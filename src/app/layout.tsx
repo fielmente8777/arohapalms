@@ -42,8 +42,6 @@ export const metadata = {
     "Luxury Accommodation Goa",
   ],
 
- 
-
   openGraph: {
     title: "Luxury Villas & Apartments in North Goa | Aroha Palms",
     description:
@@ -61,17 +59,18 @@ export const metadata = {
     ],
   },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Luxury Villas & Apartments in North Goa | Aroha Palms",
-    description:
-      "Book luxury villas and apartments with private pools in North Goa.",
-    images: ["/images/og-image.webp"],
-  },
-
   robots: {
     index: true,
     follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -83,6 +82,24 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${firaSans.variable} h-full antialiased`}>
       <head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/favicon/site.webmanifest"></link>
         {/* <!-- Google tag (gtag.js) --> */}
         <Script
           id="google-tag-manager"
