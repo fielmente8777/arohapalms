@@ -17,9 +17,62 @@ const firaSans = Fira_Sans({
   preload: true,
 });
 
-export const metadata: Metadata = {
-  title: "Aroha Palms",
-  description: "Aroha Palms, Goa",
+export const metadata = {
+  title:
+    "Luxury Villas & Apartments in North Goa | Aroha Palms Official Website",
+
+  description:
+    "Book luxury villas and apartments at Aroha Palms in North Goa. Private pools, Greek-inspired architecture, spacious stays, concierge service, and the best direct booking offers.",
+
+  keywords: [
+    "Aroha Palms",
+    "Luxury Villas Goa",
+    "Private Pool Villas Goa",
+    "North Goa Villas",
+    "Mandrem Villas",
+    "Pilerne Apartments",
+    "Holiday Villas Goa",
+    "Family Villas Goa",
+    "Corporate Offsite Goa",
+    "Wedding Villas Goa",
+    "Luxury Apartments Goa",
+    "Beach Villas Goa",
+    "Goa Stay",
+    "Villa Booking Goa",
+    "Luxury Accommodation Goa",
+  ],
+
+ 
+
+  openGraph: {
+    title: "Luxury Villas & Apartments in North Goa | Aroha Palms",
+    description:
+      "Experience barefoot luxury at Aroha Palms. Greek-inspired villas and apartments with private pools, concierge services, and peaceful stays in North Goa.",
+    siteName: "Aroha Palms",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Aroha Palms Luxury Villas",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Luxury Villas & Apartments in North Goa | Aroha Palms",
+    description:
+      "Book luxury villas and apartments with private pools in North Goa.",
+    images: ["/images/og-image.webp"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
