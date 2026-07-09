@@ -17,7 +17,7 @@ const AccommodationSection: React.FC<AccommodationSectionProps> = ({
             {tagline}
           </p>
           <SectionHeading title={title} />
-          <p className="text-secondary">{description}</p>
+          <p className="text-secondary lg:px-50">{description}</p>
         </div>
         <AccommodationCardsSection cards={cards} />
       </div>

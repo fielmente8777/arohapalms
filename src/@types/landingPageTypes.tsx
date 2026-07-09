@@ -13,7 +13,7 @@ export interface AccommodationSectionProps {
       label: string;
     }[];
     location: string;
-    image: string;
+    images: string[];
     cta: {
       label: string;
       href: string;
@@ -28,9 +28,7 @@ export interface TestimonialsProps {
     name: string;
     review: string;
   }[];
-  
 }
-
 
 export interface FaqSectionProps {
   tagline: string;
