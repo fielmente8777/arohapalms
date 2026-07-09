@@ -80,9 +80,9 @@ export const AccommodationCard: React.FC<
           />
         )}
       />
-      <div className="flex flex-col gap-4 p-6 bg-white">
+      <div className="grid grid-rows-[1fr_2.5fr_auto] gap-4 p-6 bg-white">
         <h3 className="text-2xl text-background-dark">{title}</h3>
-        <p className="text-sm text-[#57534E]">{description}</p>
+        <p className=" text-[#57534E]">{description}</p>
         <ul className="flex flex-wrap items-center gap-2">
           {amenities.map((amenity, index) => (
             <li
