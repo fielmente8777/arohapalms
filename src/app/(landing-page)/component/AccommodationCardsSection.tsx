@@ -1,9 +1,11 @@
 "use client";
 import { AccommodationSectionProps } from "@/@types/landingPageTypes";
 import LinkButton from "@/components/buttons/LinkButton";
+import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import { FillLocationIcon } from "@/utils/icons";
 import Image from "next/image";
 import { useState } from "react";
+import { Autoplay } from "swiper/modules";
 
 const AccommodationCardsSection: React.FC<{
   cards: AccommodationSectionProps["cards"];
@@ -16,7 +18,7 @@ const AccommodationCardsSection: React.FC<{
 
   // filter
   const filteredCards = cards.filter(
-    (card) => card.location.toLocaleLowerCase() === activeBtn,
+    (card) => card.location.toLocaleLowerCase() === activeBtn
   );
 
   return (
@@ -50,12 +52,33 @@ export default AccommodationCardsSection;
 
 export const AccommodationCard: React.FC<
   AccommodationSectionProps["cards"][0]
-> = ({ image, title, description, amenities, cta }) => {
+> = ({ images, title, description, amenities, cta }) => {
   return (
     <div className="border-x border-b border-[#E5E1D8] rounded-2xl overflow-hidden">
-      <div className="relative aspect-4/2.75">
-        <Image src={image} alt={title} fill className="object-cover" />
-      </div>
+      <SwiperCarousel
+        data={images}
+        slidesPerView={1}
+        spaceBetween={0}
+        loop
+        speed={700}
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          waitForTransition: false,
+        }}
+        swiperSlideClassName="relative aspect-[4/2.75]"
+        renderSlide={(image) => (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+            className="object-cover"
+          />
+        )}
+      />
       <div className="flex flex-col gap-4 p-6 bg-white">
         <h3 className="text-2xl text-background-dark">{title}</h3>
         <p className="text-sm text-[#57534E]">{description}</p>
