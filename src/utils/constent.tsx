@@ -16,9 +16,9 @@ export const contact = {
   },
   callCta: `tel:+919834220573`,
   WhatsappCta: `https://wa.me/+919834220573?text=${enCodeText}`,
-  // formDomain: "",
+  formDomain: "arohapalmsmandrem",
   // formDomain: "testmulti", //for testing
-  formHid: "arohapalmsmandrem",
+  formHid: "",
   // formHid: "",
 };
 
