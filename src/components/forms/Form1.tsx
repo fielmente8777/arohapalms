@@ -154,7 +154,7 @@ const Form1 = ({ gridView }: Props) => {
     includeCheckIn: true,
     includeCheckOut: true,
     includeMessage: true,
-    includeCity: true,
+    // includeCity: true,
     onSubmitSuccess: () => {
       setStartDate(null);
       setEndDate(null);
@@ -206,13 +206,13 @@ const Form1 = ({ gridView }: Props) => {
       onChange: handleChange,
       icon: <MailIcon />,
     },
-    {
-      name: "city",
-      label: "Location",
-      type: "dropdown",
-      value: formData.city || "",
-      icon: <LocationIcon />,
-    },
+    // {
+    //   name: "city",
+    //   label: "Location",
+    //   type: "dropdown",
+    //   value: formData.city || "",
+    //   icon: <LocationIcon />,
+    // },
     {
       name: "checkIn",
       label: "Check-in & out",
@@ -226,7 +226,7 @@ const Form1 = ({ gridView }: Props) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`${gridView ? "flex flex-col gap-3" : "grid md:grid-cols-6 items-center gap-3.5"} font-body px-4 bg-transparent max-md:divide-y divide-p1`}
+      className={`${gridView ? "flex flex-col gap-3" : "grid md:grid-cols-5 items-center gap-3.5"} font-body px-4 bg-transparent max-md:divide-y divide-p1`}
     >
       {formFields.map((field, index) => (
         <React.Fragment key={index}>

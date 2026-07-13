@@ -49,9 +49,9 @@ export const footerData: FooterData = {
           title: "Mandrem, North Goa",
         },
 
-        {
-          title: "Pilerne, North Goa",
-        },
+        // {
+        //   title: "Pilerne, North Goa",
+        // },
       ],
     },
     {
