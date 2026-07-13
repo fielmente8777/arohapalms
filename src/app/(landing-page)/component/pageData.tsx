@@ -24,7 +24,7 @@ export const landingPageData = {
 
   accommodationSection: {
     tagline: "OUR ACCOMMODATION",
-    title: "Fifteen Homes, Two Magical Addresses in Goa",
+    title: "Fifteen Homes, One Magical Address in Goa",
     description:
       "Explore every villa, apartment and suite across our Mandrem collection, each one thoughtfully designed for private, unhurried Goa stays.",
 
