@@ -210,7 +210,7 @@ const Form2: React.FC<Form2Props> = ({
     >
       {/* Full Name Field */}
       <div
-        className={`flex flex-col gap-2.5 p-2 bg-white border-[0.5px] shadow border-[#D6D3D1] rounded-lg`}
+        className={`flex md:col-span-2 col-span-1 flex-col gap-2.5 p-2 bg-white border-[0.5px] shadow border-[#D6D3D1] rounded-lg`}
       >
         <input
           type="text"
@@ -354,7 +354,7 @@ const Form2: React.FC<Form2Props> = ({
 
       {/* Guests Field */}
       <div
-        className={`flex md:col-span-2 col-span-1 items-center bg-white p-2 gap-2.5 border-[0.5px] shadow border-[#D6D3D1] rounded-lg`}
+        className={`flex  items-center bg-white p-2 gap-2.5 border-[0.5px] shadow border-[#D6D3D1] rounded-lg`}
       >
         <input
           type="text"
