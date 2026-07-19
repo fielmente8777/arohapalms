@@ -70,7 +70,7 @@ export const AccommodationCard: React.FC<
   return (
     <div className=" grid lg:grid-cols-10 grid-cols-1 gap-6  room-card">
       <div
-        className={`w-full rounded-2xl lg:col-span-6 overflow-hidden ${index % 2 === 0 ? "order-first" : "order-last"}`}
+        className={`w-full rounded-2xl lg:col-span-6 lg:block hidden overflow-hidden ${index % 2 === 0 ? "order-first" : "order-last"}`}
       >
         <SwiperCarousel
           data={images}
@@ -98,8 +98,37 @@ export const AccommodationCard: React.FC<
           )}
         />
       </div>
-      <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4 lg:gap-7 p-6 bg-background box-shadow overflow-hidden">
+      <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4 lg:gap-7 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
         <h3 className="text-2xl text-p2">{title}</h3>
+        <div
+          className={`w-full rounded-xl lg:hidden overflow-hidden`}
+        >
+          <SwiperCarousel
+            data={images}
+            slidesPerView={1}
+            spaceBetween={0}
+            loop
+            speed={1000}
+            modules={[Autoplay, Navigation]}
+            navigation={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+              waitForTransition: false,
+            }}
+            swiperSlideClassName="relative lg:aspect-[4/2.5] aspect-[4/2.75]"
+            renderSlide={(image) => (
+              <Image
+                src={image}
+                alt={title}
+                fill
+                sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+                className="object-cover"
+              />
+            )}
+          />
+        </div>
         <ul className="flex flex-wrap items-center gap-2">
           {amenities.map((amenity, index) => (
             <li
@@ -123,10 +152,8 @@ export const AccommodationCard: React.FC<
             </li>
           ))}
         </ul>
-        <p className="text-lg text-secondary font-semibold">
-          {startingPrice}
-        </p>
-        <div className="grid grid-cols-[1fr_auto] gap-4">
+        <p className="text-lg text-secondary font-semibold">{startingPrice}</p>
+        <div className="grid md:grid-cols-[1fr_auto] grid-cols-1 gap-4">
           <LinkButton
             href={cta.href}
             label={cta.label}
