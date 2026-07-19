@@ -41,9 +41,9 @@ export const FeaturesSectionCard: React.FC<
   FeaturesSectionProps["features"][0]
 > = ({ icon, title, description }) => {
   return (
-    <div className="flex flex-col gap-4 bg-white rounded-2xl p-8.5">
-      <div className="bg-background-2 w-12 h-12 rounded-full flex items-center justify-center">{icon}</div>
-      <h3 className="text-xl font-semibold">{title}</h3>
+    <div className="flex flex-col gap-4 bg-white rounded-2xl border border-primary p-8.5">
+      <div className="bg-background-2 w-12 h-12 rounded-full flex items-center justify-center text-p2">{icon}</div>
+      <h3 className="text-xl font-semibold text-p2">{title}</h3>
       <p>{description}</p>
     </div>
   );

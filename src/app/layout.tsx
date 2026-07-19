@@ -7,6 +7,9 @@ import Script from "next/script";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
 import { contact } from "@/utils/constent";
 import Call from "@/components/ContactButton/Call";
+import PopUpForm from "@/components/pop-up/PopUpForm";
+import { WebProvider } from "@/context-api/WebContext";
+import RoomDetailsPopup from "@/components/pop-up/RoomDetailsPopup";
 
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
@@ -141,11 +144,15 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
-        {children}
+        <WebProvider>
+          {children}
 
-        <LandingFooter />
-        <Whatsapp whatsAppNumber={contact.phone[0]} />
-        <Call callNumber={contact.phone[0]} />
+          <LandingFooter />
+          <PopUpForm />
+          <RoomDetailsPopup />
+          <Whatsapp whatsAppNumber={contact.phone[0]} />
+          <Call callNumber={contact.phone[0]} />
+        </WebProvider>
       </body>
       {/* <!-- Eazbot Script (Next.js) --> */}
       <Script id="chatbot-config" strategy="afterInteractive">

@@ -1,6 +1,7 @@
 "use client";
 import { AccommodationSectionProps } from "@/@types/landingPageTypes";
 import LinkButton from "@/components/buttons/LinkButton";
+import RoomDetailsPopupButton from "@/components/pop-up/RoomDetailsPopupButton";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import { FillLocationIcon } from "@/utils/icons";
 import Image from "next/image";
@@ -18,7 +19,7 @@ const AccommodationCardsSection: React.FC<{
 
   // filter
   const filteredCards = cards.filter(
-    (card) => card.location.toLocaleLowerCase() === activeBtn
+    (card) => card.location.toLocaleLowerCase() === activeBtn,
   );
 
   return (
@@ -37,10 +38,10 @@ const AccommodationCardsSection: React.FC<{
           </button>
         ))}
       </div> */}
-      <div className="mt-16">
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+      <div>
+        <div className="flex flex-col gap-6 lg:gap-16">
           {filteredCards.map((card, index) => (
-            <AccommodationCard key={index} {...card} />
+            <AccommodationCard key={index} {...card} index={index} />
           ))}
         </div>
       </div>
@@ -51,38 +52,54 @@ const AccommodationCardsSection: React.FC<{
 export default AccommodationCardsSection;
 
 export const AccommodationCard: React.FC<
-  AccommodationSectionProps["cards"][0]
-> = ({ images, title, description, amenities, cta }) => {
+  AccommodationSectionProps["cards"][0] & { index: number }
+> = ({
+  images,
+  title,
+  description,
+  amenities,
+  cta,
+  index,
+  inRoomAmenities,
+  moreInfo,
+  location,
+  note,
+  startingPrice,
+  type,
+}) => {
   return (
-    <div className="border-x border-b border-[#E5E1D8] rounded-2xl overflow-hidden room-card">
-      <SwiperCarousel
-        data={images}
-        slidesPerView={1}
-        spaceBetween={0}
-        loop
-        speed={1000}
-        modules={[Autoplay,Navigation]}
-        navigation={true}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-          waitForTransition: false,
-        }}
-        swiperSlideClassName="relative aspect-[4/2.75]"
-        renderSlide={(image) => (
-          <Image
-            src={image}
-            alt={title}
-            fill
-            sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
-            className="object-cover"
-          />
-        )}
-      />
-      <div className="grid grid-rows-[1fr_2.5fr_auto] gap-4 p-6 bg-white">
-        <h3 className="text-2xl text-background-dark">{title}</h3>
-        <p className=" text-[#57534E]">{description}</p>
+    <div className=" grid lg:grid-cols-10 grid-cols-1 gap-6  room-card">
+      <div
+        className={`w-full rounded-2xl lg:col-span-6 overflow-hidden ${index % 2 === 0 ? "order-first" : "order-last"}`}
+      >
+        <SwiperCarousel
+          data={images}
+          slidesPerView={1}
+          spaceBetween={0}
+          loop
+          speed={1000}
+          modules={[Autoplay, Navigation]}
+          navigation={true}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+            waitForTransition: false,
+          }}
+          swiperSlideClassName="relative lg:aspect-[4/2.5] aspect-[4/2.75]"
+          renderSlide={(image) => (
+            <Image
+              src={image}
+              alt={title}
+              fill
+              sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+              className="object-cover"
+            />
+          )}
+        />
+      </div>
+      <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4 lg:gap-7 p-6 bg-background box-shadow overflow-hidden">
+        <h3 className="text-2xl text-p2">{title}</h3>
         <ul className="flex flex-wrap items-center gap-2">
           {amenities.map((amenity, index) => (
             <li
@@ -94,11 +111,45 @@ export const AccommodationCard: React.FC<
             </li>
           ))}
         </ul>
-        <LinkButton
-          href={cta.href}
-          label={cta.label}
-          className="bg-primary rounded-full border-none text-white w-full justify-center"
-        />
+        <p className=" text-[#57534E]">{description}</p>
+        <ul className="flex flex-wrap items-center gap-2 p-3 border border-p2 rounded-2xl">
+          {inRoomAmenities.map((amenity, index) => (
+            <li
+              key={index}
+              className="flex items-center gap-2 text-sm py-1 text-background-dark px-3 rounded-full"
+            >
+              {amenity.icon && <span>{amenity.icon}</span>}
+              {amenity.label}
+            </li>
+          ))}
+        </ul>
+        <p className="text-lg text-secondary font-semibold">
+          {startingPrice}
+        </p>
+        <div className="grid grid-cols-[1fr_auto] gap-4">
+          <LinkButton
+            href={cta.href}
+            label={cta.label}
+            whatsAppIcon
+            className="bg-primary rounded-sm border-none text-white w-full justify-center uppercase"
+          />
+          <RoomDetailsPopupButton
+            label="Know More"
+            roomDetails={{
+              images,
+              title,
+              description,
+              amenities,
+              cta,
+              inRoomAmenities,
+              moreInfo,
+              location,
+              note,
+              startingPrice,
+              type,
+            }}
+          />
+        </div>
       </div>
     </div>
   );

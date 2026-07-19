@@ -1,6 +1,8 @@
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { SectionHeading } from "@/components/typography";
 import Image from "next/image";
+import ExperienceSlider from "./Slider/ExperienceSlider";
+import LinkButton from "@/components/buttons/LinkButton";
 
 export interface ExperienceSectionProps {
   tagline: string;
@@ -10,27 +12,46 @@ export interface ExperienceSectionProps {
     image: string;
     description: string;
   }[];
+  buttons: {
+    label: string;
+    link: string;
+  }[]
 }
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = ({
   tagline,
   title,
   experiences,
+  buttons
 }) => {
   return (
     <SectionWithContainer>
       <div className="flex flex-col gap-10">
-        <div className="space-y-2">
+        <div className="space-y-2 text-center">
           <p className="text-sm text-primary uppercase tracking-widest">
             {tagline}
           </p>
-          <SectionHeading title={title} />
+          <SectionHeading title={title} textCenter />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <ExperienceSlider cards={experiences} />
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {experiences.map((feature, index) => (
             <ExperienceSectionCard key={index} {...feature} />
           ))}
-        </div>
+        </div> */}
+        <ul className="flex flex-wrap gap-4 justify-center">
+          {buttons.map((button, index) => (
+            <li key={index}>
+              <LinkButton 
+                href={button.link}
+                label={button.label}
+                whatsAppIcon={index === 0}
+                calendarIcon={index === 1}
+                className="rounded-sm text-white bg-primary border-none"
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </SectionWithContainer>
   );

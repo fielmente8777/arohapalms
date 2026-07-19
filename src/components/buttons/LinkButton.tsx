@@ -29,11 +29,15 @@ const LinkButton: React.FC<LinkButtonProps> = ({
   ...props
 }) => {
   const { setIsOpenFormPopUp } = useWebContext();
+  const handleClick = () => {
+    setIsOpenFormPopUp(true);
+    console.log("first")
+  };
   return (
     <>
       {href === "#form" ? (
         <button
-          onClick={() => setIsOpenFormPopUp(true)}
+          onClick={handleClick}
           className={`flex items-center gap-2 shadow-md border w-fit px-4 py-2 hover:scale-95 transition-all duration-300 ease-in-out hover:scale-x-105 active:scale-95 ${className}`}
           {...props}
         >
