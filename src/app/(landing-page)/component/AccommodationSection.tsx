@@ -8,6 +8,7 @@ const AccommodationSection: React.FC<AccommodationSectionProps> = ({
   title,
   description,
   cards,
+  note,
 }) => {
   return (
     <SectionWithContainer>
@@ -19,7 +20,7 @@ const AccommodationSection: React.FC<AccommodationSectionProps> = ({
           <SectionHeading title={title} />
           <p className="text-secondary lg:px-36 lg:text-lg max-w-5xl mx-auto">{description}</p>
         </div>
-        <AccommodationCardsSection cards={cards} />
+        <AccommodationCardsSection cards={cards} note={note} />
       </div>
     </SectionWithContainer>
   );

@@ -4,6 +4,7 @@ export interface AccommodationSectionProps {
   tagline: string;
   title: string;
   description: string;
+  note: string;
   cards: {
     title: string;
     type: string;

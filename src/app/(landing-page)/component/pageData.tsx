@@ -13,8 +13,8 @@ import {
 
 export const landingPageData = {
   offer: [
-    "Monsoon Special: <span class='text-[#A20000]'>Up to 25% OFF.</span> Book Before the Offer Ends!",
-    "Monsoon Special: <span class='text-[#A20000]'>Up to 25% OFF.</span> Book Before the Offer Ends!",
+    "Monsoon Bonanza 30% off limited time offer",
+    "Monsoon Bonanza 30% off limited time offer",
   ],
   hero: {
     tag: "A Paradise in North Goa",
@@ -31,9 +31,12 @@ export const landingPageData = {
   },
 
   unforgettableSection: {
-    title: "Unwind, Explore, and Create Unforgettable Memories at Aroha Palms.",
+    // title: "Unwind, Explore, and Create Unforgettable Memories at Aroha Palms.",
+    // description:
+    //   "Escape to the peaceful charm of Aroha Palms, where lush gardens, open spaces, and tranquil surroundings offer the perfect place to relax and recharge. Just minutes from Goa's beaches, water sports, heritage sites, wellness retreats, and vibrant nightlife, you can explore the best of the destination before returning to the comfort of your private retreat.",
+    title: "Elevated Living Between the Palms and the Sea.",
     description:
-      "Escape to the peaceful charm of Aroha Palms, where lush gardens, open spaces, and tranquil surroundings offer the perfect place to relax and recharge. Just minutes from Goa's beaches, water sports, heritage sites, wellness retreats, and vibrant nightlife, you can explore the best of the destination before returning to the comfort of your private retreat.",
+      "Global elites and discerning travelers are shifting away from the high-energy crowds of Calangute and Anjuna in search of the serene privacy, pristine shores, and refined luxury of Mandrem.",
     images: [
       "/landing-page/gallery/img-1.webp",
       "/landing-page/gallery/img-2.webp",
@@ -59,7 +62,7 @@ export const landingPageData = {
     title: "18 Boutique Homes Crafted for Your Perfect Goa Getaway",
     description:
       "Explore every villa, apartment and suite across Mandrem, each one thoughtfully designed for private, unhurried Goa stays.",
-
+    note: "No need to split up the group or book multiple hotel rooms. Our largest estate villas offer seamless group living with space for up to 40 guests. Enjoy private amenities, expansive outdoor lounges, and effortless hosting—all in one magnificent setting.",
     cards: [
       {
         title: "Aroha Palms Magnifica",

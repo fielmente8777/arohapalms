@@ -3,14 +3,14 @@ import { AccommodationSectionProps } from "@/@types/landingPageTypes";
 import LinkButton from "@/components/buttons/LinkButton";
 import RoomDetailsPopupButton from "@/components/pop-up/RoomDetailsPopupButton";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
-import { FillLocationIcon } from "@/utils/icons";
 import Image from "next/image";
 import { useState } from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 
 const AccommodationCardsSection: React.FC<{
   cards: AccommodationSectionProps["cards"];
-}> = ({ cards }) => {
+  note: AccommodationSectionProps["note"];
+}> = ({ cards, note }) => {
   const btns = [
     ...new Set(cards.map((card) => card.location.toLocaleLowerCase())),
   ];
@@ -40,9 +40,17 @@ const AccommodationCardsSection: React.FC<{
       </div> */}
       <div>
         <div className="flex flex-col gap-6 lg:gap-16">
-          {filteredCards.map((card, index) => (
+          {filteredCards.slice(0, 5).map((card, index) => (
             <AccommodationCard key={index} {...card} index={index} />
           ))}
+          <p className="text-secondary text-center">{note}</p>
+          {filteredCards.length > 5 && (
+            <div className="flex flex-col gap-6 lg:gap-16">
+              {filteredCards.slice(5).map((card, index) => (
+                <AccommodationCard key={index} {...card} index={index+1} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -100,9 +108,7 @@ export const AccommodationCard: React.FC<
       </div>
       <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4 lg:gap-7 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
         <h3 className="text-2xl text-p2">{title}</h3>
-        <div
-          className={`w-full rounded-xl lg:hidden overflow-hidden`}
-        >
+        <div className={`w-full rounded-xl lg:hidden overflow-hidden`}>
           <SwiperCarousel
             data={images}
             slidesPerView={1}
