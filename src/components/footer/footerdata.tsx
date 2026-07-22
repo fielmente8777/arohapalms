@@ -70,3 +70,109 @@ export const footerData: FooterData = {
     },
   ],
 };
+
+export const WebfooterData = {
+  logo: "/images/logo.svg",
+
+  bookNow: {
+    text: "Book Now",
+    href: "/booking",
+  },
+
+  links: {
+    title: "Links",
+    items: [
+      {
+        label: "Home",
+        href: "/",
+      },
+      {
+        label: "Location - Mandrem",
+        href: "/locations/mandrem",
+      },
+      {
+        label: "Location - Pilerne",
+        href: "/locations/pilerne",
+      },
+      {
+        label: "How To Reach",
+        href: "/how-to-reach",
+      },
+      {
+        label: "The Experience",
+        href: "/experience",
+      },
+      {
+        label: "Our Story",
+        href: "/our-story",
+      },
+      {
+        label: "Articles",
+        href: "/articles",
+      },
+      {
+        label: "Contact Us",
+        href: "/contact",
+      },
+    ],
+  },
+
+  quickLinks: {
+    title: "Quick Links",
+    items: [
+      {
+        label: "Frequently Asked Questions",
+        href: "/faq",
+      },
+      {
+        label: "Guest Arrival Instructions - Mandrem",
+        href: "/arrival-instructions/mandrem",
+      },
+      {
+        label: "Guest Arrival Instructions - Pilerne",
+        href: "/arrival-instructions/pilerne",
+      },
+      {
+        label: "House Keeping Rules & Guest Guidelines",
+        href: "/housekeeping-guidelines",
+      },
+      {
+        label: "Cancellation & Refund Policy",
+        href: "/cancellation-policy",
+      },
+      {
+        label: "Privacy Policy",
+        href: "/privacy-policy",
+      },
+      {
+        label: "Terms And Conditions",
+        href: "/terms-and-conditions",
+      },
+    ],
+  },
+
+  social: {
+    title: "Social",
+    items: [
+      {
+        label: "Facebook",
+        href: "https://facebook.com",
+      },
+      {
+        label: "Instagram",
+        href: "https://instagram.com",
+      },
+      {
+        label: "LinkedIn",
+        href: "https://linkedin.com",
+      },
+    ],
+  },
+
+  copyright: "© 2026 Aroha Palms. All Rights Reserved.",
+
+  poweredBy: {
+    text: "Powered by Fielmente",
+    href: "https://fielmente.com",
+  },
+};
