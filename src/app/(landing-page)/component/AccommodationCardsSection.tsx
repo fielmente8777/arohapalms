@@ -182,7 +182,13 @@ export const AccommodationCard: React.FC<
             </li>
           ))}
         </ul> */}
-        <p className="text-lg text-secondary font-semibold">{startingPrice}</p>
+        <p className="text-lg text-secondary">
+          <span className="sr-only">
+            {startingPrice}
+          </span>
+          <span className="font-semibold">{startingPrice} </span>
+          <span className="text-sm">+ Taxes</span>
+        </p>
         {/* <div className="grid md:grid-cols-[1fr_auto] grid-cols-1 gap-4"> */}
         <LinkButton
           href={cta.href}
