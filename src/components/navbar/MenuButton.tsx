@@ -7,7 +7,10 @@ export default function MenuButton({ color="white" }: { color?: string }) {
 
   return (
     <button
-      onClick={() => setIsOpenNavBar(!isOpenNavBar)}
+      onClick={() =>{ console.log("clicked");
+          console.log(isOpenNavBar);
+
+         setIsOpenNavBar(!isOpenNavBar)}}
       className="relative flex h-14 w-14 items-center justify-center"
       aria-label="Menu"
     >

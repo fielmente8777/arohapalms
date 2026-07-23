@@ -7,7 +7,10 @@ import Script from "next/script";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
 import { contact } from "@/utils/constent";
 import Call from "@/components/ContactButton/Call";
-
+import HomeNavbar from "@/components/navbar/HomeNavbar";
+import Navbar from "@/components/navbar/navbar";
+import InnerNavbar from "@/components/navbar/InnerNavbar";
+import { WebProvider } from "@/context-api/WebContext";
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
   subsets: ["latin"],
@@ -30,11 +33,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${firaSans.variable} h-full antialiased`}>
       <body suppressHydrationWarning={true}>
-        {children}
+        <WebProvider>
+          <Navbar />
 
-        <LandingFooter />
-        <Whatsapp whatsAppNumber={contact.phone[0]} />
-        <Call callNumber={contact.phone[0]} />
+          {children}
+
+          <LandingFooter />
+          <Whatsapp whatsAppNumber={contact.phone[0]} />
+          <Call callNumber={contact.phone[0]} />
+        </WebProvider>
       </body>
       {/* <!-- Eazbot Script (Next.js) --> */}
       {/* <Script id="chatbot-config" strategy="afterInteractive">

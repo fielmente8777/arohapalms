@@ -1,6 +1,6 @@
 export const homePageData = {
   hero: {
-    video: "",
+    video: "/videos/luxuryvilla.mp4",
     subtitle: "Breathe, Revive, Rejuvenate",
 
     title: "A luxury Paradise IN NORTH GOA",
@@ -15,7 +15,7 @@ export const homePageData = {
     description: [
       "Set in the serene neighbourhoods of North Goa, Aroha Palms offers a collection of thoughtfully designed villas and apartments surrounded by lush, manicured gardens. Just a short drive from the coast, each stay blends calm, private living with effortless access to beaches, culture, and experiences—creating a space that feels both indulgent and quietly removed.",
     ],
-    video: "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/Christmas+at+Naturoville+celebrations.mp4",
+    video: "/videos/aerialview.mp4",
     highlights: [
       "Luxury Stay",
       "Wellbeing",
@@ -159,7 +159,7 @@ export const homePageData = {
     ],
   },
   testimonials: {
-    logo: "/images/logo.svg",
+    logo: "/footer.png",
 
     title: "Moments Shared By Those Who Stayed",
 

@@ -1,6 +1,10 @@
 export const roomData = [
   {
     slug: "mandrem",
+    metaData: {
+      title: "Mandrem Villas | Aroha Palms",
+      description: "Discover luxury villas in Mandrem, Goa.",
+    },
 
     hero: {
       image: "/images/mandrem/banner.webp",
@@ -54,6 +58,10 @@ export const roomData = [
 
   {
     slug: "pilerne",
+    metaData: {
+      title: "Pilerne Villas | Aroha Palms",
+      description: "Discover luxury villas in Pilerne, Goa.",
+    },
 
     hero: {
       image: "/images/pilerne/banner.webp",

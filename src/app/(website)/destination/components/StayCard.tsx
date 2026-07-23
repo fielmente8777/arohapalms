@@ -20,19 +20,21 @@ const StayCards = ({ stays }: StayCardsProps) => {
             href={stay.href}
             className="group relative overflow-hidden rounded-[32px]"
           >
-            <Image
-              src={stay.image}
-              alt={stay.subtitle}
-              fill
-              className="object-cover"
-            />
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-[32px]">
+              <Image
+                src={stay.image}
+                alt={stay.subtitle}
+                fill
+                className="object-cover"
+              />
+            </div>
 
             <div>
               <h2>{stay.title}</h2>
 
               <h3>{stay.subtitle}</h3>
 
-              <button>Explore Now</button>
+              {/* <button>Explore Now</button> */}
             </div>
           </Link>
         ))}
