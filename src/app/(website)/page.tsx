@@ -14,11 +14,11 @@ export default function HomePage() {
     <main>
       <HeroBanner {...homePageData.hero} />
       <Experience {...homePageData.experience} />
-      <OfferBanner {...homePageData.offers}/>
-      <Locations {...homePageData.locations}/>
+      <OfferBanner {...homePageData.offers} />
+      <Locations {...homePageData.locations} />
       <Dine {...homePageData.dine} />
-      <Amenities {...homePageData.amenities} />
-      <Outdoors {...homePageData.outdoors} />
+      <Amenities amenities={homePageData.amenities} outdoors={homePageData.outdoors} />
+      {/* <Outdoors {...homePageData.outdoors} /> */}
       <Testimonials {...homePageData.testimonials} />
 
     </main>

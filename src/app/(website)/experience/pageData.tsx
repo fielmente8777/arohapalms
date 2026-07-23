@@ -12,28 +12,28 @@ export const experiencePageData = {
   experiences: {
     cards: [
       {
-        image: "/images/experience/beach.webp",
+        image: "/landing-page/bnr.jpg",
         title: "Beach & Adventure",
         description:
           "Scuba Diving, Snorkeling, Jet Skiing, Parasailing, White Water Rafting, Flyboarding, Wakeboarding, Dolphin Watching, Kayaking, Dudhsagar Waterfalls.",
       },
 
       {
-        image: "/images/experience/heritage.webp",
+        image: "/landing-page/bnr.jpg",
         title: "Heritage & Culture",
         description:
           "Explore Goa's historic churches, Portuguese architecture, museums, forts, local markets and vibrant cultural heritage.",
       },
 
       {
-        image: "/images/experience/wellbeing.webp",
+        image: "/landing-page/bnr.jpg",
         title: "Healing & Wellbeing",
         description:
           "Yoga, meditation, wellness therapies, spa experiences and peaceful retreats surrounded by nature.",
       },
 
       {
-        image: "/images/experience/casino.webp",
+        image: "/landing-page/bnr.jpg",
         title: "Casino & Nightlife",
         description:
           "Cruise casinos, live music, nightlife, fine dining and entertainment experiences across Goa.",
@@ -46,28 +46,28 @@ export const experiencePageData = {
     },
   },
   Activites: {
-  title: {
-    prefix: "Experience &",
-    words: ["Breathe", "Revive", "Rejuvenate"],
-  },
+    title: {
+      prefix: "Experience &",
+      words: ["Breathe", "Revive", "Rejuvenate"],
+    },
 
-  slides: [
-    {
-      image: "/images/rejuvenate/dolphin.webp",
-      label: "Dolphin Watching",
-    },
-    {
-      image: "/images/rejuvenate/casino.webp",
-      label: "Cruise & Casino",
-    },
-    {
-      image: "/images/rejuvenate/yoga.webp",
-      label: "Scuba Diving",
-    },
-    {
-      image: "/images/rejuvenate/beach.webp",
-      label: "Paragliding",
-    },
-  ],
-},
+    slides: [
+      {
+        image: "/landing-page/bnr.jpg",
+        label: "Dolphin Watching",
+      },
+      {
+        image: "/landing-page/bnr.jpg",
+        label: "Cruise & Casino",
+      },
+      {
+        image: "/landing-page/bnr.jpg",
+        label: "Scuba Diving",
+      },
+      {
+        image: "/landing-page/bnr.jpg",
+        label: "Paragliding",
+      },
+    ],
+  },
 };

@@ -1,7 +1,6 @@
 export const homePageData = {
   hero: {
-    video: "/videos/hero-banner.mp4",
-
+    video: "",
     subtitle: "Breathe, Revive, Rejuvenate",
 
     title: "A luxury Paradise IN NORTH GOA",
@@ -14,9 +13,9 @@ export const homePageData = {
   experience: {
     title: "EXPERIENCE BAREFOOT LUXURY",
     description: [
-      "<p>Set in the serene neighbourhoods of North Goa, Aroha Palms offers a collection of thoughtfully designed villas and apartments surrounded by lush, manicured gardens. Just a short drive from the coast, each stay blends calm, private living with effortless access to beaches, culture, and experiences—creating a space that feels both indulgent and quietly removed.</p>",
+      "Set in the serene neighbourhoods of North Goa, Aroha Palms offers a collection of thoughtfully designed villas and apartments surrounded by lush, manicured gardens. Just a short drive from the coast, each stay blends calm, private living with effortless access to beaches, culture, and experiences—creating a space that feels both indulgent and quietly removed.",
     ],
-    video: "",
+    video: "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/Christmas+at+Naturoville+celebrations.mp4",
     highlights: [
       "Luxury Stay",
       "Wellbeing",
@@ -27,7 +26,7 @@ export const homePageData = {
     ],
   },
   offers: {
-    background: "/images/offers/monsoon-serenity.webp",
+    background: "/landing-page/bnr.jpg",
 
     title: "Monsoon Serenity - Offers Soon",
 
@@ -37,7 +36,7 @@ export const homePageData = {
     },
   },
   locations: {
-    background: "/images/locations/location-bg.webp",
+    background: "/landing-page/bnr.jpg",
 
     title:
       "Experience Barefoot Luxury in the Heart of North Goa Near the Shore of Mandrem",
@@ -46,7 +45,7 @@ export const homePageData = {
 
     cards: [
       {
-        image: "/images/locations/mandrem.webp",
+        image: "/landing-page/bnr.jpg",
         title: "Mandrem",
         description:
           "Set in Mandrem, enjoy calm, private stays just minutes from serene beaches, cafés, and North Goa's vibrant coastline.",
@@ -56,7 +55,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/images/locations/pilerne.webp",
+        image: "/landing-page/bnr.jpg",
         title: "Pilerne",
         description:
           "Located in Pilerne, enjoy a quiet, local setting with easy access to Candolim, Calangute, beaches, dining, and nightlife.",
@@ -68,7 +67,7 @@ export const homePageData = {
     ],
   },
   dine: {
-    background: "/images/experience/dine.webp",
+    background: "/landing-page/bnr.jpg",
 
     title: "Dine",
 
@@ -118,7 +117,7 @@ export const homePageData = {
 
     cards: [
       {
-        image: "/images/outdoors/beach-adventure.webp",
+        image: "/landing-page/bnr.jpg",
         title: "Beach and Adventure",
         description:
           "Sunlit beaches, water sports, and coastal trails await nearby, perfect for ocean dips, exploration, and easygoing adventure.",
@@ -128,7 +127,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/images/outdoors/heritage-culture.webp",
+        image: "/landing-page/bnr.jpg",
         title: "Heritage and Culture",
         description:
           "Explore churches, forts, flea markets, and North Goa's history, culture, and everyday charm woven together effortlessly.",
@@ -138,7 +137,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/images/outdoors/casino-nightlife.webp",
+        image: "/landing-page/bnr.jpg",
         title: "Casino & Nightlife",
         description:
           "Experience vibrant nights with cruise casinos, live music, and entertainment where energy and indulgence come alive after dark.",
@@ -148,7 +147,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/images/outdoors/healing-wellbeing.webp",
+        image: "/landing-page/bnr.jpg",
         title: "Healing and Wellbeing",
         description:
           "Slow down with yoga, mindful moments, and calm surroundings that bring balance, relaxation, and a sense of inner ease.",

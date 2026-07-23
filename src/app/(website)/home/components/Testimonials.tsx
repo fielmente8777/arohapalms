@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TestimonialsSlider from "@/app/(landing-page)/component/Slider/TestimonialsSlider";
+import TestimonialsSlider from "@/app/landing-page/component/Slider/TestimonialsSlider";
 
 interface TestimonialsProps {
   logo: string;
@@ -15,16 +15,20 @@ interface TestimonialsProps {
 
 const Testimonials = ({ logo, title, reviews }: TestimonialsProps) => {
   return (
-    <section>
+    <section className=" bg-white/10 relative z-20 py-10">
       <div className="max_width">
         <Image src={logo} alt={title} fill className="object-cover" />
 
-        <h2>{title}</h2>
+        <h2 className="text-center font-serif max-w-5xl mx-auto text-5xl mb-18 text-blue">{title}</h2>
 
-        <TestimonialsSlider reviews={reviews} />
+        <div className="w-full">
+
+          <TestimonialsSlider reviews={reviews} />
+        </div>
       </div>
-    </section>
+    </section >
   );
 };
 
 export default Testimonials;
+

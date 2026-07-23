@@ -13,7 +13,7 @@ interface ExperienceCardsProps {
   };
 }
 
-const ExperienceCards = ({ cards,cta }: ExperienceCardsProps) => {
+const ExperienceCards = ({ cards, cta }: ExperienceCardsProps) => {
   return (
     <section className="max_width">
       <div className="grid grid-cols-2 gap-6">
@@ -37,8 +37,8 @@ const ExperienceCards = ({ cards,cta }: ExperienceCardsProps) => {
           </div>
         ))}
       </div>
-      <div className="mt-12 flex justify-center">
-        <Link href={cta.href}>{cta.text}</Link>
+      <div className="my-12 flex justify-center">
+        <Link className="py-2 px-10 uppercase tracking-wider rounded-md text-lg bg-blue text-white hover:underline" href={cta.href}>{cta.text}</Link>
       </div>
     </section>
   );

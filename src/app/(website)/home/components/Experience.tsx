@@ -23,9 +23,9 @@ const Experience = ({
 
       <div className="relative z-10 flex h-full items-center justify-center">
         <div className="max_width text-center text-white">
-          <h2 className="font-serif text-5xl uppercase">{title}</h2>
+          <h2 className="font-serif md:text-5xl uppercase">{title}</h2>
 
-          <p className="mx-auto mt-8 max-w-5xl text-lg leading-9">
+          <p className="mx-auto mt-8 max-w-8xl text-lg leading-9">
             {description}
           </p>
 

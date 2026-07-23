@@ -17,7 +17,7 @@ const Dine = ({
   cta,
 }: DineProps) => {
   return (
-    <section className="sticky top-0 relative h-screen overflow-hidden">
+    <section className=" sticky top-0 relative h-screen overflow-hidden">
       <img
         src={background}
         alt={title}
@@ -27,14 +27,14 @@ const Dine = ({
       <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative z-10 flex h-full items-center justify-center">
-        <div className="max_width flex flex-col items-center text-center text-white">
-          <h2>{title}</h2>
+        <div className="flex flex-col items-center text-center text-white max-w-3xl space-y-4">
+          <h2 className="md:text-6xl">{title}</h2>
 
           {description.map((item, index) => (
             <p key={index}>{item}</p>
           ))}
 
-          <Link href={cta.href}>
+          <Link href={cta.href} className=" h-24 w-24 rounded-full border border-white flex justify-center items-center hover:bg-[#011f4b] transition-all duration-150 underline">
             {cta.text}
           </Link>
         </div>

@@ -26,9 +26,9 @@ const VerticalSlider = ({
   children,
 }: VerticalSliderProps) => {
   return (
-    <div className={clsx("vertical-slider", className)}>
+    <div className={clsx("vertical-slider rounded-none! ", className)}>
       <div
-        className="vertical-slider__track"
+        className="vertical-slider__track "
         style={{
           transform: `translateY(-${activeIndex * 100}%)`,
         }}
@@ -36,13 +36,13 @@ const VerticalSlider = ({
         {slides.map((slide, index) => (
           <div
             key={`${slide.image}-${index}`}
-            className="vertical-slider__slide"
+            className="vertical-slider__slide "
           >
             <Image
               src={slide.image}
               alt={slide.alt}
               fill
-              className="object-cover"
+              className="object-cover  "
             />
           </div>
         ))}
