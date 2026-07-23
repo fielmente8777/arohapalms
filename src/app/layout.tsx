@@ -169,7 +169,7 @@ export default function RootLayout({
 
         <LandingFooter />
         <Whatsapp whatsAppNumber={contact.phone[0]} />
-        <Call callNumber={contact.phone[0]} />
+        <Call callNumber={"022-41642345"} />
       </body>
       {/* <!-- Eazbot Script (Next.js) --> */}
       <Script id="chatbot-config" strategy="afterInteractive">

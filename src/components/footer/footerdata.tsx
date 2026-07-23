@@ -61,6 +61,10 @@ export const footerData: FooterData = {
           label: "WhatsApp: " + contact.phone[0],
           href: contact.WhatsappCta,
         },
+        {
+          label: "Call: 022-41642345",
+          href: "tel:02241642345",
+        },
 
         {
           label: contact.email,
