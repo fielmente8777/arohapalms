@@ -58,11 +58,11 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images }) => {
           </div>
         )}
       />
-      <div className="flex items-center justify-center gap-2 mt-6">
-        <button className="cafe-prev text-2xl">
+      <div className="flex items-center justify-center gap-4 mt-6">
+        <button className="cafe-prev text-2xl lg:text-4xl hover:border-p2 border border-transparent">
           <GoArrowLeft />
         </button>
-        <button className="cafe-next text-2xl">
+        <button className="cafe-next text-2xl lg:text-4xl hover:border-p2 border border-transparent">
           <GoArrowRight />
         </button>
       </div>

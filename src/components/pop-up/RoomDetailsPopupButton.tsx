@@ -17,7 +17,7 @@ const RoomDetailsPopupButton = ({
   return (
     <button
       onClick={() => openRoom(roomDetails)}
-      className="text-primary underline underline-offset-4 uppercase w-fit"
+      className="text-primary underline underline-offset-4 uppercase w-fit text-sm!"
     >
       {label}
     </button>

@@ -2,6 +2,7 @@
 import { AccommodationSectionProps } from "@/@types/landingPageTypes";
 import LinkButton from "@/components/buttons/LinkButton";
 import RoomDetailsPopupButton from "@/components/pop-up/RoomDetailsPopupButton";
+import AmenitiesSlider from "@/components/sliders/AmenitiesSlider";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import Image from "next/image";
 import { useState } from "react";
@@ -40,14 +41,16 @@ const AccommodationCardsSection: React.FC<{
       </div> */}
       <div>
         <div className="flex flex-col gap-6 lg:gap-16">
-          {filteredCards.slice(0, 5).map((card, index) => (
+          {filteredCards.slice(0, 3).map((card, index) => (
             <AccommodationCard key={index} {...card} index={index} />
           ))}
-          <p className="text-secondary text-center">{note}</p>
-          {filteredCards.length > 5 && (
+          <p className="text-secondary text-center max-w-4xl mx-auto border border-primary box-shadow w-full p-4 rounded-2xl lg:text-xl font-semibold bg-background">
+            {note}
+          </p>
+          {filteredCards.length > 3 && (
             <div className="flex flex-col gap-6 lg:gap-16">
-              {filteredCards.slice(5).map((card, index) => (
-                <AccommodationCard key={index} {...card} index={index+1} />
+              {filteredCards.slice(3).map((card, index) => (
+                <AccommodationCard key={index} {...card} index={index + 1} />
               ))}
             </div>
           )}
@@ -146,26 +149,10 @@ export const AccommodationCard: React.FC<
             </li>
           ))}
         </ul>
-        <p className=" text-[#57534E]">{description}</p>
-        <ul className="flex flex-wrap items-center gap-2 p-3 border border-p2 rounded-2xl">
-          {inRoomAmenities.map((amenity, index) => (
-            <li
-              key={index}
-              className="flex items-center gap-2 text-sm py-1 text-background-dark px-3 rounded-full"
-            >
-              {amenity.icon && <span>{amenity.icon}</span>}
-              {amenity.label}
-            </li>
-          ))}
-        </ul>
-        <p className="text-lg text-secondary font-semibold">{startingPrice}</p>
-        <div className="grid md:grid-cols-[1fr_auto] grid-cols-1 gap-4">
-          <LinkButton
-            href={cta.href}
-            label={cta.label}
-            whatsAppIcon
-            className="bg-primary rounded-sm border-none text-white w-full justify-center uppercase"
-          />
+        <div className="flex flex-col gap-1">
+          <p className=" text-[#57534E] line-clamp-5">
+            {moreInfo.description[0]}
+          </p>
           <RoomDetailsPopupButton
             label="Know More"
             roomDetails={{
@@ -183,6 +170,27 @@ export const AccommodationCard: React.FC<
             }}
           />
         </div>
+        <AmenitiesSlider items={inRoomAmenities} />
+        {/* <ul className="flex flex-wrap items-center gap-2 p-3 border border-p2 rounded-2xl">
+          {inRoomAmenities.map((amenity, index) => (
+            <li
+              key={index}
+              className="flex items-center gap-2 text-sm py-1 text-background-dark px-3 rounded-full"
+            >
+              {amenity.icon && <span>{amenity.icon}</span>}
+              {amenity.label}
+            </li>
+          ))}
+        </ul> */}
+        <p className="text-lg text-secondary font-semibold">{startingPrice}</p>
+        {/* <div className="grid md:grid-cols-[1fr_auto] grid-cols-1 gap-4"> */}
+        <LinkButton
+          href={cta.href}
+          label={cta.label}
+          whatsAppIcon
+          className="bg-primary rounded-sm border-none text-white w-full justify-center uppercase"
+        />
+        {/* </div> */}
       </div>
     </div>
   );

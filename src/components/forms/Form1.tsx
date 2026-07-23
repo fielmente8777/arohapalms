@@ -55,7 +55,6 @@ const budgetOption = [
   },
 ];
 
-console.log(locationOptions);
 
 // Custom Dropdown Component
 interface CustomDropdownProps {

@@ -1,3 +1,12 @@
+import {
+  BathroomIcon,
+  EvChargingFacilityIcon,
+  HighSpeedInternetIcon,
+  KitchenIcon,
+  SmartTvIcon,
+  SwimmingPoolIcon,
+  WorkStationIcon,
+} from "@/utils/amenitiesIcon";
 import { contact } from "@/utils/constent";
 import {
   BathTubIcon,
@@ -34,16 +43,23 @@ export const landingPageData = {
     // title: "Unwind, Explore, and Create Unforgettable Memories at Aroha Palms.",
     // description:
     //   "Escape to the peaceful charm of Aroha Palms, where lush gardens, open spaces, and tranquil surroundings offer the perfect place to relax and recharge. Just minutes from Goa's beaches, water sports, heritage sites, wellness retreats, and vibrant nightlife, you can explore the best of the destination before returning to the comfort of your private retreat.",
-    title: "Elevated Living Between the Palms and the Sea.",
-    description:
+    title: "Elevated Living Between the Palms and the Sea",
+    description: [
       "Global elites and discerning travelers are shifting away from the high-energy crowds of Calangute and Anjuna in search of the serene privacy, pristine shores, and refined luxury of Mandrem.",
+      "Escape to Aroha Palms Villas, where true exclusivity meets timeless design. Inspired by the sun-drenched elegance of Greek minimalism and the enduring charm of Portuguese craftsmanship, every villa is a private sanctuary crafted for discerning travelers. Wake up to sweeping mountain views, lush green landscapes, and the soothing sound of a natural stream flowing beside the property. Tucked away in the serene heart of Mandrem, yet moments from Goa's finest beaches, Aroha Palms offers the perfect balance of luxury, privacy, and nature. Book your stay today and discover a quieter, more beautiful side of Goa.",
+    ],
     images: [
       "/landing-page/gallery/img-1.webp",
       "/landing-page/gallery/img-2.webp",
       "/landing-page/gallery/img-3.webp",
-      "/landing-page/gallery/img-4.webp",
       "/landing-page/gallery/img-5.webp",
       "/landing-page/gallery/img-6.webp",
+      "/rooms/Magnifica/magnifica10.webp",
+      "/landing-page/gallery/Rectangle-34624171.png",
+      "/landing-page/gallery/Rectangle-34624176.png",
+      "/landing-page/gallery/Rectangle-34624177.png",
+      "/landing-page/gallery/Rectangle-34624178.png",
+      "/landing-page/gallery/Rectangle-34624179.png",
     ],
     buttons: [
       {
@@ -59,10 +75,10 @@ export const landingPageData = {
 
   accommodationSection: {
     tagline: "OUR ACCOMMODATION",
-    title: "18 Boutique Homes Crafted for Your Perfect Goa Getaway",
+    title: "Luxury Villas Crafted for Your Perfect Goa Getaway",
     description:
       "Explore every villa, apartment and suite across Mandrem, each one thoughtfully designed for private, unhurried Goa stays.",
-    note: "No need to split up the group or book multiple hotel rooms. Our largest estate villas offer seamless group living with space for up to 40 guests. Enjoy private amenities, expansive outdoor lounges, and effortless hosting—all in one magnificent setting.",
+    note: "No need to split up the group or book multiple hotel rooms. Our largest estate villas offer seamless group living with space for up to 40 guests. Enjoy private amenities, expansive outdoor lounges, and effortless hosting, all in one magnificent setting.",
     cards: [
       {
         title: "Aroha Palms Magnifica",
@@ -76,27 +92,32 @@ export const landingPageData = {
         ],
         inRoomAmenities: [
           {
-            icon: <PoolIcon />,
-            label: "Bonfire",
+            icon: <HighSpeedInternetIcon />,
+            label: "High Speed Internet",
           },
           {
-            icon: <PoolIcon />,
+            icon: <EvChargingFacilityIcon />,
             label: "EV Charging Facility",
           },
           {
-            icon: <PoolIcon />,
-            label: "Shared Pool",
+            icon: <WorkStationIcon />,
+            label: "Work Station",
+          },
+
+          {
+            icon: <SwimmingPoolIcon />,
+            label: "Swimming Pool",
           },
           {
-            icon: <PoolIcon />,
+            icon: <SmartTvIcon />,
             label: "Smart TV",
           },
           {
-            icon: <PoolIcon />,
+            icon: <KitchenIcon />,
             label: "Kitchen",
           },
           {
-            icon: <PoolIcon />,
+            icon: <BathroomIcon />,
             label: "Bathroom",
           },
         ],
@@ -178,29 +199,34 @@ export const landingPageData = {
           { icon: <BathTubIcon />, label: "5 Baths" },
           { icon: <GuestIcon />, label: "10 Guests" },
         ],
-        inRoomAmenities: [
+        inRoomAmenities:  [
           {
-            icon: <PoolIcon />,
-            label: "Bonfire",
+            icon: <HighSpeedInternetIcon />,
+            label: "High Speed Internet",
           },
           {
-            icon: <PoolIcon />,
+            icon: <EvChargingFacilityIcon />,
             label: "EV Charging Facility",
           },
           {
-            icon: <PoolIcon />,
-            label: "Shared Pool",
+            icon: <WorkStationIcon />,
+            label: "Work Station",
+          },
+
+          {
+            icon: <SwimmingPoolIcon />,
+            label: "Swimming Pool",
           },
           {
-            icon: <PoolIcon />,
+            icon: <SmartTvIcon />,
             label: "Smart TV",
           },
           {
-            icon: <PoolIcon />,
+            icon: <KitchenIcon />,
             label: "Kitchen",
           },
           {
-            icon: <PoolIcon />,
+            icon: <BathroomIcon />,
             label: "Bathroom",
           },
         ],
@@ -277,29 +303,34 @@ export const landingPageData = {
           { icon: <BathTubIcon />, label: "5 Baths" },
           { icon: <GuestIcon />, label: "10 Guests" },
         ],
-        inRoomAmenities: [
+        inRoomAmenities:  [
           {
-            icon: <PoolIcon />,
-            label: "Bonfire",
+            icon: <HighSpeedInternetIcon />,
+            label: "High Speed Internet",
           },
           {
-            icon: <PoolIcon />,
+            icon: <EvChargingFacilityIcon />,
             label: "EV Charging Facility",
           },
           {
-            icon: <PoolIcon />,
-            label: "Shared Pool",
+            icon: <WorkStationIcon />,
+            label: "Work Station",
+          },
+
+          {
+            icon: <SwimmingPoolIcon />,
+            label: "Swimming Pool",
           },
           {
-            icon: <PoolIcon />,
+            icon: <SmartTvIcon />,
             label: "Smart TV",
           },
           {
-            icon: <PoolIcon />,
+            icon: <KitchenIcon />,
             label: "Kitchen",
           },
           {
-            icon: <PoolIcon />,
+            icon: <BathroomIcon />,
             label: "Bathroom",
           },
         ],
@@ -378,29 +409,34 @@ export const landingPageData = {
           { icon: <BathTubIcon />, label: "18 Baths" },
           { icon: <GuestIcon />, label: "36 Guests" },
         ],
-        inRoomAmenities: [
+        inRoomAmenities:  [
           {
-            icon: <PoolIcon />,
-            label: "Bonfire",
+            icon: <HighSpeedInternetIcon />,
+            label: "High Speed Internet",
           },
           {
-            icon: <PoolIcon />,
+            icon: <EvChargingFacilityIcon />,
             label: "EV Charging Facility",
           },
           {
-            icon: <PoolIcon />,
-            label: "Shared Pool",
+            icon: <WorkStationIcon />,
+            label: "Work Station",
+          },
+
+          {
+            icon: <SwimmingPoolIcon />,
+            label: "Swimming Pool",
           },
           {
-            icon: <PoolIcon />,
+            icon: <SmartTvIcon />,
             label: "Smart TV",
           },
           {
-            icon: <PoolIcon />,
+            icon: <KitchenIcon />,
             label: "Kitchen",
           },
           {
-            icon: <PoolIcon />,
+            icon: <BathroomIcon />,
             label: "Bathroom",
           },
         ],
@@ -432,7 +468,7 @@ export const landingPageData = {
           review: {
             author: "Nishant Chury",
             description:
-              "The villa is super amazing and aesthetically made for comfort, and relaxation. The property is incredibly clean and hygienic because of the helpers of the property Manoj and Gudiya. They are very polite, and helpful. Over all the property is beautiful with a nice swimming pool, big rooms and hygiene.",
+              "The villa is super amazing and aesthetically made for comfort, and relaxation. The property is incredibly clean and hygienic because of the helpers of the property Manoj and Gudiya. They are very polite, and helpful. Over all the property is beautiful with a nice Swimming Pool, big rooms and hygiene.",
           },
         },
         note: {
@@ -465,27 +501,32 @@ export const landingPageData = {
         ],
         inRoomAmenities: [
           {
-            icon: <PoolIcon />,
-            label: "Bonfire",
+            icon: <HighSpeedInternetIcon />,
+            label: "High Speed Internet",
           },
           {
-            icon: <PoolIcon />,
+            icon: <EvChargingFacilityIcon />,
             label: "EV Charging Facility",
           },
           {
-            icon: <PoolIcon />,
-            label: "Shared Pool",
+            icon: <WorkStationIcon />,
+            label: "Work Station",
+          },
+
+          {
+            icon: <SwimmingPoolIcon />,
+            label: "Swimming Pool",
           },
           {
-            icon: <PoolIcon />,
+            icon: <SmartTvIcon />,
             label: "Smart TV",
           },
           {
-            icon: <PoolIcon />,
+            icon: <KitchenIcon />,
             label: "Kitchen",
           },
           {
-            icon: <PoolIcon />,
+            icon: <BathroomIcon />,
             label: "Bathroom",
           },
         ],
@@ -518,7 +559,7 @@ export const landingPageData = {
           review: {
             author: "Nishant Chury",
             description:
-              "The villa is super amazing and aesthetically made for comfort, and relaxation. The property is incredibly clean and hygienic because of the helpers of the property Manoj and Gudiya. They are very polite, and helpful. Over all the property is beautiful with a nice swimming pool, big rooms and hygiene.",
+              "The villa is super amazing and aesthetically made for comfort, and relaxation. The property is incredibly clean and hygienic because of the helpers of the property Manoj and Gudiya. They are very polite, and helpful. Over all the property is beautiful with a nice Swimming Pool, big rooms and hygiene.",
           },
         },
         note: {
@@ -549,29 +590,34 @@ export const landingPageData = {
           { icon: <BathTubIcon />, label: "9 Baths" },
           { icon: <GuestIcon />, label: "18 Guests" },
         ],
-        inRoomAmenities: [
+        inRoomAmenities:  [
           {
-            icon: <PoolIcon />,
-            label: "Bonfire",
+            icon: <HighSpeedInternetIcon />,
+            label: "High Speed Internet",
           },
           {
-            icon: <PoolIcon />,
+            icon: <EvChargingFacilityIcon />,
             label: "EV Charging Facility",
           },
           {
-            icon: <PoolIcon />,
-            label: "Shared Pool",
+            icon: <WorkStationIcon />,
+            label: "Work Station",
+          },
+
+          {
+            icon: <SwimmingPoolIcon />,
+            label: "Swimming Pool",
           },
           {
-            icon: <PoolIcon />,
+            icon: <SmartTvIcon />,
             label: "Smart TV",
           },
           {
-            icon: <PoolIcon />,
+            icon: <KitchenIcon />,
             label: "Kitchen",
           },
           {
-            icon: <PoolIcon />,
+            icon: <BathroomIcon />,
             label: "Bathroom",
           },
         ],
@@ -634,29 +680,34 @@ export const landingPageData = {
           { icon: <BathTubIcon />, label: "7 Baths" },
           { icon: <GuestIcon />, label: "14 Guests" },
         ],
-        inRoomAmenities: [
+        inRoomAmenities:  [
           {
-            icon: <PoolIcon />,
-            label: "Bonfire",
+            icon: <HighSpeedInternetIcon />,
+            label: "High Speed Internet",
           },
           {
-            icon: <PoolIcon />,
+            icon: <EvChargingFacilityIcon />,
             label: "EV Charging Facility",
           },
           {
-            icon: <PoolIcon />,
-            label: "Shared Pool",
+            icon: <WorkStationIcon />,
+            label: "Work Station",
+          },
+
+          {
+            icon: <SwimmingPoolIcon />,
+            label: "Swimming Pool",
           },
           {
-            icon: <PoolIcon />,
+            icon: <SmartTvIcon />,
             label: "Smart TV",
           },
           {
-            icon: <PoolIcon />,
+            icon: <KitchenIcon />,
             label: "Kitchen",
           },
           {
-            icon: <PoolIcon />,
+            icon: <BathroomIcon />,
             label: "Bathroom",
           },
         ],
@@ -881,7 +932,7 @@ export const landingPageData = {
         icon: <PoolIcon />,
         title: "Private Pool",
         description:
-          "Every villa comes with its own swimming pool for uninterrupted relaxation.",
+          "Every villa comes with its own Swimming Pool for uninterrupted relaxation.",
       },
       {
         icon: <SpaciousRoomIcon />,
@@ -1041,7 +1092,7 @@ export const landingPageData = {
       },
       {
         q: "Do all properties have private pools?",
-        a: "Every villa at Aroha Palms features a private swimming pool. Apartments and suites have access to the shared property pool.",
+        a: "Every villa at Aroha Palms features a private Swimming Pool. Apartments and suites have access to the shared property pool.",
       },
       {
         q: "Is the location safe?",
