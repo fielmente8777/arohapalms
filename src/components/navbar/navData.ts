@@ -55,11 +55,11 @@ export const InnerNavData = {
     },
     {
       label: "How To Reach",
-      href: "/ContactUs/",
+      href: "/contactus/",
     },
     {
       label: "The Experience",
-      href: "/TheExperience/",
+      href: "/theexperience/",
     },
     {
       label: "Our Story",

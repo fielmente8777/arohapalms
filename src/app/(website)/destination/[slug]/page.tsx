@@ -35,9 +35,13 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function Page({ params }: PageProps) {
-  const data = roomData.find((item) => item.slug === params.slug);
+export default async function Page({ params }: PageProps) {
 
+  const { slug } = await params;
+  console.log(slug)
+  const data = roomData.find((item) => item.slug === slug);
+
+  console.log("jkhjghfgdfsd", roomData);
   if (!data) {
     notFound();
   }
@@ -46,7 +50,7 @@ export default function Page({ params }: PageProps) {
     <main>
       <HeroBanner {...data.hero} />
       <Properties {...data.properties} />
-      <Testimonials {...homePageData.testimonials} />
+      {/* <Testimonials {...homePageData.testimonials} /> */}
     </main>
   );
 }

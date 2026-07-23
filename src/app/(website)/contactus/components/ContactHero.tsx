@@ -4,8 +4,8 @@ interface ContactHeroProps {
 
 const ContactHero = ({ title }: ContactHeroProps) => {
   return (
-    <section className="max_width">
-      <h1>{title}</h1>
+    <section className="max_width py-14">
+      <h1 className="text-blue text-5xl text-center">{title}</h1>
     </section>
   );
 };

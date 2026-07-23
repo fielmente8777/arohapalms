@@ -12,7 +12,7 @@ const HeroBanner = ({
   title,
 }: HeroBannerProps) => {
   return (
-    <section className="relative h-screen">
+    <section className="relative h-[70vh]">
       <Image
         src={image}
         alt={title}
@@ -24,10 +24,10 @@ const HeroBanner = ({
       <div className="absolute inset-0 bg-black/20" />
 
       <div className="relative z-10 flex h-full items-start">
-        <div className="max_width">
-          <p>{subtitle}</p>
+        <div className="max_width  flex flex-col justify-center h-full">
+          <p className="text-white">{subtitle}</p>
 
-          <h1>{title}</h1>
+          <h1 className="text-5xl text-white">{title}</h1>
         </div>
       </div>
     </section>

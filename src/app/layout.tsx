@@ -11,6 +11,7 @@ import HomeNavbar from "@/components/navbar/HomeNavbar";
 import Navbar from "@/components/navbar/navbar";
 import InnerNavbar from "@/components/navbar/InnerNavbar";
 import { WebProvider } from "@/context-api/WebContext";
+import Footer from "@/components/footer/WebsiteFooter";
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
           {children}
 
           <LandingFooter />
+          {/* <Footer /> */}
           <Whatsapp whatsAppNumber={contact.phone[0]} />
           <Call callNumber={contact.phone[0]} />
         </WebProvider>
