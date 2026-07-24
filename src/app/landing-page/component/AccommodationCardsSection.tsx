@@ -5,7 +5,7 @@ import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import { FillLocationIcon } from "@/utils/icons";
 import Image from "next/image";
 import { useState } from "react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 const AccommodationCardsSection: React.FC<{
   cards: AccommodationSectionProps["cards"];
@@ -23,7 +23,7 @@ const AccommodationCardsSection: React.FC<{
 
   return (
     <div>
-      <div className="flex items-center justify-center gap-4">
+      {/* <div className="flex items-center justify-center gap-4">
         {btns.map((btn, index) => (
           <button
             key={index}
@@ -36,7 +36,7 @@ const AccommodationCardsSection: React.FC<{
             {btn}
           </button>
         ))}
-      </div>
+      </div> */}
       <div className="mt-16">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
           {filteredCards.map((card, index) => (
@@ -54,14 +54,15 @@ export const AccommodationCard: React.FC<
   AccommodationSectionProps["cards"][0]
 > = ({ images, title, description, amenities, cta }) => {
   return (
-    <div className="border-x border-b border-[#E5E1D8] rounded-2xl overflow-hidden">
+    <div className="border-x border-b border-[#E5E1D8] rounded-2xl overflow-hidden room-card">
       <SwiperCarousel
         data={images}
         slidesPerView={1}
         spaceBetween={0}
         loop
-        speed={700}
-        modules={[Autoplay]}
+        speed={1000}
+        modules={[Autoplay,Navigation]}
+        navigation={true}
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
@@ -79,9 +80,9 @@ export const AccommodationCard: React.FC<
           />
         )}
       />
-      <div className="flex flex-col gap-4 p-6 bg-white">
+      <div className="grid grid-rows-[1fr_2.5fr_auto] gap-4 p-6 bg-white">
         <h3 className="text-2xl text-background-dark">{title}</h3>
-        <p className="text-sm text-[#57534E]">{description}</p>
+        <p className=" text-[#57534E]">{description}</p>
         <ul className="flex flex-wrap items-center gap-2">
           {amenities.map((amenity, index) => (
             <li

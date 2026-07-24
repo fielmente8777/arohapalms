@@ -24,9 +24,9 @@ export const landingPageData = {
 
   accommodationSection: {
     tagline: "OUR ACCOMMODATION",
-    title: "Fifteen Homes, Two Magical Addresses in Goa",
+    title: "Fifteen Homes, One Magical Address in Goa",
     description:
-      "Explore every villa, apartment and suite across our Mandrem and Pilerne collections, each one thoughtfully designed for private, unhurried Goa stays.",
+      "Explore every villa, apartment and suite across our Mandrem collection, each one thoughtfully designed for private, unhurried Goa stays.",
 
     cards: [
       {
@@ -115,8 +115,8 @@ export const landingPageData = {
         location: "Mandrem",
         images: [
           "/rooms/Serenity/Serenity.png",
-          "/rooms/Serenity/serenity1.png",
-          "/rooms/Serenity/serenity2.png",
+          "/rooms/Serenity/serenity1.jpg",
+          "/rooms/Serenity/serenity2.jpg",
           "/rooms/Serenity/serenity3.webp",
           "/rooms/Serenity/serenity4.jpg",
           "/rooms/Serenity/serenity5.webp",
@@ -257,11 +257,11 @@ export const landingPageData = {
         images: [
           "/rooms/Emerald/Emerald.png",
           "/rooms/Emerald/emerald1.jpg",
+          "/rooms/Emerald/emerald6.webp",
           "/rooms/Emerald/emerald2.jpg",
           "/rooms/Emerald/emerald3.jpg",
           "/rooms/Emerald/emerald4.jpg",
           "/rooms/Emerald/emerald5.webp",
-          "/rooms/Emerald/emerald6.webp",
         ],
         cta: {
           label: "Book Now",
