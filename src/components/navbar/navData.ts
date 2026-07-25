@@ -45,33 +45,33 @@ export const InnerNavData = {
       children: [
         {
           label: "Mandrem",
-          href: "",
+          href: "/destination/mandrem",
         },
         {
           label: "Pilerne",
-          href: "",
+          href: "/destination/pilerne",
         },
       ],
     },
     {
       label: "How To Reach",
-      href: "/ContactUs/",
+      href: "/contact-us/",
     },
     {
       label: "The Experience",
-      href: "/TheExperience/",
+      href: "/experience/",
     },
     {
       label: "Our Story",
-      href: "/about-us/",
+      href: "/our-story/",
     },
     {
       label: "Articles",
-      href: "/articles/",
+      href: "/articles",
     },
     {
       label: "Contact Us",
-      href: "/ContactUs/",
+      href: "/contact-us/",
     },
   ],
 

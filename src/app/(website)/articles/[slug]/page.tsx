@@ -30,9 +30,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       description: post.metaData.description,
       keywords: post.metaData.keyWords,
       alternates: {
-        canonical: `https://therudrakshretreat.com/blogs/${post.slug}`,
+        canonical: `https://arohapalms.com/articles/${post.slug}`,
         languages: {
-          "en-US": `https://therudrakshretreat.com/blogs/${post.slug}`,
+          "en-US": `https://arohapalms.com/articles/${post.slug}`,
         },
       },
       openGraph: {

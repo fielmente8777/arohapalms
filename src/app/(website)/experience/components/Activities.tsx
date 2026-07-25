@@ -30,7 +30,7 @@ const Activities = ({ title, slides }: ActivitiesProps) => {
   // };
 
   return (
-    <section className="Activities mt-10!">
+    <section className=" mt-10!">
       <h2 className="font-serif text-5xl text-blue mb-10 text-center ">
         {title.prefix}{" "}
         <span className="text-blue/80">{title.words[activeIndex % title.words.length]}</span>

@@ -9,8 +9,8 @@ import { contact } from "@/utils/constent";
 import Call from "@/components/ContactButton/Call";
 import Image from "next/image";
 import { WebProvider } from "@/context-api/WebContext";
+import Footer from "@/components/footer/WebsiteFooter";
 import Navbar from "@/components/navbar/navbar";
-
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
   subsets: ["latin"],
@@ -167,13 +167,12 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         <WebProvider>
-          <Navbar/>
-        {/* <!-- End Google Tag Manager (noscript) --> */}
-        {children}
-
-        <LandingFooter />
-        <Whatsapp whatsAppNumber={contact.phone[0]} />
-        <Call callNumber={"022-41642345"} />
+          {/* <!-- End Google Tag Manager (noscript) --> */}
+          {children}
+          {/* <LandingFooter /> */}
+          {/* <Footer /> */}
+          <Whatsapp whatsAppNumber={contact.phone[0]} />
+          <Call callNumber={contact.phone[0]} />
         </WebProvider>
       </body>
       {/* <!-- Eazbot Script (Next.js) --> */}

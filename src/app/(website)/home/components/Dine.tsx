@@ -17,7 +17,7 @@ const Dine = ({
   cta,
 }: DineProps) => {
   return (
-    <section className=" sticky top-0 relative h-screen overflow-hidden">
+    <section className=" sticky top-0 h-screen overflow-hidden">
       <img
         src={background}
         alt={title}
