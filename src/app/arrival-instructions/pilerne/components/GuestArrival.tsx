@@ -10,13 +10,10 @@ import {
 
 interface Section {
   title: React.ReactNode;
+  icon?: "map" | "plane" | "train" | "car" | "key" | "phone";
   content?: React.ReactNode;
   points?: React.ReactNode[];
-  extra?: React.ReactNode;
-  extraPoints?: React.ReactNode[];
-  footer?: React.ReactNode;
-  footerPoints?: React.ReactNode[];
-  icon?: "map" | "plane" | "train" | "car" | "key" | "phone";
+  ordered?: boolean;
 }
 
 interface GuestArrivalProps {
@@ -27,126 +24,89 @@ interface GuestArrivalProps {
 }
 
 const icons = {
-  map: <MapPin size={32} strokeWidth={1.7} />,
-  plane: <Plane size={32} strokeWidth={1.7} />,
-  train: <Train size={32} strokeWidth={1.7} />,
-  car: <Car size={32} strokeWidth={1.7} />,
-  key: <KeyRound size={32} strokeWidth={1.7} />,
-  phone: <Phone size={32} strokeWidth={1.7} />,
+  map: <MapPin className="h-9 w-9" />,
+  plane: <Plane className="h-8 w-8" />,
+  train: <Train className="h-8 w-8" />,
+  car: <Car className="h-8 w-8" />,
+  key: <KeyRound className="h-9 w-9" />,
+  phone: <Phone className="h-8 w-8" />,
 };
 
-const GuestArrival = ({
+export default function GuestArrival({
   title,
   introduction,
   sections,
   closingNote,
-}: GuestArrivalProps) => {
+}: GuestArrivalProps) {
   return (
-    <SectionWithContainer sectionClassName="py-24">
-      <div className="max-w-[920px] mx-auto">
+    <SectionWithContainer sectionClassName="py-24 lg:py-32">
+      <div className="mx-auto max-w-[900px] px-6">
 
-        {/* Title */}
-        <div className="text-center mb-20">
-          <h1
-            className="
-            text-[#0B2D63]
-            text-[42px]
-            md:text-[58px]
-            lg:text-[72px]
-            leading-tight
-            font-normal
-            "
-          >
+        {/* Hero */}
+        <header className="text-center">
+          <h1 className="font-serif text-[3rem] font-normal leading-none tracking-tight text-[#102B5C] md:text-[4.8rem]">
             {title}
           </h1>
 
-          <div className="mt-8 text-[20px] leading-[40px] font-medium text-[#0B2D63]">
+          <div className="mx-auto mt-8 max-w-4xl text-[20px] font-semibold leading-9 text-[#102B5C]">
             {introduction}
           </div>
-        </div>
+        </header>
 
         {/* Sections */}
-        <div className="space-y-24">
+        <div className="mt-24 space-y-24">
           {sections.map((section, index) => (
-            <section key={index}>
+            <section key={index} className="text-center">
 
-              {/* Icon + Heading */}
-              <div className="flex flex-col items-center mb-12">
-
+              {/* Heading */}
+              <div className="mb-10 flex items-center justify-center gap-3">
                 {section.icon && (
-                  <div className="text-[#0B2D63] mb-4">
+                  <span className="text-[#B77D54]">
                     {icons[section.icon]}
-                  </div>
+                  </span>
                 )}
 
-                <h2
-                  className="
-                  text-[#0B2D63]
-                  text-[34px]
-                  text-center
-                  font-medium
-                  "
-                >
+                <h2 className="font-serif text-[2.8rem] font-semibold text-[#102B5C]">
                   {section.title}
                 </h2>
               </div>
 
+              {/* Paragraph */}
               {section.content && (
-                <div className="text-center text-[19px] leading-[40px] text-[#333] mb-8">
+                <div className="mx-auto mb-8 max-w-3xl text-[20px] leading-10 text-[#24364E]">
                   {section.content}
                 </div>
               )}
 
-              {section.points && (
-                <ul className="max-w-[720px] mx-auto list-disc pl-8 space-y-8 text-[19px] leading-[40px] text-[#333]">
+              {/* Ordered List */}
+              {section.ordered && section.points && (
+                <ol className="mx-auto max-w-4xl list-decimal space-y-8 pl-8 text-left text-[20px] leading-10 text-[#24364E] marker:font-semibold marker:text-[#102B5C]">
+                  {section.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ol>
+              )}
+
+              {/* Bullet List */}
+              {!section.ordered && section.points && (
+                <ul className="mx-auto max-w-4xl list-disc space-y-8 pl-8 text-left text-[20px] leading-10 text-[#24364E] marker:text-[#102B5C]">
                   {section.points.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
                 </ul>
               )}
-
-              {section.extra && (
-                <>
-                  <div className="mt-10 text-[19px] leading-[40px] text-[#333]">
-                    {section.extra}
-                  </div>
-
-                  {section.extraPoints && (
-                    <ul className="max-w-[720px] mx-auto list-disc pl-8 mt-6 space-y-8 text-[19px] leading-[40px] text-[#333]">
-                      {section.extraPoints.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
-                  )}
-                </>
-              )}
-
-              {section.footer && (
-                <>
-                  <div className="mt-10 text-[19px] leading-[40px] text-[#333]">
-                    {section.footer}
-                  </div>
-
-                  {section.footerPoints && (
-                    <ul className="max-w-[720px] mx-auto list-disc pl-8 mt-6 space-y-8 text-[19px] leading-[40px] text-[#333]">
-                      {section.footerPoints.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
-                  )}
-                </>
-              )}
             </section>
           ))}
-
-          {/* Closing */}
-          <div className="border-t border-gray-200 pt-12 text-center text-[22px] leading-[42px] text-[#0B2D63]">
-            {closingNote}
-          </div>
         </div>
+
+        {/* Closing Message */}
+        <footer className="mt-28 text-center">
+          <h3 className="text-[2.5rem] font-semibold text-[#102B5C]">
+            {closingNote}
+          </h3>
+        </footer>
+
       </div>
     </SectionWithContainer>
   );
-};
-
-export default GuestArrival;
+}

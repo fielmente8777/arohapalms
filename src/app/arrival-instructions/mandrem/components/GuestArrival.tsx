@@ -10,9 +10,10 @@ import {
 
 interface Section {
   title: React.ReactNode;
+  icon?: "map" | "plane" | "train" | "car" | "key" | "phone";
   content?: React.ReactNode;
   points?: React.ReactNode[];
-  icon?: "map" | "plane" | "train" | "car" | "key" | "phone";
+  ordered?: boolean;
 }
 
 interface GuestArrivalProps {
@@ -23,12 +24,12 @@ interface GuestArrivalProps {
 }
 
 const icons = {
-  map: <MapPin size={30} />,
-  plane: <Plane size={30} />,
-  train: <Train size={30} />,
-  car: <Car size={30} />,
-  key: <KeyRound size={30} />,
-  phone: <Phone size={30} />,
+  map: <MapPin className="h-9 w-9" />,
+  plane: <Plane className="h-8 w-8" />,
+  train: <Train className="h-8 w-8" />,
+  car: <Car className="h-8 w-8" />,
+  key: <KeyRound className="h-9 w-9" />,
+  phone: <Phone className="h-8 w-8" />,
 };
 
 export default function GuestArrival({
@@ -38,44 +39,57 @@ export default function GuestArrival({
   closingNote,
 }: GuestArrivalProps) {
   return (
-    <SectionWithContainer sectionClassName="py-16 md:py-24">
-      <div className="mx-auto max-w-4xl px-6">
-        <header className="mb-16 text-center">
-          <h1 className="text-4xl font-semibold text-slate-900 md:text-5xl">
+    <SectionWithContainer sectionClassName="py-24 lg:py-32">
+      <div className="mx-auto max-w-[900px] px-6">
+
+        {/* Hero */}
+        <header className="text-center">
+          <h1 className="font-serif text-[3rem] font-normal leading-none tracking-tight text-[#102B5C] md:text-[4.8rem]">
             {title}
           </h1>
 
-          <div className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          <div className="mx-auto mt-8 max-w-4xl text-[20px] font-semibold leading-9 text-[#102B5C]">
             {introduction}
           </div>
         </header>
 
-        <div className="space-y-14">
+        {/* Sections */}
+        <div className="mt-24 space-y-24">
           {sections.map((section, index) => (
-            <section
-              key={index}
-              className="rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
-            >
-              <div className="mb-6 flex items-center gap-4">
+            <section key={index} className="text-center">
+
+              {/* Heading */}
+              <div className="mb-10 flex items-center justify-center gap-3">
                 {section.icon && (
-                  <div className="rounded-full bg-slate-100 p-3 text-slate-700">
+                  <span className="text-[#B77D54]">
                     {icons[section.icon]}
-                  </div>
+                  </span>
                 )}
 
-                <h2 className="text-2xl font-semibold text-slate-900">
+                <h2 className="font-serif text-[2.8rem] font-semibold text-[#102B5C]">
                   {section.title}
                 </h2>
               </div>
 
+              {/* Paragraph */}
               {section.content && (
-                <div className="mb-6 text-base leading-8 text-slate-700">
+                <div className="mx-auto mb-8 max-w-3xl text-[20px] leading-10 text-[#24364E]">
                   {section.content}
                 </div>
               )}
 
-              {section.points && (
-                <ul className="space-y-4 pl-6 text-base leading-8 text-slate-700 list-disc marker:text-slate-500">
+              {/* Ordered List */}
+              {section.ordered && section.points && (
+                <ol className="mx-auto max-w-4xl list-decimal space-y-8 pl-8 text-left text-[20px] leading-10 text-[#24364E] marker:font-semibold marker:text-[#102B5C]">
+                  {section.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ol>
+              )}
+
+              {/* Bullet List */}
+              {!section.ordered && section.points && (
+                <ul className="mx-auto max-w-4xl list-disc space-y-8 pl-8 text-left text-[20px] leading-10 text-[#24364E] marker:text-[#102B5C]">
                   {section.points.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
@@ -85,11 +99,13 @@ export default function GuestArrival({
           ))}
         </div>
 
-        <div className="mt-16 rounded-xl bg-slate-50 p-8 text-center">
-          <div className="text-xl font-semibold text-slate-900">
+        {/* Closing Message */}
+        <footer className="mt-28 text-center">
+          <h3 className="text-[2.5rem] font-semibold text-[#102B5C]">
             {closingNote}
-          </div>
-        </div>
+          </h3>
+        </footer>
+
       </div>
     </SectionWithContainer>
   );

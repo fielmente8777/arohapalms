@@ -9,7 +9,7 @@ interface Section {
 
 interface TermsConditionsProps {
   title: React.ReactNode;
-  introduction: React.ReactNode;
+  introduction?: React.ReactNode;
   sections: Section[];
   closingNote?: React.ReactNode;
 }
@@ -21,55 +21,54 @@ const TermsConditions = ({
   closingNote,
 }: TermsConditionsProps) => {
   return (
-    <SectionWithContainer sectionClassName="py-16 md:py-24 bg-white">
-      <div className="mx-auto max-w-5xl px-6">
+    <SectionWithContainer sectionClassName="py-20 lg:py-28 bg-white">
+      <div className="mx-auto max-w-4xl px-6 lg:px-8">
 
-        {/* Page Heading */}
-        <div className="mb-16 text-center">
-          <h1 className="text-4xl font-bold text-[#0B2D63] md:text-5xl">
+        {/* Header */}
+        <header className="mb-20 text-center">
+          <h1 className="font-serif text-[3.5rem] leading-none tracking-tight text-[#0E2B5C] md:text-[5rem]">
             {title}
           </h1>
 
-          <div className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600">
-            {introduction}
-          </div>
-        </div>
+          {introduction && (
+            <div className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-[#3E4A5A]">
+              {introduction}
+            </div>
+          )}
+        </header>
 
-        {/* Sections */}
-        <div className="space-y-8">
+        {/* Content */}
+        <div className="space-y-14">
           {sections.map((section, index) => (
-            <div
-              key={index}
-              className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm transition duration-300 hover:shadow-md"
-            >
-              <h2 className="mb-4 text-2xl font-semibold text-[#0B2D63]">
+            <section key={index}>
+
+              <h2 className="mb-5 font-serif text-[2rem] font-semibold text-[#102B5C]">
                 {section.title}
               </h2>
 
               {section.content && (
-                <div className="text-gray-700 leading-8">
+                <div className="space-y-6 text-[18px] leading-9 text-[#334155]">
                   {section.content}
                 </div>
               )}
 
-              {section.points && section.points.length > 0 && (
-                <ul className="mt-5 list-disc space-y-3 pl-6 text-gray-700 leading-8">
+              {section.points && (
+                <ul className="mt-6 list-disc space-y-4 pl-6 text-[18px] leading-9 text-[#334155] marker:text-[#102B5C]">
                   {section.points.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
                 </ul>
               )}
-            </div>
+            </section>
           ))}
         </div>
 
-        {/* Closing Note */}
         {closingNote && (
-          <div className="mt-16 rounded-xl bg-gray-50 border border-gray-200 p-8 text-center">
-            <p className="text-lg font-medium text-[#0B2D63]">
+          <footer className="mt-24 border-t border-gray-200 pt-10">
+            <p className="text-center text-xl font-semibold text-[#102B5C]">
               {closingNote}
             </p>
-          </div>
+          </footer>
         )}
       </div>
     </SectionWithContainer>
