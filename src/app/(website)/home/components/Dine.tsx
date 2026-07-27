@@ -27,8 +27,8 @@ const Dine = ({
       <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative z-10 flex h-full items-center justify-center">
-        <div className="flex flex-col items-center text-center text-white max-w-3xl space-y-4">
-          <h2 className="md:text-6xl">{title}</h2>
+        <div className="flex flex-col items-center text-center text-white max-w-3xl space-y-4 max-md:px-3">
+          <h2 className="text-3xl md:text-6xl">{title}</h2>
 
           {description.map((item, index) => (
             <p key={index}>{item}</p>

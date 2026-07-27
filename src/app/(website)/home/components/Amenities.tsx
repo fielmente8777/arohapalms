@@ -33,9 +33,9 @@ const Amenities = ({ amenities, outdoors }: AmenitiesProps) => {
           {amenities.title}
         </h2>
 
-        <div className="flex w-full justify-between max_width">
+        <div className="flex w-full flex-wrap items-center justify-between max_width gap-2">
           {amenities.amenities.map((item) => (
-            <div key={item.title}>
+            <div className="flex flex-col items-center gap-1 justify-center" key={item.title}>
               {item.icon}
               <p>{item.title}</p>
             </div>
@@ -48,7 +48,7 @@ const Amenities = ({ amenities, outdoors }: AmenitiesProps) => {
           {outdoors.title}
         </h2>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {outdoors?.cards.map((card, index) => (
             <div
               key={card.title}
