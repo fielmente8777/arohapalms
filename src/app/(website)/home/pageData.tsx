@@ -167,7 +167,7 @@ export const homePageData = {
     ],
   },
   testimonials: {
-    logo: "/footer.png",
+    logo: "/test.png",
 
     title: "Moments Shared By Those Who Stayed",
 

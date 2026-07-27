@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/WebsiteFooter";
 import { WebfooterData } from "@/components/footer/footerdata";
+import LandingFooter from "@/components/footer/LandingFooter";
 
 export const metadata: Metadata = {
   title: "",
@@ -16,9 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <Navbar />
+      
       {children}
-      <Footer {...WebfooterData} />
+      <LandingFooter/>
     </>
   );
 }

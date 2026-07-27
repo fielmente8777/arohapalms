@@ -9,7 +9,7 @@ import { InnerNavData } from "./navData";
 
 export default function InnerNavbar() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-white">
+    <header className="w-full">
       <nav className="max_width flex items-center justify-between py-5">
         <Link href="/">
           <div className="relative h-20 w-52">
@@ -61,7 +61,7 @@ export default function InnerNavbar() {
           )}
         </ul>
 
-        <MenuButton color="primary" />
+        <MenuButton color="blue" />
       </nav>
 
       <NavMenu />

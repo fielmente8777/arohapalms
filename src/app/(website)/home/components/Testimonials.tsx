@@ -18,7 +18,7 @@ const Testimonials = ({ logo, title, reviews }: TestimonialsProps) => {
   return (
     <section className=" bg-white relative z-20 py-10">
       <div className="max_width">
-        <div className="relative mx-auto w-[200px] aspect-[4/3] mb-6">
+        <div className="relative mx-auto w-[300px] aspect-[5/1.8] mb-6">
           <Image src={logo} alt={title} fill className="object-container" />
         </div>
 

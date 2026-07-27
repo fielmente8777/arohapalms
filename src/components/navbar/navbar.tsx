@@ -11,12 +11,12 @@ export default function Navbar() {
   // if (pathName === "/landing-page/") {
   //   return <LandingNavbar />;
   // }
-  if (pathName === "/thank-you/") {
+  if (pathName === "/thank-you/" || pathName=== "/") {
     return null;
   }
-  if (pathName === "/") {
-    return <HomeNavbar />;
-  }
+  // if (pathName === "/") {
+  //   return <HomeNavbar />;
+  // }
 
   // All other pages
   else {

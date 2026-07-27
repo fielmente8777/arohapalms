@@ -171,7 +171,6 @@ export default function RootLayout({
         <WebProvider>
           {children}
 
-          <LandingFooter />
           <PopUpForm />
           <RoomDetailsPopup />
           <Whatsapp whatsAppNumber={contact.phone[0]} />

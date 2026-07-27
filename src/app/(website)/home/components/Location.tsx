@@ -24,7 +24,7 @@ const Locations = ({ background, title, label, cards }: LocationsProps) => {
         className="absolute inset-0 h-full w-full object-cover"
       />
 
-      <div className="absolute inset-0 bg-[#dfdbcc]/80" />
+      <div className="hidden md:absolute inset-0 bg-[#dfdbcc]/80" />
 
       <div className="relative z-10 max_width h-full">
         <h2 className="text-center font-serif max-w-5xl mx-auto text-5xl mb-18 text-blue">{title}</h2>

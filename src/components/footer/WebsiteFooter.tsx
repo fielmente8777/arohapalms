@@ -57,12 +57,24 @@ const Footer = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-start mb-16 gap-10">
           {/* Logo Section */}
           <div className="lg:col-span-1">
-            <div className="relative w-48 h-16">
+            {/* <div className="relative w-48 h-16">
               <Image
                 src={logo}
                 alt="Aroha Palms"
                 fill
                 className="object-contain object-left"
+              />
+            </div> */}
+            <div
+              className={`relative 
+                              w-35 aspect-[4/.9] md:w-50`}
+            >
+              <Image
+                src={logo}
+                alt="logo"
+                fill
+                sizes="100%"
+                className="object-cover"
               />
             </div>
           </div>
