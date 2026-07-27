@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 interface AmenitiesProps {
   amenities: {
-
     title: string;
     amenities: {
-      icon: string;
+      icon: ReactNode;
       title: string;
     }[];
-  }
+  };
 
   outdoors: {
     title: string;
@@ -22,25 +22,21 @@ interface AmenitiesProps {
         href: string;
       };
     }[];
-  }
+  };
 }
 
 const Amenities = ({ amenities, outdoors }: AmenitiesProps) => {
   return (
     <section className="relative py-10 bg-white space-y-24">
       <div className="w-full">
-        <h2 className="text-center font-serif max-w-5xl mx-auto text-5xl mb-18 text-blue">{amenities.title}</h2>
+        <h2 className="text-center max-w-5xl mx-auto text-5xl mb-18 text-blue">
+          {amenities.title}
+        </h2>
 
         <div className="flex w-full justify-between max_width">
           {amenities.amenities.map((item) => (
             <div key={item.title}>
-              <Image
-                src={item.icon}
-                alt={item.title}
-                width={32}
-                height={32}
-              />
-
+              {item.icon}
               <p>{item.title}</p>
             </div>
           ))}
@@ -48,7 +44,9 @@ const Amenities = ({ amenities, outdoors }: AmenitiesProps) => {
       </div>
 
       <div className="max_width">
-        <h2 className="text-center font-serif max-w-5xl mx-auto text-5xl mb-18 text-blue">{outdoors.title}</h2>
+        <h2 className="text-center max-w-5xl mx-auto text-5xl mb-18 text-blue">
+          {outdoors.title}
+        </h2>
 
         <div className="grid grid-cols-2 gap-4">
           {outdoors?.cards.map((card, index) => (

@@ -1,3 +1,11 @@
+import {
+  CameraIcon,
+  CarIcon,
+  LeafIcon,
+  PoolIcon,
+  RoomIcon,
+} from "@/utils/icons";
+
 export const homePageData = {
   hero: {
     video: "/videos/luxuryvilla.mp4",
@@ -87,27 +95,27 @@ export const homePageData = {
 
     amenities: [
       {
-        icon: "/icons/private-pool.svg",
+        icon: <PoolIcon />,
         title: "Private Pool",
       },
       {
-        icon: "/icons/spacious-rooms.svg",
+        icon: <RoomIcon />,
         title: "Spacious Rooms",
       },
       {
-        icon: "/icons/concierge.svg",
+        icon: <CarIcon />,
         title: "Concierge",
       },
       {
-        icon: "/icons/high-speed-internet.svg",
+        icon: <CameraIcon />,
         title: "High Speed Internet",
       },
       {
-        icon: "/icons/security.svg",
+        icon: <CameraIcon />,
         title: "Security",
       },
       {
-        icon: "/icons/eco-luxury.svg",
+        icon: <LeafIcon />,
         title: "Eco Luxury",
       },
     ],
