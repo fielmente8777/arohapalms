@@ -7,7 +7,7 @@
   --background-dark-2: #FFFFFF0D;
   --primary: #D5AA63;
   --secondary: #737373;
-  --blue:#25375A
+  --p2: #005BA4;
 }
 
 @theme inline {
@@ -17,7 +17,8 @@
   --color-background-dark-2: #FFFFFF0D;
   --color-primary: #D5AA63;
   --color-secondary: #737373;
-  --color-blue:#25375A
+  --color-p2: #005BA4;
+  --color-blue: #005BA4;
 }
 
 

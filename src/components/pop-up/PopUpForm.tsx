@@ -1,7 +1,7 @@
 "use client";
 import { useWebContext } from "@/context-api/WebContext";
 import { MdClose } from "react-icons/md";
-import Form2 from "../forms/Form2";
+import Form1 from "../forms/Form1";
 
 const PopUpForm = () => {
   const { isOpenFormPopUp, setIsOpenFormPopUp } = useWebContext();
@@ -17,7 +17,7 @@ const PopUpForm = () => {
           <MdClose />
         </button>
         <div className="max-md:overflow-y-scroll hide-scroll mt-6">
-          <Form2 gridView singleDate />
+          <Form1 gridView />
         </div>
       </div>
     </section>
