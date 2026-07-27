@@ -175,6 +175,7 @@ export const homePageData = {
       {
         name: "Sarthak Chavan",
         avatar: "/images/reviews/reviewer-1.webp",
+        googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review: "Quiet and great value.",
@@ -182,6 +183,7 @@ export const homePageData = {
       {
         name: "Sarthak Chavan",
         avatar: "/images/reviews/reviewer-2.webp",
+         googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review: "Good villas.",
@@ -189,6 +191,7 @@ export const homePageData = {
       {
         name: "Vedant Chavan",
         avatar: "/images/reviews/reviewer-3.webp",
+         googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review:
@@ -197,6 +200,7 @@ export const homePageData = {
       {
         name: "Atharva Burle",
         avatar: "/images/reviews/reviewer-4.webp",
+         googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review:

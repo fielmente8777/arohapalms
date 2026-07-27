@@ -74,7 +74,7 @@ export default async function Page({ params }: PageProps) {
     <main>
       <HeroBanner {...data.hero} />
       <Properties {...data.properties} />
-      {/* <Testimonials {...homePageData.testimonials} /> */}
+      <Testimonials {...homePageData.testimonials} />
     </main>
   );
 }

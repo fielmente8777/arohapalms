@@ -6,6 +6,7 @@ interface TestimonialsProps {
   title: string;
   reviews: {
     avatar: string;
+     googleIcon: string;
     name: string;
     time: string;
     rating: number;
@@ -17,11 +18,11 @@ const Testimonials = ({ logo, title, reviews }: TestimonialsProps) => {
   return (
     <section className=" bg-white relative z-20 py-10">
       <div className="max_width">
-        <div className="relative w-[200px] aspect-4/1">
-          <Image src={logo} alt={title} fill className="object-cover" />
+        <div className="relative mx-auto w-[200px] aspect-[4/3] mb-6">
+          <Image src={logo} alt={title} fill className="object-container" />
         </div>
 
-        <h2 className="text-center max-w-5xl mx-auto text-5xl mb-18 text-blue">
+        <h2 className="text-center max-w-5xl mx-auto text-4xl mb-18 text-dark">
           {title}
         </h2>
 

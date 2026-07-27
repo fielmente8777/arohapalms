@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import blogPostPageData from "./pageData";
 import ImageBanner from "@/components/banners/ImageBanner";
 import Image from "next/image";
+import Link from "next/link";
+import { contact } from "@/utils/constent";
 interface Params {
   params: Promise<{ slug: string }>;
 }
@@ -59,7 +61,7 @@ export default async function Page({ params }: Params) {
   const path = await params;
   const pageData = blogPostPageData.find((post) => post.slug === path.slug);
 
-  console.log(pageData)
+  console.log(pageData);
   if (!pageData) return notFound();
   return (
     <main className="">
@@ -71,15 +73,28 @@ export default async function Page({ params }: Params) {
         benefits=""
       /> */}
 
-
       <div className="relative max-w-6xl mx-auto  w-full lg:aspect-3/2 aspect-[4/5.2] overflow-hidden">
-        <Image src={pageData?.bannerImage} alt={pageData?.title} fill className="object-cover" />
+        <Image
+          src={pageData?.bannerImage}
+          alt={pageData?.title}
+          fill
+          className="object-cover"
+        />
       </div>
       <SectionWithContainer>
         <div
           className="max-w-6xl mx-auto blog-content!"
           dangerouslySetInnerHTML={{ __html: pageData?.content || "" }}
         />
+        <div className="sticky bottom-6 z-50 flex justify-center mt-10">
+          <Link
+            href={contact.WhatsappCta}
+            target="_blank"
+            className="rounded-2xl bg-[#B8941F] px-10 py-5 text-white font-semibold shadow-xl hover:bg-[#9f7f18] transition-all"
+          >
+            RESERVE YOUR STAY AT 50% OFF THIS MONSOON
+          </Link>
+        </div>
       </SectionWithContainer>
     </main>
   );

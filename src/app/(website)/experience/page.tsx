@@ -15,7 +15,7 @@ export default function Page() {
 
       <Activities {...experiencePageData.Activites} />
 
-      {/* <Testimonials {...homePageData.testimonials} /> */}
+      <Testimonials {...homePageData.testimonials} />
     </main>
   );
 }

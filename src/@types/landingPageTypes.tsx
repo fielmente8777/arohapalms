@@ -46,8 +46,12 @@ export interface TestimonialsProps {
   tagline: string;
   title: string;
   reviews: {
+    avatar?: string;
+    googleIcon?: string;
     name: string;
     review: string;
+    time?: string;
+    rating?: number;
   }[];
 }
 

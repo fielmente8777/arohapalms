@@ -8,6 +8,7 @@
   --primary: #D5AA63;
   --secondary: #737373;
   --p2: #005BA4;
+  --p3: #011f4b;
 }
 
 @theme inline {
@@ -19,6 +20,7 @@
   --color-secondary: #737373;
   --color-p2: #005BA4;
   --color-blue: #005BA4;
+  --color-dark: #011f4b;
 }
 
 

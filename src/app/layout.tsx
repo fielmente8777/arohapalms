@@ -87,7 +87,7 @@ export default function RootLayout({
     <html lang="en" className={`${firaSans.variable} h-full antialiased`}>
       <head>
         {/* <!-- Facebook Pixel Code --> */}
-        <Script id="fb-pixel" strategy="beforeInteractive">
+        <Script id="fb-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
