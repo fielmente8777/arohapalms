@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import blogPostPageData from "./[slug]/pageData";
+import blogPostPageData from "../[slug]/pageData";
 
 export default function ArticlesPage() {
   return (
@@ -10,10 +10,7 @@ export default function ArticlesPage() {
 
         <div className="grid grid-cols-3 gap-8">
           {blogPostPageData.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/articles/${post.slug}`}
-            >
+            <Link key={post.slug} href={`/${post.slug}`}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                 <Image
                   src={post.bannerImage}

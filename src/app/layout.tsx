@@ -7,10 +7,11 @@ import Script from "next/script";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
 import { contact } from "@/utils/constent";
 import Call from "@/components/ContactButton/Call";
-import Image from "next/image";
+import PopUpForm from "@/components/pop-up/PopUpForm";
 import { WebProvider } from "@/context-api/WebContext";
-import Footer from "@/components/footer/WebsiteFooter";
-import Navbar from "@/components/navbar/navbar";
+import RoomDetailsPopup from "@/components/pop-up/RoomDetailsPopup";
+import Image from "next/image";
+
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
   subsets: ["latin"],
@@ -166,11 +167,13 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        {/* <!-- End Google Tag Manager (noscript) --> */}
         <WebProvider>
-          {/* <!-- End Google Tag Manager (noscript) --> */}
           {children}
-          {/* <LandingFooter /> */}
-          {/* <Footer /> */}
+
+          <LandingFooter />
+          <PopUpForm />
+          <RoomDetailsPopup />
           <Whatsapp whatsAppNumber={contact.phone[0]} />
           <Call callNumber={contact.phone[0]} />
         </WebProvider>

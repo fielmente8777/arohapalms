@@ -4,14 +4,35 @@ export interface AccommodationSectionProps {
   tagline: string;
   title: string;
   description: string;
+  note: string;
   cards: {
     title: string;
     type: string;
     description: string;
     amenities: {
-      icon?: JSX.Element;
+      icon: JSX.Element;
       label: string;
     }[];
+    inRoomAmenities: {
+      icon: JSX.Element;
+      label: string;
+    }[];
+    startingPrice: string;
+    moreInfo: {
+      description: string[];
+      listOfData: {
+        title: string;
+        list: string[];
+      };
+      review: {
+        author: string;
+        description: string;
+      };
+    };
+    note: {
+      title: string;
+      notes: string[];
+    };
     location: string;
     images: string[];
     cta: {

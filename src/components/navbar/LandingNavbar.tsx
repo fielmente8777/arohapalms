@@ -13,6 +13,7 @@ const LandingNavbar = () => {
   //   }
   //   return;
   // };
+  
   return (
     <header className="max_screen_width w-full">
       {/* TOP BAR */}
@@ -54,7 +55,7 @@ const LandingNavbar = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 rounded-lg bg-primary text-white px-2 md:px-6 py-2 md:py-3"
                 >
-                  <span className="lg:hidden block">
+                  <span className="">
                     <CalendarIcon />
                   </span>
                   <span className="lg:block text-base hidden tracking-widest">
