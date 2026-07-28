@@ -1,26 +1,67 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ReactNode } from "react";
+export interface Card {
+  image: string;
+  title: string;
+  description: string;
+
+  features: string[];
+
+  inRoomAmenities?: {
+    icon: ReactNode;
+    label: string;
+  }[];
+
+  startingPrice?: string;
+
+  moreInfo?: {
+    description: string[];
+
+    listOfData?: {
+      title?: string;
+      list: string[];
+    };
+
+    review?: {
+      author: string;
+      description: string;
+    };
+
+    sectionbutton?: {
+      btn: string;
+      listOfData: {
+        title?: string;
+        list: string[];
+      }[];
+    }[];
+  };
+
+  note?: {
+    title: string;
+    notes: string[];
+  };
+
+  location?: string;
+
+  images?: string[];
+
+  bookNow: {
+    text: string;
+    href: string;
+  };
+
+  cta: {
+    text: string;
+    href: string;
+  };
+}
 
 interface PropertiesProps {
   title: string;
 
-  cards: {
-    image: string;
-    title: string;
-    description: string;
+  cards: Card[];
 
-    features: string[];
-
-    bookNow: {
-      text: string;
-      href: string;
-    };
-
-    cta: {
-      text: string;
-      href: string;
-    };
-  }[];
 }
 
 const Properties = ({ title, cards }: PropertiesProps) => {
@@ -34,7 +75,7 @@ const Properties = ({ title, cards }: PropertiesProps) => {
             className="grid grid-cols-3 gap-6 bg-[#fefcfd]"
           >
             {/* Image */}
-            <div className="relative aspect-[3/2] overflow-hidden">
+            <div className="relative aspect-3/2 overflow-hidden">
               <Image
                 src={card.image}
                 alt={card.title}
@@ -54,8 +95,8 @@ const Properties = ({ title, cards }: PropertiesProps) => {
               </p>
 
               <div className="mt-4 flex gap-8 text-md text-blue">
-                {card.features.map((feature) => (
-                  <span key={feature}>{feature}</span>
+                {card.features.map((feature, index) => (
+                  <span key={index}>{feature}</span>
                 ))}
               </div>
 

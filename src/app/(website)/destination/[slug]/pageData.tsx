@@ -321,32 +321,7 @@ export const roomData = [
             "Guests do not have access to the villa kitchen.",
           ],
         },
-        location: "Mandrem",
-        images: [
-          "/rooms/Magnifica/Magnifica.png",
-          "/rooms/Magnifica/magnifica2.webp",
-          "/rooms/Magnifica/magnifica6.jpg",
-          "/rooms/Magnifica/magnifica12.webp",
-          "/rooms/Magnifica/magnifica8.jpg",
-          "/rooms/Magnifica/magnifica14.webp",
-          "/rooms/Magnifica/magnifica10.webp",
-          "/rooms/Magnifica/magnifica11.jpg",
-          "/rooms/Magnifica/magnifica18.jpg",
-          "/rooms/Magnifica/magnifica19.webp",
-          "/rooms/Magnifica/magnifica17.webp",
-          "/rooms/Magnifica/magnifica13.webp",
-          "/rooms/Magnifica/magnifica4.jpg",
-          "/rooms/Magnifica/magnifica1.jpg",
-          "/rooms/Magnifica/magnifica5.jpg",
-          "/rooms/Magnifica/magnifica9.jpg",
-          "/rooms/Magnifica/magnifica15.jpg",
-          "/rooms/Magnifica/magnifica16.webp",
-          "/rooms/Magnifica/magnifica20.jpg",
-          "/rooms/Magnifica/magnifica3.jpg",
-          "/rooms/Magnifica/magnifica7.jpg",
-        ],
-        description: "This luxury villa offers a serene and picturesque Greek-inspired setting with elegant whitewashed walls, blue accents, and lush greenery. Guests rave about the spotless and tranquil ambiance, perfect for a relaxing getaway. The spacious interiors, stylish decor, and well-equipped facilities provide a comfortable and memorable stay. Visitors appreciate the private pool, outdoor terraces, and cozy seating areas. The attentive staff and delectable food enhance the overall experience, making it a highly recommended choice for a memorable holiday.",
-
+        
         features: ["5 Rooms", "5 Baths", "10 Guests"],
 
           bookNow: {
@@ -360,6 +335,8 @@ export const roomData = [
           },
         },
       },
+
+
         {
           image: "/landing-page/bnr.jpg",
           title: "Aroha Palms Marisol",
@@ -635,6 +612,9 @@ export const roomData = [
             href: "/villa/paradiso",
           },
         },
+
+
+        
         {
           image: "/landing-page/bnr.jpg",
           title: "Aroha Palms Prana",
