@@ -62,10 +62,8 @@ export async function generateMetadata({
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  console.log(slug);
   const data = roomData.find((item) => item.slug === slug);
 
-  console.log("jkhjghfgdfsd", roomData);
   if (!data) {
     notFound();
   }
@@ -73,7 +71,7 @@ export default async function Page({ params }: PageProps) {
   return (
     <main>
       <HeroBanner {...data.hero} />
-      <Properties {...data.properties} />
+      {/* <Properties {...data.properties} /> */}
       <Testimonials {...homePageData.testimonials} />
     </main>
   );
