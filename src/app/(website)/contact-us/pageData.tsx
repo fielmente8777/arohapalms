@@ -49,27 +49,26 @@ export const contactPageData = {
           {
             title: "Aroha Palms Majestic",
 
-            address: [
-              "House No 67A,",
-              "Pilerne, Goa",
-              "403511",
-            ],
+            address: ["House No 67A,", "Pilerne, Goa", "403511"],
           },
 
           {
             title: "Aroha Palms Grande",
 
-            address: [
-              "House No 67B,",
-              "Pilerne, Goa",
-              "403511",
-            ],
+            address: ["House No 67B,", "Pilerne, Goa", "403511"],
           },
         ],
       },
     ],
   },
   approach: {
+    heading: "About Aroha Palms",
+   desc: `Aroha Palms is a hospitality brand and property operated by Akahata Hospitality Private Limited, a company incorporated in India. All bookings, payments, and guest services are provided by Akahata Hospitality Private Limited.
+
+GST: 30AAXCA4249B1ZV
+CIN: U55101GA2022PTC015434
+Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, Vasco Da Gama, South Goa.`,
+
     title: "Approach",
 
     description:

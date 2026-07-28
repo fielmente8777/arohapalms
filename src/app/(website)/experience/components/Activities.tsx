@@ -31,11 +31,11 @@ const Activities = ({ title, slides }: ActivitiesProps) => {
 
   return (
     <section className=" mt-10!">
-      <h2 className="font-serif text-5xl text-blue mb-10 text-center ">
+      <h2 className="text-lg md:text-5xl text-dark mb-10 text-center ">
         {title.prefix}{" "}
-        <span className="text-blue/80">{title.words[activeIndex % title.words.length]}</span>
+        <span className="text-dark/80">{title.words[activeIndex % title.words.length]}</span>
       </h2>
-      <div className="mx-auto w-120 mt-10! mb-4 h-px bg-blue text-blue" />
+      <div className="mx-auto w-120 mt-10! mb-4 h-px bg-dark text-dark" />
 
       <VerticalSlider
         slides={slides.map((item) => ({
@@ -43,9 +43,9 @@ const Activities = ({ title, slides }: ActivitiesProps) => {
           alt: item.label,
         }))}
         activeIndex={activeIndex}
-        className="experience-slider h-[90vh] w-full"
+        className="h-[90vh] w-full"
       >
-        <div className="experience-slider__content">
+        <div className="">
           <h3 className="md:text-5xl text-white">{slides[activeIndex].label}</h3>
 
           {/* <button onClick={nextSlide}>↓</button> */}

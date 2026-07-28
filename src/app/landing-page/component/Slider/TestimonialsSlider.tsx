@@ -29,8 +29,7 @@ const TestimonialsSlider: React.FC<{
           },
         }}
         renderSlide={(item) => (
-          <div className="rounded-2xl text-white backdrop-blur-sm border border-white/10 bg-background-dark-2 p-6 flex flex-col gap-5">
-            <p className="">{item.review}</p>
+        <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
             <div className="w-full h-px bg-white/10" />
             <p className="text-lg capitalize">{item.name}</p>
           </div>

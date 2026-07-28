@@ -1,26 +1,67 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ReactNode } from "react";
+export interface Card {
+  image: string;
+  title: string;
+  description: string;
+
+  features: string[];
+
+  inRoomAmenities?: {
+    icon: ReactNode;
+    label: string;
+  }[];
+
+  startingPrice?: string;
+
+  moreInfo?: {
+    description: string[];
+
+    listOfData?: {
+      title?: string;
+      list: string[];
+    };
+
+    review?: {
+      author: string;
+      description: string;
+    };
+
+    sectionbutton?: {
+      btn: string;
+      listOfData: {
+        title?: string;
+        list: string[];
+      }[];
+    }[];
+  };
+
+  note?: {
+    title: string;
+    notes: string[];
+  };
+
+  location?: string;
+
+  images?: string[];
+
+  bookNow: {
+    text: string;
+    href: string;
+  };
+
+  cta: {
+    text: string;
+    href: string;
+  };
+}
 
 interface PropertiesProps {
   title: string;
 
-  cards: {
-    image: string;
-    title: string;
-    description: string;
+  cards: Card[];
 
-    features: string[];
-
-    bookNow: {
-      text: string;
-      href: string;
-    };
-
-    cta: {
-      text: string;
-      href: string;
-    };
-  }[];
 }
 
 const Properties = ({ title, cards }: PropertiesProps) => {
