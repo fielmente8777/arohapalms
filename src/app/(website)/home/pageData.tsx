@@ -125,7 +125,7 @@ export const homePageData = {
 
     cards: [
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/paragliding.jpg",
         title: "Beach and Adventure",
         description:
           "Sunlit beaches, water sports, and coastal trails await nearby, perfect for ocean dips, exploration, and easygoing adventure.",
@@ -135,7 +135,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/churches-in.jpg",
         title: "Heritage and Culture",
         description:
           "Explore churches, forts, flea markets, and North Goa's history, culture, and everyday charm woven together effortlessly.",
@@ -145,7 +145,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/casino.jpg",
         title: "Casino & Nightlife",
         description:
           "Experience vibrant nights with cruise casinos, live music, and entertainment where energy and indulgence come alive after dark.",
@@ -155,7 +155,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/mediation.jpg",
         title: "Healing and Wellbeing",
         description:
           "Slow down with yoga, mindful moments, and calm surroundings that bring balance, relaxation, and a sense of inner ease.",
@@ -167,7 +167,7 @@ export const homePageData = {
     ],
   },
   testimonials: {
-    logo: "/footer.png",
+    logo: "/test.png",
 
     title: "Moments Shared By Those Who Stayed",
 
@@ -175,6 +175,7 @@ export const homePageData = {
       {
         name: "Sarthak Chavan",
         avatar: "/images/reviews/reviewer-1.webp",
+        googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review: "Quiet and great value.",
@@ -182,6 +183,7 @@ export const homePageData = {
       {
         name: "Sarthak Chavan",
         avatar: "/images/reviews/reviewer-2.webp",
+         googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review: "Good villas.",
@@ -189,6 +191,7 @@ export const homePageData = {
       {
         name: "Vedant Chavan",
         avatar: "/images/reviews/reviewer-3.webp",
+         googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review:
@@ -197,6 +200,7 @@ export const homePageData = {
       {
         name: "Atharva Burle",
         avatar: "/images/reviews/reviewer-4.webp",
+         googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review:

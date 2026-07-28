@@ -9,7 +9,7 @@ import { HomeNavData } from "./navData";
 export default function HomeNavbar() {
   return (
     <>
-      <header className="fixed top-0 left-0 z-50 w-full">
+      <header className="w-full">
         <nav className="max_width flex items-center justify-between py-5">
           <Link href="/">
             <div className="relative h-20 w-52">

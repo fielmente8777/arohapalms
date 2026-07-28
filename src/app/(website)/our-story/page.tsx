@@ -4,6 +4,8 @@ import Mission from "./components/Mission";
 import { OurStoryData } from "./pageData";
 import OurVillas from "./components/OurVilla";
 import Confidence from "./components/Confidence";
+import Testimonials from "../home/components/Testimonials";
+import { homePageData } from "../home/pageData";
 
 export default function OurStory() {
   return (
@@ -12,6 +14,7 @@ export default function OurStory() {
       <Mission {...OurStoryData.missionData} />
       <OurVillas {...OurStoryData.villasData} />
       <Confidence {...OurStoryData.confidenceData} />
+      <Testimonials {...homePageData.testimonials} />
     </main>
   );
 }

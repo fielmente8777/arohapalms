@@ -1,3 +1,4 @@
+import HomeNavbar from "@/components/navbar/HomeNavbar";
 import { LazyLoadedVideo } from "@/components/Video";
 import Link from "next/link";
 
@@ -14,6 +15,9 @@ interface HeroBannerProps {
 const HeroBanner = ({ video, subtitle, title, cta }: HeroBannerProps) => {
   return (
     <section className="sticky top-0 h-screen overflow-hidden">
+       <div className="inset-x-0 absolute z-30 ">
+        <HomeNavbar />
+      </div>
       {/* Background Video */}
       <div className="absolute inset-0">
         <LazyLoadedVideo src={video}/>
@@ -29,7 +33,7 @@ const HeroBanner = ({ video, subtitle, title, cta }: HeroBannerProps) => {
           <div className="mx-auto mb-8 h-px w-48 bg-white/60" />
 
           {/* Title */}
-          <h1 className="font-serif text-4xl font-light uppercase md:text-6xl">
+          <h1 className="text-4xl font-light uppercase md:text-6xl">
             {title}
           </h1>
 

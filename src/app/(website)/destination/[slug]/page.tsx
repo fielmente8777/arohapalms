@@ -70,11 +70,13 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
+  const propertiesProps = data.properties as any;
+
   return (
     <main>
       <HeroBanner {...data.hero} />
-      <Properties cards={data.properties.cards} />
-      {/* <Testimonials {...homePageData.testimonials} /> */}
+      <Properties {...propertiesProps} />
+      <Testimonials {...homePageData.testimonials} />
     </main>
   );
 }

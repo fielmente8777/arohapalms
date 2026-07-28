@@ -55,13 +55,13 @@ const NavMenu = () => {
                   <>
                     <Link
                       href={link.href}
-                      // onClick={() =>
-                      //   setOpenMenu(openMenu === link.label ? null : link.label)
-                      // }
+                      onClick={() =>
+                        setOpenMenu(openMenu === link.label ? null : link.label)
+                      }
                       className="flex w-full items-center justify-between text-sm md:text-lg font-primary tracking-[0.12em] text-[#005b96] hover:text-[#011f4b] transition-colors"
                     >
                       <span>{link.label}</span>
-                      {/* fohod */}
+
                       <span
                         onClick={() =>
                           setOpenMenu(
@@ -70,7 +70,13 @@ const NavMenu = () => {
                         }
                         className="text-lg"
                       >
-                        {openMenu === link.label ? "▼" : "▼"}
+                        <span
+                          className={`transition-transform duration-300 ${
+                            openMenu === link.label ? "rotate-180" : ""
+                          }`}
+                        >
+                          ▼
+                        </span>
                       </span>
                     </Link>
 

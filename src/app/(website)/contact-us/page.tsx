@@ -13,7 +13,7 @@ export default function Page() {
 
       <ContactGrid {...contactPageData.contact} />
       <Approach {...contactPageData.approach} />
-      {/* <Testimonials {...homePageData.testimonials} /> */}
+      <Testimonials {...homePageData.testimonials} />
     </main>
   );
 }
