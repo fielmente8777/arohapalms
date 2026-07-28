@@ -30,7 +30,7 @@ const ContactGrid = ({ backgroundImage, cards }: ContactGridProps) => {
       />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <div className=" grid grid-cols-1 md:grid grid-cols-[1fr_1fr_2fr] gap-5 ">
+        <div className=" grid grid-cols-1  md:grid-cols-[1fr_1fr_2fr] gap-5 ">
           {cards.map((card) => (
             <div key={card.title} className="w-full bg-white/80  p-6 md:p-10">
               <div className="">
@@ -47,7 +47,7 @@ const ContactGrid = ({ backgroundImage, cards }: ContactGridProps) => {
                 </div>
 
                 {card.locations && (
-                  <div className="flex">
+                  <div className="flex max-md:flex-col">
                     {card.locations.map((location) => (
                       <div key={location.title} className="flex flex-col gap-3">
                         <h3 className="text-lg font-semibold">
