@@ -73,7 +73,7 @@ export default async function Page({ params }: PageProps) {
   return (
     <main>
       <HeroBanner {...data.hero} />
-      <Properties {...data.properties} />
+      <Properties cards={data.properties.cards} />
       {/* <Testimonials {...homePageData.testimonials} /> */}
     </main>
   );

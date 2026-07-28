@@ -2,7 +2,7 @@ export const OurStoryData= {
 about:{
   title: "First-Class Selection Of Luxury Villas And Apartment",
 
-  logo: "/images/about/logo.svg",
+  logo: "/images/cropped-iconlogo.png",
 
   sectionTitle: "About Us",
 
@@ -38,9 +38,11 @@ about:{
   ],
 
   images: [
-    "/images/mission/1.webp",
-    "/images/mission/2.webp",
-    "/images/mission/3.webp",
+    "/images/villa-paradiso-1424e9.webp",
+    "/images/DSC00046-Edit-1-scaled-1.jpg",
+    "/images/villa-serenity-49921f.webp",
+    "/images/sde3.webp",
+    "/images/sde8.webp",
   ],
 },
 villasData :{

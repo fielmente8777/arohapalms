@@ -1,8 +1,11 @@
+import { PlaneIcon, RailIcon } from "@/utils/icons";
+import { Plane } from "lucide-react";
+
 export const contactPageData = {
   title: "Contact Us",
 
   contact: {
-    backgroundImage: "/landing-page/bnr.jpg",
+    backgroundImage: "/images/23-Pool_.jpg",
 
     cards: [
       {
@@ -78,7 +81,7 @@ export const contactPageData = {
     sections: [
       {
         title: "Manohar International Airport (MOPA)",
-        icon: "/landing-page/bnr.jpg",
+        icon: <PlaneIcon />,
 
         routes: [
           {
@@ -96,7 +99,7 @@ export const contactPageData = {
 
       {
         title: "Dabolim International Airport",
-        icon: "/landing-page/bnr.jpg",
+        icon: <PlaneIcon />,
 
         routes: [
           {
@@ -114,7 +117,7 @@ export const contactPageData = {
 
       {
         title: "Thivim Railway Station | Konkan Railway Division",
-        icon: "/landing-page/bnr.jpg",
+        icon: <RailIcon />,
 
         routes: [
           {
