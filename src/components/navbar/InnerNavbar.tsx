@@ -22,44 +22,55 @@ export default function InnerNavbar() {
           </div>
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-10">
-          {InnerNavData.showLinks && (
-            <ul className="hidden lg:flex items-center gap-10">
-              {InnerNavData.links.map((item) => (
-                <li key={item.label} className="relative group">
-                  {item.href ? (
-                    <Link
-                      href={item.href}
-                      className="text-blue hover:text-black transition"
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <button className="flex items-center gap-2 text-blue hover:text-black">
-                      {item.label}
-                      <span>▼</span>
-                    </button>
-                  )}
-
+        {InnerNavData.showLinks && (
+          <ul className="hidden lg:flex items-center gap-10">
+            {InnerNavData.links.map((item) => (
+              <li key={item.label} className="relative group">
+                {/* {item.href ? (
+                  <Link
+                    href={item.href}
+                    className="text-blue hover:text-black transition"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button className="flex items-center gap-2 text-blue hover:text-black">
+                    {item.label}
+                    <span>▼</span>
+                  </button>
+                )} */}
+                <Link
+                  href={item.href ?? "#"}
+                  className="flex items-center gap-2 text-blue hover:text-black transition"
+                >
+                  {item.label}
                   {item.children && (
-                    <ul className="absolute left-0 mt-4 hidden min-w-[220px] rounded-lg bg-white shadow-xl group-hover:block">
-                      {item.children.map((child) => (
-                        <li key={child.href}>
-                          <Link
-                            href={child.href}
-                            className="block px-6 py-3 hover:bg-gray-100"
-                          >
-                            {child.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    <span className="text-[10px] transition-transform duration-200 group-hover:rotate-180">
+                      ▼
+                    </span>
                   )}
-                </li>
-              ))}
-            </ul>
-          )}
-        </ul>
+                </Link>
+
+                {item.children && (
+                  <ul
+                    className="absolute left-0 top-full z-[999] min-w-[220px] hidden min-w-[250px] rounded-lg bg-white shadow-xl group-hover:block"
+                  >
+                    {item.children.map((child) => (
+                      <li key={child.href}>
+                        <Link
+                          href={child.href}
+                          className="block px-6 py-3 hover:bg-gray hover:text-white"
+                        >
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
 
         <MenuButton color="blue" />
       </nav>

@@ -33,7 +33,7 @@ const Amenities = ({ amenities, outdoors }: AmenitiesProps) => {
           {amenities.title}
         </h2>
 
-        <div className="flex w-full flex-wrap items-center justify-between max_width gap-2">
+        <div className="grid grid-cols-2 md:flex w-full flex-wrap items-center justify-between max_width gap-12">
           {amenities.amenities.map((item) => (
             <div className="flex flex-col items-center gap-1 justify-center" key={item.title}>
               {item.icon}

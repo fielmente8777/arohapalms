@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface DineProps {
@@ -10,19 +11,15 @@ interface DineProps {
   };
 }
 
-const Dine = ({
-  background,
-  title,
-  description,
-  cta,
-}: DineProps) => {
+const Dine = ({ background, title, description, cta }: DineProps) => {
   return (
     <section className=" sticky top-0 h-screen overflow-hidden">
-      <img
+      {/* <Image
         src={background}
         alt={title}
         className="absolute inset-0 h-full w-full object-cover"
-      />
+      /> */}
+      <Image src={background} alt={title} fill className="object-cover" />
 
       <div className="absolute inset-0 bg-black/30" />
 
@@ -34,7 +31,10 @@ const Dine = ({
             <p key={index}>{item}</p>
           ))}
 
-          <Link href={cta.href} className=" h-24 w-24 rounded-full border border-white flex justify-center items-center hover:bg-[#011f4b] transition-all duration-150 underline">
+          <Link
+            href={cta.href}
+            className="hidden md:flex h-24 w-24 rounded-full border border-white flex justify-center items-center hover:bg-[#011f4b] transition-all duration-150 underline"
+          >
             {cta.text}
           </Link>
         </div>
