@@ -5,14 +5,14 @@ export default function SlidingTitle({
   items,
   ariaHidden = false,
 }: {
-  items: { icon: JSX.Element; title: string }[];
+  items: string[];
   ariaHidden?: boolean;
 }) {
   const titles = [...items, ...items, ...items];
 
   return (
     <div
-      className="relative overflow-hidden py-6 border border-secondary text-secondary max_screen_width bg-white box-shadow"
+      className="relative overflow-hidden py-3 border border-primary text-background-dark max_screen_width bg-white"
       aria-hidden={ariaHidden}
     >
       <div className="marquee-wrapper">
@@ -23,14 +23,10 @@ export default function SlidingTitle({
               aria-hidden={i >= items.length}
               className="marquee-item  uppercase tracking-widest"
             >
-              <span className="flex items-center gap-2.5 w-fit">
-                <span>
-                  {t.icon}
-                </span>
-                {t.title}</span>
-              {/* <span className="separator">
+              <span dangerouslySetInnerHTML={{ __html: t }}></span>
+              <span className="separator">
                 <ICon />
-              </span> */}
+              </span>
             </span>
           ))}
         </div>

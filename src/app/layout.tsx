@@ -7,6 +7,9 @@ import Script from "next/script";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
 import { contact } from "@/utils/constent";
 import Call from "@/components/ContactButton/Call";
+import PopUpForm from "@/components/pop-up/PopUpForm";
+import { WebProvider } from "@/context-api/WebContext";
+import RoomDetailsPopup from "@/components/pop-up/RoomDetailsPopup";
 import Image from "next/image";
 
 const firaSans = Fira_Sans({
@@ -18,7 +21,7 @@ const firaSans = Fira_Sans({
   preload: true,
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title:
     "Luxury Villas & Apartments in North Goa | Aroha Palms Official Website",
 
@@ -165,11 +168,15 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
-        {children}
+        <WebProvider>
+          {children}
 
-        <LandingFooter />
-        <Whatsapp whatsAppNumber={contact.phone[0]} />
-        <Call callNumber={"022-41642345"} />
+          <LandingFooter />
+          <PopUpForm />
+          <RoomDetailsPopup />
+          <Whatsapp whatsAppNumber={contact.phone[0]} />
+          <Call callNumber={contact.phone[0]} />
+        </WebProvider>
       </body>
       {/* <!-- Eazbot Script (Next.js) --> */}
       <Script id="chatbot-config" strategy="afterInteractive">
