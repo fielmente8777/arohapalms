@@ -4,18 +4,15 @@ import useForm from "@/hooks/useForm";
 import {
   CalendarIcon,
   CallIcon,
-  LocationIcon,
-  MailIcon,
   UserIcon,
   VilaIcon,
   WalletIcon,
 } from "@/utils/formIcons";
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { countries } from "../../utils/constent";
-import { landingPageData } from "@/app/(landing-page)/component/pageData";
 
 interface Props {
   gridView?: boolean;
@@ -23,19 +20,30 @@ interface Props {
 
 // Location options
 const locationOptions = [
-  // { value: "mandrem", label: "Mandrem, North Goa" },
-  // { value: "pilerne", label: "Pilerne, North Goa" },
-  ...new Set(
-    landingPageData.accommodationSection.cards
-      .filter(
-        (card) =>
-          card.location.toLocaleLowerCase() === "mandrem" &&
-          card.type.toLocaleLowerCase() === "villa",
-      )
-      .map((card) => ({ value: card.title, label: card.title })),
-  ),
+  { value: "4BHK, Aroha Palms Magnifica ", label: "4BHK, Aroha Palms Magnifica" },
+
+  { value: "5BHK, Aroha Palms Paradiso ", label: "5BHK, Aroha Palms Paradiso " },
+
+  { value: "5BHK, Aroha Palms Serenity", label: "5BHK, Aroha Palms Serenity" },
+  { value: "18BHK, Aroha Palms Marisol ", label: "18BHK, Aroha Palms Marisol" },
+
+  { value: "10BHK, Aroha Palms Encanto ", label: "10BHK, Aroha Palms Encanto" },
+
+  { value: "9BHK, Aroha Palms Prana ", label: "9BHK, Aroha Palms Prana" },
+
+  { value: "7BHK, Aroha Palms Caia ", label: "7BHK, Aroha Palms Caia " },
+  // ...new Set(
+  //   landingPageData.accommodationSection.cards
+  //     .filter(
+  //       (card) =>
+  //         card.location.toLocaleLowerCase() === "mandrem" &&
+  //         card.type.toLocaleLowerCase() === "villa",
+  //     )
+  //     .map((card) => ({ value: card.title, label: card.title })),
+  // ),
 ];
 
+console.log("first", locationOptions);
 const budgetOption = [
   {
     value: "20000",
@@ -53,8 +61,12 @@ const budgetOption = [
     value: "50000",
     label: "50,000",
   },
+  // more the 50000
+  {
+    value: "more than 50,000",
+    label: "more than 50,000",
+  }
 ];
-
 
 // Custom Dropdown Component
 interface CustomDropdownProps {
@@ -228,30 +240,30 @@ const Form1 = ({ gridView }: Props) => {
   };
 
   type DropdownOption = {
-  value: string;
-  label: string;
-};
+    value: string;
+    label: string;
+  };
 
-type FormField =
-  | {
-      name: string;
-      label: string;
-      type: "text" | "tel" | "date";
-      value: string;
-      onChange: React.ChangeEventHandler<
-        HTMLInputElement | HTMLTextAreaElement
-      >;
-      icon: React.ReactNode;
-    }
-  | {
-      name: string;
-      label: string;
-      type: "dropdown";
-      value: string;
-      options: DropdownOption[];
-      onChange: (value: string) => void;
-      icon: React.ReactNode;
-    };
+  type FormField =
+    | {
+        name: string;
+        label: string;
+        type: "text" | "tel" | "date";
+        value: string;
+        onChange: React.ChangeEventHandler<
+          HTMLInputElement | HTMLTextAreaElement
+        >;
+        icon: React.ReactNode;
+      }
+    | {
+        name: string;
+        label: string;
+        type: "dropdown";
+        value: string;
+        options: DropdownOption[];
+        onChange: (value: string) => void;
+        icon: React.ReactNode;
+      };
 
   const formFields: FormField[] = [
     {
