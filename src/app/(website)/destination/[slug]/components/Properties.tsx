@@ -73,7 +73,7 @@ const Properties = ({ title, cards }: PropertiesProps) => {
                     pauseOnMouseEnter: true,
                   }}
                   renderSlide={(image: string) => (
-                    <div className="relative w-full max-w-sm aspect-[4/3] md:aspect-[4/3.8] overflow-hidden">
+                    <div className="relative w-full aspect-[4/3] md:aspect-[4/3] overflow-hidden">
                       <Image
                         src={image}
                         alt={card.title}
