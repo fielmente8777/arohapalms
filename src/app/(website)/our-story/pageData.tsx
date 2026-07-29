@@ -1,3 +1,5 @@
+import { DiamondIcon, Dining, LocalInsight, Secure } from "@/utils/webicons";
+
 export const OurStoryData= {
 about:{
   title: "First-Class Selection Of Luxury Villas And Apartment",
@@ -71,38 +73,41 @@ villasData :{
 
   features: [
     {
-      icon: "/icons/diamond.svg",
+      icon: <DiamondIcon />,
       title: "Refined Stays",
       description:
         "Thoughtfully designed spaces that bring together comfort, privacy, and understated luxury.",
     },
     {
-      icon: "/icons/service.svg",
+      icon: <Dining />,
       title: "Tailored Service",
       description:
         "Attentive, intuitive service shaped around your every need.",
     },
     {
-      icon: "/icons/location.svg",
+      icon: <LocalInsight />,
       title: "Local Insight",
       description:
         "Curated recommendations to help you experience Goa beyond the usual.",
     },
     {
-      icon: "/icons/shield.svg",
+      icon: <Secure />,
       title: "Trusted Approach",
       description:
         "Clear, honest experiences built on reliability and lasting trust.",
     },
-  ],
+  ], 
 
   gallery: [
-    "/images/gallery/1.webp",
-    "/images/gallery/2.webp",
-    "/images/gallery/3.webp",
-    "/images/gallery/4.webp",
-    "/images/gallery/5.webp",
-    "/images/gallery/6.webp",
+    "/images/sde10.webp",
+    "/images/AOB_3223.jpg",
+    "/images/20-Seating-area-2-1024x683.jpg",
+    "/images/AOB_3585-scaled.jpg",
+    "/images/AOB_3733-scaled.jpg",
+    "/images/villa-serenity-be9006.jpg",
+    "/images/dinning 1.jpg",
+    "/images/DSC00056-Edit-scaled-1.jpg",
+    "/images/AOB_0164.jpg",
   ],
 },
 };

@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { JSX } from "react/jsx-runtime";
 
 interface ConfidenceProps {
   title: string;
   features: {
-    icon: string;
+    icon: JSX.Element;
     title: string;
     description: string;
   }[];
@@ -19,14 +20,8 @@ const Confidence = ({ title, features, gallery }: ConfidenceProps) => {
 
         <div className="grid grid-cols-4 gap-12 mb-24">
           {features.map((item) => (
-            <div key={item.title} className="text-center">
-              <Image
-                src={item.icon}
-                alt={item.title}
-                width={60}
-                height={60}
-                className="mx-auto mb-8"
-              />
+            <div key={item.title} className="text-center flex flex-col items-center">
+              <span>{item.icon}</span>
 
               <h3 className="text-xl text-blue mb-6">{item.title}</h3>
 
