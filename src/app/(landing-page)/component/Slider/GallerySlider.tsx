@@ -3,7 +3,7 @@
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import Image from "next/image";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import { EffectCoverflow, Navigation } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 
 interface GallerySliderProps {
   images: string[];
@@ -14,7 +14,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images }) => {
     <div>
       <SwiperCarousel
         data={data || []}
-        modules={[EffectCoverflow, Navigation]}
+        modules={[EffectCoverflow, Navigation, Autoplay]}
         navigation={{
           nextEl: ".cafe-next",
           prevEl: ".cafe-prev",
@@ -47,6 +47,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images }) => {
             spaceBetween: 24,
           },
         }}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
         renderSlide={(src) => (
           <div className="w-full">
             <div className="w-full relative aspect-[4/2.5]">

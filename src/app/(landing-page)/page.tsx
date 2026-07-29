@@ -21,10 +21,10 @@ export default function LandingPage() {
         containerClassName="space-y-4"
       >
         <Form1 />
-        <p
+        {/* <p
           className="text-sm text-light max-w-3xl text-center mx-auto"
           dangerouslySetInnerHTML={{ __html: landingPageData.hero.benefits }}
-        />
+        /> */}
       </SectionWithContainer>
       <UnforgettableSection {...landingPageData.unforgettableSection} />
       <SlidingTitle items={landingPageData.offer} ariaHidden />
@@ -40,10 +40,10 @@ export default function LandingPage() {
         containerClassName="space-y-4"
       >
         <Form1 />
-        <p
+        {/* <p
           className="text-sm text-light max-w-3xl text-center mx-auto"
           dangerouslySetInnerHTML={{ __html: landingPageData.hero.benefits }}
-        />
+        /> */}
       </SectionWithContainer>
     </main>
   );
