@@ -1,13 +1,11 @@
 import { notFound } from "next/navigation";
 import { roomData } from "./pageData";
 
-import HeroBanner from "./components/HeroBanner";
-import Properties from "./components/Properties";
+import { Metadata } from "next";
 import Testimonials from "../../home/components/Testimonials";
 import { homePageData } from "../../home/pageData";
-import { Metadata } from "next";
-import { Fallback } from "next/dist/client/components/segment-cache/cache-map";
-import { title } from "process";
+import HeroBanner from "./components/HeroBanner";
+import Properties from "./components/Properties";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -71,7 +69,7 @@ export default async function Page({ params }: PageProps) {
   return (
     <main>
       <HeroBanner {...data.hero} />
-      {/* <Properties {...data.properties} /> */}
+      <Properties cards={data.properties.cards} />
       <Testimonials {...homePageData.testimonials} />
     </main>
   );

@@ -1,21 +1,19 @@
 "use client";
+import { landingPageData } from "@/app/landing-page/component/pageData";
 import { getDateInputLimits } from "@/hooks/getDateInputLimits";
 import useForm from "@/hooks/useForm";
 import {
   CalendarIcon,
   CallIcon,
-  LocationIcon,
-  MailIcon,
   UserIcon,
   VilaIcon,
-  WalletIcon,
+  WalletIcon
 } from "@/utils/formIcons";
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { countries } from "../../utils/constent";
-import { landingPageData } from "@/app/landing-page/component/pageData";
 
 
 interface Props {

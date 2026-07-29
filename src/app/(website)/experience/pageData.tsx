@@ -12,7 +12,7 @@ export const experiencePageData = {
   experiences: {
     cards: [
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/beach-trees-.jpg",
         title: "Beach & Adventure",
         description:
           "Scuba Diving, Snorkeling, Jet Skiing, Parasailing, White Water Rafting, Flyboarding, Wakeboarding, Dolphin Watching, Kayaking, Dudhsagar Waterfalls.",

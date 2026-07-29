@@ -34,7 +34,7 @@ export const homePageData = {
     ],
   },
   offers: {
-    background: "/landing-page/bnr.jpg",
+    background: "/images/sdr1.webp",
 
     title: "Monsoon Serenity - Offers Soon",
 
@@ -53,7 +53,7 @@ export const homePageData = {
 
     cards: [
       {
-        image: "/landing-page/bnr.jpg",
+        image: "images/cover1.jpg",
         title: "Mandrem",
         description:
           "Set in Mandrem, enjoy calm, private stays just minutes from serene beaches, cafés, and North Goa's vibrant coastline.",
@@ -63,7 +63,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "images/AOB_0138.jpg",
         title: "Pilerne",
         description:
           "Located in Pilerne, enjoy a quiet, local setting with easy access to Candolim, Calangute, beaches, dining, and nightlife.",
@@ -75,7 +75,7 @@ export const homePageData = {
     ],
   },
   dine: {
-    background: "/landing-page/bnr.jpg",
+    background: "/arohapalms/public/images/villa-paradiso-7d232a.webp",
 
     title: "Dine",
 
