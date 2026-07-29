@@ -66,6 +66,7 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
+
   return (
     <main>
       <HeroBanner {...data.hero} />

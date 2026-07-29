@@ -125,7 +125,7 @@ export const homePageData = {
 
     cards: [
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/paragliding.jpg",
         title: "Beach and Adventure",
         description:
           "Sunlit beaches, water sports, and coastal trails await nearby, perfect for ocean dips, exploration, and easygoing adventure.",
@@ -135,7 +135,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/churches-in.jpg",
         title: "Heritage and Culture",
         description:
           "Explore churches, forts, flea markets, and North Goa's history, culture, and everyday charm woven together effortlessly.",
@@ -145,7 +145,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/casino.jpg",
         title: "Casino & Nightlife",
         description:
           "Experience vibrant nights with cruise casinos, live music, and entertainment where energy and indulgence come alive after dark.",
@@ -155,7 +155,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/mediation.jpg",
         title: "Healing and Wellbeing",
         description:
           "Slow down with yoga, mindful moments, and calm surroundings that bring balance, relaxation, and a sense of inner ease.",
