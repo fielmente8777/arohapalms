@@ -3487,7 +3487,7 @@ export const roomData = [
 
           cta: {
             text: "View Villa",
-            href: "/villa/grande",
+            href: "villa-majestic",
           },
         },
         {
@@ -3505,7 +3505,7 @@ export const roomData = [
 
           cta: {
             text: "View Villa",
-            href: "/villa/grande",
+            href: "villa-grande",
           },
         },
       ],
