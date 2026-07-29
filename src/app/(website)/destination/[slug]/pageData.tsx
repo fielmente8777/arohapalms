@@ -7,6 +7,7 @@ import {
   SwimmingPoolIcon,
   WorkStationIcon,
 } from "@/utils/amenitiesIcon";
+import { contact } from "@/utils/constent";
 
 export const roomData = [
   {
@@ -414,17 +415,34 @@ export const roomData = [
 
           bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/magnolia",
+            href: "popup",
           },
         },
 
         {
           image: "/landing-page/bnr.jpg",
+            images: [
+          "/rooms/Paradiso/Paradiso.png",
+          "/rooms/Paradiso/paradiso1.jpg",
+          "/rooms/Paradiso/paradiso5.jpg",
+          "/rooms/Paradiso/paradiso6.webp",
+          "/rooms/Paradiso/paradiso10.jpg",
+          "/rooms/Paradiso/paradiso11.jpg",
+          "/rooms/Paradiso/paradiso12.jpg",
+          "/rooms/Paradiso/paradiso15.webp",
+          "/rooms/Paradiso/paradiso2.jpg",
+          "/rooms/Paradiso/paradiso4.jpg",
+          "/rooms/Paradiso/paradiso3.jpg",
+          "/rooms/Paradiso/paradiso7.jpg",
+          "/rooms/Paradiso/paradiso8.jpg",
+          "/rooms/Paradiso/paradiso9.jpg",
+          "/rooms/Paradiso/paradiso14.webp",
+        ],
           title: "Aroha Palms Paradiso",
           description:
             "Tucked away in the serene landscape of Mandrem, Aroha Palms Paradiso is where luxury meets laid-back Goan charm. Start your day with a refreshing dip in the private pool or sip on your morning coffee while soaking in the river and mountain views from the terrace. Just 2 km away from Mandrem Beach, a quick drive takes you to golden sands and azure waters—perfect for sunbathing, swimming, or simply lazing with a coconut in hand. Back at the villa, the lush lawn sets the stage for corporate offsites, intimate events, or a friendly game of football. As the sun dips, grill up a BBQ feast, and let the good times roll. Feeling adventurous? Explore North Goa’s iconic spots—Ashwem Beach, Chapora Fort, and the bustling Anjuna Flea Market. As the night deepens, retreat to your luxurious haven, where every corner whispers relaxation and revelry in equal measure.",
@@ -461,7 +479,6 @@ export const roomData = [
               label: "Bathroom",
             },
           ],
-          startingPrice: "Starting from ₹ 22,000/night",
           moreInfo: {
             description: [
               "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Aroha Palms Paradiso, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.",
@@ -489,7 +506,7 @@ export const roomData = [
               description:
                 "Had a great experience with Aroha Palms with the pool parties and much needed escape from the daily chaos. Place was very spacious and awesome for people looking for modern and aesthetically pleasing things. Awesome help from Rahul and Renu with managing all the maintenance of the place and was much needed help, greatly appreciate their efforts.",
             },
-            sectionbutton: [
+            sectionButton: [
               {
                 btn: "HOUSE RULES",
                 listOfData: [
@@ -548,18 +565,39 @@ export const roomData = [
           },
           bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
         },
 
         {
           image: "/landing-page/bnr.jpg",
+           images: [
+          "/rooms/Serenity/Serenity.png",
+          "/rooms/Serenity/serenity7.jpg",
+          "/rooms/Serenity/serenity8.jpg",
+          "/rooms/Serenity/serenity9.jpg",
+          "/rooms/Serenity/serenity10.jpg",
+          "/rooms/Serenity/serenity11.jpg",
+          "/rooms/Serenity/serenity13.jpg",
+          "/rooms/Serenity/serenity15.jpg",
+          "/rooms/Serenity/serenity16.webp",
+          "/rooms/Serenity/serenity5.webp",
+          "/rooms/Serenity/serenity6.jpg",
+          "/rooms/Serenity/serenity14.jpg",
+          "/rooms/Serenity/serenity17.webp",
+          "/rooms/Serenity/serenity3.webp",
+          "/rooms/Serenity/serenity4.jpg",
+          "/rooms/Serenity/serenity1.jpg",
+        ],
           title: "Aroha Palms Serenity",
+          description:
+            "This luxury villa offers a serene and picturesque Greek-inspired setting with elegant whitewashed walls, blue accents, and lush greenery. Guests rave about the spotless and tranquil ambiance, perfect for a relaxing getaway. The spacious interiors, stylish decor, and well-equipped facilities provide a comfortable and memorable stay. Visitors appreciate the private pool, outdoor terraces, and cozy seating areas. The attentive staff and delectable food enhance the overall experience, making it a highly recommended choice for a memorable holiday.",
+
           inRoomAmenities: [
             {
               icon: <HighSpeedInternetIcon />,
@@ -916,12 +954,12 @@ export const roomData = [
 
           bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
         },
 
@@ -1283,43 +1321,76 @@ export const roomData = [
             ],
           },
 
-          images: [
-            "/rooms/Magnifica/Magnifica.png",
-            "/rooms/Magnifica/magnifica2.webp",
-            "/rooms/Magnifica/magnifica6.jpg",
-            "/rooms/Magnifica/magnifica12.webp",
-            "/rooms/Magnifica/magnifica8.jpg",
-            "/rooms/Magnifica/magnifica14.webp",
-            "/rooms/Magnifica/magnifica10.webp",
-            "/rooms/Magnifica/magnifica11.jpg",
-            "/rooms/Magnifica/magnifica18.jpg",
-            "/rooms/Magnifica/magnifica19.webp",
-            "/rooms/Magnifica/magnifica17.webp",
-            "/rooms/Magnifica/magnifica13.webp",
-            "/rooms/Magnifica/magnifica4.jpg",
-            "/rooms/Magnifica/magnifica1.jpg",
-            "/rooms/Magnifica/magnifica5.jpg",
-            "/rooms/Magnifica/magnifica9.jpg",
-            "/rooms/Magnifica/magnifica15.jpg",
-            "/rooms/Magnifica/magnifica16.webp",
-            "/rooms/Magnifica/magnifica20.jpg",
-            "/rooms/Magnifica/magnifica3.jpg",
-            "/rooms/Magnifica/magnifica7.jpg",
-          ],
+           images: [
+          "/rooms/Magnifica/Magnifica.png",
+          "/rooms/Magnifica/magnifica2.webp",
+          "/rooms/Magnifica/magnifica6.jpg",
+          "/rooms/Magnifica/magnifica12.webp",
+          "/rooms/Magnifica/magnifica8.jpg",
+          "/rooms/Magnifica/magnifica14.webp",
+          "/rooms/Magnifica/magnifica10.webp",
+          "/rooms/Magnifica/magnifica11.jpg",
+          "/rooms/Magnifica/magnifica18.jpg",
+          "/rooms/Magnifica/magnifica19.webp",
+          "/rooms/Paradiso/Paradiso.png",
+          "/rooms/Paradiso/paradiso1.jpg",
+          "/rooms/Paradiso/paradiso5.jpg",
+          "/rooms/Paradiso/paradiso6.webp",
+          "/rooms/Paradiso/paradiso10.jpg",
+          "/rooms/Paradiso/paradiso11.jpg",
+          "/rooms/Paradiso/paradiso12.jpg",
+          "/rooms/Paradiso/paradiso15.webp",
+          "/rooms/Paradiso/paradiso2.jpg",
+          "/rooms/Serenity/Serenity.png",
+          "/rooms/Serenity/serenity8.jpg",
+          "/rooms/Serenity/serenity9.jpg",
+          "/rooms/Serenity/serenity4.jpg",
+          "/rooms/Serenity/serenity1.jpg",
+          "/rooms/Paradiso/paradiso4.jpg",
+          "/rooms/Magnifica/magnifica17.webp",
+          "/rooms/Magnifica/magnifica13.webp",
+          "/rooms/Magnifica/magnifica4.jpg",
+          "/rooms/Magnifica/magnifica1.jpg",
+          "/rooms/Magnifica/magnifica5.jpg",
+          "/rooms/Magnifica/magnifica9.jpg",
+          "/rooms/Magnifica/magnifica15.jpg",
+          "/rooms/Magnifica/magnifica16.webp",
+          "/rooms/Magnifica/magnifica20.jpg",
+          "/rooms/Magnifica/magnifica3.jpg",
+          "/rooms/Magnifica/magnifica7.jpg",
+           "/rooms/Emerald/Emerald.png",
+          "/rooms/Emerald/emerald1.jpg",
+          "/rooms/Emerald/emerald6.webp",
+          "/rooms/Emerald/emerald2.jpg",
+          "/rooms/Emerald/emerald3.jpg",
+          "/rooms/Emerald/emerald4.jpg",
+          "/rooms/Emerald/emerald5.webp",
+          "/rooms/Regal/Regal.png",
+          "/rooms/Regal/regal1.jpg",
+          "/rooms/Regal/regal2.jpg",
+          "/rooms/Regal/regal3.jpg",
+          "/rooms/Regal/regal4.jpg",
+          "/rooms/Regal/regal5.jpg",
+          "/rooms/Regal/regal6.jpg",
+          "/rooms/Regal/regal7.jpg",
+          "/rooms/Regal/regal8.jpg",
+          "/rooms/Regal/regal9.webp",
+        ],
           description:
             "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Marisol, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.The private pool and spacious terrace set the stage for Goa’s signature sundowners, whether you’re lounging with a cocktail or making a splash. Whether it’s a family retreat, a romantic escape, or a getaway with friends, Villa Marisol promises a luxurious yet homely vibe that will make leaving feel like the hardest part. Pack your bags—paradise awaits!",
           features: ["18 Rooms", "18 Baths", "36 Guests"],
 
-          bookNow: {
+            bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
         },
+
         {
           image: "/landing-page/bnr.jpg",
           title: "Aroha Palms Encanto",
@@ -1682,39 +1753,33 @@ export const roomData = [
           },
 
           images: [
-            "/rooms/Magnifica/Magnifica.png",
-            "/rooms/Magnifica/magnifica2.webp",
-            "/rooms/Magnifica/magnifica6.jpg",
-            "/rooms/Magnifica/magnifica12.webp",
-            "/rooms/Magnifica/magnifica8.jpg",
-            "/rooms/Magnifica/magnifica14.webp",
-            "/rooms/Magnifica/magnifica10.webp",
-            "/rooms/Magnifica/magnifica11.jpg",
-            "/rooms/Magnifica/magnifica18.jpg",
-            "/rooms/Magnifica/magnifica19.webp",
-            "/rooms/Magnifica/magnifica17.webp",
-            "/rooms/Magnifica/magnifica13.webp",
-            "/rooms/Magnifica/magnifica4.jpg",
-            "/rooms/Magnifica/magnifica1.jpg",
-            "/rooms/Magnifica/magnifica5.jpg",
-            "/rooms/Magnifica/magnifica9.jpg",
-            "/rooms/Magnifica/magnifica15.jpg",
-            "/rooms/Magnifica/magnifica16.webp",
-            "/rooms/Magnifica/magnifica20.jpg",
-            "/rooms/Magnifica/magnifica3.jpg",
-            "/rooms/Magnifica/magnifica7.jpg",
-          ],
+          "/rooms/Paradiso/Paradiso.png",
+          "/rooms/Paradiso/paradiso1.jpg",
+          "/rooms/Paradiso/paradiso5.jpg",
+          "/rooms/Paradiso/paradiso6.webp",
+          "/rooms/Paradiso/paradiso10.jpg",
+          "/rooms/Paradiso/paradiso11.jpg",
+          "/rooms/Paradiso/paradiso12.jpg",
+          "/rooms/Paradiso/paradiso15.webp",
+          "/rooms/Paradiso/paradiso2.jpg",
+          "/rooms/Serenity/Serenity.png",
+          "/rooms/Serenity/serenity8.jpg",
+          "/rooms/Serenity/serenity9.jpg",
+          "/rooms/Serenity/serenity4.jpg",
+          "/rooms/Serenity/serenity1.jpg",
+          "/rooms/Paradiso/paradiso4.jpg",
+        ],
 
           features: ["10 Rooms", "10 Baths", "20 Guests"],
 
-          bookNow: {
+           bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
         },
 
@@ -2075,41 +2140,40 @@ export const roomData = [
           },
 
           images: [
-            "/rooms/Magnifica/Magnifica.png",
-            "/rooms/Magnifica/magnifica2.webp",
-            "/rooms/Magnifica/magnifica6.jpg",
-            "/rooms/Magnifica/magnifica12.webp",
-            "/rooms/Magnifica/magnifica8.jpg",
-            "/rooms/Magnifica/magnifica14.webp",
-            "/rooms/Magnifica/magnifica10.webp",
-            "/rooms/Magnifica/magnifica11.jpg",
-            "/rooms/Magnifica/magnifica18.jpg",
-            "/rooms/Magnifica/magnifica19.webp",
-            "/rooms/Magnifica/magnifica17.webp",
-            "/rooms/Magnifica/magnifica13.webp",
-            "/rooms/Magnifica/magnifica4.jpg",
-            "/rooms/Magnifica/magnifica1.jpg",
-            "/rooms/Magnifica/magnifica5.jpg",
-            "/rooms/Magnifica/magnifica9.jpg",
-            "/rooms/Magnifica/magnifica15.jpg",
-            "/rooms/Magnifica/magnifica16.webp",
-            "/rooms/Magnifica/magnifica20.jpg",
-            "/rooms/Magnifica/magnifica3.jpg",
-            "/rooms/Magnifica/magnifica7.jpg",
-          ],
+          "/rooms/Magnifica/Magnifica.png",
+          "/rooms/Magnifica/magnifica2.webp",
+          "/rooms/Magnifica/magnifica6.jpg",
+          "/rooms/Magnifica/magnifica12.webp",
+          "/rooms/Magnifica/magnifica8.jpg",
+          "/rooms/Magnifica/magnifica14.webp",
+          "/rooms/Magnifica/magnifica10.webp",
+          "/rooms/Magnifica/magnifica11.jpg",
+          "/rooms/Magnifica/magnifica18.jpg",
+          "/rooms/Magnifica/magnifica19.webp",
+          "/rooms/Paradiso/Paradiso.png",
+          "/rooms/Paradiso/paradiso1.jpg",
+          "/rooms/Paradiso/paradiso5.jpg",
+          "/rooms/Paradiso/paradiso6.webp",
+          "/rooms/Paradiso/paradiso10.jpg",
+          "/rooms/Paradiso/paradiso11.jpg",
+          "/rooms/Paradiso/paradiso12.jpg",
+          "/rooms/Paradiso/paradiso15.webp",
+          "/rooms/Paradiso/paradiso2.jpg",
+          "/rooms/Paradiso/paradiso4.jpg",
+        ],
           description:
             "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Prana, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.The private pool and spacious terrace set the stage for Goa’s signature sundowners, whether you’re lounging with a cocktail or making a splash. Whether it’s a family retreat, a romantic escape, or a getaway with friends, Villa Encanto promises a luxurious yet homely vibe that will make leaving feel like the hardest part. Pack your bags—paradise awaits!",
 
           features: ["9 Rooms", "9 Baths", "18 Guests"],
 
-          bookNow: {
+            bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
         },
 
@@ -2470,42 +2534,42 @@ export const roomData = [
             ],
           },
 
-          images: [
-            "/rooms/Magnifica/Magnifica.png",
-            "/rooms/Magnifica/magnifica2.webp",
-            "/rooms/Magnifica/magnifica6.jpg",
-            "/rooms/Magnifica/magnifica12.webp",
-            "/rooms/Magnifica/magnifica8.jpg",
-            "/rooms/Magnifica/magnifica14.webp",
-            "/rooms/Magnifica/magnifica10.webp",
-            "/rooms/Magnifica/magnifica11.jpg",
-            "/rooms/Magnifica/magnifica18.jpg",
-            "/rooms/Magnifica/magnifica19.webp",
-            "/rooms/Magnifica/magnifica17.webp",
-            "/rooms/Magnifica/magnifica13.webp",
-            "/rooms/Magnifica/magnifica4.jpg",
-            "/rooms/Magnifica/magnifica1.jpg",
-            "/rooms/Magnifica/magnifica5.jpg",
-            "/rooms/Magnifica/magnifica9.jpg",
-            "/rooms/Magnifica/magnifica15.jpg",
-            "/rooms/Magnifica/magnifica16.webp",
-            "/rooms/Magnifica/magnifica20.jpg",
-            "/rooms/Magnifica/magnifica3.jpg",
-            "/rooms/Magnifica/magnifica7.jpg",
-          ],
+         images: [
+          "/rooms/Serenity/serenity8.jpg",
+          "/rooms/Serenity/serenity9.jpg",
+          "/rooms/Serenity/serenity4.jpg",
+          "/rooms/Serenity/serenity1.jpg",
+          "/rooms/Emerald/Emerald.png",
+          "/rooms/Emerald/emerald1.jpg",
+          "/rooms/Emerald/emerald6.webp",
+          "/rooms/Emerald/emerald2.jpg",
+          "/rooms/Emerald/emerald3.jpg",
+          "/rooms/Emerald/emerald4.jpg",
+          "/rooms/Emerald/emerald5.webp",
+          "/rooms/Regal/Regal.png",
+          "/rooms/Regal/regal1.jpg",
+          "/rooms/Regal/regal2.jpg",
+          "/rooms/Regal/regal3.jpg",
+          "/rooms/Regal/regal4.jpg",
+          "/rooms/Regal/regal5.jpg",
+          "/rooms/Regal/regal6.jpg",
+          "/rooms/Regal/regal7.jpg",
+          "/rooms/Regal/regal8.jpg",
+          "/rooms/Regal/regal9.webp",
+        ],
           description:
             "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Caia, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke. The private pool and spacious terrace set the stage for Goa’s signature sundowners, whether you’re lounging with a cocktail or making a splash. Whether it’s a family retreat, a romantic escape, or a getaway with friends, Villa Caia promises a luxurious yet homely vibe that will make leaving feel like the hardest part. Pack your bags—paradise awaits!",
 
           features: ["7 Rooms", "7 Baths", "14 Guests"],
 
-          bookNow: {
+           bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
         },
 
@@ -2516,15 +2580,45 @@ export const roomData = [
             "A thoughtfully designed 1,200 sq. ft. apartment that blends Mediterranean-inspired elegance with the vibrant, coastal soul of the Arabian sea. Located on the first floor with modern lift access, the space is crafted for seamless flow and total privacy. The apartment features two sunlit master suites (800 and 400 sq. ft.) with king-size beds and a flexible layout perfectly suited for families, friend groups, or couples seeking a tranquil base. Dedicated workstations and a fully equipped kitchen allow for a stay that combines functionality and complete independence, complemented by secluded attached balconies for quiet reflection.",
 
           features: ["2 Rooms", "2 Baths", "4 Guests", "Terrace", "Kitchen"],
+          inRoomAmenities: [
+            {
+              icon: <HighSpeedInternetIcon />,
+              label: "High Speed Internet",
+            },
+            {
+              icon: <EvChargingFacilityIcon />,
+              label: "EV Charging Facility",
+            },
+            {
+              icon: <WorkStationIcon />,
+              label: "Work Station",
+            },
 
+            {
+              icon: <SwimmingPoolIcon />,
+              label: "Swimming Pool",
+            },
+            {
+              icon: <SmartTvIcon />,
+              label: "Smart TV",
+            },
+            {
+              icon: <KitchenIcon />,
+              label: "Kitchen",
+            },
+            {
+              icon: <BathroomIcon />,
+              label: "Bathroom",
+            },
+          ],
           bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
           moreInfo: {
             description: [
@@ -2552,7 +2646,7 @@ export const roomData = [
               description:
                 "Good ambience and close to beach. Very aesthetic place and perfect for photos",
             },
-            sectionbutton: [
+            sectionButton: [
               {
                 btn: "HOUSE RULES",
                 listOfData: [
@@ -2620,14 +2714,14 @@ export const roomData = [
 
           features: ["2 Rooms", "2 Baths", "4 Guests"],
 
-          bookNow: {
+           bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
           inRoomAmenities: [
             {
@@ -2686,7 +2780,7 @@ export const roomData = [
               description:
                 "Good ambience and close to beach. Very aesthetic place and perfect for photos",
             },
-            sectionbutton: [
+            sectionButton: [
               {
                 btn: "HOUSE RULES",
                 listOfData: [
@@ -2749,19 +2843,28 @@ export const roomData = [
         {
           image: "/landing-page/bnr.jpg",
           title: "Suite De Emerald",
+           images: [
+          "/rooms/Emerald/Emerald.png",
+          "/rooms/Emerald/emerald1.jpg",
+          "/rooms/Emerald/emerald6.webp",
+          "/rooms/Emerald/emerald2.jpg",
+          "/rooms/Emerald/emerald3.jpg",
+          "/rooms/Emerald/emerald4.jpg",
+          "/rooms/Emerald/emerald5.webp",
+        ],
           description:
             "A thoughtfully designed 800 sq. ft. apartment that blends Mediterranean-inspired aesthetics with a calm, coastal sensibility. Located on the second floor with lift access, the space is crafted for effortless living, offering privacy, openness, and a seamless flow throughout. The apartment features two sunlit master suites with king-size beds and a flexible layout suited for families, friend groups, or extended stays. A dedicated workstation and a fully equipped kitchen allow for a stay that combines relaxation, functionality, and complete independence.",
 
           features: ["1 Rooms", "2 Guests"],
 
-          bookNow: {
+            bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
           inRoomAmenities: [
             {
@@ -2820,7 +2923,7 @@ export const roomData = [
               description:
                 "Good ambience and close to beach. Very aesthetic place and perfect for photos",
             },
-            sectionbutton: [
+            sectionButton: [
               {
                 btn: "HOUSE RULES",
                 listOfData: [
@@ -2941,7 +3044,7 @@ export const roomData = [
               description:
                 "Good ambience and close to beach. Very aesthetic place and perfect for photos",
             },
-            sectionbutton: [
+            sectionButton: [
               {
                 btn: "HOUSE RULES",
                 listOfData: [
@@ -3028,14 +3131,14 @@ export const roomData = [
 
           features: ["1 Rooms", "2 Guests", "Terrace"],
 
-          bookNow: {
+            bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
         },
 
@@ -3101,7 +3204,7 @@ export const roomData = [
               description:
                 "Good ambience and close to beach. Very aesthetic place and perfect for photos",
             },
-            sectionbutton: [
+            sectionButton: [
               {
                 btn: "HOUSE RULES",
                 listOfData: [
@@ -3187,14 +3290,14 @@ export const roomData = [
 
           features: ["1 Rooms", "2 Guests"],
 
-          bookNow: {
+            bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
         },
         {
@@ -3261,7 +3364,7 @@ export const roomData = [
                 "Good ambience and close to beach. Very aesthetic place and perfect for photos",
             },
 
-            sectionbutton: [
+            sectionButton: [
               {
                 btn: "HOUSE RULES",
                 listOfData: [
@@ -3322,40 +3425,29 @@ export const roomData = [
             ],
           },
           images: [
-            "/rooms/Magnifica/Magnifica.png",
-            "/rooms/Magnifica/magnifica2.webp",
-            "/rooms/Magnifica/magnifica6.jpg",
-            "/rooms/Magnifica/magnifica12.webp",
-            "/rooms/Magnifica/magnifica8.jpg",
-            "/rooms/Magnifica/magnifica14.webp",
-            "/rooms/Magnifica/magnifica10.webp",
-            "/rooms/Magnifica/magnifica11.jpg",
-            "/rooms/Magnifica/magnifica18.jpg",
-            "/rooms/Magnifica/magnifica19.webp",
-            "/rooms/Magnifica/magnifica17.webp",
-            "/rooms/Magnifica/magnifica13.webp",
-            "/rooms/Magnifica/magnifica4.jpg",
-            "/rooms/Magnifica/magnifica1.jpg",
-            "/rooms/Magnifica/magnifica5.jpg",
-            "/rooms/Magnifica/magnifica9.jpg",
-            "/rooms/Magnifica/magnifica15.jpg",
-            "/rooms/Magnifica/magnifica16.webp",
-            "/rooms/Magnifica/magnifica20.jpg",
-            "/rooms/Magnifica/magnifica3.jpg",
-            "/rooms/Magnifica/magnifica7.jpg",
-          ],
+          "/rooms/Regal/Regal.png",
+          "/rooms/Regal/regal1.jpg",
+          "/rooms/Regal/regal2.jpg",
+          "/rooms/Regal/regal3.jpg",
+          "/rooms/Regal/regal4.jpg",
+          "/rooms/Regal/regal5.jpg",
+          "/rooms/Regal/regal6.jpg",
+          "/rooms/Regal/regal7.jpg",
+          "/rooms/Regal/regal8.jpg",
+          "/rooms/Regal/regal9.webp",
+        ],
           description:
             "A thoughtfully designed 800 sq. ft. apartment that blends Mediterranean-inspired aesthetics with a calm, coastal sensibility. Situated on the first floor with lift access, the space is crafted for effortless living, offering privacy, openness, and a seamless flow throughout. The apartment features a spacious master suite with a king-size bed and a versatile layout suited for couples, friend groups, or families. A dedicated workstation, along with a fully equipped kitchen, ensures a stay that balances comfort, independence, and everyday convenience with ease.",
           features: ["1 Rooms", "2 Guests"],
 
-          bookNow: {
+           bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
             text: "View Villa",
-            href: "/villa/paradiso",
+            href: "popup",
           },
         },
       ],

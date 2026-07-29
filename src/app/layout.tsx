@@ -11,6 +11,7 @@ import PopUpForm from "@/components/pop-up/PopUpForm";
 import { WebProvider } from "@/context-api/WebContext";
 import RoomDetailsPopup from "@/components/pop-up/RoomDetailsPopup";
 import Image from "next/image";
+import PropertyDetailsPopup from "@/components/pop-up/PropertyDetailsPopup";
 
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
@@ -173,6 +174,7 @@ export default function RootLayout({
 
           <PopUpForm />
           <RoomDetailsPopup />
+          <PropertyDetailsPopup />
           <Whatsapp whatsAppNumber={contact.phone[0]} />
           <Call callNumber={contact.phone[0]} />
         </WebProvider>
