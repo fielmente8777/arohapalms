@@ -35,7 +35,7 @@ const Activities = ({ title, slides }: ActivitiesProps) => {
         {title.prefix}{" "}
         <span className="text-dark/80">{title.words[activeIndex % title.words.length]}</span>
       </h2>
-      <div className="mx-auto w-120 mt-10! mb-4 h-px bg-dark text-dark" />
+      <div className="mx-auto w-40 md:w-120 h-px bg-dark text-dark" />
 
       <VerticalSlider
         slides={slides.map((item) => ({
@@ -43,7 +43,7 @@ const Activities = ({ title, slides }: ActivitiesProps) => {
           alt: item.label,
         }))}
         activeIndex={activeIndex}
-        className="h-[90vh] w-full"
+        className="h-screen w-full"
       >
         <div className="">
           <h3 className="md:text-5xl text-white">{slides[activeIndex].label}</h3>

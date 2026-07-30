@@ -272,3 +272,35 @@
   color: #011f4b;
   font-weight: 700;
 }
+
+.vertical-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.vertical-slider__track {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.vertical-slider__slide {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  flex: 0 0 100%;
+}
+
+.vertical-slider__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 6rem;
+}

@@ -1,3 +1,5 @@
+import { PlaneIcon, RailIcon } from "@/utils/icons";
+
 export const contactPageData = {
   title: "Contact Us",
 
@@ -77,7 +79,7 @@ Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, V
     sections: [
       {
         title: "Manohar International Airport (MOPA)",
-        icon: "/landing-page/bnr.jpg",
+        icon: <PlaneIcon/>,
 
         routes: [
           {
@@ -95,7 +97,7 @@ Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, V
 
       {
         title: "Dabolim International Airport",
-        icon: "/landing-page/bnr.jpg",
+        icon: <PlaneIcon/>,
 
         routes: [
           {
@@ -113,7 +115,7 @@ Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, V
 
       {
         title: "Thivim Railway Station | Konkan Railway Division",
-        icon: "/landing-page/bnr.jpg",
+        icon: <RailIcon/>,
 
         routes: [
           {
