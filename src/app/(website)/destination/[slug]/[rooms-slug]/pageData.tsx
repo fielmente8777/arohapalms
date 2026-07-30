@@ -11,18 +11,19 @@ export const roomData = [
       title: "Aroha Palms Majestic",
 
       images: [
-        "/rooms/Grande/Grande.jpg",
-        "/rooms/Grande/Grande.jpg",
-        "/rooms/Grande/Grande.jpg",
-        "/rooms/Grande/Grande.jpg",
-      ],
+  "/rooms/Majestic/16-Bed-4-1.jpg",
+  "/rooms/Majestic/20-Seating-area-2.jpg",
+  "/rooms/Majestic/22-Outdoor_-1.jpg",
+  "/rooms/Majestic/AOB_4059--scaled.jpg",
+  "/rooms/Majestic/DSC00193-Edit-scaled-2.jpg",
+],
     },
 
     overview: {
       topText:
         "Each tent comes with an expansive deck balcony perched over lush greenery and looking out over the sea. Perfect for lounging, watching the sunset or for catching the first rays of sunlight with a cup of locally sourced organic coffee.",
 
-      image: "/rooms/Caia/Caia.png",
+      image: "/images/AOB_4119-768x512.jpg",
 
       bottomText:
         "Embracing our philosophy of barefoot luxury, the tents (650 sq. ft.) at Cabo Serai allow guests to naturally explore the outdoors with all the modern comforts of a luxurious accommodation. Opening out on a large private deck ideal for sunbathing, bird watching, yoga or meditation, every tent offers the experience of waking up amid treetops with panoramic views of the surrounding forest, cliffs and azure waters of the Arabian Sea.",
@@ -62,7 +63,7 @@ export const roomData = [
     },
 
     activity: {
-      image: "/rooms/Caia/Caia.png",
+      image: "/rooms/Majestic/DSC00080-Edit-scaled-1-1024x683.jpg",
 
       title:
         "Experience delightful and mindful activities in the Cabo area, with activities managed by experts from the domain.",
@@ -80,20 +81,22 @@ export const roomData = [
 
     hero: {
       title: "Aroha Palms Grande",
-
-      images: [
-        "/rooms/Grande/Grande.jpg",
-        "/rooms/Grande/Grande.jpg",
-        "/rooms/Grande/Grande.jpg",
-        "/rooms/Grande/Grande.jpg",
-      ],
+        images: [
+          "/images/P1126008-.jpg",
+  "/rooms/Grande/00-COver_.jpg",
+  "/rooms/Grande/AOB_4059--scaled.jpg",
+  "/rooms/Grande/DSC00046-Edit-scaled-1.jpg",
+  "/rooms/Grande/DSC00193-Edit-scaled-2.jpg",
+  "/rooms/Grande/DSC00292-Edit-scaled-1.jpg",
+  "/rooms/Grande/P1126008-Edit-scaled-1.jpg",
+],
     },
 
     overview: {
       topText:
         "Each cottage comes with an expansive deck balcony perched over lush greenery and looking out over the sea. Perfect for lounging, watching the sunset or for catching the first rays of sunlight with a cup of locally sourced organic coffee.",
 
-      image: "/rooms/Caia/Caia.png",
+      image: "/images/P1126008-.jpg",
 
       bottomText:
         "Built on the grounds of sustainability, All our 8 luxury cottages and 3 luxury tents are sea facing while being nestled in the privacy of our flourishing forest. Spacious (750 sq. ft.), airy, and luxuriously designed, our rooms are curated to make the most of the tropical sea breeze and the tranquil sound of waves with amenities for highest guest comfort.",
@@ -133,7 +136,7 @@ export const roomData = [
     },
 
     activity: {
-      image: "/rooms/Caia/Caia.png",
+      image: "/images/DSC00080-Edit-scaled-1.jpg",
 
       title:
         "Experience delightful and mindful activities in the Cabo area, with activities managed by experts from the domain.",
