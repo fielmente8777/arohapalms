@@ -24,7 +24,7 @@ const LandingNavbar = () => {
             <div className="relative aspect-[4/.9] w-40 md:w-75">
               <Image
                 src={navData.logo}
-                alt="The Acacia Hotel Logo"
+                alt="Logo"
                 fill
                 priority
                 className="object-cover rounded-md"
