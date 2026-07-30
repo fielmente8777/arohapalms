@@ -1,3 +1,4 @@
+import { contact } from "@/utils/constent";
 import {
   CameraIcon,
   CarIcon,
@@ -15,7 +16,7 @@ export const homePageData = {
 
     cta: {
       text: "Reserve ",
-      href: "/booking",
+      href: contact.WhatsappCta,
     },
   },
   experience: {
@@ -34,13 +35,13 @@ export const homePageData = {
     ],
   },
   offers: {
-    background: "/landing-page/bnr.jpg",
+    background: "/images/sdr1.webp",
 
     title: "Monsoon Serenity - Offers Soon",
 
     cta: {
       text: "Click Here",
-      href: "/offers",
+      href: contact.WhatsappCta,
     },
   },
   locations: {
@@ -53,7 +54,7 @@ export const homePageData = {
 
     cards: [
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/cover1.jpg",
         title: "Mandrem",
         description:
           "Set in Mandrem, enjoy calm, private stays just minutes from serene beaches, cafés, and North Goa's vibrant coastline.",
@@ -63,7 +64,7 @@ export const homePageData = {
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/AOB_0138.jpg",
         title: "Pilerne",
         description:
           "Located in Pilerne, enjoy a quiet, local setting with easy access to Candolim, Calangute, beaches, dining, and nightlife.",
@@ -75,7 +76,7 @@ export const homePageData = {
     ],
   },
   dine: {
-    background: "/landing-page/bnr.jpg",
+    background: "/images/villa-paradiso-7d232a.webp",
 
     title: "Dine",
 
@@ -87,7 +88,7 @@ export const homePageData = {
 
     cta: {
       text: "Click Here",
-      href: "/dining",
+      href: "/experience",
     },
   },
   amenities: {
@@ -125,43 +126,43 @@ export const homePageData = {
 
     cards: [
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/paragliding.jpg",
         title: "Beach and Adventure",
         description:
           "Sunlit beaches, water sports, and coastal trails await nearby, perfect for ocean dips, exploration, and easygoing adventure.",
         cta: {
           text: "Click Here",
-          href: "/beach-adventure",
+          href: "/destination",
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/churches-in.jpg",
         title: "Heritage and Culture",
         description:
           "Explore churches, forts, flea markets, and North Goa's history, culture, and everyday charm woven together effortlessly.",
         cta: {
           text: "Click Here",
-          href: "/heritage-culture",
+          href: "/destination",
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/casino.jpg",
         title: "Casino & Nightlife",
         description:
           "Experience vibrant nights with cruise casinos, live music, and entertainment where energy and indulgence come alive after dark.",
         cta: {
           text: "Click Here",
-          href: "/casino-nightlife",
+          href: "/destination",
         },
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/mediation.jpg",
         title: "Healing and Wellbeing",
         description:
           "Slow down with yoga, mindful moments, and calm surroundings that bring balance, relaxation, and a sense of inner ease.",
         cta: {
           text: "Click Here",
-          href: "/healing-wellbeing",
+          href: "/destination",
         },
       },
     ],
@@ -183,7 +184,7 @@ export const homePageData = {
       {
         name: "Sarthak Chavan",
         avatar: "/images/reviews/reviewer-2.webp",
-         googleIcon: "/icons/google.svg",
+        googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review: "Good villas.",
@@ -191,7 +192,7 @@ export const homePageData = {
       {
         name: "Vedant Chavan",
         avatar: "/images/reviews/reviewer-3.webp",
-         googleIcon: "/icons/google.svg",
+        googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review:
@@ -200,7 +201,7 @@ export const homePageData = {
       {
         name: "Atharva Burle",
         avatar: "/images/reviews/reviewer-4.webp",
-         googleIcon: "/icons/google.svg",
+        googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review:

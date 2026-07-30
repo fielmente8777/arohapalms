@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ReactNode } from "react";
 
 interface ApproachProps {
   heading: string;
@@ -8,7 +9,7 @@ interface ApproachProps {
 
   sections: {
     title: string;
-    icon: string;
+    icon: ReactNode;
 
     routes: {
       distance: string;
@@ -48,14 +49,13 @@ const Approach = ({
         <div key={section.title} className="py-10">
           <div className="flex flex-col items-center gap-6 justify-center">
             <div className="aspect-square relative h-16 w-16">
-              <Image
-                src={section.icon}
-                alt={section.title}
-                fill
-                className="rounded-full object-cover overflow-hidden"
-              />
+              <div className="h-16 w-16 items-center justify-center flex">
+                {section.icon}
+              </div>
             </div>
-            <h3 className="text-dark">{section.title}</h3>
+
+            <h3>{section.title}</h3>
+
           </div>
 
           <div className="flex flex-col md:flex-row gap-10 md:justify-between mt-14">

@@ -11,13 +11,13 @@ export const yourStayPageData = {
 
   stays: [
     {
-      image: "/landing-page/bnr.jpg",
+      image: "/images/cover1.jpg",
       title: "Explore Aroha Palms",
       subtitle: "at Mandrem",
       href: "/destination/mandrem",
     },
     {
-      image: "/landing-page/bnr.jpg",
+      image: "/images/AOB_0138.jpg",
       title: "Explore Aroha Palms",
       subtitle: "at Pilerne",
       href: "/destination/pilerne",

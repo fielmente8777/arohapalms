@@ -35,7 +35,10 @@ const Amenities = ({ amenities, outdoors }: AmenitiesProps) => {
 
         <div className="grid grid-cols-2 md:flex w-full flex-wrap items-center justify-between max_width gap-12">
           {amenities.amenities.map((item) => (
-            <div className="flex flex-col items-center gap-1 justify-center" key={item.title}>
+            <div
+              className="flex flex-col items-center gap-1 justify-center"
+              key={item.title}
+            >
               {item.icon}
               <p>{item.title}</p>
             </div>
@@ -61,12 +64,24 @@ const Amenities = ({ amenities, outdoors }: AmenitiesProps) => {
                 className="object-cover"
               />
 
-              <div>
+              {/* <div>
                 <h3>{card.title}</h3>
 
                 <p>{card.description}</p>
 
                 <Link href={card.cta.href}>{card.cta.text}</Link>
+              </div> */}
+              <div className="absolute inset-0 flex flex-col items-center justify-start pt-16 px-8 text-center text-white">
+                <h3 className="text-4xl mb-6">{card.title}</h3>
+
+                <p className="max-w-md mb-8">{card.description}</p>
+
+                <Link
+                  href={card.cta.href}
+                  className="hidden md:flex h-24 w-24 rounded-full border border-white flex justify-center items-center hover:bg-[#011f4b] transition-all duration-150 underline"
+                >
+                  {card.cta.text}
+                </Link>
               </div>
             </div>
           ))}

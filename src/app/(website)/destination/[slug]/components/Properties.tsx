@@ -95,7 +95,7 @@ const Properties = ({ title, cards }: PropertiesProps) => {
 
               {/* <div className="mt-4 flex gap-8 text-md text-blue"> */}
               <div className="mt-4 flex flex-wrap md:justify-start gap-4 text-md text-blue">
-                {card.features.map((feature) => (
+                {card.features?.map((feature) => (
                   <span key={feature}>{feature}</span>
                 ))}
               </div>

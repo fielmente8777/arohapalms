@@ -12,28 +12,28 @@ export const experiencePageData = {
   experiences: {
     cards: [
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/beach-trees-.jpg",
         title: "Beach & Adventure",
         description:
           "Scuba Diving, Snorkeling, Jet Skiing, Parasailing, White Water Rafting, Flyboarding, Wakeboarding, Dolphin Watching, Kayaking, Dudhsagar Waterfalls.",
       },
 
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/basilica-of-bom-jesus.jpg",
         title: "Heritage & Culture",
         description:
           "Explore Goa's historic churches, Portuguese architecture, museums, forts, local markets and vibrant cultural heritage.",
       },
 
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/mediation.jpg",
         title: "Healing & Wellbeing",
         description:
           "Yoga, meditation, wellness therapies, spa experiences and peaceful retreats surrounded by nature.",
       },
 
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/casino.jpg",
         title: "Casino & Nightlife",
         description:
           "Cruise casinos, live music, nightlife, fine dining and entertainment experiences across Goa.",

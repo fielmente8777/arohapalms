@@ -4,7 +4,7 @@ export const contactPageData = {
   title: "Contact Us",
 
   contact: {
-    backgroundImage: "/landing-page/bnr.jpg",
+    backgroundImage: "/images/23-Pool_.jpg",
 
     cards: [
       {
@@ -65,7 +65,7 @@ export const contactPageData = {
   },
   approach: {
     heading: "About Aroha Palms",
-   desc: `Aroha Palms is a hospitality brand and property operated by Akahata Hospitality Private Limited, a company incorporated in India. All bookings, payments, and guest services are provided by Akahata Hospitality Private Limited.
+    desc: `Aroha Palms is a hospitality brand and property operated by Akahata Hospitality Private Limited, a company incorporated in India. All bookings, payments, and guest services are provided by Akahata Hospitality Private Limited.
 
 GST: 30AAXCA4249B1ZV
 CIN: U55101GA2022PTC015434
@@ -79,7 +79,7 @@ Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, V
     sections: [
       {
         title: "Manohar International Airport (MOPA)",
-        icon: <PlaneIcon/>,
+        icon: <PlaneIcon />,
 
         routes: [
           {
@@ -97,7 +97,7 @@ Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, V
 
       {
         title: "Dabolim International Airport",
-        icon: <PlaneIcon/>,
+        icon: <PlaneIcon />,
 
         routes: [
           {
@@ -115,7 +115,7 @@ Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, V
 
       {
         title: "Thivim Railway Station | Konkan Railway Division",
-        icon: <RailIcon/>,
+        icon: <RailIcon />,
 
         routes: [
           {

@@ -22,7 +22,7 @@ const ExperienceCards = ({ cards, cta }: ExperienceCardsProps) => {
             key={card.title}
             className="group relative aspect-[1.5/2] md:aspect-[4/3] overflow-hidden"
           >
-            <Image
+           <Image
               src={card.image}
               alt={card.title}
               fill
