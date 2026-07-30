@@ -19,7 +19,7 @@ const OfferBanner = ({ background, title, cta }: OfferBannerProps) => {
 
       <div className="relative z-10 flex h-full items-end justify-center pb-32">
         <div className="w-180 rounded-full bg-white/40 px-12 py-4 backdrop-blur-md">
-          <h2 className="text-center md:text-3xl text-white md:text-[#25375A]">
+          <h2 className="text-center md:text-3xl text-white md:text-blue">
             {title}
           </h2>
 
@@ -28,7 +28,7 @@ const OfferBanner = ({ background, title, cta }: OfferBannerProps) => {
           <div className="mt-3 flex justify-center">
             <Link
               href={cta.href}
-              className="rounded-full border md:border-[#25375A] px-6 py-1.5 text-xs uppercase tracking-wider  text-white md:text-[#25375A] transition-all duration-150 hover:underline"
+              className="rounded-full border md:border-blue px-6 py-1.5 text-xs uppercase tracking-wider  text-white md:text-blue transition-all duration-150 hover:underline"
             >
               {cta.text}
             </Link>

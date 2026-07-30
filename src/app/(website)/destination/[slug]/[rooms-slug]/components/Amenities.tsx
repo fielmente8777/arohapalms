@@ -17,11 +17,11 @@ const Amenities = ({ data }: AmenitiesProps) => {
       <Container>
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-5xl uppercase tracking-wide text-blue">
+          <h2 className="  text-2xl md:text-5xl uppercase tracking-wide text-blue">
             {data.title}
           </h2>
 
-          <div className="mx-auto h-px max-w-90 w-full bg-blue" />
+          <div className="mx-auto h-px w-60 md:max-w-90 md:w-full bg-blue" />
 
           <p className="mx-auto mt-8 max-w-2xl text-gray-600">
             {data.subtitle}
@@ -29,7 +29,7 @@ const Amenities = ({ data }: AmenitiesProps) => {
         </div>
 
         {/* Grid */}
-        <div className="max-w-5xl w-full mx-auto mt-6 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+        <div className=" w-[300px] md:max-w-5xl md:w-full mx-auto mt-6 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
           {data.items.map((item, index) => (
             <AmenityCard key={index} title={item.title} />
           ))}

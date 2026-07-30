@@ -8,53 +8,56 @@ interface VerticalSliderProps {
     image: string;
     alt: string;
   }[];
-
   activeIndex: number;
-
   className?: string;
-
   overlayClassName?: string;
-
   children?: React.ReactNode;
 }
 
-const VerticalSlider = ({
+export default function VerticalSlider({
   slides,
   activeIndex,
   className,
   overlayClassName,
   children,
-}: VerticalSliderProps) => {
+}: VerticalSliderProps) {
   return (
-    <div className={clsx("vertical-slider rounded-none! ", className)}>
+    <div
+      className={clsx(
+        "relative overflow-hidden w-full h-[700px] md:h-screen",
+        className
+      )}
+    >
       <div
-        className="vertical-slider__track "
+        className="absolute inset-0 transition-transform duration-700 ease-in-out"
         style={{
           transform: `translateY(-${activeIndex * 100}%)`,
         }}
       >
         {slides.map((slide, index) => (
           <div
-            key={`${slide.image}-${index}`}
-            className="vertical-slider__slide "
+            key={index}
+            className="relative w-full h-[700px] md:h-screen"
           >
             <Image
               src={slide.image}
               alt={slide.alt}
               fill
-              className="object-cover  "
+              className="object-cover"
+              priority={index === 0}
             />
           </div>
         ))}
       </div>
 
-      {children && (
-        <div className={clsx("vertical-slider__overlay", overlayClassName)}>
-          {children}
-        </div>
-      )}
+      <div
+        className={clsx(
+          "absolute inset-0 z-10 p-6 md:p-12",
+          overlayClassName
+        )}
+      >
+        {children}
+      </div>
     </div>
   );
-};
-
-export default VerticalSlider;
+}

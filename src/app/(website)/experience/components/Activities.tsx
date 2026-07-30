@@ -3,7 +3,6 @@
 import VerticalSlider from "@/components/sliders/VerticalSlider";
 import { useEffect, useState } from "react";
 
-
 interface ActivitiesProps {
   title: {
     prefix: string;
@@ -25,17 +24,19 @@ const Activities = ({ title, slides }: ActivitiesProps) => {
 
     return () => clearInterval(timer);
   }, [slides.length]);
-  // const nextSlide = () => {
-  //   setActiveIndex((prev) => (prev + 1) % slides.length);
-  // };
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % slides.length);
+  };
 
   return (
     <section className=" mt-10!">
-      <h2 className="text-lg md:text-5xl text-dark mb-10 text-center ">
+      <h2 className="text-lg md:text-5xl text-blue mb-10 text-center ">
         {title.prefix}{" "}
-        <span className="text-dark/80">{title.words[activeIndex % title.words.length]}</span>
+        <span className="text-dark/80">
+          {title.words[activeIndex % title.words.length]}
+        </span>
       </h2>
-      <div className="mx-auto w-40 md:w-120 h-px bg-dark text-dark" />
+      <div className="mx-auto w-40 md:w-120 h-px bg-blue text-blue" />
 
       <VerticalSlider
         slides={slides.map((item) => ({
@@ -43,12 +44,19 @@ const Activities = ({ title, slides }: ActivitiesProps) => {
           alt: item.label,
         }))}
         activeIndex={activeIndex}
-        className="h-screen w-full"
+        className="h-[700px] md:h-screen w-full"
       >
-        <div className="">
-          <h3 className="md:text-5xl text-white">{slides[activeIndex].label}</h3>
+        <div className="flex items-start justify-between w-full">
+          <h3 className="text-2xl md:text-5xl text-white font-light">
+            {slides[activeIndex].label}
+          </h3>
 
-          {/* <button onClick={nextSlide}>↓</button> */}
+          <button
+            onClick={nextSlide}
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white text-white hover:bg-white hover:text-black transition"
+          >
+            ↓
+          </button>
         </div>
       </VerticalSlider>
     </section>

@@ -60,7 +60,7 @@ export const homePageData = {
           "Set in Mandrem, enjoy calm, private stays just minutes from serene beaches, cafés, and North Goa's vibrant coastline.",
         cta: {
           text: "Explore Now",
-          href: "/locations/mandrem",
+          href: "/destination/mandrem",
         },
       },
       {
@@ -70,7 +70,7 @@ export const homePageData = {
           "Located in Pilerne, enjoy a quiet, local setting with easy access to Candolim, Calangute, beaches, dining, and nightlife.",
         cta: {
           text: "Explore Now",
-          href: "/locations/pilerne",
+          href: "/destination/pilerne",
         },
       },
     ],

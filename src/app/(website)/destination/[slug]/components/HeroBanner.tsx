@@ -24,8 +24,8 @@ const HeroBanner = ({
       <div className="absolute inset-0 bg-black/20" />
 
       <div className="relative z-10 flex h-full items-start">
-        <div className="max_width  flex flex-col justify-center h-full">
-          {/* <p className="text-white">{subtitle}</p> */}
+        <div className="max_width  flex flex-col justify-start px-12">
+          <p className=" text-2xl md:text-3xl text-white mb-14 mt-4">{subtitle}</p>
 
           <h1 className="text-2xl md:text-5xl text-white">{title}</h1>
         </div>
