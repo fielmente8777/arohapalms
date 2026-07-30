@@ -26,7 +26,7 @@ const TermsConditions = ({
 
         {/* Header */}
         <header className="mb-20 text-center">
-          <h1 className="font-serif text-[3.5rem] leading-none tracking-tight text-[#0E2B5C] md:text-[5rem]">
+          <h1 className="font-serif text-[3.5rem] leading-none tracking-tight text-blue md:text-[5rem]">
             {title}
           </h1>
 
@@ -42,7 +42,7 @@ const TermsConditions = ({
           {sections.map((section, index) => (
             <section key={index}>
 
-              <h2 className="mb-5 font-serif text-[2rem] font-semibold text-[#102B5C]">
+              <h2 className="mb-5 font-serif text-[2rem] font-semibold text-blue">
                 {section.title}
               </h2>
 

@@ -18,7 +18,7 @@ export const guestArrivalData = {
           href="https://maps.app.goo.gl/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#0B2D63] underline font-medium hover:text-[#184A96]"
+          className="text-blue underline font-medium hover:text-blue/50"
         >
           Click for Google Maps Location
         </a>

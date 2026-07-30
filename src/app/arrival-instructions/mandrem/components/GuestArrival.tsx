@@ -44,11 +44,11 @@ export default function GuestArrival({
 
         {/* Hero */}
         <header className="text-center">
-          <h1 className="font-serif text-[3rem] font-normal leading-none tracking-tight text-[#102B5C] md:text-[4.8rem]">
+          <h1 className="font-serif text-[3rem] font-normal leading-none tracking-tight text-blue md:text-[4.8rem]">
             {title}
           </h1>
 
-          <div className="mx-auto mt-8 max-w-4xl text-[20px] font-semibold leading-9 text-[#102B5C]">
+          <div className="mx-auto mt-8 max-w-4xl text-[20px] font-semibold leading-9 text-blue">
             {introduction}
           </div>
         </header>
@@ -66,21 +66,21 @@ export default function GuestArrival({
                   </span>
                 )}
 
-                <h2 className="font-serif text-[2.8rem] font-semibold text-[#102B5C]">
+                <h2 className="font-serif text-[2.8rem] font-semibold text-blue">
                   {section.title}
                 </h2>
               </div>
 
               {/* Paragraph */}
               {section.content && (
-                <div className="mx-auto mb-8 max-w-3xl text-[20px] leading-10 text-[#24364E]">
+                <div className="mx-auto mb-8 max-w-3xl text-[20px] leading-10 text-blue">
                   {section.content}
                 </div>
               )}
 
               {/* Ordered List */}
               {section.ordered && section.points && (
-                <ol className="mx-auto max-w-4xl list-decimal space-y-8 pl-8 text-left text-[20px] leading-10 text-[#24364E] marker:font-semibold marker:text-[#102B5C]">
+                <ol className="mx-auto max-w-4xl list-decimal space-y-8 pl-8 text-left text-[20px] leading-10 text-blue marker:font-semibold marker:text-[#102B5C]">
                   {section.points.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
@@ -89,7 +89,7 @@ export default function GuestArrival({
 
               {/* Bullet List */}
               {!section.ordered && section.points && (
-                <ul className="mx-auto max-w-4xl list-disc space-y-8 pl-8 text-left text-[20px] leading-10 text-[#24364E] marker:text-[#102B5C]">
+                <ul className="mx-auto max-w-4xl list-disc space-y-8 pl-8 text-left text-[20px] leading-10 text-blue marker:text-[#102B5C]">
                   {section.points.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
@@ -101,7 +101,7 @@ export default function GuestArrival({
 
         {/* Closing Message */}
         <footer className="mt-28 text-center">
-          <h3 className="text-[2.5rem] font-semibold text-[#102B5C]">
+          <h3 className="text-[2.5rem] font-semibold text-blue">
             {closingNote}
           </h3>
         </footer>

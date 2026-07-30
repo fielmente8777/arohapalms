@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface OfferBannerProps {
-  background: string[];
+  background: string[] ;
   title: string;
   cta: {
     text: string;
