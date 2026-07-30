@@ -84,7 +84,7 @@ export default async function Page({ params }: Params) {
 
   if (!pageData) return notFound();
   return (
-    <main className="">
+    <main >
       {/* <ImageBanner
         image={pageData?.bannerImage as string}
         title={pageData?.title as string}
@@ -93,7 +93,7 @@ export default async function Page({ params }: Params) {
         benefits=""
       /> */}
 
-      <div className="relative max-w-6xl mx-auto  w-full lg:aspect-3/2 aspect-[4/5.2] overflow-hidden">
+      <div className="relative max-w-6xl mx-auto  w-full lg:aspect-3/2 aspect-[3/2] overflow-hidden">
         <Image
           src={pageData?.bannerImage}
           alt={pageData?.title}

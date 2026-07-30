@@ -3482,7 +3482,7 @@ export const roomData = [
 
           bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {
@@ -3500,7 +3500,7 @@ export const roomData = [
 
           bookNow: {
             text: "Book Now",
-            href: "/booking",
+            href: contact.WhatsappCta,
           },
 
           cta: {

@@ -1,18 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import blogPostPageData from "../[slug]/pageData";
+import { SectionWithContainer } from "@/components/sectionComponants";
 
 export default function ArticlesPage() {
   return (
   
-      <main className="py-24">
+      <main>
+        <SectionWithContainer sectionClassName="">
         <div className="max_width">
-          <h1 className="text-center mb-16">Articles</h1>
+          {/* <h1 className="text-center mb-16">Articles</h1> */}
 
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blogPostPageData.map((post) => (
               <Link key={post.slug} href={`/${post.slug}`}>
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <div className="relative md:aspect-[4/3] overflow-hidden rounded-2xl">
                   <Image
                     src={post.bannerImage}
                     alt={post.title}
@@ -28,6 +30,7 @@ export default function ArticlesPage() {
             ))}
           </div>
         </div>
+        </SectionWithContainer>
       </main>
      
   

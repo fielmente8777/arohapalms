@@ -49,7 +49,7 @@ const Properties = ({ title, cards }: PropertiesProps) => {
 
   return (
     <section className="max_width py-20">
-      <h2 className="text-xl md:text-4xl text-dark border-b pb-6 w-fit">
+      <h2 className="text-xl md:text-4xl text-blue border-b pb-6 w-fit">
         {title}
       </h2>
       <div className="mt-14 space-y-16">
@@ -96,7 +96,7 @@ const Properties = ({ title, cards }: PropertiesProps) => {
             )}
 
             <div className="col-span-2 flex flex-col h-full ">
-              <h3 className="text-2xl text-dark">{card.title}</h3>
+              <h3 className="text-2xl text-blue">{card.title}</h3>
               <p className="mt-3 text-gray-700">{card.description}</p>
 
               <div className="mt-4 flex flex-wrap md:justify-start gap-4 text-md text-blue">

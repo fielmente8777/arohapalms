@@ -308,13 +308,12 @@ const blogPostPageData: BlogPost[] = [
       "Monsoon Bonanza: 50% Off Luxury Villas in Goa — Why the Rain Makes It the Best Time to Go",
     publishedAt: "June 23, 2026",
     author: "Aroha Palms",
-    bannerImage:
-      "/images/bonanza-50.png",
+    bannerImage: "/images/bonanza-50.png",
     content: `<p>There is a version of Goa that most people never see. Not the December version with its sunlit beaches and crowded shacks — that Goa is wonderful, but it is thoroughly discovered. The version we’re talking about is quieter, greener, and far more breathtaking. It smells of wet earth and jasmine. The paddy fields around Mandrem fill with standing water that catches the sky. The palms outside the villa go a shade of green so vivid it looks painted. Every waterfall in Goa comes roaring to life. And the whole state slows down to a pace that is, frankly, heaven.</p>
 
-<p>This is Goa in the monsoon. And this year, Aroha Palms is making it your most affordable luxury escape yet. <a href="http://wa.me/9834220573/" rel="noopener">Check availability of villas &gt;&gt;&gt;</a></p>
+<p>This is Goa in the monsoon. And this year, Aroha Palms is making it your most affordable luxury escape yet. <a class='text-blue' href="http://wa.me/9834220573/" rel="noopener">Check availability of villas &gt;&gt;&gt;</a></p>
 
-<p>We’re offering a <a href="/5-bhk-villa-in-mandrem/">flat 50% off on all our luxury private villas in Mandrem, North Goa</a> for stays between June and September. Whether you’re planning a romantic couple’s retreat in a 2 BHK villa, a family holiday in a 4 BHK or 5 BHK villa, or a large group escape in our 7, 9, 10 or 18 BHK properties — the rain is on, the price is down, and the experience is genuinely extraordinary.</p>
+<p>We’re offering a <a class='text-blue' href="/5-bhk-villa-in-mandrem/">flat 50% off on all our luxury private villas in Mandrem, North Goa</a> for stays between June and September. Whether you’re planning a romantic couple’s retreat in a 2 BHK villa, a family holiday in a 4 BHK or 5 BHK villa, or a large group escape in our 7, 9, 10 or 18 BHK properties — the rain is on, the price is down, and the experience is genuinely extraordinary.</p>
 
 <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">The Beauty of Goa in the Monsoon — Why This Season Is Truly Special</h3>
 <p>If you’ve only seen Goa under a clear December sky, you’ve seen one side of it. The monsoon reveals another — arguably the more honest one. This is the Goa that locals love most: the state at its most alive, most lush, most itself.</p>
@@ -336,7 +335,7 @@ const blogPostPageData: BlogPost[] = [
     <strong>The Festivals Belong to This Season:</strong> Some of Goa’s most authentic cultural celebrations happen entirely in the monsoon. Sao Joao, on 24 June, is a joyful feast of St John the Baptist where Goans leap into wells and rivers in floral headgear, celebrating the rains with Feni and community. The Bonderam Festival on Divar Island in August is a vibrant parade of colourful flags and local music that captures the warmth of Goan village life completely. These are the festivals that locals actually celebrate — and in the monsoon, you get to experience them as a participant rather than a bystander.
   </li><br />
   <li>
-    <strong>The Freshest Seafood of the Year:</strong> Ask any Goan chef and they’ll tell you: monsoon is when the seafood is at its absolute finest. The fish market in Mapusa and the village vendors near Mandrem carry fresh kingfish, pomfret, tiger prawns, and clams that have had the full benefit of a rested, unpressured sea. In-villa catering at Aroha Palms means that fresh Goan seafood — bought from the local market that morning, cooked in your villa kitchen that evening — becomes the meal your trip is remembered for. <a href="http://wa.me/+919834220573/" rel="noopener">Savor all of these in Mandrem.</a>
+    <strong>The Freshest Seafood of the Year:</strong> Ask any Goan chef and they’ll tell you: monsoon is when the seafood is at its absolute finest. The fish market in Mapusa and the village vendors near Mandrem carry fresh kingfish, pomfret, tiger prawns, and clams that have had the full benefit of a rested, unpressured sea. In-villa catering at Aroha Palms means that fresh Goan seafood — bought from the local market that morning, cooked in your villa kitchen that evening — becomes the meal your trip is remembered for. <a class='text-blue' href="http://wa.me/+919834220573/" rel="noopener">Savor all of these in Mandrem.</a>
   </li>
 </ol>
 
@@ -366,7 +365,7 @@ const blogPostPageData: BlogPost[] = [
       <li><strong>7 BHK villa in Goa:</strong> for larger groups and milestone celebrations — seven rooms across a single exclusive property, with pool and terrace, entirely private.</li>
       <li><strong>9 BHK villas in North Goa:</strong> for extended families, two-family trips, or corporate groups who want the scale of a resort with the privacy of a home.</li>
     </ul>
-    <p style="text-align: center;"><a href="http://wa.me/+919834220573/" rel="noopener">To book, WhatsApp us at +91 98342 20573 or click.</a></p>
+    <p style="text-align: center;"><a class='text-blue' href="http://wa.me/+919834220573/" rel="noopener">To book, WhatsApp us at +91 98342 20573 or click.</a></p>
   </li>
 </ol>
 
@@ -432,7 +431,7 @@ const blogPostPageData: BlogPost[] = [
   </li>
 </ol>
 
-<p style="text-align: center;"><a href="http://wa.me/+919834220573/" rel="noopener">Reserve your Stay at 50% Off this Monsoon</a></p>`,
+<p style="text-align: center;"><a class='text-blue' href="http://wa.me/+919834220573/" rel="noopener">Reserve your Stay at 50% Off this Monsoon</a></p>`,
   },
   //   {
   //     slug: "mandrem-vs-morjim-which-is-better-for-a-relaxed-goa-trip",
@@ -639,8 +638,7 @@ const blogPostPageData: BlogPost[] = [
     title: "Mandrem vs Morjim: Which is Better for a Relaxed Goa Trip?",
     publishedAt: "June 02, 2026",
     author: "Aroha Palms",
-    bannerImage:
-      "/images/morjim-beach-.jpg",
+    bannerImage: "/images/morjim-beach-.jpg",
     content: `<p>When people think of a peaceful and luxurious getaway in North Goa, two places almost always come up in the conversation — Mandrem and Morjim.</p>
 
 <p>As some parts of Goa continue to get busier and more commercial, travellers looking for a slower and more relaxed experience are moving towards the quieter beaches of North Goa. Both Mandrem and Morjim offer beautiful coastlines, stunning sunsets, and a calmer side of Goa, but the overall experience in each place feels very different.</p>
@@ -765,71 +763,71 @@ const blogPostPageData: BlogPost[] = [
 
 <p>If you’re searching for luxury villas in North Goa, private pool villas in Goa, or premium group stays near Mandrem Beach, Aroha Palms offers a stay experience that feels relaxed, elegant, and genuinely memorable.</p>
 
-<p>For bookings and enquiries, contact the <a href="http://wa.me/+919834220573/" rel="noopener">Aroha Palms team at +91 98342 20573</a>.</p>`,
+<p>For bookings and enquiries, contact the <a class='text-blue' href="http://wa.me/+919834220573/" rel="noopener">Aroha Palms team at +91 98342 20573</a>.</p>`,
   },
-//   {
-//     slug: "elite-beaches-cafes-near-aroha-palms",
-//     metaData: {
-//       title:
-//         "Elite Beaches & Cafés Near Aroha Palms | Mandrem's Coastal Luxury Guide",
-//       description:
-//         "The Ultimate Guide to Mandrem's Coastal Luxury: Elite Beaches & Cafés Near Aroha Palms. Discover the best beaches and cafes in North Goa.",
-//       keyWords:
-//         "Mandrem beaches, Ashwem Beach, Arambol Beach, Morjim Beach, cafés in Mandrem, Chique Shanti, Artjuna, Cafe North",
-//     },
-//     title: "Elite Beaches & Cafés Near Aroha Palms",
-//     publishedAt: "May 22, 2026",
-//     author: "Aroha Palms",
-//     bannerImage: "/landing-page/bnr.jpg",
-//     content: `<p>Just minutes away from the Greek-inspired sanctuary of Aroha Palms, North Goa's most iconic shorelines offer an exquisite blend of sophisticated relaxation, authentic local experiences, and untouched coastal charm.</p>
-//       <img
-//   src="/generated/images/your-second-image.png"
-//   alt=" "
-// />
-//     <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">The Best Luxury Beaches in North Goa Near Aroha Palms</h3>
-//     <h4>Mandrem Beach – Peaceful Beach Escape in North Goa</h4>
-//     <p>Located just a short drive from Aroha Palms, Mandrem Beach is known for its calm atmosphere, soft sandy shoreline, and peaceful surroundings. Less crowded than many North Goa beaches, it’s ideal for travellers looking to unwind and enjoy Goa at a slower pace. Spend your mornings taking long walks by the sea, relaxing at beachside cafés, or enjoying yoga sessions by the shore. The beach is also perfect for sunset watching, quiet swims, and laid-back evenings with live music and cocktails.</p>
-//     <h4>Ashwem Beach – Best Beach Cafés & Relaxed Coastal Vibes in Goa</h4>
-//     <p>Ashwem Beach offers a beautiful blend of luxury and simplicity, making it one of North Goa’s most loved coastal spots. Known for its clean shoreline, stylish beach cafés, and relaxed vibe, it’s perfect for spending slow afternoons by the sea. Visitors can enjoy beach hopping, sunbathing, trying fresh seafood, or exploring boutique cafés and beach clubs nearby. Ashwem is also popular for surfing, wellness retreats, and peaceful sunset experiences.</p>
+  //   {
+  //     slug: "elite-beaches-cafes-near-aroha-palms",
+  //     metaData: {
+  //       title:
+  //         "Elite Beaches & Cafés Near Aroha Palms | Mandrem's Coastal Luxury Guide",
+  //       description:
+  //         "The Ultimate Guide to Mandrem's Coastal Luxury: Elite Beaches & Cafés Near Aroha Palms. Discover the best beaches and cafes in North Goa.",
+  //       keyWords:
+  //         "Mandrem beaches, Ashwem Beach, Arambol Beach, Morjim Beach, cafés in Mandrem, Chique Shanti, Artjuna, Cafe North",
+  //     },
+  //     title: "Elite Beaches & Cafés Near Aroha Palms",
+  //     publishedAt: "May 22, 2026",
+  //     author: "Aroha Palms",
+  //     bannerImage: "/landing-page/bnr.jpg",
+  //     content: `<p>Just minutes away from the Greek-inspired sanctuary of Aroha Palms, North Goa's most iconic shorelines offer an exquisite blend of sophisticated relaxation, authentic local experiences, and untouched coastal charm.</p>
+  //       <img
+  //   src="/generated/images/your-second-image.png"
+  //   alt=" "
+  // />
+  //     <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">The Best Luxury Beaches in North Goa Near Aroha Palms</h3>
+  //     <h4>Mandrem Beach – Peaceful Beach Escape in North Goa</h4>
+  //     <p>Located just a short drive from Aroha Palms, Mandrem Beach is known for its calm atmosphere, soft sandy shoreline, and peaceful surroundings. Less crowded than many North Goa beaches, it’s ideal for travellers looking to unwind and enjoy Goa at a slower pace. Spend your mornings taking long walks by the sea, relaxing at beachside cafés, or enjoying yoga sessions by the shore. The beach is also perfect for sunset watching, quiet swims, and laid-back evenings with live music and cocktails.</p>
+  //     <h4>Ashwem Beach – Best Beach Cafés & Relaxed Coastal Vibes in Goa</h4>
+  //     <p>Ashwem Beach offers a beautiful blend of luxury and simplicity, making it one of North Goa’s most loved coastal spots. Known for its clean shoreline, stylish beach cafés, and relaxed vibe, it’s perfect for spending slow afternoons by the sea. Visitors can enjoy beach hopping, sunbathing, trying fresh seafood, or exploring boutique cafés and beach clubs nearby. Ashwem is also popular for surfing, wellness retreats, and peaceful sunset experiences.</p>
 
-//     <h4>Arambol Beach – Bohemian Beach Experiences in North Goa</h4>
-//     <p>One of Goa’s most vibrant and free-spirited beaches, Arambol Beach is loved for its bohemian energy, lively atmosphere, and artistic culture. From drum circles and live music sessions to beach markets and yoga spots, there’s always something happening here. You can spend the day exploring cafés, shopping for handmade jewellery and local crafts, trying water sports, or simply relaxing by the beach. Don’t miss the famous sunset gatherings and the nearby Sweet Water Lake for a unique Arambol experience.</p>
+  //     <h4>Arambol Beach – Bohemian Beach Experiences in North Goa</h4>
+  //     <p>One of Goa’s most vibrant and free-spirited beaches, Arambol Beach is loved for its bohemian energy, lively atmosphere, and artistic culture. From drum circles and live music sessions to beach markets and yoga spots, there’s always something happening here. You can spend the day exploring cafés, shopping for handmade jewellery and local crafts, trying water sports, or simply relaxing by the beach. Don’t miss the famous sunset gatherings and the nearby Sweet Water Lake for a unique Arambol experience.</p>
 
-//     <h4>Morjim Beach – Scenic Beachside Experiences & Sunset Views in Goa</h4>
-//     <p>Known for its scenic beauty and peaceful charm, Morjim Beach is a favourite among travellers looking for a quieter beach experience in North Goa. Famous as a nesting site for Olive Ridley turtles, the beach offers wide open sands, relaxed beach shacks, and beautiful sunset views. Visitors can enjoy beachside dining, kite surfing, paddleboarding, and long scenic walks along the shore. Morjim is also home to several popular cafés and fine dining spots, making it perfect for a relaxed day by the sea.</p>
-//        <img
-//   src="/generated/images/your-second-image.png"
-//   alt=" "
-// />
-//     <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">Best Cafés to Visit Near Aroha Palms, Mandrem</h3>
-//     <p>Beyond the tide, Mandrem’s culinary scene is thriving with artisanal spaces, premium coffee roasters, and open-air brunch hubs—all located within a seamless 10-minute drive from Aroha Palms.</p>
-//     <h4>Chique Shanti – Stylish Café & Dining Experience in Mandrem</h4><p>With its beautifully curated, tropical-chic interiors and breezy coastal vibe, Chique Shanti is a standout choice for everything from a slow, lazy breakfast to romantic sunset dinners. The menu highlights a sophisticated mix of global flavors and signature cocktails, mirroring the upscale, laid-back atmosphere of Mandrem perfectly.</p>
-//     <h4>Artjuna Mandrem – Café, Community & Creative Coastal Living</h4><p>Undeniably one of the most popular lifestyle landmarks in North Goa, Artjuna blends healthy Mediterranean-inspired dining with a vibrant community spirit. Set under a canopy of green, this open-air garden café serves exceptional artisanal coffee, a fresh daily bakery selection, and wholesome meals. It also houses a boutique shopping space and regularly hosts intimate wellness events.</p>
-//     <h4>Café Junas 9 – Cozy Café Experience Near Mandrem Beach</h4>
-// <p>A charming, intimate hideaway loved for its warm hospitality and quiet setting, Café Junas 9 is tailor-made for slow mornings and peaceful evening unwinding. Stop by to enjoy freshly roasted brews, light wholesome bites, and comforting desserts away from the typical tourist rush.</p>
+  //     <h4>Morjim Beach – Scenic Beachside Experiences & Sunset Views in Goa</h4>
+  //     <p>Known for its scenic beauty and peaceful charm, Morjim Beach is a favourite among travellers looking for a quieter beach experience in North Goa. Famous as a nesting site for Olive Ridley turtles, the beach offers wide open sands, relaxed beach shacks, and beautiful sunset views. Visitors can enjoy beachside dining, kite surfing, paddleboarding, and long scenic walks along the shore. Morjim is also home to several popular cafés and fine dining spots, making it perfect for a relaxed day by the sea.</p>
+  //        <img
+  //   src="/generated/images/your-second-image.png"
+  //   alt=" "
+  // />
+  //     <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">Best Cafés to Visit Near Aroha Palms, Mandrem</h3>
+  //     <p>Beyond the tide, Mandrem’s culinary scene is thriving with artisanal spaces, premium coffee roasters, and open-air brunch hubs—all located within a seamless 10-minute drive from Aroha Palms.</p>
+  //     <h4>Chique Shanti – Stylish Café & Dining Experience in Mandrem</h4><p>With its beautifully curated, tropical-chic interiors and breezy coastal vibe, Chique Shanti is a standout choice for everything from a slow, lazy breakfast to romantic sunset dinners. The menu highlights a sophisticated mix of global flavors and signature cocktails, mirroring the upscale, laid-back atmosphere of Mandrem perfectly.</p>
+  //     <h4>Artjuna Mandrem – Café, Community & Creative Coastal Living</h4><p>Undeniably one of the most popular lifestyle landmarks in North Goa, Artjuna blends healthy Mediterranean-inspired dining with a vibrant community spirit. Set under a canopy of green, this open-air garden café serves exceptional artisanal coffee, a fresh daily bakery selection, and wholesome meals. It also houses a boutique shopping space and regularly hosts intimate wellness events.</p>
+  //     <h4>Café Junas 9 – Cozy Café Experience Near Mandrem Beach</h4>
+  // <p>A charming, intimate hideaway loved for its warm hospitality and quiet setting, Café Junas 9 is tailor-made for slow mornings and peaceful evening unwinding. Stop by to enjoy freshly roasted brews, light wholesome bites, and comforting desserts away from the typical tourist rush.</p>
 
-// <h4>Café North – Modern Café Experience in Mandrem</h4>
-// <p>Boasting minimalist, modern interiors and a highly welcoming atmosphere, Café North is a sleek neighborhood space designed for slowing down. Whether you need a premium caffeine fix between beach trips, a stylish brunch spot, or a relaxed evening catch-up with friends, it serves as a highly convenient stop right at your doorstep.
-// </p>
+  // <h4>Café North – Modern Café Experience in Mandrem</h4>
+  // <p>Boasting minimalist, modern interiors and a highly welcoming atmosphere, Café North is a sleek neighborhood space designed for slowing down. Whether you need a premium caffeine fix between beach trips, a stylish brunch spot, or a relaxed evening catch-up with friends, it serves as a highly convenient stop right at your doorstep.
+  // </p>
 
-// <h4>Hangout Restaurant – Relaxed Dining & Local Flavours in North Goa</h4>
-// <p>For a taste of authentic local heritage alongside classic comfort food, Hangout Restaurant offers an easygoing, hospitable dining experience. Highly favored by both selective travelers and locals, it is the ideal spot for a casual seafood lunch or a hearty dinner after a sun-soaked day exploring North Goa’s coastline.</p>
-//     `,
-//   },
-{
-  slug: "elite-beaches-cafes-near-aroha-palms",
-  metaData: {
-    title: "Elite Beaches & Cafés Near Aroha Palms, Mandrem | Travel Guide",
-    description:
-      "The ultimate guide to Mandrem's coastal luxury. Discover elite beaches, top cafes, and scenic spots just minutes away from Aroha Palms in North Goa.",
-    keyWords:
-      "Elite beaches Goa, luxury cafes Mandrem, Aroha Palms, Ashwem beach, Arambol beach, Morjim beach, Artjuna Mandrem",
-  },
-  title: "Elite Beaches & Cafés Near Aroha Palms",
-  publishedAt: "May 22, 2026",
-  author: "Aroha Palms",
-  bannerImage: "/images/coffee-and-beach.png",
-  content: `<p>Just minutes away from the Greek-inspired sanctuary of Aroha Palms, North Goa’s most iconic shorelines offer an exquisite blend of sophisticated relaxation, authentic local experiences, and untouched coastal charm. Whether you are chasing peaceful mornings by the waves, elite beach clubs, thrilling water adventures, or private sunset viewings, these neighboring hotspots ensure every day of your Goan getaway feels beautifully distinct.</p>
+  // <h4>Hangout Restaurant – Relaxed Dining & Local Flavours in North Goa</h4>
+  // <p>For a taste of authentic local heritage alongside classic comfort food, Hangout Restaurant offers an easygoing, hospitable dining experience. Highly favored by both selective travelers and locals, it is the ideal spot for a casual seafood lunch or a hearty dinner after a sun-soaked day exploring North Goa’s coastline.</p>
+  //     `,
+  //   },
+  {
+    slug: "elite-beaches-cafes-near-aroha-palms",
+    metaData: {
+      title: "Elite Beaches & Cafés Near Aroha Palms, Mandrem | Travel Guide",
+      description:
+        "The ultimate guide to Mandrem's coastal luxury. Discover elite beaches, top cafes, and scenic spots just minutes away from Aroha Palms in North Goa.",
+      keyWords:
+        "Elite beaches Goa, luxury cafes Mandrem, Aroha Palms, Ashwem beach, Arambol beach, Morjim beach, Artjuna Mandrem",
+    },
+    title: "Elite Beaches & Cafés Near Aroha Palms",
+    publishedAt: "May 22, 2026",
+    author: "Aroha Palms",
+    bannerImage: "/images/coffee-and-beach.png",
+    content: `<p>Just minutes away from the Greek-inspired sanctuary of Aroha Palms, North Goa’s most iconic shorelines offer an exquisite blend of sophisticated relaxation, authentic local experiences, and untouched coastal charm. Whether you are chasing peaceful mornings by the waves, elite beach clubs, thrilling water adventures, or private sunset viewings, these neighboring hotspots ensure every day of your Goan getaway feels beautifully distinct.</p>
 
 <img src="" alt="Elite Beaches Near Aroha Palms" />
 
@@ -866,8 +864,7 @@ const blogPostPageData: BlogPost[] = [
 
 <h4 style="font-size: 1.5rem; color: #011f4b; font-weight: 600; margin-top: 1rem;">Hangout Restaurant – Relaxed Dining &amp; Local Flavours in North Goa</h4>
 <p>For a taste of authentic local heritage alongside classic comfort food, Hangout Restaurant offers an easygoing, hospitable dining experience. Highly favored by both selective travelers and locals, it is the ideal spot for a casual seafood lunch or a hearty dinner after a sun-soaked day exploring North Goa’s coastline.</p>`,
-
-},
+  },
   {
     slug: "north-goa-7-day-itinerary",
     metaData: {
@@ -940,7 +937,7 @@ const blogPostPageData: BlogPost[] = [
 <h2>Your Base for the Perfect North Goa Week</h2>
 <p>Everything in this itinerary is designed around the rhythm that a private luxury villa makes possible — the freedom to go when you want, return when you want, and always come home to somewhere beautiful.</p>
 <p>At Aroha Palms, our Mandrem villas are designed exactly for this kind of holiday. Private pools, generous living spaces, dedicated villa management, and the quiet magic of Mandrem on your doorstep.</p>
-<p>Start planning your North Goa week at <a href="http://www.arohapalms.com"><strong>arohapalms.com</strong></a> — our team is happy to help tailor the itinerary to your group and dates.</p>`,
+<p>Start planning your North Goa week at <a class='text-blue' href="http://www.arohapalms.com"><strong>arohapalms.com</strong></a> — our team is happy to help tailor the itinerary to your group and dates.</p>`,
   },
   {
     slug: "goa-in-october-weather-activities-guide",
@@ -999,7 +996,7 @@ const blogPostPageData: BlogPost[] = [
     <li><strong>Boutique Hotels:</strong> Quaint boutique hotels offer a charming stay with personalized service.</li>
     <li><strong>Guesthouses and Homestays:</strong> These budget-friendly options allow you to experience Goan hospitality up close.</li>
     <li><strong>Hostels:</strong> Ideal for backpackers, hostels offer affordable dormitory-style accommodation and a chance to meet fellow travelers.</li>
-    <li><a href="https://arohapalms.com/"><strong>Cottages and Villas:</strong></a> Perfect for larger groups or those seeking privacy, you can rent cottages or villas with modern amenities.</li>
+    <li><a class='text-blue' href="https://arohapalms.com/"><strong>Cottages and Villas:</strong></a> Perfect for larger groups or those seeking privacy, you can rent cottages or villas with modern amenities.</li>
 </ol>
 
 <img src="https://arohapalms.com/wp-content/uploads/2023/09/aroha-palms-pilerne-goa-1-768x512.jpg" alt="Aroha Palms Luxury Villa Goa" />
