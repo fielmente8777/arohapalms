@@ -55,19 +55,19 @@ export const experiencePageData = {
 
     slides: [
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/dolphins.jpg",
         label: "Dolphin Watching",
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/1casino.jpg",
         label: "Cruise & Casino",
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/suba.jpg",
         label: "Scuba Diving",
       },
       {
-        image: "/landing-page/bnr.jpg",
+        image: "/images/para.jpg",
         label: "Paragliding",
       },
     ],
