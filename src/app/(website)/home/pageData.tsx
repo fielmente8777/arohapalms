@@ -5,6 +5,8 @@ import {
   PoolIcon,
   RoomIcon,
 } from "@/utils/icons";
+import { Images } from "lucide-react";
+import { PiSelectionBackgroundFill } from "react-icons/pi";
 
 export const homePageData = {
   hero: {
@@ -34,8 +36,16 @@ export const homePageData = {
     ],
   },
   offers: {
-    background: "/images/sdr1.webp",
-
+    background: [
+      "/images/03-Bed-1.jpg",
+      "/images/AOB_9848-1-scaled.jpg",
+      "/images/AOB_9629-scaled.jpg",
+      "/images/00-Living-and-Dining-Apt-11.jpg",
+      "/images/pool-games-1558622839.jpg",
+      "/images/AOB_3528-scaled.jpg",
+      "/images/AOB_3679-scaled.jpg",
+      "/images/AOB_4059-1-1-scaled.jpg",
+    ],
     title: "Monsoon Serenity - Offers Soon",
 
     cta: {
@@ -44,7 +54,7 @@ export const homePageData = {
     },
   },
   locations: {
-    background: "/landing-page/bnr.jpg",
+    background: "/images/23-Pool_.jpg",
 
     title:
       "Experience Barefoot Luxury in the Heart of North Goa Near the Shore of Mandrem",
