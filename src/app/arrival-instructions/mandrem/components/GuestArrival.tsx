@@ -8,7 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 
-interface Section {
+export interface Section {
   title: React.ReactNode;
   icon?: "map" | "plane" | "train" | "car" | "key" | "phone";
   content?: React.ReactNode;
@@ -16,7 +16,7 @@ interface Section {
   ordered?: boolean;
 }
 
-interface GuestArrivalProps {
+export interface GuestArrivalProps {
   title: React.ReactNode;
   introduction: React.ReactNode;
   sections: Section[];

@@ -10,7 +10,7 @@ export const guestArrivalData = {
 
   sections: [
     {
-      icon: "map",
+      icon: "map" as const,
       title: "Google Maps Location",
       content: (
         <a
@@ -25,7 +25,7 @@ export const guestArrivalData = {
     },
 
     {
-      icon: "plane",
+      icon: "plane" as const,
       title: "Arrival by Air",
       points: [
         <>
@@ -45,7 +45,7 @@ export const guestArrivalData = {
     },
 
     {
-      icon: "train",
+      icon: "train" as const,
       title: "Arrival by Train",
       points: [
         <>
@@ -63,7 +63,7 @@ export const guestArrivalData = {
     },
 
     {
-      icon: "car",
+      icon: "car" as const,
       title: "Arrival by Road",
       points: [
         <>From North Goa: Take NH66 and follow signs towards Pilerne.</>,
@@ -76,7 +76,7 @@ export const guestArrivalData = {
     },
 
     {
-      icon: "key",
+      icon: "key" as const,
       title: "Check-in Process",
       points: [
         <>
@@ -138,7 +138,7 @@ export const guestArrivalData = {
     },
 
     {
-      icon: "phone",
+      icon: "phone" as const,
       title: "Need Assistance?",
       content: (
         <>

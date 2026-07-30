@@ -1,16 +1,15 @@
-import type { Metadata } from "next";
+import Call from "@/components/ContactButton/Call";
+import Whatsapp from "@/components/ContactButton/WhatsApp";
+import PopUpForm from "@/components/pop-up/PopUpForm";
+import PropertyDetailsPopup from "@/components/pop-up/PropertyDetailsPopup";
+import RoomDetailsPopup from "@/components/pop-up/RoomDetailsPopup";
+import { WebProvider } from "@/context-api/WebContext";
+import { contact } from "@/utils/constent";
 import { Fira_Sans } from "next/font/google";
+import Image from "next/image";
+import Script from "next/script";
 import "./globals.css";
 import "./style.scss";
-import LandingFooter from "@/components/footer/LandingFooter";
-import Script from "next/script";
-import Whatsapp from "@/components/ContactButton/WhatsApp";
-import { contact } from "@/utils/constent";
-import Call from "@/components/ContactButton/Call";
-import PopUpForm from "@/components/pop-up/PopUpForm";
-import { WebProvider } from "@/context-api/WebContext";
-import RoomDetailsPopup from "@/components/pop-up/RoomDetailsPopup";
-import Image from "next/image";
 
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
@@ -173,12 +172,13 @@ export default function RootLayout({
 
           <PopUpForm />
           <RoomDetailsPopup />
+          <PropertyDetailsPopup />
           <Whatsapp whatsAppNumber={contact.phone[0]} />
           <Call callNumber={contact.phone[0]} />
         </WebProvider>
       </body>
       {/* <!-- Eazbot Script (Next.js) --> */}
-      {/* <Script id="chatbot-config" strategy="afterInteractive">
+      <Script id="chatbot-config" strategy="afterInteractive">
         {`
           window.eazbotConfig = {
             ndid: "4c13e800-cf4a-43f1-a448-d6df8149defe",
@@ -189,7 +189,7 @@ export default function RootLayout({
       <Script
         src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
         strategy="afterInteractive"
-      /> */}
+      />
     </html>
   );
 }

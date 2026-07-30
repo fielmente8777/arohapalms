@@ -1,3 +1,4 @@
+
 export const guestArrivalData = {
   title: "Guest Arrival Instructions - Mandrem",
 
@@ -10,7 +11,7 @@ export const guestArrivalData = {
 
   sections: [
     {
-      icon: "map",
+      icon: "map" as const,
       title: "Google Maps Location",
       content: (
         <a
@@ -25,7 +26,7 @@ export const guestArrivalData = {
     },
 
     {
-      icon: "plane",
+      icon: "plane" as const,
       title: "Arrival by Air",
       points: [
         <>
@@ -45,7 +46,7 @@ export const guestArrivalData = {
     },
 
     {
-      icon: "train",
+      icon: "train" as const,
       title: "Arrival by Train",
       points: [
         <>
@@ -63,7 +64,7 @@ export const guestArrivalData = {
     },
 
     {
-      icon: "car",
+      icon: "car" as const,
       title: "Arrival by Road",
       points: [
         <>From North Goa: Take NH66 and follow the signs towards Mandrem.</>,
@@ -76,7 +77,7 @@ export const guestArrivalData = {
     },
 
     {
-      icon: "key",
+      icon: "key" as const,
       title: "Check-in Process",
       points: [
         <>
@@ -84,51 +85,42 @@ export const guestArrivalData = {
           earlier, please inform the villa owner or representative in advance so
           arrangements can be made if possible.
         </>,
-
         <>
           You will be greeted by the villa manager or representative upon
           arrival, who will show you around the villa and provide you with keys,
           remotes, and other essential information.
         </>,
-
         <>
           Please provide a valid government-issued ID and sign the Customer
           Conduct document during check-in.
         </>,
-
         <>
           A refundable security deposit will be collected during check-in and
           returned at check-out, provided there are no damages or additional
           charges.
         </>,
-
         <>
           The villa representative will explain the use of appliances,
           electronics, and other facilities available in the villa.
         </>,
-
         <>
           Information about nearby attractions, transportation, and local
           amenities will also be shared with you.
         </>,
-
         <>
           The villa manager or representative will remain available throughout
           your stay for any assistance or queries.
         </>,
-
         <>
           Every villa includes a fully equipped kitchen. Caretakers can prepare
           tea and coffee. A private chef can also be arranged on request for an
           additional charge. Please inform the manager in advance.
         </>,
-
         <>
           Several restaurants and cafés are located nearby, and a list of
           recommended restaurants is available inside the villa. Food delivery
           services such as Swiggy are also available.
         </>,
-
         <>
           Emergency contact details for the villa manager or representative will
           be provided upon arrival and are also available in the welcome folder
@@ -138,7 +130,7 @@ export const guestArrivalData = {
     },
 
     {
-      icon: "phone",
+      icon: "phone" as const,
       title: "Need Assistance?",
       content: (
         <>

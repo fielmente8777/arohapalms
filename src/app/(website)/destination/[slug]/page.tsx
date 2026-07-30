@@ -1,13 +1,11 @@
 import { notFound } from "next/navigation";
 import { roomData } from "./pageData";
 
-import HeroBanner from "./components/HeroBanner";
-import Properties from "./components/Properties";
+import { Metadata } from "next";
 import Testimonials from "../../home/components/Testimonials";
 import { homePageData } from "../../home/pageData";
-import { Metadata } from "next";
-import { Fallback } from "next/dist/client/components/segment-cache/cache-map";
-import { title } from "process";
+import HeroBanner from "./components/HeroBanner";
+import Properties from "./components/Properties";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -62,20 +60,17 @@ export async function generateMetadata({
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  console.log(slug);
   const data = roomData.find((item) => item.slug === slug);
 
-  console.log("jkhjghfgdfsd", roomData);
   if (!data) {
     notFound();
   }
 
-  const propertiesProps = data.properties as any;
 
   return (
     <main>
       <HeroBanner {...data.hero} />
-      <Properties {...propertiesProps} />
+      <Properties cards={data.properties.cards} title={data.properties.title} />
       <Testimonials {...homePageData.testimonials} />
     </main>
   );
