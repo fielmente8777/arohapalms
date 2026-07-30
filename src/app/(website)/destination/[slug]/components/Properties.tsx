@@ -8,7 +8,7 @@ import { JSX } from "react";
 import { Autoplay } from "swiper/modules";
 
 export interface Card {
-  image: string;
+  image?: string;
   title: string;
   description?: string;
   features?: string[];
@@ -44,8 +44,6 @@ const isPopupHref = (href: string) => href === "popup" || href === "#popup";
 
 const Properties = ({ title, cards }: PropertiesProps) => {
   const { openProperty } = useWebContext();
-
-  console.log("first", cards[0].images);
 
   return (
     <section className="max_width py-20">
@@ -85,14 +83,16 @@ const Properties = ({ title, cards }: PropertiesProps) => {
                 />
               </div>
             ) : (
-              <div className="relative mx-auto w-full max-w-sm aspect-[4/3] md:max-w-none md:aspect-[3/2] overflow-hidden">
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  className="object-cover transition duration-500 hover:scale-105"
-                />
-              </div>
+              card.image && (
+                <div className="relative mx-auto w-full max-w-sm aspect-[4/3] md:max-w-none md:aspect-[3/2] overflow-hidden">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover transition duration-500 hover:scale-105"
+                  />
+                </div>
+              )
             )}
 
             <div className="col-span-2 flex flex-col h-full ">

@@ -33,7 +33,7 @@ const OfferBanner = ({ background = [], title, cta }: OfferBannerProps) => {
 
   return (
     <section className="sticky top-0 h-screen overflow-hidden">
-      <Image src={background} alt={title} fill className="object-cover" />
+      <Image src={background[currentImage]} alt={title} fill className="object-cover" />
 
   <div className="absolute inset-0 bg-black/20" />
 
