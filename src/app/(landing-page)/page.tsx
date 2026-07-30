@@ -1,20 +1,20 @@
-import VideoBanner from "@/components/banners/VideoBanner";
+import Form1 from "@/components/forms/Form1";
+import { SectionWithContainer } from "@/components/sectionComponants";
 import SlidingTitle from "@/components/sliders/SlidingTitle";
 import AccommodationSection from "./component/AccommodationSection";
+import Banner from "./component/Banner";
 import ExperienceSection from "./component/ExperienceSection";
 import FaqSection from "./component/FaqSection";
 import FeaturesSection from "./component/FeaturesSection";
 import { landingPageData } from "./component/pageData";
 import Testimonials from "./component/Testimonials";
 import UnforgettableSection from "./component/UnforgettableSection";
-import { SectionWithContainer } from "@/components/sectionComponants";
-import Form1 from "@/components/forms/Form1";
 
 export default function LandingPage() {
   return (
     <main className="bg-background">
       <SlidingTitle items={landingPageData.offer} />
-      <VideoBanner {...landingPageData.hero} />
+      <Banner {...landingPageData.hero} />
       <SectionWithContainer
         defaultPadding={false}
         sectionClassName="py-8 border-b border-primary"

@@ -33,10 +33,28 @@ export const landingPageData = {
     benefits:
       "<span class='text-[#A20000]'>Save 25%</span> when you book direct • No prepayment • Free cancellation",
     image: "/landing-page/bnr.jpg",
-    video: {
-      src: "/video/Aroha-video.mp4",
-      poster: "/video/Aroha-video.png",
-    },
+    images: [
+      "/landing-page/bnr/Copy-of-DSC01038.webp",
+      "/landing-page/bnr/Copy-of-DSC01064.webp",
+      "/landing-page/bnr/Copy-of-DSC01106.webp",
+      "/landing-page/bnr/Copy-of-DSC01130.webp",
+      "/landing-page/bnr/Copy-of-DSC01152.webp",
+      "/landing-page/bnr/Copy-of-DSC01199.webp",
+      "/landing-page/bnr/Copy-of-DSC01210.webp",
+      "/landing-page/bnr/Copy-of-DSC01243.webp",
+      "/landing-page/bnr/Copy-of-DSC01258.webp",
+      "/landing-page/bnr/Copy-of-DSC01278.webp",
+      "/landing-page/bnr/Copy-of-DSC01309.webp",
+      "/landing-page/bnr/Copy-of-DSC01311.webp",
+      "/landing-page/bnr/Copy-of-DSC01353.webp",
+      "/landing-page/bnr/Copy-of-DSC01381.webp",
+      "/landing-page/bnr/Rectangle-34624168.png",
+      "/landing-page/bnr/Rectangle-34624169.png",
+    ],
+    // video: {
+    //   src: "/video/Aroha-video.mp4",
+    //   poster: "/video/Aroha-video.png",
+    // },
   },
 
   unforgettableSection: {
@@ -517,7 +535,7 @@ export const landingPageData = {
           "/rooms/Magnifica/magnifica20.jpg",
           "/rooms/Magnifica/magnifica3.jpg",
           "/rooms/Magnifica/magnifica7.jpg",
-           "/rooms/Emerald/Emerald.png",
+          "/rooms/Emerald/Emerald.png",
           "/rooms/Emerald/emerald1.jpg",
           "/rooms/Emerald/emerald6.webp",
           "/rooms/Emerald/emerald2.jpg",
