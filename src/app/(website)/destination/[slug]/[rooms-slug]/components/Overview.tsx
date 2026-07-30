@@ -12,10 +12,10 @@ interface OverviewProps {
 
 const Overview = ({ data }: OverviewProps) => {
   return (
-    <Section>
+    <Section >
       <Container>
         {/* Top Description */}
-        <p className="mx-auto max-w-4xl text-center text-[18px] leading-9 text-gray-700">
+        <p className="mx-auto max-w-4xl text-start md:text-center text-sm md:text-[18px]  leading-7 md:leading-9 text-gray-700">
           {data.topText}
         </p>
 
@@ -31,7 +31,7 @@ const Overview = ({ data }: OverviewProps) => {
         </div>
 
         {/* Bottom Description */}
-        <p className="mx-auto max-w-4xl text-center text-[18px] leading-9 text-gray-700">
+        <p className="mx-auto max-w-4xl text-center text-xs md:text-[18px] leading-7 md:leading-9 text-gray-700">
           {data.bottomText}
         </p>
       </Container>

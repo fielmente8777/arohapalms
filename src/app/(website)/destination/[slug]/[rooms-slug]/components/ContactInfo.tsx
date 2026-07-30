@@ -10,8 +10,8 @@ interface ContactInfoProps {
 
 const ContactInfo = ({ data }: ContactInfoProps) => {
   return (
-    <Section className="py-10">
-      <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+    <Section defaultPadding={false}>
+      <div className="hidden md:mx-auto flex max-w-4xl flex-col items-center text-center">
         {/* Phone Numbers */}
         <p className="text-sm font-medium tracking-wide text-[#0E2A5C]">
           {data.phones.join(" & ")}

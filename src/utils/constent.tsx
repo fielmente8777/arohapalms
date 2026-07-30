@@ -25,6 +25,16 @@ export const contact = {
   formHid: "",
   // formHid: "",
 };
+export const mapLinks = {
+  mandrem:
+    "https://www.google.com/maps/place/Aroha+Palms+Mandrem/@15.6702041,73.7203591,17z/data=!4m9!3m8!1s0x3bbfef6f05b14c35:0xc6ee1453b90fe702!5m2!4m1!1i2!8m2!3d15.670199!4d73.722934!16s%2Fg%2F11y1mwp0m2",
+
+  majestic:
+    "https://www.google.com/maps/place/Aroha+Palms+Majestic+Pilerne/@15.529661,73.8010118,892m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bbfc1eda0913fe1:0xf842cd32152c9827!8m2!3d15.529661!4d73.8010118!16s%2Fg%2F11txd0r32c",
+
+  grande:
+    "https://www.google.com/maps/place/Aroha+Palm+Grande/@15.5296686,73.7979849,17z/data=!3m1!4b1!4m6!3m5!1s0x3bbfc136110506bd:0xa3bf9093b17286d8!8m2!3d15.5296634!4d73.8005598!16s%2Fg%2F11twg_kdq3",
+};
 
 interface data_Type {
   name: string;

@@ -15,6 +15,7 @@ interface ContactGridProps {
     locations?: {
       title: string;
       address: string[];
+      mapUrl: string;
     }[];
   }[];
 }
@@ -47,18 +48,36 @@ const ContactGrid = ({ backgroundImage, cards }: ContactGridProps) => {
                 </div>
 
                 {card.locations && (
-                <div className="flex flex-col md:flex-row gap-12">
+                  <div className="flex flex-col md:flex-row gap-12">
                     {card.locations.map((location) => (
-                      <div key={location.title} className="flex flex-col gap-3">
-                        <h3 className="text-sm md:text-[16px] text-start font-semibold">
+                      <div key={location.title} className="relative z-50 flex flex-col gap-3">
+                        {/* <h3 className="text-sm md:text-[16px] text-start font-semibold">
                           {location.title}
-                        </h3>
+                        </h3> */}
+                        <Link
+                          href={location.mapUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm md:text-[16px] text-start font-semibold hover:underline"
+                        >
+                          {location.title}
+                        </Link>
 
-                        <div className="flex flex-wrap text-xs md:text-[15px] md:flex-col md:gap-2">
+                        {/* <div className="flex flex-wrap text-xs md:text-[15px] md:flex-col md:gap-2">
                           {location.address.map((line) => (
                             <p key={line}>{line}</p>
                           ))}
-                        </div>
+                        </div> */}
+                        <Link
+                          href={location.mapUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex flex-wrap text-xs md:text-[15px] md:flex-col md:gap-2 hover:underline"
+                        >
+                          {location.address.map((line) => (
+                            <p key={line}>{line}</p>
+                          ))}
+                        </Link>
                       </div>
                     ))}
                   </div>

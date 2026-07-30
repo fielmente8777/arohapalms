@@ -1,3 +1,4 @@
+import { SectionWithContainer } from "@/components/sectionComponants";
 import Image from "next/image";
 
 interface AboutSectionProps {
@@ -19,9 +20,9 @@ const AboutSection = ({
   details,
 }: AboutSectionProps) => {
   return (
-    <section className="bg-white py-24">
+    <SectionWithContainer sectionClassName="bg-white ">
       <div className="max_width text-center">
-        <h1 className="text-[68px] leading-[1.08] mx-auto max-w-[900px] text-blue mb-20">
+        <h1 className=" text-3xl md:text-[68px] leading-[1.08] mx-auto max-w-[900px] text-blue mb-20">
           {title}
         </h1>
 
@@ -35,7 +36,7 @@ const AboutSection = ({
           />
         </div>
 
-        <h2 className="text-[56px] leading-none items-center text-blue mb-12">
+        <h2 className="text-2xl md:text-[56px] leading-none items-center text-blue mb-12">
           {sectionTitle}
         </h2>
 
@@ -51,7 +52,7 @@ const AboutSection = ({
           ))}
         </div>
       </div>
-    </section>
+    </SectionWithContainer>
   );
 };
 

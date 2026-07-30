@@ -55,9 +55,12 @@ const NavMenu = () => {
                   <>
                     <Link
                       href={link.href}
-                      onClick={() =>
-                        setOpenMenu(openMenu === link.label ? null : link.label)
-                      }
+                      onClick={() => {
+                        setOpenMenu(
+                          openMenu === link.label ? null : link.label
+                        );
+                        setIsOpenNavBar(false);
+                      }}
                       className="flex w-full items-center justify-between text-sm md:text-lg font-primary tracking-[0.12em] text-[#005b96] hover:text-[#011f4b] transition-colors"
                     >
                       <span>{link.label}</span>
@@ -86,12 +89,12 @@ const NavMenu = () => {
                       }`}
                     >
                       <ul className="ml-6 flex flex-col gap-3">
-                        {/* sbsuvuy */}
+                    
                         {link.children.map((child) => (
                           <li key={child.href}>
                             <Link
                               href={child.href}
-                              // onClick={() => setIsOpenNavBar(false)}
+                              onClick={() => setIsOpenNavBar(false)}
                               className="block text-sm text-[#16386C] hover:text-[#011f4b] transition-colors"
                             >
                               {child.label}

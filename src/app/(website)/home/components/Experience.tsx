@@ -29,7 +29,7 @@ const Experience = ({
             {description}
           </p>
 
-          <div className="mt-16 flex flex-wrap justify-center gap-x-12 gap-y-4">
+          <div className="mt-16 grid grid-cols-2 md:flex flex-wrap justify-center gap-x-12 gap-y-4">
             {highlights.map((item) => (
               <span key={item} className="text-lg">
                 • {item}

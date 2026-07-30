@@ -1,3 +1,4 @@
+import { contact } from "@/utils/constent";
 import {
   CameraIcon,
   CarIcon,
@@ -17,7 +18,7 @@ export const homePageData = {
 
     cta: {
       text: "Reserve ",
-      href: "/booking",
+      href: contact.WhatsappCta,
     },
   },
   experience: {
@@ -50,7 +51,7 @@ export const homePageData = {
 
     cta: {
       text: "Click Here",
-      href: "/offers",
+      href: contact.WhatsappCta,
     },
   },
   locations: {
@@ -63,29 +64,29 @@ export const homePageData = {
 
     cards: [
       {
-        image: "images/cover1.jpg",
+        image: "/images/cover1.jpg",
         title: "Mandrem",
         description:
           "Set in Mandrem, enjoy calm, private stays just minutes from serene beaches, cafés, and North Goa's vibrant coastline.",
         cta: {
           text: "Explore Now",
-          href: "/locations/mandrem",
+          href: "/destination/mandrem",
         },
       },
       {
-        image: "images/AOB_0138.jpg",
+        image: "/images/AOB_0138.jpg",
         title: "Pilerne",
         description:
           "Located in Pilerne, enjoy a quiet, local setting with easy access to Candolim, Calangute, beaches, dining, and nightlife.",
         cta: {
           text: "Explore Now",
-          href: "/locations/pilerne",
+          href: "/destination/pilerne",
         },
       },
     ],
   },
   dine: {
-    background: "/arohapalms/public/images/villa-paradiso-7d232a.webp",
+    background: "/images/villa-paradiso-7d232a.webp",
 
     title: "Dine",
 
@@ -97,7 +98,7 @@ export const homePageData = {
 
     cta: {
       text: "Click Here",
-      href: "/dining",
+      href: "/experience",
     },
   },
   amenities: {
@@ -141,7 +142,7 @@ export const homePageData = {
           "Sunlit beaches, water sports, and coastal trails await nearby, perfect for ocean dips, exploration, and easygoing adventure.",
         cta: {
           text: "Click Here",
-          href: "/beach-adventure",
+          href: "/destination",
         },
       },
       {
@@ -151,7 +152,7 @@ export const homePageData = {
           "Explore churches, forts, flea markets, and North Goa's history, culture, and everyday charm woven together effortlessly.",
         cta: {
           text: "Click Here",
-          href: "/heritage-culture",
+          href: "/destination",
         },
       },
       {
@@ -161,7 +162,7 @@ export const homePageData = {
           "Experience vibrant nights with cruise casinos, live music, and entertainment where energy and indulgence come alive after dark.",
         cta: {
           text: "Click Here",
-          href: "/casino-nightlife",
+          href: "/destination",
         },
       },
       {
@@ -171,7 +172,7 @@ export const homePageData = {
           "Slow down with yoga, mindful moments, and calm surroundings that bring balance, relaxation, and a sense of inner ease.",
         cta: {
           text: "Click Here",
-          href: "/healing-wellbeing",
+          href: "/destination",
         },
       },
     ],
@@ -193,7 +194,7 @@ export const homePageData = {
       {
         name: "Sarthak Chavan",
         avatar: "/images/reviews/reviewer-2.webp",
-         googleIcon: "/icons/google.svg",
+        googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review: "Good villas.",
@@ -201,7 +202,7 @@ export const homePageData = {
       {
         name: "Vedant Chavan",
         avatar: "/images/reviews/reviewer-3.webp",
-         googleIcon: "/icons/google.svg",
+        googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review:
@@ -210,7 +211,7 @@ export const homePageData = {
       {
         name: "Atharva Burle",
         avatar: "/images/reviews/reviewer-4.webp",
-         googleIcon: "/icons/google.svg",
+        googleIcon: "/icons/google.svg",
         time: "2 months ago",
         rating: 5,
         review:

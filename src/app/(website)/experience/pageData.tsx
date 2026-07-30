@@ -1,3 +1,5 @@
+import { contact } from "@/utils/constent";
+
 export const experiencePageData = {
   intro: {
     title: "Discover Luxury",
@@ -42,7 +44,7 @@ export const experiencePageData = {
 
     cta: {
       text: "Enquire For These Experiences",
-      href: "/contact-us",
+      href: contact.WhatsappCta,
     },
   },
   Activites: {

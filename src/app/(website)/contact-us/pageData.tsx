@@ -1,3 +1,4 @@
+import { contact, mapLinks } from "@/utils/constent";
 import { PlaneIcon, RailIcon } from "@/utils/icons";
 
 export const contactPageData = {
@@ -13,11 +14,11 @@ export const contactPageData = {
         links: [
           {
             label: "+91 98342 20573",
-            href: "tel:+919834220573",
+            href: contact.callCta,
           },
           {
             label: "Click To WhatsApp",
-            href: "https://wa.me/919834220573",
+            href: contact.WhatsappCta,
           },
         ],
       },
@@ -39,6 +40,7 @@ export const contactPageData = {
         locations: [
           {
             title: "Aroha Palms Mandrem",
+            mapUrl: mapLinks.mandrem,
 
             address: [
               "House No. 290,",
@@ -46,16 +48,19 @@ export const contactPageData = {
               "Mandrem, Goa",
               "403527",
             ],
+           
           },
 
           {
             title: "Aroha Palms Majestic",
+            mapUrl: mapLinks.majestic,
 
             address: ["House No 67A,", "Pilerne, Goa", "403511"],
           },
 
           {
             title: "Aroha Palms Grande",
+            mapUrl: mapLinks.grande,
 
             address: ["House No 67B,", "Pilerne, Goa", "403511"],
           },
@@ -65,7 +70,7 @@ export const contactPageData = {
   },
   approach: {
     heading: "About Aroha Palms",
-   desc: `Aroha Palms is a hospitality brand and property operated by Akahata Hospitality Private Limited, a company incorporated in India. All bookings, payments, and guest services are provided by Akahata Hospitality Private Limited.
+    desc: `Aroha Palms is a hospitality brand and property operated by Akahata Hospitality Private Limited, a company incorporated in India. All bookings, payments, and guest services are provided by Akahata Hospitality Private Limited.
 
 GST: 30AAXCA4249B1ZV
 CIN: U55101GA2022PTC015434
