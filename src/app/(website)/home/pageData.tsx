@@ -8,7 +8,81 @@ import {
 } from "@/utils/icons";
 import { Images } from "lucide-react";
 import { PiSelectionBackgroundFill } from "react-icons/pi";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Aroha Palms - Luxury Villas & Apartments in Mandrem, Goa",
+
+  description:
+    "Aroha Palms, North Goa—calm villas & apartments in lush gardens, offering private stays with easy access to beaches and local experiences.",
+
+  keywords: [
+    "Aroha Palms",
+    "Luxury Villas Goa",
+    "Luxury Apartments Goa",
+    "Mandrem Goa",
+    "North Goa Villas",
+    "Goa Villa Rental",
+    "Holiday Villas Goa",
+    "Luxury Stay Goa",
+  ],
+
+  authors: [
+    {
+      name: "Aroha Palms",
+    },
+  ],
+
+  creator: "Aroha Palms",
+  publisher: "Aroha Palms",
+
+  alternates: {
+    canonical: "https://www.arohapalms.com/",
+  },
+
+  openGraph: {
+    title: "Aroha Palms - Luxury Villas & Apartments in Mandrem, Goa",
+
+    description:
+      "Aroha Palms, North Goa—calm villas & apartments in lush gardens, offering private stays with easy access to beaches and local experiences.",
+
+    url: "https://www.arohapalms.com/",
+    siteName: "Aroha Palms",
+    locale: "en_GB", // agar site en-GB use karti hai
+    type: "website",
+
+    images: [
+      {
+        url: "/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Aroha Palms Luxury Villas",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Aroha Palms - Luxury Villas & Apartments in Mandrem, Goa",
+    description:
+      "Aroha Palms, North Goa—calm villas & apartments in lush gardens, offering private stays with easy access to beaches and local experiences.",
+    images: ["/images/og-image.webp"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 export const homePageData = {
   hero: {
     video: "/videos/luxuryvilla.mp4",

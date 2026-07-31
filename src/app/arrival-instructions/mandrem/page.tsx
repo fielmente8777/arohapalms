@@ -8,9 +8,74 @@ import GuestArrival from "./components/GuestArrival";
 import { guestArrivalData } from "./pageData";
 
 export const metadata: Metadata = {
-  title: "Guest Arrival Instructions - Mandrem | Aroha Palms",
+  title: "Mandrem - Aroha Palms",
+
   description:
-    "Guest arrival instructions for Aroha Palms, Mandrem. Find directions, transportation details, check-in process, and useful information before your stay.",
+    "Picture this: Greek-inspired elegance meets tropical bliss in the heart of Goa. Discover Aroha Palms Magnifica and luxury villas in Mandrem, North Goa.",
+
+  keywords: [
+    "Aroha Palms",
+    "Mandrem Goa",
+    "Aroha Palms Magnifica",
+    "Luxury Villas Mandrem",
+    "Mandrem Villas",
+    "Luxury Stay Goa",
+    "North Goa Villas",
+    "Goa Holiday Villas",
+    "Luxury Accommodation Goa",
+    "Private Villas Goa",
+  ],
+
+  authors: [
+    {
+      name: "Aroha Palms",
+    },
+  ],
+
+  creator: "Aroha Palms",
+  publisher: "Aroha Palms",
+
+  alternates: {
+    canonical: "https://arohapalms.com/mandrem/",
+  },
+
+  openGraph: {
+    title: "Mandrem - Aroha Palms",
+    description:
+      "Discover Aroha Palms Magnifica in Mandrem, North Goa—Greek-inspired luxury villas offering a serene and elegant getaway.",
+    url: "https://arohapalms.com/mandrem/",
+    siteName: "Aroha Palms",
+    locale: "en_GB",
+    type: "website",
+    images: [
+      {
+        url: "/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Aroha Palms Mandrem",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Mandrem - Aroha Palms",
+    description:
+      "Discover Aroha Palms Magnifica in Mandrem, North Goa—Greek-inspired luxury villas.",
+    images: ["/images/og-image.webp"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+    },
+  },
 };
 
 export default function GuestArrivalPage() {
