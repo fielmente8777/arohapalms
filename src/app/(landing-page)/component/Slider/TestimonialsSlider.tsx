@@ -2,6 +2,7 @@
 
 import { TestimonialsProps } from "@/@types/landingPageTypes";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
+import { BlueTickIcon, StarIcon } from "@/utils/icons";
 import { Autoplay } from "swiper/modules";
 
 const TestimonialsSlider: React.FC<{
@@ -30,6 +31,12 @@ const TestimonialsSlider: React.FC<{
         }}
         renderSlide={(item) => (
           <div className="rounded-2xl text-white backdrop-blur-sm border border-white/10 bg-background-dark-2 p-6 flex flex-col gap-5">
+            <div className="flex items-center gap-1">
+              {Array.from({ length: item.rating ?? 5 }).map((_, i) => (
+                <StarIcon key={i} />
+              ))}
+              {/* <BlueTickIcon /> */}
+            </div>
             <p className="">{item.review}</p>
             <div className="w-full h-px bg-white/10" />
             <p className="text-lg capitalize">{item.name}</p>

@@ -460,26 +460,31 @@ export const landingPageData = {
         name: "Naveen Kumar Dagar",
         review:
           "Amazing place amazing staff members Kuldeep, seeta ji and Manoj everyone is very nice and taking care of small small requirements, will miss this villa, checking out today",
+           rating: 5,
       },
       {
         name: "vedant chavan",
         review:
-          "The place and the staff of this place is very polite and gives homely vibes to all its guet, specially manoj ji who manages it is very friemdly and always ready to help the person It feels like the dream house of many people",
+          "The place and the staff of this place is very polite and gives homely vibes to all its guest, specially manoj ji who manages it is very friendly and always ready to help the person It feels like the dream house of many people",
+           rating: 5,
       },
       {
         name: "Gudiya Yadav",
         review:
           "Paradiso is an excellent luxury villa for families and groups visiting Goa. Beautiful interiors, relaxing pool area, and easy access to restaurants, nightlife, and beaches. We especially appreciated that the beach was only a 2-minute drive away manager Manoj yadav was very helpful,kind and loyal ",
+           rating: 5,
       },
       {
         name: "Atharva burle",
         review:
-          "The villa was superb , and villa manager named Mr. Manoj he treated us very well and was too nyc and kind . I enjoyed a lot . 😃",
+          "The villa was superb , and villa manager named Mr. Manoj he treated us very well and was too nice and kind . I enjoyed a lot . 😃",
+           rating: 5,
       },
       {
         name: "Sonu Rawat",
         review:
           "Aroha Palms Paradiso combines luxury, privacy, and location perfectly. The villa is close to Mandrem and Ashwem beaches while still feeling calm and exclusive. Loved evenings at Lazy Dog and the nearby cafes. One of the finest luxury villas in Goa",
+           rating: 5,
       },
     ],
   },
