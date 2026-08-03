@@ -17,8 +17,11 @@ export interface AccommodationSectionProps {
       icon: JSX.Element;
       label: string;
     }[];
+    originalPrice: string;
     startingPrice: string;
     moreInfo: {
+      title: string;
+      roominfo: string;
       description: string[];
       listOfData: {
         title: string;
@@ -28,7 +31,7 @@ export interface AccommodationSectionProps {
         author: string;
         description: string;
       };
-    };
+    }
     note: {
       title: string;
       notes: string[];

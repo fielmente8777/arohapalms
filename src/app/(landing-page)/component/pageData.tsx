@@ -19,11 +19,12 @@ import {
   SecurityIcon,
   SpaciousRoomIcon,
 } from "@/utils/landingIcon";
+import { title } from "process";
 
 export const landingPageData = {
   offer: [
-    "Monsoon Bonanza 30% off limited time offer",
-    "Monsoon Bonanza 30% off limited time offer",
+    "Monsoon Bonanza 30% off limited time offer valid till 31 August",
+    "Monsoon Bonanza 30% off limited time offer valid till 31 August",
   ],
   hero: {
     tag: "A Paradise in North Goa",
@@ -61,17 +62,17 @@ export const landingPageData = {
     // title: "Unwind, Explore, and Create Unforgettable Memories at Aroha Palms.",
     // description:
     //   "Escape to the peaceful charm of Aroha Palms, where lush gardens, open spaces, and tranquil surroundings offer the perfect place to relax and recharge. Just minutes from Goa's beaches, water sports, heritage sites, wellness retreats, and vibrant nightlife, you can explore the best of the destination before returning to the comfort of your private retreat.",
-    title: "Elevated Living Between the Palms and the Sea",
+    title: "Where Mediterranean Grace Meets Coastal Serenity",
     description: [
-      "Global elites and discerning travelers are shifting away from the high-energy crowds of Calangute and Anjuna in search of the serene privacy, pristine shores, and refined luxury of Mandrem.",
-      "Escape to Aroha Palms Villas, where true exclusivity meets timeless design. Inspired by the sun-drenched elegance of Greek minimalism and the enduring charm of Portuguese craftsmanship, every villa is a private sanctuary crafted for discerning travelers. Wake up to sweeping mountain views, lush green landscapes, and the soothing sound of a natural stream flowing beside the property. Tucked away in the serene heart of Mandrem, yet moments from Goa's finest beaches, Aroha Palms offers the perfect balance of luxury, privacy, and nature. Book your stay today and discover a quieter, more beautiful side of Goa.",
+      "Welcome to Aroha Palms, an exclusive collection of luxury villas and private apartments tucked along a peaceful streamside in North Goa’s coveted Mandrem coast. Designed in a timeless Mediterranean aesthetic and surrounded by lush tropical foliage, each property offers a private sanctuary where modern sophistication meets the slow-paced rhythm of Goan susegad.",
+      "Whether you are seeking an intimate family escape, a multi-generational reunion, a wellness retreat, or a grand destination event, Aroha Palms brings together spacious living, private pools, and bespoke hospitality all just a 3-5 minute drive from the golden sands of Mandrem Beach.",
     ],
     images: [
       "/landing-page/gallery/img-1.webp",
       "/landing-page/gallery/img-2.webp",
       "/landing-page/gallery/img-3.webp",
       "/landing-page/gallery/img-5.webp",
-      "/landing-page/gallery/img-6.webp",
+      // "/landing-page/gallery/img-6.webp",
       "/rooms/Magnifica/magnifica10.webp",
       "/landing-page/gallery/Rectangle-34624171.png",
       "/landing-page/gallery/Rectangle-34624176.png",
@@ -99,7 +100,7 @@ export const landingPageData = {
     note: "No need to split up the group or book multiple hotel rooms. Our largest estate villas offer seamless group living with space for up to 40 guests. Enjoy private amenities, expansive outdoor lounges, and effortless hosting, all in one magnificent setting.",
     cards: [
       {
-        title: "Aroha Palms Magnifica",
+        title: "Aroha Palms Villa Magnifica - The Intimate One",
         type: "Villa",
         description:
           "Greek-inspired elegance meets tropical bliss. Perched between a serene river and lush mountains, just 2 km from Mandrem Beach.",
@@ -139,35 +140,58 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        originalPrice: "₹ 23400",
+        originalPrice: "₹ 23400/night",
         startingPrice: "₹ 18,000/night",
         moreInfo: {
+          title: "Mediterranean Grace Meets Coastal Tranquility",
+          roominfo:
+            "4 Bedrooms | 4,000 Sq. Ft. | Private 10m Pool | Streamside Sanctuary",
+
           description: [
-            "Where Mediterranean grace meets the vibrant soul of the Arabian Sea, Villa Magnifica by Aroha Palms redefines coastal luxury in North Goa. Spanning 4,000 square feet of private sanctuary in Mandrem, this estate balances grand charm with refined sophistication. Positioned alongside a peaceful stream, it provides an exclusive retreat immersed in nature. Best of all, the pristine shores of Mandrem Beach are just a 3-minute drive away.",
-            "A sparkling 10-meter pool and open balconies set the scene for Goa’s iconic sundowners, whether you are unwinding poolside or enjoying the evening breeze. Featuring 4 spacious bedrooms and fluid indoor-outdoor living areas, it is ideal for family holidays, group getaways, or intimate escapes. Villa Magnifica offers an elevated yet cozy atmosphere that turns every moment into a lasting memory. Pack your bags—your private paradise is waiting!",
+            "Where the soothing rhythm of a flowing stream meets Mediterranean architecture, Villa Magnifica is the hidden gem of our Mandrem collection. Spanning 4,000 square feet of private sanctuary, this intimate retreat enjoys an exclusive waterfront setting, offering guests a peaceful escape immersed in nature's quiet beauty. Just a 3–5 minute drive from the pristine shores of Mandrem Beach, it strikes the perfect balance between tranquil seclusion and coastal adventure.",
+
+            "Wake up to birdsong over the water, spend peaceful afternoons beside your private 10-metre swimming pool, or unwind with sunset drinks on the breezy balcony. Featuring four light-filled bedrooms and a seamless indoor-outdoor layout, Villa Magnifica is thoughtfully designed for intimate family vacations, boutique group retreats, or couples seeking a secluded luxury escape in North Goa.",
           ],
           listOfData: {
             title: "Explore your stay",
             list: [
-              "Villa Magnifica stands out as one of the finest private villas in Mandrem due to its:",
-              "– Quiet North Goa location, offering a secluded haven to experience the authentic susegad lifestyle",
-              "– Elegant Mediterranean design spread across 4,000 sq. ft. of picture-perfect sanctuary",
-              "– Serene streamside setting, delivering a calming natural backdrop from morning to night",
-              "– Private 10m swimming pool, designed for total relaxation under the Goan sun",
-              "– High-end infrastructure, including whisper-quiet AC, spa-inspired rain showers, and smart entertainment systems",
-              "– Prime location near iconic beaches and dining destinations like Thalassa, La Plage, and Lazy Dog",
-              "ADD-ON SERVICES",
-              "– Gourmet dining served in-house through a dedicated Chef-on-Call service.",
-              "– Private airport transfers curated for seamless travel to and from Mopa or Dabolim airports.",
-              "– Tailored watersports itineraries designed to add excitement to your coastal escape.",
-              "– Flexible booking options to combine luxury suites or expand your private villa experience.",
+              "Villa Magnifica stands out as Mandrem's premier waterfront sanctuary due to its:",
+
+              "– Intimate 4-bedroom floor plan spanning 4,000 sq. ft., designed for privacy and comfort.",
+              "– Exclusive streamside location offering serene water views and lush tropical surroundings.",
+              "– Timeless Mediterranean-inspired architecture with elegant, sunlit interiors.",
+              "– Private 10-metre swimming pool with a spacious poolside terrace for all-day relaxation.",
+              "– Premium amenities including whisper-quiet air conditioning, spa-style rain showers, Smart TVs, and high-speed Wi-Fi.",
+              "– Approx. 3–5 minutes by car to Mandrem Beach and close to renowned dining destinations including La Plage, Thalassa, and Lazy Dog.",
+
+              "CURATED ADD-ON SERVICES",
+
+              "– Private Chef Experience: Enjoy freshly prepared gourmet meals served in the comfort of your villa—from leisurely poolside breakfasts to bespoke multi-course dinners (advance booking required).",
+
+              "– Private Airport Transfers: Chauffeur-driven transfers to and from Mopa (GOX) and Dabolim (GOI) airports (advance booking required).",
+
+              "– Personalised Coastal Experiences: Tailor-made itineraries featuring watersports, yacht charters, sightseeing tours, and curated local excursions.",
+
+              "– Flexible Accommodation Options: Additional villas or suites can be arranged for larger groups and special gatherings.",
+
+              "– Private Celebrations & Events: Bespoke arrangements for birthdays, anniversaries, intimate weddings, and corporate retreats.",
+
+              "Essential Stay Information:",
+
+              "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+
+              "2. Dedicated on-site caretakers are available daily from 9:00 AM to 9:00 PM for housekeeping and guest assistance.",
+
+              "3. Villa kitchens are fully equipped for self-cooking, while the adjacent restaurant also offers convenient in-villa meal delivery.",
+
+              "4. 24/7 estate security with professional personnel and CCTV surveillance for complete peace of mind.",
             ],
           },
           review: {
-            author: "Rushikesh Nimbhorkar",
+            author: "Kajal",
             description:
-              "Had a great experience with Aroha Palms with the pool parties and much needed escape from the daily chaos. Place was very spacious and awesome for people looking for modern and aesthetically pleasing things. Awesome help from Rahul and Renu with managing all the maintenance of the place and was much needed help, greatly appreciate their efforts.",
-          },
+              "Had a great stay! The caretaker was helpful, the room was clean and comfortable, and the location was perfect. I would definitely recommend this place to others.",
+             },
         },
         note: {
           title: "Note:",
@@ -209,7 +233,7 @@ export const landingPageData = {
         },
       },
       {
-        title: "Aroha Palms Paradiso",
+        title: "Aroha Palms Villa Paradiso – The All-Rounder",
         type: "Villa",
         description:
           "Luxury meets laid-back Goan charm. Private pool, terrace with river & mountain views, and a lush lawn perfect for gatherings.",
@@ -252,25 +276,35 @@ export const landingPageData = {
         originalPrice: "₹ 28600",
         startingPrice: "₹ 22,000/night",
         moreInfo: {
+          title: "Unmatched Scale, Tropical Privacy, and Grand Elegance",
+          roominfo: "5 Bedrooms | 5,000 Sq. Ft. | Private 10m Pool | Sprawling Estate",
           description: [
-            "Where grand coastal scale meets pure Mediterranean sophistication, Villa Paradiso by Aroha Palms sets a new benchmark for luxury in North Goa. Sprawling across an impressive 5,000 square feet in Mandrem, this generous estate offers an abundance of space, total privacy, and timeless charm. Surrounded by lush tropical foliage beside a gentle running stream, it provides a quiet sanctuary designed for guests who desire both room to breathe and high-end elegance. Best of all, the golden sands of Mandrem Beach are only a 3-minute drive from your front door.",
-            "At the center of the estate, a sweeping 10-meter private pool and airy balconies create an inviting space for vibrant poolside gatherings or quiet evening cocktails. Featuring 5 spacious bedrooms and open indoor-outdoor living zones, Villa Paradiso is uniquely equipped to host larger family reunions, milestone group celebrations, or multi-generational getaways. It is an expansive, luxurious haven where privacy and togetherness exist in perfect balance. Pack your bags—your ultimate Goan escape awaits!",
+            "Bright, open, and undeniably vibrant, Villa Paradiso by Aroha Palms is designed around the art of effortless hosting. Sprawling across an impressive 5,000 square feet in Mandrem, this 5-bedroom estate boasts the largest and sunniest pool terrace on the property, earning its place as the undeniable social hub of the collection. Framed by lush tropical greenery and set beside a gentle running stream, it offers an inviting oasis where high-end Greek-inspired elegance meets coastal freedom, just a 3-5 minutes' drive from Mandrem Beach.",
+            "Days at Paradiso naturally center around the water — from morning laps in the private 10-meter pool to sun-drenched afternoons and golden-hour cocktails on the sweeping deck. Featuring 5 spacious bedrooms and fluid, open-plan living areas that flow seamlessly into the outdoor pool yard, it is uniquely built for families and friends who love to gather, celebrate, and unwind together in total comfort.",
           ],
           listOfData: {
             title: "Explore your stay",
             list: [
-              "Villa Paradiso stands out as one of the finest luxury estates in Mandrem due to its:",
-              "– Massive 5,000 sq. ft. floor plan, providing vast living areas wrapped in striking Mediterranean architecture",
-              "– 5 private, elegantly appointed bedrooms built to comfortably host larger parties and families",
-              "– Peaceful streamside setting in North Goa, letting you experience the slow-paced susegad lifestyle in total quiet",
-              "– Private 10m swimming pool framed by lush tropical greenery, built for all-day relaxing and swimming",
-              "– Flawless modern infrastructure, including total climate control, high-pressure rain showers, and premium entertainment systems",
-              "– Prime access to North Goa’s coastal circuit, including Ashwem Beach, Morjim, and legendary spots like Thalassa",
-              "ADD-ON SERVICES",
-              "– Bespoke culinary experiences cooked fresh at the estate by a private Chef-on-Call.",
-              "– Private airport transfers organized directly to and from Mopa or Dabolim airports.",
-              "– Custom watersports and coastal itineraries tailored to your group's preference.",
-              "– Expandable booking options to combine luxury suites or villas for even larger group requirements.",
+              "Villa Paradiso stands out as Mandrem's ultimate social estate due to its:",
+              "– Generous 5-bedroom floor plan spanning 5,000 sq. ft., crafted for effortless group hosting and togetherness",
+              "– Expansive private sundeck surrounding a 10m swimming pool, optimized for all-day sunbathing and poolside dining",
+              "– Fluid indoor-outdoor architectural layout connecting main living spaces directly to the terrace",
+              "– Serene streamside surroundings providing a peaceful, nature-filled backdrop from sunrise to sunset",
+              "– Premium estate infrastructure, including whisper-quiet AC, spa-style rain showers, and high-speed Wi-Fi",
+              "– Approx. 3–5 minutes by car to Mandrem Beach and close proximity to iconic dining spots like Thalassa and La Plage",
+
+              "CURATED ADD-ON SERVICES",
+              "– Chef-on-Call Service: Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+              "– Private Airport Transfers: Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
+              "– Coastal & Watersports Itineraries: Custom activity planning including watersports packages, yacht charters, and local excursions.",
+              "– Flexible Accommodation Options: Configurable villa requirements arranged with our reservation specialists to fit your exact group size.",
+              "– Event Options: Configurable event arrangements and bespoke hosting services for special occasions. ",
+              "Essential Stay Information:",
+              "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+              "Dedicated On-Site Caretakers: On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+              "Cooking facilities: Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+              "24/7 Estate Security: Complete peace of mind with round-the-clock security personnel and CCTV surveillance",
+
             ],
           },
           review: {
@@ -313,7 +347,7 @@ export const landingPageData = {
         },
       },
       {
-        title: "Aroha Palms Serenity",
+        title: "Aroha Palms Villa Serenity – The Stillwater",
         type: "Villa",
         description:
           "Whitewashed walls, blue accents, lush greenery. A tranquil, spotless retreat with private pool and elegant interiors.",
@@ -353,28 +387,53 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        originalPrice:"₹ 28600",
+        originalPrice: "₹ 28600/night",
         startingPrice: "₹ 22,000/night",
         moreInfo: {
+          title: "Understated Luxury Wrapped in Coastal Calm",
+
+          roominfo:
+            "5 Bedrooms | 5,000 Sq. Ft. | Private 10m Pool | Peaceful Retreat",
+
           description: [
-            "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Aroha Palms Serenity, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.",
-            "The private pool and spacious terrace set the stage for Goa’s signature sundowners, whether you’re lounging with a cocktail or making a splash. Whether it’s a family retreat, a romantic escape, or a getaway with friends, Aroha Palms Serenity promises a luxurious yet homely vibe that will make leaving feel like the hardest part. Pack your bags—paradise awaits!",
+            "True to its name, Villa Serenity is a retreat for the senses—a place where time slows down and the gentle murmur of a nearby stream replaces the noise of everyday life. Set within 5,000 square feet of lush tropical gardens in Mandrem, this five-bedroom villa embodies calm in every detail. Just a 3–5 minute drive from the pristine shores of Mandrem Beach, it offers a peaceful sanctuary framed by timeless Greek-inspired architecture and tranquil natural surroundings.",
+
+            "Begin your mornings with coffee on shaded balconies overlooking tropical greenery, unwind beside the private 10-metre swimming pool through the afternoon, and enjoy intimate dinners under the stars as evening sets in. Featuring five beautifully appointed bedrooms and seamless indoor-outdoor living spaces, Villa Serenity is thoughtfully designed for family holidays, wellness retreats, and memorable getaways with friends seeking privacy, comfort, and relaxation.",
           ],
+
           listOfData: {
             title: "Explore your stay",
             list: [
-              "Aroha Palms Serenity stands out as one of the top villas in Mandrem due to its:",
-              "– Secluded North Goa location, offering the perfect escape to experience the susegad lifestyle",
-              "– Bright, Greek-inspired interiors, exuding subtle luxury with top-notch amenities",
-              "– Serene river flowing by the property, creating a soothing backdrop to wake up to",
-              "– Charming terrace, ideal for enjoying your morning brew and a leisurely breakfast",
-              "– Private pool, perfect for lounging and soaking up the Goan sun",
-              "– Easy access to Goa’s stunning beaches and vibrant tourist attractions",
-              "ADD-ON SERVICES",
-              "– All vegetarian and non-vegetarian meals are available in-house at an additional cost.",
-              "– The costs for the aforementioned food and beverage offerings and events are subject to an 18% G'ST charge.",
-              "– A bonfire can be set up for the guests at an extra charge of Rs. 3000 per session.",
-              "– Prices may vary subject to availability and peak season rates.",
+              "Villa Serenity stands out as Mandrem's most peaceful luxury retreat due to its:",
+
+              "– Quiet garden setting surrounded by lush tropical greenery and serene streamside views.",
+              "– Spacious 5-bedroom estate spanning 5,000 sq. ft., designed for comfort, privacy, and togetherness.",
+              "– Private 10-metre swimming pool with expansive sun decks for peaceful swims and all-day relaxation.",
+              "– Timeless Greek-inspired architecture featuring airy layouts, elegant interiors, and soothing colour palettes.",
+              "– Premium amenities including whisper-quiet air conditioning, spa-style rain showers, Smart TVs, and high-speed Wi-Fi.",
+              "– Prime North Goa location just 3–5 minutes from Mandrem Beach, Ashwem Beach, and renowned dining destinations including Thalassa and La Plage.",
+
+              "CURATED ADD-ON SERVICES",
+
+              "– Private Chef Experience: Enjoy freshly prepared gourmet meals served in the comfort of your villa—from leisurely poolside breakfasts to bespoke multi-course dinners (advance booking required).",
+
+              "– Private Airport Transfers: Chauffeur-driven transfers to and from Mopa (GOX) and Dabolim (GOI) airports (advance booking required).",
+
+              "– Personalised Coastal Experiences: Tailor-made itineraries featuring watersports, yacht charters, sightseeing tours, and curated local excursions.",
+
+              "– Flexible Accommodation Options: Additional villas or luxury suites can be arranged for larger groups and extended family stays.",
+
+              "– Private Celebrations & Events: Bespoke arrangements for birthdays, anniversaries, intimate weddings, wellness retreats, and corporate gatherings.",
+
+              "Essential Stay Information:",
+
+              "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+
+              "2. Dedicated on-site caretakers are available daily from 9:00 AM to 9:00 PM for housekeeping and guest assistance.",
+
+              "3. Villa kitchens are fully equipped for self-cooking, while the adjacent restaurant also offers convenient in-villa meal delivery.",
+
+              "4. 24/7 estate security with professional personnel and CCTV surveillance for complete peace of mind.",
             ],
           },
           review: {
@@ -418,14 +477,14 @@ export const landingPageData = {
         },
       },
       {
-        title: "Aroha Palms Marisol",
-        type: "Grand Villa",
+        title: "Aroha Palms Villa Caia – The Reunion",
+        type: "Villa",
         description:
-          "Our largest retreat. Ideal for weddings, corporate offsites and large celebrations with unmatched space and privacy.",
+          "A luxurious retreat for family reunions and friend getaways. Greek-inspired architecture, private pool, and starlit dinners.",
         amenities: [
-          { icon: <BedIcon />, label: "18 Rooms" },
-          { icon: <BathTubIcon />, label: "18 Baths" },
-          { icon: <GuestIcon />, label: "36 Guests" },
+          { icon: <BedIcon />, label: "7 Rooms" },
+          { icon: <BathTubIcon />, label: "7 Baths" },
+          { icon: <GuestIcon />, label: "14 Guests" },
         ],
         inRoomAmenities: [
           {
@@ -458,36 +517,58 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        originalPrice: "₹ 97500",
-        startingPrice: " ₹ 75,000/night",
+        originalPrice: "₹ 40300/night",
+        startingPrice: "₹ 31,000/night",
         moreInfo: {
+          title: "Together in Luxury, Designed for Every Generation",
+
+          roominfo:
+            "7 Bedrooms | Combination Estate: 5-BR Villa + 2-BR Apartment | Sleeps up to 14",
+
           description: [
-            "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Marisol, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke",
-            "The private pool and spacious terrace set the stage for Goa’s signature sundowners, whether you’re lounging with a cocktail or making a splash. Whether it’s a family retreat, a romantic escape, or a getaway with friends, Villa Marisol promises a luxurious yet homely vibe that will make leaving feel like the hardest part. Pack your bags—paradise awaits!",
+            "When a single villa isn't quite enough for your group, Villa Caia offers the perfect step up in space and flexibility. Combining a flagship five-bedroom Greek-inspired villa with an adjacent private two-bedroom luxury apartment, Caia provides seven beautifully appointed bedrooms in total. This thoughtfully designed estate allows multi-generational families and groups of friends to stay together while still enjoying the comfort of separate living quarters. Set beside a tranquil stream and surrounded by lush tropical greenery, it delivers complete privacy just a 3–5 minute drive from Mandrem Beach.",
+
+            "At the heart of the estate lies a private 10-metre swimming pool and expansive outdoor terrace, creating the perfect setting for leisurely poolside lunches, sunset cocktails, and unforgettable evenings under the stars. Seamless indoor-outdoor living spaces and sun-filled Mediterranean-inspired interiors blend modern luxury with warm Goan hospitality, making Villa Caia the ideal destination for family reunions, group celebrations, and extended coastal escapes.",
           ],
           listOfData: {
             title: "Explore your stay",
             list: [
-              "Villa Marisol stands out as one of the top villas in Mandrem due to its",
-              "– Secluded North Goa location, offering the perfect escape to experience the susegad lifestyle",
-              "– Bright, Greek-inspired interiors, exuding subtle luxury with top-notch amenities",
-              "– Serene river flowing by the property, creating a soothing backdrop to wake up to",
-              "– Charming terrace, ideal for enjoying your morning brew and a leisurely breakfast",
-              "– Private pool, perfect for lounging and soaking up the Goan sun",
-              "– Easy access to Goa’s stunning beaches and vibrant tourist attractions",
-              "ADD-ON SERVICES",
-              "– All vegetarian and non-vegetarian meals are available in-house at an additional cost.",
-              "– The costs for the aforementioned food and beverage offerings and events are subject to an 18% G'ST charge.",
-              "– The costs for the aforementioned food and beverage offerings and events are subject to an 18% GST charge.",
-              "– Prices may vary subject to availability and peak season rates.",
-              "Tan. Tunes. Tranquility – That’s what a day at Villa Marisol looks like.",
-              "Tucked away in the serene landscape of Mandrem, Villa Marisol is where luxury meets laid-back Goan charm. Start your day with a refreshing dip in the private pool or sip on your morning coffee while soaking in the river and mountain views from the terrace. Just 2 km away from Mandrem Beach, a quick drive takes you to golden sands and azure waters—perfect for sunbathing, swimming, or simply lazing with a coconut in hand. Back at the villa, the lush lawn sets the stage for corporate offsites, intimate events, or a friendly game of football. As the sun dips, grill up a BBQ feast, and let the good times roll. Feeling adventurous? Explore North Goa’s iconic spots—Ashwem Beach, Chapora Fort, and the bustling Anjuna Flea Market. As the night deepens, retreat to your luxurious haven, where every corner whispers relaxation and revelry in equal measure.",
+              "Villa Caia stands out as Mandrem's premier reunion estate due to its:",
+
+              "– Unique 7-bedroom combination estate featuring a 5-bedroom luxury villa and a private 2-bedroom apartment, comfortably accommodating up to 14 guests.",
+              "– Ideal balance of spacious shared living areas and independent private accommodation for families and larger groups.",
+              "– Peaceful streamside setting surrounded by lush tropical greenery, offering a tranquil North Goa escape.",
+              "– Private 10-metre swimming pool with an expansive terrace, perfect for relaxing, entertaining, and outdoor dining.",
+              "– Premium amenities including whisper-quiet air conditioning, spa-style rain showers, Smart TVs, and high-speed Wi-Fi.",
+              "– Prime location just 3–5 minutes from Mandrem Beach and close to Ashwem Beach, Morjim Beach, Thalassa, La Plage, and Lazy Dog.",
+
+              "CURATED ADD-ON SERVICES",
+
+              "– Private Chef Experience: Enjoy freshly prepared gourmet meals served in the comfort of your villa—from leisurely poolside breakfasts to bespoke multi-course dinners (advance booking required).",
+
+              "– Private Airport Transfers: Chauffeur-driven transfers to and from Mopa (GOX) and Dabolim (GOI) airports (advance booking required).",
+
+              "– Personalised Coastal Experiences: Tailor-made itineraries featuring watersports, yacht charters, sightseeing tours, and curated local excursions.",
+
+              "– Flexible Accommodation Options: Additional villas or luxury suites can be arranged for even larger groups and destination celebrations.",
+
+              "– Private Celebrations & Events: Bespoke arrangements for birthdays, anniversaries, family reunions, intimate weddings, and corporate retreats.",
+
+              "Essential Stay Information:",
+
+              "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+
+              "2. Dedicated on-site caretakers are available daily from 9:00 AM to 9:00 PM for housekeeping and guest assistance.",
+
+              "3. Villa kitchens are fully equipped for self-cooking, while the adjacent restaurant also offers convenient in-villa meal delivery.",
+
+              "4. 24/7 estate security with professional personnel and CCTV surveillance for complete peace of mind.",
             ],
           },
           review: {
-            author: "Nishant Chury",
+            author: "Nilesh Agarwal",
             description:
-              "The villa is super amazing and aesthetically made for comfort, and relaxation. The property is incredibly clean and hygienic because of the helpers of the property Manoj and Gudiya. They are very polite, and helpful. Over all the property is beautiful with a nice Swimming Pool, big rooms and hygiene.",
+              "Villa is beautiful. The caretaker kuldip is a great guy. Good service.",
           },
         },
         note: {
@@ -503,42 +584,10 @@ export const landingPageData = {
         },
         location: "Mandrem",
         images: [
-          "/rooms/Magnifica/Magnifica.png",
-          "/rooms/Magnifica/magnifica2.webp",
-          "/rooms/Magnifica/magnifica6.jpg",
-          "/rooms/Magnifica/magnifica12.webp",
-          "/rooms/Magnifica/magnifica8.jpg",
-          "/rooms/Magnifica/magnifica14.webp",
-          "/rooms/Magnifica/magnifica10.webp",
-          "/rooms/Magnifica/magnifica11.jpg",
-          "/rooms/Magnifica/magnifica18.jpg",
-          "/rooms/Magnifica/magnifica19.webp",
-          "/rooms/Paradiso/Paradiso.png",
-          "/rooms/Paradiso/paradiso1.jpg",
-          "/rooms/Paradiso/paradiso5.jpg",
-          "/rooms/Paradiso/paradiso6.webp",
-          "/rooms/Paradiso/paradiso10.jpg",
-          "/rooms/Paradiso/paradiso11.jpg",
-          "/rooms/Paradiso/paradiso12.jpg",
-          "/rooms/Paradiso/paradiso15.webp",
-          "/rooms/Paradiso/paradiso2.jpg",
-          "/rooms/Serenity/Serenity.png",
           "/rooms/Serenity/serenity8.jpg",
           "/rooms/Serenity/serenity9.jpg",
           "/rooms/Serenity/serenity4.jpg",
           "/rooms/Serenity/serenity1.jpg",
-          "/rooms/Paradiso/paradiso4.jpg",
-          "/rooms/Magnifica/magnifica17.webp",
-          "/rooms/Magnifica/magnifica13.webp",
-          "/rooms/Magnifica/magnifica4.jpg",
-          "/rooms/Magnifica/magnifica1.jpg",
-          "/rooms/Magnifica/magnifica5.jpg",
-          "/rooms/Magnifica/magnifica9.jpg",
-          "/rooms/Magnifica/magnifica15.jpg",
-          "/rooms/Magnifica/magnifica16.webp",
-          "/rooms/Magnifica/magnifica20.jpg",
-          "/rooms/Magnifica/magnifica3.jpg",
-          "/rooms/Magnifica/magnifica7.jpg",
           "/rooms/Emerald/Emerald.png",
           "/rooms/Emerald/emerald1.jpg",
           "/rooms/Emerald/emerald6.webp",
@@ -563,115 +612,7 @@ export const landingPageData = {
         },
       },
       {
-        title: "Aroha Palms Encanto",
-        type: "Villa",
-        description:
-          "A luxurious yet homely vibe. Private pool, spacious terrace, and sundowners under Goan skies.",
-        amenities: [
-          { icon: <BedIcon />, label: "10 Rooms" },
-          { icon: <BathTubIcon />, label: "10 Baths" },
-          { icon: <GuestIcon />, label: "20 Guests" },
-        ],
-        inRoomAmenities: [
-          {
-            icon: <HighSpeedInternetIcon />,
-            label: "High Speed Internet",
-          },
-          {
-            icon: <EvChargingFacilityIcon />,
-            label: "EV Charging Facility",
-          },
-          {
-            icon: <WorkStationIcon />,
-            label: "Work Station",
-          },
-
-          {
-            icon: <SwimmingPoolIcon />,
-            label: "Swimming Pool",
-          },
-          {
-            icon: <SmartTvIcon />,
-            label: "Smart TV",
-          },
-          {
-            icon: <KitchenIcon />,
-            label: "Kitchen",
-          },
-          {
-            icon: <BathroomIcon />,
-            label: "Bathroom",
-          },
-        ],
-        originalPrice: "₹ 57200",
-        startingPrice: "₹ 44,000/night",
-        moreInfo: {
-          description: [
-            "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Encanto, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.",
-            "The private pool and spacious terrace set the stage for Goa’s signature sundowners, whether you’re lounging with a cocktail or making a splash. Whether it’s a family retreat, a romantic escape, or a getaway with friends, Villa Encanto promises a luxurious yet homely vibe that will make leaving feel like the hardest part. Pack your bags—paradise awaits!",
-          ],
-          listOfData: {
-            title: "Explore your stay",
-            list: [
-              "Villa Encanto stands out as one of the top villas in Mandrem due to its:",
-              "– Secluded North Goa location, offering the perfect escape to experience the susegad lifestyle",
-              "– Bright, Greek-inspired interiors, exuding subtle luxury with top-notch amenities",
-              "– Serene river flowing by the property, creating a soothing backdrop to wake up to",
-              "– Charming terrace, ideal for enjoying your morning brew and a leisurely breakfast",
-              "– Private pool, perfect for lounging and soaking up the Goan sun",
-              "– Easy access to Goa’s stunning beaches and vibrant tourist attractions",
-
-              "ADD-ON SERVICES",
-              "– All vegetarian and non-vegetarian meals are available in-house at an additional cost.",
-              "– The costs for the aforementioned food and beverage offerings and events are subject to an 18% GST charge.",
-              "– The costs for the aforementioned food and beverage offerings and events are subject to an 18% GST charge.",
-              "– Prices may vary subject to availability and peak season rates.",
-              "Tan. Tunes. Tranquility – That’s what a day at Villa Encanto looks like.",
-              "Tucked away in the serene landscape of Mandrem, Villa Encanto is where luxury meets laid-back Goan charm. Start your day with a refreshing dip in the private pool or sip on your morning coffee while soaking in the river and mountain views from the terrace. Just 2 km away from Mandrem Beach, a quick drive takes you to golden sands and azure waters—perfect for sunbathing, swimming, or simply lazing with a coconut in hand. Back at the villa, the lush lawn sets the stage for corporate offsites, intimate events, or a friendly game of football. As the sun dips, grill up a BBQ feast, and let the good times roll. Feeling adventurous? Explore North Goa’s iconic spots—Ashwem Beach, Chapora Fort, and the bustling Anjuna Flea Market. As the night deepens, retreat to your luxurious haven, where every corner whispers relaxation and revelry in equal measure.",
-            ],
-          },
-          review: {
-            author: "Nishant Chury",
-            description:
-              "The villa is super amazing and aesthetically made for comfort, and relaxation. The property is incredibly clean and hygienic because of the helpers of the property Manoj and Gudiya. They are very polite, and helpful. Over all the property is beautiful with a nice Swimming Pool, big rooms and hygiene.",
-          },
-        },
-        note: {
-          title: "Note:",
-          notes: [
-            "All rates are on a per person, per day basis.",
-            "Additional guests are chargeable.",
-            "Barbecue can also be arranged at an additional cost.",
-            "Consumption of non-vegetarian food is allowed.",
-            "Please inform us of your meal preference in advance and allow us a minimum 48 hrs notice prior to your check-in date.",
-            "Guests do not have access to the villa kitchen.",
-          ],
-        },
-        location: "Mandrem",
-        images: [
-          "/rooms/Paradiso/Paradiso.png",
-          "/rooms/Paradiso/paradiso1.jpg",
-          "/rooms/Paradiso/paradiso5.jpg",
-          "/rooms/Paradiso/paradiso6.webp",
-          "/rooms/Paradiso/paradiso10.jpg",
-          "/rooms/Paradiso/paradiso11.jpg",
-          "/rooms/Paradiso/paradiso12.jpg",
-          "/rooms/Paradiso/paradiso15.webp",
-          "/rooms/Paradiso/paradiso2.jpg",
-          "/rooms/Serenity/Serenity.png",
-          "/rooms/Serenity/serenity8.jpg",
-          "/rooms/Serenity/serenity9.jpg",
-          "/rooms/Serenity/serenity4.jpg",
-          "/rooms/Serenity/serenity1.jpg",
-          "/rooms/Paradiso/paradiso4.jpg",
-        ],
-        cta: {
-          label: "Enquire Now",
-          href: contact.WhatsappCta,
-        },
-      },
-      {
-        title: "Aroha Palms Prana",
+        title: "Aroha Palms Villa Prana – The Breathing Space ",
         type: "Villa",
         description:
           "A serene sanctuary designed for wellness-focused stays. Perfect for yoga retreats and mindful escapes.",
@@ -711,30 +652,53 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        originalPrice: "₹ 52000",
+        originalPrice: "₹ 52000/night",
         startingPrice: "₹ 40,000/night",
         moreInfo: {
+          title: "A Sanctuary of Wellness, Space & Timeless Luxury",
+
+          roominfo:
+            "9 Bedrooms | Combination Estate: 5-BR Villa + 4-BR Villa | Sleeps up to 18",
+
           description: [
-            "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Prana, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.",
-            "The private pool and spacious terrace set the stage for Goa’s signature sundowners, whether you’re lounging with a cocktail or making a splash. Whether it’s a family retreat, a romantic escape, or a getaway with friends, Villa Prana promises a luxurious yet homely vibe that will make leaving feel like the hardest part. Pack your bags—paradise awaits!",
+            "Named after the Sanskrit word for 'vital life force,' Villa Prana by Aroha Palms is thoughtfully designed as a rejuvenating sanctuary for larger groups seeking connection, relaxation, and renewal. Combining a flagship five-bedroom luxury villa with an adjoining four-bedroom villa, this expansive nine-bedroom estate offers generous living spaces that encourage guests to slow down, reconnect, and embrace Goa's peaceful rhythm. Nestled beside a tranquil stream and surrounded by lush tropical greenery in Mandrem, Villa Prana provides an inspiring setting for wellness retreats, family reunions, and unforgettable group escapes—just a 3–5 minute drive from the pristine shores of Mandrem Beach.",
+
+            "Begin your mornings with yoga on the manicured lawns, spend sun-soaked afternoons beside the private 10-metre swimming pool, and gather under the stars for memorable alfresco dinners. Seamless indoor-outdoor living, elegant Mediterranean-inspired interiors, and thoughtfully curated spaces create the perfect balance between peaceful privacy and vibrant togetherness, making Villa Prana an exceptional destination for restorative holidays and meaningful celebrations.",
           ],
+
           listOfData: {
             title: "Explore your stay",
             list: [
-              "Villa Prana stands out as one of the top villas in Mandrem due to its:",
-              "– Secluded North Goa location, offering the perfect escape to experience the susegad lifestyle",
-              "– Bright, Greek-inspired interiors, exuding subtle luxury with top-notch amenities",
-              "– Serene river flowing by the property, creating a soothing backdrop to wake up to",
-              "– Charming terrace, ideal for enjoying your morning brew and a leisurely breakfast",
-              "– Private pool, perfect for lounging and soaking up the Goan sun",
-              "– Easy access to Goa’s stunning beaches and vibrant tourist attractions",
+              "Villa Prana stands out as Mandrem's premier wellness and retreat estate due to its:",
 
-              "ADD-ON SERVICES",
-              "– All vegetarian and non-vegetarian meals are available in-house at an additional cost.",
-              "– The costs for the aforementioned food and beverage offerings and events are subject to an 18% GST charge.",
-              "– Prices may vary subject to availability and peak season rates.",
-              "Tan. Tunes. Tranquility – That’s what a day at Villa Prana looks like.",
-              "Tucked away in the serene landscape of Mandrem, Villa Prana is where luxury meets laid-back Goan charm. Start your day with a refreshing dip in the private pool or sip on your morning coffee while soaking in the river and mountain views from the terrace. Just 2 km away from Mandrem Beach, a quick drive takes you to golden sands and azure waters—perfect for sunbathing, swimming, or simply lazing with a coconut in hand. Back at the villa, the lush lawn sets the stage for corporate offsites, intimate events, or a friendly game of football. As the sun dips, grill up a BBQ feast, and let the good times roll. Feeling adventurous? Explore North Goa’s iconic spots—Ashwem Beach, Chapora Fort, and the bustling Anjuna Flea Market. As the night deepens, retreat to your luxurious haven, where every corner whispers relaxation and revelry in equal measure.",
+              "– Expansive 9-bedroom estate combining a luxurious 5-bedroom villa with an adjoining 4-bedroom villa, comfortably accommodating up to 18 guests.",
+              "– Elegant Mediterranean-inspired architecture featuring bright, airy interiors and thoughtfully designed living spaces.",
+              "– Peaceful streamside setting surrounded by lush tropical greenery, creating the perfect environment for relaxation and rejuvenation.",
+              "– Private 10-metre swimming pool with spacious sun decks, ideal for yoga sessions, leisurely swims, and outdoor gatherings.",
+              "– Premium amenities including whisper-quiet air conditioning, spa-style rain showers, Smart TVs, premium entertainment systems, and high-speed Wi-Fi.",
+              "– Prime North Goa location just 3–5 minutes from Mandrem Beach and close to Ashwem Beach, Morjim Beach, Thalassa, La Plage, and Lazy Dog.",
+
+              "CURATED ADD-ON SERVICES",
+
+              "– Private Chef Experience: Enjoy freshly prepared gourmet meals served in the comfort of your villa—from leisurely poolside breakfasts to bespoke multi-course dinners (advance booking required).",
+
+              "– Private Airport Transfers: Chauffeur-driven transfers to and from Mopa (GOX) and Dabolim (GOI) airports (advance booking required).",
+
+              "– Personalised Coastal Experiences: Tailor-made itineraries featuring watersports, yacht charters, sightseeing tours, and curated local excursions.",
+
+              "– Flexible Accommodation Options: Additional villas or luxury suites can be arranged for larger groups, destination celebrations, and extended stays.",
+
+              "– Private Celebrations & Events: Bespoke arrangements for birthdays, anniversaries, wellness retreats, family reunions, intimate weddings, and corporate offsites.",
+
+              "Essential Stay Information:",
+
+              "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+
+              "2. Dedicated on-site caretakers are available daily from 9:00 AM to 9:00 PM for housekeeping and guest assistance.",
+
+              "3. Villa kitchens are fully equipped for self-cooking, while the adjacent restaurant also offers convenient in-villa meal delivery.",
+
+              "4. 24/7 estate security with professional personnel and CCTV surveillance for complete peace of mind.",
             ],
           },
           review: {
@@ -783,14 +747,14 @@ export const landingPageData = {
         },
       },
       {
-        title: "Aroha Palms Caia",
+        title: "Aroha Palms Villa Encanto – The Celebration House",
         type: "Villa",
         description:
-          "A luxurious retreat for family reunions and friend getaways. Greek-inspired architecture, private pool, and starlit dinners.",
+          "A luxurious yet homely vibe. Private pool, spacious terrace, and sundowners under Goan skies.",
         amenities: [
-          { icon: <BedIcon />, label: "7 Rooms" },
-          { icon: <BathTubIcon />, label: "7 Baths" },
-          { icon: <GuestIcon />, label: "14 Guests" },
+          { icon: <BedIcon />, label: "10 Rooms" },
+          { icon: <BathTubIcon />, label: "10 Baths" },
+          { icon: <GuestIcon />, label: "20 Guests" },
         ],
         inRoomAmenities: [
           {
@@ -823,36 +787,58 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        originalPrice: "₹ 40300",
-        startingPrice: "₹ 31,000/night",
+        originalPrice: "₹ 57200/night",
+        startingPrice: "₹ 44,000/night",
         moreInfo: {
+          title: "Where Grand Celebrations Meet Timeless Luxury",
+
+          roominfo:
+            "10 Bedrooms | Combination Estate: Two Joined 5-BR Villas | Sleeps up to 20",
+
           description: [
-            "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Caia, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.",
-            "The private pool and spacious terrace set the stage for Goa’s signature sundowners, whether you’re lounging with a cocktail or making a splash. Whether it’s a family retreat, a romantic escape, or a getaway with friends, Villa Caia promises a luxurious yet homely vibe that will make leaving feel like the hardest part. Pack your bags—paradise awaits!",
+            "Created by seamlessly combining two of our flagship five-bedroom luxury villas, Villa Encanto is purpose-built for life's biggest celebrations. Offering ten spacious bedrooms, dual living halls, expansive entertainment areas, and private pool spaces, this grand estate delivers the perfect blend of scale, sophistication, and comfort for milestone birthdays, family reunions, destination celebrations, and memorable group getaways. Nestled beside a tranquil stream and surrounded by lush tropical greenery, Villa Encanto offers an exclusive retreat in North Goa, just a 3–5 minute drive from the pristine shores of Mandrem Beach.",
+
+            "Designed for effortless entertaining, the estate invites guests to gather on the expansive lawns, spacious terrace decks, and poolside lounges for sunset cocktails, barbecue evenings, and unforgettable celebrations under the stars. At the same time, two independent villas provide peaceful private spaces for relaxation whenever needed. Seamless indoor-outdoor living, elegant Mediterranean-inspired interiors, and thoughtfully curated spaces create an elevated atmosphere where every occasion becomes a lasting memory.",
           ],
           listOfData: {
             title: "Explore your stay",
             list: [
-              "Villa Caia stands out as one of the top villas in Mandrem due to its:",
-              "– Secluded North Goa location, offering the perfect escape to experience the susegad lifestyle",
-              "– Bright, Greek-inspired interiors, exuding subtle luxury with top-notch amenities",
-              "– Serene river flowing by the property, creating a soothing backdrop to wake up to",
-              "– Charming terrace, ideal for enjoying your morning brew and a leisurely breakfast",
-              "– Private pool, perfect for lounging and soaking up the Goan sun",
-              "– Easy access to Goa’s stunning beaches and vibrant tourist attractions",
+              "Villa Encanto stands out as Mandrem's premier celebration estate due to its:",
 
-              "ADD-ON SERVICES",
-              "– All vegetarian and non-vegetarian meals are available in-house at an additional cost.",
-              "– The costs for the aforementioned food and beverage offerings and events are subject to an 18% GST charge.",
-              "– Prices may vary subject to availability and peak season rates.",
-              "Tan. Tunes. Tranquility – That’s what a day at Villa Caia looks like.",
-              "Tucked away in the serene landscape of Mandrem, Villa Caia is where luxury meets laid-back Goan charm. Start your day with a refreshing dip in the private pool or sip on your morning coffee while soaking in the river and mountain views from the terrace. Just 2 km away from Mandrem Beach, a quick drive takes you to golden sands and azure waters—perfect for sunbathing, swimming, or simply lazing with a coconut in hand. Back at the villa, the lush lawn sets the stage for corporate offsites, intimate events, or a friendly game of football. As the sun dips, grill up a BBQ feast, and let the good times roll. Feeling adventurous? Explore North Goa’s iconic spots—Ashwem Beach, Chapora Fort, and the bustling Anjuna Flea Market. As the night deepens, retreat to your luxurious haven, where every corner whispers relaxation and revelry in equal measure.",
+              "– Expansive 10-bedroom estate created by combining two luxurious 5-bedroom villas, comfortably accommodating up to 20 guests.",
+              "– Dual living halls and spacious entertainment areas offering the perfect balance between social gatherings and private relaxation.",
+              "– Peaceful streamside setting surrounded by lush tropical greenery, delivering privacy and North Goa's signature susegad lifestyle.",
+              "– Private 10-metre swimming pools, expansive lawns, and scenic terrace decks designed for outdoor dining, celebrations, and all-day relaxation.",
+              "– Premium amenities including whisper-quiet air conditioning, spa-style rain showers, Smart TVs, premium entertainment systems, and high-speed Wi-Fi.",
+              "– Prime North Goa location just 3–5 minutes from Mandrem Beach and close to Ashwem Beach, Morjim Beach, Thalassa, La Plage, and Lazy Dog.",
+
+              "CURATED ADD-ON SERVICES",
+
+              "– Private Chef Experience: Enjoy freshly prepared gourmet meals served in the comfort of your villa—from leisurely poolside breakfasts to bespoke multi-course dinners (advance booking required).",
+
+              "– Private Airport Transfers: Chauffeur-driven transfers to and from Mopa (GOX) and Dabolim (GOI) airports (advance booking required).",
+
+              "– Personalised Coastal Experiences: Tailor-made itineraries featuring watersports, yacht charters, sightseeing tours, and curated local excursions.",
+
+              "– Flexible Accommodation Options: Additional villas or luxury suites can be arranged for larger celebrations and destination events.",
+
+              "– Private Celebrations & Events: Bespoke arrangements for birthdays, anniversaries, family reunions, destination weddings, corporate retreats, and private celebrations.",
+
+              "Essential Stay Information:",
+
+              "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+
+              "2. Dedicated on-site caretakers are available daily from 9:00 AM to 9:00 PM for housekeeping and guest assistance.",
+
+              "3. Villa kitchens are fully equipped for self-cooking, while the adjacent restaurant also offers convenient in-villa meal delivery.",
+
+              "4. 24/7 estate security with professional personnel and CCTV surveillance for complete peace of mind.",
             ],
           },
           review: {
-            author: "Nilesh Agarwal",
+            author: "Nishant Chury",
             description:
-              "Villa is beautiful. The caretaker kuldip is a great guy. Good service.",
+              "The villa is super amazing and aesthetically made for comfort, and relaxation. The property is incredibly clean and hygienic because of the helpers of the property Manoj and Gudiya. They are very polite, and helpful. Over all the property is beautiful with a nice Swimming Pool, big rooms and hygiene.",
           },
         },
         note: {
@@ -868,10 +854,171 @@ export const landingPageData = {
         },
         location: "Mandrem",
         images: [
+          "/rooms/Paradiso/Paradiso.png",
+          "/rooms/Paradiso/paradiso1.jpg",
+          "/rooms/Paradiso/paradiso5.jpg",
+          "/rooms/Paradiso/paradiso6.webp",
+          "/rooms/Paradiso/paradiso10.jpg",
+          "/rooms/Paradiso/paradiso11.jpg",
+          "/rooms/Paradiso/paradiso12.jpg",
+          "/rooms/Paradiso/paradiso15.webp",
+          "/rooms/Paradiso/paradiso2.jpg",
+          "/rooms/Serenity/Serenity.png",
           "/rooms/Serenity/serenity8.jpg",
           "/rooms/Serenity/serenity9.jpg",
           "/rooms/Serenity/serenity4.jpg",
           "/rooms/Serenity/serenity1.jpg",
+          "/rooms/Paradiso/paradiso4.jpg",
+        ],
+        cta: {
+          label: "Enquire Now",
+          href: contact.WhatsappCta,
+        },
+      },
+      {
+        title: "Aroha Palms Villa Marisol – The Grand Estate",
+        type: "Grand Villa",
+        description:
+          "Our largest retreat. Ideal for weddings, corporate offsites and large celebrations with unmatched space and privacy.",
+        amenities: [
+          { icon: <BedIcon />, label: "18 Rooms" },
+          { icon: <BathTubIcon />, label: "18 Baths" },
+          { icon: <GuestIcon />, label: "36 Guests" },
+        ],
+        inRoomAmenities: [
+          {
+            icon: <HighSpeedInternetIcon />,
+            label: "High Speed Internet",
+          },
+          {
+            icon: <EvChargingFacilityIcon />,
+            label: "EV Charging Facility",
+          },
+          {
+            icon: <WorkStationIcon />,
+            label: "Work Station",
+          },
+
+          {
+            icon: <SwimmingPoolIcon />,
+            label: "Swimming Pool",
+          },
+          {
+            icon: <SmartTvIcon />,
+            label: "Smart TV",
+          },
+          {
+            icon: <KitchenIcon />,
+            label: "Kitchen",
+          },
+          {
+            icon: <BathroomIcon />,
+            label: "Bathroom",
+          },
+        ],
+        originalPrice: "₹ 97500/night",
+        startingPrice: " ₹ 75,000/night",
+        moreInfo: {
+          title: "The Ultimate Private Luxury Estate in North Goa",
+
+          roominfo:
+            "18 Bedrooms | Full Compound: All 3 Villas + 2 Apartments | Sleeps up to 36",
+
+          description: [
+            "The pinnacle of private group luxury in North Goa, Villa Marisol by Aroha Palms offers the ultimate exclusive takeover of our Mandrem collection. Combining all three signature luxury villas with two adjoining two-bedroom apartments, this magnificent 18-bedroom estate transforms individual residences into one seamless private sanctuary, comfortably accommodating up to 36 guests. Nestled beside a tranquil stream and surrounded by lush tropical greenery, Villa Marisol delivers exceptional privacy, generous open spaces, and an unforgettable setting just a 3–5 minute drive from the pristine shores of Mandrem Beach.",
+
+            "Thoughtfully designed for destination weddings, corporate offsites, milestone celebrations, wellness retreats, and large multi-generational family gatherings, Villa Marisol offers an unmatched combination of scale and sophistication. Guests enjoy exclusive access to three private 10-metre swimming pools, expansive sun terraces, beautifully landscaped lawns, and elegant indoor-outdoor living spaces that encourage both vibrant celebrations and peaceful moments of relaxation. Every corner of the estate has been curated to create an extraordinary coastal retreat where unforgettable memories are made together.",
+          ],
+          listOfData: {
+            title: "Explore your stay",
+            list: [
+              "Villa Marisol stands out as North Goa's premier private luxury compound due to its:",
+
+              "– Expansive 18-bedroom private estate comprising three luxury villas and two private apartments, comfortably accommodating up to 36 guests.",
+              "– Exclusive access to the entire compound, ensuring complete privacy for celebrations, retreats, destination events, and extended family gatherings.",
+              "– Three private 10-metre swimming pools with spacious sun decks, landscaped gardens, and multiple outdoor entertainment areas.",
+              "– Peaceful streamside location surrounded by lush tropical greenery, offering a serene escape while embracing North Goa's relaxed susegad lifestyle.",
+              "– Premium amenities including whisper-quiet air conditioning, spa-style rain showers, Smart TVs, premium entertainment systems, and high-speed Wi-Fi throughout the estate.",
+              "– Prime location just 3–5 minutes from Mandrem Beach and close to Ashwem Beach, Morjim Beach, Thalassa, La Plage, Lazy Dog, and North Goa's finest cafés and beach clubs.",
+
+              "CURATED ADD-ON SERVICES",
+
+              "– Private Chef Experience: Enjoy freshly prepared gourmet meals served in the comfort of your villa—from leisurely poolside breakfasts to bespoke multi-course dinners (advance booking required).",
+
+              "– Private Airport Transfers: Chauffeur-driven transfers to and from Mopa (GOX) and Dabolim (GOI) airports (advance booking required).",
+
+              "– Personalised Coastal Experiences: Tailor-made itineraries featuring watersports, yacht charters, sightseeing tours, beach hopping, and curated local excursions.",
+
+              "– Flexible Accommodation Options: Configurable villa and apartment combinations can be arranged to perfectly suit your group's requirements.",
+
+              "– Private Celebrations & Events: Bespoke arrangements for destination weddings, milestone birthdays, anniversaries, wellness retreats, corporate offsites, gala dinners, and private celebrations.",
+
+              "Essential Stay Information:",
+
+              "1. All rates are quoted on a full-compound buyout, per-night basis for up to 36 guests.",
+
+              "2. Dedicated on-site caretakers are available daily from 9:00 AM to 9:00 PM for housekeeping and guest assistance.",
+
+              "3. Villa kitchens are fully equipped for self-cooking, while the adjacent restaurant also offers convenient in-villa meal delivery.",
+
+              "4. 24/7 estate security with professional personnel and CCTV surveillance for complete peace of mind.",
+            ],
+          },
+          review: {
+            author: "Nishant Chury",
+            description:
+              "The villa is super amazing and aesthetically made for comfort, and relaxation. The property is incredibly clean and hygienic because of the helpers of the property Manoj and Gudiya. They are very polite, and helpful. Over all the property is beautiful with a nice Swimming Pool, big rooms and hygiene.",
+          },
+        },
+        note: {
+          title: "Note:",
+          notes: [
+            "All rates are on a per person, per day basis.",
+            "Additional guests are chargeable.",
+            "Barbecue can also be arranged at an additional cost.",
+            "Consumption of non-vegetarian food is allowed.",
+            "Please inform us of your meal preference in advance and allow us a minimum 48 hrs notice prior to your check-in date.",
+            "Guests do not have access to the villa kitchen.",
+          ],
+        },
+        location: "Mandrem",
+        images: [
+          "/rooms/Magnifica/Magnifica.png",
+          "/rooms/Magnifica/magnifica2.webp",
+          "/rooms/Magnifica/magnifica6.jpg",
+          "/rooms/Magnifica/magnifica12.webp",
+          "/rooms/Magnifica/magnifica8.jpg",
+          "/rooms/Magnifica/magnifica14.webp",
+          "/rooms/Magnifica/magnifica10.webp",
+          "/rooms/Magnifica/magnifica11.jpg",
+          "/rooms/Magnifica/magnifica18.jpg",
+          "/rooms/Magnifica/magnifica19.webp",
+          "/rooms/Paradiso/Paradiso.png",
+          "/rooms/Paradiso/paradiso1.jpg",
+          "/rooms/Paradiso/paradiso5.jpg",
+          "/rooms/Paradiso/paradiso6.webp",
+          "/rooms/Paradiso/paradiso10.jpg",
+          "/rooms/Paradiso/paradiso11.jpg",
+          "/rooms/Paradiso/paradiso12.jpg",
+          "/rooms/Paradiso/paradiso15.webp",
+          "/rooms/Paradiso/paradiso2.jpg",
+          "/rooms/Serenity/Serenity.png",
+          "/rooms/Serenity/serenity8.jpg",
+          "/rooms/Serenity/serenity9.jpg",
+          "/rooms/Serenity/serenity4.jpg",
+          "/rooms/Serenity/serenity1.jpg",
+          "/rooms/Paradiso/paradiso4.jpg",
+          "/rooms/Magnifica/magnifica17.webp",
+          "/rooms/Magnifica/magnifica13.webp",
+          "/rooms/Magnifica/magnifica4.jpg",
+          "/rooms/Magnifica/magnifica1.jpg",
+          "/rooms/Magnifica/magnifica5.jpg",
+          "/rooms/Magnifica/magnifica9.jpg",
+          "/rooms/Magnifica/magnifica15.jpg",
+          "/rooms/Magnifica/magnifica16.webp",
+          "/rooms/Magnifica/magnifica20.jpg",
+          "/rooms/Magnifica/magnifica3.jpg",
+          "/rooms/Magnifica/magnifica7.jpg",
           "/rooms/Emerald/Emerald.png",
           "/rooms/Emerald/emerald1.jpg",
           "/rooms/Emerald/emerald6.webp",

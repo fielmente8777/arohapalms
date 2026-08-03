@@ -51,6 +51,8 @@ const RoomDetailsPopup = () => {
             <h2 className="font-primary lg:text-3xl text-2xl text-p2">
               {room?.title}
             </h2>
+             <p className="text-xl text-p2">{room?.moreInfo.title}</p>
+        <p className="text-xl text-p2">{room?.moreInfo.roominfo}</p>
             <div className="lg:hidden w-full">
               <SwiperCarousel
                 data={room?.images || []}
@@ -93,16 +95,7 @@ const RoomDetailsPopup = () => {
                 {item}
               </p>
             ))}
-            {room?.moreInfo.review.author && (
-              <div className="space-y-2">
-                <p className="text-sm text-p2">Guest Review</p>
-                <p className="">{room?.moreInfo.review.author}</p>
-                <div className="w-full h-px bg-white/10" />
-                <p className="text-sm text-secondary">
-                  {room?.moreInfo.review.description}
-                </p>
-              </div>
-            )}
+            
             {/* note */}
             {room?.note.title && (
               <div className="space-y-2">
@@ -112,6 +105,16 @@ const RoomDetailsPopup = () => {
                     {index + 1}. {item}
                   </p>
                 ))}
+              </div>
+            )}
+            {room?.moreInfo.review.author && (
+              <div className="space-y-2">
+                <p className="text-sm text-p2">Guest Review</p>
+                <p className="">{room?.moreInfo.review.author}</p>
+                <div className="w-full h-px bg-white/10" />
+                <p className="text-sm text-secondary">
+                  {room?.moreInfo.review.description}
+                </p>
               </div>
             )}
           </div>

@@ -77,6 +77,7 @@ export const AccommodationCard: React.FC<
   note,
   startingPrice,
   type,
+  originalPrice,
 }) => {
   return (
     <div className=" grid lg:grid-cols-10 grid-cols-1 gap-6  room-card">
@@ -111,6 +112,8 @@ export const AccommodationCard: React.FC<
       </div>
       <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4 lg:gap-7 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
         <h3 className="text-2xl text-p2">{title}</h3>
+        <p className="text-xl text-p2">{moreInfo.title}</p>
+        <p className="text-xl text-p2">{moreInfo.roominfo}</p>
         <div className={`w-full rounded-xl lg:hidden overflow-hidden`}>
           <SwiperCarousel
             data={images}
@@ -165,6 +168,7 @@ export const AccommodationCard: React.FC<
               moreInfo,
               location,
               note,
+              originalPrice,
               startingPrice,
               type,
             }}
@@ -182,6 +186,12 @@ export const AccommodationCard: React.FC<
             </li>
           ))}
         </ul> */}
+        <p className="text-sm text-secondary line-through" >
+          <span className="sr-only">
+            {originalPrice}
+          </span>
+          <span className="font">{originalPrice} </span>
+        </p>
         <p className="text-lg text-secondary">
           <span className="sr-only">
             {startingPrice}
