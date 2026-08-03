@@ -139,7 +139,8 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        startingPrice: "Starting from ₹ 18,000/night",
+        originalPrice: "₹ 23400",
+        startingPrice: "₹ 18,000/night",
         moreInfo: {
           description: [
             "Where Mediterranean grace meets the vibrant soul of the Arabian Sea, Villa Magnifica by Aroha Palms redefines coastal luxury in North Goa. Spanning 4,000 square feet of private sanctuary in Mandrem, this estate balances grand charm with refined sophistication. Positioned alongside a peaceful stream, it provides an exclusive retreat immersed in nature. Best of all, the pristine shores of Mandrem Beach are just a 3-minute drive away.",
@@ -248,7 +249,8 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        startingPrice: "Starting from ₹ 22,000/night",
+        originalPrice: "₹ 28600",
+        startingPrice: "₹ 22,000/night",
         moreInfo: {
           description: [
             "Where grand coastal scale meets pure Mediterranean sophistication, Villa Paradiso by Aroha Palms sets a new benchmark for luxury in North Goa. Sprawling across an impressive 5,000 square feet in Mandrem, this generous estate offers an abundance of space, total privacy, and timeless charm. Surrounded by lush tropical foliage beside a gentle running stream, it provides a quiet sanctuary designed for guests who desire both room to breathe and high-end elegance. Best of all, the golden sands of Mandrem Beach are only a 3-minute drive from your front door.",
@@ -351,7 +353,8 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        startingPrice: "Starting from ₹ 22,000/night",
+        originalPrice:"₹ 28600",
+        startingPrice: "₹ 22,000/night",
         moreInfo: {
           description: [
             "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Aroha Palms Serenity, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.",
@@ -455,7 +458,8 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        startingPrice: "Starting from ₹ 75,000/night",
+        originalPrice: "₹ 97500",
+        startingPrice: " ₹ 75,000/night",
         moreInfo: {
           description: [
             "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Marisol, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke",
@@ -599,7 +603,8 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        startingPrice: "Starting from ₹ 44,000/night",
+        originalPrice: "₹ 57200",
+        startingPrice: "₹ 44,000/night",
         moreInfo: {
           description: [
             "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Encanto, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.",
@@ -706,7 +711,8 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        startingPrice: "Starting from ₹ 40,000/night",
+        originalPrice: "₹ 52000",
+        startingPrice: "₹ 40,000/night",
         moreInfo: {
           description: [
             "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Prana, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.",
@@ -817,7 +823,8 @@ export const landingPageData = {
             label: "Bathroom",
           },
         ],
-        startingPrice: "Starting from ₹ 31,000/night",
+        originalPrice: "₹ 40300",
+        startingPrice: "₹ 31,000/night",
         moreInfo: {
           description: [
             "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Caia, a stunning retreat in Mandrem that radiates both sophistication and warmth—the perfect blend for a dreamy vacation. Perched between a serene river and lush mountains, this villa truly gives you the best of both worlds. And with Mandrem Beach just 2 km away, your dose of sun, sand, and sea is just a short ride away—like the cherry on a perfectly chilled Coke.",
