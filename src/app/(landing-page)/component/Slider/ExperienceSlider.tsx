@@ -1,7 +1,7 @@
 "use client";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import { useState } from "react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { ExperienceSectionProps } from "../ExperienceSection";
 import ExperienceCard from "../cards/ExperienceCard";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
@@ -18,7 +18,8 @@ const ExperienceSlider: React.FC<{
           slidesPerView={1}
           spaceBetween={20}
           loop
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
           navigation={{
             nextEl: ".experience-next",
             prevEl: ".experience-prev",
