@@ -25,14 +25,15 @@ export interface AccommodationSectionProps {
       description: string[];
       listOfData: {
         title: string;
+        description?: string;
         list: string[];
-      };
+      }[];
       review: {
         author: string;
         description: string;
       };
-    }
-    note: {
+    };
+    note?: {
       title: string;
       notes: string[];
     };

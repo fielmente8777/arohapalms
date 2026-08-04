@@ -111,9 +111,11 @@ export const AccommodationCard: React.FC<
         />
       </div>
       <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4 lg:gap-7 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
-        <h3 className="text-2xl text-p2">{title}</h3>
-        <p className="text-xl text-p2">{moreInfo.title}</p>
-        <p className="text-xl text-p2">{moreInfo.roominfo}</p>
+        <div className="space-y-1">
+          <h3 className="text-2xl text-p2">{title}</h3>
+          <p className=" text-dark">{moreInfo.title}</p>
+          <p className="text-sm text-[#57534E] uppercase">{moreInfo.roominfo}</p>
+        </div>
         <div className={`w-full rounded-xl lg:hidden overflow-hidden`}>
           <SwiperCarousel
             data={images}
@@ -153,7 +155,7 @@ export const AccommodationCard: React.FC<
           ))}
         </ul>
         <div className="flex flex-col gap-1">
-          <p className=" text-[#57534E] line-clamp-5">
+          <p className=" text-[#57534E] line-clamp-3">
             {moreInfo.description[0]}
           </p>
           <RoomDetailsPopupButton
@@ -186,19 +188,17 @@ export const AccommodationCard: React.FC<
             </li>
           ))}
         </ul> */}
-        <p className="text-sm text-secondary line-through" >
-          <span className="sr-only">
-            {originalPrice}
-          </span>
-          <span className="font">{originalPrice} </span>
-        </p>
-        <p className="text-lg text-secondary">
-          <span className="sr-only">
-            {startingPrice}
-          </span>
-          <span className="font-semibold">{startingPrice} </span>
-          <span className="text-sm">+ Taxes</span>
-        </p>
+        <div className="">
+          <p className="text-sm text-secondary line-through">
+            <span className="sr-only">{originalPrice}</span>
+            <span className="font">{originalPrice} </span>
+          </p>
+          <p className="text-lg text-secondary">
+            <span className="sr-only">{startingPrice}</span>
+            <span className="font-semibold">{startingPrice} </span>
+            <span className="text-sm">+ Taxes</span>
+          </p>
+        </div>
         {/* <div className="grid md:grid-cols-[1fr_auto] grid-cols-1 gap-4"> */}
         <LinkButton
           href={cta.href}
