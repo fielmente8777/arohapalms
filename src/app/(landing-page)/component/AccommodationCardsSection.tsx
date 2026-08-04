@@ -98,7 +98,7 @@ export const AccommodationCard: React.FC<
             pauseOnMouseEnter: true,
             waitForTransition: false,
           }}
-          swiperSlideClassName="relative lg:aspect-[4/2.5] aspect-[4/2.75]"
+          swiperSlideClassName="relative lg:aspect-[4/2.6] aspect-[4/2.75]"
           renderSlide={(image) => (
             <Image
               src={image}
@@ -110,7 +110,7 @@ export const AccommodationCard: React.FC<
           )}
         />
       </div>
-      <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4  lg:gap-6 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
+      <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4  lg:gap-5 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
         <div className="space-y-1">
           <h3 className="text-2xl text-p2">{title}</h3>
           <p className=" text-dark">{moreInfo.title}</p>
@@ -155,7 +155,7 @@ export const AccommodationCard: React.FC<
           ))}
         </ul>
         <div className="flex flex-col gap-1">
-          <p className=" text-[#57534E] line-clamp-3">
+          <p className=" text-[#57534E] line-clamp-2">
             {moreInfo.description[0]}
           </p>
           <RoomDetailsPopupButton
