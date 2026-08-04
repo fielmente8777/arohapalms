@@ -114,7 +114,7 @@ export const AccommodationCard: React.FC<
         <div className="space-y-1">
           <h3 className="text-2xl text-p2">{title}</h3>
           <p className=" text-dark">{moreInfo.title}</p>
-          <p className="text-sm text-[#57534E] uppercase">{moreInfo.roominfo}</p>
+          <p className="text-xs text-[#57534E] uppercase">{moreInfo.roominfo}</p>
         </div>
         <div className={`w-full rounded-xl lg:hidden overflow-hidden`}>
           <SwiperCarousel
