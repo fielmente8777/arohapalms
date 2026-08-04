@@ -110,7 +110,7 @@ export const AccommodationCard: React.FC<
           )}
         />
       </div>
-      <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4 lg:gap-7 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
+      <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4  lg:gap-6 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
         <div className="space-y-1">
           <h3 className="text-2xl text-p2">{title}</h3>
           <p className=" text-dark">{moreInfo.title}</p>
