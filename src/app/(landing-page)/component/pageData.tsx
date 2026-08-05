@@ -7,7 +7,6 @@ import {
   SwimmingPoolIcon,
   WorkStationIcon,
 } from "@/utils/amenitiesIcon";
-import { contact } from "@/utils/constent";
 import {
   BathTubIcon,
   BedIcon,
@@ -20,17 +19,30 @@ import {
   SpaciousRoomIcon,
 } from "@/utils/landingIcon";
 
+export const createWhatsappCta = (villaName: string) => {
+  const message = `Hi Aroha Palms Team,
+
+I'm interested in booking a stay at ${villaName}.
+
+Please share the best available options and rates.
+
+Thank you!`;
+
+  return `https://wa.me/919834220573?text=${encodeURIComponent(message)}`;
+};
+
 export const landingPageData = {
   offer: [
-    "Monsoon Bonanza 30% off limited time offer valid till 31 August",
-    "Monsoon Bonanza 30% off limited time offer valid till 31 August",
+    "Monsoon Bonanza 30% off limited time offer valid till 31st August. Use discount code : <span class='text-[#A20000]'>MONSOON30</span>",
+    "Monsoon Bonanza 30% off limited time offer valid till 31st August. Use discount code : <span class='text-[#A20000]'>MONSOON30</span>",
   ],
   hero: {
     tag: "A Paradise in North Goa",
     title: "Barefoot Luxury, Quietly your Own",
     description:
       "Greek-inspired villas & apartments with private pools, lush gardens and effortless access to Goa's finest beaches. ",
-    benefits:"<span class='text-[#A20000]'>Save 25%</span> when you book direct • No prepayment • Free cancellation",
+    benefits:
+      "<span class='text-[#A20000]'>Save 25%</span> when you book direct • No prepayment • Free cancellation",
     image: "/landing-page/bnr.jpg",
     images: [
       "/landing-page/bnr/Copy-of-DSC01038.webp",
@@ -81,12 +93,13 @@ export const landingPageData = {
     buttons: [
       {
         label: "Enquire Now",
-        link: contact.WhatsappCta,
-      },
-      {
-        label: "Book Now",
         link: "#form",
+        // link: contact.WhatsappCta,
       },
+      // {
+      //   label: "Book Now",
+      //   link: "#form",
+      // },
     ],
   },
 
@@ -95,10 +108,12 @@ export const landingPageData = {
     title: "Luxury Villas Crafted for Your Perfect Goa Getaway",
     description:
       "Explore every villa, apartment and suite across Mandrem, each one thoughtfully designed for private, unhurried Goa stays.",
-    note: "No need to split up the group or book multiple hotel rooms. Our largest estate villas offer seamless group living with space for up to 40 guests. Enjoy private amenities, expansive outdoor lounges, and effortless hosting, all in one magnificent setting.",
+    note: "Some trips need room for everyone. Our villas and apartments join into larger estates a villa and an apartment for the family, two villas for a celebration, or the full compound for 36. Whatever the size, everything stays private and the hosting is handled.",
     cards: [
       {
-        title: "Aroha Palms Villa Magnifica - The Intimate One",
+        title: "Villa Magnifica",
+        discountCode: "MONSOON30",
+        span: "The Intimate One",
         type: "Villa",
         description: "Mediterranean Grace Meets Coastal Tranquility",
         amenities: [
@@ -119,8 +134,12 @@ export const landingPageData = {
         startingPrice: "₹ 18,000/night",
         moreInfo: {
           title: "Mediterranean Grace Meets Coastal Tranquility",
-          roominfo:
-            "4 Bedrooms | 4,000 Sq. Ft. | Private 10m Pool | Streamside Sanctuary",
+          roomInfo: [
+            "4 Bedrooms ",
+            "4,000 Sq. Ft. ",
+            "Private 10m Pool ",
+            "Streamside Sanctuary",
+          ],
           description: [
             "Where the soothing rhythm of a flowing stream meets Mediterranean architecture, Villa Magnifica is the hidden gem of our Mandrem collection. Spanning 4,000 square feet of private sanctuary, this intimate retreat owns its waterfront setting, offering guests an exclusive escape immersed in nature's quiet beauty. Just a 3-5-minute drive from the shores of Mandrem Beach, it provides the ultimate balance between quiet seclusion and coastal adventure.",
             "Wake up to bird calls over the water, spend peaceful afternoons beside your private 10-meter pool, or host low-key sundowners on the breezy balcony. Featuring 4 light-filled bedrooms and an airy indoor-outdoor layout, Villa Magnifica is crafted specifically for intimate family stays, small group retreats, or couples seeking a secluded Goan sanctuary. And when you're ready for the sea? The white sands of Mandrem Beach are just minutes away.",
@@ -142,20 +161,20 @@ export const landingPageData = {
             {
               title: "CURATED ADD-ON SERVICES",
               list: [
-                "Chef-on-Call Service: Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
-                "Private Airport Transfers: Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
-                "Coastal & Watersports Itineraries: Custom activity planning including watersports packages, yacht charters, and local excursions.",
-                "Flexible Accommodation Options: Configurable villa requirements arranged with our reservation specialists to fit your exact group size.",
-                "Event Options: Configurable event arrangements and bespoke hosting services for special occasions.",
+                "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+                "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
+                "<b>Coastal & Watersports Itineraries:</b> Custom activity planning including watersports packages, yacht charters, and local excursions.",
+                "<b>Flexible Accommodation Options:</b> Configurable villa requirements arranged with our reservation specialists to fit your exact group size.",
+                "<b>Event Options:</b> Configurable event arrangements and bespoke hosting services for special occasions.",
               ],
             },
             {
               title: "Essential Stay Information:",
               list: [
-                "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-                "2. Dedicated On-Site Caretakers: On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-                "3. Cooking facilities: Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
-                "4. 24/7 Estate Security: Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
+                " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+                " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+                " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
               ],
             },
           ],
@@ -191,11 +210,14 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-          href: "contact.WhatsappCta",
+         href:"#form",
+          // href: createWhatsappCta("Aroha Palms Villa Magnifica"),
         },
       },
       {
-        title: "Aroha Palms Villa Paradiso – The All-Rounder",
+        title: "Villa Paradiso",
+        discountCode: "MONSOON30",
+        span: " The All-Rounder",
         type: "Villa",
         description: "Unmatched Scale, Tropical Privacy, and Grand Elegance",
         amenities: [
@@ -216,8 +238,12 @@ export const landingPageData = {
         startingPrice: "₹ 22,000/night",
         moreInfo: {
           title: "Unmatched Scale, Tropical Privacy, and Grand Elegance",
-          roominfo:
-            "5 Bedrooms | 5,000 Sq. Ft. | Private 10m Pool | Sprawling Estate",
+          roomInfo: [
+            "5 Bedrooms",
+            "5,000 Sq. Ft.",
+            "Private 10m Pool",
+            "Sprawling Estate",
+          ],
           description: [
             "Bright, open, and undeniably vibrant, Villa Paradiso by Aroha Palms is designed around the art of effortless hosting. Sprawling across an impressive 5,000 square feet in Mandrem, this 5-bedroom estate boasts the largest and sunniest pool terrace on the property, earning its place as the undeniable social hub of the collection. Framed by lush tropical greenery and set beside a gentle running stream, it offers an inviting oasis where high-end Greek-inspired elegance meets coastal freedom, just a 3-5 minutes' drive from Mandrem Beach.",
             "Days at Paradiso naturally center around the water — from morning laps in the private 10-meter pool to sun-drenched afternoons and golden-hour cocktails on the sweeping deck. Featuring 5 spacious bedrooms and fluid, open-plan living areas that flow seamlessly into the outdoor pool yard, it is uniquely built for families and friends who love to gather, celebrate, and unwind together in total comfort.",
@@ -239,20 +265,20 @@ export const landingPageData = {
             {
               title: "CURATED ADD-ON SERVICES",
               list: [
-                "Chef-on-Call Service: Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
-                "Private Airport Transfers: Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
-                "Coastal & Watersports Itineraries: Custom activity planning including watersports packages, yacht charters, and local excursions.",
-                "Flexible Accommodation Options: Configurable villa requirements arranged with our reservation specialists to fit your exact group size.",
-                "Event Options: Configurable event arrangements and bespoke hosting services for special occasions.",
+                "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+                "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
+                "<b>Coastal & Watersports Itineraries:</b> Custom activity planning including watersports packages, yacht charters, and local excursions.",
+                "<b>Flexible Accommodation Options:</b> Configurable villa requirements arranged with our reservation specialists to fit your exact group size.",
+                "<b>Event Options:</b> Configurable event arrangements and bespoke hosting services for special occasions.",
               ],
             },
             {
               title: "Essential Stay Information:",
               list: [
-                "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-                "2. Dedicated On-Site Caretakers: On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-                "3. Cooking facilities: Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
-                "4. 24/7 Estate Security: Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
+                " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+                " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+                " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
               ],
             },
           ],
@@ -282,11 +308,14 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-          href: "contact.WhatsappCta",
+         href:"#form",
+          // href: createWhatsappCta("Aroha Palms Villa Paradiso"),
         },
       },
       {
-        title: "Aroha Palms Villa Serenity – The Stillwater",
+        title: "Villa Serenity",
+        discountCode: "MONSOON30",
+        span: "The Stillwater",
         type: "Villa",
         description: "Understated Luxury Wrapped in Coastal Calm",
         amenities: [
@@ -307,8 +336,12 @@ export const landingPageData = {
         startingPrice: "₹ 22,000/night",
         moreInfo: {
           title: "Understated Luxury Wrapped in Coastal Calm",
-          roominfo:
-            "5 Bedrooms | 5,000 Sq. Ft. | Private 10m Pool | Peaceful Retreat",
+          roomInfo: [
+            "5 Bedrooms",
+            "5,000 Sq. Ft.",
+            "Private 10m Pool",
+            "Peaceful Retreat",
+          ],
           description: [
             "True to its name, Villa Serenity is a retreat for the senses — a place where time slows down and the gentle murmur of a nearby stream replaces the noise of daily life. Set within 5,000 square feet of lush garden grounds in Mandrem, this 5-bedroom villa distills calm into every detail. Located just a 3-5 minutes' drive from the white sands of Mandrem Beach, it offers a peaceful haven wrapped in timeless Greek-inspired architecture.",
             "Spend your mornings sipping coffee on shaded balconies overlooking tropical foliage, afternoons relaxing beside the private 10-meter pool, and evenings indulging in quiet dining under the stars. Designed with 5 beautifully styled bedrooms and fluid indoor-outdoor living spaces, Villa Serenity is crafted for restful group holidays, multi-generational family gatherings, or wellness retreats. Pack your bags—your peaceful paradise awaits!",
@@ -330,20 +363,20 @@ export const landingPageData = {
             {
               title: "CURATED ADD-ON SERVICES",
               list: [
-                "Chef-on-Call Service: Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
-                "Private Airport Transfers: Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
-                "Coastal & Watersports Itineraries: Custom group activity planning including watersports packages, yacht charters, and local excursions.",
-                "Flexible Accommodation Options: Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
-                "Event Options: Configurable event arrangements and bespoke hosting services for special occasions.",
+                "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+                "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
+                "<b>Coastal & Watersports Itineraries:</b> Custom group activity planning including watersports packages, yacht charters, and local excursions.",
+                "<b>Flexible Accommodation Options:</b> Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
+                "<b>Event Options:</b> Configurable event arrangements and bespoke hosting services for special occasions.",
               ],
             },
             {
               title: "Essential Stay Information:",
               list: [
-                "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-                "2. Dedicated On-Site Caretakers: On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-                "3. Cooking facilities: Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
-                "4. 24/7 Estate Security: Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
+                " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+                " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+                " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
               ],
             },
           ],
@@ -353,7 +386,7 @@ export const landingPageData = {
               "It was amazing experience with aroha palms the luxury villas. This villa one of the best luxury villa in goa the care taker Mr Kuldeep also very nice guy he taking care of us very nicely so definitely visit again. Specially thanks to ishu bhaiya (indrajeet singh rajpurohit) and nikhil Kashyap Bhaiya for geving us this wonderful experience",
           },
         },
-       
+
         location: "Mandrem",
         images: [
           "/rooms/Serenity/Serenity.png",
@@ -375,11 +408,14 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-          href: "contact.WhatsappCta",
+         href:"#form",
+          // href: createWhatsappCta("Aroha Palms Villa Serenity"),
         },
       },
       {
-        title: "Aroha Palms Villa Caia – The Reunion",
+        title: "Villa Caia",
+        discountCode: "MONSOON30",
+        span: "The Reunion",
         type: "Villa",
         description: "Together in Luxury, Designed for Every Generation",
         amenities: [
@@ -400,8 +436,11 @@ export const landingPageData = {
         startingPrice: "₹ 31,000/night",
         moreInfo: {
           title: "Together in Luxury, Designed for Every Generation",
-          roominfo:
-            "7 Bedrooms | Combination Estate: 5-BR Villa + 2-BR Apartment | Sleeps up to 14",
+          roomInfo: [
+            "7 Bedrooms",
+            "Combination Estate: 5-BR Villa + 2-BR Apartment",
+            "Sleeps up to 14",
+          ],
           description: [
             "When a single villa isn't quite enough for your group, Villa Caia offers the perfect step up in space and flexibility. Combining a flagship 5-bedroom Greek-inspired villa with an adjacent, private 2-bedroom luxury apartment, Caia provides 7 bedrooms in total. This thoughtful layout gives multi-generational families or groups of friends the ability to holiday together on the same private grounds while retaining separate living quarters for quiet downtime. Situated along a serene streamside and framed by lush tropical greenery, it delivers absolute privacy just a 3-5 minutes' drive from Mandrem Beach.",
             "Centered around a refreshing 10-meter private pool and spacious outdoor terrace, Villa Caia sets a captivating scene for Goa's signature sundowners, poolside lunches, and evening toasts under the stars. Fluid indoor-outdoor living areas and sun-drenched interiors balance warm Goan hospitality with subtle Mediterranean luxury. Whether hosting a family reunion or relaxing on a long-awaited escape, Caia offers an upscale, welcoming vibe that turns every moment into a lasting memory.",
@@ -423,20 +462,20 @@ export const landingPageData = {
             {
               title: "CURATED ADD-ON SERVICES",
               list: [
-                "Chef-on-Call Service: Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
-                "Private Airport Transfers: Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
-                "Coastal & Watersports Itineraries: Custom group activity planning including watersports packages, yacht charters, and local excursions.",
-                "Flexible Accommodation Options: Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
-                "Event Options: Configurable event arrangements and bespoke hosting services for special occasions.",
+                "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+                "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
+                "<b>Coastal & Watersports Itineraries:</b> Custom group activity planning including watersports packages, yacht charters, and local excursions.",
+                "<b>Flexible Accommodation Options:</b> Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
+                "<b>Event Options:</b> Configurable event arrangements and bespoke hosting services for special occasions.",
               ],
             },
             {
               title: "Essential Stay Information:",
               list: [
-                "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-                "2. Dedicated On-Site Caretakers: On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-                "3. Cooking facilities: Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
-                "4. 24/7 Estate Security: Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
+                " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+                " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+                " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
               ],
             },
           ],
@@ -446,7 +485,7 @@ export const landingPageData = {
               "Villa is beautiful. The caretaker kuldip is a great guy. Good service.",
           },
         },
-       
+
         location: "Mandrem",
         images: [
           "/rooms/Serenity/serenity8.jpg",
@@ -473,11 +512,14 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-          href: "contact.WhatsappCta",
+         href:"#form",
+          // href: createWhatsappCta("Aroha Palms Villa Caia"),
         },
       },
       {
-        title: "Aroha Palms Villa Prana – The Breathing Space",
+        title: "Villa Prana",
+        discountCode: "MONSOON30",
+        span: " The Breathing Space",
         type: "Villa",
         description: "A Sanctuary of Wellness, Space & Timeless Luxury",
         amenities: [
@@ -498,8 +540,11 @@ export const landingPageData = {
         startingPrice: "₹ 40,000/night",
         moreInfo: {
           title: "A Sanctuary of Wellness, Space & Timeless Luxury",
-          roominfo:
-            "9 Bedrooms | Combination Estate: 5-BR Villa + 4-BR Villa | Sleeps up to 18",
+          roomInfo: [
+            "9 Bedrooms",
+            "Combination Estate: 5-BR Villa + 4-BR Villa",
+            "Sleeps up to 18",
+          ],
           description: [
             "Named after the Sanskrit word for 'vital life force,' Villa Prana by Aroha Palms is designed as a rejuvenating breathing space for larger groups. Spanning 9 bedrooms across a flagship 5-bedroom luxury villa and connected 4-bedroom luxury villa, this estate offers the spatial and mental room needed to slow down, stretch out, and exhale. Set along a calm stream surrounded by lush tropical greenery in Mandrem, it provides an uplifting backdrop for wellness retreats, extended family reunions, or creative group getaways. Best of all, the golden sands of Mandrem Beach are just 3-5 minutes' drive away.",
             "Spend your mornings practicing yoga on the manicured lawn, afternoons lounging beside the private 10-meter pool, and evenings dining under open skies. The villa's seamless indoor-outdoor layout and bright, picture-perfect interiors make it an exceptional choice for those seeking both restorative privacy and vibrant communal gathering.",
@@ -521,20 +566,20 @@ export const landingPageData = {
             {
               title: "CURATED ADD-ON SERVICES",
               list: [
-                "Chef-on-Call Service: Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
-                "Private Airport Transfers: Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
-                "Coastal & Watersports Itineraries: Custom group activity planning including watersports packages, yacht charters, and local excursions.",
-                "Flexible Accommodation Options: Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
-                "Event Options: Configurable event arrangements and bespoke hosting services for special occasions.",
+                "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+                "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
+                "<b>Coastal & Watersports Itineraries:</b> Custom group activity planning including watersports packages, yacht charters, and local excursions.",
+                "<b>Flexible Accommodation Options:</b> Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
+                "<b>Event Options:</b> Configurable event arrangements and bespoke hosting services for special occasions.",
               ],
             },
             {
               title: "Essential Stay Information:",
               list: [
-                "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-                "2. Dedicated On-Site Caretakers: On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-                "3. Cooking facilities: Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
-                "4. 24/7 Estate Security: Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
+                " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+                " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+                " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
               ],
             },
           ],
@@ -544,7 +589,7 @@ export const landingPageData = {
               "Great property, good food and amazing service. Manoj Yadav, Gudiya Yadav (care takers) took good care of our stay for 2 nights and 3 days",
           },
         },
-       
+
         location: "Mandrem",
         images: [
           "/rooms/Magnifica/Magnifica.png",
@@ -570,11 +615,14 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-          href: "contact.WhatsappCta",
+         href:"#form",
+          // href: createWhatsappCta("Aroha Palms Villa Prana"),
         },
       },
       {
-        title: "Aroha Palms Villa Encanto – The Celebration House",
+        title: "Villa Encanto",
+        discountCode: "MONSOON30",
+        span: "The Celebration House",
         type: "Villa",
         description: "Where Grand Celebrations Meet Timeless Luxury",
         amenities: [
@@ -595,8 +643,11 @@ export const landingPageData = {
         startingPrice: "₹ 44,000/night",
         moreInfo: {
           title: "Where Grand Celebrations Meet Timeless Luxury",
-          roominfo:
-            "10 Bedrooms | Combination Estate: Two Joined 5-BR Villas | Sleeps up to 20",
+          roomInfo: [
+            "10 Bedrooms",
+            "Combination Estate: Two Joined 5-BR Villas",
+            "Sleeps up to 20",
+          ],
           description: [
             "Created by joining two of our flagship 5-bedroom luxury villas, Villa Encanto is purpose-built for life's big moments. Offering 10 spacious bedrooms, dual living halls, and private pool spaces, this grand compound provides the scale and sophistication required for milestone birthdays, family reunions, and special gatherings. Positioned along a calm, flowing stream and surrounded by lush tropical greenery, it serves as an exclusive, peaceful haven in North Goa. Best of all, the sun-kissed shores of Mandrem Beach are just 3-5 minutes' drive away.",
             "Here, grand occasion hosting feels effortless. Guests can gather together on the central lawn and sweeping terrace decks for sunset cocktails and barbecue evenings, while enjoying the luxury of two distinct villas to retreat to at night. Designed with fluid indoor-outdoor living areas and light-filled interiors, Villa Encanto offers an elevated, luxurious vibe where relaxation and celebration come naturally.",
@@ -618,20 +669,20 @@ export const landingPageData = {
             {
               title: "CURATED ADD-ON SERVICES",
               list: [
-                "Chef-on-Call Service: Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
-                "Private Airport Transfers: Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
-                "Coastal & Watersports Itineraries: Custom group activity planning including watersports packages, yacht charters, and local excursions.",
-                "Flexible Accommodation Options: Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
-                "Event Options: Configurable event arrangements and bespoke hosting services for special occasions.",
+                "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+                "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
+                "<b>Coastal & Watersports Itineraries:</b> Custom group activity planning including watersports packages, yacht charters, and local excursions.",
+                "<b>Flexible Accommodation Options:</b> Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
+                "<b>Event Options:</b> Configurable event arrangements and bespoke hosting services for special occasions.",
               ],
             },
             {
               title: "Essential Stay Information:",
               list: [
-                "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-                "2. Dedicated On-Site Caretakers: On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-                "3. Cooking facilities: Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
-                "4. 24/7 Estate Security: Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
+                " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+                " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+                " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
               ],
             },
           ],
@@ -641,7 +692,7 @@ export const landingPageData = {
               "The villa is super amazing and aesthetically made for comfort, and relaxation. The property is incredibly clean and hygienic because of the helpers of the property Manoj and Gudiya. They are very polite, and helpful. Over all the property is beautiful with a nice Swimming Pool, big rooms and hygiene.",
           },
         },
-       
+
         location: "Mandrem",
         images: [
           "/rooms/Paradiso/Paradiso.png",
@@ -662,11 +713,14 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-          href: "contact.WhatsappCta",
+         href:"#form",
+          // href: createWhatsappCta("Aroha Palms Villa Encanto"),
         },
       },
       {
-        title: "Aroha Palms Villa Marisol – The Grand Estate",
+        title: "Villa Marisol",
+        discountCode: "MONSOON30",
+        span: "The Grand Estate",
         type: "Grand Villa",
         description: "The Ultimate Private Luxury Estate in North Goa",
         amenities: [
@@ -687,8 +741,11 @@ export const landingPageData = {
         startingPrice: "₹ 75,000/night",
         moreInfo: {
           title: "The Ultimate Private Luxury Estate in North Goa",
-          roominfo:
-            "18 Bedrooms | Full Compound: All 3 Villas + 2 Apartments | Sleeps up to 36",
+          roomInfo: [
+            "18 Bedrooms",
+            "Full Compound: All 3 Villas + 2 Apartments",
+            "Sleeps up to 36"
+          ],
           description: [
             "The pinnacle of private group luxury in North Goa, Villa Marisol is the ultimate total takeover of our Mandrem collection. Created by combining all three luxury villas and both 2-bedroom apartments into a massive 18-bedroom compound, Marisol turns what would usually be a fragmented booking into one seamless, private retreat that comfortably sleeps up to 36 guests. Set along a peaceful, flowing stream and wrapped in lush tropical greenery, this grand estate balances complete exclusive privacy with generous, open communal spaces. Best of all, the sun-kissed shores of Mandrem Beach are just a 3-5 minutes' drive away.",
             "Designed for corporate offsites, milestone celebrations, and large multi-family gatherings, Marisol offers unmatched scale and versatility. Enjoy exclusive access to three 10-meter private swimming pools, sunlit terrace decks, and expansive outdoor grounds ideal for golden-hour cocktails or gala dinners under the stars. Fluid indoor-outdoor living spaces flow effortlessly into light-filled interiors, ensuring everyone in your party enjoys both shared celebration and quiet personal space. Pack your bags—your private coastal sanctuary awaits!",
@@ -710,20 +767,20 @@ export const landingPageData = {
             {
               title: "CURATED ADD-ON SERVICES",
               list: [
-                "Chef-on-Call Service: Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
-                "Private Airport Transfers: Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
-                "Coastal & Watersports Itineraries: Custom group activity planning including watersports packages, yacht charters, and local excursions.",
-                "Flexible Accommodation Options: Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
-                "Event Options: Configurable event arrangements and bespoke hosting services for special occasions.",
+                "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+                "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
+                "<b>Coastal & Watersports Itineraries:</b> Custom group activity planning including watersports packages, yacht charters, and local excursions.",
+                "<b>Flexible Accommodation Options:</b> Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
+                "<b>Event Options:</b> Configurable event arrangements and bespoke hosting services for special occasions.",
               ],
             },
             {
               title: "Essential Stay Information:",
               list: [
-                "1. All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-                "2. Dedicated On-Site Caretakers: On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-                "3. Cooking facilities: Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
-                "4. 24/7 Estate Security: Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
+                " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
+                " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+                " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
               ],
             },
           ],
@@ -733,7 +790,7 @@ export const landingPageData = {
               "The villa is super amazing and aesthetically made for comfort, and relaxation. The property is incredibly clean and hygienic because of the helpers of the property Manoj and Gudiya. They are very polite, and helpful. Over all the property is beautiful with a nice Swimming Pool, big rooms and hygiene.",
           },
         },
-       
+
         location: "Mandrem",
         images: [
           "/rooms/Magnifica/Magnifica.png",
@@ -792,7 +849,8 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-          href: "contact.WhatsappCta",
+         href:"#form",
+          // href: createWhatsappCta("Aroha Palms Villa Marisol"),
         },
       },
 
@@ -1003,12 +1061,13 @@ export const landingPageData = {
     buttons: [
       {
         label: "Enquire Now",
-        link: contact.WhatsappCta,
-      },
-      {
-        label: "Book Now",
         link: "#form",
+        // link: contact.WhatsappCta,
       },
+      // {
+      //   label: "Book Now",
+      //   link: "#form",
+      // },
     ],
   },
   gallery: {
@@ -1053,12 +1112,13 @@ export const landingPageData = {
     buttons: [
       {
         label: "Enquire Now",
-        link: contact.WhatsappCta,
-      },
-      {
-        label: "Book Now",
         link: "#form",
+        // link: contact.WhatsappCta,
       },
+      // {
+      //   label: "Book Now",
+      //   link: "#form",
+      // },
     ],
   },
 
@@ -1068,12 +1128,13 @@ export const landingPageData = {
     buttons: [
       {
         label: "Enquire Now",
-        link: contact.WhatsappCta,
-      },
-      {
-        label: "Book Now",
         link: "#form",
+        // link: contact.WhatsappCta,
       },
+      // {
+      //   label: "Book Now",
+      //   link: "#form",
+      // },
     ],
     reviews: [
       {
@@ -1115,7 +1176,7 @@ export const landingPageData = {
       },
       {
         q: "What are the check-in and check-out timings?",
-        a: "Standard check-in is 2:00 PM and check-out is 11:00 AM. Early check-in or late check-out can be arranged based on availability.",
+        a: "Standard check-in is 3:00 PM and check-out is 10:00 AM. Early check-in or late check-out can be arranged based on availability.",
       },
       {
         q: "Can I book a villa for weddings or corporate offsites?",
@@ -1123,11 +1184,11 @@ export const landingPageData = {
       },
       {
         q: "Are the villas pet-friendly?",
-        a: "Select villas welcome well-behaved pets. Please mention it in your enquiry so we can confirm and prepare the villa.",
+        a: "While we love animals, our villas are strictly pet-free to ensure a comfortable stay for all guests.",
       },
       {
         q: "Do all properties have private pools?",
-        a: "Every villa at Aroha Palms features a private Swimming Pool. Apartments and suites have access to the shared property pool.",
+        a: "Pool access for apartment and suite guests is only available when booked together with a villa.",
       },
       {
         q: "Is the location safe?",

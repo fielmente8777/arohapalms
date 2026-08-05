@@ -1,7 +1,7 @@
 "use client";
 import { useWebContext } from "@/context-api/WebContext";
 import { MdClose } from "react-icons/md";
-import Form1 from "../forms/Form1";
+import WhatsappForm from "../forms/WhatsappForm";
 
 const PopUpForm = () => {
   const { isOpenFormPopUp, setIsOpenFormPopUp } = useWebContext();
@@ -17,7 +17,7 @@ const PopUpForm = () => {
           <MdClose />
         </button>
         <div className="max-md:overflow-y-scroll hide-scroll mt-6">
-          <Form1 gridView />
+          <WhatsappForm gridView />
         </div>
       </div>
     </section>

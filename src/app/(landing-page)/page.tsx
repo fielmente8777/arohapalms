@@ -1,4 +1,4 @@
-import Form1 from "@/components/forms/Form1";
+import WhatsappForm from "@/components/forms/WhatsappForm";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import SlidingTitle from "@/components/sliders/SlidingTitle";
 import AccommodationSection from "./component/AccommodationSection";
@@ -20,7 +20,7 @@ export default function LandingPage() {
         sectionClassName="py-8 border-b border-primary"
         containerClassName="space-y-4"
       >
-        <Form1 />
+        <WhatsappForm />
         {/* <p
           className="text-sm text-light max-w-3xl text-center mx-auto"
           dangerouslySetInnerHTML={{ __html: landingPageData.hero.benefits }}
@@ -39,7 +39,7 @@ export default function LandingPage() {
         sectionClassName="py-8 border-t border-primary"
         containerClassName="space-y-4"
       >
-        <Form1 />
+        <WhatsappForm />
         {/* <p
           className="text-sm text-light max-w-3xl text-center mx-auto"
           dangerouslySetInnerHTML={{ __html: landingPageData.hero.benefits }}

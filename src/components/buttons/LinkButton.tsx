@@ -12,6 +12,8 @@ interface LinkButtonProps {
   calendarIcon?: boolean;
   arrowIcon?: boolean;
   getDirectionIcon?: boolean;
+  /** Villa name to pre-select in the enquiry form (used only when href === "#form") */
+  villa?: string;
   [key: string]: unknown;
   showSecureBadge?: boolean;
   secureBadgeText?: string;
@@ -26,13 +28,22 @@ const LinkButton: React.FC<LinkButtonProps> = ({
   whatsAppIcon = false,
   callIcon = false,
   calendarIcon = false,
+  // These must be destructured so they are NOT spread onto the DOM node
+  getDirectionIcon = false,
+  showSecureBadge = false,
+  secureBadgeText = "",
+  villa,
   ...props
 }) => {
-  const { setIsOpenFormPopUp } = useWebContext();
+  const { openFormPopUp , isOpen, closeRoom} = useWebContext();
+
   const handleClick = () => {
-    setIsOpenFormPopUp(true);
-    console.log("first")
+    openFormPopUp(villa);
+    if(isOpen){
+      closeRoom();
+    }
   };
+
   return (
     <>
       {href === "#form" ? (

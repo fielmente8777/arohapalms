@@ -33,7 +33,8 @@ const UnforgettableSection: React.FC<UnforgettableSectionProps> = ({
        <p className="text-secondary text-center lg:text-lg">
           {description[1]}
         </p>
-      <ul className="grid grid-cols-1 md:grid-cols-2 max-w-md mx-auto gap-4 justify-center ">
+      <ul className="mx-auto">
+      {/* <ul className="grid grid-cols-1 md:grid-cols-2 max-w-md mx-auto gap-4 justify-center "> */}
         {buttons.map((button, index) => (
           <li key={index}>
             <LinkButton

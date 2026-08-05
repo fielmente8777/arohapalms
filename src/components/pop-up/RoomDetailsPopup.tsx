@@ -3,9 +3,9 @@
 import { useWebContext } from "@/context-api/WebContext";
 import Image from "next/image";
 import { MdClose } from "react-icons/md";
-import SwiperCarousel from "../sliders/SwiperCarousel";
 import { Autoplay, Navigation } from "swiper/modules";
-import { AccommodationSectionProps } from "@/@types/landingPageTypes";
+import LinkButton from "../buttons/LinkButton";
+import SwiperCarousel from "../sliders/SwiperCarousel";
 
 // Define the type for listOfData items
 type ListOfDataItem = {
@@ -34,9 +34,9 @@ const RoomDetailsPopup = () => {
             <p className="text-sm text-secondary">{item.description}</p>
           )}
           {item.list && Array.isArray(item.list) && (
-            <ul className="list-disc pl-5 space-y-1 text-sm text-secondary">
+            <ul className={`list-disc pl-5 space-y-1 text-sm text-secondary`}>
               {item.list.map((listItem: string, idx: number) => (
-                <li key={idx}>{listItem}</li>
+                <li key={idx} dangerouslySetInnerHTML={{ __html: listItem }} />
               ))}
             </ul>
           )}
@@ -53,9 +53,9 @@ const RoomDetailsPopup = () => {
       return (
         <div className="space-y-2">
           <p className="font-semibold text-p2">{listData.title}</p>
-          <ul className="list-disc pl-5 space-y-1 text-sm text-secondary">
+          <ul className="list-decimal pl-5 space-y-1 text-sm text-secondary">
             {listData.list.map((item: string, idx: number) => (
-              <li key={idx}>{item}</li>
+              <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
             ))}
           </ul>
         </div>
@@ -73,7 +73,7 @@ const RoomDetailsPopup = () => {
           : "invisible opacity-0 scale-3d"
       }`}
     >
-      <div className="bg-background-2 relative max-w-4xl w-full lg:p-8 p-4 rounded-2xl max-h-[95vh]">
+      <div className="bg-background relative max-w-4xl w-full lg:p-8 p-4 rounded-2xl max-h-[95vh]">
         <button
           className="absolute top-4 right-4 max-lg:top-2 max-lg:right-2 text-2xl text-primary hover:text-primary/80 transition-colors z-10"
           onClick={closeRoom}
@@ -89,7 +89,7 @@ const RoomDetailsPopup = () => {
               slidesPerView={1}
               spaceBetween={0}
               loop
-              speed={1000}
+              speed={1500}
               modules={[Autoplay, Navigation]}
               navigation={true}
               autoplay={{
@@ -142,14 +142,21 @@ const RoomDetailsPopup = () => {
               )}
 
               {/* Room Info */}
-              {room?.moreInfo?.roominfo && (
-                <p className="text-sm text-secondary">
-                  {room?.moreInfo.roominfo}
-                </p>
+              {room?.moreInfo?.roomInfo && (
+                <div className="flex flex-wrap items-center gap-2 py-2">
+                  {room.moreInfo.roomInfo.map((info, index) => (
+                    <span
+                      key={index}
+                      className="flex items-center gap-2 bg-background-2 text-sm py-1 text-background-dark px-3 rounded-full"
+                    >
+                      {info}
+                    </span>
+                  ))}
+                </div>
               )}
 
               {/* Amenities - Quick Overview */}
-              {room?.amenities && room.amenities.length > 0 && (
+              {/* {room?.amenities && room.amenities.length > 0 && (
                 <div className="flex flex-wrap items-center gap-4 py-2">
                   {room.amenities.map((amenity, index) => (
                     <div
@@ -162,6 +169,21 @@ const RoomDetailsPopup = () => {
                   ))}
                 </div>
               )}
+
+              {/* Amenities - Quick Overview */}
+              {/* {room?.amenities && room.amenities.length > 0 && (
+                <div className="flex flex-wrap items-center gap-4 py-2">
+                  {room.amenities.map((amenity, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 text-sm text-secondary"
+                    >
+                      {amenity.icon}
+                      <span>{amenity.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )} */}
             </div>
             {/* Image Gallery - Mobile */}
             <div className="lg:hidden w-full">
@@ -231,7 +253,10 @@ const RoomDetailsPopup = () => {
                 <p className="font-semibold text-p2">{room.note.title}</p>
                 <ul className="list-disc pl-5 space-y-1 text-sm text-secondary">
                   {room.note.notes.map((note: string, index: number) => (
-                    <li key={index}>{note}</li>
+                    <li
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: note }}
+                    />
                   ))}
                 </ul>
               </div>
@@ -240,10 +265,18 @@ const RoomDetailsPopup = () => {
             {/* Review Section */}
             {room?.moreInfo?.review?.author && (
               <div className="space-y-2 border-t border-white/10 pt-4">
-                <p className="text-sm font-semibold text-p2">Guest Review</p>
-                <p className="text-sm text-primary font-medium">
-                  {room?.moreInfo.review.author}
-                </p>
+                <div className="flex items-center justify-between gap-4">
+                  <div className="">
+                    <p className="text-sm font-semibold text-p2">
+                      Guest Review
+                    </p>
+                    <p className="text-lg text-primary font-medium">
+                      {room?.moreInfo.review.author}
+                    </p>
+                  </div>
+                  <Image src="/Booking.png" alt="booking" width={25} height={25} />
+                </div>
+                <span className="text-lg text-primary text-wider">★★★★★</span>
                 <div className="w-full h-px bg-white/10" />
                 <p className="text-sm text-secondary italic">
                   {room?.moreInfo.review.description}
@@ -254,14 +287,21 @@ const RoomDetailsPopup = () => {
             {/* CTA Button */}
             {room?.cta && (
               <div className="pt-4">
-                <a
+                {/* <a
                   href={room.cta.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block w-full text-center bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors"
                 >
                   {room.cta.label}
-                </a>
+                </a> */}
+                <LinkButton
+                  href={room.cta.href}
+                  label={room.cta.label}
+                  whatsAppIcon
+                  villa={room.title}
+                  className="rounded-sm text-white bg-primary border-none w-full justify-center uppercase"
+                />
               </div>
             )}
           </div>

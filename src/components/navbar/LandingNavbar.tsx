@@ -1,11 +1,11 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarIcon } from "../buttons/LinkButton";
+import { WhatsAppIcon } from "../buttons/LinkButton";
 import { navData } from "./navData";
+import { useWebContext } from "@/context-api/WebContext";
 
 const LandingNavbar = () => {
-
-
   // const scrollToSection = (id: string) => {
   //   const element = document.getElementById(id);
   //   if (element) {
@@ -13,7 +13,8 @@ const LandingNavbar = () => {
   //   }
   //   return;
   // };
-  
+  const { openFormPopUp , isOpen, closeRoom} = useWebContext();
+
   return (
     <header className="max_screen_width w-full">
       {/* TOP BAR */}
@@ -49,19 +50,24 @@ const LandingNavbar = () => {
           <ul className="flex items-center gap-2">
             {navData.buttons.map((link, index) => (
               <li key={index} className="flex items-center gap-2">
-                <Link
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-lg bg-primary text-white px-2 md:px-6 py-2 md:py-3"
+                <button
+                  onClick={() => {
+                    openFormPopUp();
+                  }}
+                  // href={link.href}
+                  // target="_blank"
+                  // rel="noopener noreferrer"
+                  className="flex items-center gap-2 rounded-lg bg-primary uppercase text-white px-2 md:px-6 py-2 md:py-3"
                 >
                   <span className="">
-                    <CalendarIcon />
+                    <WhatsAppIcon />
+                    {/* <CalendarIcon /> */}
                   </span>
                   <span className="lg:block text-base hidden tracking-widest">
-                    {link.label}
+                    {/* {link.label} */}
+                    Enquire Now
                   </span>
-                </Link>
+                </button>
               </li>
             ))}
           </ul>

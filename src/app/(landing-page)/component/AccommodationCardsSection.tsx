@@ -2,6 +2,7 @@
 import { AccommodationSectionProps } from "@/@types/landingPageTypes";
 import LinkButton from "@/components/buttons/LinkButton";
 import RoomDetailsPopupButton from "@/components/pop-up/RoomDetailsPopupButton";
+import Container from "@/components/sectionComponants/Container";
 import AmenitiesSlider from "@/components/sliders/AmenitiesSlider";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import Image from "next/image";
@@ -40,13 +41,22 @@ const AccommodationCardsSection: React.FC<{
         ))}
       </div> */}
       <div>
-        <div className="flex flex-col gap-6 lg:gap-16">
-          {filteredCards.slice(0, 3).map((card, index) => (
-            <AccommodationCard key={index} {...card} index={index} />
-          ))}
-          <p className="text-secondary text-center max-w-4xl mx-auto border border-primary box-shadow w-full p-4 rounded-2xl lg:text-xl font-semibold bg-background">
-            {note}
-          </p>
+        <Container>
+          <div className="flex flex-col gap-6 lg:gap-16">
+            {filteredCards.slice(0, 3).map((card, index) => (
+              <AccommodationCard key={index} {...card} index={index} />
+            ))}
+          </div>
+        </Container>
+        <div className="py-8 bg-background-dark w-full my-10">
+          <div className="text-white bg-background-dark text-center max-w-4xl mx-auto space-y-3.5 ">
+            <p className="text-2xl font-semibold capitalize">
+              Stays that scale with your group!
+            </p>
+            <p className="lg:text-xl">{note}</p>
+          </div>
+        </div>
+        <Container>
           {filteredCards.length > 3 && (
             <div className="flex flex-col gap-6 lg:gap-16">
               {filteredCards.slice(3).map((card, index) => (
@@ -54,7 +64,7 @@ const AccommodationCardsSection: React.FC<{
               ))}
             </div>
           )}
-        </div>
+        </Container>
       </div>
     </div>
   );
@@ -78,6 +88,8 @@ export const AccommodationCard: React.FC<
   startingPrice,
   type,
   originalPrice,
+  span,
+  discountCode,
 }) => {
   return (
     <div className=" grid lg:grid-cols-10 grid-cols-1 gap-6  room-card">
@@ -89,14 +101,14 @@ export const AccommodationCard: React.FC<
           slidesPerView={1}
           spaceBetween={0}
           loop
-          speed={1000}
+          speed={2000}
           modules={[Autoplay, Navigation]}
           navigation={true}
           autoplay={{
-            delay: 2000,
+            delay: 4000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
-            waitForTransition: false,
+            waitForTransition: true,
           }}
           swiperSlideClassName="relative lg:aspect-[4/2.6] aspect-[4/2.75]"
           renderSlide={(image) => (
@@ -110,11 +122,23 @@ export const AccommodationCard: React.FC<
           )}
         />
       </div>
-      <div className="lg:col-span-4 flex flex-col border-2 border-primary rounded-2xl gap-4  lg:gap-5 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
-        <div className="space-y-1">
-          <h3 className="text-2xl text-p2">{title}</h3>
-          <p className=" text-dark">{moreInfo.title}</p>
-          <p className="text-xs text-[#57534E] uppercase">{moreInfo.roominfo}</p>
+      <div className="lg:col-span-4 flex flex-col justify-between border-2 border-primary rounded-2xl gap-4  lg:gap-5 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <h3 className="text-3xl text-p2 font-semibold">{title}</h3>
+            <span className="text-lg text-p2 uppercase">- {span}</span>
+          </div>
+          <p className="text-lg text-primary">{moreInfo.title}</p>
+          <div className="flex flex-wrap items-center gap-2 py-2">
+            {moreInfo.roomInfo.map((info, index) => (
+              <span
+                key={index}
+                className="flex items-center gap-2 bg-background-2 text-sm py-1 text-background-dark px-3 rounded-full"
+              >
+                {info}
+              </span>
+            ))}
+          </div>
         </div>
         <div className={`w-full rounded-xl lg:hidden overflow-hidden`}>
           <SwiperCarousel
@@ -122,14 +146,14 @@ export const AccommodationCard: React.FC<
             slidesPerView={1}
             spaceBetween={0}
             loop
-            speed={1000}
+            speed={2000}
             modules={[Autoplay, Navigation]}
             navigation={true}
             autoplay={{
-              delay: 2000,
+              delay: 4000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
-              waitForTransition: false,
+              waitForTransition: true,
             }}
             swiperSlideClassName="relative lg:aspect-[4/2.5] aspect-[4/2.75]"
             renderSlide={(image) => (
@@ -143,7 +167,7 @@ export const AccommodationCard: React.FC<
             )}
           />
         </div>
-        <ul className="flex flex-wrap items-center gap-2">
+        {/* <ul className="flex flex-wrap items-center gap-2">
           {amenities.map((amenity, index) => (
             <li
               key={index}
@@ -153,7 +177,7 @@ export const AccommodationCard: React.FC<
               {amenity.label}
             </li>
           ))}
-        </ul>
+        </ul> */}
         <div className="flex flex-col gap-1">
           <p className=" text-[#57534E] line-clamp-2">
             {moreInfo.description[0]}
@@ -173,6 +197,8 @@ export const AccommodationCard: React.FC<
               originalPrice,
               startingPrice,
               type,
+              span,
+              discountCode,
             }}
           />
         </div>
@@ -188,15 +214,20 @@ export const AccommodationCard: React.FC<
             </li>
           ))}
         </ul> */}
-        <div className="">
-          <p className="text-sm text-secondary line-through">
+        <div className="flex items-center gap-4 justify-between">
+          {/* <p className="text-sm text-secondary line-through">
             <span className="sr-only">{originalPrice}</span>
             <span className="font">{originalPrice} </span>
-          </p>
+          </p> */}
           <p className="text-lg text-secondary">
             <span className="sr-only">{startingPrice}</span>
             <span className="font-semibold">{startingPrice} </span>
             <span className="text-sm">+ Taxes</span>
+          </p>
+          <p className="text-sm text-secondary">
+            <span className="sr-only">{discountCode}</span>
+            <span className="">Discount code: </span>
+            <span className="text-p2">{discountCode} </span>
           </p>
         </div>
         {/* <div className="grid md:grid-cols-[1fr_auto] grid-cols-1 gap-4"> */}
@@ -204,6 +235,7 @@ export const AccommodationCard: React.FC<
           href={cta.href}
           label={cta.label}
           whatsAppIcon
+          villa={title}
           className="bg-primary rounded-sm border-none text-white w-full justify-center uppercase"
         />
         {/* </div> */}

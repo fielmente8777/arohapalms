@@ -1,26 +1,46 @@
-// "use client"
+"use client";
 
+import { useState } from "react";
 import { FaqSectionProps } from "@/@types/landingPageTypes";
-
-// import { useState } from "react";
 
 const Accordion: React.FC<FaqSectionProps["items"][0]> = ({
   q: question,
   a: answer,
 }) => {
-  // Accordion component implementation goes here
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="py-4 cursor-pointer group">
-      <div className="flex justify-between items-center">
-        <h3 className="text-background-dark ">{question}</h3>
-        <span className="mt-2 transition-transform duration-300 ease-in-out group-hover:rotate-180">
-          <DropDownIcon  />
+    <div className="border-b border-gray-200 py-4">
+      <button
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        className="flex w-full items-center justify-between text-left"
+        aria-expanded={isOpen}
+      >
+        <h3 className="text-background-dark pr-4">{question}</h3>
+
+        <span
+          className={`transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        >
+          <DropDownIcon />
         </span>
+      </button>
+
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          isOpen
+            ? "grid-rows-[1fr] opacity-100 mt-3"
+            : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p className="text-secondary text-sm leading-6">
+            {answer}
+          </p>
+        </div>
       </div>
-      <p className="hidden group-hover:block group-active:block transition-transform group-hover:translate-y-1 group-active:translate-y-1 group-active:opacity-100 group-hover:opacity-100 opacity-0 transform duration-1000 ease-in-out mt-2 text-secondary text-sm">
-        {answer}
-      </p>
     </div>
   );
 };

@@ -7,6 +7,8 @@ export interface AccommodationSectionProps {
   note: string;
   cards: {
     title: string;
+    span: string;
+    discountCode: string;
     type: string;
     description: string;
     amenities: {
@@ -21,7 +23,7 @@ export interface AccommodationSectionProps {
     startingPrice: string;
     moreInfo: {
       title: string;
-      roominfo: string;
+      roomInfo: string[];
       description: string[];
       listOfData: {
         title: string;

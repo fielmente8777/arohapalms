@@ -15,7 +15,7 @@ interface OpenAmenityModalArray {
 type RoomDetailsType = AccommodationSectionProps["cards"][0];
 
 interface WebContextType {
-   isOpen: boolean;
+  isOpen: boolean;
   room: RoomDetailsType | null;
   openRoom: (room: RoomDetailsType) => void;
   closeRoom: () => void;
@@ -28,6 +28,12 @@ interface WebContextType {
 
   isOpenFormPopUp: boolean;
   setIsOpenFormPopUp: (open: boolean) => void;
+
+  // Villa name to pre-select in the enquiry form (empty string = no prefill)
+  formVilla: string;
+  setFormVilla: (villa: string) => void;
+  openFormPopUp: (villa?: string) => void;
+  closeFormPopUp: () => void;
 
   passImagesArray: string[];
   setPassImagesArray: (images: string[]) => void;
@@ -47,7 +53,6 @@ interface WebContextType {
 }
 
 const WebContext = createContext<WebContextType>({
-
   isOpen: false,
   room: null,
   openRoom: () => {},
@@ -58,6 +63,11 @@ const WebContext = createContext<WebContextType>({
 
   isOpenFormPopUp: false,
   setIsOpenFormPopUp: () => {},
+
+  formVilla: "",
+  setFormVilla: () => {},
+  openFormPopUp: () => {},
+  closeFormPopUp: () => {},
 
   openImageModal: false,
   setOpenImageModal: () => {},
@@ -90,6 +100,8 @@ export const WebProvider = ({ children }: WebProviderProps) => {
 
   const [isOpenFormPopUp, setIsOpenFormPopUp] = useState(false);
 
+  const [formVilla, setFormVilla] = useState("");
+
   const [passImagesArray, setPassImagesArray] = useState<string[]>([]);
 
   const [imageCurrentIndex, setImageCurrentIndex] = useState(0);
@@ -98,6 +110,18 @@ export const WebProvider = ({ children }: WebProviderProps) => {
   const [amenityModalArray, setAmenityModalArray] = useState<
     OpenAmenityModalArray[]
   >([]);
+
+  // Open the enquiry popup, optionally carrying a villa name to prefill
+  const openFormPopUp = (villa?: string) => {
+    setFormVilla(villa ?? "");
+    setIsOpenFormPopUp(true);
+  };
+
+  const closeFormPopUp = () => {
+    setIsOpenFormPopUp(false);
+    setFormVilla("");
+  };
+
   const openGallery = ({ images, index = 0 }: OpenGalleryProps) => {
     setPassImagesArray(images);
 
@@ -139,6 +163,11 @@ export const WebProvider = ({ children }: WebProviderProps) => {
 
         isOpenFormPopUp,
         setIsOpenFormPopUp,
+
+        formVilla,
+        setFormVilla,
+        openFormPopUp,
+        closeFormPopUp,
 
         openImageModal,
         setOpenImageModal,

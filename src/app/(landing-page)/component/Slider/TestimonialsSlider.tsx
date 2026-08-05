@@ -2,6 +2,7 @@
 
 import { TestimonialsProps } from "@/@types/landingPageTypes";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
+import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 
 const TestimonialsSlider: React.FC<{
@@ -30,9 +31,20 @@ const TestimonialsSlider: React.FC<{
         }}
         renderSlide={(item) => (
           <div className="rounded-2xl text-white backdrop-blur-sm border border-white/10 bg-background-dark-2 p-6 flex flex-col gap-5">
+            <span className="text-lg text-primary text-wider">
+              ★★★★★
+            </span>
             <p className="">{item.review}</p>
             <div className="w-full h-px bg-white/10" />
-            <p className="text-lg capitalize">{item.name}</p>
+            <div className="flex items-center gap-3 justify-between">
+              <p className="text-lg capitalize">{item.name}</p>
+              <Image
+                src="/g-icon.png"
+                alt="Google Icon"
+                width={24}
+                height={24}
+              />
+            </div>
           </div>
         )}
       />

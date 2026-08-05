@@ -1,6 +1,6 @@
 "use client";
+import { useWebContext } from "@/context-api/WebContext";
 import { getDateInputLimits } from "@/hooks/getDateInputLimits";
-import useForm from "@/hooks/useForm";
 import {
   CalendarIcon,
   CallIcon,
@@ -13,12 +13,19 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { countries } from "../../utils/constent";
+import { WhatsAppIcon } from "../buttons/LinkButton";
 
 interface Props {
   gridView?: boolean;
+  /** Optional villa name to pre-select, e.g. "Villa Magnifica" */
+  villa?: string;
 }
 
-// Location options
+// WhatsApp destination number
+// const WHATSAPP_NUMBER = "+919834220573";
+const WHATSAPP_NUMBER = "+918820445101";
+
+// Villa options
 const locationOptions = [
   {
     value: "4BHK, Aroha Palms Magnifica ",
@@ -33,32 +40,31 @@ const locationOptions = [
   { value: "9BHK, Aroha Palms Prana ", label: "9BHK, Aroha Palms Prana" },
   { value: "10BHK, Aroha Palms Encanto ", label: "10BHK, Aroha Palms Encanto" },
   { value: "18BHK, Aroha Palms Marisol ", label: "18BHK, Aroha Palms Marisol" },
-
 ];
 
-const budgetOption = [
-  {
-    value: "20000",
-    label: "20,000",
-  },
-  {
-    value: "30000",
-    label: "30,000",
-  },
-  {
-    value: "40000",
-    label: "40,000",
-  },
-  {
-    value: "50000",
-    label: "50,000",
-  },
-  // more the 50000
-  {
-    value: "more than 50,000",
-    label: "more than 50,000",
-  },
-];
+const normalizeVillaName = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/aroha palms|villa|\d+\s*bhk/g, "")
+    .replace(/[^a-z]/g, "");
+
+export const matchVillaOption = (input?: string | null) => {
+  if (!input) return "";
+
+  const target = normalizeVillaName(input);
+  if (!target) return "";
+
+  const matched = locationOptions.find((option) => {
+    const current = normalizeVillaName(option.value);
+    if (!current) return false;
+    return (
+      current === target || current.includes(target) || target.includes(current)
+    );
+  });
+
+  // Return the exact option value so the dropdown selection matches
+  return matched ? matched.value : "";
+};
 
 // Custom Dropdown Component
 interface CustomDropdownProps {
@@ -168,9 +174,75 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({
   );
 };
 
-const Form1 = ({ gridView }: Props) => {
+// Local (not UTC) yyyy-mm-dd so the date never shifts by a day
+const formatDate = (date: Date) => {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+};
+
+interface WhatsappFormData {
+  name: string;
+  countryCode: string;
+  phone: string;
+  promoCode: string;
+  villa: string;
+  checkIn: string;
+  checkOut: string;
+}
+
+const initialFormData: WhatsappFormData = {
+  name: "",
+  countryCode: "+91",
+  phone: "",
+  promoCode: "",
+  villa: "",
+  checkIn: "",
+  checkOut: "",
+};
+
+// Builds the pre-filled WhatsApp message from the form data
+export const buildWhatsappMessage = (data: WhatsappFormData) => {
+  const lines: string[] = [
+    "Hi Aroha Palms Team,",
+    "",
+    "I'm interested in booking a stay at Aroha Palms.",
+    "",
+  ];
+
+  if (data.name) lines.push(`Name: ${data.name}`);
+  if (data.phone) lines.push(`Phone: ${data.countryCode} ${data.phone}`);
+  if (data.villa) lines.push(`Villa: ${data.villa.trim()}`);
+  if (data.checkIn) lines.push(`Check-in: ${data.checkIn}`);
+  if (data.checkOut) lines.push(`Check-out: ${data.checkOut}`);
+  if (data.promoCode) lines.push(`Promo Code: ${data.promoCode}`);
+
+  lines.push(
+    "",
+    "Please share the best available options and rates.",
+    "",
+    "Thank you!",
+  );
+
+  return encodeURIComponent(lines.join("\n"));
+};
+
+const WhatsappForm = ({ gridView, villa }: Props) => {
+  // Villa name carried in from whichever CTA opened the popup
+  const { formVilla } = useWebContext();
+  const prefillVilla = villa ?? formVilla;
+
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
+  // Lazy initializer so a villa passed on first mount is already selected
+  const [formData, setFormData] = useState<WhatsappFormData>(() => ({
+    ...initialFormData,
+    villa: matchVillaOption(prefillVilla),
+  }));
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const { min, max } = getDateInputLimits({
     showPast: false,
@@ -180,27 +252,39 @@ const Form1 = ({ gridView }: Props) => {
   const minDate = min ? new Date(min) : undefined;
   const maxDate = max ? new Date(max) : undefined;
 
-  const {
-    isSubmitting,
-    errors,
-    handleSubmit,
-    formData,
-    handleChange,
-    setFieldValue,
-    submitSuccess,
-  } = useForm({
-    includeCheckIn: true,
-    includeCheckOut: true,
-    includeMessage: true,
-    includeCity: false,
-    includeBudget: true,
-    includeVilla: true,
-    onSubmitSuccess: () => {
-      setStartDate(null);
-      setEndDate(null);
-      window.open("/thank-you/", "_blank");
-    },
-  });
+  const setFieldValue = (name: keyof WhatsappFormData, value: string) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => {
+      if (!prev[name]) return prev;
+      const next = { ...prev };
+      delete next[name];
+      return next;
+    });
+  };
+
+  // Keep the pre-selected villa after a reset if one was passed in, and also update the form if the prop changes
+  const [lastPrefillVilla, setLastPrefillVilla] = useState(prefillVilla);
+
+  if (prefillVilla !== lastPrefillVilla) {
+    setLastPrefillVilla(prefillVilla);
+
+    const matched = matchVillaOption(prefillVilla);
+    if (matched) {
+      setFormData((prev) => ({ ...prev, villa: matched }));
+      setErrors((prev) => {
+        if (!prev.villa) return prev;
+        const next = { ...prev };
+        delete next.villa;
+        return next;
+      });
+    }
+  }
+
+  const handleChange: React.ChangeEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  > = (e) => {
+    setFieldValue(e.target.name as keyof WhatsappFormData, e.target.value);
+  };
 
   const handleDateChange = (dates: [Date | null, Date | null]) => {
     const [start, end] = dates;
@@ -208,27 +292,60 @@ const Form1 = ({ gridView }: Props) => {
     setStartDate(start);
     setEndDate(end);
 
-    if (start) {
-      setFieldValue("checkIn", start.toISOString().split("T")[0]);
-    }
-    if (end) {
-      setFieldValue("checkOut", end.toISOString().split("T")[0]);
-    }
+    setFieldValue("checkIn", start ? formatDate(start) : "");
+    setFieldValue("checkOut", end ? formatDate(end) : "");
   };
 
-  // Handle location change
-  const handleLocationChange = (value: string) => {
-    setFieldValue("city", value);
-  };
-
-  // Handle budget change
-  const handleBudgetChange = (value: string) => {
-    setFieldValue("budget", value);
+  // Handle promo code change
+  const handlePromoCodeChange: React.ChangeEventHandler<HTMLInputElement> = (
+    e,
+  ) => {
+    setFieldValue("promoCode", e.target.value.toUpperCase());
   };
 
   // Handle villa change
   const handleVillaChange = (value: string) => {
     setFieldValue("villa", value);
+  };
+
+  const validate = () => {
+    const nextErrors: Record<string, string> = {};
+
+    if (!formData.name.trim()) nextErrors.name = "Please enter your name";
+
+    const digits = formData.phone.replace(/\D/g, "");
+    if (!digits) nextErrors.phone = "Please enter your phone number";
+    else if (digits.length < 7) nextErrors.phone = "Enter a valid phone number";
+
+    if (!formData.villa) nextErrors.villa = "Please select a villa";
+
+    setErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!validate()) return;
+
+    setIsSubmitting(true);
+
+    const enCodeText = buildWhatsappMessage(formData);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${enCodeText}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    // Keep the pre-selected villa after a reset if one was passed in
+    setFormData({
+      ...initialFormData,
+      villa: matchVillaOption(prefillVilla),
+    });
+    setStartDate(null);
+    setEndDate(null);
+    setIsSubmitting(false);
+    setSubmitSuccess(true);
+    setTimeout(() => setSubmitSuccess(false), 3000);
+    window.open("/thank-you/", "_blank");
   };
 
   type DropdownOption = {
@@ -260,7 +377,7 @@ const Form1 = ({ gridView }: Props) => {
   const formFields: FormField[] = [
     {
       name: "name",
-      label: "Name",
+      label: "Name*",
       type: "text",
       value: formData.name,
       onChange: handleChange,
@@ -268,44 +385,37 @@ const Form1 = ({ gridView }: Props) => {
     },
     {
       name: "phone",
-      label: "Ph Number",
+      label: "Ph Number*",
       type: "tel",
       value: formData.phone,
       onChange: handleChange,
       icon: <CallIcon />,
     },
-    {
-      name: "budget",
-      label: "Select Budget*",
-      type: "dropdown",
-      value: formData.budget || "",
-      options: budgetOption,
-      icon: <WalletIcon />,
-      onChange: handleBudgetChange,
-    },
+
     {
       name: "villa",
       label: "Select Villa*",
       type: "dropdown",
-      value: formData.villa || "",
+      value: formData.villa,
       options: locationOptions,
       icon: <VilaIcon />,
       onChange: handleVillaChange,
     },
-    // {
-    //   name: "city",
-    //   label: "Preferred Location",
-    //   type: "dropdown",
-    //   value: formData.city || "",
-    //   icon: <VilaIcon />,
-    // },
     {
       name: "checkIn",
-      label: "Check-in & out",
+      label: "Check-in & out*",
       type: "date",
-      value: formData.checkIn || "",
+      value: formData.checkIn,
       onChange: handleChange,
       icon: <CalendarIcon />,
+    },
+    {
+      name: "promoCode",
+      label: "Promo Code",
+      type: "text",
+      value: formData.promoCode,
+      onChange: handlePromoCodeChange,
+      icon: <WalletIcon />,
     },
   ];
 
@@ -343,13 +453,7 @@ const Form1 = ({ gridView }: Props) => {
               <label className="text-p2">{field.icon}</label>
               <CustomDropdown
                 value={field.value}
-                onChange={
-                  field.name === "budget"
-                    ? handleBudgetChange
-                    : field.name === "villa"
-                      ? handleVillaChange
-                      : handleLocationChange
-                }
+                onChange={field.onChange}
                 placeholder={field.label}
                 options={field.options ?? []}
                 error={errors[field.name]}
@@ -417,12 +521,15 @@ const Form1 = ({ gridView }: Props) => {
         disabled={isSubmitting}
       >
         {isSubmitting ? (
-          "Submitting..."
+          "Opening WhatsApp..."
         ) : submitSuccess ? (
           "Thank You!"
         ) : (
           <span className="flex items-center justify-center gap-2.5">
-            BOOK YOUR STAY
+            <span>
+              <WhatsAppIcon />
+            </span>{" "}
+            Enquire Now
           </span>
         )}
       </button>
@@ -430,6 +537,4 @@ const Form1 = ({ gridView }: Props) => {
   );
 };
 
-export default Form1;
-
-// Location Icon Component
+export default WhatsappForm;
