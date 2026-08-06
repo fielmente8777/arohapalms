@@ -22,8 +22,7 @@ interface Props {
 }
 
 // WhatsApp destination number
-// const WHATSAPP_NUMBER = "+919834220573";
-const WHATSAPP_NUMBER = "+918820445101";
+const WHATSAPP_NUMBER = "+919834220573";
 
 // Villa options
 const locationOptions = [
