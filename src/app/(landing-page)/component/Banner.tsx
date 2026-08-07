@@ -25,12 +25,12 @@ const Banner: React.FC<BannerProps> = ({ images }) => {
         data={images}
         slidesPerView={1}
         spaceBetween={0}
-        speed={5000}
+        speed={1800}
         loop={true}
         modules={[Autoplay]}
         freeMode={true}
         autoplay={{
-          delay: 3000,
+          delay: 1800,
         }}
         renderSlide={(image) => (
           <div className="relative w-full lg:aspect-[16/7.7] aspect-[4/3.7] overflow-hidden">

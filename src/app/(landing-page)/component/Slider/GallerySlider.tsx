@@ -47,7 +47,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images }) => {
             spaceBetween: 24,
           },
         }}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
         renderSlide={(src) => (
           <div className="w-full">
             <div className="w-full relative aspect-[4/2.5]">

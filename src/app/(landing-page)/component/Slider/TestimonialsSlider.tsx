@@ -13,7 +13,7 @@ const TestimonialsSlider: React.FC<{
       <SwiperCarousel
         data={reviews}
         modules={[Autoplay]}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        autoplay={{ delay: 1800, disableOnInteraction: false }}
         slidesPerView={1}
         spaceBetween={26}
         loop

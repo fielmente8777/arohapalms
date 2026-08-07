@@ -19,7 +19,7 @@ const ExperienceSlider: React.FC<{
           spaceBetween={20}
           loop
           modules={[Navigation, Autoplay]}
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          autoplay={{ delay: 1800, disableOnInteraction: false }}
           navigation={{
             nextEl: ".experience-next",
             prevEl: ".experience-prev",

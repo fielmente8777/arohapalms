@@ -101,11 +101,11 @@ export const AccommodationCard: React.FC<
           slidesPerView={1}
           spaceBetween={0}
           loop
-          speed={2000}
+          speed={1800}
           modules={[Autoplay, Navigation]}
           navigation={true}
           autoplay={{
-            delay: 4000,
+            delay: 1800,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
             waitForTransition: true,
