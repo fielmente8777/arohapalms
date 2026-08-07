@@ -213,7 +213,7 @@ export const AccommodationCard: React.FC<
             </li>
           ))}
         </ul> */}
-        <div className="flex items-center gap-4 justify-between">
+        <div className="flex max-md:flex-col lg:items-center gap-4 justify-between">
           {/* <p className="text-sm text-secondary line-through">
             <span className="sr-only">{originalPrice}</span>
             <span className="font">{originalPrice} </span>
