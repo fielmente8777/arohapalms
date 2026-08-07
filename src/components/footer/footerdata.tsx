@@ -1,5 +1,4 @@
 import { contact } from "@/utils/constent";
-import { FillCallIcon, FillLocationIcon, FillMailIcon } from "@/utils/icons";
 
 interface FooterData {
   logo: string;
@@ -15,7 +14,7 @@ interface FooterData {
       title?: string;
       icon?: React.ReactNode;
       label?: string;
-      href?: string;
+      href: string;
       label2?: string;
       href2?: string;
     }[];
@@ -46,7 +45,8 @@ export const footerData: FooterData = {
       title: "Locations",
       links: [
         {
-          title: "Mandrem, North Goa",
+          label: "Mandrem, North Goa",
+          href: "https://maps.app.goo.gl/m2HPpmkyeBQAMsjZ7",
         },
 
         // {
