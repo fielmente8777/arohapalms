@@ -110,7 +110,7 @@ export const AccommodationCard: React.FC<
             pauseOnMouseEnter: true,
             waitForTransition: true,
           }}
-          swiperSlideClassName="relative lg:aspect-[4/2.6] aspect-[4/2.75]"
+          swiperSlideClassName="relative w-full h-full xl:aspect-[4/2.8] lg:aspect-[4/7] aspect-[4/2.75]"
           renderSlide={(image) => (
             <Image
               src={image}
@@ -124,10 +124,9 @@ export const AccommodationCard: React.FC<
       </div>
       <div className="lg:col-span-4 flex flex-col justify-between border-2 border-primary rounded-2xl gap-4  lg:gap-5 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
         <div className="space-y-3">
-          <div className="flex max-lg:flex-col max-lg:items-start gap-2">
-            <h3 className="lg:text-3xl text-2xl text-p2 font-semibold">{title}</h3>
-            <span className="text-lg text-p2 uppercase">- {span}</span>
-          </div>
+          <h3 className="lg:text-3xl text-2xl text-p2 font-semibold">
+            {title} - {span}
+          </h3>
           <p className="text-lg text-primary">{moreInfo.title}</p>
           <div className="flex flex-wrap items-center gap-2 py-2">
             {moreInfo.roomInfo.map((info, index) => (
@@ -230,14 +229,18 @@ export const AccommodationCard: React.FC<
             <span className="text-p2">{discountCode} </span>
           </p>
         </div>
+
         {/* <div className="grid md:grid-cols-[1fr_auto] grid-cols-1 gap-4"> */}
-        <LinkButton
-          href={cta.href}
-          label={cta.label}
-          whatsAppIcon
-          villa={title}
-          className="bg-primary rounded-sm border-none text-white w-full justify-center uppercase"
-        />
+        <div className="">
+          <LinkButton
+            href={cta.href}
+            label={cta.label}
+            whatsAppIcon
+            villa={title}
+            className="bg-primary rounded-sm border-none text-white w-full justify-center uppercase"
+          />
+          <p className="mt-2 text-center text-secondary">*Rates vary by season</p>
+        </div>
         {/* </div> */}
       </div>
     </div>

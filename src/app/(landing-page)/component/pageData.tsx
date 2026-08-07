@@ -131,7 +131,7 @@ export const landingPageData = {
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
         originalPrice: "₹ 23400/night",
-        startingPrice: "₹ 18,000/night",
+        startingPrice: "From ₹ 28,000/night",
         moreInfo: {
           title: "Mediterranean Grace Meets Coastal Tranquility",
           roomInfo: [
@@ -235,7 +235,7 @@ export const landingPageData = {
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
         originalPrice: "₹ 28600",
-        startingPrice: "₹ 22,000/night",
+        startingPrice: "From ₹ 35,000/night",
         moreInfo: {
           title: "Unmatched Scale, Tropical Privacy, and Grand Elegance",
           roomInfo: [
@@ -333,7 +333,7 @@ export const landingPageData = {
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
         originalPrice: "₹ 28600/night",
-        startingPrice: "₹ 22,000/night",
+        startingPrice: "From ₹ 35,000/night",
         moreInfo: {
           title: "Understated Luxury Wrapped in Coastal Calm",
           roomInfo: [
@@ -433,7 +433,7 @@ export const landingPageData = {
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
         originalPrice: "₹ 40300/night",
-        startingPrice: "₹ 31,000/night",
+        startingPrice: "From ₹ 45,000/night",
         moreInfo: {
           title: "Together in Luxury, Designed for Every Generation",
           roomInfo: [
@@ -537,7 +537,7 @@ export const landingPageData = {
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
         originalPrice: "₹ 52000/night",
-        startingPrice: "₹ 40,000/night",
+        startingPrice: "From ₹ 63,000/night",
         moreInfo: {
           title: "A Sanctuary of Wellness, Space & Timeless Luxury",
           roomInfo: [
@@ -640,7 +640,7 @@ export const landingPageData = {
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
         originalPrice: "₹ 57200/night",
-        startingPrice: "₹ 44,000/night",
+        startingPrice: "From ₹ 70,000/night",
         moreInfo: {
           title: "Where Grand Celebrations Meet Timeless Luxury",
           roomInfo: [
@@ -738,7 +738,7 @@ export const landingPageData = {
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
         originalPrice: "₹ 97500/night",
-        startingPrice: "₹ 75,000/night",
+        startingPrice: "From ₹ 1,18,000/night",
         moreInfo: {
           title: "The Ultimate Private Luxury Estate in North Goa",
           roomInfo: [
