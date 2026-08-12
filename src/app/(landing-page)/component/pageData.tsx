@@ -33,8 +33,8 @@ Thank you!`;
 
 export const landingPageData = {
   offer: [
-    "Monsoon Bonanza 30% off limited time offer valid till 31st August. Use discount code : <span class='text-[#A20000]'>MONSOON30</span>",
-    "Monsoon Bonanza 30% off limited time offer valid till 31st August. Use discount code : <span class='text-[#A20000]'>MONSOON30</span>",
+    "Monsoon Bonanza 30% off limited time offer valid till <span class='text-[#A20000]'>31st August.</span> Use discount code : <span class='text-[#A20000]'>MONSOON30</span>",
+    "Monsoon Bonanza 30% off limited time offer valid till <span class='text-[#A20000]'>31st August.</span> Use discount code : <span class='text-[#A20000]'>MONSOON30</span>",
   ],
   hero: {
     tag: "A Paradise in North Goa",

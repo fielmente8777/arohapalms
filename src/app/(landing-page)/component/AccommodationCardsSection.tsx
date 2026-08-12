@@ -213,7 +213,7 @@ export const AccommodationCard: React.FC<
             </li>
           ))}
         </ul> */}
-        <div className="flex max-md:flex-col lg:items-center gap-4 justify-between">
+        <div className="flex max-md:flex-col gap-4 justify-between">
           {/* <p className="text-sm text-secondary line-through">
             <span className="sr-only">{originalPrice}</span>
             <span className="font">{originalPrice} </span>
@@ -223,11 +223,16 @@ export const AccommodationCard: React.FC<
             <span className="font-semibold">{startingPrice} </span>
             <span className="text-sm">+ Taxes</span>
           </p>
-          <p className="text-sm text-secondary">
-            <span className="sr-only">{discountCode}</span>
-            <span className="">Discount code: </span>
-            <span className="text-p2">{discountCode} </span>
-          </p>
+          <div className="flex flex-col items-center">
+            <p className="text-sm text-secondary">
+              <span className="sr-only">{discountCode}</span>
+              <span className="">Discount code: </span>
+              <span className="text-p2">{discountCode} </span>
+            </p>
+            <span className="text-sm text-secondary">
+              ( Valid Till <span className="text-[#A20000]">31st August</span> )
+            </span>
+          </div>
         </div>
 
         {/* <div className="grid md:grid-cols-[1fr_auto] grid-cols-1 gap-4"> */}
@@ -239,7 +244,9 @@ export const AccommodationCard: React.FC<
             villa={title}
             className="bg-primary rounded-sm border-none text-white w-full justify-center uppercase"
           />
-          <p className="mt-2 text-center text-secondary">*Rates vary by season</p>
+          <p className="mt-2 text-center text-secondary">
+            *Rates vary by season
+          </p>
         </div>
         {/* </div> */}
       </div>
