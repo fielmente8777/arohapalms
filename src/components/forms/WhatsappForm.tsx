@@ -421,7 +421,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`${gridView ? "flex flex-col gap-3" : "grid md:grid-cols-6 items-center gap-3.5"} font-body px-4 bg-transparent max-md:divide-y divide-p1`}
+      className={`${gridView ? "flex flex-col gap-3" : "grid md:grid-cols-6 items-start gap-3.5"} font-body px-4 bg-transparent max-md:divide-y divide-p1`}
     >
       {formFields.map((field, index) => (
         <React.Fragment key={index}>
@@ -494,18 +494,25 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
               />
             </div>
           ) : (
-            <div
-              className={`flex lg:bg-white items-center gap-2.5 lg:shadow border-light/30 lg:rounded-lg ${gridView ? "p-4" : "max-md:pb-4 max-md:pt-2 py-3 lg:px-2"}`}
-            >
-              <label className="text-p2">{field.icon}</label>
-              <input
-                type={field.type}
-                name={field.name}
-                placeholder={field.label}
-                className="w-full placeholder:text-secondarya focus:outline-none text-secondarya"
-                value={field.value}
-                onChange={field.onChange}
-              />
+            <div className="flex flex-col gap-1">
+              <div
+                className={`flex lg:bg-white items-center gap-2.5 lg:shadow border-light/30 lg:rounded-lg ${gridView ? "p-4" : "max-md:pb-4 max-md:pt-2 py-3 lg:px-2"}`}
+              >
+                <label className="text-p2">{field.icon}</label>
+                <input
+                  type={field.type}
+                  name={field.name}
+                  placeholder={field.label}
+                  className="w-full placeholder:text-secondarya focus:outline-none text-secondarya"
+                  value={field.value}
+                  onChange={field.onChange}
+                />
+              </div>
+              {field.name === "promoCode" && (
+                <span className="text-xs text-gray-400">
+                  *Monsoon offer valid till 31st August
+                </span>
+              )}
             </div>
           )}
 

@@ -42,7 +42,7 @@ export const footerData: FooterData = {
   ],
   lists: [
     {
-      title: "Locations",
+      title: "Location",
       links: [
         {
           label: "Mandrem, North Goa",
