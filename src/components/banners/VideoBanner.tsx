@@ -1,6 +1,6 @@
 import { Container, Section } from "@/components/sectionComponants";
 import { LazyLoadedVideo } from "@/components/Video";
-import LandingNavbar from "../navbar/LandingNavbar";
+// import LandingNavbar from "../navbar/LandingNavbar";
 import Form1 from "../forms/Form1";
 
 interface VideoBannerProps {
