@@ -152,7 +152,7 @@ const Form2: React.FC<Form2Props> = ({
     includeCheckIn: true,
     includeCheckOut: !singleDate,
     includeMessage: true,
-    includeCity: true,
+    // includeCity: true,
     onSubmitSuccess: () => {
       if (setOpen) {
         setOpen(false);
@@ -210,7 +210,7 @@ const Form2: React.FC<Form2Props> = ({
     >
       {/* Full Name Field */}
       <div
-        className={`flex flex-col gap-2.5 p-2 bg-white border-[0.5px] shadow border-[#D6D3D1] rounded-lg`}
+        className={`flex md:col-span-2 col-span-1 flex-col gap-2.5 p-2 bg-white border-[0.5px] shadow border-[#D6D3D1] rounded-lg`}
       >
         <input
           type="text"
@@ -354,7 +354,7 @@ const Form2: React.FC<Form2Props> = ({
 
       {/* Guests Field */}
       <div
-        className={`flex items-center bg-white p-2 gap-2.5 border-[0.5px] shadow border-[#D6D3D1] rounded-lg`}
+        className={`flex  items-center bg-white p-2 gap-2.5 border-[0.5px] shadow border-[#D6D3D1] rounded-lg`}
       >
         <input
           type="text"
@@ -368,7 +368,7 @@ const Form2: React.FC<Form2Props> = ({
       </div>
 
       {/* City/Location Field with Custom Dropdown */}
-      <div
+      {/* <div
         className={`flex items-center bg-white p-2 gap-2.5 border-[0.5px] shadow border-[#D6D3D1] rounded-lg`}
       >
         <CustomDropdown
@@ -378,7 +378,7 @@ const Form2: React.FC<Form2Props> = ({
           options={locationOptions}
           error={errors.city}
         />
-      </div>
+      </div> */}
 
       {/* Message Field */}
       <div

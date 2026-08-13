@@ -21,6 +21,5 @@ export const WebsiteNavData = {
   links: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about-us/" },
-   
   ],
 };

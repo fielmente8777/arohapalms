@@ -1,5 +1,6 @@
 "use client";
 
+import { AccommodationSectionProps } from "@/@types/landingPageTypes";
 import { createContext, useContext, useState } from "react";
 
 interface OpenGalleryProps {
@@ -10,7 +11,15 @@ interface OpenAmenityModalArray {
   amenityType: string;
   amenities: string[];
 }
+
+type RoomDetailsType = AccommodationSectionProps["cards"][0];
+
 interface WebContextType {
+  isOpen: boolean;
+  room: RoomDetailsType | null;
+  openRoom: (room: RoomDetailsType) => void;
+  closeRoom: () => void;
+
   isOpenNavBar: boolean;
   setIsOpenNavBar: (open: boolean) => void;
 
@@ -19,6 +28,12 @@ interface WebContextType {
 
   isOpenFormPopUp: boolean;
   setIsOpenFormPopUp: (open: boolean) => void;
+
+  // Villa name to pre-select in the enquiry form (empty string = no prefill)
+  formVilla: string;
+  setFormVilla: (villa: string) => void;
+  openFormPopUp: (villa?: string) => void;
+  closeFormPopUp: () => void;
 
   passImagesArray: string[];
   setPassImagesArray: (images: string[]) => void;
@@ -38,11 +53,21 @@ interface WebContextType {
 }
 
 const WebContext = createContext<WebContextType>({
+  isOpen: false,
+  room: null,
+  openRoom: () => {},
+  closeRoom: () => {},
+
   isOpenNavBar: false,
   setIsOpenNavBar: () => {},
 
   isOpenFormPopUp: false,
   setIsOpenFormPopUp: () => {},
+
+  formVilla: "",
+  setFormVilla: () => {},
+  openFormPopUp: () => {},
+  closeFormPopUp: () => {},
 
   openImageModal: false,
   setOpenImageModal: () => {},
@@ -75,6 +100,8 @@ export const WebProvider = ({ children }: WebProviderProps) => {
 
   const [isOpenFormPopUp, setIsOpenFormPopUp] = useState(false);
 
+  const [formVilla, setFormVilla] = useState("");
+
   const [passImagesArray, setPassImagesArray] = useState<string[]>([]);
 
   const [imageCurrentIndex, setImageCurrentIndex] = useState(0);
@@ -83,6 +110,18 @@ export const WebProvider = ({ children }: WebProviderProps) => {
   const [amenityModalArray, setAmenityModalArray] = useState<
     OpenAmenityModalArray[]
   >([]);
+
+  // Open the enquiry popup, optionally carrying a villa name to prefill
+  const openFormPopUp = (villa?: string) => {
+    setFormVilla(villa ?? "");
+    setIsOpenFormPopUp(true);
+  };
+
+  const closeFormPopUp = () => {
+    setIsOpenFormPopUp(false);
+    setFormVilla("");
+  };
+
   const openGallery = ({ images, index = 0 }: OpenGalleryProps) => {
     setPassImagesArray(images);
 
@@ -99,14 +138,36 @@ export const WebProvider = ({ children }: WebProviderProps) => {
     setImageCurrentIndex(0);
   };
 
+  const [room, setRoom] = useState<RoomDetailsType | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openRoom = (room: RoomDetailsType) => {
+    setRoom(room);
+    setIsOpen(true);
+  };
+
+  const closeRoom = () => {
+    setIsOpen(false);
+    setRoom(null);
+  };
+
   return (
     <WebContext.Provider
       value={{
+        isOpen,
+        room,
+        openRoom,
+        closeRoom,
         isOpenNavBar,
         setIsOpenNavBar,
 
         isOpenFormPopUp,
         setIsOpenFormPopUp,
+
+        formVilla,
+        setFormVilla,
+        openFormPopUp,
+        closeFormPopUp,
 
         openImageModal,
         setOpenImageModal,

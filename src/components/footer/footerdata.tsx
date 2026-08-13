@@ -1,5 +1,4 @@
 import { contact } from "@/utils/constent";
-import { FillCallIcon, FillLocationIcon, FillMailIcon } from "@/utils/icons";
 
 interface FooterData {
   logo: string;
@@ -15,7 +14,7 @@ interface FooterData {
       title?: string;
       icon?: React.ReactNode;
       label?: string;
-      href?: string;
+      href: string;
       label2?: string;
       href2?: string;
     }[];
@@ -43,15 +42,16 @@ export const footerData: FooterData = {
   ],
   lists: [
     {
-      title: "Locations",
+      title: "Location",
       links: [
         {
-          title: "Mandrem, North Goa",
+          label: "Mandrem, North Goa",
+          href: "https://maps.app.goo.gl/m2HPpmkyeBQAMsjZ7",
         },
 
-        {
-          title: "Pilerne, North Goa",
-        },
+        // {
+        //   title: "Pilerne, North Goa",
+        // },
       ],
     },
     {
@@ -60,6 +60,10 @@ export const footerData: FooterData = {
         {
           label: "WhatsApp: " + contact.phone[0],
           href: contact.WhatsappCta,
+        },
+        {
+          label: "Call: 022-41642345",
+          href: "tel:02241642345",
         },
 
         {

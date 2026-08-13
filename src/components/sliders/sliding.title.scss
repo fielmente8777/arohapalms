@@ -1,7 +1,8 @@
 .marquee-wrapper {
   display: flex;
   width: max-content;
-  animation: marquee 18s linear infinite;
+  /* slowed down from 18s to 36s */
+  animation: marquee 36s linear infinite;
 }
 
 .marquee-track {

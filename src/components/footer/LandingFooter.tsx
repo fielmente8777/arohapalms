@@ -39,41 +39,16 @@ const LandingFooter = () => {
               <ul className={`flex flex-col md:gap-2 gap-4`}>
                 {list.links.map((item, suIndex) => (
                   <li key={suIndex}>
-                    {/* <span
-                      className={`mt-1 ${
-                        index === 1
-                          ? "text-white flex items-center justify-center rounded-sm bg-white w-10 aspect-square"
-                          : "text-white inline-block"
-                      }`}
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={item.href}
+                      className=" text-sm"
                     >
-                      {item.icon}
-                      <span className="sr-only">{item.label}</span>
-                    </span> */}
-                    {/* {item.title && (
-                      <span
-                        className={`${
-                          index === 1
-                            ? "text-white font-aboreto text-2xl my-auto"
-                            : "md:text-lg text-white inline-block"
-                        }`}
-                      >
-                        {item.title}
+                      <span className={` text-white/80 inline-block`}>
+                        {item.label}
                       </span>
-                    )} */}
-                    {item.href ? (
-                      <Link
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={item.href}
-                        className=" text-sm"
-                      >
-                        <span className={` text-white/80 inline-block`}>
-                          {item.label}
-                        </span>
-                      </Link>
-                    ) : (
-                      <span className={` text-white/80 text-sm`}>{item.title}</span>
-                    )}
+                    </Link>
                   </li>
                 ))}
               </ul>

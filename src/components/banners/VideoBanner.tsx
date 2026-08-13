@@ -1,14 +1,13 @@
-import { Container, Section } from "@/components/sectionComponants";
+import { Section } from "@/components/sectionComponants";
 import { LazyLoadedVideo } from "@/components/Video";
-// import LandingNavbar from "../navbar/LandingNavbar";
-import Form1 from "../forms/Form1";
+import LandingNavbar from "../navbar/LandingNavbar";
 
 interface VideoBannerProps {
   video: {
     src: string;
     poster: string;
   };
-  benefit: string;
+  benefit?: string;
 }
 
 const VideoBanner: React.FC<VideoBannerProps> = ({ video, benefit }) => {
@@ -21,9 +20,9 @@ const VideoBanner: React.FC<VideoBannerProps> = ({ video, benefit }) => {
         <LandingNavbar />
       </div>
       <LazyLoadedVideo src={video.src} poster={video.poster} />
-      <div className="absolute inset-0 z-10 bg-linear-to-t from-black/80  to-black/10" />
+      <div className="absolute inset-0 z-10 bg-black/10" />
 
-      <div className="absolute inset-0  z-20 md:flex items-end pb-10 justify-center  hidden">
+      {/* <div className="absolute inset-0  z-20 md:flex items-end pb-10 justify-center  hidden">
         <Container>
           <div
             className="bg-background/80 py-6 px-1.5 rounded-[20px] mt-8 flex flex-col gap-5 max-w-6xl w-full mx-auto"
@@ -36,7 +35,7 @@ const VideoBanner: React.FC<VideoBannerProps> = ({ video, benefit }) => {
             />
           </div>
         </Container>
-      </div>
+      </div> */}
     </Section>
   );
 };

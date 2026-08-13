@@ -1,8 +1,8 @@
 import Image from "next/image";
 import LandingNavbar from "../navbar/LandingNavbar";
-import { Container, Section } from "../sectionComponants";
-import Form1 from "../forms/Form1";
-import { FillLocationIcon } from "@/utils/icons";
+import { Section } from "../sectionComponants";
+// import Form1 from "../forms/Form1";
+// import { FillLocationIcon } from "@/utils/icons";
 
 interface ImageBannerProps {
   tag: string;
@@ -29,7 +29,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
       <Image src={image} alt={title} fill className="object-cover" />
       <div className="absolute inset-0 z-10 bg-black/40 " />
 
-      <div className="absolute inset-0  z-20 flex items-end pb-10 justify-center">
+      {/* <div className="absolute inset-0  z-20 flex items-end pb-10 justify-center">
         <Container>
           <div className="flex flex-col items-center  gap-6 max-md:gap-30">
             <div className="space-y-2 text-center md:max-w-xl w-full mx-auto">
@@ -57,7 +57,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({
             </div>
           </div>
         </Container>
-      </div>
+      </div> */}
     </Section>
   );
 };

@@ -4,10 +4,11 @@ import useForm from "@/hooks/useForm";
 import {
   CalendarIcon,
   CallIcon,
-  MailIcon,
-  UserIcon
+  UserIcon,
+  VilaIcon,
+  WalletIcon,
 } from "@/utils/formIcons";
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoIosArrowDown } from "react-icons/io";
@@ -19,8 +20,44 @@ interface Props {
 
 // Location options
 const locationOptions = [
-  { value: "mandrem", label: "Mandrem, North Goa" },
-  { value: "pilerne", label: "Pilerne, North Goa" },
+  {
+    value: "4BHK, Aroha Palms Magnifica ",
+    label: "4BHK, Aroha Palms Magnifica",
+  },
+  {
+    value: "5BHK, Aroha Palms Paradiso ",
+    label: "5BHK, Aroha Palms Paradiso ",
+  },
+  { value: "5BHK, Aroha Palms Serenity", label: "5BHK, Aroha Palms Serenity" },
+  { value: "7BHK, Aroha Palms Caia ", label: "7BHK, Aroha Palms Caia " },
+  { value: "9BHK, Aroha Palms Prana ", label: "9BHK, Aroha Palms Prana" },
+  { value: "10BHK, Aroha Palms Encanto ", label: "10BHK, Aroha Palms Encanto" },
+  { value: "18BHK, Aroha Palms Marisol ", label: "18BHK, Aroha Palms Marisol" },
+
+];
+
+const budgetOption = [
+  {
+    value: "20000",
+    label: "20,000",
+  },
+  {
+    value: "30000",
+    label: "30,000",
+  },
+  {
+    value: "40000",
+    label: "40,000",
+  },
+  {
+    value: "50000",
+    label: "50,000",
+  },
+  // more the 50000
+  {
+    value: "more than 50,000",
+    label: "more than 50,000",
+  },
 ];
 
 // Custom Dropdown Component
@@ -50,7 +87,7 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({
   const filteredOptions = useMemo(() => {
     if (!searchTerm) return options;
     return options.filter((option) =>
-      option.label.toLowerCase().includes(searchTerm.toLowerCase())
+      option.label.toLowerCase().includes(searchTerm.toLowerCase()),
     );
   }, [searchTerm, options]);
 
@@ -63,7 +100,10 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -119,9 +159,7 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({
               </div>
             ))
           ) : (
-            <div className="px-4 py-2 text-gray-500">
-              No locations found
-            </div>
+            <div className="px-4 py-2 text-gray-500">No locations found</div>
           )}
         </div>
       )}
@@ -154,7 +192,9 @@ const Form1 = ({ gridView }: Props) => {
     includeCheckIn: true,
     includeCheckOut: true,
     includeMessage: true,
-    includeCity: true,
+    includeCity: false,
+    includeBudget: true,
+    includeVilla: true,
     onSubmitSuccess: () => {
       setStartDate(null);
       setEndDate(null);
@@ -181,7 +221,43 @@ const Form1 = ({ gridView }: Props) => {
     setFieldValue("city", value);
   };
 
-  const formFields = [
+  // Handle budget change
+  const handleBudgetChange = (value: string) => {
+    setFieldValue("budget", value);
+  };
+
+  // Handle villa change
+  const handleVillaChange = (value: string) => {
+    setFieldValue("villa", value);
+  };
+
+  type DropdownOption = {
+    value: string;
+    label: string;
+  };
+
+  type FormField =
+    | {
+        name: string;
+        label: string;
+        type: "text" | "tel" | "date";
+        value: string;
+        onChange: React.ChangeEventHandler<
+          HTMLInputElement | HTMLTextAreaElement
+        >;
+        icon: React.ReactNode;
+      }
+    | {
+        name: string;
+        label: string;
+        type: "dropdown";
+        value: string;
+        options: DropdownOption[];
+        onChange: (value: string) => void;
+        icon: React.ReactNode;
+      };
+
+  const formFields: FormField[] = [
     {
       name: "name",
       label: "Name",
@@ -199,20 +275,30 @@ const Form1 = ({ gridView }: Props) => {
       icon: <CallIcon />,
     },
     {
-      name: "email",
-      label: "Email ID",
-      type: "email",
-      value: formData.email,
-      onChange: handleChange,
-      icon: <MailIcon />,
+      name: "budget",
+      label: "Select Budget*",
+      type: "dropdown",
+      value: formData.budget || "",
+      options: budgetOption,
+      icon: <WalletIcon />,
+      onChange: handleBudgetChange,
     },
     {
-      name: "city",
-      label: "Location",
+      name: "villa",
+      label: "Select Villa*",
       type: "dropdown",
-      value: formData.city || "",
-      icon: <LocationIcon />,
+      value: formData.villa || "",
+      options: locationOptions,
+      icon: <VilaIcon />,
+      onChange: handleVillaChange,
     },
+    // {
+    //   name: "city",
+    //   label: "Preferred Location",
+    //   type: "dropdown",
+    //   value: formData.city || "",
+    //   icon: <VilaIcon />,
+    // },
     {
       name: "checkIn",
       label: "Check-in & out",
@@ -234,7 +320,7 @@ const Form1 = ({ gridView }: Props) => {
             <div
               className={`lg:bg-white flex items-center gap-2.5 lg:shadow border-light/30 lg:rounded-lg ${gridView ? "p-4" : "max-md:pb-4 max-md:pt-2 py-3 lg:px-2"}`}
             >
-              <label className="text-secondary">{field.icon}</label>
+              <label className="text-p2">{field.icon}</label>
               <DatePicker
                 selected={startDate}
                 onChange={handleDateChange}
@@ -254,27 +340,35 @@ const Form1 = ({ gridView }: Props) => {
             <div
               className={`lg:bg-white flex items-center gap-2.5 lg:shadow border-light/30 lg:rounded-lg ${gridView ? "p-4" : "max-md:pb-4 max-md:pt-2 py-3 lg:px-2"}`}
             >
-              <label className="text-secondary">{field.icon}</label>
+              <label className="text-p2">{field.icon}</label>
               <CustomDropdown
                 value={field.value}
-                onChange={handleLocationChange}
-                placeholder="Preferred Location"
-                options={locationOptions}
-                error={errors.city}
+                onChange={
+                  field.name === "budget"
+                    ? handleBudgetChange
+                    : field.name === "villa"
+                      ? handleVillaChange
+                      : handleLocationChange
+                }
+                placeholder={field.label}
+                options={field.options ?? []}
+                error={errors[field.name]}
               />
             </div>
           ) : field.type === "tel" ? (
             <div
               className={`flex lg:bg-white items-center gap-2.5 lg:shadow border-light/30 lg:rounded-lg ${gridView ? "p-4" : "max-md:pb-4 max-md:pt-2 py-3 lg:px-2"}`}
             >
-              <label className="text-secondary">{field.icon}</label>
+              <label className="text-p2">{field.icon}</label>
               <div className="relative">
                 <select
                   className="ps-2 cursor-pointer border-p1 appearance-none w-full placeholder:text-secondarya focus:outline-none text-secondarya"
                   name="countryCode"
                   value={formData.countryCode}
                   onChange={(e) => setFieldValue("countryCode", e.target.value)}
-                  style={{ width: `${(formData.countryCode || "+91").length * 2}ch` }}
+                  style={{
+                    width: `${(formData.countryCode || "+91").length * 2}ch`,
+                  }}
                   aria-label="Country Code"
                 >
                   {countries.map((country, index) => (
@@ -300,7 +394,7 @@ const Form1 = ({ gridView }: Props) => {
             <div
               className={`flex lg:bg-white items-center gap-2.5 lg:shadow border-light/30 lg:rounded-lg ${gridView ? "p-4" : "max-md:pb-4 max-md:pt-2 py-3 lg:px-2"}`}
             >
-              <label className="text-secondary">{field.icon}</label>
+              <label className="text-p2">{field.icon}</label>
               <input
                 type={field.type}
                 name={field.name}
@@ -339,17 +433,3 @@ const Form1 = ({ gridView }: Props) => {
 export default Form1;
 
 // Location Icon Component
-export const LocationIcon = () => (
-  <svg
-    width={16}
-    height={16}
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M8 0C4.5 0 1.5 2.5 1.5 6C1.5 10 8 16 8 16C8 16 14.5 10 14.5 6C14.5 2.5 11.5 0 8 0ZM8 8C6.9 8 6 7.1 6 6C6 4.9 6.9 4 8 4C9.1 4 10 4.9 10 6C10 7.1 9.1 8 8 8Z"
-      fill="#303030"
-    />
-  </svg>
-);
