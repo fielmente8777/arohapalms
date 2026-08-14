@@ -59,6 +59,7 @@ export interface TestimonialsProps {
 }
 
 export interface FaqSectionProps {
+  image?: string;
   tagline: string;
   title: string;
   items: {

@@ -7,17 +7,19 @@ import { SectionHeading } from "@/components/typography";
 import Image from "next/image";
 
 const FaqSection: React.FC<FaqSectionProps> = ({
+  image,
   tagline,
   title,
   items,
   concierge,
 }) => {
+  const faqImage = image || "/rooms/Imperial/AOB_0110[1]_43_11zon.jpg";
   return (
     <SectionWithContainer>
       <div className="grid lg:grid-cols-2 grid-cols-1 items-center gap-10 lg:gap-16 max-w-5xl mx-auto">
         <div className="lg:block hidden w-full aspect-4/5 relative">
           <Image
-            src="/Rectangle-34624170.png"
+            src={faqImage}
             alt="faq"
             fill
             sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
@@ -33,7 +35,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({
           </div>
           <div className="lg:hidden w-full aspect-4/3 relative">
             <Image
-              src="/Rectangle-34624170.png"
+              src={faqImage}
               alt="faq"
               fill
               sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
