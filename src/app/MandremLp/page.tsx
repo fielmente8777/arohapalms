@@ -5,6 +5,7 @@ import Banner from "../(landing-page)/component/Banner";
 import { landingPageData } from "./components/pagedata";
 import UnforgettableSection from "../(landing-page)/component/UnforgettableSection";
 
+import ExperienceSection from "../(landing-page)/component/ExperienceSection";
 import FeaturesSection from "../(landing-page)/component/FeaturesSection";
 import Testimonials from "../(landing-page)/component/Testimonials";
 import FaqSection from "../(landing-page)/component/FaqSection";
@@ -14,7 +15,6 @@ import NearbyPlaces from "./components/Nearby";
 export default function LandingPage() {
   return (
     <main className="bg-background">
-      <SlidingTitle items={landingPageData.offer} />
       <Banner {...landingPageData.hero} />
       <SectionWithContainer
         defaultPadding={false}
@@ -28,12 +28,10 @@ export default function LandingPage() {
         /> */}
       </SectionWithContainer>
       <UnforgettableSection {...landingPageData.unforgettableSection} />
-      <SlidingTitle items={landingPageData.offer} ariaHidden />
       <AccommodationSection {...landingPageData.accommodationSection} />
-      <SlidingTitle items={landingPageData.offer} ariaHidden />
       <FeaturesSection {...landingPageData.featuresSection} />
-      {/* <ExperienceSection {...landingPageData.experienceSection} /> */}
       <NearbyPlaces {...landingPageData.nearbyPlaces} />
+      <ExperienceSection {...landingPageData.experienceSection} />
       <Testimonials {...landingPageData.testimonials} />
       <FaqSection {...landingPageData.faq} />
       <SectionWithContainer

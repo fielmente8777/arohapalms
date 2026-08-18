@@ -10,6 +10,8 @@ const LandingFooter = () => {
   if (pathName === "/thank-you/") {
     return null;
   }
+  const isMandremLp = pathName?.toLowerCase().includes("mandremlp");
+
   return (
     <footer className="max_screen_width bg-background-dark text-white">
       <Container>
@@ -30,30 +32,38 @@ const LandingFooter = () => {
             <p className=" text-white/60">{footerData.description}</p>
           </div>
 
-          {footerData.lists.map((list, index) => (
-            <div className={` flex flex-col gap-4`} key={index}>
-              <h2
-                className="uppercase text-white/60 tracking-widest"
-                dangerouslySetInnerHTML={{ __html: list.title ?? "" }}
-              />
-              <ul className={`flex flex-col md:gap-2 gap-4`}>
-                {list.links.map((item, suIndex) => (
-                  <li key={suIndex}>
-                    <Link
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={item.href}
-                      className=" text-sm"
-                    >
-                      <span className={` text-white/80 inline-block`}>
-                        {item.label}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {footerData.lists.map((list, index) => {
+            const isLocationList = list.title?.toLowerCase() === "location";
+            return (
+              <div className={` flex flex-col gap-4`} key={index}>
+                <h2
+                  className="uppercase text-white/60 tracking-widest"
+                  dangerouslySetInnerHTML={{ __html: list.title ?? "" }}
+                />
+                <ul className={`flex flex-col md:gap-2 gap-4`}>
+                  {list.links.map((item, suIndex) => {
+                    const label = isLocationList && isMandremLp
+                      ? "Pilerne, North Goa"
+                      : item.label;
+                    return (
+                      <li key={suIndex}>
+                        <Link
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={item.href}
+                          className=" text-sm"
+                        >
+                          <span className={` text-white/80 inline-block`}>
+                            {label}
+                          </span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
         </div>
         <div className="bg-white/10 h-px w-full" />
       </Container>

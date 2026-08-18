@@ -34,13 +34,13 @@ const NearbyPlaces = ({ tagline, title, cta, places }: NearbyPlacesProps) => {
               {title}
             </h2>
 
-            <LinkButton
+            {cta && <LinkButton
               href={cta.href}
               label={cta.label}
               whatsAppIcon
               villa={title}
               className="mt-5 justify-center rounded-sm border-none bg-primary px-6 text-white uppercase"
-            />
+            />}
           </div>
 
           {/* Right - Nearby Places Slider */}

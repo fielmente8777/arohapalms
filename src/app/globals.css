@@ -24,3 +24,16 @@
 body {
   font-family: var(--font-fira-sans);
 }
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-hero-zoom {
+  animation: heroZoom 12s ease-out forwards;
+}

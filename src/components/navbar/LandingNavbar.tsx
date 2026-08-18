@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { WhatsAppIcon } from "../buttons/LinkButton";
+import { BookingCalenderIcon } from "@/utils/formIcons";
 import { navData } from "./navData";
 import { useWebContext } from "@/context-api/WebContext";
 
@@ -60,12 +60,10 @@ const LandingNavbar = () => {
                   className="flex items-center gap-2 rounded-lg bg-primary uppercase text-white px-2 md:px-6 py-2 md:py-3"
                 >
                   <span className="">
-                    <WhatsAppIcon />
-                    {/* <CalendarIcon /> */}
+                    <BookingCalenderIcon />
                   </span>
-                  <span className="lg:block text-base hidden tracking-widest">
-                    {/* {link.label} */}
-                    Enquire Now
+                  <span className="lg:block text-base hidden tracking-widest font-semibold">
+                    BOOK NOW
                   </span>
                 </button>
               </li>

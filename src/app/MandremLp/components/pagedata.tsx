@@ -43,10 +43,10 @@ export const landingPageData = {
       "Greek-inspired villas & apartments with private pools, lush gardens and effortless access to Goa's finest beaches. ",
     benefits:
       "<span class='text-[#A20000]'>Save 25%</span> when you book direct • No prepayment • Free cancellation",
-    image: "/rooms/Majestic/AOB_4059-[1]_29_11zon.jpg",
+    image: "/hero-banner.jpg",
     images: [
       // 1. Front / Exterior / Pool
-      "/rooms/Grande/AOB_0110[1]_8_11zon.jpg",
+      "/hero-banner.jpg",
       "/rooms/Grande/AOB_0131_copy[1]_9_11zon.jpg",
       "/rooms/Imperial/AOB_4084-[1]_49_11zon.jpg",
       "/rooms/Majestic/AOB_3512[1]_22_11zon.jpg",
@@ -75,35 +75,23 @@ export const landingPageData = {
     // title: "Unwind, Explore, and Create Unforgettable Memories at Aroha Palms.",
     // description:
     //   "Escape to the peaceful charm of Aroha Palms, where lush gardens, open spaces, and tranquil surroundings offer the perfect place to relax and recharge. Just minutes from Goa's beaches, water sports, heritage sites, wellness retreats, and vibrant nightlife, you can explore the best of the destination before returning to the comfort of your private retreat.",
+    tag: "AROHA PALMS, PILERNE – NORTH GOA",
     title: "Old-World Goan Character, Quietly Reimagined",
     description: [
       "Welcome to Aroha Palms Pilerne, two private luxury villas set in Pilerne village, which has stayed rustic despite sitting minutes from the North Goa tourist belt.",
       "Whether you are seeking an intimate family escape, a multi-generational reunion, a wellness retreat, or a grand destination event, Aroha Palms Pilerene brings together spacious living, private pools, and bespoke hospitality all just a few minutes drive from the golden sands of three of North Goa's most-visited beaches - Candolim, Calangute, and Baga - and none of their noise at your gate. You wake in a quiet village and reach the coast before the morning heat.",
     ],
     images: [
-      // 1. Front / Exterior / Pool
-      "/rooms/Grande/AOB_0007[1]_1_11zon.jpg",
-      "/rooms/Majestic/AOB_4059-[1]_29_11zon.jpg",
-      "/rooms/Imperial/AOB_0117[1]_41_11zon.jpg",
-      "/rooms/Majestic/AOB_3202[1]_30_11zon.jpg",
-      "/rooms/Grande/AOB_0078[1]_7_11zon.jpg",
-      // 2. Bedrooms / Rooms / Lofts
-      "/rooms/Grande/AOB_0028[1]_3_11zon.jpg",
-      "/rooms/Imperial/AOB_9889[1]_44_11zon.jpg",
-      "/rooms/Majestic/AOB_3189[1]_17_11zon.jpg",
-      // 3. Interior / Living / Lounge / Dining / Kitchen
-      "/rooms/Grande/AOB_0015[1]_2_11zon.jpg",
-      "/rooms/Majestic/AOB_3626[1]_25_11zon.jpg",
-      "/rooms/Majestic/AOB_3300[1]_19_11zon.jpg",
-      "/rooms/Imperial/AOB_9834[1]_37_11zon.jpg",
-      // 4. Washrooms / Bathrooms
-      "/rooms/Grande/AOB_0049[1]_5_11zon.jpg",
-      "/rooms/Imperial/AOB_9727[1]_39_11zon.jpg",
-      "/rooms/Majestic/AOB_3704[1]_27_11zon.jpg",
+      "/landing-page/unforgettable-1.jpg",
+      "/landing-page/unforgettable-2.jpg",
+      "/landing-page/unforgettable-3.jpg",
+      "/landing-page/unforgettable-4.jpg",
+      "/landing-page/unforgettable-5.jpg",
+      "/landing-page/unforgettable-6.jpg",
     ],
     buttons: [
       {
-        label: "Enquire Now",
+        label: "BOOK NOW",
         link: "#form",
         // link: contact.WhatsappCta,
       },
@@ -116,9 +104,9 @@ export const landingPageData = {
 
   accommodationSection: {
     tagline: "OUR ACCOMMODATION",
-    title: "Luxury Villas Crafted for Your Perfect Goa Getaway",
+    title: "Boutique Homes Crafted for Your Perfect Goa Getaway",
     description:
-      "Explore every villa, apartment and suite across Mandrem, each one thoughtfully designed for private, unhurried Goa stays.",
+      "Explore every villa, apartment and suite across Pelerne, each one thoughtfully designed for private, unhurried Goa stays.",
     note: "Some trips need room for everyone. Two villas join into larger estates for the family, twin villas suit a celebration, the full compound accommodates up to 26 guests. Whatever the size, everything stays private, and the hosting is handled.",
     cards: [
       {
@@ -129,10 +117,10 @@ export const landingPageData = {
         description:
           "A Restored Portuguese Residence, Reimagined for Modern Excursions",
         amenities: [
-          
+
           { icon: <BedIcon />, label: "5 Bedrooms + 2 Lofts" },
           { icon: <BathTubIcon />, label: "5 Baths" },
-          
+
           { icon: <GuestIcon />, label: "Sleeps up to 14" },
         ],
         inRoomAmenities: [
@@ -195,29 +183,32 @@ export const landingPageData = {
             },
           ],
           review: {
-            author: "Yash Kumar Gupta",
+            author: "Praveen Kujal",
             description:
-              "Had a great stay! The caretaker was helpful, the room was clean and comfortable, and the location was perfect. I would definitely recommend this place to others.",
+              "We stayed at the property on a visit from the UK. They have two villas and both are amazingly well laid out, beautiful and comfortable. The lower villa is a classic Goan villa. It’s worth a visit only to admire the architecture. We stayed at the one in the back. The villas have huge rooms either comfortable beds and comfortable bathrooms. They have been tastefully decorated with large windows that allow light in. The staff are attentive and make sure the stay is comfortable. Overall, an amazing stay! Thanks.",
           },
         },
         location: "Mandrem",
         images: [
-          "/rooms/Majestic/AOB_4059-[1]_29_11zon.jpg",
-          "/rooms/Majestic/AOB_3626[1]_25_11zon.jpg",
-          "/rooms/Majestic/AOB_3300[1]_19_11zon.jpg",
-          "/rooms/Majestic/AOB_3470[1]_21_11zon.jpg",
-          "/rooms/Majestic/AOB_3549[1]_23_11zon.jpg",
-          "/rooms/Majestic/AOB_3704[1]_27_11zon.jpg",
-          "/rooms/Majestic/AOB_3356[1]_32_11zon.jpg",
-          "/rooms/Majestic/AOB_3189[1]_17_11zon.jpg",
-          "/rooms/Majestic/AOB_3202[1]_30_11zon.jpg",
-          "/rooms/Majestic/AOB_3223[1]_18_11zon.jpg",
-          "/rooms/Majestic/AOB_3230[1]_31_11zon.jpg",
-          "/rooms/Majestic/AOB_3670[1]_26_11zon.jpg",
-          "/rooms/Majestic/AOB_3733[1]_28_11zon.jpg",
-          "/rooms/Majestic/AOB_3512[1]_22_11zon.jpg",
-          "/rooms/Majestic/AOB_3585[1]_24_11zon.jpg",
-          "/rooms/Majestic/AOB_3380[1]_20_11zon.jpg",
+          "https://lh3.googleusercontent.com/d/1Ae2jINBXsQAt6hlANAf5es4Ly-P_W00u",
+          "https://lh3.googleusercontent.com/d/1y57gRQBG5_-3N3OP_uG9pT1YXNM3JSei",
+          "https://lh3.googleusercontent.com/d/15cpLYfghLZm_iSd2IOeo4nQLjC8bh_Wy",
+          "https://lh3.googleusercontent.com/d/1Z1vuFVVF0L2_4FoZvFHgcUTKSf55fm9a",
+          "https://lh3.googleusercontent.com/d/1Z1vuFVVF0L2_4FoZvFHgcUTKSf55fm9a",
+          "https://lh3.googleusercontent.com/d/1W_JNK4dv9H1vlQMUW8Qv7ci1IXxJRSBy",
+          "https://lh3.googleusercontent.com/d/1fn1z33GXAfKvtjKEi9V5GrvcdXxzV3iV",
+          "https://lh3.googleusercontent.com/d/1Ym3OP3_fogqeguOPAx4-ntWGmQKeOJ3q",
+          "https://lh3.googleusercontent.com/d/1B0Z44BwYawsoZmQlJX5ZS-ZD40AtPFP6",
+          "https://lh3.googleusercontent.com/d/1EAk6jPsBGBbO5kRSUCcW4xrHuHLrxKT5",
+          "https://lh3.googleusercontent.com/d/1zsCC6c-LugweL-PngyjnrU2IAY7Du-Wp",
+          "https://lh3.googleusercontent.com/d/1-vRXs7AmssYFq8U8A5km8a4Y1FGoAUoV",
+          "https://lh3.googleusercontent.com/d/1l3FcDfyAH3jkptvoEE6zZY5TPAUFpfQz",
+          "https://lh3.googleusercontent.com/d/1A56wEg0HNinw_c6kGRF1W3z_m3kpxKCp",
+          "https://lh3.googleusercontent.com/d/1MkNzdk55_LmVORPqve1ehvLxOYDtNVoC",
+          "https://lh3.googleusercontent.com/d/1GK6sTc641VnApTeIjIK62aquly1s5EnZ",
+          "https://lh3.googleusercontent.com/d/1wqt19RJKZUjzb8vemcBxiZcuTlYp8dxq",
+          "https://lh3.googleusercontent.com/d/1kEXnjOYHFXhJkHMyH4LBRMJuNY6cJFqL",
+          "https://lh3.googleusercontent.com/d/1kEXnjOYHFXhJkHMyH4LBRMJuNY6cJFqL",
         ],
         cta: {
           label: "Enquire Now",
@@ -232,10 +223,10 @@ export const landingPageData = {
         type: "Villa",
         description: "A Newly Built Artistic Villa With An Intimate Setting",
         amenities: [
-          
+
           { icon: <BedIcon />, label: "6 Bedrooms" },
           { icon: <BathTubIcon />, label: "6 Ensuite Baths" },
-          
+
           { icon: <GuestIcon />, label: "Sleeps up to 12" },
         ],
         inRoomAmenities: [
@@ -300,29 +291,34 @@ export const landingPageData = {
             },
           ],
           review: {
-            author: "Yash",
+            author: "Avneet",
             description:
-              "Had a great experience with Aroha Palms with the pool parties and much needed escape from the daily chaos. Place was very spacious and awesome for people looking for modern and aesthetically pleasing things. Awesome help from Rahul and Renu with managing all the maintenance of the place and was much needed help, greatly appreciate their efforts.",
+              "This was an amazing place to stay with my family. The place is very specious and beautiful with its decor and Goan architecture. The staff were extremely attentive and kind to us. Definitely would stay again.",
           },
         },
         location: "Mandrem",
         images: [
-          "/rooms/Grande/AOB_0131_copy[1]_9_11zon.jpg",
-          "/rooms/Grande/AOB_0110[1]_8_11zon.jpg",
-          "/rooms/Grande/AOB_0028[1]_3_11zon.jpg",
-          "/rooms/Grande/AOB_0042[1]_4_11zon.jpg",
-          "/rooms/Grande/AOB_0049[1]_5_11zon.jpg",
-          "/rooms/Grande/AOB_9917[1]_14_11zon.jpg",
-          "/rooms/Grande/AOB_0007[1]_1_11zon.jpg",
-          "/rooms/Grande/AOB_0015[1]_2_11zon.jpg",
-          "/rooms/Grande/AOB_0064[1]_6_11zon.jpg",
-          "/rooms/Grande/AOB_0078[1]_7_11zon.jpg",
-          "/rooms/Grande/AOB_0150[1]_10_11zon.jpg",
-          "/rooms/Grande/AOB_0164[1]_11_11zon.jpg",
-          "/rooms/Grande/AOB_0174[1]_12_11zon.jpg",
-          "/rooms/Grande/AOB_9798[1]_16_11zon.jpg",
-          "/rooms/Grande/AOB_9848[1]_15_11zon.jpg",
-          "/rooms/Grande/AOB_9983[1]_13_11zon.jpg",
+          "https://lh3.googleusercontent.com/d/1_Y5GfRSkWCAQdubo8cHzrVKcW1_0Zdve",
+          "https://lh3.googleusercontent.com/d/1Ad9bdJ7TyqE6plj7ySLdDwIV0A6DQ_aM",
+          "https://lh3.googleusercontent.com/d/1Ad9bdJ7TyqE6plj7ySLdDwIV0A6DQ_aM",
+          "https://lh3.googleusercontent.com/d/1xg05eqMCot4T0JnWk_YUDGOiOqKdUZb3",
+          "https://lh3.googleusercontent.com/d/13FOZuFSG7Jyyg4C4hge8718MQn_wDH_T",
+          "https://lh3.googleusercontent.com/d/1USS4apmyYC75KkAAL78YoH-zMXGMF85S",
+          "https://lh3.googleusercontent.com/d/10DchjSd-ZD-fvWGwqhoQeh8zfBdRWwk6",
+          "https://lh3.googleusercontent.com/d/14m1rp5GI4Fc_6arvwQtufK6NOJWypaXQ",
+          "https://lh3.googleusercontent.com/d/1dr89fzOzeQKha64Xl9sbHoCn3j9Uq-re",
+          "https://lh3.googleusercontent.com/d/1hZgLABFKAnsMnlbMtZxBFgEQhLf4i7X_",
+          "https://lh3.googleusercontent.com/d/1IqDy8W7UapgmNV0BsmxaIO6cdRwFJTXp",
+          "https://lh3.googleusercontent.com/d/1uPch8US4k4H1jI-yvChE_g1LsgjE8zWK",
+          "https://lh3.googleusercontent.com/d/1T_xUtjhHdfx2znKjd5OOir4Xri9muK5E",
+          "https://lh3.googleusercontent.com/d/1RhtvIAa9wWVOTT0-P2nTBiOmdFrXxE_s",
+          "https://lh3.googleusercontent.com/d/1oA_Vj3EyD5ao-62yx8ANfEdhO6MDOo_M",
+          "https://lh3.googleusercontent.com/d/1kcNzVl8jIvpnCBTuQtQWkZYHGbi-vTA3",
+          "https://lh3.googleusercontent.com/d/1x1K54y1c2LJockuEuSQKHlnJZwy2HKNr",
+          "https://lh3.googleusercontent.com/d/1i_H6bn1xObc4WHOHXc2uhKNWL3vOGejC",
+          "https://lh3.googleusercontent.com/d/1fEvl4j-eAuvhubSwr0dIh9-Ujh94YOAS",
+          "https://lh3.googleusercontent.com/d/1y-kx9m2dfaNia7TVRLQCrK5hJe2OMM6d",
+          "https://lh3.googleusercontent.com/d/1rMZFTJ5HEaPimeOcNT-5Tk8v7BwXtdOq",
         ],
         cta: {
           label: "Enquire Now",
@@ -338,9 +334,9 @@ export const landingPageData = {
         description:
           "A Restored Portuguese Residence, Reimagined for Modern Excursions",
         amenities: [
-          
+
           { icon: <BedIcon />, label: "11 Bedrooms + 2 Lofts" },
-          
+
           { icon: <GuestIcon />, label: "Sleeps up to 26" },
         ],
         inRoomAmenities: [
@@ -399,35 +395,55 @@ export const landingPageData = {
                 "<b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals. Restaurant delivery is also available.",
                 "<b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
                 "<b>House guidelines:</b> Smoking on balconies and outdoor areas only. No pets inside the villa. Music indoors between 10 PM and 8 AM, no loud music after 10 PM. The pool is unsupervised — please stay close to children at all times. In-room safety lockers provided.",
-                
+
               ],
             },
           ],
           review: {
-            author: "Mr. Gupta",
+            author: "Jagjit Dhaliwal",
             description:
-              "Had a great experience with Aroha Palms with the pool parties and much needed escape from the daily chaos. Place was very spacious and awesome for people looking for modern and aesthetically pleasing things. Awesome help from Rahul and Renu with managing all the maintenance of the place and was much needed help, greatly appreciate their efforts.",
+              "We stayed a couple of days and found the place to absolutely amazing. As a whole the facilities were amazing with access to the swimming pool. The staff were absolutely wonderful and the overall ambience of the place was great. The Goan style architecture was very beautiful and the house was extremely spacious.",
           },
         },
         location: "Mandrem",
         images: [
-          "/rooms/Imperial/AOB_0110[1]_43_11zon.jpg",
-          "/rooms/Imperial/AOB_0117[1]_41_11zon.jpg",
-          "/rooms/Imperial/AOB_4084-[1]_49_11zon.jpg",
-          "/rooms/Imperial/AOB_0028[1]_42_11zon.jpg",
-          "/rooms/Imperial/AOB_3422[1]_47_11zon.jpg",
-          "/rooms/Imperial/AOB_3470[1]_55_11zon.jpg",
-          "/rooms/Imperial/AOB_9670[1]_40_11zon.jpg",
-          "/rooms/Imperial/AOB_9889[1]_44_11zon.jpg",
-          "/rooms/Imperial/AOB_9917[1]_34_11zon.jpg",
-          "/rooms/Imperial/AOB_3761[1]_50_11zon.jpg",
-          "/rooms/Imperial/AOB_9784[1]_38_11zon.jpg",
-          "/rooms/Imperial/AOB_9834[1]_37_11zon.jpg",
-          "/rooms/Imperial/AOB_9875[1]_35_11zon.jpg",
-          "/rooms/Imperial/AOB_9977[1]_33_11zon.jpg",
-          "/rooms/Imperial/AOB_3371[1]_54_11zon.jpg",
-          "/rooms/Imperial/AOB_3714[1]_51_11zon.jpg",
-          "/rooms/Imperial/AOB_9727[1]_39_11zon.jpg",
+          "https://lh3.googleusercontent.com/d/1_Y5GfRSkWCAQdubo8cHzrVKcW1_0Zdve",
+          "https://lh3.googleusercontent.com/d/1Ae2jINBXsQAt6hlANAf5es4Ly-P_W00u",
+          "https://lh3.googleusercontent.com/d/1Ad9bdJ7TyqE6plj7ySLdDwIV0A6DQ_aM",
+          "https://lh3.googleusercontent.com/d/1y57gRQBG5_-3N3OP_uG9pT1YXNM3JSei",
+          "https://lh3.googleusercontent.com/d/1xg05eqMCot4T0JnWk_YUDGOiOqKdUZb3",
+          "https://lh3.googleusercontent.com/d/15cpLYfghLZm_iSd2IOeo4nQLjC8bh_Wy",
+          "https://lh3.googleusercontent.com/d/13FOZuFSG7Jyyg4C4hge8718MQn_wDH_T",
+          "https://lh3.googleusercontent.com/d/1Z1vuFVVF0L2_4FoZvFHgcUTKSf55fm9a",
+          "https://lh3.googleusercontent.com/d/1USS4apmyYC75KkAAL78YoH-zMXGMF85S",
+          "https://lh3.googleusercontent.com/d/1W_JNK4dv9H1vlQMUW8Qv7ci1IXxJRSBy",
+          "https://lh3.googleusercontent.com/d/10DchjSd-ZD-fvWGwqhoQeh8zfBdRWwk6",
+          "https://lh3.googleusercontent.com/d/1fn1z33GXAfKvtjKEi9V5GrvcdXxzV3iV",
+          "https://lh3.googleusercontent.com/d/14m1rp5GI4Fc_6arvwQtufK6NOJWypaXQ",
+          "https://lh3.googleusercontent.com/d/1Ym3OP3_fogqeguOPAx4-ntWGmQKeOJ3q",
+          "https://lh3.googleusercontent.com/d/1dr89fzOzeQKha64Xl9sbHoCn3j9Uq-re",
+          "https://lh3.googleusercontent.com/d/1B0Z44BwYawsoZmQlJX5ZS-ZD40AtPFP6",
+          "https://lh3.googleusercontent.com/d/1hZgLABFKAnsMnlbMtZxBFgEQhLf4i7X_",
+          "https://lh3.googleusercontent.com/d/1EAk6jPsBGBbO5kRSUCcW4xrHuHLrxKT5",
+          "https://lh3.googleusercontent.com/d/1IqDy8W7UapgmNV0BsmxaIO6cdRwFJTXp",
+          "https://lh3.googleusercontent.com/d/1zsCC6c-LugweL-PngyjnrU2IAY7Du-Wp",
+          "https://lh3.googleusercontent.com/d/1uPch8US4k4H1jI-yvChE_g1LsgjE8zWK",
+          "https://lh3.googleusercontent.com/d/1-vRXs7AmssYFq8U8A5km8a4Y1FGoAUoV",
+          "https://lh3.googleusercontent.com/d/1T_xUtjhHdfx2znKjd5OOir4Xri9muK5E",
+          "https://lh3.googleusercontent.com/d/1l3FcDfyAH3jkptvoEE6zZY5TPAUFpfQz",
+          "https://lh3.googleusercontent.com/d/1RhtvIAa9wWVOTT0-P2nTBiOmdFrXxE_s",
+          "https://lh3.googleusercontent.com/d/1A56wEg0HNinw_c6kGRF1W3z_m3kpxKCp",
+          "https://lh3.googleusercontent.com/d/1oA_Vj3EyD5ao-62yx8ANfEdhO6MDOo_M",
+          "https://lh3.googleusercontent.com/d/1MkNzdk55_LmVORPqve1ehvLxOYDtNVoC",
+          "https://lh3.googleusercontent.com/d/1kcNzVl8jIvpnCBTuQtQWkZYHGbi-vTA3",
+          "https://lh3.googleusercontent.com/d/1GK6sTc641VnApTeIjIK62aquly1s5EnZ",
+          "https://lh3.googleusercontent.com/d/1x1K54y1c2LJockuEuSQKHlnJZwy2HKNr",
+          "https://lh3.googleusercontent.com/d/1wqt19RJKZUjzb8vemcBxiZcuTlYp8dxq",
+          "https://lh3.googleusercontent.com/d/1i_H6bn1xObc4WHOHXc2uhKNWL3vOGejC",
+          "https://lh3.googleusercontent.com/d/1kEXnjOYHFXhJkHMyH4LBRMJuNY6cJFqL",
+          "https://lh3.googleusercontent.com/d/1fEvl4j-eAuvhubSwr0dIh9-Ujh94YOAS",
+          "https://lh3.googleusercontent.com/d/1y-kx9m2dfaNia7TVRLQCrK5hJe2OMM6d",
+          "https://lh3.googleusercontent.com/d/1rMZFTJ5HEaPimeOcNT-5Tk8v7BwXtdOq",
         ],
         cta: {
           label: "Enquire Now",
@@ -1047,16 +1063,29 @@ export const landingPageData = {
     title: "Trusted by travellers.",
     buttons: [
       {
-        label: "Enquire Now",
+        label: "BOOK NOW",
         link: "#form",
-        // link: contact.WhatsappCta,
       },
-      // {
-      //   label: "Book Now",
-      //   link: "#form",
-      // },
     ],
     reviews: [
+      {
+        name: "Gudiya Yadav",
+        review:
+          "Paradiso is an excellent luxury villa for families and groups visiting Goa. Beautiful interiors, relaxing pool area, and easy access to restaurants, nightlife, and beaches. We especially appreciated that the beach was only a 2-minute drive away manager Manoj yadav was very helpful,kind and loyal",
+        rating: 5,
+      },
+      {
+        name: "Atharva Burle",
+        review:
+          "The villa was superb , and villa manager named Mr. Manoj he treated us very well and was too nice and kind . I enjoyed a lot . 😃",
+        rating: 5,
+      },
+      {
+        name: "Sonu Rawat",
+        review:
+          "Aroha Palms Paradiso combines luxury, privacy, and location perfectly. The villa is close to Mandrem and Ashwem beaches while still feeling calm and exclusive. Loved evenings at Lazy Dog and the nearby cafes. One of the finest luxury villas in Goa",
+        rating: 5,
+      },
       {
         name: "Naveen Kumar Dagar",
         review:
@@ -1070,28 +1099,16 @@ export const landingPageData = {
         rating: 5,
       },
       {
-        name: "Gudiya Yadav",
+        name: "Jagjit Dhaliwal",
         review:
-          "Paradiso is an excellent luxury villa for families and groups visiting Goa. Beautiful interiors, relaxing pool area, and easy access to restaurants, nightlife, and beaches. We especially appreciated that the beach was only a 2-minute drive away manager Manoj yadav was very helpful,kind and loyal ",
-        rating: 5,
-      },
-      {
-        name: "Atharva burle",
-        review:
-          "The villa was superb , and villa manager named Mr. Manoj he treated us very well and was too nice and kind . I enjoyed a lot . 😃",
-        rating: 5,
-      },
-      {
-        name: "Sonu Rawat",
-        review:
-          "Aroha Palms Paradiso combines luxury, privacy, and location perfectly. The villa is close to Mandrem and Ashwem beaches while still feeling calm and exclusive. Loved evenings at Lazy Dog and the nearby cafes. One of the finest luxury villas in Goa",
+          "We stayed a couple of days and found the place to absolutely amazing. As a whole the facilities were amazing with access to the swimming pool. The staff were absolutely wonderful and the overall ambience of the place was great. The Goan style architecture was very beautiful and the house was extremely spacious.",
         rating: 5,
       },
     ],
   },
 
   faq: {
-    image: "/rooms/Grande/AOB_0150[1]_10_11zon.jpg",
+    image: "/landing-page/faq-aerial.png",
     tagline: "ANSWERS",
     title: "Everything you want to know.",
     items: [
@@ -1133,16 +1150,15 @@ export const landingPageData = {
     title: "Getting Here & Getting Around",
 
     cta: {
-      label: "Enquire Now",
+      label: "BOOK NOW",
       href: "#form",
-      // href: createWhatsappCta("Aroha Palms Villa Paradiso"),
     },
 
     places: [
       {
         title: "Candolim Beach",
         duration: "5 km, 10 min",
-        icon: "airplane",
+        icon: "location",
       },
       {
         title: "Calangute Beach",
@@ -1158,6 +1174,68 @@ export const landingPageData = {
         title: "Baga Beach",
         duration: "9 km, 18 min",
         icon: "location",
+      },
+      {
+        title: "Panjim (Capital)",
+        duration: "12 km, 25 min",
+        icon: "location",
+      },
+      {
+        title: "Anjuna",
+        duration: "15 km, 30 min",
+        icon: "location",
+      },
+      {
+        title: "Dabolim Airport (GOI)",
+        duration: "33 km, 45 min",
+        icon: "airplane",
+      },
+      {
+        title: "Manohar / Mopa Airport (GOX)",
+        duration: "35 km, 55 min",
+        icon: "airplane",
+      },
+    ],
+  },
+  experienceSection: {
+    tagline: "BEYOND THE VILLA",
+    title: "Nearby Activities",
+    experiences: [
+      {
+        title: "MAE DE DEUS CHURCH",
+        image: "/landing-page/nearby-mae-de-deus.png",
+        // description:
+        //   "Saligao Striking neo-Gothic heritage architecture set amidst lush village lanes, ideal for morning cycling trails",
+      },
+      {
+        title: "MUSEUM OF GOA (MOG)",
+        image: "/landing-page/nearby-mog.jpg",
+        // description:
+        //   "Pilerne Contemporary art galleries, open-air sculptures, and cultural exhibits right around the corner.",
+      },
+      {
+        title: "CANDOLIM & SINQUERIM BEACHES",
+        image: "/landing-page/nearby-candolim.jpg",
+        // description:
+        //   "Golden sands, watersports, and tranquil coastal sundowners just 10–15 minutes away",
+      },
+      {
+        title: "FORT AGUADA & LIGHTHOUSE",
+        image: "/landing-page/nearby-fort-aguada.jpg",
+        // description:
+        //   "Candolim Historic 17th-century Portuguese fortress offering panoramic sea and cliffside views",
+      },
+      {
+        title: "REIS MAGOS FORT",
+        image: "/landing-page/nearby-reis-magos.jpg",
+        // description:
+        //   "Verem Restored heritage fort overlooking the Mandovi estuary, known for cultural exhibitions and scenic river vistas",
+      },
+    ],
+    buttons: [
+      {
+        label: "BOOK NOW",
+        link: "#form",
       },
     ],
   },

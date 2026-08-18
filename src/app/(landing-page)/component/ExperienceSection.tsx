@@ -10,7 +10,7 @@ export interface ExperienceSectionProps {
   experiences: {
     title: string;
     image: string;
-    description: string;
+    description?: string;
   }[];
   buttons: {
     label: string;

@@ -7,6 +7,7 @@ import ExperienceSection from "./component/ExperienceSection";
 import FaqSection from "./component/FaqSection";
 import FeaturesSection from "./component/FeaturesSection";
 import { landingPageData } from "./component/pageData";
+import NearbyPlaces from "../MandremLp/components/Nearby";
 import Testimonials from "./component/Testimonials";
 import UnforgettableSection from "./component/UnforgettableSection";
 
@@ -27,10 +28,9 @@ export default function LandingPage() {
         /> */}
       </SectionWithContainer>
       <UnforgettableSection {...landingPageData.unforgettableSection} />
-      <SlidingTitle items={landingPageData.offer} ariaHidden />
       <AccommodationSection {...landingPageData.accommodationSection} />
-      <SlidingTitle items={landingPageData.offer} ariaHidden />
       <FeaturesSection {...landingPageData.featuresSection} />
+      {/* <NearbyPlaces {...landingPageData.nearbyPlaces} /> */}
       <ExperienceSection {...landingPageData.experienceSection} />
       <Testimonials {...landingPageData.testimonials} />
       <FaqSection {...landingPageData.faq} />

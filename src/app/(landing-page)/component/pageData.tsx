@@ -1087,26 +1087,26 @@ export const landingPageData = {
       {
         title: "Beach & Adventure",
         image: "/landing-page/beach.png",
-        description:
-          "Sunlit beaches, water sports and coastal trails just a short drive away.",
+        // description:
+        //   "Sunlit beaches, water sports and coastal trails just a short drive away.",
       },
       {
         title: "Heritage & Culture",
         image: "/landing-page/culture.png",
-        description:
-          "Explore churches, forts and local markets where Goa's history comes alive.",
+        // description:
+        //   "Explore churches, forts and local markets where Goa's history comes alive.",
       },
       {
         title: "Casino & Nightlife",
         image: "/landing-page/casino.png",
-        description:
-          "Cruise casinos, live music and Goa's iconic beach clubs after dark.",
+        // description:
+        //   "Cruise casinos, live music and Goa's iconic beach clubs after dark.",
       },
       {
         title: "Yoga & Wellbeing",
         image: "/landing-page/yoga.png",
-        description:
-          "Yoga sessions, Ayurvedic rituals, and calm surroundings for inner ease.",
+        // description:
+        //   "Yoga sessions, Ayurvedic rituals, and calm surroundings for inner ease.",
       },
     ],
     buttons: [
