@@ -1,14 +1,13 @@
 import WhatsappForm from "@/components/forms/WhatsappForm";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import SlidingTitle from "@/components/sliders/SlidingTitle";
-import Banner from "../(landing-page)/component/Banner";
+import Banner from "./components/Banner";
 import { landingPageData } from "./components/pagedata";
-import UnforgettableSection from "../(landing-page)/component/UnforgettableSection";
-
-import ExperienceSection from "../(landing-page)/component/ExperienceSection";
-import FeaturesSection from "../(landing-page)/component/FeaturesSection";
-import Testimonials from "../(landing-page)/component/Testimonials";
-import FaqSection from "../(landing-page)/component/FaqSection";
+import UnforgettableSection from "./components/UnforgettableSection";
+import ExperienceSection from "./components/ExperienceSection";
+import FeaturesSection from "./components/FeaturesSection";
+import Testimonials from "./components/Testimonials";
+import FaqSection from "./components/FaqSection";
 import AccommodationSection from "./components/AccommodationSection";
 import NearbyPlaces from "./components/Nearby";
 

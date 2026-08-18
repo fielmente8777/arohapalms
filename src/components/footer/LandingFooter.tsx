@@ -10,7 +10,7 @@ const LandingFooter = () => {
   if (pathName === "/thank-you/") {
     return null;
   }
-  const isMandremLp = pathName?.toLowerCase().includes("mandremlp");
+  const isPilerneLp = pathName?.toLowerCase().includes("pilerne");
 
   return (
     <footer className="max_screen_width bg-background-dark text-white">
@@ -42,7 +42,7 @@ const LandingFooter = () => {
                 />
                 <ul className={`flex flex-col md:gap-2 gap-4`}>
                   {list.links.map((item, suIndex) => {
-                    const label = isLocationList && isMandremLp
+                    const label = isLocationList && isPilerneLp
                       ? "Pilerne, North Goa"
                       : item.label;
                     return (

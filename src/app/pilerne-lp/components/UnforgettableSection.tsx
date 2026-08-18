@@ -41,9 +41,9 @@ const UnforgettableSection: React.FC<UnforgettableSectionProps> = ({
         <p className="text-secondary text-center lg:text-lg leading-relaxed">
           {description[1]}
         </p>
-        {/* <p className="text-gray-700 font-semibold text-base md:text-lg tracking-wide mt-1">
+        <p className="text-gray-700 font-semibold text-base md:text-lg tracking-wide mt-1">
           Relax, Rejuvenate, Revive.
-        </p> */}
+        </p>
         <ul className="mx-auto mt-1">
           {buttons.map((button, index) => (
             <li key={index}>

@@ -1171,7 +1171,7 @@ export const landingPageData = {
   },
 
   faq: {
-    image: "",
+    image: "/Rectangle-34624170.png",
     tagline: "ANSWERS",
     title: "Everything you want to know.",
     items: [

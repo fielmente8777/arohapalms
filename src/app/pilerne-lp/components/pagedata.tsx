@@ -1204,32 +1204,32 @@ export const landingPageData = {
       {
         title: "MAE DE DEUS CHURCH",
         image: "/landing-page/nearby-mae-de-deus.png",
-        // description:
-        //   "Saligao Striking neo-Gothic heritage architecture set amidst lush village lanes, ideal for morning cycling trails",
+        description:
+          "Saligao Striking neo-Gothic heritage architecture set amidst lush village lanes, ideal for morning cycling trails",
       },
       {
         title: "MUSEUM OF GOA (MOG)",
         image: "/landing-page/nearby-mog.jpg",
-        // description:
-        //   "Pilerne Contemporary art galleries, open-air sculptures, and cultural exhibits right around the corner.",
+        description:
+          "Pilerne Contemporary art galleries, open-air sculptures, and cultural exhibits right around the corner.",
       },
       {
         title: "CANDOLIM & SINQUERIM BEACHES",
         image: "/landing-page/nearby-candolim.jpg",
-        // description:
-        //   "Golden sands, watersports, and tranquil coastal sundowners just 10–15 minutes away",
+        description:
+          "Golden sands, watersports, and tranquil coastal sundowners just 10–15 minutes away",
       },
       {
         title: "FORT AGUADA & LIGHTHOUSE",
         image: "/landing-page/nearby-fort-aguada.jpg",
-        // description:
-        //   "Candolim Historic 17th-century Portuguese fortress offering panoramic sea and cliffside views",
+        description:
+          "Candolim Historic 17th-century Portuguese fortress offering panoramic sea and cliffside views",
       },
       {
         title: "REIS MAGOS FORT",
         image: "/landing-page/nearby-reis-magos.jpg",
-        // description:
-        //   "Verem Restored heritage fort overlooking the Mandovi estuary, known for cultural exhibitions and scenic river vistas",
+        description:
+          "Verem Restored heritage fort overlooking the Mandovi estuary, known for cultural exhibitions and scenic river vistas",
       },
     ],
     buttons: [
