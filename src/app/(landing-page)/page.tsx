@@ -7,7 +7,7 @@ import ExperienceSection from "./component/ExperienceSection";
 import FaqSection from "./component/FaqSection";
 import FeaturesSection from "./component/FeaturesSection";
 import { landingPageData } from "./component/pageData";
-import NearbyPlaces from "../MandremLp/components/Nearby";
+import NearbyPlaces from "../pilerne-lp/components/Nearby";
 import Testimonials from "./component/Testimonials";
 import UnforgettableSection from "./component/UnforgettableSection";
 

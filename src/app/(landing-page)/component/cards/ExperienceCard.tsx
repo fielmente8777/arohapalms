@@ -15,7 +15,11 @@ const ExperienceCard: React.FC<
         <p className="text-center capitalize text-white md:text-lg text-nowrap">{title}</p>
       </div>
     </div>
-    {description && <p className="" >{description}</p>}
+    {description && (
+      <p className="text-black/70 text-center text-sm md:text-base mt-3 leading-relaxed">
+        {description}
+      </p>
+    )}
     </div>
   );
 };
