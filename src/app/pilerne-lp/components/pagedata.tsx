@@ -86,7 +86,6 @@ export const landingPageData = {
       "/landing-page/unforgettable-2.jpg",
       "/landing-page/unforgettable-3.jpg",
       "/landing-page/unforgettable-4.jpg",
-      "/landing-page/unforgettable-5.jpg",
       "/landing-page/unforgettable-6.jpg",
     ],
     buttons: [
@@ -1015,7 +1014,7 @@ export const landingPageData = {
         icon: <ConciergeIcon />,
         title: "Concierge",
         description:
-          "24/7 dedicated concierge for bookings, transfers, chef service and events.",
+          "Dedicated concierge for bookings, transfers, chef service and events.",
       },
       {
         icon: <FreeWifiIcon />,

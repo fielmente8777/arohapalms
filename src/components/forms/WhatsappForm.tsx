@@ -58,8 +58,8 @@ const pilerneLocationOptions: VillaOption[] = [
     label: "6BHK, Aroha Palms Villa Grande ",
   },
   {
-    value: "6+5BHK, Aroha Palms Villa Imperial",
-    label: "6+5BHK, Aroha Palms Villa Imperial",
+    value: "11BHK, Aroha Palms Villa Imperial",
+    label: "11BHK, Aroha Palms Villa Imperial",
   },
 ];
 
