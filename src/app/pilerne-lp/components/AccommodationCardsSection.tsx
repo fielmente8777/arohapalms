@@ -34,7 +34,7 @@ const AccommodationCardsSection: React.FC<{
             ))}
           </div>
         </Container>
-        <div className="py-8 bg-background-dark w-full my-10 border-y-4 border-primary">
+        <div className="py-8 bg-background-dark w-full my-16">
           <Container className="text-white bg-background-dark text-center max-w-4xl mx-auto space-y-3.5 ">
             <p className="text-2xl font-semibold capitalize text-primary">
               Stays that scale with your group!
@@ -96,7 +96,7 @@ export const AccommodationCard: React.FC<
             pauseOnMouseEnter: true,
             waitForTransition: true,
           }}
-          swiperSlideClassName="relative w-full h-full xl:aspect-[4/2.8] lg:aspect-[4/7] aspect-[4/2.75]"
+          swiperSlideClassName="relative w-full h-full xl:aspect-[4/3] lg:aspect-[4/7] aspect-[4/2.75]"
           renderSlide={(image) => (
             <Image
               src={image}
@@ -110,7 +110,7 @@ export const AccommodationCard: React.FC<
       </div>
       <div className="lg:col-span-4 flex flex-col justify-between border-2 border-primary rounded-2xl gap-4  lg:gap-5 lg:p-6 p-4 bg-background box-shadow overflow-hidden">
         <div className="space-y-3">
-          <h3 className="lg:text-3xl text-2xl text-p2 font-semibold">
+          <h3 className="lg:text-3xl text-2xl text-p2">
             {title} - {span}
           </h3>
           <p className="text-lg text-primary">{moreInfo.title}</p>
@@ -216,7 +216,7 @@ export const AccommodationCard: React.FC<
               <span className="text-p2">{discountCode} </span>
             </p>
             <span className="text-sm text-secondary">
-              ( Valid Till <span className="text-[#A20000]">31st August</span> )
+              ( Valid Till <span className="text-[#A20000]">30th September</span> )
             </span>
           </div>
         </div>

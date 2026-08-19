@@ -14,10 +14,11 @@ import NearbyPlaces from "./components/Nearby";
 export default function LandingPage() {
   return (
     <main className="bg-background">
+      <SlidingTitle items={landingPageData.offer} />
       <Banner {...landingPageData.hero} isSliding={false} />
       <SectionWithContainer
         defaultPadding={false}
-        sectionClassName="py-8 border-b border-primary"
+        sectionClassName="py-8 border-b border-primary box-shadow"
         containerClassName="space-y-4"
       >
         <WhatsappForm />
@@ -27,15 +28,19 @@ export default function LandingPage() {
         /> */}
       </SectionWithContainer>
       <UnforgettableSection {...landingPageData.unforgettableSection} />
+      <SlidingTitle items={landingPageData.offer}ariaHidden />
       <AccommodationSection {...landingPageData.accommodationSection} />
+      <SlidingTitle items={landingPageData.offer} ariaHidden />
       <FeaturesSection {...landingPageData.featuresSection} />
       <NearbyPlaces {...landingPageData.nearbyPlaces} />
+
       <ExperienceSection {...landingPageData.experienceSection} />
       <Testimonials {...landingPageData.testimonials} />
+      <SlidingTitle items={landingPageData.offer} ariaHidden/>
       <FaqSection {...landingPageData.faq} />
       <SectionWithContainer
         defaultPadding={false}
-        sectionClassName="py-8 border-t border-primary"
+        sectionClassName="py-8 border-t border-primary box-shadow"
         containerClassName="space-y-4"
       >
         <WhatsappForm />

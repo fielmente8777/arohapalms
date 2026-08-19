@@ -8,7 +8,7 @@ export default function SlidingTitle({
   items: string[];
   ariaHidden?: boolean;
 }) {
-  const titles = [...items, ...items, ...items];
+  const titles = [...items, ...items, ...items, ...items, ...items];
 
   return (
     <div

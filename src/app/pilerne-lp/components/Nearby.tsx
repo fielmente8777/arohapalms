@@ -49,7 +49,7 @@ const NearbyPlaces = ({ tagline, title, cta, places }: NearbyPlacesProps) => {
               data={places}
               slidesPerView={3}
               spaceBetween={0}
-              loop={false}
+              loop={true}
               modules={[Navigation]}
               direction="vertical"
               navigation={{

@@ -111,7 +111,7 @@ const RoomDetailsPopup = () => {
             />
             {/* In-Room Amenities */}
             {room?.inRoomAmenities && room.inRoomAmenities.length > 0 && (
-              <div className="mt-4 bg-primary/5 rounded-lg space-y-2">
+              <div className="mt-4 rounded-lg space-y-2">
                 <p className="font-semibold text-p2 mb-2">In-Room Amenities</p>
                 <div className="grid grid-cols-2 gap-2">
                   {room.inRoomAmenities.map((amenity, index) => (

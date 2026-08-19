@@ -14,6 +14,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { countries } from "../../utils/constent";
 import { WhatsAppIcon } from "../buttons/LinkButton";
+import { usePathname } from "next/navigation";
 
 interface Props {
   gridView?: boolean;
@@ -25,7 +26,9 @@ interface Props {
 const WHATSAPP_NUMBER = "+919834220573";
 
 // Villa options
-const locationOptions = [
+
+
+const mandermLocationOptions = [
   {
     value: "4BHK, Aroha Palms Magnifica ",
     label: "4BHK, Aroha Palms Magnifica",
@@ -40,6 +43,22 @@ const locationOptions = [
   { value: "10BHK, Aroha Palms Encanto ", label: "10BHK, Aroha Palms Encanto" },
   { value: "18BHK, Aroha Palms Marisol ", label: "18BHK, Aroha Palms Marisol" },
 ];
+
+const pilerneLocationOptions = [
+  {
+    value: "5BHK, Aroha Palms Villa Majestic ",
+    label: "5BHK, Aroha Palms Villa Majestic",
+  },
+  {
+    value: "6BHK, Aroha Palms Villa Grande ",
+    label: "6BHK, Aroha Palms Villa Grande ",
+  },
+  { value: "6+5BHK, Aroha Palms Villa Imperial",
+    label: "6+5BHK, Aroha Palms Villa Imperial" },
+  
+];
+
+const locationOptions = window.location.pathname === "/" ?mandermLocationOptions: pilerneLocationOptions;
 
 const normalizeVillaName = (value: string) =>
   value
@@ -229,6 +248,8 @@ export const buildWhatsappMessage = (data: WhatsappFormData) => {
 
 const WhatsappForm = ({ gridView, villa }: Props) => {
   // Villa name carried in from whichever CTA opened the popup
+  const pathName = usePathname();
+  const validDate = pathName === "/" ? "*Monsoon offer valid till 31st August": "*Offer valid till 30th September";
   const { formVilla } = useWebContext();
   const prefillVilla = villa ?? formVilla;
 
@@ -510,7 +531,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
               </div>
               {field.name === "promoCode" && (
                 <span className="text-xs text-gray-400">
-                  *Monsoon offer valid till 31st August
+                   {validDate}
                 </span>
               )}
             </div>

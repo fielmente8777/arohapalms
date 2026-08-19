@@ -33,8 +33,7 @@ Thank you!`;
 
 export const landingPageData = {
   offer: [
-    "Monsoon Bonanza limited time offer valid till <span class='text-[#A20000]'>30% OFF</span> limited time offer valid till 31st August. Use discount code : <span class='text-[#A20000]'>MONSOON30</span>",
-    "Monsoon Bonanza 30% off limited time offer valid till <span class='text-[#A20000]'>31st August.</span> Use discount code : <span class='text-[#A20000]'>MONSOON30</span>",
+    "Limited time offer valid till <span class='text-[#A20000]'>30th September.</span> Use discount code : <span class='text-[#A20000]'>PILERNE20</span>",
   ],
   hero: {
     tag: "A Paradise in North Goa",
@@ -80,6 +79,7 @@ export const landingPageData = {
     description: [
       "Welcome to Aroha Palms Pilerne, two private luxury villas set in Pilerne village, which has stayed rustic despite sitting minutes from the North Goa tourist belt.",
       "Whether you are seeking an intimate family escape, a multi-generational reunion, a wellness retreat, or a grand destination event, Aroha Palms Pilerene brings together spacious living, private pools, and bespoke hospitality all just a few minutes drive from the golden sands of three of North Goa's most-visited beaches - Candolim, Calangute, and Baga - and none of their noise at your gate. You wake in a quiet village and reach the coast before the morning heat.",
+      "Relax, Rejuvenate, Revive."
     ],
     images: [
       "/landing-page/unforgettable-1.jpg",
@@ -91,7 +91,7 @@ export const landingPageData = {
     ],
     buttons: [
       {
-        label: "BOOK NOW",
+        label: "ENQUIRE NOW",
         link: "#form",
         // link: contact.WhatsappCta,
       },
@@ -110,9 +110,9 @@ export const landingPageData = {
     note: "Some trips need room for everyone. Two villas join into larger estates for the family, twin villas suit a celebration, the full compound accommodates up to 26 guests. Whatever the size, everything stays private, and the hosting is handled.",
     cards: [
       {
-        title: "Villa Majestic – The Heritage One",
-        discountCode: "MONSOON30",
-        span: "The Intimate One",
+        title: "Villa Majestic",
+        discountCode: "PILERNE20",
+        span: "The Heritage One",
         type: "Villa",
         description:
           "A Restored Portuguese Residence, Reimagined for Modern Excursions",
@@ -133,8 +133,8 @@ export const landingPageData = {
           { icon: <KitchenIcon />, label: "Kitchen" },
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
-        originalPrice: "₹ X,XXX/night",
-        startingPrice: "From ₹ X,XXX/night",
+        originalPrice: "₹ 35,000/night",
+        startingPrice: "From ₹ 35,000/night",
         moreInfo: {
           title:
             "A Restored Portuguese Residence, Reimagined for Modern Excursions",
@@ -217,9 +217,9 @@ export const landingPageData = {
         },
       },
       {
-        title: "Villa Grande – The Collector's House",
-        discountCode: "MONSOON30",
-        span: " The All-Rounder",
+        title: "Villa Grande",
+        discountCode: "PILERNE20",
+        span: "The Collector's House",
         type: "Villa",
         description: "A Newly Built Artistic Villa With An Intimate Setting",
         amenities: [
@@ -239,8 +239,8 @@ export const landingPageData = {
           { icon: <KitchenIcon />, label: "Kitchen" },
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
-        originalPrice: "₹ X,XXX",
-        startingPrice: "From ₹ X,XXX/night",
+        originalPrice: "₹ 48,000",
+        startingPrice: "From ₹ 48,000/night",
         moreInfo: {
           title: "A Newly Built Artistic Villa With An Intimate Setting",
           roomInfo: [
@@ -327,9 +327,9 @@ export const landingPageData = {
         },
       },
       {
-        title: "Villa Imperial – The Twin Estate",
-        discountCode: "MONSOON30",
-        span: " The All-Rounder",
+        title: "Villa Imperial",
+        discountCode: "PILERNE20",
+        span: "The Twin Estate",
         type: "Villa",
         description:
           "A Restored Portuguese Residence, Reimagined for Modern Excursions",
@@ -349,8 +349,8 @@ export const landingPageData = {
           { icon: <KitchenIcon />, label: "Kitchen" },
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
-        originalPrice: "₹ X,XXX",
-        startingPrice: "From ₹ X,XXX/night",
+        originalPrice: "₹ 83,000",
+        startingPrice: "From ₹ 83,000/night",
         moreInfo: {
           title: "A Newly Built Artistic Villa With An Intimate Setting",
           roomInfo: [
@@ -1069,33 +1069,21 @@ export const landingPageData = {
     ],
     reviews: [
       {
-        name: "Gudiya Yadav",
+        name: "Jass Bhatt",
         review:
-          "Paradiso is an excellent luxury villa for families and groups visiting Goa. Beautiful interiors, relaxing pool area, and easy access to restaurants, nightlife, and beaches. We especially appreciated that the beach was only a 2-minute drive away manager Manoj yadav was very helpful,kind and loyal",
+          "We have had a fantastic stay at this villa. We stayed for 3 nights and there were 8 people. The villa is very well equipped with all the requirements one would need during the stay. Paresh sir and his wife were very helpful and considerate of the guests. Highly recommended to stay.",
         rating: 5,
       },
       {
-        name: "Atharva Burle",
+        name: "Ankit Savla",
         review:
-          "The villa was superb , and villa manager named Mr. Manoj he treated us very well and was too nice and kind . I enjoyed a lot . 😃",
+          "One of the best vacation with family. Had a lovely stay. Cleanliness and Hospitality was amazing. Mr Paresh, Mrs Moni and their family really took good care of us. The place is massive and well kept. Rooms are well equipped with all amenities and clean bathrooms. Mr Paresh and Mrs Moni are really well behaved and made us really enjoy our holidays to the max. Will definitely visit again in the future.",
         rating: 5,
       },
       {
-        name: "Sonu Rawat",
+        name: "Tech Hobbies",
         review:
-          "Aroha Palms Paradiso combines luxury, privacy, and location perfectly. The villa is close to Mandrem and Ashwem beaches while still feeling calm and exclusive. Loved evenings at Lazy Dog and the nearby cafes. One of the finest luxury villas in Goa",
-        rating: 5,
-      },
-      {
-        name: "Naveen Kumar Dagar",
-        review:
-          "Amazing place amazing staff members Kuldeep, seeta ji and Manoj everyone is very nice and taking care of small small requirements, will miss this villa, checking out today",
-        rating: 5,
-      },
-      {
-        name: "vedant chavan",
-        review:
-          "The place and the staff of this place is very polite and gives homely vibes to all its guest, specially manoj ji who manages it is very friendly and always ready to help the person It feels like the dream house of many people",
+          "Excellent property for a weekend gateway. We had an amazing experience. The staffs are extremely helpful and professional. Paresh and Moni were always attentive to take care about any need including food. I highly recommend this place for a perfect family trip.",
         rating: 5,
       },
       {
@@ -1122,7 +1110,7 @@ export const landingPageData = {
       },
       {
         q: "Can I book a villa for weddings or corporate offsites?",
-        a: "Yes. Villas like Marisol (36 guests) and Encanto (20 guests) are ideal for weddings, birthday celebrations and corporate offsites. Our team helps with décor, catering and event planning.",
+        a: "Yes. Villas like Imperial (26 guests) are ideal for weddings, birthday celebrations, and corporate offsites. Our team helps with décor, catering, and event planning.",
       },
       {
         q: "Are the villas pet-friendly?",
@@ -1130,7 +1118,7 @@ export const landingPageData = {
       },
       {
         q: "Do all properties have private pools?",
-        a: "Pool access for apartment and suite guests is only available when booked together with a villa.",
+        a: "All villas come with dedicated pool access.",
       },
       {
         q: "Is the location safe?",
@@ -1150,7 +1138,7 @@ export const landingPageData = {
     title: "Getting Here & Getting Around",
 
     cta: {
-      label: "BOOK NOW",
+      label: "ENQUIRE NOW",
       href: "#form",
     },
 
@@ -1234,7 +1222,7 @@ export const landingPageData = {
     ],
     buttons: [
       {
-        label: "BOOK NOW",
+        label: "ENQUIRE NOW",
         link: "#form",
       },
     ],

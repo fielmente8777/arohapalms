@@ -3,14 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "../sectionComponants";
-import { footerData } from "./footerdata";
+import { footerData, pilerneFooterData } from "./footerdata";
 
 const LandingFooter = () => {
   const pathName = usePathname();
+  const data = pathName === "/" ? footerData: pilerneFooterData;
+
   if (pathName === "/thank-you/") {
     return null;
   }
-  const isPilerneLp = pathName?.toLowerCase().includes("pilerne");
 
   return (
     <footer className="max_screen_width bg-background-dark text-white">
@@ -22,17 +23,17 @@ const LandingFooter = () => {
                   w-35 aspect-[4/.9] md:w-50`}
             >
               <Image
-                src={footerData.logo}
+                src={data.logo}
                 alt="logo"
                 fill
                 sizes="100%"
                 className="object-cover"
               />
             </div>
-            <p className=" text-white/60">{footerData.description}</p>
+            <p className=" text-white/60">{data.description}</p>
           </div>
 
-          {footerData.lists.map((list, index) => {
+          {data.lists.map((list, index) => {
             const isLocationList = list.title?.toLowerCase() === "location";
             return (
               <div className={` flex flex-col gap-4`} key={index}>
@@ -41,26 +42,21 @@ const LandingFooter = () => {
                   dangerouslySetInnerHTML={{ __html: list.title ?? "" }}
                 />
                 <ul className={`flex flex-col md:gap-2 gap-4`}>
-                  {list.links.map((item, suIndex) => {
-                    const label = isLocationList && isPilerneLp
-                      ? "Pilerne, North Goa"
-                      : item.label;
-                    return (
-                      <li key={suIndex}>
-                        <Link
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href={item.href}
-                          className=" text-sm"
-                        >
-                          <span className={` text-white/80 inline-block`}>
-                            {label}
-                          </span>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
+                {list.links.map((item, suIndex) => (
+                  <li key={suIndex}>
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={item.href}
+                      className=" text-sm"
+                    >
+                      <span className={` text-white/80 inline-block`}>
+                        {item.label}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
               </div>
             );
           })}

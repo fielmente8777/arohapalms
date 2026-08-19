@@ -18,32 +18,29 @@ export default function LandingPage() {
       <Banner {...landingPageData.hero} />
       <SectionWithContainer
         defaultPadding={false}
-        sectionClassName="py-8 border-b border-primary"
+        sectionClassName="py-8 border-b border-primary box-shadow"
         containerClassName="space-y-4"
       >
         <WhatsappForm />
-        {/* <p
-          className="text-sm text-light max-w-3xl text-center mx-auto"
-          dangerouslySetInnerHTML={{ __html: landingPageData.hero.benefits }}
-        /> */}
+        
       </SectionWithContainer>
       <UnforgettableSection {...landingPageData.unforgettableSection} />
+      <SlidingTitle items={landingPageData.offer} ariaHidden />
       <AccommodationSection {...landingPageData.accommodationSection} />
+      <SlidingTitle items={landingPageData.offer} ariaHidden />
       <FeaturesSection {...landingPageData.featuresSection} />
-      {/* <NearbyPlaces {...landingPageData.nearbyPlaces} /> */}
+      
       <ExperienceSection {...landingPageData.experienceSection} />
       <Testimonials {...landingPageData.testimonials} />
+      <SlidingTitle items={landingPageData.offer} ariaHidden />
       <FaqSection {...landingPageData.faq} />
       <SectionWithContainer
         defaultPadding={false}
-        sectionClassName="py-8 border-t border-primary"
+        sectionClassName="py-8 border-t border-primary box-shadow "
         containerClassName="space-y-4"
       >
         <WhatsappForm />
-        {/* <p
-          className="text-sm text-light max-w-3xl text-center mx-auto"
-          dangerouslySetInnerHTML={{ __html: landingPageData.hero.benefits }}
-        /> */}
+        
       </SectionWithContainer>
     </main>
   );
