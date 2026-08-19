@@ -106,7 +106,7 @@ export const landingPageData = {
     tagline: "OUR ACCOMMODATION",
     title: "Boutique Homes Crafted for Your Perfect Goa Getaway",
     description:
-      "Explore every villa, apartment and suite across Pelerne, each one thoughtfully designed for private, unhurried Goa stays.",
+      "Explore every villa across Pelerne, each one thoughtfully designed for private, unhurried Goa stays.",
     note: "Some trips need room for everyone. Two villas join into larger estates for the family, twin villas suit a celebration, the full compound accommodates up to 26 guests. Whatever the size, everything stays private, and the hosting is handled.",
     cards: [
       {

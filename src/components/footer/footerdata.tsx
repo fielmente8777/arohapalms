@@ -75,7 +75,7 @@ export const pilerneFooterData: FooterData = {
   logo: "/logo.png",
   tagLine: "Resorts · Khajuraho",
   description:
-    "Luxury villas & apartments in the serene neighbourhoods of North Goa. Barefoot luxury, private living, and effortless access to beaches and culture.",
+    "Luxury villas in the serene neighbourhoods of North Goa. Barefoot luxury, private living, and effortless access to beaches and culture.",
   cta: [
     {
       label: "CALL NOW",
@@ -96,11 +96,11 @@ export const pilerneFooterData: FooterData = {
       links: [
         {
           label: "Villa Majestic",
-          href: "",
+          href: "https://maps.app.goo.gl/e7nBBKNYk1GQLxZo6",
         },
         {
           label: "Villa Grande",
-          href: "",
+          href: "https://maps.app.goo.gl/XLBRFiDys3waquzw9",
         },
       ],
     },
