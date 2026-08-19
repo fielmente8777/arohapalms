@@ -25,10 +25,14 @@ interface Props {
 // WhatsApp destination number
 const WHATSAPP_NUMBER = "+919834220573";
 
+type VillaOption = {
+  value: string;
+  label: string;
+};
+
 // Villa options
 
-
-const mandermLocationOptions = [
+const mandermLocationOptions: VillaOption[] = [
   {
     value: "4BHK, Aroha Palms Magnifica ",
     label: "4BHK, Aroha Palms Magnifica",
@@ -44,7 +48,7 @@ const mandermLocationOptions = [
   { value: "18BHK, Aroha Palms Marisol ", label: "18BHK, Aroha Palms Marisol" },
 ];
 
-const pilerneLocationOptions = [
+const pilerneLocationOptions: VillaOption[] = [
   {
     value: "5BHK, Aroha Palms Villa Majestic ",
     label: "5BHK, Aroha Palms Villa Majestic",
@@ -53,12 +57,19 @@ const pilerneLocationOptions = [
     value: "6BHK, Aroha Palms Villa Grande ",
     label: "6BHK, Aroha Palms Villa Grande ",
   },
-  { value: "6+5BHK, Aroha Palms Villa Imperial",
-    label: "6+5BHK, Aroha Palms Villa Imperial" },
-  
+  {
+    value: "6+5BHK, Aroha Palms Villa Imperial",
+    label: "6+5BHK, Aroha Palms Villa Imperial",
+  },
 ];
 
-const locationOptions = window.location.pathname === "/" ?mandermLocationOptions: pilerneLocationOptions;
+/**
+ * Which villa list belongs to a route.
+ * Takes the pathname as an argument (from usePathname) so nothing reads
+ * window at module scope — that is what broke the server render.
+ */
+export const getLocationOptions = (pathname: string | null): VillaOption[] =>
+  pathname === "/" ? mandermLocationOptions : pilerneLocationOptions;
 
 const normalizeVillaName = (value: string) =>
   value
@@ -66,13 +77,16 @@ const normalizeVillaName = (value: string) =>
     .replace(/aroha palms|villa|\d+\s*bhk/g, "")
     .replace(/[^a-z]/g, "");
 
-export const matchVillaOption = (input?: string | null) => {
+export const matchVillaOption = (
+  input: string | null | undefined,
+  options: VillaOption[],
+) => {
   if (!input) return "";
 
   const target = normalizeVillaName(input);
   if (!target) return "";
 
-  const matched = locationOptions.find((option) => {
+  const matched = options.find((option) => {
     const current = normalizeVillaName(option.value);
     if (!current) return false;
     return (
@@ -89,7 +103,7 @@ interface CustomDropdownProps {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
-  options: typeof locationOptions;
+  options: VillaOption[];
   error?: string;
   className?: string;
 }
@@ -247,9 +261,20 @@ export const buildWhatsappMessage = (data: WhatsappFormData) => {
 };
 
 const WhatsappForm = ({ gridView, villa }: Props) => {
-  // Villa name carried in from whichever CTA opened the popup
   const pathName = usePathname();
-  const validDate = pathName === "/" ? "*Monsoon offer valid till 31st August": "*Offer valid till 30th September";
+
+  // Route decides which villa list and which offer line to show
+  const locationOptions = useMemo(
+    () => getLocationOptions(pathName),
+    [pathName],
+  );
+
+  const validDate =
+    pathName === "/"
+      ? "*Monsoon offer valid till 31st August"
+      : "*Offer valid till 30th September";
+
+  // Villa name carried in from whichever CTA opened the popup
   const { formVilla } = useWebContext();
   const prefillVilla = villa ?? formVilla;
 
@@ -258,7 +283,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
   // Lazy initializer so a villa passed on first mount is already selected
   const [formData, setFormData] = useState<WhatsappFormData>(() => ({
     ...initialFormData,
-    villa: matchVillaOption(prefillVilla),
+    villa: matchVillaOption(prefillVilla, locationOptions),
   }));
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -282,13 +307,23 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
     });
   };
 
-  // Keep the pre-selected villa after a reset if one was passed in, and also update the form if the prop changes
-  const [lastPrefillVilla, setLastPrefillVilla] = useState(prefillVilla);
+  // Re-match when the incoming villa name changes, or when the route swaps
+  // the villa list. Adjusting state during render (rather than in an effect)
+  // is React's recommended pattern for state derived from props.
+  const [lastPrefill, setLastPrefill] = useState({
+    villa: prefillVilla,
+    options: locationOptions,
+  });
 
-  if (prefillVilla !== lastPrefillVilla) {
-    setLastPrefillVilla(prefillVilla);
+  if (
+    prefillVilla !== lastPrefill.villa ||
+    locationOptions !== lastPrefill.options
+  ) {
+    const optionsChanged = locationOptions !== lastPrefill.options;
+    setLastPrefill({ villa: prefillVilla, options: locationOptions });
 
-    const matched = matchVillaOption(prefillVilla);
+    const matched = matchVillaOption(prefillVilla, locationOptions);
+
     if (matched) {
       setFormData((prev) => ({ ...prev, villa: matched }));
       setErrors((prev) => {
@@ -297,6 +332,13 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
         delete next.villa;
         return next;
       });
+    } else if (optionsChanged) {
+      // Route changed and the old selection isn't in the new list — clear it
+      setFormData((prev) =>
+        locationOptions.some((option) => option.value === prev.villa)
+          ? prev
+          : { ...prev, villa: "" },
+      );
     }
   }
 
@@ -358,7 +400,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
     // Keep the pre-selected villa after a reset if one was passed in
     setFormData({
       ...initialFormData,
-      villa: matchVillaOption(prefillVilla),
+      villa: matchVillaOption(prefillVilla, locationOptions),
     });
     setStartDate(null);
     setEndDate(null);
@@ -530,9 +572,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
                 />
               </div>
               {field.name === "promoCode" && (
-                <span className="text-xs text-gray-400">
-                   {validDate}
-                </span>
+                <span className="text-xs text-gray-400">{validDate}</span>
               )}
             </div>
           )}
