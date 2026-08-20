@@ -24,7 +24,7 @@ interface NearbyPlacesProps {
 const NearbyPlaces = ({ tagline, title, cta, places }: NearbyPlacesProps) => {
   return (
     <SectionWithContainer sectionClassName="w-full border-y-2 border-primary bg-background-dark mb-10">
-      <div className="mx-auto max-w-[1360px] px-6 lg:px-10">
+      <div className="">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           {/* Left */}
           <div className="flex flex-col justify-center">
@@ -39,27 +39,26 @@ const NearbyPlaces = ({ tagline, title, cta, places }: NearbyPlacesProps) => {
               label={cta.label}
               whatsAppIcon
               villa={title}
-              className="mt-5 justify-center rounded-sm border-none bg-primary px-6 text-white uppercase"
+              className="mt-5 justify-center rounded-sm border-none bg-primary px-6 text-white uppercase max-lg:hidden"
             />}
           </div>
 
           {/* Right - Nearby Places Slider */}
-          <div className="relative pr-12">
+          <div className="relative pr-12 w-full xl:aspect-[4/1.25] aspect-[4/2]">
             <SwiperCarousel
               data={places}
               slidesPerView={3}
               spaceBetween={0}
-              loop={true}
+              loop
               modules={[Navigation]}
               direction="vertical"
               navigation={{
                 nextEl: ".nearby-next",
                 prevEl: ".nearby-prev",
               }}
-              className="h-[320px] w-full"
-              swiperSlideClassName="!h-auto"
+              className="w-full h-full overflow-hidden max-lg:border-b lg:border-t border-white/35"
               renderSlide={(place) => (
-                <div className="flex items-center justify-between border-b border-white/30 py-6 first:border-t">
+                <div className="flex items-center justify-between border-b border-white/35 py-6 ">
                   <div className="flex items-center gap-5">
                     <span className="text-primary">
                       {place.icon === "airplane" ? <PlaneIcon /> : <MapIcon />}
@@ -96,6 +95,13 @@ const NearbyPlaces = ({ tagline, title, cta, places }: NearbyPlacesProps) => {
               </button>
             </div>
           </div>
+            {cta && <LinkButton
+              href={cta.href}
+              label={cta.label}
+              whatsAppIcon
+              villa={title}
+              className="mt-5 justify-center rounded-sm border-none bg-primary px-6 text-white uppercase lg:hidden"
+            />}
         </div>
       </div>
     </SectionWithContainer>
