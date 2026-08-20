@@ -651,7 +651,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
         </button>
       </form>
       {Object.keys(errors).length > 0 && (
-        <p className="text-red-500" role="alert">
+        <p className="text-red-500 text-center" role="alert">
           {/* {Object.values(errors).join(" ")} */}
           Please fill all the required fields
         </p>
