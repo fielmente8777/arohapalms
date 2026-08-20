@@ -87,7 +87,7 @@ export const landingPageData = {
       "/landing-page/unforgettable-2.jpg",
       "/landing-page/unforgettable-3.jpg",
       "/landing-page/unforgettable-4.jpg",
-      "/landing-page/unforgettable-5.jpg",
+      // "/landing-page/unforgettable-5.jpg",
       "/landing-page/unforgettable-6.jpg",
     ],
     buttons: [
