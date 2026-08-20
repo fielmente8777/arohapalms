@@ -633,7 +633,7 @@ export const JacuzziIcon = () => (
     <g mask="url(#mask0_395_3)">
       <path
         d="M129.835 574.276V609.879C129.835 626.084 116.696 639.221 100.491 639.221"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -641,7 +641,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M552.832 574.276V609.879C552.832 626.084 565.971 639.221 582.176 639.221"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -649,7 +649,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M348.029 43.4453C348.029 58.0839 334.638 58.0839 334.638 72.7226C334.638 87.3626 348.029 87.3626 348.029 102.003C348.029 116.643 334.638 116.643 334.638 131.283"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -657,7 +657,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M507.825 100.837C507.825 115.476 494.435 115.476 494.435 130.115C494.435 144.755 507.825 144.755 507.825 159.395C507.825 174.035 494.435 174.035 494.435 188.676"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -665,7 +665,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M188.232 100.837C188.232 115.476 174.841 115.476 174.841 130.115C174.841 144.755 188.232 144.755 188.232 159.395C188.232 174.035 174.841 174.035 174.841 188.676"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -673,7 +673,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M50.3384 366.184V509.892C50.3384 545.451 79.1637 574.276 114.721 574.276H567.945C603.502 574.276 632.328 545.451 632.328 509.892V366.184"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -681,7 +681,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M406.805 275.865H35.1446C21.2579 275.865 9.99927 287.122 9.99927 301.009C9.99927 314.895 21.2579 326.153 35.1446 326.153H443.289"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -689,7 +689,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M572.279 326.153H647.523C661.409 326.153 672.667 314.896 672.667 301.009C672.667 287.122 661.409 275.865 647.523 275.865H608.847"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -697,7 +697,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M543.303 291.277C543.303 310.9 527.395 326.807 507.774 326.807C488.151 326.807 472.245 310.9 472.245 291.277C472.245 271.655 488.151 255.748 507.774 255.748C527.395 255.748 543.303 271.655 543.303 291.277Z"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -705,7 +705,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M528.359 262.328L539.234 237.224C548.918 214.871 533.206 189.396 508.854 188.691C508.495 188.681 508.135 188.676 507.774 188.676C507.413 188.676 507.053 188.681 506.694 188.691C482.342 189.396 466.629 214.871 476.313 237.224L487.189 262.328"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -713,7 +713,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M484.799 264.186L464.474 245.554C446.517 229.091 417.305 235.608 408.306 258.391C408.547 258.727 408.425 259.066 408.306 259.407C408.187 259.748 408.075 260.09 407.967 260.432C400.669 283.675 419.605 306.855 443.897 305.015L474.139 302.723"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -721,7 +721,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M474.854 304.644L449.305 321.216C428.866 334.473 427.851 364.387 447.742 378.452C448.035 378.66 448.331 378.864 448.633 379.063C448.934 379.263 449.235 379.459 449.541 379.648C470.213 392.54 497.398 380.023 501.707 356.044L506.963 326.787"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -729,7 +729,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M508.603 326.786L513.86 356.043C518.169 380.022 545.355 392.539 566.027 379.647C566.331 379.458 566.633 379.263 566.935 379.063C567.236 378.863 567.532 378.659 567.825 378.453C587.716 364.386 586.701 334.474 566.263 321.217L540.697 304.634"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"
@@ -737,7 +737,7 @@ export const JacuzziIcon = () => (
       />
       <path
         d="M541.41 302.715L571.756 305.014C596.049 306.855 614.982 283.675 607.684 260.433C607.577 260.09 607.464 259.747 607.345 259.406C607.228 259.065 607.105 258.726 606.978 258.391C598.348 235.609 569.136 229.091 551.177 245.554L530.802 264.233"
-        stroke="currentColor"
+        stroke="#005BA4"
         strokeWidth={20}
         strokeMiterlimit={10}
         strokeLinecap="round"

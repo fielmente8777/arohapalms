@@ -15,7 +15,7 @@ export default function LandingPage() {
   return (
     <main className="bg-background">
       <SlidingTitle items={landingPageData.offer} />
-      <Banner {...landingPageData.hero} isSliding={false} />
+      <Banner {...landingPageData.hero} isSliding={true} />
       <SectionWithContainer
         defaultPadding={false}
         sectionClassName="py-8 border-b border-primary box-shadow"
