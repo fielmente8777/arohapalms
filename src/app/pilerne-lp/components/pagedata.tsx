@@ -78,7 +78,7 @@ export const landingPageData = {
     title: "Old-World Goan Character, Quietly Reimagined",
     description: [
       "Welcome to Aroha Palms Pilerne, two private luxury villas set in Pilerne village, which has stayed rustic despite sitting minutes from the North Goa tourist belt.",
-      "Whether you are seeking an intimate family escape, a multi-generational reunion, a wellness retreat, or a grand destination event, Aroha Palms Pilerene brings together spacious living, private pools, and bespoke hospitality all just a few minutes drive from the golden sands of three of North Goa's most-visited beaches - Candolim, Calangute, and Baga - and none of their noise at your gate. You wake in a quiet village and reach the coast before the morning heat.",
+      "Whether you are seeking an intimate family escape, a multi-generational reunion, a wellness retreat, or a grand destination event, Aroha Palms Pilerne brings together spacious living, private pools, and bespoke hospitality all just a few minutes drive from the golden sands of three of North Goa's most-visited beaches - Candolim, Calangute, and Baga - and none of their noise at your gate. You wake in a quiet village and reach the coast before the morning heat.",
       "Relax, Rejuvenate, Revive."
     ],
     images: [
@@ -86,6 +86,7 @@ export const landingPageData = {
       "/landing-page/unforgettable-2.jpg",
       "/landing-page/unforgettable-3.jpg",
       "/landing-page/unforgettable-4.jpg",
+      "/landing-page/unforgettable-5.jpg",
       "/landing-page/unforgettable-6.jpg",
     ],
     buttons: [
@@ -105,7 +106,7 @@ export const landingPageData = {
     tagline: "OUR ACCOMMODATION",
     title: "Boutique Homes Crafted for Your Perfect Goa Getaway",
     description:
-      "Explore every villa across Pelerne, each one thoughtfully designed for private, unhurried Goa stays.",
+      "Explore every villa, apartment and suite across Pilerne, each one thoughtfully designed for private, unhurried Goa stays.",
     note: "Some trips need room for everyone. Two villas join into larger estates for the family, twin villas suit a celebration, the full compound accommodates up to 26 guests. Whatever the size, everything stays private, and the hosting is handled.",
     cards: [
       {
@@ -114,7 +115,7 @@ export const landingPageData = {
         span: "The Heritage One",
         type: "Villa",
         description:
-          "A Restored Portuguese Residence, Reimagined for Modern Excursions",
+          "Grand Portuguese Walls, Soft Sunlit Calm",
         amenities: [
 
           { icon: <BedIcon />, label: "5 Bedrooms + 2 Lofts" },
@@ -125,7 +126,7 @@ export const landingPageData = {
         inRoomAmenities: [
           { icon: <HighSpeedInternetIcon />, label: "Bonfire" },
           { icon: <EvChargingFacilityIcon />, label: "EV Charging Facility" },
-          { icon: <SwimmingPoolIcon />, label: "Shared Pool" },
+          { icon: <SwimmingPoolIcon />, label: "Decent Pool" },
           { icon: <WorkStationIcon />, label: "Work Station" },
 
           //   { icon: <SmartTvIcon />, label: "Smart TV" },
@@ -136,13 +137,14 @@ export const landingPageData = {
         startingPrice: "From ₹ 35,000/night",
         moreInfo: {
           title:
-            "A Restored Portuguese Residence, Reimagined for Modern Excursions",
+            "Grand Portuguese Walls, Soft Sunlit Calm",
           roomInfo: [
             "7,500 sq ft ",
             "5 Bedrooms + 2 Lofts",
             "5 Baths",
             "Private 10m Pool ",
             "Sleeps up to 14",
+            "2 Dedicated Staffs",
           ],
           description: [
             "Villa Majestic is built on an old Portuguese house, and the bones of it still show — thick walls, generous proportions, the kind of deep shade that only comes from a home designed before air conditioning existed. The restoration kept all of that and added contemporary interiors around it. Across 7,500 square feet, five bedrooms and two lofts sleep up to fourteen guests.",
@@ -159,6 +161,7 @@ export const landingPageData = {
                 "A restored old Portuguese house paired with contemporary interiors, set in a quiet residential village away from the crowds",
                 "Private 10-metre swimming pool with poolside dining, the natural centre of the villa from breakfast through to evening drinks",
                 "Fully equipped kitchen, high-speed Wi-Fi, and dependable power backup — suited to long stays and remote work",
+                "Each Villa Has Two Powder Rooms",
               ],
             },
             {
@@ -174,7 +177,7 @@ export const landingPageData = {
               title: "Essential Stay Information:",
               list: [
                 "All rates are quoted on a full compound buyout, per-night basis for up to 14 guests.",
-                "<b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+                "<b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping are available for emergencies 24/7.",
                 "<b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals. Restaurant delivery is also available.",
                 "<b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
                 "<b>House guidelines:</b> Smoking on balconies and outdoor areas only. No pets inside the villa. Music indoors between 10 PM and 8 AM, no loud music after 10 PM. The pool is unsupervised — please stay close to children at all times.",
@@ -193,7 +196,6 @@ export const landingPageData = {
           "https://lh3.googleusercontent.com/d/1y57gRQBG5_-3N3OP_uG9pT1YXNM3JSei",
           "https://lh3.googleusercontent.com/d/15cpLYfghLZm_iSd2IOeo4nQLjC8bh_Wy",
           "https://lh3.googleusercontent.com/d/1Z1vuFVVF0L2_4FoZvFHgcUTKSf55fm9a",
-          "https://lh3.googleusercontent.com/d/1Z1vuFVVF0L2_4FoZvFHgcUTKSf55fm9a",
           "https://lh3.googleusercontent.com/d/1W_JNK4dv9H1vlQMUW8Qv7ci1IXxJRSBy",
           "https://lh3.googleusercontent.com/d/1fn1z33GXAfKvtjKEi9V5GrvcdXxzV3iV",
           "https://lh3.googleusercontent.com/d/1Ym3OP3_fogqeguOPAx4-ntWGmQKeOJ3q",
@@ -207,7 +209,6 @@ export const landingPageData = {
           "https://lh3.googleusercontent.com/d/1GK6sTc641VnApTeIjIK62aquly1s5EnZ",
           "https://lh3.googleusercontent.com/d/1wqt19RJKZUjzb8vemcBxiZcuTlYp8dxq",
           "https://lh3.googleusercontent.com/d/1kEXnjOYHFXhJkHMyH4LBRMJuNY6cJFqL",
-          "https://lh3.googleusercontent.com/d/1kEXnjOYHFXhJkHMyH4LBRMJuNY6cJFqL",
         ],
         cta: {
           label: "Enquire Now",
@@ -220,7 +221,7 @@ export const landingPageData = {
         discountCode: "PILERNE20",
         span: "The Collector's House",
         type: "Villa",
-        description: "A Newly Built Artistic Villa With An Intimate Setting",
+        description: "A Collector's Sanctuary of Stone and Sky",
         amenities: [
 
           { icon: <BedIcon />, label: "6 Bedrooms" },
@@ -231,7 +232,7 @@ export const landingPageData = {
         inRoomAmenities: [
           { icon: <HighSpeedInternetIcon />, label: "Bonfire" },
           { icon: <EvChargingFacilityIcon />, label: "EV Charging Facility" },
-          { icon: <SwimmingPoolIcon />, label: "Shared Pool" },
+          { icon: <SwimmingPoolIcon />, label: "Decent Pool" },
           { icon: <WorkStationIcon />, label: "Work Station" },
 
           { icon: <SmartTvIcon />, label: "Smart TV" },
@@ -241,7 +242,7 @@ export const landingPageData = {
         originalPrice: "₹ 48,000",
         startingPrice: "From ₹ 48,000/night",
         moreInfo: {
-          title: "A Newly Built Artistic Villa With An Intimate Setting",
+          title: "A Collector's Sanctuary of Stone and Sky",
           roomInfo: [
             "8,000 sq ft ",
             "6 Bedrooms",
@@ -249,6 +250,7 @@ export const landingPageData = {
             "5 Private Jacuzzis",
             "Private 10m Pool ",
             "Sleeps up to 12",
+            "2 Dedicated Staffs",
           ],
           description: [
             "Villa Grande is the newer of the pair and the more deliberate — 8,000 square feet of white, three-storey home built from the ground up as an art villa, wrapped in manicured gardens and old-world verandahs. Six curated bedrooms open into light, five of them with private jacuzzi tubs. The interiors carry a Portuguese-Goan colour palette and original work from celebrated artists, anchored by a drawing room that spills straight onto the poolside patio.",
@@ -267,6 +269,7 @@ export const landingPageData = {
                 "Alfresco barbecue deck built for sit-down dinners and evening grills under the stars",
                 "A dedicated workstation in every bedroom, 100% power backup, and secure on-site parking — the whole villa reserved exclusively for your group",
                 "Steam room and a pool table located next to the poolside, offering extra relaxation and entertainment options",
+                "Each Villa Has Two Powder Rooms",
               ],
             },
             {
@@ -282,7 +285,7 @@ export const landingPageData = {
               title: "Essential Stay Information:",
               list: [
                 "All rates are quoted on a full compound buyout, per-night basis for up to 12 guests.",
-                "<b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+                "<b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping are available for emergencies 24/7.",
                 "<b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals. Restaurant delivery is also available.",
                 "<b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
                 "<b>House guidelines:</b> Smoking on balconies and outdoor areas only. No pets inside the villa. Music indoors between 10 PM and 8 AM, no loud music after 10 PM. The pool is unsupervised — please stay close to children at all times.",
@@ -298,7 +301,6 @@ export const landingPageData = {
         location: "Mandrem",
         images: [
           "https://lh3.googleusercontent.com/d/1_Y5GfRSkWCAQdubo8cHzrVKcW1_0Zdve",
-          "https://lh3.googleusercontent.com/d/1Ad9bdJ7TyqE6plj7ySLdDwIV0A6DQ_aM",
           "https://lh3.googleusercontent.com/d/1Ad9bdJ7TyqE6plj7ySLdDwIV0A6DQ_aM",
           "https://lh3.googleusercontent.com/d/1xg05eqMCot4T0JnWk_YUDGOiOqKdUZb3",
           "https://lh3.googleusercontent.com/d/13FOZuFSG7Jyyg4C4hge8718MQn_wDH_T",
@@ -328,7 +330,7 @@ export const landingPageData = {
       {
         title: "Villa Imperial",
         discountCode: "PILERNE20",
-        span: "The Twin Estate",
+        span: "Private Portuguese Sanctuary",
         type: "Villa",
         description:
           "A Restored Portuguese Residence, Reimagined for Modern Excursions",
@@ -341,22 +343,24 @@ export const landingPageData = {
         inRoomAmenities: [
           { icon: <HighSpeedInternetIcon />, label: "Bonfire" },
           { icon: <EvChargingFacilityIcon />, label: "EV Charging Facility" },
-          { icon: <SwimmingPoolIcon />, label: "Shared Pool" },
+          { icon: <SwimmingPoolIcon />, label: "Decent Pool" },
           { icon: <WorkStationIcon />, label: "Work Station" },
 
           { icon: <SmartTvIcon />, label: "Smart TV" },
           { icon: <KitchenIcon />, label: "Kitchen" },
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
-        originalPrice: "₹ 83,000",
-        startingPrice: "From ₹ 83,000/night",
+        originalPrice: "₹ 80,000",
+        startingPrice: "From ₹ 80,000/night",
         moreInfo: {
           title: "A Newly Built Artistic Villa With An Intimate Setting",
           roomInfo: [
             "15,500 sq ft ",
             "11 Bedrooms + 2 Lofts",
+            "4 Dedicated Staffs",
             "Combination Estate: 6-BR Art Villa + 5-BR Villa ",
             "Sleeps up to 26",
+
           ],
           description: [
             "When one villa isn't enough, Villa Imperial opens the door between them — literally. Villa Grande and Villa Majestic stand side by side, connected by a garden door between the two private pools. Booked together, they become a single private compound of 15,500 square feet: 11 bedrooms and two lofts, two 10-metre pools, and up to 26 guests, with the whole of Aroha Palms Pilerne reserved for your party and nobody else in it.",
@@ -374,6 +378,7 @@ export const landingPageData = {
                 "Two private 10-metre pools joined by a garden door — open for a single connected compound, closed for two independent villas",
                 "Distinct gathering and retreat spaces: Grande's art-filled drawing room and barbecue deck for the group, Majestic's bedrooms and lofts for quieter downtime",
                 "Steam room and a pool table located next to the poolside, offering extra relaxation and entertainment options",
+                "Each Villa Has Four Powder Rooms",
               ],
             },
             {
@@ -390,7 +395,7 @@ export const landingPageData = {
               title: "Essential Stay Information:",
               list: [
                 "All rates are quoted on a full compound buyout, per-night basis for up to 26 guests.",
-                "<b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
+                "<b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping are available for emergencies 24/7.",
                 "<b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals. Restaurant delivery is also available.",
                 "<b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
                 "<b>House guidelines:</b> Smoking on balconies and outdoor areas only. No pets inside the villa. Music indoors between 10 PM and 8 AM, no loud music after 10 PM. The pool is unsupervised — please stay close to children at all times. In-room safety lockers provided.",
@@ -415,28 +420,28 @@ export const landingPageData = {
           "https://lh3.googleusercontent.com/d/13FOZuFSG7Jyyg4C4hge8718MQn_wDH_T",
           "https://lh3.googleusercontent.com/d/1Z1vuFVVF0L2_4FoZvFHgcUTKSf55fm9a",
           "https://lh3.googleusercontent.com/d/1USS4apmyYC75KkAAL78YoH-zMXGMF85S",
-          "https://lh3.googleusercontent.com/d/1W_JNK4dv9H1vlQMUW8Qv7ci1IXxJRSBy",
-          "https://lh3.googleusercontent.com/d/10DchjSd-ZD-fvWGwqhoQeh8zfBdRWwk6",
-          "https://lh3.googleusercontent.com/d/1fn1z33GXAfKvtjKEi9V5GrvcdXxzV3iV",
-          "https://lh3.googleusercontent.com/d/14m1rp5GI4Fc_6arvwQtufK6NOJWypaXQ",
-          "https://lh3.googleusercontent.com/d/1Ym3OP3_fogqeguOPAx4-ntWGmQKeOJ3q",
-          "https://lh3.googleusercontent.com/d/1dr89fzOzeQKha64Xl9sbHoCn3j9Uq-re",
-          "https://lh3.googleusercontent.com/d/1B0Z44BwYawsoZmQlJX5ZS-ZD40AtPFP6",
-          "https://lh3.googleusercontent.com/d/1hZgLABFKAnsMnlbMtZxBFgEQhLf4i7X_",
-          "https://lh3.googleusercontent.com/d/1EAk6jPsBGBbO5kRSUCcW4xrHuHLrxKT5",
-          "https://lh3.googleusercontent.com/d/1IqDy8W7UapgmNV0BsmxaIO6cdRwFJTXp",
-          "https://lh3.googleusercontent.com/d/1zsCC6c-LugweL-PngyjnrU2IAY7Du-Wp",
-          "https://lh3.googleusercontent.com/d/1uPch8US4k4H1jI-yvChE_g1LsgjE8zWK",
-          "https://lh3.googleusercontent.com/d/1-vRXs7AmssYFq8U8A5km8a4Y1FGoAUoV",
-          "https://lh3.googleusercontent.com/d/1T_xUtjhHdfx2znKjd5OOir4Xri9muK5E",
-          "https://lh3.googleusercontent.com/d/1l3FcDfyAH3jkptvoEE6zZY5TPAUFpfQz",
-          "https://lh3.googleusercontent.com/d/1RhtvIAa9wWVOTT0-P2nTBiOmdFrXxE_s",
-          "https://lh3.googleusercontent.com/d/1A56wEg0HNinw_c6kGRF1W3z_m3kpxKCp",
-          "https://lh3.googleusercontent.com/d/1oA_Vj3EyD5ao-62yx8ANfEdhO6MDOo_M",
-          "https://lh3.googleusercontent.com/d/1MkNzdk55_LmVORPqve1ehvLxOYDtNVoC",
-          "https://lh3.googleusercontent.com/d/1kcNzVl8jIvpnCBTuQtQWkZYHGbi-vTA3",
-          "https://lh3.googleusercontent.com/d/1GK6sTc641VnApTeIjIK62aquly1s5EnZ",
-          "https://lh3.googleusercontent.com/d/1x1K54y1c2LJockuEuSQKHlnJZwy2HKNr",
+          // "https://lh3.googleusercontent.com/d/1W_JNK4dv9H1vlQMUW8Qv7ci1IXxJRSBy",
+          // "https://lh3.googleusercontent.com/d/10DchjSd-ZD-fvWGwqhoQeh8zfBdRWwk6",
+          // "https://lh3.googleusercontent.com/d/1fn1z33GXAfKvtjKEi9V5GrvcdXxzV3iV",
+          // "https://lh3.googleusercontent.com/d/14m1rp5GI4Fc_6arvwQtufK6NOJWypaXQ",
+          // "https://lh3.googleusercontent.com/d/1Ym3OP3_fogqeguOPAx4-ntWGmQKeOJ3q",
+          // "https://lh3.googleusercontent.com/d/1dr89fzOzeQKha64Xl9sbHoCn3j9Uq-re",
+          // "https://lh3.googleusercontent.com/d/1B0Z44BwYawsoZmQlJX5ZS-ZD40AtPFP6",
+          // "https://lh3.googleusercontent.com/d/1hZgLABFKAnsMnlbMtZxBFgEQhLf4i7X_",
+          // "https://lh3.googleusercontent.com/d/1EAk6jPsBGBbO5kRSUCcW4xrHuHLrxKT5",
+          // "https://lh3.googleusercontent.com/d/1IqDy8W7UapgmNV0BsmxaIO6cdRwFJTXp",
+          // "https://lh3.googleusercontent.com/d/1zsCC6c-LugweL-PngyjnrU2IAY7Du-Wp",
+          // "https://lh3.googleusercontent.com/d/1uPch8US4k4H1jI-yvChE_g1LsgjE8zWK",
+          // "https://lh3.googleusercontent.com/d/1-vRXs7AmssYFq8U8A5km8a4Y1FGoAUoV",
+          // "https://lh3.googleusercontent.com/d/1T_xUtjhHdfx2znKjd5OOir4Xri9muK5E",
+          // "https://lh3.googleusercontent.com/d/1l3FcDfyAH3jkptvoEE6zZY5TPAUFpfQz",
+          // "https://lh3.googleusercontent.com/d/1RhtvIAa9wWVOTT0-P2nTBiOmdFrXxE_s",
+          // "https://lh3.googleusercontent.com/d/1A56wEg0HNinw_c6kGRF1W3z_m3kpxKCp",
+          // "https://lh3.googleusercontent.com/d/1oA_Vj3EyD5ao-62yx8ANfEdhO6MDOo_M",
+          // "https://lh3.googleusercontent.com/d/1MkNzdk55_LmVORPqve1ehvLxOYDtNVoC",
+          // "https://lh3.googleusercontent.com/d/1kcNzVl8jIvpnCBTuQtQWkZYHGbi-vTA3",
+          // "https://lh3.googleusercontent.com/d/1GK6sTc641VnApTeIjIK62aquly1s5EnZ",
+          // "https://lh3.googleusercontent.com/d/1x1K54y1c2LJockuEuSQKHlnJZwy2HKNr",
           "https://lh3.googleusercontent.com/d/1wqt19RJKZUjzb8vemcBxiZcuTlYp8dxq",
           "https://lh3.googleusercontent.com/d/1i_H6bn1xObc4WHOHXc2uhKNWL3vOGejC",
           "https://lh3.googleusercontent.com/d/1kEXnjOYHFXhJkHMyH4LBRMJuNY6cJFqL",
@@ -1014,7 +1019,7 @@ export const landingPageData = {
         icon: <ConciergeIcon />,
         title: "Concierge",
         description:
-          "Dedicated concierge for bookings, transfers, chef service and events.",
+          "24/7 dedicated concierge for bookings, transfers, chef service and events.",
       },
       {
         icon: <FreeWifiIcon />,
@@ -1109,7 +1114,8 @@ export const landingPageData = {
       },
       {
         q: "Can I book a villa for weddings or corporate offsites?",
-        a: "Yes. Villas like Imperial (26 guests) are ideal for weddings, birthday celebrations, and corporate offsites. Our team helps with décor, catering, and event planning.",
+        a: "Yes. Villas like Imperial (26 guests) are ideal for weddings, birthday celebrations, and corporate offsites.",
+        // a: "Yes. Villas like Imperial (26 guests) are ideal for weddings, birthday celebrations, and corporate offsites. Our team helps with décor, catering, and event planning.",
       },
       {
         q: "Are the villas pet-friendly?",
@@ -1120,8 +1126,10 @@ export const landingPageData = {
         a: "All villas come with dedicated pool access.",
       },
       {
+        // Having Doubt
         q: "Is the location safe?",
-        a: "All properties feature 24/7 on-site security, CCTV surveillance, and a dedicated concierge available round the clock.",
+        a: "On-site security teams, CCTV surveillance, and a dedicated concierge available round the clock.",
+        // a: "All properties feature 24/7 on-site security, CCTV surveillance, and a dedicated concierge available round the clock.",
       },
     ],
     concierge: {

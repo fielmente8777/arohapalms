@@ -113,7 +113,7 @@ export const pilerneFooterData: FooterData = {
         },
         {
           label: "Call: 022-41642345",
-          href: "tel:02241642345",
+          href: "+919834220573",
         },
 
         {

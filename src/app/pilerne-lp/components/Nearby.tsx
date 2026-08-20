@@ -28,7 +28,7 @@ const NearbyPlaces = ({ tagline, title, cta, places }: NearbyPlacesProps) => {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           {/* Left */}
           <div className="flex flex-col justify-center">
-            <p className="mb-4 text-sm uppercase text-primary">{tagline}</p>
+            <p className="mb-4 text-lg uppercase text-primary">{tagline}</p>
 
             <h2 className="font-instrument text-3xl text-white lg:text-4xl">
               {title}
