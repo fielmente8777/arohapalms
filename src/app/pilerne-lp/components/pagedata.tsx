@@ -1019,7 +1019,7 @@ export const landingPageData = {
         icon: <ConciergeIcon />,
         title: "Concierge",
         description:
-          "24/7 dedicated concierge for bookings, transfers, chef service and events.",
+          "Dedicated caretakers are available from 9 AM–9 PM for assistance with bookings, transfers, chef services, and events, with 24/7 availability for emergencies.",
       },
       {
         icon: <FreeWifiIcon />,
@@ -1123,13 +1123,11 @@ export const landingPageData = {
       },
       {
         q: "Do all properties have private pools?",
-        a: "All villas come with dedicated pool access.",
+        a: "All villas have private pools.",
       },
       {
-        // Having Doubt
         q: "Is the location safe?",
-        a: "On-site security teams, CCTV surveillance, and a dedicated concierge available round the clock.",
-        // a: "All properties feature 24/7 on-site security, CCTV surveillance, and a dedicated concierge available round the clock.",
+        a: "On-site security teams, CCTV surveillance, and caretakers available from 9 AM–9 PM, with 24/7 availability for emergencies.",
       },
     ],
     concierge: {
