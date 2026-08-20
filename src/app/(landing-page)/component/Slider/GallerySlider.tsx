@@ -9,7 +9,7 @@ interface GallerySliderProps {
   images: string[];
 }
 const GallerySlider: React.FC<GallerySliderProps> = ({ images }) => {
-  const data = images.length < 3 ? [...images, ...images, ...images] : images;
+  const data = images.length < 5 ? [...images, ...images, ...images] : images;
   return (
     <div>
       <SwiperCarousel
