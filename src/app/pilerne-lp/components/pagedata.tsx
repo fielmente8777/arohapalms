@@ -2,6 +2,7 @@ import {
   BathroomIcon,
   EvChargingFacilityIcon,
   HighSpeedInternetIcon,
+  JacuzziIcon,
   KitchenIcon,
   SmartTvIcon,
   SwimmingPoolIcon,
@@ -78,7 +79,7 @@ export const landingPageData = {
     title: "Old-World Goan Character, Quietly Reimagined",
     description: [
       "Welcome to Aroha Palms Pilerne, two private luxury villas set in Pilerne village, which has stayed rustic despite sitting minutes from the North Goa tourist belt.",
-      "Whether you are seeking an intimate family escape, a multi-generational reunion, a wellness retreat, or a grand destination event, Aroha Palms Pilerne brings together spacious living, private pools, and bespoke hospitality all just a few minutes drive from the golden sands of three of North Goa's most-visited beaches - Candolim, Calangute, and Baga - and none of their noise at your gate. You wake in a quiet village and reach the coast before the morning heat.",
+      "Whether you are seeking an intimate family escape, a multi-generational reunion, a wellness retreat, or a grand destination event, Aroha Palms Pilerne brings together spacious living, private pools, and bespoke hospitality all just a few minutes drive from the golden sands of three of North Goa's most-visited beaches - Candolim, Calangute, and Baga - with none of the outside noise reaching your gate. You wake in a quiet village and reach the coast before the morning heat.",
       "Relax, Rejuvenate, Revive."
     ],
     images: [
@@ -86,7 +87,7 @@ export const landingPageData = {
       "/landing-page/unforgettable-2.jpg",
       "/landing-page/unforgettable-3.jpg",
       "/landing-page/unforgettable-4.jpg",
-      "/landing-page/unforgettable-5.jpg",
+      // "/landing-page/unforgettable-5.jpg",
       "/landing-page/unforgettable-6.jpg",
     ],
     buttons: [
@@ -107,7 +108,7 @@ export const landingPageData = {
     title: "Boutique Homes Crafted for Your Perfect Goa Getaway",
     description:
       "Explore every villa, apartment and suite across Pilerne, each one thoughtfully designed for private, unhurried Goa stays.",
-    note: "Some trips need room for everyone. Two villas join into larger estates for the family, twin villas suit a celebration, the full compound accommodates up to 26 guests. Whatever the size, everything stays private, and the hosting is handled.",
+    note: "Some trips need room for everyone. Two villas can be combined to create a larger private estate for families, while twin villas are ideal for celebrations and group stays, the full compound accommodates up to 26 guests. Whatever the size, everything stays private, and the hosting is handled.",
     cards: [
       {
         title: "Villa Majestic",
@@ -126,12 +127,13 @@ export const landingPageData = {
         inRoomAmenities: [
           { icon: <HighSpeedInternetIcon />, label: "Bonfire" },
           { icon: <EvChargingFacilityIcon />, label: "EV Charging Facility" },
-          { icon: <SwimmingPoolIcon />, label: "Decent Pool" },
+          { icon: <SwimmingPoolIcon />, label: "Dedicated Pool" },
           { icon: <WorkStationIcon />, label: "Work Station" },
 
           //   { icon: <SmartTvIcon />, label: "Smart TV" },
           { icon: <KitchenIcon />, label: "Kitchen" },
           { icon: <BathroomIcon />, label: "Bathroom" },
+          { icon: <JacuzziIcon />, label: "5 Private Jacuzzis" },
         ],
         originalPrice: "₹ 35,000/night",
         startingPrice: "From ₹ 35,000/night",
@@ -232,12 +234,13 @@ export const landingPageData = {
         inRoomAmenities: [
           { icon: <HighSpeedInternetIcon />, label: "Bonfire" },
           { icon: <EvChargingFacilityIcon />, label: "EV Charging Facility" },
-          { icon: <SwimmingPoolIcon />, label: "Decent Pool" },
+          { icon: <SwimmingPoolIcon />, label: "Dediacted Pool" },
           { icon: <WorkStationIcon />, label: "Work Station" },
 
           { icon: <SmartTvIcon />, label: "Smart TV" },
           { icon: <KitchenIcon />, label: "Kitchen" },
           { icon: <BathroomIcon />, label: "Bathroom" },
+          { icon: <JacuzziIcon />, label: "6 Private Jacuzzis" },
         ],
         originalPrice: "₹ 48,000",
         startingPrice: "From ₹ 48,000/night",
@@ -343,12 +346,13 @@ export const landingPageData = {
         inRoomAmenities: [
           { icon: <HighSpeedInternetIcon />, label: "Bonfire" },
           { icon: <EvChargingFacilityIcon />, label: "EV Charging Facility" },
-          { icon: <SwimmingPoolIcon />, label: "Decent Pool" },
+          { icon: <SwimmingPoolIcon />, label: "Dedicated Pool" },
           { icon: <WorkStationIcon />, label: "Work Station" },
 
           { icon: <SmartTvIcon />, label: "Smart TV" },
           { icon: <KitchenIcon />, label: "Kitchen" },
           { icon: <BathroomIcon />, label: "Bathroom" },
+          { icon: <JacuzziIcon />, label: "11 Private Jacuzzis" },
         ],
         originalPrice: "₹ 80,000",
         startingPrice: "From ₹ 80,000/night",
@@ -1019,7 +1023,7 @@ export const landingPageData = {
         icon: <ConciergeIcon />,
         title: "Concierge",
         description:
-          "24/7 dedicated concierge for bookings, transfers, chef service and events.",
+          "Dedicated caretakers are available from 9 AM–9 PM for assistance with bookings, transfers, chef services, and events, with 24/7 availability for emergencies.",
       },
       {
         icon: <FreeWifiIcon />,
@@ -1123,13 +1127,11 @@ export const landingPageData = {
       },
       {
         q: "Do all properties have private pools?",
-        a: "All villas come with dedicated pool access.",
+        a: "All villas have private pools.",
       },
       {
-        // Having Doubt
         q: "Is the location safe?",
-        a: "On-site security teams, CCTV surveillance, and a dedicated concierge available round the clock.",
-        // a: "All properties feature 24/7 on-site security, CCTV surveillance, and a dedicated concierge available round the clock.",
+        a: "On-site security teams, CCTV surveillance, and caretakers available from 9 AM–9 PM, with 24/7 availability for emergencies.",
       },
     ],
     concierge: {
