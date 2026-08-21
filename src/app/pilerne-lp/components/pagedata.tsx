@@ -46,7 +46,7 @@ export const landingPageData = {
     image: "/hero-banner.jpg",
     images: [
       // 1. Front / Exterior / Pool
-      "/hero-banner.jpg",
+      // "/hero-banner.jpg",
       "/rooms/Grande/AOB_0131_copy[1]_9_11zon.jpg",
       "/rooms/Imperial/AOB_4084-[1]_49_11zon.jpg",
       "/rooms/Majestic/AOB_3512[1]_22_11zon.jpg",
