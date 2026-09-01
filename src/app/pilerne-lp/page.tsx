@@ -1,20 +1,20 @@
 import WhatsappForm from "@/components/forms/WhatsappForm";
 import { SectionWithContainer } from "@/components/sectionComponants";
-import SlidingTitle from "@/components/sliders/SlidingTitle";
+// import SlidingTitle from "@/components/sliders/SlidingTitle";
 import Banner from "../(landing-page)/component/Banner";
-import { landingPageData } from "./components/pagedata";
-import UnforgettableSection from "../(landing-page)/component/UnforgettableSection";
 import ExperienceSection from "../(landing-page)/component/ExperienceSection";
+import FaqSection from "../(landing-page)/component/FaqSection";
 import FeaturesSection from "../(landing-page)/component/FeaturesSection";
 import Testimonials from "../(landing-page)/component/Testimonials";
-import FaqSection from "../(landing-page)/component/FaqSection";
+import UnforgettableSection from "../(landing-page)/component/UnforgettableSection";
 import AccommodationSection from "./components/AccommodationSection";
 import NearbyPlaces from "./components/Nearby";
+import { landingPageData } from "./components/pagedata";
 
 export default function LandingPage() {
   return (
     <main className="bg-background">
-      <SlidingTitle items={landingPageData.offer} />
+      {/* <SlidingTitle items={landingPageData.offer} /> */}
       <Banner {...landingPageData.hero} isSliding={true} />
       <SectionWithContainer
         defaultPadding={false}
@@ -28,15 +28,15 @@ export default function LandingPage() {
         /> */}
       </SectionWithContainer>
       <UnforgettableSection {...landingPageData.unforgettableSection} />
-      <SlidingTitle items={landingPageData.offer}ariaHidden />
+      {/* <SlidingTitle items={landingPageData.offer}ariaHidden /> */}
       <AccommodationSection {...landingPageData.accommodationSection} />
-      <SlidingTitle items={landingPageData.offer} ariaHidden />
+      {/* <SlidingTitle items={landingPageData.offer} ariaHidden /> */}
       <FeaturesSection {...landingPageData.featuresSection} />
       <NearbyPlaces {...landingPageData.nearbyPlaces} />
 
       <ExperienceSection {...landingPageData.experienceSection} />
       <Testimonials {...landingPageData.testimonials} />
-      <SlidingTitle items={landingPageData.offer} ariaHidden/>
+      {/* <SlidingTitle items={landingPageData.offer} ariaHidden/> */}
       <FaqSection {...landingPageData.faq} />
       <SectionWithContainer
         defaultPadding={false}
