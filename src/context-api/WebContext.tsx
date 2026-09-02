@@ -1,6 +1,7 @@
 "use client";
 
 import { AccommodationSectionProps } from "@/@types/landingPageTypes";
+import { Card } from "@/app/(website)/destination/[slug]/components/Properties";
 import { createContext, useContext, useState } from "react";
 
 interface OpenGalleryProps {
@@ -13,12 +14,19 @@ interface OpenAmenityModalArray {
 }
 
 type RoomDetailsType = AccommodationSectionProps["cards"][0];
+type PropertyDetailsType = Card;
 
 interface WebContextType {
   isOpen: boolean;
   room: RoomDetailsType | null;
   openRoom: (room: RoomDetailsType) => void;
   closeRoom: () => void;
+
+  // NEW — property popup
+  isOpenProperty: boolean;
+  property: PropertyDetailsType | null;
+  openProperty: (property: PropertyDetailsType) => void;
+  closeProperty: () => void;
 
   isOpenNavBar: boolean;
   setIsOpenNavBar: (open: boolean) => void;
@@ -48,7 +56,6 @@ interface WebContextType {
   setAmenityModalArray: (array: OpenAmenityModalArray[]) => void;
 
   openGallery: ({ images, index }: OpenGalleryProps) => void;
-
   closeGallery: () => void;
 }
 
@@ -57,6 +64,11 @@ const WebContext = createContext<WebContextType>({
   room: null,
   openRoom: () => {},
   closeRoom: () => {},
+
+  isOpenProperty: false,
+  property: null,
+  openProperty: () => {},
+  closeProperty: () => {},
 
   isOpenNavBar: false,
   setIsOpenNavBar: () => {},
@@ -85,7 +97,6 @@ const WebContext = createContext<WebContextType>({
   setAmenityModalArray: () => {},
 
   openGallery: () => {},
-
   closeGallery: () => {},
 });
 
@@ -95,17 +106,13 @@ interface WebProviderProps {
 
 export const WebProvider = ({ children }: WebProviderProps) => {
   const [isOpenNavBar, setIsOpenNavBar] = useState(false);
-
   const [openImageModal, setOpenImageModal] = useState(false);
-
   const [isOpenFormPopUp, setIsOpenFormPopUp] = useState(false);
 
   const [formVilla, setFormVilla] = useState("");
 
   const [passImagesArray, setPassImagesArray] = useState<string[]>([]);
-
   const [imageCurrentIndex, setImageCurrentIndex] = useState(0);
-
   const [openAmenityModal, setOpenAmenityModal] = useState(false);
   const [amenityModalArray, setAmenityModalArray] = useState<
     OpenAmenityModalArray[]
@@ -124,17 +131,13 @@ export const WebProvider = ({ children }: WebProviderProps) => {
 
   const openGallery = ({ images, index = 0 }: OpenGalleryProps) => {
     setPassImagesArray(images);
-
     setImageCurrentIndex(index);
-
     setOpenImageModal(true);
   };
 
   const closeGallery = () => {
     setOpenImageModal(false);
-
     setPassImagesArray([]);
-
     setImageCurrentIndex(0);
   };
 
@@ -151,6 +154,20 @@ export const WebProvider = ({ children }: WebProviderProps) => {
     setRoom(null);
   };
 
+  // NEW — property popup state + handlers
+  const [property, setProperty] = useState<PropertyDetailsType | null>(null);
+  const [isOpenProperty, setIsOpenProperty] = useState(false);
+
+  const openProperty = (property: PropertyDetailsType) => {
+    setProperty(property);
+    setIsOpenProperty(true);
+  };
+
+  const closeProperty = () => {
+    setIsOpenProperty(false);
+    setProperty(null);
+  };
+
   return (
     <WebContext.Provider
       value={{
@@ -158,6 +175,12 @@ export const WebProvider = ({ children }: WebProviderProps) => {
         room,
         openRoom,
         closeRoom,
+
+        isOpenProperty,
+        property,
+        openProperty,
+        closeProperty,
+
         isOpenNavBar,
         setIsOpenNavBar,
 
@@ -185,7 +208,6 @@ export const WebProvider = ({ children }: WebProviderProps) => {
         setAmenityModalArray,
 
         openGallery,
-
         closeGallery,
       }}
     >

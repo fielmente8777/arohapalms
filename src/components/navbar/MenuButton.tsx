@@ -2,12 +2,17 @@
 
 import { useWebContext } from "@/context-api/WebContext";
 
-export default function MenuButton({ color="white" }: { color?: string }) {
+export default function MenuButton({ color = "gray" }: { color?: string }) {
   const { isOpenNavBar, setIsOpenNavBar } = useWebContext();
 
   return (
     <button
-      onClick={() => setIsOpenNavBar(!isOpenNavBar)}
+      onClick={() => {
+        console.log("clicked");
+        console.log(isOpenNavBar);
+
+        setIsOpenNavBar(!isOpenNavBar);
+      }}
       className="relative flex h-14 w-14 items-center justify-center"
       aria-label="Menu"
     >
@@ -24,6 +29,10 @@ export default function MenuButton({ color="white" }: { color?: string }) {
       />
 
       {/* BOTTOM */}
+      <span
+        className={`absolute h-0.5 w-8 bg-${color} transition-all duration-500 ease-in-out
+        ${isOpenNavBar ? "-rotate-45" : "translate-y-2"}`}
+      />
       <span
         className={`absolute h-0.5 w-8 bg-${color} transition-all duration-500 ease-in-out
         ${isOpenNavBar ? "-rotate-45" : "translate-y-2"}`}

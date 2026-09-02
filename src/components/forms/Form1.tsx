@@ -1,4 +1,5 @@
 "use client";
+import { landingPageData } from "@/app/landing-page/component/pageData";
 import { getDateInputLimits } from "@/hooks/getDateInputLimits";
 import useForm from "@/hooks/useForm";
 import {
@@ -6,7 +7,7 @@ import {
   CallIcon,
   UserIcon,
   VilaIcon,
-  WalletIcon,
+  WalletIcon
 } from "@/utils/formIcons";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import DatePicker from "react-datepicker";

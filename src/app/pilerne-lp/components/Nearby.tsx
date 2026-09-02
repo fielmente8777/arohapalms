@@ -2,7 +2,7 @@
 
 import LinkButton from "@/components/buttons/LinkButton";
 import { SectionWithContainer } from "@/components/sectionComponants";
-import { MapIcon, PlaneIcon } from "@/utils/icons";
+import { MapIcon, Plane } from "@/utils/icons";
 import { ReactNode } from "react";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import { Navigation } from "swiper/modules";
@@ -61,7 +61,7 @@ const NearbyPlaces = ({ tagline, title, cta, places }: NearbyPlacesProps) => {
                 <div className="flex items-center justify-between border-b border-white/35 py-6 ">
                   <div className="flex items-center gap-5">
                     <span className="text-primary">
-                      {place.icon === "airplane" ? <PlaneIcon /> : <MapIcon />}
+                      {place.icon === "airplane" ? <Plane /> : <MapIcon />}
                     </span>
 
                     <span className="text-base text-white lg:text-lg">

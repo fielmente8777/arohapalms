@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
+import Call from "@/components/ContactButton/Call";
+import Whatsapp from "@/components/ContactButton/WhatsApp";
+import PopUpForm from "@/components/pop-up/PopUpForm";
+import PropertyDetailsPopup from "@/components/pop-up/PropertyDetailsPopup";
+import RoomDetailsPopup from "@/components/pop-up/RoomDetailsPopup";
+import { WebProvider } from "@/context-api/WebContext";
+import { contact } from "@/utils/constent";
 import { Fira_Sans } from "next/font/google";
+import Image from "next/image";
+import Script from "next/script";
 import "./globals.css";
 import "./style.scss";
-import LandingFooter from "@/components/footer/LandingFooter";
-import Script from "next/script";
-import Whatsapp from "@/components/ContactButton/WhatsApp";
-import { contact } from "@/utils/constent";
-import Call from "@/components/ContactButton/Call";
-import PopUpForm from "@/components/pop-up/PopUpForm";
-import { WebProvider } from "@/context-api/WebContext";
-import RoomDetailsPopup from "@/components/pop-up/RoomDetailsPopup";
-import Image from "next/image";
+import type { Metadata } from "next";
 
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
@@ -87,7 +87,7 @@ export default function RootLayout({
     <html lang="en" className={`${firaSans.variable} h-full antialiased`}>
       <head>
         {/* <!-- Facebook Pixel Code --> */}
-        <Script id="fb-pixel" strategy="beforeInteractive">
+        <Script id="fb-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -171,9 +171,9 @@ export default function RootLayout({
         <WebProvider>
           {children}
 
-          <LandingFooter />
           <PopUpForm />
           <RoomDetailsPopup />
+          <PropertyDetailsPopup />
           <Whatsapp whatsAppNumber={contact.phone[0]} />
           <Call callNumber={contact.phone[0]} />
         </WebProvider>
