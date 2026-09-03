@@ -1,15 +1,16 @@
 import WhatsappForm from "@/components/forms/WhatsappForm";
 import { SectionWithContainer } from "@/components/sectionComponants";
 // import SlidingTitle from "@/components/sliders/SlidingTitle";
-import Banner from "../(landing-page)/component/Banner";
-import ExperienceSection from "../(landing-page)/component/ExperienceSection";
-import FaqSection from "../(landing-page)/component/FaqSection";
-import FeaturesSection from "../(landing-page)/component/FeaturesSection";
-import Testimonials from "../(landing-page)/component/Testimonials";
-import UnforgettableSection from "../(landing-page)/component/UnforgettableSection";
+
 import AccommodationSection from "./components/AccommodationSection";
 import NearbyPlaces from "./components/Nearby";
 import { landingPageData } from "./components/pagedata";
+import Banner from "../landing-page/component/Banner";
+import UnforgettableSection from "../landing-page/component/UnforgettableSection";
+import FeaturesSection from "../landing-page/component/FeaturesSection";
+import ExperienceSection from "../landing-page/component/ExperienceSection";
+import Testimonials from "../landing-page/component/Testimonials";
+import FaqSection from "../landing-page/component/FaqSection";
 
 export default function LandingPage() {
   return (
