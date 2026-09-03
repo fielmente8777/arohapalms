@@ -186,14 +186,14 @@ const LocationSection = ({
           </div>
 
           {/* LEFT DECORATIVE DESIGN */}
-          <div className="absolute left-[-9px] top-0 z-20 h-full w-[15px] overflow-hidden">
-            <Image
-              src="/home/design3.png"
-              alt=""
-              fill
-              className="object-cover"
-            />
-          </div>
+        <div className="absolute left-[-15px] top-0 z-20 h-full w-[15px]">
+  <Image
+    src="/home/design3.png"
+    alt=""
+    fill
+    className="object-cover"
+  />
+</div>
         </div>
       </div>
     </Section>
