@@ -105,7 +105,7 @@ export default function RootLayout({
             width="1"
             alt="facebook pixel"
             src="https://www.facebook.com/tr?id=1266443945568311&ev=PageView
-&noscript=1"
+                &noscript=1"
           />
         </noscript>
         {/* <!-- End Facebook Pixel Code --> */}

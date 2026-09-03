@@ -515,14 +515,14 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
       onChange: handleChange,
       icon: <CalendarIcon />,
     },
-    {
-      name: "promoCode",
-      label: "Promo Code",
-      type: "text",
-      value: formData.promoCode,
-      onChange: handlePromoCodeChange,
-      icon: <WalletIcon />,
-    },
+    // {
+    //   name: "promoCode",
+    //   label: "Promo Code",
+    //   type: "text",
+    //   value: formData.promoCode,
+    //   onChange: handlePromoCodeChange,
+    //   icon: <WalletIcon />,
+    // },
   ];
 
   return (
@@ -530,7 +530,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
       <form
         onSubmit={handleSubmit}
         noValidate
-        className={`${gridView ? "flex flex-col gap-3" : "grid md:grid-cols-6 items-start gap-3.5"} font-body px-4 bg-transparent max-md:divide-y divide-p1`}
+        className={`${gridView ? "flex flex-col gap-3" : `grid md:grid-cols-${formFields.length + 1} items-start gap-3.5`} font-body px-4 bg-transparent max-md:divide-y divide-p1`}
       >
         {formFields.map((field, index) => (
           <React.Fragment key={index}>

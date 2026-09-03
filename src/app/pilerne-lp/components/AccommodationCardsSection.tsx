@@ -209,7 +209,7 @@ export const AccommodationCard: React.FC<
               <span className="font-semibold">{startingPrice} </span>
               <span className="text-sm">+ Taxes</span>
             </p>
-            <div className="flex flex-col items-center">
+            {/* <div className="flex flex-col items-center">
               <p className="text-sm text-secondary">
                 <span className="sr-only">{discountCode}</span>
                 <span className="">Discount code: </span>
@@ -218,7 +218,7 @@ export const AccommodationCard: React.FC<
               <span className="text-sm text-secondary">
                 ( Valid Till <span className="text-[#A20000]">30th September</span> )
               </span>
-            </div>
+            </div> */}
           </div>
 
           {/* <div className="grid md:grid-cols-[1fr_auto] grid-cols-1 gap-4"> */}
