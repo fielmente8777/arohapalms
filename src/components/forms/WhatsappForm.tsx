@@ -311,10 +311,9 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
   // One ref per focusable field, keyed by field name
   const fieldRefs = useRef<Record<string, HTMLInputElement | null>>({});
 
-  const registerField =
-    (name: string) => (el: HTMLInputElement | null) => {
-      fieldRefs.current[name] = el;
-    };
+  const registerField = (name: string) => (el: HTMLInputElement | null) => {
+    fieldRefs.current[name] = el;
+  };
 
   const { min, max } = getDateInputLimits({
     showPast: false,
@@ -530,7 +529,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
       <form
         onSubmit={handleSubmit}
         noValidate
-        className={`${gridView ? "flex flex-col gap-3" : `grid md:grid-cols-${formFields.length + 1} items-start gap-3.5`} font-body px-4 bg-transparent max-md:divide-y divide-p1`}
+        className={`${gridView ? "flex flex-col gap-3" : `grid md:grid-cols-5 items-start gap-3.5`} font-body px-4 bg-transparent max-md:divide-y divide-p1`}
       >
         {formFields.map((field, index) => (
           <React.Fragment key={index}>
