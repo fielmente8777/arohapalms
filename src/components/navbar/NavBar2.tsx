@@ -30,17 +30,13 @@ const NavBar2 = () => {
         }`}
       >
         <nav className="max_screen_width mx-auto flex items-center justify-between border-b border-white/40 pl-4 md:pl-6">
-
           {/* MENU */}
           <div className="shrink-0">
             <MenuButton color="white" />
           </div>
 
           {/* LOGO */}
-          <Link
-            href="/"
-            className="absolute left-1/2 -translate-x-1/2"
-          >
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2">
             <div className="relative aspect-[3.8/1] w-[140px] md:w-[213px]">
               <Image
                 src="/logo.png"
@@ -62,7 +58,7 @@ const NavBar2 = () => {
       </header>
 
       {/* NAV MENU */}
-      <NavMenu />
+      <NavMenu side="left" />
     </>
   );
 };

@@ -5,7 +5,11 @@ import Link from "next/link";
 import { useWebContext } from "@/context-api/WebContext";
 import { InnerNavData } from "./navData";
 
-const NavMenu = () => {
+interface NavMenuProps {
+  side?: "left" | "right";
+}
+
+const NavMenu = ({ side = "right" }: NavMenuProps) => {
   const { isOpenNavBar, setIsOpenNavBar } = useWebContext();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
@@ -33,8 +37,14 @@ const NavMenu = () => {
 
       {/* Side Menu */}
       <aside
-        className={`absolute top-0 right-0 h-screen w-full max-w-[500px] bg-[#F8F3E6] transition-transform duration-500 ease-in-out ${
-          isOpenNavBar ? "translate-x-0" : "translate-x-full"
+        className={`absolute top-0 h-screen w-full max-w-[500px] bg-[#F8F3E6] transition-transform duration-500 ease-in-out ${
+          side === "left" ? "left-0" : "right-0"
+        } ${
+          isOpenNavBar
+            ? "translate-x-0"
+            : side === "left"
+              ? "-translate-x-full"
+              : "translate-x-full"
         }`}
       >
         {/* Close Button */}
@@ -89,7 +99,6 @@ const NavMenu = () => {
                       }`}
                     >
                       <ul className="ml-6 flex flex-col gap-3">
-                    
                         {link.children.map((child) => (
                           <li key={child.href}>
                             <Link

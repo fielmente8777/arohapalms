@@ -35,10 +35,10 @@ export const InnerNavData = {
   logo: "/logo1.png",
 
   links: [
-    {
-      label: "First Impressions",
-      href: "/",
-    },
+    // {
+    //   label: "First Impressions",
+    //   href: "/",
+    // },
     {
       label: "Your Stay",
       href: "/destination/",
