@@ -76,6 +76,7 @@ const Testimonials = ({
                 font-light
                 leading-[1.2]
                 text-p3
+             
                 md:text-5xl
                 lg:text-[48px]
               "
