@@ -30,7 +30,7 @@ const NavBar2 = () => {
         ${isScrolled ? "bg-navy shadow-md" : "bg-transparent"}
       `}
     >
-      <nav className="max_screen_width mx-auto h-[56px] md:h-[70px] flex items-center justify-between pl-4 md:pl-6 border-b border-white/40">
+      <nav className="max_screen_width mx-auto flex items-center justify-between pl-4 md:pl-6 border-b border-white/40">
         {/* MENU */}
           <div className="shrink-0">
           <MenuButton color="white" />
@@ -53,11 +53,11 @@ const NavBar2 = () => {
         <Link
           href="#form"
           className=" hidden
-            md:flex md:h-[50px]
+            md:flex md:h-[59px]
             items-center
             bg-primary
             px-6
-            text-[10px]
+            text-xs
             font-medium
             uppercase
             text-white

@@ -29,7 +29,7 @@ export const homePageData = {
       "Set in the serene neighbourhoods of North Goa, Aroha Palms offers a collection of thoughtfully designed villas and apartments surrounded by lush, manicured gardens. Just a short drive from the coast, each stay blends calm, private living with effortless access to beaches, culture and experiences, a place that feels both indulgent and quietly removed.",
     button: {
       label: "Know More",
-      href: "/about",
+      href: "/our-story",
     },
   },
   // experience: {
@@ -224,17 +224,37 @@ export const homePageData = {
         distance: "XX Kilometers",
       },
     ],
-    mapImage: "/images/location-map.png",
+    mapImage: "/images/Group 4278.png",
   },
   testimonials: {
-    testimonial: {
+
       image: "/home/review.jpg",
-      tag: "Testimonials",
+      tagline: "Testimonials",
       title: "Appreciation From Our Guests",
-      review:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      name: "Lorem Ipsum",
-    },
+
+
+    reviews: [
+      {
+        review:
+          "Quiet and great value.",
+        name: "Sarthak Chavan",
+      },
+      {
+        review:
+          "Good villas.",
+        name: "Sarthak Chavan",
+      },
+      {
+        review:
+          "The place and the staff are very polite and give homely vibes to all the guests. The hospitality was excellent.",
+        name: "Vedant Chavan",
+      },
+      {
+        review:
+          "The villa was superb, and the manager treated us very well. We enjoyed our stay a lot.",
+        name: "Atharva Burle",
+      }
+    ],
   },
   nearbyActivities: {
     tag: "Beyond Aroha Palms",
@@ -277,7 +297,7 @@ export const homePageData = {
 
         secondaryImage: "/home/img2.jpg",
 
-        href: "/landing-page",
+        href: "/destination/mandrem",
 
         showPlay: true,
       },
@@ -291,7 +311,7 @@ export const homePageData = {
 
         secondaryImage: "/home/img4.jpg",
 
-        href: "/pilerne-lp",
+        href: "/destination/pilerne",
 
         showPlay: true,
       },

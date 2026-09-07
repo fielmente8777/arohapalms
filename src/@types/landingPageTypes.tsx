@@ -49,6 +49,7 @@ export interface AccommodationSectionProps {
 }
 
 export interface TestimonialsProps {
+  image?: string;
   tagline: string;
   title: string;
   reviews: {

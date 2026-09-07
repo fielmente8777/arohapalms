@@ -110,7 +110,7 @@ const Banner: FC<BannerProps> = ({
         </div>
       ) : /* ✅ Case 2: Only Video */
       videoSrc ? (
-        <div className="w-full xl:h-dvh max-xl:aspect-4/3 max-lg:aspect-[4/2] max-md:aspect-[4/7] relative">
+        <div className="w-full xl:h-dvh max-xl:aspect-4/3 max-lg:aspect-[4/2] max-md:aspect-[3/4.5] relative">
           <LazyLoadedVideoNew src={videoSrc} poster={thumbNail || ""} />
           <div className="absolute top-0 left-0 w-full z-10">
             <NavBar2 />

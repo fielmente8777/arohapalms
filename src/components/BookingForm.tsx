@@ -11,8 +11,12 @@ import {
 
 const locations = [
   {
-    name: "",
-    slug: "",
+    name: "Mandrem",
+    slug: "mandrem",
+  },
+  {
+    name: "Pilerne",
+    slug: "pilerne",
   },
 ];
 
