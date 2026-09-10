@@ -125,12 +125,19 @@ const Banner: FC<BannerProps> = ({
         </div>
       ) : /* ✅ Case 3: Only Single Image */
       hasSingleImage ? (
-        <div className="w-full relative aspect-[4/2]">
-          <Image src={images[0]} alt="image" fill className="object-cover" />
+        <div className="w-full xl:h-dvh max-xl:aspect-4/3 max-lg:aspect-[4/2] max-md:aspect-[3/4.5] relative">
+          <Image src={images[0]} alt="banner image" fill priority className="object-cover" />
 
           <div className="absolute top-0 left-0 w-full z-10">
             <NavBar2 />
           </div>
+          {showBookingForm && (
+            <div className="absolute bottom-6 inset-x-0 z-10">
+              <Container className="xl:max-w-5xl! mx-auto">
+                <BookingForm />
+              </Container>
+            </div>
+          )}
         </div>
       ) : /* ✅ Case 4: Multiple Images (Carousel) */
       hasImages ? (
@@ -145,9 +152,9 @@ const Banner: FC<BannerProps> = ({
             speed={2500}
             className="w-full"
             renderSlide={(image) => (
-              <div className="w-full lg:aspect-auto lg:h-dvh relative md:aspect-[4/3] aspect-square">
-                <Image src={image} alt="image" fill className="object-cover" />
-                <div className="absolute inset-0 z-10 bg-black/20" />
+              <div className="w-full xl:h-dvh max-xl:aspect-4/3 max-lg:aspect-[4/2] max-md:aspect-[3/4.5] relative">
+                <Image src={image} alt="banner image" fill className="object-cover" />
+                <div className="absolute inset-0 z-1 bg-black/20" />
               </div>
             )}
           />
@@ -155,6 +162,13 @@ const Banner: FC<BannerProps> = ({
           <div className="absolute top-0 left-0 w-full z-10">
             <NavBar2 />
           </div>
+          {showBookingForm && (
+            <div className="absolute bottom-6 inset-x-0 z-10">
+              <Container className="xl:max-w-5xl! mx-auto">
+                <BookingForm />
+              </Container>
+            </div>
+          )}
         </div>
       ) : null}
     </Section>

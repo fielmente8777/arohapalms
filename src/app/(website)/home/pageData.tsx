@@ -9,15 +9,21 @@ import {
   TrainIcon,
 } from "@/utils/icons";
 
-import { Images } from "lucide-react";
+// import { Images } from "lucide-react";
 import { PiSelectionBackgroundFill } from "react-icons/pi";
 import { BusIcon } from "../../../utils/icons";
 
 export const homePageData = {
   hero: {
-    videoSrc: "/videos/luxuryvilla.mp4",
-    thumbNail: "/videos/luxuryvilla.png",
-    images: [],
+    // videoSrc: "/videos/luxuryvilla.mp4",
+    // thumbNail: "/videos/luxuryvilla.png",
+    images: [
+      "/rooms/Imperial/AOB_4084-[1]_49_11zon.jpg",
+      "/rooms/Grande/AOB_0138-scaled.jpg",
+      // "/landing-page/unforgettable-6.jpg",
+      "/rooms/Grande/AOB_0028[1]_3_11zon.jpg",
+      // "/images/AOB_3733-scaled.jpg",
+    ],
     title: "",
     subTitle: "",
     description: "",
@@ -50,16 +56,16 @@ export const homePageData = {
   experience: {
     slides: [
       {
-        image: "/home/dine.jpg",
-        title: "Access",
+        image: "/rooms/Encanto/villa-serenity-ccdafa-1024x683.webp",
+        // title: "Access",
       },
       {
-        image: "/home/dine.jpg",
-        title: "Wine & Dine",
+        image: "/landing-page/unforgettable-1.jpg",
+        // title: "Wine & Dine",
       },
       {
-        image: "/home/dine.jpg",
-        title: "Pools & Leisure",
+        image: "/landing-page/unforgettable-3.jpg",
+        // title: "Pools & Leisure",
       },
     ],
   },
@@ -228,9 +234,9 @@ export const homePageData = {
   },
   testimonials: {
 
-      image: "/home/review.jpg",
-      tagline: "Testimonials",
-      title: "Appreciation From Our Guests",
+    image: "/landing-page/faq-aerial.png",
+    tagline: "Testimonials",
+    title: "Appreciation From Our Guests",
 
 
     reviews: [
@@ -293,13 +299,13 @@ export const homePageData = {
         description:
           "Set in Mandrem, enjoy calm, private stays just minutes from serene beaches, cafés, and North Goa's scenic coastline.",
 
-        image: "/home/img1.jpg",
+        image: "/landing-page/gallery/img-1.webp",
 
-        secondaryImage: "/home/img2.jpg",
+        secondaryImage: "/rooms/Magnifica/magnifica2.webp",
 
         href: "/destination/mandrem",
 
-        showPlay: true,
+        showPlay: false,
       },
 
       {
@@ -307,13 +313,13 @@ export const homePageData = {
         description:
           "Located in Pilerne, enjoy a quiet, local setting with easy access to Candolim, Calangute, beaches, dining and nightlife.",
 
-        image: "/home/img3.jpg",
+        image: "/landing-page/unforgettable-2.jpg",
 
-        secondaryImage: "/home/img4.jpg",
+        secondaryImage: "/rooms/Imperial/AOB_3422[1]_47_11zon.jpg",
 
         href: "/destination/pilerne",
 
-        showPlay: true,
+        showPlay: false,
       },
     ],
   },
