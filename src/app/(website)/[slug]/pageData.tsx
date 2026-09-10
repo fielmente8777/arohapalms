@@ -15,6 +15,7 @@ export interface BlogPost {
   content: string;
 }
 
+
 const blogPostPageData: BlogPost[] = [
   //   {
   //     slug: "monsoon-bonanza-50-per-cent-off-luxury-villas-in-goa",
