@@ -7,7 +7,7 @@ import { Section } from "@/components/sectionComponants";
 
 interface ExperienceSlide {
   image: string;
-  title: string;
+  title?: string;
 }
 
 interface ExperienceProps {
@@ -38,7 +38,7 @@ const Experience = ({ slides }: ExperienceProps) => {
             {/* IMAGE */}
             <Image
               src={slide.image}
-              alt={slide.title}
+              alt={slide.title || "Experience slide"}
               fill
               priority
               sizes="100vw"
@@ -49,11 +49,13 @@ const Experience = ({ slides }: ExperienceProps) => {
             <div className="absolute inset-0 bg-black/20" />
 
             {/* TITLE */}
-            <div className="absolute inset-x-0 bottom-8 z-10 flex justify-center md:bottom-10">
-              <h2 className="font-primary text-3xl font-light text-white md:text-4xl lg:text-5xl">
-                {slide.title}
-              </h2>
-            </div>
+            {slide.title && (
+              <div className="absolute inset-x-0 bottom-8 z-10 flex justify-center md:bottom-10">
+                <h2 className="font-primary text-3xl font-light text-white md:text-4xl lg:text-5xl">
+                  {slide.title}
+                </h2>
+              </div>
+            )}
           </div>
         )}
       />

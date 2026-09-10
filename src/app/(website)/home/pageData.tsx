@@ -9,7 +9,7 @@ import {
   TrainIcon,
 } from "@/utils/icons";
 
-// import { Images } from "lucide-react";
+import { Images } from "lucide-react";
 import { PiSelectionBackgroundFill } from "react-icons/pi";
 import { BusIcon } from "../../../utils/icons";
 
