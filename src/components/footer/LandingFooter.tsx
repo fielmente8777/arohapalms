@@ -7,7 +7,7 @@ import { footerData, pilerneFooterData } from "./footerdata";
 
 const LandingFooter = () => {
   const pathName = usePathname();
-  const data = pathName === "/" ? footerData: pilerneFooterData;
+  const data = pathName === "/landing-page/" ? footerData : pilerneFooterData;
 
   if (pathName === "/thank-you/") {
     return null;
@@ -42,21 +42,21 @@ const LandingFooter = () => {
                   dangerouslySetInnerHTML={{ __html: list.title ?? "" }}
                 />
                 <ul className={`flex flex-col md:gap-2 gap-4`}>
-                {list.links.map((item, suIndex) => (
-                  <li key={suIndex}>
-                    <Link
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={item.href}
-                      className=" text-sm"
-                    >
-                      <span className={` text-white/80 inline-block`}>
-                        {item.label}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                  {list.links.map((item, suIndex) => (
+                    <li key={suIndex}>
+                      <Link
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={item.href}
+                        className=" text-sm"
+                      >
+                        <span className={` text-white/80 inline-block`}>
+                          {item.label}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             );
           })}
