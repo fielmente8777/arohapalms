@@ -5,16 +5,15 @@ import {
   CalendarIcon,
   CallIcon,
   UserIcon,
-  VilaIcon,
-  WalletIcon,
+  VilaIcon
 } from "@/utils/formIcons";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { countries } from "../../utils/constent";
 import { WhatsAppIcon } from "../buttons/LinkButton";
-import { usePathname } from "next/navigation";
 
 interface Props {
   gridView?: boolean;
@@ -72,7 +71,7 @@ const pilerneLocationOptions: VillaOption[] = [
  * window at module scope — that is what broke the server render.
  */
 export const getLocationOptions = (pathname: string | null): VillaOption[] =>
-  pathname === "/" ? mandermLocationOptions : pilerneLocationOptions;
+  pathname === "/landing-page/" ? mandermLocationOptions : pilerneLocationOptions;
 
 const normalizeVillaName = (value: string) =>
   value
@@ -170,6 +169,8 @@ const CustomDropdown = React.forwardRef<HTMLInputElement, CustomDropdownProps>(
       setIsOpen(false);
       setSearchTerm("");
     };
+
+    
 
     return (
       <div ref={dropdownRef} className={`relative w-full ${className}`}>
