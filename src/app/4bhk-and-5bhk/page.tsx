@@ -12,6 +12,7 @@ import UnforgettableSection from "@/app/landing-page/component/UnforgettableSect
 
 export default function FourBhkAndFiveBhkLandingPage() {
   return (
+    
     <main className="bg-background">
       {/* <SlidingTitle items={landingPageData.offer} /> */}
       <Banner {...landingPageData.hero} />
