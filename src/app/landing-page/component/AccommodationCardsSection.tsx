@@ -112,7 +112,7 @@ export const AccommodationCard: React.FC<
             pauseOnMouseEnter: true,
             waitForTransition: true,
           }}
-          swiperSlideClassName="relative w-full h-full xl:aspect-[4/2.8] lg:aspect-[4/7] aspect-[4/2.75]"
+          swiperSlideClassName="relative w-full h-full xl:aspect-[4/2.8] lg:aspect-[4/7] aspect-[4/2.75] rounded-2xl overflow-hidden"
           renderSlide={(image) => (
             <Image
               src={image}
@@ -156,7 +156,7 @@ export const AccommodationCard: React.FC<
               pauseOnMouseEnter: true,
               waitForTransition: true,
             }}
-            swiperSlideClassName="relative lg:aspect-[4/2.5] aspect-[4/2.75]"
+            swiperSlideClassName="relative lg:aspect-[4/2.5] aspect-[4/2.75] rounded-xl overflow-hidden"
             renderSlide={(image) => (
               <Image
                 src={image}
