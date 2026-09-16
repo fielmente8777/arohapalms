@@ -48,14 +48,16 @@ const AccommodationCardsSection: React.FC<{
             ))}
           </div>
         </Container>
-        <div className="py-8 bg-background-dark w-full my-10">
-          <Container className="text-white bg-background-dark text-center max-w-4xl mx-auto space-y-3.5 ">
-            <p className="text-2xl font-semibold capitalize">
-              Stays that scale with your group!
-            </p>
-            <p className="lg:text-xl">{note}</p>
-          </Container>
-        </div>
+        {note && (
+          <div className="py-8 bg-background-dark w-full my-10">
+            <Container className="text-white bg-background-dark text-center max-w-4xl mx-auto space-y-3.5 ">
+              <p className="text-2xl font-semibold capitalize">
+                Stays that scale with your group!
+              </p>
+              <p className="lg:text-xl">{note}</p>
+            </Container>
+          </div>
+        )}
         <Container>
           {filteredCards.length > 3 && (
             <div className="flex flex-col gap-6 lg:gap-16">
