@@ -36,28 +36,54 @@ type VillaOption = {
 
 const mandermLocationOptions: VillaOption[] = [
   {
-    value: "4BHK, Aroha Palms Magnifica ",
+    value: "4BHK, Aroha Palms Magnifica",
     label: "4BHK, Aroha Palms Magnifica",
   },
   {
-    value: "5BHK, Aroha Palms Paradiso ",
-    label: "5BHK, Aroha Palms Paradiso ",
+    value: "5BHK, Aroha Palms Paradiso",
+    label: "5BHK, Aroha Palms Paradiso",
   },
   { value: "5BHK, Aroha Palms Serenity", label: "5BHK, Aroha Palms Serenity" },
-  { value: "7BHK, Aroha Palms Caia ", label: "7BHK, Aroha Palms Caia " },
-  { value: "9BHK, Aroha Palms Prana ", label: "9BHK, Aroha Palms Prana" },
-  { value: "10BHK, Aroha Palms Encanto ", label: "10BHK, Aroha Palms Encanto" },
-  { value: "18BHK, Aroha Palms Marisol ", label: "18BHK, Aroha Palms Marisol" },
+  { value: "7BHK, Aroha Palms Caia", label: "7BHK, Aroha Palms Caia" },
+  { value: "9BHK, Aroha Palms Prana", label: "9BHK, Aroha Palms Prana" },
+  { value: "10BHK, Aroha Palms Encanto", label: "10BHK, Aroha Palms Encanto" },
+  { value: "18BHK, Aroha Palms Marisol", label: "18BHK, Aroha Palms Marisol" },
+];
+
+const fourAndFiveBhkLocationOptions: VillaOption[] = [
+  {
+    value: "4BHK, Aroha Palms Magnifica",
+    label: "4BHK, Aroha Palms Magnifica",
+  },
+  {
+    value: "5BHK, Aroha Palms Paradiso",
+    label: "5BHK, Aroha Palms Paradiso",
+  },
+];
+
+const largeGroupAndCorporateLocationOptions: VillaOption[] = [
+  {
+    value: "9BHK, Aroha Palms Prana",
+    label: "9BHK, Aroha Palms Prana",
+  },
+  {
+    value: "10BHK, Aroha Palms Encanto",
+    label: "10BHK, Aroha Palms Encanto",
+  },
+  {
+    value: "18BHK, Aroha Palms Marisol",
+    label: "18BHK, Aroha Palms Marisol",
+  },
 ];
 
 const pilerneLocationOptions: VillaOption[] = [
   {
-    value: "5BHK, Aroha Palms Villa Majestic ",
+    value: "5BHK, Aroha Palms Villa Majestic",
     label: "5BHK, Aroha Palms Villa Majestic",
   },
   {
-    value: "6BHK, Aroha Palms Villa Grande ",
-    label: "6BHK, Aroha Palms Villa Grande ",
+    value: "6BHK, Aroha Palms Villa Grande",
+    label: "6BHK, Aroha Palms Villa Grande",
   },
   {
     value: "11BHK, Aroha Palms Villa Imperial",
@@ -70,8 +96,26 @@ const pilerneLocationOptions: VillaOption[] = [
  * Takes the pathname as an argument (from usePathname) so nothing reads
  * window at module scope — that is what broke the server render.
  */
-export const getLocationOptions = (pathname: string | null): VillaOption[] =>
-  pathname === "/landing-page/" ? mandermLocationOptions : pilerneLocationOptions;
+export const getLocationOptions = (pathname: string | null): VillaOption[] => {
+  if (!pathname) return mandermLocationOptions;
+
+  const cleanPath = pathname.replace(/\/+$/, "");
+
+  if (cleanPath.endsWith("/4bhk-and-5bhk")) {
+    return fourAndFiveBhkLocationOptions;
+  }
+  if (
+    cleanPath.endsWith("/group-and-family") ||
+    cleanPath.endsWith("/corporate")
+  ) {
+    return largeGroupAndCorporateLocationOptions;
+  }
+  if (cleanPath.endsWith("/pilerne-lp")) {
+    return pilerneLocationOptions;
+  }
+
+  return mandermLocationOptions;
+};
 
 const normalizeVillaName = (value: string) =>
   value
