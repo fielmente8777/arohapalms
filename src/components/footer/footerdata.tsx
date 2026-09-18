@@ -225,3 +225,59 @@ export const pilerneFooterData: FooterData = {
     },
   ],
 };
+
+export const  WebData: FooterData = {
+  logo: "/logo.png",
+  tagLine: "Resorts · Khajuraho",
+  description:
+    "Luxury villas in the serene neighbourhoods of North Goa. Barefoot luxury, private living, and effortless access to beaches and culture.",
+
+  cta: [
+    {
+      label: "CALL NOW",
+      href: contact.callCta,
+    },
+    {
+      label: "ENQUIRE NOW",
+      href: contact.WhatsappCta,
+    },
+    {
+      label: "BOOK NOW",
+      href: "#form",
+    },
+  ],
+
+  lists: [
+    {
+      title: "Location",
+      links: [
+        {
+          label: "Mandrem",
+          href: "/landing-page/",
+        },
+        {
+          label: "Pilerne",
+          href: "/pilerne-lp/",
+        },
+      ],
+    },
+
+    {
+      title: "Contact",
+      links: [
+        {
+          label: "WhatsApp: " + contact.phone[0],
+          href: contact.WhatsappCta,
+        },
+        {
+          label: "Call: 022-41642345",
+          href: "+919834220573",
+        },
+        {
+          label: contact.email,
+          href: "mailto:" + contact.email,
+        },
+      ],
+    },
+  ],
+};

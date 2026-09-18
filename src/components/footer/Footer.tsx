@@ -3,17 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "../sectionComponants";
-import { footerData, pilerneFooterData } from "./footerdata";
+import { footerData, WebData } from "./footerdata";
 
-const LandingFooter = () => {
+const NewFooter = () => {
   const pathName = usePathname();
-  const data =
-    pathName === "/landing-page/" ||
-    "/corporate/" ||
-    "/4bhk-and-5bhk/ " ||
-    " /group-and-family/"
-      ? footerData
-      : pilerneFooterData;
+  const data = pathName === "/landing-page/" ? footerData : WebData;
 
   if (pathName === "/thank-you/") {
     return null;
@@ -89,4 +83,4 @@ const LandingFooter = () => {
   );
 };
 
-export default LandingFooter;
+export default NewFooter;

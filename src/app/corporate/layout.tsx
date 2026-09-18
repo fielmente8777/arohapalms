@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LandingFooter from "@/components/footer/LandingFooter";
+import NewFooter from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Corporate | Luxury Villas & Apartments in North Goa",
@@ -14,7 +15,7 @@ export default function CorporateLayout({
   return (
     <>
       {children}
-      <LandingFooter />
+     <LandingFooter />
     </>
   );
 }
