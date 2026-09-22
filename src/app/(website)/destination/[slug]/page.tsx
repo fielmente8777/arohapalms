@@ -6,6 +6,7 @@ import Testimonials from "../../home/components/Testimonials";
 import { homePageData } from "../../home/pageData";
 import HeroBanner from "./components/HeroBanner";
 import Properties from "./components/Properties";
+import Banner from "../../home/components/Banner";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -69,9 +70,10 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main>
-      <HeroBanner {...data.hero} />
+       <Banner {...homePageData.hero} showBookingForm />
+      {/* <HeroBanner {...data.hero} /> */}
       <Properties cards={data.properties.cards} title={data.properties.title} />
-      <Testimonials {...homePageData.testimonials} />
+      {/* <Testimonials {...homePageData.testimonials} /> */}
     </main>
   );
 }

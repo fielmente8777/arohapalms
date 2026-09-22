@@ -42,10 +42,10 @@ export const experiencePageData = {
       },
     ],
 
-    cta: {
-      text: "Enquire For These Experiences",
-      href: contact.WhatsappCta,
-    },
+    // cta: {
+    //   text: "Enquire For These Experiences",
+    //   href: contact.WhatsappCta,
+    // }, 
   },
   Activites: {
     title: {

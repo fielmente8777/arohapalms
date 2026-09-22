@@ -6,15 +6,19 @@ import OurVillas from "./components/OurVilla";
 import Confidence from "./components/Confidence";
 import Testimonials from "../home/components/Testimonials";
 import { homePageData } from "../home/pageData";
+import AboutIntro from "./components/About";
+import About from "./components/About";
 
 export default function OurStory() {
   return (
     <main>
-      <AboutSection {...OurStoryData.about} />
-      <Mission {...OurStoryData.missionData} />
+      <About {...OurStoryData.missionData} />
       <OurVillas {...OurStoryData.villasData} />
-      <Confidence {...OurStoryData.confidenceData} />
-      <Testimonials {...homePageData.testimonials} />
+      {/* <AboutSection {...OurStoryData.about} />
+      <Mission {...OurStoryData.missionData} />
+      
+      <Confidence {...OurStoryData.confidenceData} /> */}
+      {/* <Testimonials {...homePageData.testimonials} /> */}
     </main>
   );
 }

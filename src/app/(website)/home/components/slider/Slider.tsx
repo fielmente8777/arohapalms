@@ -1,49 +1,51 @@
 "use client";
 
+import LinkButton from "@/components/buttons/LinkButton";
 import { Section } from "@/components/sectionComponants";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import Image from "next/image";
 import { useState } from "react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
-interface Activity {
-  image: string;
-  title: string;
-  description: string;
+interface GallerySliderProps {
+  images: string[];
+  link: {
+    label: string;
+    href: string;
+  };
 }
 
-interface SliderProps {
-  cards: Activity[];
-}
-
-const Slider: React.FC<SliderProps> = ({ cards }) => {
-  // images = images.length > 3 ? images : [...images, ...images];
+const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
+  images = images.length > 3 ? images : [...images, ...images];
   const [activeIndex, setActiveIndex] = useState(0);
-  const sliderCards = cards.length > 3 ? cards : [...cards, ...cards];
   return (
     <Section>
       <div className="relative">
         <SwiperCarousel
-          data={sliderCards}
+          data={images}
           modules={[Navigation]}
           navigation={{
-            nextEl: ".nearby-section-next",
-            prevEl: ".nearby-section-prev",
+            nextEl: ".gallery-slider-next",
+            prevEl: ".gallery-slider-prev",
           }}
-          slidesPerView="auto"
-          spaceBetween={12}
+          // autoplay={{
+          //   delay: 2000,
+          //   disableOnInteraction: false,
+          // }}
+          slidesPerView={1}
+          spaceBetween={20}
           loop
           centeredSlides={true}
           breakpoints={{
             768: {
-              slidesPerView: 2.45,
-              spaceBetween: 16,
+              slidesPerView: 1.55,
+              spaceBetween: 12,
             },
           }}
           speed={900}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           className="w-full"
-          renderSlide={(card, index) => (
+          renderSlide={(src, index) => (
             <div
               className={`w-full relative ${
                 index === activeIndex
@@ -51,65 +53,41 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
                   : "md:aspect-[4/2.2] aspect-4/3"
               }`}
             >
-              <Image
-                src={card.image}
-                alt="Image"
-                fill
-                className="object-cover"
-              />
-              <div
-                className="
-                  absolute
-                  inset-x-0
-                  bottom-0
-                  bg-gradient-to-t
-                  from-black/70
-                  via-black/20
-                  to-transparent
-                  px-5
-                  pb-5
-                  pt-20
-                  text-white
-                "
-              >
-                <h3 className="text-sm uppercase tracking-wide md:text-lg">
-                  {card.title}
-                </h3>
-              </div>
+              <Image src={src} alt="Image" fill className="object-cover" />
             </div>
           )}
         />
-        <div className="relative -mt-16">
+        <div className="relative -mt-10">
           <div
             className="mx-auto
               flex
               w-full
-              max-w-[1000px]
+              max-w-[1100px]
               items-center
               justify-between
               "
           >
-            <button className="nearby-section-prev flex items-center justify-center w-10 aspect-square ">
+            <button className="gallery-slider-prev flex items-center justify-center w-10 aspect-square ">
               <BtnIcon />
             </button>
-            <button className="nearby-section-next flex items-center justify-center w-10 aspect-square rotate-180">
+            <button className="gallery-slider-next flex items-center justify-center w-10 aspect-square rotate-180">
               <BtnIcon />
             </button>
           </div>
         </div>
       </div>
-      {/* <LinkButton
+      <LinkButton
         href={link.href}
         label={link.label}
         className="mx-auto mt-18! text-p2 !border-0
     !border-b
     !border-p2"
-      /> */}
+      />
     </Section>
   );
 };
 
-export default Slider;
+export default GallerySlider;
 
 export const BtnIcon = () => (
   <svg

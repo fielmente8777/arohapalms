@@ -47,6 +47,27 @@ about:{
     "/images/sde8.webp",
   ],
 },
+// villasData :{
+//   title: "Our Villas",
+
+//   description: [
+//     "Our villas are situated in such a manner that they seamlessly blends indoor and outdoor living spaces to create an atmosphere of old-world charm.",
+
+//     "With manicured garden, private pool, and multiple bedrooms, we aim to provides the perfect retreat for relaxation in a natural setting.",
+
+//     "The outdoor patio, overlooking the crystal blue waters of the pool, provides a tranquil and comfortable space for unwinding.",
+
+//     "Indulge in a stay where every desire is anticipated, and every detail is effortlessly taken care of.",
+//   ],
+
+//   card: {
+//     title:
+//       "Discover a way for family and friends to vacation better together.",
+
+//     description:
+//       "At Aroha Palms, every stay is designed for togetherness. From slow mornings by the pool to evenings that linger a little longer, our homes create the perfect setting for families and friends to reconnect, celebrate, and simply be.",
+//   },
+// },
 villasData :{
   title: "Our Villas",
 
@@ -59,6 +80,10 @@ villasData :{
 
     "Indulge in a stay where every desire is anticipated, and every detail is effortlessly taken care of.",
   ],
+   videos: [
+      "/videos/mandrem.mp4",
+      "/videos/pilerne.mp4",
+    ],
 
   card: {
     title:

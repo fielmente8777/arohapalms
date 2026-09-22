@@ -1,70 +1,229 @@
+"use client";
+
+import { Section } from "@/components/sectionComponants";
+import Link from "next/link";
+
 interface OurVillasProps {
   title: string;
   description: string[];
+  videos: string[];
   card: {
     title: string;
     description: string;
   };
 }
 
-const OurVillas = ({ title, description, card }: OurVillasProps) => {
+const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
   return (
-    <section className="bg-white">
-      <div className="max_width">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-[56px] text-blue mb-10">{title}</h2>
+    <Section className="bg-[#fefcf4] ">
+      <div className="max_screen_width px-8">
+        <div
+          className="
+            grid
+            grid-cols-1
+            items-center
+            gap-10
+            md:grid-cols-[0.75fr_1.25fr]
+            md:gap-12
+            lg:gap-16
+          "
+        >
+    
+          <div className="max-w-[430px]">
+          
+            <h2
+              className="
+                text-2xl
+                leading-[1.2]
+                text-blue
+                md:text-[32px]
+              "
+            >
+              {title}
+            </h2>
 
-          <div className="space-y-10">
-            {description.map((item, index) => (
-              <p key={index} className="text-lg leading-9 text-[#233A63]">
-                {item}
-              </p>
+          
+            <div className="mt-5 space-y-4">
+              {description.map((text, index) => (
+                <p
+                  key={index}
+                  className="
+                    text-sm
+                    leading-[1.7]
+                    text-[#666]
+                    md:text-[14px]
+                  "
+                >
+                  {text}
+                </p>
+              ))}
+            </div>
+
+           
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                href="/destination/mandrem"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  border
+                  border-blue
+                  px-5
+                  py-2.5
+                  text-[10px]
+                  font-medium
+                  uppercase
+                  tracking-wide
+                  text-blue
+                  transition
+                  duration-300
+                  hover:bg-blue
+                  hover:text-white
+                "
+              >
+                Explore Mandrem
+              </Link>
+
+              <Link
+                href="/destination/pilerne"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  border
+                  border-blue
+                  px-5
+                  py-2.5
+                  text-[10px]
+                  font-medium
+                  uppercase
+                  tracking-wide
+                  text-blue
+                  transition
+                  duration-300
+                  hover:bg-blue
+                  hover:text-white
+                "
+              >
+                Explore Pilerne
+              </Link>
+            </div>
+          </div>
+
+
+          <div
+            className="
+              grid
+              grid-cols-1
+              gap-4
+              sm:grid-cols-2
+            "
+          >
+            {videos.slice(0, 2).map((video, index) => (
+              <div
+                key={`${video}-${index}`}
+                className="
+                  group
+                  relative
+                  aspect-[0.82/1]
+                  w-full
+                  overflow-hidden
+                "
+              >
+                <video
+                  src={video}
+                  muted
+                  loop
+                  autoPlay
+                  playsInline
+                  className="
+                    h-full
+                    w-full
+                    object-cover
+                    transition-transform
+                    duration-700
+                    group-hover:scale-105
+                  "
+                />
+
+                {/* PLAY ICON */}
+                {/* <div className="absolute inset-0 flex items-center justify-center">
+                  <div
+                    className="
+                      flex
+                      h-12
+                      w-12
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-white/90
+                      text-blue
+                    "
+                  >
+                    <span className="ml-1 text-base">▶</span>
+                  </div>
+                </div> */}
+              </div>
             ))}
           </div>
         </div>
 
-        {/* <div className="relative mt-20 border-2 border-blue min-h-[320px] flex items-center justify-end px-12">
-          <div className="absolute left-[-80px] top-1/2 -translate-y-1/2 w-[535px] aspect-[2/1] bg-blue rounded-[14px] text-white flex items-center px-12">
-            <h3 className="text-[40px] leading-[1.25]">
-              {card.title}
-            </h3>
-          </div>
-
-          <div className="max-w-[500px]">
-            <p className="text-lg leading-9 text-[#233A63]">
-              {card.description}
-            </p>
-          </div>
-        </div> */}
-        <div className="relative mt-16 md:mt-20 border-2 border-blue min-h-[280px] md:min-h-[320px]  md:px-12 pt-24 md:pt-0 flex items-end md:items-center justify-center md:justify-end">
-          {/* Blue Card */}
+        <div
+          className="
+    bg-[#fefcf4]
+    py-16
+    md:py-12
+  "
+        >
           <div
             className="
-      absolute
-      -top-16 md:top-1/2
-      left-4 md:left-[-80px]
-      md:-translate-y-1/2
-      w-[calc(100%-2rem)] md:w-[535px]
-      bg-blue
-      rounded-[14px]
-      px-6 py-6 md:px-12 md:py-8
-      text-white
+      max_width
+      grid
+      grid-cols-1
+      gap-8
+      md:grid-cols-[1fr_1fr]
+      md:items-center
+      md:gap-0
     "
           >
-            <h3 className="text-[16px] md:text-[40px] leading-tight md:leading-[1.25]">
-              {card.title}
-            </h3>
-          </div>
+            {/* TITLE */}
+            <div>
+              <h3
+                className="
+          max-w-[624px]
+          text-[28px]
+          font-light
+          
+          text-[#1670B7]
+          md:text-[40px]
+          
+        "
+              >
+                {card.title}
+              </h3>
+            </div>
 
-          {/* Description */}
-          <div className="w-full max-w-[250px] md:max-w-[500px]">
-            <p className="text-lg md:text-lg leading-7 md:leading-9 text-[#233A63]">
-              {card.description}
-            </p>
+            {/* DESCRIPTION */}
+            <div>
+              <p
+                className="
+          max-w-[676px]
+          text-[14px]
+          font-normal
+          
+          text-[#6B6B6B]
+          md:text-[20px]
+          
+        "
+              >
+                {card.description}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

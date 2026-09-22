@@ -1,8 +1,8 @@
+import Image from "next/image";
 import AboutSection from "./home/components/AboutSection";
 
 import Banner from "./home/components/Banner";
 import Experience from "./home/components/Experience";
-
 
 import LocationSection from "./home/components/LocationSection";
 import NearbyActivities from "./home/components/Nearby";
@@ -10,24 +10,32 @@ import StayWithUs from "./home/components/Stay";
 
 import Testimonials from "./home/components/Testimonials";
 import { homePageData } from "./home/pageData";
-
+import Place from "./home/components/Place";
 
 export default function HomePage() {
   return (
     <main>
       <Banner {...homePageData.hero} showBookingForm />
+      <div className="max_screen_width relative w-full aspect-[164/1]">
+        <Image
+          src="/images/Greek1.png"
+          alt=""
+          fill
+          className="object-contain"
+        />
+      </div>
       <AboutSection {...homePageData.about} />
-      <Experience {...homePageData.experience} />
+      {/* <Experience {...homePageData.experience} /> */}
       {/* <OfferBanner {...homePageData.offers} />
       <Locations {...homePageData.locations} />
       <Dine {...homePageData.dine} />
       <Amenities amenities={homePageData.amenities} outdoors={homePageData.outdoors} /> */}
       {/* <Outdoors {...homePageData.outdoors} /> */}
-      <StayWithUs {...homePageData.stayWithUs} />
+      <Place {...homePageData.PlaceData}/>
+      {/* <StayWithUs {...homePageData.stayWithUs} /> */}
       <NearbyActivities {...homePageData.nearbyActivities} />
       <LocationSection {...homePageData.location} />
       <Testimonials {...homePageData.testimonials} />
-
     </main>
   );
 }

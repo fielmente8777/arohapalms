@@ -159,9 +159,9 @@ const Banner: FC<BannerProps> = ({
             )}
           />
 
-          <div className="absolute top-0 left-0 w-full z-10">
+          {/* <div className="absolute top-0 left-0 w-full z-10">
             <NavBar2 />
-          </div>
+          </div> */}
           {showBookingForm && (
             <div className="absolute bottom-6 inset-x-0 z-10">
               <Container className="xl:max-w-5xl! mx-auto">

@@ -11,7 +11,7 @@ export default function YourStayPage() {
       <StayIntro {...yourStayPageData.intro} />
 
       <StayCards stays={yourStayPageData.stays} />
-      <Testimonials {...homePageData.testimonials} />
+      {/* <Testimonials {...homePageData.testimonials} /> */}
     </main>
   );
 }

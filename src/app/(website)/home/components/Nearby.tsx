@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import NearbyActivitiesSlider from "./slider/NearbySlider";
+import Slider from "./slider/NearbySlider";
 
 interface Activity {
   image: string;
@@ -43,7 +44,7 @@ const NearbyActivities = ({
 
       {/* ACTIVITIES SLIDER */}
 
-      <NearbyActivitiesSlider cards={activities} />
+      <Slider cards={activities} />
     </SectionWithContainer>
   );
 };

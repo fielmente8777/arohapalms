@@ -142,4 +142,54 @@ Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, V
       gst: "CIN: U55101GA2022PTC015434  GSTIN: 30AAXCA2498B1ZV",
     },
   },
+  contactSection: {
+    title: "Contact Us",
+
+    subTitle: "LET'S PLAN YOUR STAY",
+
+    illustration: "/images/Group 4280.png",
+
+    description:
+      "From booking inquiries to special requests, we're just a message away. We look forward to welcoming you to Aroha Palms.",
+
+    button: {
+      label: "VIEW GOOGLE MAP",
+      href: contact.mapUrl,
+    },
+
+    email: {
+      label: "Email Address:",
+      value: contact.email,
+      href: `mailto:${contact.email}`,
+    },
+
+    phone: {
+      label: "Phone:",
+      value: contact.phone[0],
+     href: `tel:${contact.phone[0]}`,
+    },
+
+    locations: {
+      label: "Locations:",
+      items: [
+        "Aroha Palms Mandrem: House No. 290, Marathwada, Mandrem, Goa 403527",
+        "Aroha Palms Majestic: House No. 67A, Pilerne, Goa 403511",
+        "Aroha Palms Grande: House No. 67B, Pilerne, Goa 403511",
+      ],
+    },
+  },
+  registeredAddressSection: {
+    image: "/registered-address.webp",
+
+    logo: "/logo.png",
+
+    title: "Registered Address:",
+
+    address:
+      "House No 211/A-7, B-704, Block B, Sancoale, Zuari Nagar, Vasco Da Gama, South Goa,",
+
+    cin: "U55100GA2022PTC015434",
+
+    gst: "30AAXCA2498B1ZV",
+  },
 };

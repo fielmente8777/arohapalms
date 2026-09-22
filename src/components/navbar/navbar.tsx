@@ -5,6 +5,7 @@ import LandingNavbar from "./LandingNavbar";
 import WebsiteNav from "./WebsiteNav";
 import HomeNavbar from "./HomeNavbar";
 import InnerNavbar from "./InnerNavbar";
+import NavBar2 from "./NavBar2";
 
 export default function Navbar() {
   const pathName = usePathname();
@@ -19,8 +20,11 @@ export default function Navbar() {
   // }
 
   // All other pages
-  else {
-    return <InnerNavbar />;
+  // else {
+  //   return <InnerNavbar />;
+  // }
+  else{
+    return <NavBar2/>
   }
   //  else {
   //   return <WebsiteNav />;

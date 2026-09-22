@@ -7,6 +7,7 @@ import {
   FillCalenderIcon,
   FillLocation,
   FillUserIcon,
+  GuestIcon,
 } from "./BookingFormIcons";
 
 const locations = [
@@ -20,11 +21,23 @@ const locations = [
   },
 ];
 
+const villas = [
+  {
+    name: "Villa Majestic",
+    slug: "villa-majestic",
+  },
+  {
+    name: "Villa Grande",
+    slug: "villa-grande",
+  },
+];
 export default function BookingForm() {
   const [location, setLocation] = useState<(typeof locations)[number] | null>(
     null
   );
+  const [villa, setVilla] = useState<(typeof villas)[number] | null>(null);
   const [locationOpen, setLocationOpen] = useState(false);
+  const [villaOpen, setVillaOpen] = useState(false);
   const [guestOpen, setGuestOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [adults, setAdults] = useState(2);
@@ -39,18 +52,41 @@ export default function BookingForm() {
 
   const locationRef = useRef<HTMLDivElement>(null);
   const guestRef = useRef<HTMLDivElement>(null);
+  const villaRef = useRef<HTMLDivElement>(null);
 
+  // useEffect(() => {
+  //   const close = (e: MouseEvent) => {
+  //     if (
+  //       locationRef.current &&
+  //       !locationRef.current.contains(e.target as Node)
+  //     )
+  //       setLocationOpen(false);
+  //     if (guestRef.current && !guestRef.current.contains(e.target as Node))
+  //       setGuestOpen(false);
+  //   };
+  //   document.addEventListener("mousedown", close);
+  //   return () => document.removeEventListener("mousedown", close);
+  // }, []);
   useEffect(() => {
     const close = (e: MouseEvent) => {
       if (
         locationRef.current &&
         !locationRef.current.contains(e.target as Node)
-      )
+      ) {
         setLocationOpen(false);
-      if (guestRef.current && !guestRef.current.contains(e.target as Node))
+      }
+
+      if (villaRef.current && !villaRef.current.contains(e.target as Node)) {
+        setVillaOpen(false);
+      }
+
+      if (guestRef.current && !guestRef.current.contains(e.target as Node)) {
         setGuestOpen(false);
+      }
     };
+
     document.addEventListener("mousedown", close);
+
     return () => document.removeEventListener("mousedown", close);
   }, []);
 
@@ -102,7 +138,7 @@ export default function BookingForm() {
   return (
     <div className="w-full">
       {/* Bar */}
-      <div className="grid w-full lg:grid-cols-[1fr_1fr_1fr_auto] md:grid-cols-2 grid-cols-1 items-center bg-white/20 backdrop-blur-sm ">
+      <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] items-center bg-white/20 backdrop-blur-sm">
         {/* Location */}
         <div
           ref={locationRef}
@@ -110,7 +146,9 @@ export default function BookingForm() {
           onClick={() => setLocationOpen((o) => !o)}
         >
           <FillLocation />
-          <span className={labelCls}>{location?.name || "Find Location"}</span>
+          <span className={labelCls}>
+            {location?.name || "Select Location"}
+          </span>
 
           {locationOpen && (
             <div className="absolute left-0 top-full z-50 mt-0.5 w-64 rounded-b-md bg-background shadow-xl overflow-hidden">
@@ -137,14 +175,40 @@ export default function BookingForm() {
             </div>
           )}
         </div>
+        {/* Villa */}
+        <div
+          ref={villaRef}
+          className={fieldCls}
+          onClick={() => setVillaOpen((o) => !o)}
+        >
+          <FillUserIcon />
+          <span className={labelCls}>{villa?.name || "Select Villa"}</span>
 
+          {villaOpen && (
+            <div className="absolute left-0 top-full z-50 mt-0.5 w-64 rounded-b-md bg-background shadow-xl overflow-hidden">
+              {villas.map((item) => (
+                <button
+                  type="button"
+                  key={item.slug}
+                  onClick={() => {
+                    setVilla(item);
+                    setVillaOpen(false);
+                  }}
+                  className="block w-full px-4 py-3 text-left text-sm hover:bg-white/10"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
         {/* Guests */}
         <div
           ref={guestRef}
           className={fieldCls}
           onClick={() => setGuestOpen((o) => !o)}
         >
-          <FillUserIcon />
+          <GuestIcon />
           <span className={labelCls}>
             {adults || children ? guestLabel : "Select Guests"}
           </span>

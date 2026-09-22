@@ -46,4 +46,20 @@ export const FillCalenderIcon = () => (
       fill="white"
     />
   </svg>
-)
+);
+
+export const GuestIcon = () => (
+<svg
+  width={16}
+  height={16}
+  viewBox="0 0 16 16"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M6 14V8H11.3333C11.3333 7.63333 11.464 7.31956 11.7253 7.05867C11.9867 6.79778 12.3004 6.66711 12.6667 6.66667C13.0329 6.66622 13.3469 6.79689 13.6087 7.05867C13.8704 7.32044 14.0009 7.63422 14 8V14H10.6667V10.6667H9.33333V14H6ZM2 14V5.33333L10.6667 2V6.66667H4.66667V14H2Z"
+    fill="white"
+  />
+</svg>
+
+);
