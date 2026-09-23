@@ -1,12 +1,16 @@
 "use client";
 
 import { Section } from "@/components/sectionComponants";
+import Image from "next/image";
 import Link from "next/link";
 
 interface OurVillasProps {
   title: string;
   description: string[];
-  videos: string[];
+  videos: {
+    video: string;
+    thumbnail: string;
+  }[];
   card: {
     title: string;
     description: string;
@@ -15,7 +19,7 @@ interface OurVillasProps {
 
 const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
   return (
-    <Section className="bg-[#fefcf4] ">
+    <Section className="bg-background-2 ">
       <div className="max_screen_width px-8">
         <div
           className="
@@ -28,9 +32,7 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
             lg:gap-16
           "
         >
-    
-          <div className="max-w-[430px]">
-          
+          <div className="max-w-[480px]">
             <h2
               className="
                 text-2xl
@@ -42,7 +44,6 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
               {title}
             </h2>
 
-          
             <div className="mt-5 space-y-4">
               {description.map((text, index) => (
                 <p
@@ -58,7 +59,6 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
               ))}
             </div>
 
-           
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/destination/mandrem"
@@ -73,7 +73,6 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
                   text-[10px]
                   font-medium
                   uppercase
-                  tracking-wide
                   text-blue
                   transition
                   duration-300
@@ -97,7 +96,6 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
                   text-[10px]
                   font-medium
                   uppercase
-                  tracking-wide
                   text-blue
                   transition
                   duration-300
@@ -110,7 +108,6 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
             </div>
           </div>
 
-
           <div
             className="
               grid
@@ -119,19 +116,32 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
               sm:grid-cols-2
             "
           >
-            {videos.slice(0, 2).map((video, index) => (
+            {videos.slice(0, 2).map((item, index) => (
               <div
-                key={`${video}-${index}`}
+                key={`${item.video}-${index}`}
                 className="
                   group
                   relative
-                  aspect-[0.82/1]
+                  h-[664]
+                  aspect-[2/3]
                   w-full
                   overflow-hidden
                 "
               >
+                <Image
+                  src={item.thumbnail}
+                  alt=""
+                  fill
+                  className="
+                    absolute
+                    inset-0
+                    z-10
+                    object-cover
+                   
+                  "
+                />
                 <video
-                  src={video}
+                  src={item.video}
                   muted
                   loop
                   autoPlay
@@ -167,16 +177,25 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
             ))}
           </div>
         </div>
-
-        <div
-          className="
-    bg-[#fefcf4]
+      </div>
+      <div className="mt-10 w-full overflow-hidden md:mt-16">
+        <Image
+          src="/images/Greek1.png"
+          alt=""
+          width={1440}
+          height={80}
+          className="h-auto w-full object-cover"
+        />
+      </div>
+      <div
+        className="
+    bg-background-2
     py-16
     md:py-12
   "
-        >
-          <div
-            className="
+      >
+        <div
+          className="
       max_width
       grid
       grid-cols-1
@@ -185,11 +204,11 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
       md:items-center
       md:gap-0
     "
-          >
-            {/* TITLE */}
-            <div>
-              <h3
-                className="
+        >
+          {/* TITLE */}
+          <div>
+            <h3
+              className="
           max-w-[624px]
           text-[28px]
           font-light
@@ -198,15 +217,15 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
           md:text-[40px]
           
         "
-              >
-                {card.title}
-              </h3>
-            </div>
+            >
+              {card.title}
+            </h3>
+          </div>
 
-            {/* DESCRIPTION */}
-            <div>
-              <p
-                className="
+          {/* DESCRIPTION */}
+          <div>
+            <p
+              className="
           max-w-[676px]
           text-[14px]
           font-normal
@@ -215,10 +234,9 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
           md:text-[20px]
           
         "
-              >
-                {card.description}
-              </p>
-            </div>
+            >
+              {card.description}
+            </p>
           </div>
         </div>
       </div>

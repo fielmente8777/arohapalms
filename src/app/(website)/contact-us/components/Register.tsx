@@ -29,7 +29,7 @@ const Register = ({
         </div>
 
         {/* CONTENT */}
-        <div className="bg-[#F7F5E9] flex flex-col items-center justify-center text-center px-6 py-12">
+        <div className="bg-background-2 flex flex-col items-center justify-center text-center px-6 py-12">
           {/* LOGO */}
           <div className="relative w-[220px] h-[100px] mb-8">
             <Image
@@ -42,17 +42,17 @@ const Register = ({
 
           {/* REGISTERED ADDRESS */}
           <div className="max-w-[500px] font-inter text-[#162534]">
-            <h3 className="font-semibold text-sm mb-3">{title}</h3>
+            <h3 className="font-semibold text-xl mb-3">{title}</h3>
 
-            <p className="text-sm md:text-base leading-relaxed">{address}</p>
+            <p className="text-sm md:text-xl ">{address}</p>
 
             {/* CIN */}
-            <p className="mt-5 text-sm">
+            <p className="mt-5 text-xl">
               <span className="font-semibold">CIN:</span> {cin}
             </p>
 
             {/* GST */}
-            <p className="mt-3 text-sm">
+            <p className="mt-3 text-xl">
               <span className="font-semibold">GST:</span> {gst}
             </p>
           </div>

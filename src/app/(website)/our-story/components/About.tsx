@@ -2,6 +2,7 @@
 
 import { Section } from "@/components/sectionComponants";
 import GallerySlider, { BtnIcon } from "./silder/Image";
+import Image from "next/image";
 
 interface AboutProps {
   title: string;
@@ -12,9 +13,9 @@ interface AboutProps {
 
 const About = ({ title, intro, description, images }: AboutProps) => {
   return (
-    <Section className="bg-[#fefcf4] ">
+    <Section className="bg-background-2 ">
       <div className="">
-        <div className="mx-auto w-full ">
+        <div className="mx-auto w-full pt-16! ">
           <div className="flex flex-col items-start md:flex-row">
             {/* LEFT + MAIN IMAGE */}
             <div className="w-full md:w-auto">
@@ -89,6 +90,15 @@ const About = ({ title, intro, description, images }: AboutProps) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="mt-10 w-full overflow-hidden md:mt-16">
+        <Image
+          src="/images/Greek1.png"
+          alt=""
+          width={1440}
+          height={80}
+          className="h-auto w-full object-cover"
+        />
       </div>
     </Section>
   );

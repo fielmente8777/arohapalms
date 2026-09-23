@@ -21,7 +21,7 @@ interface FooterData {
 }
 
 export const WebfooterData = {
-  logo: "/footer1.png",
+  logo: "/newf.png",
 
   bookNow: {
     text: "Book Now",

@@ -538,11 +538,13 @@ const Properties = ({ title, cards }: PropertiesProps) => {
   const { openProperty } = useWebContext();
 
   return (
-    <Section className="bg-[#fefcf4] ">
+    <Section className="bg-background-2 ">
       <div className="max_screen_width px-8">
         <h2
           className="
             w-fit
+            text-center
+            mx-auto
             border-b
             border-[#c8c0a8]
             pb-5

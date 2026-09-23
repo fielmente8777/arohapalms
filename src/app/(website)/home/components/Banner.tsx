@@ -24,7 +24,7 @@ const Banner: FC<BannerProps> = ({
   const hasSingleImage = images && images.length === 1;
 
   return (
-    <Section defaultPadding={false} className="banner max_screen_width ">
+    <Section defaultPadding={false} className="banner max_screen_width-2 ">
       {/* ✅ Case 1: Both Video + Images */}
       {videoSrc && hasImages ? (
         <div className="w-full max-w-[90rem] mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 lg:py-12">
@@ -37,6 +37,7 @@ const Banner: FC<BannerProps> = ({
               muted
               controls={false}
             />
+
           </div>
           {/* <div className="lg:hidden block">
             <Swiper
@@ -126,7 +127,13 @@ const Banner: FC<BannerProps> = ({
       ) : /* ✅ Case 3: Only Single Image */
       hasSingleImage ? (
         <div className="w-full xl:h-dvh max-xl:aspect-4/3 max-lg:aspect-[4/2] max-md:aspect-[3/4.5] relative">
-          <Image src={images[0]} alt="banner image" fill priority className="object-cover" />
+          <Image
+            src={images[0]}
+            alt="banner image"
+            fill
+            priority
+            className="object-cover"
+          />
 
           <div className="absolute top-0 left-0 w-full z-10">
             <NavBar2 />
@@ -141,7 +148,7 @@ const Banner: FC<BannerProps> = ({
         </div>
       ) : /* ✅ Case 4: Multiple Images (Carousel) */
       hasImages ? (
-        <div className="relative w-full">
+        <div className="relative w-full max_screen_width">
           <SwiperCarousel
             data={images}
             slidesPerView={1}
@@ -152,16 +159,30 @@ const Banner: FC<BannerProps> = ({
             speed={2500}
             className="w-full"
             renderSlide={(image) => (
-              <div className="w-full xl:h-dvh max-xl:aspect-4/3 max-lg:aspect-[4/2] max-md:aspect-[3/4.5] relative">
-                <Image src={image} alt="banner image" fill className="object-cover" />
+              <div className="w-full lg:aspect-[4/2] md:aspect-[3/4.5] relative">
+                <Image
+                  src={image}
+                  alt="banner image"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 z-1 bg-black/20" />
               </div>
             )}
           />
+          <div className="bg-background-2 w-full overflow-hidden">
+            <Image
+              src="/images/Greek1.png"
+              alt=""
+              width={1440}
+              height={80}
+              className="h-auto w-full object-cover"
+            />
+          </div>
 
-          {/* <div className="absolute top-0 left-0 w-full z-10">
+          <div className="absolute top-0 left-0 w-full z-10">
             <NavBar2 />
-          </div> */}
+          </div>
           {showBookingForm && (
             <div className="absolute bottom-6 inset-x-0 z-10">
               <Container className="xl:max-w-5xl! mx-auto">

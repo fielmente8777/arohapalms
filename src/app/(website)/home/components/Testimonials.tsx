@@ -32,7 +32,8 @@ const Testimonials = ({
       {/* 1380px Frame with 1px #CA9E55 Border */}
       <div className="mx-auto w-full max-w-[1380px] ">
         <div className="grid grid-cols-1 overflow-hidden rounded-xs border border-[#CA9E55] bg-white md:h-[602px] md:grid-cols-2">
-          {/* ================= LEFT SIDE: FULL IMAGE ================= */}
+       
+
           <div className="relative min-h-[360px] w-full md:h-full">
             <Image
               src={image || "/home/testimonial-img.jpg"}
@@ -44,15 +45,15 @@ const Testimonials = ({
             />
           </div>
 
-          {/* ================= RIGHT SIDE: CENTERED CONTENT ================= */}
-          <div className="flex h-full flex-col items-center justify-center px-6 text-center md:px-12 lg:px-16">
+
+          <div className="flex h-full flex-col items-center justify-start py-16 px-6 text-center md:px-12 lg:px-16">
             <div className="flex w-full max-w-[520px] flex-col items-center">
-              {/* TITLE */}
-              <h2 className="font-primary text-2xl font-light text-p2 md:text-[34px] lg:text-[38px] leading-tight">
+             
+              <h2 className="font-primary text-2xl font-light text-p2 md:text-[34px] lg:text-5xl ">
                 {title}
               </h2>
 
-              {/* GOOGLE ICON */}
+            
               <div className="relative mt-4 h-7 w-7">
                 <Image
                   src="/g-icon.png"
@@ -69,8 +70,6 @@ const Testimonials = ({
                     key={i}
                     size={14}
                     fill="#CA9E55"
-                    strokeWidth={0}
-                    className="shrink-0"
                   />
                 ))}
               </div>
@@ -97,12 +96,12 @@ const Testimonials = ({
                   renderSlide={(item) => (
                     <div className="flex flex-col items-center text-center">
                       {/* Review Text */}
-                      <p className="line-clamp-5 text-[13px] leading-[1.8] text-[#777777] md:text-[14px]">
+                      <p className="text-[13px] text-[#777777] md:text-xl">
                         {item.review}
                       </p>
 
                       {/* Author Name */}
-                      <p className="mt-5 text-[12px] font-medium uppercase tracking-[1.5px] text-[#17384e]">
+                      <p className="mt-5 text-[12px] md:text-xl font-medium uppercase text-[#17384e]">
                         {item.name}
                       </p>
                     </div>
@@ -110,7 +109,7 @@ const Testimonials = ({
                 />
               </div>
 
-              {/* ================= BOTTOM NAVIGATION ARROWS ================= */}
+           
               <div className="mt-8 flex items-center justify-center gap-6">
                 <button
                   type="button"

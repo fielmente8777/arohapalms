@@ -5,9 +5,15 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import MenuButton from "./MenuButton";
 import NavMenu from "./NavMenu";
+import { usePathname } from "next/navigation";
 
 const NavBar2 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const blueNavbarPages = ["/our-story/", "/experience/", "/contact-us/"];
+
+  const isBlueNavbar = blueNavbarPages.includes(pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,12 +34,14 @@ const NavBar2 = () => {
         <header
           className={`fixed flex items-center justify-center left-0 top-0 w-full z-[100] transition-all duration-500`}
         >
-          <nav className={`max_screen_width flex items-center justify-between border-b border-white/40 pl-4 md:pl-6 ${
-            isScrolled ? "bg-navy shadow-md" : "bg-transparent"
-          }
-            `}>
+          <nav
+            className={`max_screen_width flex items-center justify-between border-b border-white/40 pl-4 md:pl-6 ${
+               isBlueNavbar || isScrolled ? "bg-navy shadow-md" : "bg-transparent"
+            }
+            `}
+          >
             {/* MENU */}
-            <div className="shrink-0">
+            <div className="">
               <MenuButton color="white" />
             </div>
 

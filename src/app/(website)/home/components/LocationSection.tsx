@@ -23,14 +23,11 @@ const LocationSection = ({
   mapImage,
 }: LocationSectionProps) => {
   return (
-    <Section
-      
-      className="relative z-0 w-full bg-navy"
-    >
-      <div className="grid w-full grid-cols-1 md:grid-cols-2">
+    <Section defaultPadding={false} className="relative z-0 w-full bg-navy">
+      <div className="grid w-full grid-cols-1  md:grid-cols-[40%_60%]">
         {/* LEFT CONTENT */}
-        <div className="flex items-start px-6 ">
-          <div className="w-full max-w-[600px]">
+        <div className="relative flex items-start px-6 py-12 ">
+          <div className="w-full max-w-[550px]">
             {/* TAG */}
             <p className="text-xs font-medium uppercase text-white md:text-lg">
               {tag}
@@ -71,7 +68,9 @@ const LocationSection = ({
                   >
                     {/* ICON + TITLE */}
                     <div className="flex items-center gap-3">
-                      <div className="shrink-0 text-golden">{location.icon}</div>
+                      <div className="shrink-0 text-golden">
+                        {location.icon}
+                      </div>
 
                       <p className="text-xs uppercase tracking-[0.2em] text-white md:text-sm">
                         {location.title}
@@ -87,29 +86,25 @@ const LocationSection = ({
               })}
             </div>
           </div>
+          <div className="absolute right-0 top-0 z-20 h-full w-[15px] rotate-180">
+            <Image
+              src="/home/design6.png"
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
         {/* MAP */}
-        <div className="relative min-h-[350px] overflow-hidden md:min-h-[580px] px-6 md:px-0">
+        <div className="relative h-[350px] overflow-hidden md:h-[615px] px-6 md:px-0">
           <Image
             src={mapImage}
             alt="Location map"
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 800px) 100vw, 50vw"
             className="object-cover"
           />
-
-
-
-          {/* LEFT DECORATIVE DESIGN */}
-        <div className="absolute left-[-15px] top-0 z-20 h-full w-[15px]">
-  <Image
-    src="/home/design3.png"
-    alt=""
-    fill
-    className="object-cover"
-  />
-</div>
         </div>
       </div>
     </Section>

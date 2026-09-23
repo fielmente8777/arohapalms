@@ -15,10 +15,9 @@ export default function Navbar() {
   if (pathName === "/thank-you/" || pathName=== "/") {
     return null;
   }
-  // if (pathName === "/") {
-  //   return <HomeNavbar />;
-  // }
-
+  if (pathName === "/" || pathName === "") {
+    return <NavBar2 />;
+  }
   // All other pages
   // else {
   //   return <InnerNavbar />;

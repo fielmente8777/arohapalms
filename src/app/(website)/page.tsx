@@ -16,14 +16,6 @@ export default function HomePage() {
   return (
     <main>
       <Banner {...homePageData.hero} showBookingForm />
-      <div className="max_screen_width relative w-full aspect-[164/1]">
-        <Image
-          src="/images/Greek1.png"
-          alt=""
-          fill
-          className="object-contain"
-        />
-      </div>
       <AboutSection {...homePageData.about} />
       {/* <Experience {...homePageData.experience} /> */}
       {/* <OfferBanner {...homePageData.offers} />
@@ -31,7 +23,7 @@ export default function HomePage() {
       <Dine {...homePageData.dine} />
       <Amenities amenities={homePageData.amenities} outdoors={homePageData.outdoors} /> */}
       {/* <Outdoors {...homePageData.outdoors} /> */}
-      <Place {...homePageData.stayWithUs}/>
+      <Place {...homePageData.stayWithUs} />
       {/* <StayWithUs {...homePageData.stayWithUs} /> */}
       <NearbyActivities {...homePageData.nearbyActivities} />
       <LocationSection {...homePageData.location} />

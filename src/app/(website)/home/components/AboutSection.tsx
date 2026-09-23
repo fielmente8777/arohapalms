@@ -25,12 +25,13 @@ const AboutSection = ({
 }: AboutSectionProps) => {
   return (
     <>
-      <SectionWithContainer sectionClassName="w-full bg-background-2 ">
+      <SectionWithContainer defaultPadding={false} sectionClassName="w-full bg-background-2 ">
         <div className="mx-auto flex flex-col items-center text-center">
           {/* TITLE */}
 
           <h2
             className="mb-4
+            mt-12!
             font-primary
             max-w-[560px]
             md:text-[48px]

@@ -15,6 +15,7 @@ const Gallery = ({
   description,
 }: GalleryProps) => {
   return (
+    <>
     <Section className="relative h-[760px] w-full overflow-hidden">
       <Image
         src={image}
@@ -42,7 +43,18 @@ const Gallery = ({
           )}
         </div>
       </div>
+      
     </Section>
+              <div className="bg-background-2 max_screen_width overflow-hidden">
+                <Image
+                  src="/images/Greek1.png"
+                  alt=""
+                  width={1440}
+                  height={80}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+              </>
   );
 };
 

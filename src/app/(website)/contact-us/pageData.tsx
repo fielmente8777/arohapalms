@@ -179,9 +179,9 @@ Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, V
     },
   },
   registeredAddressSection: {
-    image: "/registered-address.webp",
+    image: "/images/23-Pool_.jpg",
 
-    logo: "/logo.png",
+    logo: "/logo1.png",
 
     title: "Registered Address:",
 

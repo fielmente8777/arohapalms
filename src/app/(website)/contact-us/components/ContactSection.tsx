@@ -47,13 +47,13 @@ const ContactUs = ({
   locations,
 }: ContactUsProps) => {
   return (
-    <Section defaultPadding={false}>
-      <div className="grid w-full grid-cols-1 lg:grid-cols-2">
+    <Section defaultPadding={false} className="pt-15 bg-background-2">
+      <div className="grid w-full grid-cols-1 lg:grid-cols-2 bg-background-2">
 
-        {/* ================= LEFT ================= */}
+   
         <div className="flex flex-col items-center justify-center bg-tertiary text-center max-md:py-10 px-4">
 
-          {/* Title */}
+       
           <div>
             <p className="font-inter text-primary text-sm tracking-[0.3em] uppercase mb-4">
               {subTitle}
@@ -64,7 +64,7 @@ const ContactUs = ({
             </h2>
           </div>
 
-          {/* Illustration */}
+      
           <div className="relative my-12 aspect-[4.11/1] w-full">
             <Image
               src={illustration}
@@ -74,12 +74,12 @@ const ContactUs = ({
             />
           </div>
 
-          {/* Description */}
+       
           <p className="text-secondary max-w-[500px] text-sm md:text-base leading-relaxed">
             {description}
           </p>
 
-          {/* Button */}
+       
           <Link
             href={button.href}
             target="_blank"
@@ -90,9 +90,16 @@ const ContactUs = ({
           </Link>
         </div>
 
-        {/* ================= RIGHT ================= */}
+     
         <div className="relative bg-navy text-white min-h-[500px] lg:min-h-[650px] px-8 md:px-12 lg:px-14 py-12 lg:py-14">
-
+  <div className=" absolute left-0 top-0 z-0 h-full w-[16px]">
+    <Image
+      src="/home/design6.png"
+      alt=""
+      fill
+      className="object-cover"
+    />
+  </div>
           <div className="max-w-[600px] mx-auto">
 
             {/* EMAIL */}

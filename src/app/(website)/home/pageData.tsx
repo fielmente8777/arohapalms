@@ -235,7 +235,7 @@ export const homePageData = {
         distance: "XX Kilometers",
       },
     ],
-    mapImage: "/images/Group 4278.png",
+    mapImage: "/images/Map.png",
   },
   testimonials: {
     image: "/home/review.jpg",
@@ -300,7 +300,7 @@ export const homePageData = {
         description:
           "Set in Mandrem, enjoy calm, private stays just minutes from serene beaches, cafés, and North Goa's scenic coastline.",
 
-        image: "/landing-page/gallery/img-1.webp",
+        image: "/landing-page/gallery/1.webp",
 
         secondaryImage: "/rooms/Magnifica/magnifica2.webp",
 
@@ -314,7 +314,7 @@ export const homePageData = {
         description:
           "Located in Pilerne, enjoy a quiet, local setting with easy access to Candolim, Calangute, beaches, dining and nightlife.",
 
-        image: "/landing-page/unforgettable-2.jpg",
+        image: "/landing-page/2.jpg",
 
         secondaryImage: "/rooms/Imperial/AOB_3422[1]_47_11zon.jpg",
 

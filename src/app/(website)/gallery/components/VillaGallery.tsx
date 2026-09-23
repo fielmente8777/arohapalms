@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { MapPin } from "lucide-react";
 import GallerySlider from "../../home/components/slider/Slider";
+import { Section } from "@/components/sectionComponants";
 
 interface Villa {
   name: string;
@@ -43,10 +44,9 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
   const thumbTranslatePercent = activeVillaIndex * 100;
 
   return (
-    <section className="w-full overflow-hidden bg-[#fefcf4] py-12 md:py-16">
-      <div className="mx-auto w-full max-w-[1441px]">
-        {/* LOCATION BUTTONS */}
-        {/* LOCATION BUTTONS */}
+    <Section className="w-full overflow-hidden bg-background-2 py-12 md:py-16">
+      <div className="mx-auto w-full ">
+
         <div className="flex justify-center gap-3 md:gap-4">
           {(["Mandrem", "Pilerne"] as const).map((item) => {
             const isActive = location === item;
@@ -134,7 +134,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
         </div>
 
         {/* VILLA IMAGE SLIDER */}
-        <div className="mt-8 w-full">
+        <div className="mt-8 max_screen_width">
           <GallerySlider
             key={`${location}-${activeVillaIndex}`}
             images={activeVilla.images}
@@ -143,7 +143,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
 
         {/* DESCRIPTION */}
         <div className="mx-auto mt-8 max-w-[680px] px-6 text-center">
-          <p className="text-[13px] leading-[1.8] text-[#777] md:text-[14px]">
+          <p className="text-[13px] leading-[1.8] text-[#777] md:text-xl">
             {activeVilla.description}
           </p>
         </div>
@@ -156,9 +156,8 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
               border-b
               border-[#1976b9]
               pb-1
-              text-[9px]
+              text-sm
               uppercase
-              tracking-[1px]
               text-[#1976b9]
             "
           >
@@ -166,7 +165,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
           </Link>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

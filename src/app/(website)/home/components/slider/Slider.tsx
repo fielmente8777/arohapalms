@@ -19,8 +19,8 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
   images = images.length > 3 ? images : [...images, ...images];
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <Section defaultPadding={false} className="w-full">
-      <div className="relative pb-12">
+    <Section className="w-full">
+      <div className="relative ">
         <SwiperCarousel
           data={images}
           modules={[Navigation]}
