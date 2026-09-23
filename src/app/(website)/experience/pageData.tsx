@@ -1,17 +1,24 @@
 import { contact } from "@/utils/constent";
 
 export const experiencePageData = {
-  intro: {
-    title: "Discover Luxury",
+  // intro: {
+  //   title: "Discover Luxury",
 
-    description: [
+  //   description: [
+  //     "Immerse yourself in the quiet rhythm of Aroha Palms, where lush gardens, open skies, and serene spaces invite moments of stillness and reflection. Begin your mornings with gentle movement, yoga, and mindful pauses that bring you closer to a sense of balance and ease.",
+
+  //     "Beyond your private retreat, discover Goa in its many forms—sunlit beaches and water adventures, vibrant heritage and culture, rejuvenating wellness experiences, and lively evenings on cruise casinos. Just a short drive from the coast, Aroha Palms offers the perfect setting to explore freely, then return to a space that feels calm, indulgent, and entirely your own.",
+  //   ],
+  // },
+
+  experiences: {
+    heading: "Discover Luxury",
+
+    desc: [
       "Immerse yourself in the quiet rhythm of Aroha Palms, where lush gardens, open skies, and serene spaces invite moments of stillness and reflection. Begin your mornings with gentle movement, yoga, and mindful pauses that bring you closer to a sense of balance and ease.",
 
       "Beyond your private retreat, discover Goa in its many forms—sunlit beaches and water adventures, vibrant heritage and culture, rejuvenating wellness experiences, and lively evenings on cruise casinos. Just a short drive from the coast, Aroha Palms offers the perfect setting to explore freely, then return to a space that feels calm, indulgent, and entirely your own.",
     ],
-  },
-
-  experiences: {
     cards: [
       {
         image: "/images/beach-trees-.jpg",
@@ -45,7 +52,7 @@ export const experiencePageData = {
     // cta: {
     //   text: "Enquire For These Experiences",
     //   href: contact.WhatsappCta,
-    // }, 
+    // },
   },
   Activites: {
     title: {

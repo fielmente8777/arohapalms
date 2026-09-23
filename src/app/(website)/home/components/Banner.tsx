@@ -24,7 +24,7 @@ const Banner: FC<BannerProps> = ({
   const hasSingleImage = images && images.length === 1;
 
   return (
-    <Section defaultPadding={false} className="banner max_screen_width_2 ">
+    <Section defaultPadding={false} className="banner max_screen_width ">
       {/* ✅ Case 1: Both Video + Images */}
       {videoSrc && hasImages ? (
         <div className="w-full max-w-[90rem] mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 lg:py-12">

@@ -1,9 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import { Section } from "@/components/sectionComponants";
-import AboutImageSlider, { AboutImageSliderRef } from "./silder/Image";
-import { ChevronRight } from "lucide-react";
+import GallerySlider, { BtnIcon } from "./silder/Image";
 
 interface AboutProps {
   title: string;
@@ -13,37 +11,41 @@ interface AboutProps {
 }
 
 const About = ({ title, intro, description, images }: AboutProps) => {
-  const sliderRef = useRef<AboutImageSliderRef>(null);
-
   return (
-    <Section className="bg-[#fefcf4] py-16! ">
-      <div className="max_screen_width">
-      
-        <div className="mx-auto w-full max-w-[1408px]">
-          <div className="flex flex-col items-start justify-center gap-6 md:flex-row md:gap-10">
-   
+    <Section className="bg-[#fefcf4] ">
+      <div className="">
+        <div className="mx-auto w-full ">
+          <div className="flex flex-col items-start md:flex-row">
+            {/* LEFT + MAIN IMAGE */}
             <div className="w-full md:w-auto">
-              <AboutImageSlider ref={sliderRef} images={images} title={title} />
+              <GallerySlider images={images} />
             </div>
 
-
-            <div className="flex w-full flex-col justify-between pt-0 md:h-[568px] md:max-w-[443px] ">
+            {/* RIGHT CONTENT */}
+            <div
+              className="flex w-full flex-col justify-between  
+            md:ml-10
+            md:h-[568px]
+            md:px-0
+            lg:ml-10
+            md:pr-6
+            lg:pr-8
+            "
+            >
               <div>
-                <h2 className="text-2xl font-normal tracking-tight text-[#17384e] md:text-[38px] lg:text-[40px]">
+                <h2 className="text-2xl font-normal text-[#17384e] md:text-[38px] lg:text-5xl">
                   {title}
                 </h2>
 
-              
-                <p className="mt-6 text-sm  text-gray-600 md:text-[14px] lg:text-[15px]">
+                <p className="mt-6 text-sm text-gray-600 md:text-lg lg:text-xl">
                   {intro}
                 </p>
 
-               
                 <div className="mt-4 space-y-4">
                   {description.map((text, index) => (
                     <p
                       key={index}
-                      className="text-sm leading-[1.65] text-gray-600 md:text-[14px] lg:text-[15px]"
+                      className="text-sm text-gray-600 md:text-lg lg:text-xl"
                     >
                       {text}
                     </p>
@@ -51,24 +53,35 @@ const About = ({ title, intro, description, images }: AboutProps) => {
                 </div>
               </div>
 
+              {/* BOTTOM */}
               <div className="mt-8 flex items-center justify-between pt-2">
-              
+                {/* SAME GALLERY NEXT BUTTON */}
                 <button
                   type="button"
-                  onClick={() => sliderRef.current?.next()}
+                  className="
+                   -mt-14
+                    gallery-slider-next
+                    flex
+                    items-center
+                    rotate-180
+                  "
                   aria-label="Next image"
-                  className="flex items-center text-[#d2a45d] transition-opacity duration-300 hover:opacity-60"
                 >
-                  <span className="w-10 border-t border-[#d2a45d]" />
-                  <span className="ml-1 text-2xl font-light leading-none">
-                  <ChevronRight size={18} strokeWidth={1.4} />
-                </span>
+                  <BtnIcon />
                 </button>
 
                 {/* CONTACT */}
                 <a
-                  href="/contact"
-                  className="border-b border-[#17384e] pb-0.5 text-[10px] uppercase tracking-wider text-[#17384e]"
+                  href="/contact-us"
+                  className="
+                    border-b
+                    border-[#17384e]
+                    pb-0.5
+                    text-[10px]
+                    uppercase
+                    tracking-wider
+                    text-[#17384e]
+                  "
                 >
                   Contact
                 </a>

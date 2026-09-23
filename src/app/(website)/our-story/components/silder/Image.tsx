@@ -1,167 +1,190 @@
-"use client";
 
+
+import LinkButton from "@/components/buttons/LinkButton";
+import { Section } from "@/components/sectionComponants";
+import SwiperCarousel from "@/components/sliders/SwiperCarousel";
 import Image from "next/image";
-import {
-  forwardRef,
-  useImperativeHandle,
-  useState,
-} from "react";
-import { ChevronLeft } from "lucide-react";
+import { useState } from "react";
+import { Navigation } from "swiper/modules";
 
-interface AboutImageSliderProps {
+interface GallerySliderProps {
   images: string[];
-  title?: string;
+  link?: {
+    label: string;
+    href: string;
+  };
 }
 
-export interface AboutImageSliderRef {
-  next: () => void;
-  previous: () => void;
-}
+const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
+  images = images.length > 2 ? images : [...images, ...images];
 
-const AboutImageSlider = forwardRef<
-  AboutImageSliderRef,
-  AboutImageSliderProps
->(({ images, title = "About Aroha Palms" }, ref) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useImperativeHandle(ref, () => ({
-    next: handleNext,
-    previous: handlePrevious,
-  }));
-
-  if (!images.length) return null;
-
-  const previousIndex =
-    activeIndex === 0 ? images.length - 1 : activeIndex - 1;
-
-  function handlePrevious() {
-    if (isAnimating || images.length <= 1) return;
-
-    setIsAnimating(true);
-    setTimeout(() => {
-      setActiveIndex((prev) =>
-        prev === 0 ? images.length - 1 : prev - 1
-      );
-      setIsAnimating(false);
-    }, 250);
-  }
-
-  function handleNext() {
-    if (isAnimating || images.length <= 1) return;
-
-    setIsAnimating(true);
-    setTimeout(() => {
-      setActiveIndex((prev) =>
-        prev === images.length - 1 ? 0 : prev + 1
-      );
-      setIsAnimating(false);
-    }, 250);
-  }
 
   return (
-    <div className="w-full">
-      {/* DESKTOP */}
-      <div className="hidden items-start gap-6 md:flex">
-        {/* LEFT PREVIEW */}
-        <div className="flex w-[241px] flex-col justify-between self-stretch">
-          <div className="relative h-[516px] w-full overflow-hidden">
-            <Image
-              src={images[previousIndex]}
-              alt={`${title} preview`}
-              fill
-              sizes="241px"
-              className="object-cover transition-opacity duration-500 ease-in-out"
+    // <Section className="!p-0">
+    //   <div className="relative w-full">
+    //     <SwiperCarousel
+    //       data={images}
+    //       modules={[Navigation]}
+    //       navigation={{
+    //         nextEl: ".gallery-slider-next",
+    //         prevEl: ".gallery-slider-prev",
+    //       }}
+    //       slidesPerView={2.5}
+    //       spaceBetween={24}
+    //       loop
+    //       speed={900}
+    //       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+    //       className="w-full"
+    //       renderSlide={(src, index = 0) => (
+    //         <div
+    //           className={`
+    //             relative
+    //             shrink-0
+    //             overflow-hidden
+    //             transition-all
+    //             duration-700
+    //             ease-in-out
+    //             ${
+    //               index === activeIndex
+    //                 ? "h-[568px] w-[676px]"
+    //                 : "h-[516px] w-[241px]"
+    //             }
+    //           `}
+    //         >
+    //           <Image
+    //             src={src}
+    //             alt={`Image ${index + 1}`}
+    //             fill
+    //             sizes={index === activeIndex ? "676px" : "241px"}
+    //             className="object-cover"
+    //           />
+    //         </div>
+    //       )}
+    //     />
+
+    //     {/* EXISTING GALLERY BUTTONS */}
+    //     <div className="relative z-20 mt-4">
+    //       <div className="flex w-full items-center justify-between">
+    //         <button
+    //           type="button"
+    //           className="
+    //             gallery-slider-prev
+    //             flex
+    //             w-10
+    //             items-center
+    //             justify-center
+    //           "
+    //           aria-label="Previous image"
+    //         >
+    //           <BtnIcon />
+    //         </button>
+
+    //         <button
+    //           type="button"
+    //           className="
+    //             gallery-slider-next
+    //             flex
+    //             w-10
+    //             rotate-180
+    //             items-center
+    //             justify-center
+    //           "
+    //           aria-label="Next image"
+    //         >
+    //           <BtnIcon />
+    //         </button>
+    //       </div>
+    //     </div>
+    //   </div>
+
+    //   {link && (
+    //     <LinkButton
+    //       href={link.href}
+    //       label={link.label}
+    //       className="mx-auto mt-18! border-0! border-b! border-p2! text-p2"
+    //     />
+    //   )}
+    // </Section>
+    <Section defaultPadding={false} >
+      <div className="relative  ">
+        <div className="flex items-start gap-6">
+          {/* LEFT IMAGE */}
+          <div className="hidden md:block ">
+            <div className="relative h-[528px] w-[241px] overflow-hidden">
+              <Image
+                src={
+                  images[
+                    activeIndex === 0 ? images.length - 1 : activeIndex - 1
+                  ]
+                }
+                alt="Previous image"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* PREVIOUS BUTTON */}
+            <div className="mt-2 flex w-[241px] justify-end">
+              <button
+                className="gallery-slider-prev flex items-center justify-center"
+                type="button"
+              >
+                <BtnIcon />
+              </button>
+            </div>
+          </div>
+
+          {/* MAIN SWIPER */}
+          <div className="md:w-[676px]">
+            <SwiperCarousel
+              data={images}
+              modules={[Navigation]}
+              navigation={{
+                nextEl: ".gallery-slider-next",
+                prevEl: ".gallery-slider-prev",
+              }}
+              slidesPerView={1}
+              spaceBetween={0}
+              loop
+              centeredSlides={false}
+              speed={900}
+              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+              className="w-full"
+              renderSlide={(src) => (
+                <div className="relative h-[568px] w-full">
+                  <Image src={src} alt="Image" fill className="object-cover" />
+                </div>
+              )}
             />
           </div>
-
-
-          <button
-            type="button"
-            onClick={handlePrevious}
-            aria-label="Previous image"
-            className="
-              mt-4
-              flex
-              items-center
-              text-[#d2a45d]
-              transition-opacity
-              duration-300
-              hover:opacity-60
-            "
-          >
-            <ChevronLeft size={20} strokeWidth={1.2} />
-            <span className="w-10 border-t border-[#d2a45d]" />
-          </button>
-        </div>
-
-        {/* MAIN IMAGE */}
-        <div className="relative h-[568px] w-[676px] overflow-hidden">
-          <Image
-            key={images[activeIndex]}
-            src={images[activeIndex]}
-            alt={`${title} ${activeIndex + 1}`}
-            fill
-            sizes="676px"
-            className={`
-              object-cover
-              transition-all
-              duration-500
-              ease-in-out
-              ${
-                isAnimating
-                  ? "scale-[1.015] opacity-50"
-                  : "scale-100 opacity-100"
-              }
-            `}
-            priority={activeIndex === 0}
-          />
         </div>
       </div>
 
-      {/* MOBILE */}
-      <div className="md:hidden">
-        <div className="relative aspect-[4/3] w-full overflow-hidden">
-          <Image
-            key={images[activeIndex]}
-            src={images[activeIndex]}
-            alt={`${title} ${activeIndex + 1}`}
-            fill
-            sizes="100vw"
-            className="object-cover transition-all duration-500 ease-in-out"
-          />
-
-          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-            <button
-              type="button"
-              onClick={handlePrevious}
-              aria-label="Previous image"
-              className="flex items-center text-white"
-            >
-              <ChevronLeft size={22} strokeWidth={1.2} />
-              <span className="ml-1 w-8 border-t border-white" />
-            </button>
-
-            <span className="text-xs text-white">
-              {activeIndex + 1}/{images.length}
-            </span>
-
-            <button
-              type="button"
-              onClick={handleNext}
-              aria-label="Next image"
-              className="flex items-center text-white"
-            >
-              <span className="mr-1 w-8 border-t border-white" />
-              <span className="text-lg">→</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+      {link && (
+        <LinkButton
+          href={link.href}
+          label={link.label}
+          className="mx-auto mt-18! border-0! border-b! border-p2! text-p2"
+        />
+      )}
+    </Section>
   );
-});
+};
 
-AboutImageSlider.displayName = "AboutImageSlider";
+export default GallerySlider;
 
-export default AboutImageSlider;
+export const BtnIcon = () => (
+  <svg
+    width={65}
+    height={15}
+    viewBox="0 0 65 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0.292892 8.07112C-0.0976334 7.6806 -0.0976334 7.04743 0.292892 6.65691L6.65685 0.292946C7.04738 -0.0975785 7.68054 -0.0975785 8.07107 0.292946C8.46159 0.68347 8.46159 1.31664 8.07107 1.70716L2.41422 7.36401L8.07107 13.0209C8.46159 13.4114 8.46159 14.0446 8.07107 14.4351C7.68054 14.8256 7.04738 14.8256 6.65685 14.4351L0.292892 8.07112ZM65 7.36401V8.36401H1V7.36401V6.36401H65V7.36401Z"
+      fill="#CA9E55"
+    />
+  </svg>
+);

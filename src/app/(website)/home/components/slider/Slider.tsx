@@ -9,7 +9,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 
 interface GallerySliderProps {
   images: string[];
-  link: {
+  link?: {
     label: string;
     href: string;
   };
@@ -19,8 +19,8 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
   images = images.length > 3 ? images : [...images, ...images];
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <Section>
-      <div className="relative">
+    <Section defaultPadding={false} className="w-full">
+      <div className="relative pb-12">
         <SwiperCarousel
           data={images}
           modules={[Navigation]}
@@ -57,32 +57,33 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
             </div>
           )}
         />
-        <div className="relative -mt-10">
+        <div className="relative -mt-16 z-20 pointer-events-none">
           <div
             className="mx-auto
               flex
               w-full
-              max-w-[1100px]
+              max-w-[1150px]
               items-center
               justify-between
+              pointer-events-auto
               "
           >
-            <button className="gallery-slider-prev flex items-center justify-center w-10 aspect-square ">
+            <button className="gallery-slider-prev flex items-center justify-center  ">
               <BtnIcon />
             </button>
-            <button className="gallery-slider-next flex items-center justify-center w-10 aspect-square rotate-180">
+            <button className="gallery-slider-next flex items-center justify-center rotate-180">
               <BtnIcon />
             </button>
           </div>
         </div>
       </div>
-      <LinkButton
-        href={link.href}
-        label={link.label}
-        className="mx-auto mt-18! text-p2 !border-0
-    !border-b
-    !border-p2"
-      />
+      {link && (
+        <LinkButton
+          href={link.href}
+          label={link.label}
+          className="mx-auto mt-18! border-0! border-b! border-p2! text-p2"
+        />
+      )}
     </Section>
   );
 };

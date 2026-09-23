@@ -1,123 +1,144 @@
 "use client";
 
 import Image from "next/image";
-import { Section } from "@/components/sectionComponants";
+import { useState } from "react";
+import { Navigation, Autoplay } from "swiper/modules";
 import SwiperCarousel from "@/components/sliders/SwiperCarousel";
-import { TestimonialsProps } from "@/@types/landingPageTypes";
-import { Autoplay } from "swiper/modules";
+import { Star } from "lucide-react";
+import { BtnIcon } from "./slider/Slider";
+import { Section } from "@/components/sectionComponants";
+
+interface Review {
+  name: string;
+  review: string;
+  rating?: number;
+}
+
+interface TestimonialsProps {
+  image: string;
+  title?: string;
+  reviews: Review[];
+}
 
 const Testimonials = ({
   image,
-  tagline,
-  title,
-  reviews,
+  title = "Appreciation From Our Guests",
+  reviews = [],
 }: TestimonialsProps) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <Section
-      defaultPadding={false}
-      className="w-full bg-background-2 py-6 md:py-0 md:px-0"
-    >
-      <div className="grid w-full grid-cols-1 md:grid-cols-2">
-        {/* IMAGE - FIXED */}
-        <div className="relative min-h-[450px] md:min-h-[680px]">
-          <Image
-            src={image || ""}
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-          />
+    <Section className="w-full bg-background-2 ">
+      {/* 1380px Frame with 1px #CA9E55 Border */}
+      <div className="mx-auto w-full max-w-[1380px] ">
+        <div className="grid grid-cols-1 overflow-hidden rounded-xs border border-[#CA9E55] bg-white md:h-[602px] md:grid-cols-2">
+          {/* ================= LEFT SIDE: FULL IMAGE ================= */}
+          <div className="relative min-h-[360px] w-full md:h-full">
+            <Image
+              src={image || "/home/testimonial-img.jpg"}
+              alt="Guest Appreciation"
+              fill
+              sizes="(max-width: 768px) 100vw, 690px"
+              priority
+              className="object-cover"
+            />
+          </div>
 
-          {/* ARCH BORDER */}
-          <div
-            className="
-              absolute
-              top-2
-              right-2
-              bottom-0
-              left-2
-              rounded-t-[140px]
-              border-t
-              border-x
-              border-white/80
-              md:top-3
-              md:right-3
-              md:left-3
-              md:rounded-t-[190px]
-            "
-          />
-        </div>
+          {/* ================= RIGHT SIDE: CENTERED CONTENT ================= */}
+          <div className="flex h-full flex-col items-center justify-center px-6 text-center md:px-12 lg:px-16">
+            <div className="flex w-full max-w-[520px] flex-col items-center">
+              {/* TITLE */}
+              <h2 className="font-primary text-2xl font-light text-p2 md:text-[34px] lg:text-[38px] leading-tight">
+                {title}
+              </h2>
 
-        {/* CONTENT */}
-        <div className="flex items-center bg-background-2 px-8 py-16 md:px-12 lg:px-16 xl:px-20">
-          <div className="w-full max-w-[650px]">
+              {/* GOOGLE ICON */}
+              <div className="relative mt-4 h-7 w-7">
+                <Image
+                  src="/g-icon.png"
+                  alt="Google"
+                  fill
+                  className="object-contain"
+                />
+              </div>
 
-            {/* TAG - FIXED */}
-            <p className="text-sm uppercase tracking-[0.3em] text-p2">
-              {tagline}
-            </p>
+              {/* 5 GOLD STARS */}
+              <div className="mt-3 flex items-center justify-center gap-1 text-[#CA9E55]">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    size={14}
+                    fill="#CA9E55"
+                    strokeWidth={0}
+                    className="shrink-0"
+                  />
+                ))}
+              </div>
 
-            {/* DECORATIVE IMAGE - FIXED */}
-            <div className="relative mt-2 h-[9px] w-[150px]">
-              <Image
-                src="/images/design.png"
-                alt=""
-                fill
-                className="object-cover object-left"
-              />
-            </div>
+              {/* REVIEWS SWIPER */}
+              <div className="mt-6 w-full">
+                <SwiperCarousel
+                  data={reviews}
+                  modules={[Navigation, Autoplay]}
+                  navigation={{
+                    nextEl: ".testimonial-next-btn",
+                    prevEl: ".testimonial-prev-btn",
+                  }}
+                  autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  }}
+                  slidesPerView={1}
+                  spaceBetween={0}
+                  loop
+                  speed={700}
+                  onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                  className="w-full"
+                  renderSlide={(item) => (
+                    <div className="flex flex-col items-center text-center">
+                      {/* Review Text */}
+                      <p className="line-clamp-5 text-[13px] leading-[1.8] text-[#777777] md:text-[14px]">
+                        {item.review}
+                      </p>
 
-            {/* TITLE - FIXED */}
-            <h2
-              className="
-                mt-5
-                font-primary
-                text-4xl
-                font-light
-                leading-[1.2]
-                text-p3
-             
-                md:text-5xl
-                lg:text-[48px]
-              "
-            >
-              {title}
-            </h2>
+                      {/* Author Name */}
+                      <p className="mt-5 text-[12px] font-medium uppercase tracking-[1.5px] text-[#17384e]">
+                        {item.name}
+                      </p>
+                    </div>
+                  )}
+                />
+              </div>
 
-            {/* GOOGLE - FIXED */}
-            <div className="relative mt-7 aspect-square w-[42px]">
-              <Image
-                src="/home/google.png"
-                alt="Google"
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            {/* ONLY REVIEW + NAME SWIPES */}
-            <div className="mt-6">
-              <SwiperCarousel
-                data={reviews}
-                modules={[Autoplay]}
-                autoplay={{
-                  delay: 1800,
-                  disableOnInteraction: false,
-                }}
-                slidesPerView={1}
-                spaceBetween={0}
-                loop
-                renderSlide={(item) => (
-                  <div>
-                    <p className="max-w-[620px] text-base leading-[1.65] text-gray md:text-lg">
-                      {item.review}
-                    </p>
-
-                    <p className="mt-5 text-sm font-bold uppercase tracking-[0.25em] text-p3">
-                      {item.name}
-                    </p>
-                  </div>
-                )}
-              />
+              {/* ================= BOTTOM NAVIGATION ARROWS ================= */}
+              <div className="mt-8 flex items-center justify-center gap-6">
+                <button
+                  type="button"
+                  aria-label="Previous review"
+                  className="testimonial-prev-btn flex items-center justify-center transition-opacity hover:opacity-60 cursor-pointer"
+                >
+                  <BtnIcon />
+                </button>
+                <div className="flex items-center gap-2 px-1">
+                  {reviews.map((_, dotIndex) => (
+                    <span
+                      key={dotIndex}
+                      className={`inline-block rounded-full transition-all duration-300 ${
+                        activeIndex === dotIndex
+                          ? "h-2 w-2 bg-blue"
+                          : "h-1.5 w-1.5 bg-[#e8e4dc]"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  aria-label="Next review"
+                  className="testimonial-next-btn flex items-center justify-center rotate-180 transition-opacity hover:opacity-60 cursor-pointer"
+                >
+                  <BtnIcon />
+                </button>
+              </div>
             </div>
           </div>
         </div>

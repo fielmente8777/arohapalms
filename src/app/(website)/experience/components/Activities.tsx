@@ -140,6 +140,7 @@
 
 import { Section } from "@/components/sectionComponants";
 import Slider from "../../home/components/slider/NearbySlider";
+import GallerySlider from "../../home/components/slider/Slider";
 
 interface Activity {
   image: string;
@@ -176,13 +177,7 @@ const Activities = ({ title, slides }: ActivitiesProps) => {
       </div>
 
       {/* SLIDER */}
-      <Slider
-        cards={slides.map((slide) => ({
-          image: slide.image,
-          title: slide.label,
-          description: "",
-        }))}
-      />
+      <GallerySlider images={slides.map((slide) => slide.image)} />
     </Section>
   );
 };

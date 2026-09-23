@@ -10,33 +10,23 @@ interface ExperienceCard {
 }
 
 interface ExperienceGalleryProps {
+  heading: string;
+  desc: string[];
   cards: ExperienceCard[];
 }
 
 const ExperienceGallery = ({
+  heading,
+  desc,
   cards,
 }: ExperienceGalleryProps) => {
   return (
     <Section className="w-full bg-background-2 py-16 md:py-20">
       <div className="mx-auto w-full max_width px-6">
-
-        {/* HEADING */}
-        <div className="mx-auto flex max-w-[650px] flex-col items-center text-center">
-          <p
-            className="
-              text-[10px]
-              uppercase
-              tracking-[3px]
-              text-p2
-              md:text-[12px]
-            "
-          >
-            Experiences Beyond The Stay
-          </p>
-
+        {/* HEADING + DESCRIPTION */}
+        <div className="mx-auto flex max-w-[850px] flex-col items-center text-center">
           <h2
             className="
-              mt-4
               font-primary
               text-[32px]
               font-light
@@ -45,8 +35,14 @@ const ExperienceGallery = ({
               md:text-[48px]
             "
           >
-            Your Private Goan Escape
+            {heading}
           </h2>
+
+          <div className="mt-5 flex flex-col gap-4 text-sm leading-relaxed text-p2/80 md:text-base">
+            {desc.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
         </div>
 
         {/* EXPERIENCE CARDS */}
@@ -138,7 +134,7 @@ const ExperienceGallery = ({
                 />
               </button>
 
-              {/* TITLE */}
+              {/* TITLE FROM PAGE DATA */}
               <div
                 className="
                   absolute

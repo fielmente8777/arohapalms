@@ -34,9 +34,9 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
             <h2
               className="
                 text-2xl
-                leading-[1.2]
+                
                 text-blue
-                md:text-[32px]
+                md:text-5xl
               "
             >
               {title}
@@ -49,9 +49,8 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
                   key={index}
                   className="
                     text-sm
-                    leading-[1.7]
                     text-[#666]
-                    md:text-[14px]
+                    md:text-xl
                   "
                 >
                   {text}

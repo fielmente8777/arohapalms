@@ -4,23 +4,34 @@ import { Section } from "@/components/sectionComponants";
 import Image from "next/image";
 import Link from "next/link";
 
-interface LocationCard {
-  title: string;
+interface StayCard {
+  location: string;
+  description: string;
   image: string;
+  secondaryImage: string;
   href: string;
+  showPlay: boolean;
 }
 
-interface LocationsProps {
+interface StayWithUsProps {
+  tag: string;
   title: string;
-  descriptions: string[];
-  locations: LocationCard[];
+  cards: StayCard[];
 }
 
-const Place = ({ title, descriptions, locations }: LocationsProps) => {
+const Place = ({
+  tag,
+  title,
+  cards,
+}: StayWithUsProps) => {
   return (
-    <Section className="bg-background-2">
-      <div className="mx-auto w-full">
-     
+    <Section
+      
+      className="bg-background-2 py-24! drop-shadow-2xl"
+    >
+      <div className="mx-auto max_screen_width">
+
+        {/* HEADING */}
         <div
           className="
             mx-auto
@@ -28,66 +39,58 @@ const Place = ({ title, descriptions, locations }: LocationsProps) => {
             max-w-[850px]
             flex-col
             items-center
-            px-6
+            px-7
             pb-12
-            pt-16
             text-center
             md:pb-[52px]
-            md:pt-[62px]
           "
         >
+          {/* TAG */}
+          <p
+            className="
+              text-[10px]
+              uppercase
+              text-blue
+              md:text-[12px]
+            "
+          >
+            {tag}
+          </p>
+
           {/* TITLE */}
           <h2
             className="
+              mt-3
               max-w-3xl
               text-[28px]
               font-light
-              
-              text-[#1670B7]
+              leading-[1.2]
+              text-p2
               md:text-[48px]
-             
             "
           >
             {title}
           </h2>
-
-          {/* DESCRIPTIONS */}
-          <div className="mt-6 space-y-4">
-            {descriptions.map((description, index) => (
-              <p
-                key={index}
-                className="
-                  text-[13px]
-                  
-                  text-[#777777]
-                  md:text-[20px]
-                 
-                "
-              >
-                {description}
-              </p>
-            ))}
-          </div>
         </div>
 
-        {/* ================= LOCATION CARDS ================= */}
+        {/* LOCATION CARDS */}
         <div className="grid w-full grid-cols-1 md:grid-cols-2">
-          {locations.map((location) => (
+          {cards.map((card) => (
             <Link
-              key={location.title}
-              href={location.href}
+              key={card.location}
+              href={card.href}
               className="
-  group
-  relative
-  aspect-[6/5]
-  w-full
-  overflow-hidden
-"
+                group
+                relative
+                aspect-[6/5]
+                w-full
+                overflow-hidden
+              "
             >
-              {/* IMAGE */}
+              {/* MAIN IMAGE */}
               <Image
-                src={location.image}
-                alt={location.title}
+                src={card.image}
+                alt={card.location}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="
@@ -98,6 +101,31 @@ const Place = ({ title, descriptions, locations }: LocationsProps) => {
                   group-hover:scale-105
                 "
               />
+
+              {/* SECONDARY IMAGE */}
+              {/* <div
+                className="
+                  absolute
+                  bottom-6
+                  right-6
+                  z-10
+                  h-[110px]
+                  w-[85px]
+                  overflow-hidden
+                  md:bottom-7
+                  md:right-7
+                  md:h-[150px]
+                  md:w-[115px]
+                "
+              >
+                <Image
+                  src={card.secondaryImage}
+                  alt={`${card.location} room`}
+                  fill
+                  sizes="115px"
+                  className="object-cover"
+                />
+              </div> */}
 
               {/* DARK OVERLAY */}
               <div
@@ -117,9 +145,9 @@ const Place = ({ title, descriptions, locations }: LocationsProps) => {
                   absolute
                   inset-x-0
                   bottom-0
-                  h-[45%]
+                  h-[55%]
                   bg-gradient-to-t
-                  from-black/45
+                  from-black/60
                   to-transparent
                 "
               />
@@ -128,28 +156,51 @@ const Place = ({ title, descriptions, locations }: LocationsProps) => {
               <div
                 className="
                   absolute
-                  bottom-6
-                  left-6
+                  bottom-7
+                  left-7
                   z-10
+                  max-w-[430px]
                   text-white
-                  md:bottom-7
-                  md:left-7
                 "
               >
-                <h3
+                <p
                   className="
-                    text-[20px]
-                    font-medium
-                    leading-none
-                    md:text-[22px]
+                    text-[10px]
+                    uppercase
+                    tracking-[2px]
+                    text-white/80
                   "
                 >
-                  {location.title}
+                  {tag}
+                </p>
+
+                <h3
+                  className="
+                    mt-2
+                    text-[24px]
+                    font-medium
+                    leading-tight
+                    md:text-[30px]
+                  "
+                >
+                  {card.location}
                 </h3>
+
+                <p
+                  className="
+                    mt-3
+                    text-xs
+                    leading-[1.5]
+                    text-white/90
+                    md:text-sm
+                  "
+                >
+                  {card.description}
+                </p>
 
                 <span
                   className="
-                    mt-2
+                    mt-4
                     block
                     text-[9px]
                     uppercase
@@ -159,6 +210,39 @@ const Place = ({ title, descriptions, locations }: LocationsProps) => {
                   Explore
                 </span>
               </div>
+
+              {/* PLAY BUTTON */}
+              {card.showPlay && (
+                <button
+                  type="button"
+                  aria-label={`Play ${card.location}`}
+                  className="
+                    absolute
+                    left-1/2
+                    top-1/2
+                    z-20
+                    flex
+                    h-12
+                    w-12
+                    -translate-x-1/2
+                    -translate-y-1/2
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-white
+                  "
+                >
+                  <span
+                    className="
+                      ml-1
+                      border-y-[6px]
+                      border-y-transparent
+                      border-l-[9px]
+                      border-l-p2
+                    "
+                  />
+                </button>
+              )}
             </Link>
           ))}
         </div>

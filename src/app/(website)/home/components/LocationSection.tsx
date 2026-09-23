@@ -24,15 +24,15 @@ const LocationSection = ({
 }: LocationSectionProps) => {
   return (
     <Section
-      defaultPadding={false}
-      className="relative z-0 w-full bg-background-2 p-0"
+      
+      className="relative z-0 w-full bg-navy"
     >
       <div className="grid w-full grid-cols-1 md:grid-cols-2">
         {/* LEFT CONTENT */}
-        <div className="flex items-center px-6 py-16">
-          <div className="w-full max-w-[500px]">
+        <div className="flex items-start px-6 ">
+          <div className="w-full max-w-[600px]">
             {/* TAG */}
-            <p className="text-xs font-medium uppercase text-p2 md:text-lg">
+            <p className="text-xs font-medium uppercase text-white md:text-lg">
               {tag}
             </p>
 
@@ -50,11 +50,11 @@ const LocationSection = ({
             <h2
               className="
                 mt-5
-                max-w-[560px]
+                w-full
                 font-primary
                 text-4xl
                 font-light
-                text-p3
+                text-white
                 md:text-5xl
               "
             >
@@ -71,15 +71,15 @@ const LocationSection = ({
                   >
                     {/* ICON + TITLE */}
                     <div className="flex items-center gap-3">
-                      <div className="shrink-0 text-p2">{location.icon}</div>
+                      <div className="shrink-0 text-golden">{location.icon}</div>
 
-                      <p className="text-xs uppercase tracking-[0.2em] text-gray md:text-sm">
+                      <p className="text-xs uppercase tracking-[0.2em] text-white md:text-sm">
                         {location.title}
                       </p>
                     </div>
 
                     {/* DISTANCE */}
-                    <p className="pl-[30px] text-sm text-gray md:text-base">
+                    <p className="pl-[35px] text-sm text-gray md:text-base">
                       {location.distance}
                     </p>
                   </div>

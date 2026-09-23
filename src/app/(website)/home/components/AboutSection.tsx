@@ -97,38 +97,6 @@ const AboutSection = ({
             href: "/our-story",
           }}
         />
-        {/* <div className="flex justify-center pb-12 pt-8 md:pb-16">
-          <Link
-            href="/our-story"
-            className="
-              group
-              inline-flex
-              items-center
-              gap-2
-              border-b
-              border-p2
-              pb-1
-              text-[14px]
-              font-medium
-              uppercase
-              text-p2
-              transition-opacity
-              hover:opacity-70
-            "
-          >
-            About Us
-            <span
-              className="
-                text-sm
-                transition-transform
-                duration-300
-                group-hover:translate-x-1
-              "
-            >
-              <ArrowIcon />
-            </span>
-          </Link>
-        </div> */}
       </div>
     </>
   );

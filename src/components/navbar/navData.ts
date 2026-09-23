@@ -53,14 +53,18 @@ export const InnerNavData = {
         },
       ],
     },
-    {
-      label: "How To Reach",
-      href: "/contact-us/",
-    },
+    // {
+    //   label: "How To Reach",
+    //   href: "/contact-us/",
+    // },
     {
       label: "The Experience",
       href: "/experience/",
     },
+      {
+        label: "Gallery",
+        href: "/gallery",
+      },
     {
       label: "Our Story",
       href: "/our-story/",

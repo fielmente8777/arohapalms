@@ -1,103 +1,111 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
+import { useMemo, useState } from "react";
+import { MapPin } from "lucide-react";
+import GallerySlider from "../../home/components/slider/Slider";
 
-interface VillaGalleryProps {
-  villas: {
-    name: string;
-    image: string;
-    description: string;
-  }[];
+interface Villa {
+  name: string;
+  images: string[];
+  description: string;
 }
 
-const VillaGallery = ({ villas }: VillaGalleryProps) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+interface VillaGalleryProps {
+  mandrem: Villa[];
+  pilerne: Villa[];
+}
 
-  const activeVilla = villas[activeIndex];
+const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
+  const [location, setLocation] = useState<"Mandrem" | "Pilerne">("Mandrem");
 
-  const handlePrev = () => {
-    setActiveIndex((prev) =>
-      prev === 0 ? villas.length - 1 : prev - 1
-    );
-  };
+  const [activeVillaIndex, setActiveVillaIndex] = useState(0);
 
-  const handleNext = () => {
-    setActiveIndex((prev) =>
-      prev === villas.length - 1 ? 0 : prev + 1
-    );
-  };
+  const villas = useMemo(
+    () => (location === "Mandrem" ? mandrem : pilerne),
+    [location, mandrem, pilerne]
+  );
+
+  const activeVilla = villas[activeVillaIndex];
 
   if (!activeVilla) return null;
 
-  return (
-    <section className="bg-[#fefcf4] py-12 md:py-16">
-      <div className="max_width">
+  const handleLocationChange = (newLocation: "Mandrem" | "Pilerne") => {
+    setLocation(newLocation);
+    setActiveVillaIndex(0);
+  };
 
+  const handleVillaChange = (index: number) => {
+    setActiveVillaIndex(index);
+  };
+
+  const thumbWidthPercent = villas.length > 0 ? 100 / villas.length : 100;
+  const thumbTranslatePercent = activeVillaIndex * 100;
+
+  return (
+    <section className="w-full overflow-hidden bg-[#fefcf4] py-12 md:py-16">
+      <div className="mx-auto w-full max-w-[1441px]">
+        {/* LOCATION BUTTONS */}
         {/* LOCATION BUTTONS */}
         <div className="flex justify-center gap-3 md:gap-4">
-          <button
-            type="button"
-            className="
-              inline-flex
-              items-center
-              gap-2
-              bg-[#152536]
-              px-5
-              py-3
-              text-[10px]
-              uppercase
-              tracking-[2px]
-              text-white
-              md:px-7
-            "
-          >
-            <MapPin size={11} strokeWidth={1.5} />
-            Mandrem
-          </button>
+          {(["Mandrem", "Pilerne"] as const).map((item) => {
+            const isActive = location === item;
 
-          <button
-            type="button"
-            className="
-              inline-flex
-              items-center
-              gap-2
-              border
-              border-[#bdbdbd]
-              bg-transparent
-              px-5
-              py-3
-              text-[10px]
-              uppercase
-              tracking-[2px]
-              text-[#999]
-              md:px-7
-            "
-          >
-            <MapPin size={11} strokeWidth={1.5} />
-            Pilerne
-          </button>
+            return (
+              <button
+                key={item}
+                type="button"
+                onClick={() => handleLocationChange(item)}
+                className={`
+          group
+          inline-flex
+          items-center
+          gap-2
+          px-5
+          py-3
+          text-lg
+          uppercase
+          transition
+          md:px-7
+          ${
+            isActive
+              ? "bg-[#152536] text-white"
+              : "border border-[#bdbdbd] bg-transparent text-[#999]"
+          }
+        `}
+              >
+                <MapPin
+                  size={16}
+                  strokeWidth={1.5}
+                  className={`
+            transition-colors
+            ${isActive ? "text-[#CA9E55]" : "text-[#999]"}
+          `}
+                />
+
+                {item}
+              </button>
+            );
+          })}
         </div>
 
-        {/* VILLA TABS */}
-        <div className="mt-7 overflow-x-auto">
-          <div className="flex min-w-max justify-center gap-8 md:gap-10">
+        <div className="mt-7 overflow-x-auto scrollbar-hide">
+          <div className="mx-auto flex w-max min-w-full justify-center gap-8 px-6 md:gap-14">
             {villas.map((villa, index) => (
               <button
                 key={villa.name}
                 type="button"
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleVillaChange(index)}
                 className={`
                   relative
+                  
                   pb-3
-                  text-[9px]
+                  text-sm
                   uppercase
-                  tracking-[1.5px]
+                  
                   transition
                   ${
-                    activeIndex === index
+                    activeVillaIndex === index
                       ? "text-[#1976b9]"
                       : "text-[#c2c2c2]"
                   }
@@ -105,7 +113,7 @@ const VillaGallery = ({ villas }: VillaGalleryProps) => {
               >
                 {villa.name}
 
-                {activeIndex === index && (
+                {activeVillaIndex === index && (
                   <span className="absolute bottom-0 left-0 h-[1px] w-full bg-[#1976b9]" />
                 )}
               </button>
@@ -113,90 +121,29 @@ const VillaGallery = ({ villas }: VillaGalleryProps) => {
           </div>
         </div>
 
-        {/* PROGRESS LINE */}
-        <div className="mt-5 h-[5px] w-full overflow-hidden rounded-full border border-[#d5d5d5]">
-          <div
-            className="h-full rounded-full bg-[#d3a04c] transition-all duration-500"
-            style={{
-              width: `${((activeIndex + 1) / villas.length) * 100}%`,
-            }}
+        <div className="mx-auto mt-3 w-full max-w-[1100px] px-6 md:px-12">
+          <div className="relative h-[8px] w-full rounded-full bg-[#e8e4dc]">
+            <div
+              className="absolute top-[2px] h-[5px] rounded-full bg-[#CA9E55] transition-transform duration-500 ease-out"
+              style={{
+                width: `${Math.max(thumbWidthPercent, 12)}%`,
+                transform: `translateX(${thumbTranslatePercent}%)`,
+              }}
+            />
+          </div>
+        </div>
+
+        {/* VILLA IMAGE SLIDER */}
+        <div className="mt-8 w-full">
+          <GallerySlider
+            key={`${location}-${activeVillaIndex}`}
+            images={activeVilla.images}
           />
         </div>
 
-        {/* IMAGE SLIDER */}
-        <div className="relative mt-8 flex items-center justify-center">
-
-          {/* PREVIOUS */}
-          <button
-            type="button"
-            onClick={handlePrev}
-            aria-label="Previous villa"
-            className="
-              absolute
-              left-0
-              z-10
-              flex
-              h-10
-              w-10
-              items-center
-              justify-center
-              text-[#d3a04c]
-              md:-left-2
-            "
-          >
-            <ChevronLeft
-              size={24}
-              strokeWidth={1.2}
-            />
-          </button>
-
-          {/* IMAGE */}
-          <div className="relative h-[300px] w-[82%] overflow-hidden md:h-[365px] md:w-[78%] lg:h-[390px] lg:w-[70%]">
-            <Image
-              key={activeVilla.image}
-              src={activeVilla.image}
-              alt={activeVilla.name}
-              fill
-              sizes="(max-width: 768px) 82vw, 70vw"
-              className="object-cover"
-            />
-          </div>
-
-          {/* NEXT */}
-          <button
-            type="button"
-            onClick={handleNext}
-            aria-label="Next villa"
-            className="
-              absolute
-              right-0
-              z-10
-              flex
-              h-10
-              w-10
-              items-center
-              justify-center
-              text-[#d3a04c]
-              md:-right-2
-            "
-          >
-            <ChevronRight
-              size={24}
-              strokeWidth={1.2}
-            />
-          </button>
-        </div>
-
         {/* DESCRIPTION */}
-        <div className="mx-auto mt-8 max-w-[680px] text-center">
-          <p
-            className="
-              text-[13px]
-              leading-[1.8]
-              text-[#777]
-              md:text-[14px]
-            "
-          >
+        <div className="mx-auto mt-8 max-w-[680px] px-6 text-center">
+          <p className="text-[13px] leading-[1.8] text-[#777] md:text-[14px]">
             {activeVilla.description}
           </p>
         </div>
@@ -218,7 +165,6 @@ const VillaGallery = ({ villas }: VillaGalleryProps) => {
             Contact
           </Link>
         </div>
-
       </div>
     </section>
   );

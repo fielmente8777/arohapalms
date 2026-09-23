@@ -17,9 +17,10 @@ interface SliderProps {
 }
 
 const Slider: React.FC<SliderProps> = ({ cards }) => {
-  // images = images.length > 3 ? images : [...images, ...images];
   const [activeIndex, setActiveIndex] = useState(0);
+
   const sliderCards = cards.length > 3 ? cards : [...cards, ...cards];
+
   return (
     <Section>
       <div className="relative">
@@ -30,7 +31,7 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
             nextEl: ".nearby-section-next",
             prevEl: ".nearby-section-prev",
           }}
-          slidesPerView="auto"
+          slidesPerView={1.5}
           spaceBetween={12}
           loop
           centeredSlides={true}
@@ -44,67 +45,121 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           className="w-full"
           renderSlide={(card, index) => (
-            <div
-              className={`w-full relative ${
-                index === activeIndex
-                  ? "md:aspect-4/2.5 aspect-4/3"
-                  : "md:aspect-[4/2.2] aspect-4/3"
-              }`}
-            >
-              <Image
-                src={card.image}
-                alt="Image"
-                fill
-                className="object-cover"
-              />
+            <div className="relative flex h-[650px] w-full items-start">
               <div
-                className="
-                  absolute
-                  inset-x-0
-                  bottom-0
-                  bg-gradient-to-t
-                  from-black/70
-                  via-black/20
-                  to-transparent
-                  px-5
-                  pb-5
-                  pt-20
-                  text-white
-                "
+                className={`
+                relative
+                w-full
+                overflow-hidden
+                transition-all
+                duration-700
+                ease-in-out
+                ${
+                  index === activeIndex
+                    ? "md:aspect-5/6 aspect-4/3"
+                    : "md:aspect-[5/5] aspect-4/3"
+                }
+              `}
               >
-                <h3 className="text-sm uppercase tracking-wide md:text-lg">
-                  {card.title}
-                </h3>
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  sizes="
+                  (max-width: 768px) 70vw,
+                  368px
+                "
+                  className="object-cover"
+                />
+
+                {/* IMAGE OVERLAY */}
+                <div
+                  className="
+                  absolute
+                  inset-0
+                  bg-black/5
+                "
+                />
+
+                {/* BOTTOM GRADIENT */}
+                {/* TITLE */}
+                <div
+                  className="
+    absolute
+    bottom-0
+    left-0
+    z-10
+    flex
+    h-10
+    w-full
+    items-center
+    justify-center
+    bg-white/40
+    px-3
+  "
+                >
+                  <span
+                    className="
+      text-center
+      text-xs
+      font-medium
+      uppercase
+      tracking-wide
+      text-white
+      md:text-sm
+    "
+                  >
+                    {card.title}
+                  </span>
+                </div>
               </div>
             </div>
           )}
         />
-        <div className="relative -mt-16">
+
+        {/* NAVIGATION */}
+        <div className="relative z-20 -mt-20">
           <div
-            className="mx-auto
+            className="
+              mx-auto
               flex
               w-full
-              max-w-[1000px]
+              max-w-[700px]
               items-center
               justify-between
-              "
+            "
           >
-            <button className="nearby-section-prev flex items-center justify-center w-10 aspect-square ">
+            <button
+              type="button"
+              aria-label="Previous"
+              className="
+                nearby-section-prev
+                flex
+                
+                items-center
+                justify-center
+              "
+            >
               <BtnIcon />
             </button>
-            <button className="nearby-section-next flex items-center justify-center w-10 aspect-square rotate-180">
+
+            <button
+              type="button"
+              aria-label="Next"
+              className="
+                nearby-section-next
+                flex
+                
+                rotate-180
+                items-center
+                justify-center
+              "
+            >
               <BtnIcon />
             </button>
           </div>
         </div>
       </div>
-      {/* <LinkButton
-        href={link.href}
-        label={link.label}
-        className="mx-auto mt-18! text-p2 !border-0
-    !border-b
-    !border-p2"
-      /> */}
     </Section>
   );
 };

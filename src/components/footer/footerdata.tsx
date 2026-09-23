@@ -43,13 +43,13 @@ export const WebfooterData = {
         label: "Location - Pilerne",
         href: "/destination/pilerne",
       },
-      {
-        label: "How To Reach",
-        href: "/contact-us",
-      },
-      {
+     {
         label: "The Experience",
         href: "/experience",
+      },
+      {
+        label: "Gallery",
+        href: "/gallery",
       },
       {
         label: "Our Story",
