@@ -9,6 +9,7 @@ export interface BlogPost {
   slug: string;
   metaData: MetaData;
   title: string;
+  description: string;
   publishedAt: string;
   author: string;
   bannerImage: string;
@@ -308,6 +309,7 @@ const blogPostPageData: BlogPost[] = [
     title:
       "Monsoon Bonanza: 50% Off Luxury Villas in Goa — Why the Rain Makes It the Best Time to Go",
     publishedAt: "June 23, 2026",
+    description:"There is a version of Goa that most people never see. Not the December version with its sunlit beaches and crowded shacks — that Goa is wonderful, but it is thoroughly discovered. The version we’re talking about is quieter, greener, and far more breathtaking. It smells of wet earth and jasmine. The paddy fields around Mandrem fill with standing water that catches the sky. The palms outside the villa go a shade of green so vivid it looks painted. Every waterfall in Goa comes roaring to life. And the whole state slows down to a pace that is, frankly, heaven.",
     author: "Aroha Palms",
     bannerImage: "/images/bonanza-50.png",
     content: `<p>There is a version of Goa that most people never see. Not the December version with its sunlit beaches and crowded shacks — that Goa is wonderful, but it is thoroughly discovered. The version we’re talking about is quieter, greener, and far more breathtaking. It smells of wet earth and jasmine. The paddy fields around Mandrem fill with standing water that catches the sky. The palms outside the villa go a shade of green so vivid it looks painted. Every waterfall in Goa comes roaring to life. And the whole state slows down to a pace that is, frankly, heaven.</p>
@@ -639,6 +641,7 @@ const blogPostPageData: BlogPost[] = [
     title: "Mandrem vs Morjim: Which is Better for a Relaxed Goa Trip?",
     publishedAt: "June 02, 2026",
     author: "Aroha Palms",
+    description:"When people think of a peaceful and luxurious getaway in North Goa, two places almost always come up in the conversation — Mandrem and Morjim.",
     bannerImage: "/images/morjim-beach-.jpg",
     content: `<p>When people think of a peaceful and luxurious getaway in North Goa, two places almost always come up in the conversation — Mandrem and Morjim.</p>
 
@@ -827,6 +830,7 @@ const blogPostPageData: BlogPost[] = [
     title: "Elite Beaches & Cafés Near Aroha Palms",
     publishedAt: "May 22, 2026",
     author: "Aroha Palms",
+    description: "Just minutes away from the Greek-inspired sanctuary of Aroha Palms, North Goa’s most iconic shorelines offer an exquisite blend of sophisticated relaxation, authentic local experiences, and untouched coastal charm. Whether you are chasing peaceful mornings by the waves, elite beach clubs, thrilling water adventures, or private sunset viewings, these neighboring hotspots ensure every day of your Goan getaway feels beautifully distinct.",
     bannerImage: "/images/coffee-and-beach.png",
     content: `<p>Just minutes away from the Greek-inspired sanctuary of Aroha Palms, North Goa’s most iconic shorelines offer an exquisite blend of sophisticated relaxation, authentic local experiences, and untouched coastal charm. Whether you are chasing peaceful mornings by the waves, elite beach clubs, thrilling water adventures, or private sunset viewings, these neighboring hotspots ensure every day of your Goan getaway feels beautifully distinct.</p>
 
@@ -879,6 +883,7 @@ const blogPostPageData: BlogPost[] = [
     publishedAt: "May 22, 2026",
     author: "Aroha Palms",
     bannerImage: "/images/beach.jpg",
+    description:"The best Goa holidays are not just about the beaches you visit or the restaurants you discover. They are about having the right base — somewhere you genuinely want to return to at the end of the day. Somewhere that feels like a retreat, not just a place to sleep.",
     content: `<h1>The Perfect 7-Day North Goa Itinerary </h1>
 <h2>- Using a Luxury Villa in Mandrem as Your Base</h2>
 
@@ -952,8 +957,9 @@ const blogPostPageData: BlogPost[] = [
     title: "Goa in October: Complete Weather, Activities & Travel Guide",
     publishedAt: "May 22, 2026",
     author: "Aroha Palms",
+    description:"October is a magical time to visit Goa, India’s beach paradise. As the monsoon retreats, the state comes alive with lush green landscapes, clear skies, and balmy weather. If you’re planning a trip to Goa in October, you’re in for a treat. In this comprehensive guide, we’ll delve into everything you need to know about Goa’s weather during this month and the top activities and attractions that make it an unforgettable destination. From sun-soaked beaches to vibrant festivals, let’s uncover the best of Goa in October.",
     bannerImage: "/images/candolim-beach-goa-1-600x450.jpg",
-    content: `<p><strong>Introduction:</strong> October is a magical time to visit Goa, India’s beach paradise. As the monsoon retreats, the state comes alive with lush green landscapes, clear skies, and balmy weather. If you’re planning a trip to Goa in October, you’re in for a treat. In this comprehensive guide, we’ll delve into everything you need to know about Goa’s weather during this month and the top activities and attractions that make it an unforgettable destination. From sun-soaked beaches to vibrant festivals, let’s uncover the best of Goa in October.</p>
+    content: `<p>October is a magical time to visit Goa, India’s beach paradise. As the monsoon retreats, the state comes alive with lush green landscapes, clear skies, and balmy weather. If you’re planning a trip to Goa in October, you’re in for a treat. In this comprehensive guide, we’ll delve into everything you need to know about Goa’s weather during this month and the top activities and attractions that make it an unforgettable destination. From sun-soaked beaches to vibrant festivals, let’s uncover the best of Goa in October.</p>
 
 <img src="https://arohapalms.com/wp-content/uploads/2023/09/candolim-beach-goa-1-600x450.jpg" alt="Candolim Beach Goa" />
 
@@ -1027,6 +1033,7 @@ const blogPostPageData: BlogPost[] = [
       "Exploring Goa Weather in October: Your Ultimate Guide to a Perfect Getaway",
     publishedAt: "November 22, 2023",
     author: "Aroha Palms",
+    description:'October is a magical time to visit Goa, Indian beach paradise. As the monsoon retreats, the state comes alive with lush green landscapes, clear skies, and balmy weather. If you&#8217;re planning a trip to Goa in October, you&#8217;re in for a treat. In this comprehensive guide, we&#8217;ll delve into everything you need to know about Goa&#8217;s weather during this month and the top activities and attractions that make it an unforgettable destination. From sun-soaked beaches to vibrant festivals, let&#8217;s uncover the best of Goa in October.',
     bannerImage: "/images/beach.jpg",
     content: `<p><span style="color: #000080;"><b>Introduction:</b></span> October is a magical time to visit Goa, India&#8217;s beach paradise. As the monsoon retreats, the state comes alive with<img loading="lazy" decoding="async" class="size-medium wp-image-1198 alignright" src="https://arohapalms.com/wp-content/uploads/2023/09/candolim-beach-goa-1-300x225.jpg" alt="" width="300" height="225" srcset="https://arohapalms.com/wp-content/uploads/2023/09/candolim-beach-goa-1-300x225.jpg 300w, https://arohapalms.com/wp-content/uploads/2023/09/candolim-beach-goa-1-600x450.jpg 600w, https://arohapalms.com/wp-content/uploads/2023/09/candolim-beach-goa-1.jpg 768w" sizes="(max-width: 300px) 100vw, 300px" /> lush green landscapes, clear skies, and balmy weather. If you&#8217;re planning a trip to Goa in October, you&#8217;re in for a treat. In this comprehensive guide, we&#8217;ll delve into everything you need to know about Goa&#8217;s weather during this month and the top activities and attractions that make it an unforgettable destination. From sun-soaked beaches to vibrant festivals, let&#8217;s uncover the best of Goa in October.</p>
 <p><strong><span style="color: #000080;"> Understanding Goa&#8217;s October Weather</span> </strong></p>
@@ -1094,8 +1101,9 @@ const blogPostPageData: BlogPost[] = [
     author: "",
 
     bannerImage: "",
+    description:'When it comes to celebrating life with unbridled enthusiasm and unparalleled zest, few places do it better than Goa. This sunny coastal paradise is renowned for its lively festivals, and one event that stands out above the rest is the Goa Carnival. If you&#8217;re planning a visit to this beautiful state, attending the Goa Carnival is an absolute must. In this blog post, we will delve into the heart of this vibrant celebration, giving you a comprehensive guide to ensure you make the most of your carnival experience in Goa.',
 
-    content: `<p><span style="color: #000080;"><strong>Introduction</strong></span>: When it comes to celebrating life with unbridled enthusiasm and unparalleled zest, few places do it better than Goa.<img loading="lazy" decoding="async" class=" wp-image-1213 alignright" src="https://arohapalms.com/wp-content/uploads/2023/09/goa-carnival-1-300x171.jpg" alt="" width="504" height="287" /> This sunny coastal paradise is renowned for its lively festivals, and one event that stands out above the rest is the Goa Carnival. If you&#8217;re planning a visit to this beautiful state, attending the Goa Carnival is an absolute must. In this blog post, we will delve into the heart of this vibrant celebration, giving you a comprehensive guide to ensure you make the most of your carnival experience in Goa.</p>
+    content: `]<p><span style="color: #000080;"><strong>Introduction</strong></span>: When it comes to celebrating life with unbridled enthusiasm and unparalleled zest, few places do it better than Goa.<img loading="lazy" decoding="async" class=" wp-image-1213 alignright" src="https://arohapalms.com/wp-content/uploads/2023/09/goa-carnival-1-300x171.jpg" alt="" width="504" height="287" /> This sunny coastal paradise is renowned for its lively festivals, and one event that stands out above the rest is the Goa Carnival. If you&#8217;re planning a visit to this beautiful state, attending the Goa Carnival is an absolute must. In this blog post, we will delve into the heart of this vibrant celebration, giving you a comprehensive guide to ensure you make the most of your carnival experience in Goa.</p>
 <p><span style="color: #000080;"><strong>The History and Origins of Goa Carnival </strong></span></p>
 <p>To truly appreciate the Goa Carnival, it&#8217;s essential to understand its historical roots. Dating back to the Portuguese colonial era, the carnival has evolved into a colorful and lively celebration that showcases Goa&#8217;s unique cultural blend. Learn about its inception, the fusion of traditions, and the reasons behind its enduring popularity.</p>
 <p><strong> <span style="color: #000080;">When and Where </span></strong></p>
@@ -1129,6 +1137,7 @@ const blogPostPageData: BlogPost[] = [
     publishedAt: "September 24, 2023",
     author: "Aroha Palms",
     bannerImage: "/images/goa-carnival-1-300x171.jpg",
+    description:'Goa, often referred to as India&#8217;s beach paradise, is renowned for its stunning coastline, vibrant culture, and exciting water sports. The state&#8217;s azure waters and pristine beaches make it a haven for thrill-seekers and adventure enthusiasts. In this comprehensive guide, we will delve into the world of Goa water sports, exploring the best activities, safety measures, and the overall experience.',
     content: `<p><span style="color: #000080;"><strong>Introduction</strong></span></p>
 <p>Goa, often referred to as India&#8217;s beach paradise, is renowned for its stunning coastline, vibrant culture, and exciting water sports. The state&#8217;s azure waters and pristine beaches make it a haven for thrill-seekers and adventure enthusiasts. In this comprehensive guide, we will delve into the world of Goa water sports, exploring the best activities, safety measures, and the overall experience.</p>
 <p><span style="color: #000080;"><strong>Water Sports in Goa: A Kaleidoscope of Adventures</strong></span></p>
@@ -1168,6 +1177,7 @@ const blogPostPageData: BlogPost[] = [
       "Exploring the Best of Candolim Beach, Goa: A Comprehensive Tourist Guide",
     publishedAt: "September 21, 2023",
     author: "Aroha Palms",
+    description:'Nestled on the shores of the Arabian Sea, Candolim Beach in Goa is a mesmerizing destination that offers an incredible blend of natural beauty, vibrant nightlife, delectable cuisine, thrilling adventures, and comfortable accommodations. As one of the most sought-after beach destinations in India, Candolim offers a plethora of experiences for tourists seeking both relaxation and excitement. In this comprehensive guide, we&#8217;ll walk you through the must-visit places of interest in Candolim, including recommendations for nightlife, dining, entertainment, adventure, and where to stay, with a special mention of the highly recommended Aroha Palms villa.',
     bannerImage: "/images/paragliding.jpg",
     content: `<p><span style="color: #000080;"><strong>Introduction</strong></span></p>
 <p>Nestled on the shores of the Arabian Sea, Candolim Beach in Goa is a mesmerizing destination that offers an incredible blend of<img loading="lazy" decoding="async" class=" wp-image-1198 alignright" src="https://arohapalms.com/wp-content/uploads/2023/09/candolim-beach-goa-1-300x225.jpg" alt="" width="316" height="237" srcset="https://arohapalms.com/wp-content/uploads/2023/09/candolim-beach-goa-1-300x225.jpg 300w, https://arohapalms.com/wp-content/uploads/2023/09/candolim-beach-goa-1-600x450.jpg 600w, https://arohapalms.com/wp-content/uploads/2023/09/candolim-beach-goa-1.jpg 768w" sizes="(max-width: 316px) 100vw, 316px" /> natural beauty, vibrant nightlife, delectable cuisine, thrilling adventures, and comfortable accommodations. As one of the most sought-after beach destinations in India, Candolim offers a plethora of experiences for tourists seeking both relaxation and excitement. In this comprehensive guide, we&#8217;ll walk you through the must-visit places of interest in Candolim, including recommendations for nightlife, dining, entertainment, adventure, and where to stay, with a special mention of the highly recommended Aroha Palms villa.</p>
@@ -1219,6 +1229,7 @@ const blogPostPageData: BlogPost[] = [
     publishedAt: "September 10, 2023",
     author: "Aroha Palms",
     bannerImage: "/images/sunburn-Goa-1-600x338.jpg",
+    description:"Nestled along the picturesque western coastline of India, Goa has earned a reputation as a tropical paradise renowned for its sandy beaches, vibrant culture, and unforgettable parties. The allure of Goa parties and events attracts visitors from all corners of the globe, seeking to experience the unique blend of music, culture, and natural beauty. In this blog post, we will delve into the enchanting world of Goa's parties and events, exploring the most popular keywords and phrases that Google searchers use to uncover this fascinating aspect of the state.",
     content: `<p>&nbsp;</p>
 <p><span style="color: #000080;"><strong>Introduction</strong></span></p>
 <p>Nestled along the picturesque western coastline of India, Goa has earned a reputation as a tropical paradise renowned for its sandy beaches, vibrant culture, and unforgettable parties. The allure of Goa parties and events attracts visitors from all corners of the globe, seeking to experience the unique blend of music, culture, and natural beauty. In this blog post, we will delve into the enchanting world of Goa&#8217;s parties and events, exploring the most popular keywords and phrases that Google searchers use to uncover this fascinating aspect of the state.</p>
@@ -1264,6 +1275,7 @@ const blogPostPageData: BlogPost[] = [
       "Exploring the Vibrant Charms of Anjuna Flea Market in Goa: A Shopper’s Paradise",
     publishedAt: "September 6, 2023",
     author: "Aroha Palms",
+    description:"Nestled within the heart of Goa lies a captivating treasure trove of color, culture, and craftsmanship &#8211; the Anjuna Flea Market. Renowned for its bohemian atmosphere, diverse offerings, and vibrant ambience, this market has become a must-visit destination for travelers seeking unique souvenirs, local handicrafts, and a true taste of Goa&#8217;s cultural essence. In this blog post, we&#8217;ll delve into the enchanting world of the Anjuna Flea Market, uncovering its history, attractions, and the vibrant shopping experience it offers.",
     bannerImage: "/images/AnjunaFleaMarket.jpg.jpg",
     content: `<p><span style="color: #000080;"><strong>Introduction</strong></span></p>
 <p>Nestled within the heart of Goa lies a captivating treasure trove of color, culture, and craftsmanship &#8211; the Anjuna Flea Market.<img loading="lazy" decoding="async" class=" wp-image-1165 alignright" src="https://arohapalms.com/wp-content/uploads/2023/08/AnjunaFleaMarket-1-300x213.jpg" alt="" width="372" height="264" srcset="https://arohapalms.com/wp-content/uploads/2023/08/AnjunaFleaMarket-1-300x213.jpg 300w, https://arohapalms.com/wp-content/uploads/2023/08/AnjunaFleaMarket-1-600x425.jpg 600w, https://arohapalms.com/wp-content/uploads/2023/08/AnjunaFleaMarket-1-768x545.jpg 768w, https://arohapalms.com/wp-content/uploads/2023/08/AnjunaFleaMarket-1.jpg 1024w" sizes="(max-width: 372px) 100vw, 372px" /> Renowned for its bohemian atmosphere, diverse offerings, and vibrant ambience, this market has become a must-visit destination for travelers seeking unique souvenirs, local handicrafts, and a true taste of Goa&#8217;s cultural essence. In this blog post, we&#8217;ll delve into the enchanting world of the Anjuna Flea Market, uncovering its history, attractions, and the vibrant shopping experience it offers.</p>
@@ -1308,6 +1320,7 @@ const blogPostPageData: BlogPost[] = [
     publishedAt: "September 2, 2023",
     author: "Aroha Palms",
     bannerImage: "/images/nightlife-goa-dancing.jpg",
+    description:"When the sun sets in North Goa, a whole new world comes alive. The serene beaches and tranquil vibes of the day transform into a vibrant and electrifying nightlife that attracts tourists from around the globe. North Goa, known for its picturesque beauty and laid-back ambiance, is also home to some of the most happening nightspots in India. So, if you&#8217;re a party enthusiast searching for an unforgettable nightlife experience, you&#8217;re in for a treat. In this guide, we&#8217;ll walk you through the hottest nightclubs, beach parties, and cultural experiences that define the nightlife scene in North Goa.",
     content: `<p><span style="color: #000080;"><strong>Introduction</strong></span></p>
 <p>When the sun sets in North Goa, a whole new world comes alive. The serene beaches and tranquil vibes of the day transform into a<img loading="lazy" decoding="async" class=" wp-image-1151 alignright" src="https://arohapalms.com/wp-content/uploads/2023/08/nightlife-goa-dancing-1-300x201.jpeg" alt="" width="369" height="247" srcset="https://arohapalms.com/wp-content/uploads/2023/08/nightlife-goa-dancing-1-300x201.jpeg 300w, https://arohapalms.com/wp-content/uploads/2023/08/nightlife-goa-dancing-1.jpeg 370w" sizes="(max-width: 369px) 100vw, 369px" /> vibrant and electrifying nightlife that attracts tourists from around the globe. North Goa, known for its picturesque beauty and laid-back ambiance, is also home to some of the most happening nightspots in India. So, if you&#8217;re a party enthusiast searching for an unforgettable nightlife experience, you&#8217;re in for a treat. In this guide, we&#8217;ll walk you through the hottest nightclubs, beach parties, and cultural experiences that define the nightlife scene in North Goa.</p>
 <p><span style="color: #000080;"><strong>Beachside Revelry</strong></span></p>
@@ -1337,6 +1350,7 @@ const blogPostPageData: BlogPost[] = [
     publishedAt: "August 30, 2023",
     author: "Aroha Palms",
     bannerImage: "/images/St-Francis-Xaviers-Church.jpg",
+    description:"Welcome to the vibrant and sun-kissed land of Goa, where stunning beaches, lively nightlife, and rich cultural heritage converge. Among the many historical gems that grace this coastal paradise, St. Xavier&#8217;s Church stands as a testament to the state&#8217;s colonial past and architectural brilliance. In this blog post, we will take you on a virtual journey to explore the captivating beauty and fascinating history of St. Xavier&#8217;s Church in Goa.",
     content: `<p><span style="color: #000080;"><strong>Introduction</strong></span></p>
 <p>Welcome to the vibrant and sun-kissed land of Goa, where stunning beaches, lively nightlife, and rich cultural heritage converge. <img loading="lazy" decoding="async" class=" wp-image-1143 alignright" src="https://arohapalms.com/wp-content/uploads/2023/08/St-Francis-Xaviers-Church-Old-Goa-1.jpeg" alt="" width="326" height="244" /> Among the many historical gems that grace this coastal paradise, St. Xavier&#8217;s Church stands as a testament to the state&#8217;s colonial past and architectural brilliance. In this blog post, we will take you on a virtual journey to explore the captivating beauty and fascinating history of St. Xavier&#8217;s Church in Goa.</p>
 <p><span style="color: #000080;"><strong>A Glimpse into the Past</strong></span></p>
@@ -1366,6 +1380,7 @@ const blogPostPageData: BlogPost[] = [
     publishedAt: "August 26, 2023",
     author: "Aroha Palms",
     bannerImage: "/images/P1126008-.jpg",
+    description:"Goa, a paradise of sun, sand, and vibrant culture, has long been a favorite destination for travelers seeking a perfect blend of relaxation and excitement. When it comes to accommodation, North Goa offers a myriad of options, from cozy beachside cottages to opulent villas. In this blog post, we will take you on a journey through the world of grandeur, highlighting the allure of 10-room villas and focusing on the exquisite Aroha Palms Villas.",
     content: `<p><span style="color: #000080;"><strong>Introduction</strong></span></p>
 <p>Goa, a paradise of sun, sand, and vibrant culture, has long been a favorite destination for travelers seeking a perfect blend of relaxation and excitement. When it comes to accommodation, North Goa offers a myriad of options, from cozy beachside cottages to opulent villas. In this blog post, we will take you on a journey through the world of grandeur, highlighting the allure of 10-room villas and focusing on the exquisite Aroha Palms Villas.</p>
 <p><span style="color: #000080;"><strong>The Grandeur of North Goa&#8217;s 10-Room Villas</strong></span></p>
@@ -1400,6 +1415,7 @@ const blogPostPageData: BlogPost[] = [
       "Exploring the Best Tourist Events and Attractions in Goa this September",
     publishedAt: "August 24, 2023",
     author: "Aroha Palms",
+    description:"As the summer heat gradually subsides and the monsoon rains bid adieu, September emerges as a delightful month to explore the coastal paradise of Goa. With its pristine beaches, vibrant nightlife, and rich cultural heritage, Goa has long been a sought-after destination for travelers from around the world. This September, the state is all set to welcome tourists with a lineup of exciting events and attractions that cater to diverse interests. Whether you&#8217;re a beach lover, a history enthusiast, or a partygoer, Goa has something special in store for you.",
     bannerImage: "/images/palolem-beach-goa-1.jpeg",
     content: `<p>As the summer heat gradually subsides and the monsoon rains bid adieu, September emerges as a delightful month to explore the coastal paradise of Goa. With its pristine beaches, vibrant nightlife, and rich cultural heritage, Goa has long been a sought-after destination for travelers from around the world. This September, the state is all set to welcome tourists with a lineup of exciting events and attractions that cater to diverse interests. Whether you&#8217;re a beach lover, a history enthusiast, or a partygoer, Goa has something special in store for you.</p>
 <p><span style="color: #000080;"><strong>Sun-Kissed Beach Retreats:</strong></span></p>
@@ -1446,6 +1462,7 @@ const blogPostPageData: BlogPost[] = [
     title: "Unleash Your Adventurous Spirit: Thrilling Activities in North Goa",
     publishedAt: "August 23, 2023",
     author: "Aroha Palms",
+    description:"When you think of Goa, images of serene beaches and vibrant nightlife likely come to mind. However, beyond the laid-back vibe and sun-soaked shores, North Goa offers a treasure trove of exhilarating adventure activities that are perfect for thrill-seekers and outdoor enthusiasts. In this blog post, we&#8217;re uncovering the adrenaline-pumping side of Goa, showcasing the best adventure activities that will get your heart racing and your spirits soaring.",
     bannerImage: "/images/hot-air-balooning-goa-1.jpeg",
     content: `<h4><span style="color: #000080;"><strong>Introduction</strong></span></h4>
 <p>When you think of Goa, images of serene beaches and vibrant nightlife likely come to mind. However, beyond the laid-back vibe and sun-soaked shores, North Goa offers a treasure trove of exhilarating adventure activities that are perfect for thrill-seekers and outdoor enthusiasts. In this blog post, we&#8217;re uncovering the adrenaline-pumping side of Goa, showcasing the best adventure activities that will get your heart racing and your spirits soaring.</p>
@@ -1481,6 +1498,7 @@ const blogPostPageData: BlogPost[] = [
       "Embrace the Charm of Goa in September: Weather and Reasons to Visit",
     publishedAt: "August 19, 2023",
     author: "Aroha Palms",
+    description:"As the monsoon bids adieu, September emerges as a captivating time to explore the coastal paradise of Goa. With its stunning beaches, rich culture, and vibrant atmosphere, this popular destination takes on a unique allure in the early days of autumn. In this blog post, we&#8217;ll delve into the weather in Goa during September and uncover the compelling reasons why this month offers an ideal window to experience the magic of this coastal gem.",
     bannerImage: "/images/visit-goa-august-monsoon-1.jpeg",
     content: `<p><span style="color: #000080;"><strong>Introduction:</strong></span> As the monsoon bids adieu, September emerges as a captivating time to explore the coastal paradise of Goa. With its stunning beaches, rich culture, and vibrant atmosphere, this popular destination takes on a unique allure in the early days of autumn. In this blog post, we&#8217;ll delve into the weather in Goa during September and uncover the compelling reasons why this month offers an ideal window to experience the magic of this coastal gem.</p>
 <p><strong><span style="color: #000080;">September Weather in Goa:</span></strong> A Transition to Tranquility September marks the transition between the monsoon season and the post-monsoon period in Goa. While the rain showers gradually taper off, the region remains lush and rejuvenated. The temperature ranges between a comfortable 25-30°C (77-86°F), offering a delightful climate that&#8217;s perfect for exploration. Humidity begins to recede, making outdoor activities more enjoyable.</p>
@@ -1508,6 +1526,7 @@ const blogPostPageData: BlogPost[] = [
     title: "Unveiling Paradise: The 10 Best Villas to Stay in North Goa",
     publishedAt: "August 17, 2023",
     author: "Aroha Palms",
+    description:"Goa, a tropical haven of sun, sand, and vibrant culture, has captured the hearts of travelers worldwide. While the beaches and nightlife are undoubtedly alluring, the option to stay in luxurious villas amplifies the Goan experience. In this blog post, we&#8217;re presenting the 10 best villas to stay in North Goa, offering unparalleled comfort, privacy, and a taste of opulence. Among these exquisite options, Aroha Palms Grande and Aroha Palms Majestic stand out as paradisiacal escapes that redefine luxury living.",
     bannerImage: "/images/luxury-villa-goa-1-768x512.jpg",
     content: `<h4><span style="color: #000080;"><strong>Introduction</strong></span></h4>
 <p>Goa, a tropical haven of sun, sand, and vibrant culture, has captured the hearts of travelers worldwide. While the beaches and</p>
@@ -1551,6 +1570,7 @@ const blogPostPageData: BlogPost[] = [
       "Unveiling the Best Beaches of North Goa: Where Sun, Sand, and Serenity Converge",
     publishedAt: "August 8, 2023",
     author: "Aroha Palms",
+    description:"When it comes to idyllic beach destinations, North Goa stands as a beacon of pristine shores, vibrant nightlife, and an unmistakable blend of cultures. The northern coastline of this tropical haven is adorned with an array of stunning beaches, each with its own distinct charm and appeal. In this blog post, we&#8217;ll embark on a journey to explore the best beaches of North Goa, where sun-kissed sands, turquoise waters, and a laid-back vibe create the perfect recipe for an unforgettable coastal getaway.",
     bannerImage: "/images/Vagator-beach-goa-1.jpeg",
     content: `<p><span style="color: #000080;"><strong><img loading="lazy" decoding="async" class="size-full wp-image-1085 alignright" src="https://arohapalms.com/wp-content/uploads/2023/08/Vagator-beach-goa-1.jpeg" alt="" width="259" height="194" />Introduction:</strong> </span>When it comes to idyllic beach destinations, North Goa stands as a beacon of pristine shores, vibrant nightlife, and an unmistakable blend of cultures. The northern coastline of this tropical haven is adorned with an array of stunning beaches, each with its own distinct charm and appeal. In this blog post, we&#8217;ll embark on a journey to explore the best beaches of North Goa, where sun-kissed sands, turquoise waters, and a laid-back vibe create the perfect recipe for an unforgettable coastal getaway.</p>
 <ol>
@@ -1576,6 +1596,7 @@ const blogPostPageData: BlogPost[] = [
     title: "Exploring the Unique Charm of August Weather in Goa",
     publishedAt: "August 8, 2023",
     author: "Aroha Palms",
+    description:"When one thinks of Goa, images of sun-soaked beaches, vibrant nightlife, and lively festivals come to mind. While the peak tourist season typically falls between October and February, there&#8217;s an underrated gem waiting to be discovered in August. This monsoon month brings with it a distinct allure that transforms Goa into a lush, captivating paradise. In this blog post, we&#8217;ll delve into the weather in August in Goa and explore the compelling reasons to visit this tropical paradise during this offbeat season.",
     bannerImage: "/images/goa-monsoon-tourism-1.jpeg",
     content: `<p><span style="color: #000080;"><strong>Introduction:</strong> </span>When one thinks of Goa, images of sun-soaked beaches, vibrant nightlife, and lively festivals come to mind. While the peak tourist season typically falls between October and February, there&#8217;s an underrated gem waiting to be discovered in August. This monsoon month brings with it a distinct allure that transforms Goa into a lush, captivating paradise. In this blog post, we&#8217;ll delve into the weather in August in Goa and explore the compelling reasons to visit this tropical paradise during this offbeat season.</p>
 <p><span style="color: #000080;"><strong>August Weather in Goa: A Monsoon Retreat:</strong> </span>August marks the heart of the monsoon season in Goa, and while some might shy<img loading="lazy" decoding="async" class=" wp-image-1069 alignright" src="https://arohapalms.com/wp-content/uploads/2023/08/goa-monsoon-tourism-1.jpeg" alt="" width="387" height="251" /> away from travel during rainy periods, Goa takes on a unique charm during this time. The lush greenery is at its peak, with the landscape transformed into a tapestry of vibrant hues. Rain showers are a regular occurrence, but they&#8217;re often short and refreshing, followed by clear spells of skies that paint breathtaking rainbows against the horizon. The average temperature hovers around a pleasant 25-28°C (77-82°F), making outdoor activities enjoyable without the scorching heat of the high season.</p>
