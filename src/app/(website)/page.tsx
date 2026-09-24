@@ -11,6 +11,8 @@ import StayWithUs from "./home/components/Stay";
 import Testimonials from "./home/components/Testimonials";
 import { homePageData } from "./home/pageData";
 import Place from "./home/components/Place";
+import About from "./our-story/components/About";
+import { OurStoryData } from "./our-story/pageData";
 
 export default function HomePage() {
   return (
@@ -24,6 +26,7 @@ export default function HomePage() {
       <Amenities amenities={homePageData.amenities} outdoors={homePageData.outdoors} /> */}
       {/* <Outdoors {...homePageData.outdoors} /> */}
       <Place {...homePageData.stayWithUs} />
+      <About {...OurStoryData.missionData} />
       {/* <StayWithUs {...homePageData.stayWithUs} /> */}
       <NearbyActivities {...homePageData.nearbyActivities} />
       <LocationSection {...homePageData.location} />
