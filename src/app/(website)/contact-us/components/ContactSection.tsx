@@ -85,7 +85,7 @@ const ContactUs = ({
             href={button.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center justify-center bg-navy px-7 py-3 text-[14px] uppercase tracking-[0.15em] text-white transition duration-300 hover:opacity-80"
+            className="mt-10 inline-flex items-center justify-center bg-navy px-7 md:mb-10 py-3 text-[14px] uppercase tracking-[0.15em] text-white transition duration-300 hover:opacity-80"
           >
             {button.label}
           </Link>
@@ -93,7 +93,15 @@ const ContactUs = ({
 
      
         <div className="relative bg-navy text-white min-h-[500px] lg:min-h-[650px] px-8 md:px-12 lg:px-14 py-12 lg:py-14">
-  <div className=" absolute left-0 top-0 z-0 h-full w-[16px]">
+            <div className=" absolute lg:hidden left-0 top-0 z-0 h-[30px] w-full ">
+    <Image
+      src="/home/design5.png"
+      alt=""
+      fill
+      className="object-fill"
+    />
+  </div>
+  <div className=" absolute hidden lg:block left-0 top-0 z-0 h-full w-[16px]">
     <Image
       src="/home/design6.png"
       alt=""

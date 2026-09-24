@@ -26,7 +26,8 @@ const NearbyActivities = ({
     <SectionWithContainer sectionClassName="w-full bg-background-2 text-white md:px-0 overflow-hidden">
       {/* HEADING */}
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-        <p className="text-xs uppercase text-blue md:text-lg">{tag}</p>
+        <p className="text-xs uppercase text-blue 
+       md:text-[17px] lg:text-lg">{tag}</p>
 
         {/* <div className="relative mt-2 mb-4 h-[9px] w-[190px] overflow-hidden">
           <Image
@@ -37,7 +38,7 @@ const NearbyActivities = ({
           />
         </div> */}
 
-        <h2 className="mt-2 text-blue font-primary text-2xl font-light md:text-5xl">
+        <h2 className="mt-2 text-blue font-primary  font-light md:text-3xl lg:text-5xl">
           {title}
         </h2>
       </div>

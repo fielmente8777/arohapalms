@@ -16,25 +16,25 @@ const About = ({ title, intro, description, images }: AboutProps) => {
     <Section className="bg-background-2 ">
       <div className="">
         <div className="mx-auto w-full pt-16! ">
-          <div className="flex flex-col items-start md:flex-row">
+          <div className="flex flex-col items-start md:flex-col-1 lg:flex-row">
             {/* LEFT + MAIN IMAGE */}
-            <div className="w-full md:w-auto">
+            <div className=" w-full md:w-auto">
               <GallerySlider images={images} />
             </div>
 
             {/* RIGHT CONTENT */}
             <div
               className="flex w-full flex-col justify-between  
-            md:ml-10
             md:h-[568px]
-            md:px-0
+            lg:px-0
             lg:ml-10
-            md:pr-6
+            md:px-4
+            md:py-4
             lg:pr-8
             "
             >
               <div>
-                <h2 className="text-2xl font-normal text-[#17384e] md:text-[38px] lg:text-5xl">
+                <h2 className="text-2xl font-normal text-[#17384e] md:text-3xl lg:text-5xl">
                   {title}
                 </h2>
 
@@ -54,12 +54,11 @@ const About = ({ title, intro, description, images }: AboutProps) => {
                 </div>
               </div>
 
-              {/* BOTTOM */}
-              <div className="mt-8 flex items-center justify-between pt-2">
-                {/* SAME GALLERY NEXT BUTTON */}
+              <div className="lg:mt-8 flex items-center justify-between lg:pt-2">
                 <button
                   type="button"
                   className="
+                  hidden lg:block
                    -mt-14
                     gallery-slider-next
                     flex
@@ -80,7 +79,6 @@ const About = ({ title, intro, description, images }: AboutProps) => {
                     pb-0.5
                     text-[10px]
                     uppercase
-                    tracking-wider
                     text-[#17384e]
                   "
                 >

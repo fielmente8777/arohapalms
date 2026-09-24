@@ -255,7 +255,7 @@ const PropertyCard = ({ card, openProperty, index }: PropertyCardProps) => {
     grid
     grid-cols-1
     gap-6
-    md:gap-6
+    lg:gap-6
     ${
       index % 2 === 0
         ? "md:grid-cols-[1.65fr_1fr]"
@@ -270,7 +270,7 @@ const PropertyCard = ({ card, openProperty, index }: PropertyCardProps) => {
   `}
         >
           {/* MAIN IMAGE */}
-          <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[1.55/1]">
+          <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-[1.25/1] lg:aspect-[1.85/1]">
             {images.length > 0 && (
               <Swiper
                 modules={[Autoplay]}
@@ -318,15 +318,12 @@ const PropertyCard = ({ card, openProperty, index }: PropertyCardProps) => {
                 aria-label="Previous image"
                 onClick={() => swiper?.slidePrev()}
                 className="
-                  flex
-                  shrink-0
-                  items-center
-                  text-blue
-                "
+    flex
+    items-center
+    text-blue
+  "
               >
-                <ChevronLeft size={18} strokeWidth={1.4} />
-
-                <span className="w-6 border-t border-blue md:w-8" />
+                <BtnIcon />
               </button>
 
               {/* THUMBNAILS */}
@@ -374,15 +371,15 @@ const PropertyCard = ({ card, openProperty, index }: PropertyCardProps) => {
                 aria-label="Next image"
                 onClick={() => swiper?.slideNext()}
                 className="
-                  flex
-                  shrink-0
-                  items-center
-                  text-blue
-                "
-              >
-                <span className="w-6 border-t border-blue md:w-8" />
+    flex
 
-                <ChevronRight size={18} strokeWidth={1.4} />
+    items-center
+
+  "
+              >
+                <div className="rotate-180">
+                  <BtnIcon />
+                </div>
               </button>
             </div>
           )}
@@ -433,10 +430,10 @@ const PropertyCard = ({ card, openProperty, index }: PropertyCardProps) => {
                     border-[#d8cda9]
                     px-3
                     py-1.5
-                    text-[10px]
-                    leading-none
+                    md:text-[10px]
+                    
                     text-[#333]
-                    md:text-[11px]
+                    lg:text-[11px]
                   "
                 >
                   {feature}
@@ -449,11 +446,12 @@ const PropertyCard = ({ card, openProperty, index }: PropertyCardProps) => {
             <p
               className="
                 mt-5
-                text-[14px]
-                leading-[1.65]
+                md:text-[14px]
                 text-gray-600
-                md:text-[15px]
-              "
+                lg:text-[15px]
+                md:line-clamp-6
+                lg:line-clamp-none
+                "
             >
               {description}
             </p>
@@ -470,7 +468,6 @@ const PropertyCard = ({ card, openProperty, index }: PropertyCardProps) => {
                 text-[10px]
                 font-medium
                 uppercase
-                tracking-wide
                 text-blue
                 transition-opacity
                 hover:opacity-70
@@ -556,7 +553,7 @@ const Properties = ({ title, cards }: PropertiesProps) => {
           {title}
         </h2>
 
-        <div className="mt-14 space-y-20">
+        <div className="lg:mt-14 lg:space-y-20">
           {cards.map((card, index) => (
             <PropertyCard
               key={card.title}
@@ -572,3 +569,18 @@ const Properties = ({ title, cards }: PropertiesProps) => {
 };
 
 export default Properties;
+
+export const BtnIcon = () => (
+  <svg
+    width={65}
+    height={15}
+    viewBox="0 0 65 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0.292892 8.07112C-0.0976334 7.6806 -0.0976334 7.04743 0.292892 6.65691L6.65685 0.292946C7.04738 -0.0975785 7.68054 -0.0975785 8.07107 0.292946C8.46159 0.68347 8.46159 1.31664 8.07107 1.70716L2.41422 7.36401L8.07107 13.0209C8.46159 13.4114 8.46159 14.0446 8.07107 14.4351C7.68054 14.8256 7.04738 14.8256 6.65685 14.4351L0.292892 8.07112ZM65 7.36401V8.36401H1V7.36401V6.36401H65V7.36401Z"
+      fill="#005BA4"
+    />
+  </svg>
+);

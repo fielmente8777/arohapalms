@@ -2,14 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MenuButton from "./MenuButton";
 import NavMenu from "./NavMenu";
 import { usePathname } from "next/navigation";
 
 const NavBar2 = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  const [visible, setVisible] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
+
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
   const blueNavbarPages = ["/our-story/", "/experience/", "/contact-us/"];
 
@@ -17,14 +22,31 @@ const NavBar2 = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > window.innerHeight - 50);
+      const currentScrollY = window.scrollY;
+
+      setScrolled(currentScrollY > 50);
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 120) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+      ticking.current = false;
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    const onScroll = () => {
+      if (!ticking.current) {
+        window.requestAnimationFrame(handleScroll);
+        ticking.current = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 
@@ -32,11 +54,14 @@ const NavBar2 = () => {
     <>
       <div className="">
         <header
-          className={`fixed flex items-center justify-center left-0 top-0 w-full z-[100] transition-all duration-500`}
+          className={` fixed top-0 left-0 z-50 w-full
+        transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)]
+        will-change-transform
+        ${visible ? "translate-y-0" : "-translate-y-full"}`}
         >
           <nav
             className={`max_screen_width flex items-center justify-between border-b border-white/40 pl-4 md:pl-6 ${
-               isBlueNavbar || isScrolled ? "bg-navy shadow-md" : "bg-transparent"
+              isBlueNavbar || scrolled ? "bg-navy shadow-md" : "bg-transparent"
             }
             `}
           >

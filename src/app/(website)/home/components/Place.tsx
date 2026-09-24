@@ -27,7 +27,7 @@ const Place = ({
   return (
     <Section
       
-      className="bg-background-2 py-24! drop-shadow-2xl"
+      className="bg-background-2 lg:py-24! drop-shadow-2xl"
     >
       <div className="mx-auto max_screen_width">
 
@@ -36,13 +36,14 @@ const Place = ({
           className="
             mx-auto
             flex
-            max-w-[850px]
+            md:max-w-[600px]
+            lg:max-w-[850px]
             flex-col
             items-center
             px-7
             pb-12
             text-center
-            md:pb-[52px]
+            lg:pb-[52px]
           "
         >
           {/* TAG */}
@@ -64,9 +65,9 @@ const Place = ({
               max-w-3xl
               text-[28px]
               font-light
-              leading-[1.2]
               text-p2
-              md:text-[48px]
+              md:text-[30px]
+              lg:text-[48px]
             "
           >
             {title}
@@ -82,7 +83,8 @@ const Place = ({
               className="
                 group
                 relative
-                aspect-[6/5]
+                md:aspect-[4/3]
+                lg:aspect-[6/5]
                 w-full
                 overflow-hidden
               "
@@ -157,9 +159,11 @@ const Place = ({
                 className="
                   absolute
                   bottom-7
-                  left-7
+                  lg:left-7
+                  md:left-4
                   z-10
-                  max-w-[430px]
+                  md:max-w-[400px]
+                  lg:max-w-[430px]
                   text-white
                 "
               >
@@ -167,7 +171,6 @@ const Place = ({
                   className="
                     text-[10px]
                     uppercase
-                    tracking-[2px]
                     text-white/80
                   "
                 >
@@ -177,10 +180,10 @@ const Place = ({
                 <h3
                   className="
                     mt-2
-                    text-[24px]
+                    text-xl
                     font-medium
-                    leading-tight
-                    md:text-[30px]
+                    md:text-[24px]
+                    lg:text-[30px]
                   "
                 >
                   {card.location}
@@ -190,7 +193,6 @@ const Place = ({
                   className="
                     mt-3
                     text-xs
-                    leading-[1.5]
                     text-white/90
                     md:text-sm
                   "

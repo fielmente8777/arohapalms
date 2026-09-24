@@ -35,6 +35,10 @@ export const WebfooterData = {
         label: "Home",
         href: "/",
       },
+        {
+        label: "Our Story",
+        href: "/our-story",
+      },
       {
         label: "Location - Mandrem",
         href: "/destination/mandrem",
@@ -51,10 +55,7 @@ export const WebfooterData = {
         label: "Gallery",
         href: "/gallery",
       },
-      {
-        label: "Our Story",
-        href: "/our-story",
-      },
+    
       {
         label: "Articles",
         href: "/articles",

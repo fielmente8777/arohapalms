@@ -24,7 +24,7 @@ const LocationSection = ({
 }: LocationSectionProps) => {
   return (
     <Section defaultPadding={false} className="relative z-0 w-full bg-navy">
-      <div className="grid w-full grid-cols-1  md:grid-cols-[40%_60%]">
+      <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-[40%_60%]">
         {/* LEFT CONTENT */}
         <div className="relative flex items-start px-6 py-12 ">
           <div className="w-full max-w-[550px]">
@@ -49,10 +49,11 @@ const LocationSection = ({
                 mt-5
                 w-full
                 font-primary
-                text-4xl
+                
                 font-light
                 text-white
-                md:text-5xl
+                md:text-3xl
+                lg:text-5xl
               "
             >
               {title}
@@ -86,7 +87,8 @@ const LocationSection = ({
               })}
             </div>
           </div>
-          <div className="absolute right-0 top-0 z-20 h-full w-[15px] rotate-180">
+
+          <div className="absolute hidden lg:block right-0 top-0 z-20 h-full w-[15px] rotate-180">
             <Image
               src="/home/design6.png"
               alt=""
@@ -95,15 +97,16 @@ const LocationSection = ({
             />
           </div>
         </div>
-
+        <div className=" relative lg:hidden left-0 bottom-0 z-0 h-[30px] w-full ">
+          <Image src="/home/design6.png" alt="" fill className="object-fill" />
+        </div>
         {/* MAP */}
-        <div className="relative h-[350px] overflow-hidden md:h-[615px] px-6 md:px-0">
+        <div className="relative h-[350px] md:h-[420px] overflow-hidden lg:h-[530px] px-6 md:px-0">
           <Image
             src={mapImage}
             alt="Location map"
             fill
-            sizes="(max-width: 800px) 100vw, 50vw"
-            className="object-cover"
+            className="object-fill"
           />
         </div>
       </div>

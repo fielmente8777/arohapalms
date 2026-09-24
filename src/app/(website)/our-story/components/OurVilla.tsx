@@ -27,16 +27,17 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
             grid-cols-1
             items-center
             gap-10
-            md:grid-cols-[0.75fr_1.25fr]
+            lg:grid-cols-[0.75fr_1.25fr]
             md:gap-12
             lg:gap-16
           "
         >
-          <div className="max-w-[480px]">
+          <div className="lg:max-w-[480px]">
             <h2
               className="
                 text-2xl
-                
+                lg:text-start
+                md:text-center
                 text-blue
                 md:text-5xl
               "
@@ -59,7 +60,7 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
               ))}
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-7 flex lg:flex-wrap gap-3 md:mx-auto">
               <Link
                 href="/destination/mandrem"
                 className="
@@ -122,8 +123,9 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
                 className="
                   group
                   relative
-                  h-[664]
-                  aspect-[2/3]
+                  md:aspect-[3/4]
+                  lg:h-[664]
+                  lg:aspect-[2/3]
                   w-full
                   overflow-hidden
                 "
@@ -190,8 +192,8 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
       <div
         className="
     bg-background-2
-    py-16
-    md:py-12
+    md:py-8
+    lg:py-12
   "
       >
         <div
@@ -201,20 +203,19 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
       grid-cols-1
       gap-8
       md:grid-cols-[1fr_1fr]
-      md:items-center
-      md:gap-0
+      lg:items-center
+      md:gap-2
     "
         >
           {/* TITLE */}
           <div>
             <h3
               className="
-          max-w-[624px]
-          text-[28px]
+          lg:max-w-[624px]
+          md:text-3xl
           font-light
-          
           text-[#1670B7]
-          md:text-[40px]
+          lg:text-[40px]
           
         "
             >
@@ -226,12 +227,12 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
           <div>
             <p
               className="
-          max-w-[676px]
-          text-[14px]
+          lg:max-w-[676px]
+          lg:text-[14px]
           font-normal
           
           text-[#6B6B6B]
-          md:text-[20px]
+          lg:text-[20px]
           
         "
             >

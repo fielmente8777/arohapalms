@@ -12,7 +12,7 @@ export default function Navbar() {
   // if (pathName === "/landing-page/") {
   //   return <LandingNavbar />;
   // }
-  if (pathName === "/thank-you/" || pathName=== "/") {
+  if (pathName === "/thank-you/") {
     return null;
   }
   if (pathName === "/" || pathName === "") {

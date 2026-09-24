@@ -159,7 +159,7 @@ const Banner: FC<BannerProps> = ({
             speed={2500}
             className="w-full"
             renderSlide={(image) => (
-              <div className="w-full lg:aspect-[4/2] md:aspect-[3/4.5] relative">
+              <div className="w-full xl-[3/1.5] max-xl:aspect-[3.2/1.7] lg:aspect-[3.2/1.5] max-md:aspect-[4/6] md:aspect-[4/5]  relative">
                 <Image
                   src={image}
                   alt="banner image"
@@ -180,9 +180,9 @@ const Banner: FC<BannerProps> = ({
             />
           </div>
 
-          <div className="absolute top-0 left-0 w-full z-10">
+          {/* <div className="absolute top-0 left-0 w-full z-10">
             <NavBar2 />
-          </div>
+          </div> */}
           {showBookingForm && (
             <div className="absolute bottom-6 inset-x-0 z-10">
               <Container className="xl:max-w-5xl! mx-auto">

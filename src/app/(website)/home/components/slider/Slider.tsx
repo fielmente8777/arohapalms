@@ -57,12 +57,14 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
             </div>
           )}
         />
-        <div className="relative -mt-16 z-20 pointer-events-none">
+        <div className="relative md:-mt-8 max-md:-mt-32 max-lg:-mt-11 xl:-mt-16 z-20 pointer-events-none">
           <div
             className="mx-auto
               flex
               w-full
-              max-w-[1150px]
+              md:max-w-[650px]
+              lg:max-w-[830px]
+              xl:max-w-[1150px]
               items-center
               justify-between
               pointer-events-auto
@@ -81,7 +83,8 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
         <LinkButton
           href={link.href}
           label={link.label}
-          className="mx-auto mt-18! border-0! border-b! border-p2! text-p2"
+          className="mx-auto md:mt-16 max-md:mt-17 max-lg:mt-18!
+          lg:mt-16 border-0! border-b! border-p2! text-p2"
         />
       )}
     </Section>

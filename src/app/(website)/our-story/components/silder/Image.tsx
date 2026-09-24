@@ -21,96 +21,11 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    // <Section className="!p-0">
-    //   <div className="relative w-full">
-    //     <SwiperCarousel
-    //       data={images}
-    //       modules={[Navigation]}
-    //       navigation={{
-    //         nextEl: ".gallery-slider-next",
-    //         prevEl: ".gallery-slider-prev",
-    //       }}
-    //       slidesPerView={2.5}
-    //       spaceBetween={24}
-    //       loop
-    //       speed={900}
-    //       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-    //       className="w-full"
-    //       renderSlide={(src, index = 0) => (
-    //         <div
-    //           className={`
-    //             relative
-    //             shrink-0
-    //             overflow-hidden
-    //             transition-all
-    //             duration-700
-    //             ease-in-out
-    //             ${
-    //               index === activeIndex
-    //                 ? "h-[568px] w-[676px]"
-    //                 : "h-[516px] w-[241px]"
-    //             }
-    //           `}
-    //         >
-    //           <Image
-    //             src={src}
-    //             alt={`Image ${index + 1}`}
-    //             fill
-    //             sizes={index === activeIndex ? "676px" : "241px"}
-    //             className="object-cover"
-    //           />
-    //         </div>
-    //       )}
-    //     />
-
-    //     {/* EXISTING GALLERY BUTTONS */}
-    //     <div className="relative z-20 mt-4">
-    //       <div className="flex w-full items-center justify-between">
-    //         <button
-    //           type="button"
-    //           className="
-    //             gallery-slider-prev
-    //             flex
-    //             w-10
-    //             items-center
-    //             justify-center
-    //           "
-    //           aria-label="Previous image"
-    //         >
-    //           <BtnIcon />
-    //         </button>
-
-    //         <button
-    //           type="button"
-    //           className="
-    //             gallery-slider-next
-    //             flex
-    //             w-10
-    //             rotate-180
-    //             items-center
-    //             justify-center
-    //           "
-    //           aria-label="Next image"
-    //         >
-    //           <BtnIcon />
-    //         </button>
-    //       </div>
-    //     </div>
-    //   </div>
-
-    //   {link && (
-    //     <LinkButton
-    //       href={link.href}
-    //       label={link.label}
-    //       className="mx-auto mt-18! border-0! border-b! border-p2! text-p2"
-    //     />
-    //   )}
-    // </Section>
     <Section defaultPadding={false} >
       <div className="relative  ">
         <div className="flex items-start gap-6">
           {/* LEFT IMAGE */}
-          <div className="hidden md:block ">
+          <div className="hidden lg:block ">
             <div className="relative h-[528px] w-[241px] overflow-hidden">
               <Image
                 src={
@@ -160,7 +75,53 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
           </div>
         </div>
       </div>
+        <div className="block w-full lg:hidden">
+          <SwiperCarousel
+            data={images}
+            modules={[Navigation]}
+            navigation={{
+              nextEl: ".gallery-mobile-next",
+              prevEl: ".gallery-mobile-prev",
+            }}
+            slidesPerView={1}
+            spaceBetween={0}
+            loop
+            speed={700}
+            onSlideChange={(swiper) =>
+              setActiveIndex(swiper.realIndex)
+            }
+            className="w-full"
+            renderSlide={(src) => (
+              <div className="relative aspect-[442/664] w-full overflow-hidden">
+                <Image
+                  src={src}
+                  alt="Image"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
+          />
 
+          {/* MOBILE NAVIGATION */}
+          <div className="mt-3 flex w-full items-center justify-between">
+            <button
+              type="button"
+              className="gallery-mobile-prev"
+              aria-label="Previous image"
+            >
+              <BtnIcon />
+            </button>
+
+            <button
+              type="button"
+              className="gallery-mobile-next rotate-180"
+              aria-label="Next image"
+            >
+              <BtnIcon />
+            </button>
+          </div>
+        </div>
       {link && (
         <LinkButton
           href={link.href}
@@ -188,3 +149,4 @@ export const BtnIcon = () => (
     />
   </svg>
 );
+

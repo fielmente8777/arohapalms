@@ -29,17 +29,17 @@ const Testimonials = ({
 
   return (
     <Section className="w-full bg-background-2 ">
-      {/* 1380px Frame with 1px #CA9E55 Border */}
-      <div className="mx-auto w-full max-w-[1380px] ">
-        <div className="grid grid-cols-1 overflow-hidden rounded-xs border border-[#CA9E55] bg-white md:h-[602px] md:grid-cols-2">
+      
+      <div className="mx-auto w-full lg:max-w-[1380px] ">
+        <div className="grid grid-cols-1 overflow-hidden rounded-xs border border-[#CA9E55] bg-white lg:h-[602px] md:grid-cols-2">
        
 
-          <div className="relative min-h-[360px] w-full md:h-full">
+          <div className="relative md:min-h-[300px] lg:min-h-[360px] w-full md:h-full">
             <Image
               src={image || "/home/testimonial-img.jpg"}
               alt="Guest Appreciation"
               fill
-              sizes="(max-width: 768px) 100vw, 690px"
+              
               priority
               className="object-cover"
             />

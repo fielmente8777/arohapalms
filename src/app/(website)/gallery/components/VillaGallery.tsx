@@ -142,7 +142,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
         </div>
 
         {/* DESCRIPTION */}
-        <div className="mx-auto mt-8 max-w-[680px] px-6 text-center">
+        <div className="mx-auto max-md:mt-18 max-lg:mt-10 lg:mt-10 max-w-[680px] px-6 text-center">
           <p className="text-[13px] leading-[1.8] text-[#777] md:text-xl">
             {activeVilla.description}
           </p>

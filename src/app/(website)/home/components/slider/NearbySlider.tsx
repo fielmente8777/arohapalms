@@ -45,7 +45,7 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           className="w-full"
           renderSlide={(card, index) => (
-            <div className="relative flex h-[650px] w-full items-start">
+            <div className="relative flex md:h-[500px] lg:h-[650px] w-full items-start">
               <div
                 className={`
                 relative
@@ -72,7 +72,7 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
                   className="object-cover"
                 />
 
-                {/* IMAGE OVERLAY */}
+                
                 <div
                   className="
                   absolute
@@ -81,16 +81,18 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
                 "
                 />
 
-                {/* BOTTOM GRADIENT */}
-                {/* TITLE */}
+                
                 <div
                   className="
+                  md:items-center
+                  justify-center
     absolute
     bottom-0
     left-0
     z-10
     flex
-    h-10
+    md:h-8
+    lg:h-10
     w-full
     items-center
     justify-center
@@ -101,12 +103,15 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
                   <span
                     className="
       text-center
+      justify-center
       text-xs
       font-medium
       uppercase
       tracking-wide
       text-white
-      md:text-sm
+      md:text-[10px]
+      lg:text-sm
+      xl:text-[15px]
     "
                   >
                     {card.title}
@@ -118,13 +123,15 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
         />
 
         {/* NAVIGATION */}
-        <div className="relative z-20 -mt-20">
+        <div className="relative z-20 md:-mt-55 lg:-mt-65 xl:-mt-24">
           <div
             className="
               mx-auto
               flex
               w-full
-              max-w-[700px]
+              md:max-w-[440px]
+              lg:max-w-[550px]
+              xl:max-w-[700px]
               items-center
               justify-between
             "

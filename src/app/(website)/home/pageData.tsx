@@ -225,12 +225,12 @@ export const homePageData = {
         distance: "XX Kilometers",
       },
       {
-        icon: <TrainIcon />,
+        icon: <BusIcon />,
         title: "Train Station",
         distance: "XX Kilometers",
       },
       {
-        icon: <PIcon />,
+        icon: <BusIcon />,
         title: "Airport",
         distance: "XX Kilometers",
       },
@@ -366,5 +366,4 @@ export const homePageData = {
   //     },
   //   ],
   // },
-
 };

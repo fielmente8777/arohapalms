@@ -16,7 +16,7 @@ const Gallery = ({
 }: GalleryProps) => {
   return (
     <>
-    <Section className="relative h-[760px] w-full overflow-hidden">
+    <Section className="relative max-md:h-[500px] max-lg:h-[760px] lg:h-[760px] w-full overflow-hidden">
       <Image
         src={image}
         alt={title}

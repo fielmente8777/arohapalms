@@ -33,11 +33,12 @@ const AboutSection = ({
             className="mb-4
             mt-12!
             font-primary
-            max-w-[560px]
-            md:text-[48px]
+            md:w-[380px]
+            lg:w-[400px]
+            lg:text-5xl
             font-light
             text-p2
-            text-3xl
+            md:text-3xl
           "
           >
             {title}
@@ -54,7 +55,8 @@ const AboutSection = ({
 
           <p
             className="mt-6
-            max-w-[520px]
+            md:max-w-[650px]
+            lg:max-w-[800px]
             text-sm
             font-normal
             text-[#777777]

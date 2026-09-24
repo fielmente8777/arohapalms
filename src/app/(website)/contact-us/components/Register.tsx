@@ -22,9 +22,9 @@ const Register = ({
 }: RegisterProps) => {
   return (
     <Section defaultPadding={false}>
-      <div className="grid w-full grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+      <div className="grid w-full grid-cols-1 lg:grid-cols-2 min-h-[600px] bg-background-2">
         {/* IMAGE */}
-        <div className="relative min-h-[400px] lg:min-h-[600px]">
+        <div className="relative min-h-[400px] lg:min-h-[600px] lg:mt-0 md:mt-8">
           <Image src={image} alt="Aroha Palms" fill className="object-cover" />
         </div>
 
