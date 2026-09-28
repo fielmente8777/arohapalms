@@ -76,11 +76,14 @@ const NavMenu = ({ side = "right" }: NavMenuProps) => {
                       <span>{link.label}</span>
 
                       <span
-                        onClick={() =>
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+
                           setOpenMenu(
                             openMenu === link.label ? null : link.label
-                          )
-                        }
+                          );
+                        }}
                         className="text-lg"
                       >
                         <span
@@ -116,7 +119,7 @@ const NavMenu = ({ side = "right" }: NavMenuProps) => {
                 ) : (
                   <Link
                     href={link.href!}
-                    // onClick={() => setIsOpenNavBar(false)}
+                    onClick={() => setIsOpenNavBar(false)}
                     className="block text-sm md:text-lg font-primary tracking-[0.12em] text-[#005b96] hover:text-[#011f4b] transition-colors"
                   >
                     {link.label}

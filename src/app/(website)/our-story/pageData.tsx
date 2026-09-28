@@ -98,6 +98,18 @@ export const OurStoryData = {
       description:
         "At Aroha Palms, every stay is designed for togetherness. From slow mornings by the pool to evenings that linger a little longer, our homes create the perfect setting for families and friends to reconnect, celebrate, and simply be.",
     },
+    buttons: [
+      {
+        label: "Explore Mandrem",
+        href: "/destination/mandrem",
+        variant: "solid",
+      },
+      {
+        label: "Explore Pilerne",
+        href: "/destination/pilerne",
+        variant: "outline",
+      },
+    ],
   },
   confidenceData: {
     title: "Driven By Confidence, Elegance And Luxury",

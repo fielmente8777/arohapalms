@@ -12,6 +12,7 @@ const NavBar2 = () => {
 
   const [visible, setVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
@@ -52,7 +53,7 @@ const NavBar2 = () => {
 
   return (
     <>
-      <div className="">
+      <div>
         <header
           className={` fixed top-0 left-0 z-50 w-full
         transition-transform duration-700 ease-[cubic-bezier(0.76,0,0.24,1)]

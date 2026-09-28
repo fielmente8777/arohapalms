@@ -1,5 +1,6 @@
 "use client";
 
+import LinkButton from "@/components/buttons/LinkButton";
 import { Section } from "@/components/sectionComponants";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,9 +16,20 @@ interface OurVillasProps {
     title: string;
     description: string;
   };
+  buttons: {
+    label: string;
+    href: string;
+    variant: string;
+  }[];
 }
 
-const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
+const OurVillas = ({
+  title,
+  description,
+  videos,
+  card,
+  buttons,
+}: OurVillasProps) => {
   return (
     <Section className="bg-background-2 ">
       <div className="max_screen_width px-8">
@@ -60,52 +72,20 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
               ))}
             </div>
 
-            <div className="mt-7 flex lg:flex-wrap gap-3 md:mx-auto">
-              <Link
-                href="/destination/mandrem"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  border
-                  border-blue
-                  px-5
-                  py-2.5
-                  text-[10px]
-                  font-medium
-                  uppercase
-                  text-blue
-                  transition
-                  duration-300
-                  hover:bg-blue
-                  hover:text-white
-                "
-              >
-                Explore Mandrem
-              </Link>
-
-              <Link
-                href="/destination/pilerne"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  border
-                  border-blue
-                  px-5
-                  py-2.5
-                  text-[10px]
-                  font-medium
-                  uppercase
-                  text-blue
-                  transition
-                  duration-300
-                  hover:bg-blue
-                  hover:text-white
-                "
-              >
-                Explore Pilerne
-              </Link>
+            <div className="mt-7 flex flex-wrap items-center gap-4">
+              {buttons.map((button, index) => (
+                <Link
+                  key={`${button.href}-${index}`}
+                  href={button.href}
+                  className={`inline-flex items-center justify-center px-5 py-2.5 text-[10px] font-medium uppercase md:text-sm transition duration-300 ${
+                    button.variant === "solid"
+                      ? "bg-navy text-white hover:bg-blue"
+                      : "border-b border-blue text-blue hover:bg-blue hover:text-white"
+                  }`}
+                >
+                  {button.label}
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -180,7 +160,7 @@ const OurVillas = ({ title, description, videos, card }: OurVillasProps) => {
           </div>
         </div>
       </div>
-      <div className="mt-10 w-full overflow-hidden md:mt-16">
+      <div className="mt-10 w-full overflow-hidden md:mt-16 rotate-180">
         <Image
           src="/images/Greek1.png"
           alt=""

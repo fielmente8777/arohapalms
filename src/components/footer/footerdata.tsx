@@ -22,9 +22,11 @@ interface FooterData {
 
 export const WebfooterData = {
   logo: "/newf.png",
+  cin: "U55101GA2022PTC015434",
+  gstin: "30AAXCA4249B1ZV",
 
   bookNow: {
-    text: "Book Now",
+    text: "Find A Villa",
     href: "/booking",
   },
 
@@ -35,7 +37,7 @@ export const WebfooterData = {
         label: "Home",
         href: "/",
       },
-        {
+      {
         label: "Our Story",
         href: "/our-story",
       },
@@ -47,7 +49,7 @@ export const WebfooterData = {
         label: "Location - Pilerne",
         href: "/destination/pilerne",
       },
-     {
+      {
         label: "The Experience",
         href: "/experience",
       },
@@ -55,7 +57,7 @@ export const WebfooterData = {
         label: "Gallery",
         href: "/gallery",
       },
-    
+
       {
         label: "Articles",
         href: "/articles",
@@ -119,10 +121,10 @@ export const WebfooterData = {
     ],
   },
 
-  copyright: "© 2026 Aroha Palms. All Rights Reserved.",
+  copyright: "© AROHA PALMS 2026. ALL RIGHTS RESERVED.",
 
   poweredBy: {
-    text: "Powered by Fielmente",
+    text: "Crafted By Fielmente",
     href: "https://fielmente.com",
   },
 };
@@ -227,7 +229,7 @@ export const pilerneFooterData: FooterData = {
   ],
 };
 
-export const  WebData: FooterData = {
+export const WebData: FooterData = {
   logo: "/logo.png",
   tagLine: "Resorts · Khajuraho",
   description:

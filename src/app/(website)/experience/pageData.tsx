@@ -77,6 +77,23 @@ export const experiencePageData = {
         image: "/images/para.jpg",
         label: "Paragliding",
       },
+      {
+        image: "/images/suba.jpg",
+        label: "Scuba Diving",
+      },
+      {
+        image: "/images/para.jpg",
+        label: "Paragliding",
+      },
     ],
+    exploreBeyond: {
+      title: "Explore Beyond Aroha Palms",
+      description:
+        "For those looking to venture beyond the villa, North Goa's beaches, forts, cafés, and cultural experiences are just waiting to be explored.",
+      cta: {
+        label: "Nearby Experiences",
+        href: "/destination",
+      },
+    },
   },
 };

@@ -40,13 +40,12 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
     setActiveVillaIndex(index);
   };
 
-  const thumbWidthPercent = villas.length > 0 ? 100 / villas.length : 100;
-  const thumbTranslatePercent = activeVillaIndex * 100;
+  const progressPercent =
+    villas.length > 0 ? ((activeVillaIndex + 1) / villas.length) * 100 : 0;
 
   return (
     <Section className="w-full overflow-hidden bg-background-2 py-12 md:py-16">
       <div className="mx-auto w-full ">
-
         <div className="flex justify-center gap-3 md:gap-4">
           {(["Mandrem", "Pilerne"] as const).map((item) => {
             const isActive = location === item;
@@ -124,10 +123,9 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
         <div className="mx-auto mt-3 w-full max-w-[1100px] px-6 md:px-12">
           <div className="relative h-[8px] w-full rounded-full bg-[#e8e4dc]">
             <div
-              className="absolute top-[2px] h-[5px] rounded-full bg-[#CA9E55] transition-transform duration-500 ease-out"
+              className="absolute left-0 top-[2px] h-[5px] rounded-full bg-[#CA9E55] transition-all duration-500 ease-out"
               style={{
-                width: `${Math.max(thumbWidthPercent, 12)}%`,
-                transform: `translateX(${thumbTranslatePercent}%)`,
+                width: `${progressPercent}%`,
               }}
             />
           </div>

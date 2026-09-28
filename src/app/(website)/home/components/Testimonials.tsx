@@ -30,11 +30,11 @@ const Testimonials = ({
   return (
     <Section className="w-full bg-background-2 ">
       
-      <div className="mx-auto w-full lg:max-w-[1380px] ">
+      <div className="mx-auto w-full lg:w-[1450px] ">
         <div className="grid grid-cols-1 overflow-hidden rounded-xs border border-[#CA9E55] bg-white lg:h-[602px] md:grid-cols-2">
        
 
-          <div className="relative md:min-h-[300px] lg:min-h-[360px] w-full md:h-full">
+          <div className="relative md:min-h-[300px] w-full md:h-full">
             <Image
               src={image || "/home/testimonial-img.jpg"}
               alt="Guest Appreciation"
@@ -63,7 +63,6 @@ const Testimonials = ({
                 />
               </div>
 
-              {/* 5 GOLD STARS */}
               <div className="mt-3 flex items-center justify-center gap-1 text-[#CA9E55]">
                 {[...Array(5)].map((_, i) => (
                   <Star
@@ -74,7 +73,6 @@ const Testimonials = ({
                 ))}
               </div>
 
-              {/* REVIEWS SWIPER */}
               <div className="mt-6 w-full">
                 <SwiperCarousel
                   data={reviews}
@@ -95,12 +93,11 @@ const Testimonials = ({
                   className="w-full"
                   renderSlide={(item) => (
                     <div className="flex flex-col items-center text-center">
-                      {/* Review Text */}
+                      
                       <p className="text-[13px] text-[#777777] md:text-xl">
                         {item.review}
                       </p>
 
-                      {/* Author Name */}
                       <p className="mt-5 text-[12px] md:text-xl font-medium uppercase text-[#17384e]">
                         {item.name}
                       </p>

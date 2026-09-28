@@ -65,7 +65,7 @@ const AboutSection = ({
           >
             {description}
           </p>
-
+{/* 
           <Link
             href={button.href}
             className="
@@ -89,14 +89,14 @@ const AboutSection = ({
             <span className="text-sm transition-transform duration-300 group-hover:translate-x-1">
               <ArrowIcon />
             </span>
-          </Link>
+          </Link> */}
         </div>
       </SectionWithContainer>
       <div className="bg-background-2 max_screen_width">
         <GallerySlider
           images={images}
           link={{
-            label: "About Us",
+            label: "ABOUT US",
             href: "/our-story",
           }}
         />

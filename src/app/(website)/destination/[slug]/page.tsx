@@ -67,12 +67,11 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
-
   return (
     <main>
-       <Banner {...homePageData.hero} showBookingForm />
+      <Banner {...homePageData.hero} showBookingForm />
       {/* <HeroBanner {...data.hero} /> */}
-      <Properties cards={data.properties.cards} title={data.properties.title} />
+      <Properties cards={data.properties.cards} sectionHeader={data.properties.sectionHeader} />
       {/* <Testimonials {...homePageData.testimonials} /> */}
     </main>
   );

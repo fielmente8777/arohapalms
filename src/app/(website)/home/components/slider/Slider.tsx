@@ -57,7 +57,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
             </div>
           )}
         />
-        <div className="relative md:-mt-8 max-md:-mt-32 max-lg:-mt-11 xl:-mt-16 z-20 pointer-events-none">
+        <div className="relative md:-mt-8 max-md:-mt-32 max-lg:-mt-10 xl:-mt-11 z-20 pointer-events-none">
           <div
             className="mx-auto
               flex

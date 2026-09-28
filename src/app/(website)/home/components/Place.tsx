@@ -47,7 +47,7 @@ const Place = ({
           "
         >
           {/* TAG */}
-          <p
+          {/* <p
             className="
               text-[10px]
               uppercase
@@ -56,7 +56,7 @@ const Place = ({
             "
           >
             {tag}
-          </p>
+          </p> */}
 
           {/* TITLE */}
           <h2
@@ -167,7 +167,7 @@ const Place = ({
                   text-white
                 "
               >
-                <p
+                {/* <p
                   className="
                     text-[10px]
                     uppercase
@@ -175,7 +175,7 @@ const Place = ({
                   "
                 >
                   {tag}
-                </p>
+                </p> */}
 
                 <h3
                   className="
@@ -204,9 +204,9 @@ const Place = ({
                   className="
                     mt-4
                     block
-                    text-[9px]
+                    text-[14px]
                     uppercase
-                    tracking-[0.08em]
+                    
                   "
                 >
                   Explore

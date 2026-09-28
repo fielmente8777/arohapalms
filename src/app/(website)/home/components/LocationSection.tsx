@@ -101,7 +101,7 @@ const LocationSection = ({
           <Image src="/home/design6.png" alt="" fill className="object-fill" />
         </div>
         {/* MAP */}
-        <div className="relative h-[350px] md:h-[420px] overflow-hidden lg:h-[530px] px-6 md:px-0">
+        <div className="relative h-[350px] md:h-[420px] overflow-hidden lg:h-[616px] px-6 md:px-0">
           <Image
             src={mapImage}
             alt="Location map"
