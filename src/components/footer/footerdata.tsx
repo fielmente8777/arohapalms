@@ -21,7 +21,7 @@ interface FooterData {
 }
 
 export const WebfooterData = {
-  logo: "/newf.png",
+  logo: "/home/newf.png",
   cin: "U55101GA2022PTC015434",
   gstin: "30AAXCA4249B1ZV",
 
