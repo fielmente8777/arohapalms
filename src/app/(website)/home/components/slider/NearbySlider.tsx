@@ -18,7 +18,7 @@ interface SliderProps {
 
 const Slider: React.FC<SliderProps> = ({ cards }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const total = cards.length;
   const sliderCards = cards.length > 3 ? cards : [...cards, ...cards];
 
   return (
@@ -40,7 +40,7 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
               slidesPerView: 2.45,
               spaceBetween: 16,
             },
-             1032: {
+            1032: {
               slidesPerView: 2.7,
               spaceBetween: 16,
             },
@@ -76,7 +76,6 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
                   className="object-cover"
                 />
 
-                
                 <div
                   className="
                   absolute
@@ -85,7 +84,6 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
                 "
                 />
 
-                
                 <div
                   className="
                   md:items-center
@@ -154,7 +152,9 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
             >
               <BtnIcon />
             </button>
-
+            <span className="hidden text-xs text-[#152536] max-lg:block">
+              {activeIndex + 1} - {total}
+            </span>
             <button
               type="button"
               aria-label="Next"

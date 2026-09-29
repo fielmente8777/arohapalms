@@ -6,7 +6,7 @@ import Image from "next/image";
 
 interface ExperienceCard {
   image: string;
-  video: string;
+  video?: string;
   title: string;
   description: string;
 }
@@ -71,11 +71,16 @@ const ExperienceGallery = ({
                   overflow-hidden
                 "
               >
-                {/* LAZY LOADED VIDEO */}
-                <LazyLoadedVideo
-                  src={card.video}
-                  poster={card.image}
-                />
+                {card.video ? (
+                  <LazyLoadedVideo src={card.video} poster={card.image} />
+                ) : (
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover"
+                  />
+                )}
 
                 {/* OVERLAY */}
                 <div
@@ -89,8 +94,6 @@ const ExperienceGallery = ({
                     group-hover:bg-black/15
                   "
                 />
-
-           
 
                 {/* TITLE */}
                 <div

@@ -115,7 +115,7 @@ export const AccommodationCard: React.FC<
             </h3>
             <p className="text-lg text-primary">{moreInfo.title}</p>
             <div className="flex flex-wrap items-center gap-2 py-2">
-              {moreInfo.roomInfo.map((info, index) => (
+              {moreInfo.roomInfo?.map((info, index) => (
                 <span
                   key={index}
                   className="flex items-center gap-2 bg-background-2 text-sm py-1 text-background-dark px-3 rounded-full"

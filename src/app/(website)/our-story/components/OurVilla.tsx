@@ -51,20 +51,21 @@ const OurVillas = ({
                 lg:text-start
                 text-center
                 text-blue
-                md:text-5xl
+                lg:text-5xl
+
               "
             >
               {title}
             </h2>
 
-            <div className="mt-5 space-y-4">
+            <div className="mt-5 hidden lg:block space-y-4">
               {description.map((text, index) => (
                 <p
                   key={index}
                   className="
                     text-lg
                     text-[#666]
-                    md:text-xl
+                    lg:text-xl
                   "
                 >
                   {text}
@@ -72,7 +73,7 @@ const OurVillas = ({
               ))}
             </div>
 
-            <div className="mt-7 hidden lg:block  flex flex-wrap items-center gap-4">
+            <div className="mt-7 hidden lg:flex flex-wrap mx-auto items-center gap-4">
               {buttons.map((button, index) => (
                 <Link
                   key={`${button.href}-${index}`}
@@ -98,7 +99,7 @@ const OurVillas = ({
         relative
         w-full
         aspect-[3/4]
-        md:aspect-[3/4] lg:h-[660] lg:aspect-[2.5/3.2]
+        md:aspect-[3/4] lg:h-[550] lg:aspect-[2/3]
         overflow-hidden
       "
               >
@@ -106,8 +107,22 @@ const OurVillas = ({
               </div>
             ))}
           </div>
+                      <div className="mt-5 lg:hidden space-y-4">
+              {description.map((text, index) => (
+                <p
+                  key={index}
+                  className="
+                    text-lg
+                    text-[#666]
+                    lg:text-xl
+                  "
+                >
+                  {text}
+                </p>
+              ))}
+            </div>
 
-                      <div className="mt-7 w-full lg:hidden flex flex-wrap  items-center gap-4">
+                      <div className="mt-7 w-full lg:hidden flex flex-row mx-auto items-center justify-center gap-4">
               {buttons.map((button, index) => (
                 <Link
                   key={`${button.href}-${index}`}

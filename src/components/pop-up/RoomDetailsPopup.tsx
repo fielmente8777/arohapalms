@@ -9,7 +9,7 @@ import SwiperCarousel from "../sliders/SwiperCarousel";
 
 // Define the type for listOfData items
 type ListOfDataItem = {
-  title: string;
+  title?: string;
   description?: string;
   list: string[];
 };

@@ -527,9 +527,9 @@ const GallerySlider = ({
 
   return (
     <Section defaultPadding={false}>
-      <div className="w-full lg:max-w-[941px]">
+      <div className="w-full xl:max-w-[941px]">
         {/* DESKTOP */}
-        <div className="relative hidden aspect-[941/568] w-full overflow-hidden lg:block">
+        <div className="relative hidden aspect-[941/568] w-full overflow-hidden xl:block">
           <Slides
             images={images}
             activeIndex={activeIndex}
@@ -549,9 +549,9 @@ const GallerySlider = ({
         </div>
 
         {/* MOBILE + MD */}
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <div
-            className="relative aspect-[4/3.5] w-full overflow-hidden md:aspect-[4/3]"
+            className="relative aspect-[4/3.5] w-full overflow-hidden lg:aspect-[5/3]"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >

@@ -10,8 +10,22 @@ import { Autoplay, Navigation } from "swiper/modules";
 import AmenitiesSlider from "../sliders/AmenitiesSlider";
 
 type SectionListItem =
-  | string
-  | { title?: string; subTitle?: string; items?: string[] };
+  string | { title?: string; subTitle?: string; items?: string[] };
+
+type SectionButton = {
+  btn: string;
+  listOfData: {
+    title?: string;
+    list: (
+      | string
+      | {
+          title?: string;
+          subTitle?: string;
+          items?: string[];
+        }
+    )[];
+  }[];
+};
 
 const renderSectionListItem = (item: SectionListItem, idx: number) => {
   if (typeof item === "string") {
@@ -51,7 +65,8 @@ const renderSectionListItem = (item: SectionListItem, idx: number) => {
 const PropertyDetailsPopup = () => {
   const { property, isOpenProperty, closeProperty } = useWebContext();
 
-  const sectionButtons = property?.moreInfo?.sectionButton;
+  const sectionButtons: SectionButton[] =
+    property?.moreInfo?.sectionButton ?? [];
 
   const [activeBtn, setActiveBtn] = useState<string | null>(null);
 
@@ -82,9 +97,7 @@ const PropertyDetailsPopup = () => {
         <div className="grid max-lg:mt-3.5 lg:grid-cols-2 grid-cols-1 gap-6">
           <div className="lg:block hidden w-full room-card">
             <SwiperCarousel
-              data={
-                property?.images || (property?.image ? [property.image] : [])
-              }
+              data={property?.images || [""]}
               slidesPerView={1}
               spaceBetween={0}
               loop
@@ -100,7 +113,8 @@ const PropertyDetailsPopup = () => {
               swiperSlideClassName="aspect-4/4 relative rounded-2xl overflow-hidden"
               renderSlide={(image) => (
                 <Image
-                  src={image}
+                  src={image as string}
+
                   alt={property?.title || ""}
                   fill
                   sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
@@ -128,10 +142,7 @@ const PropertyDetailsPopup = () => {
 
             <div className="lg:hidden w-full">
               <SwiperCarousel
-                data={
-                  property?.images ||
-                  (property?.image ? [property.image] : [])
-                }
+                data={property?.images || [""]}
                 slidesPerView={1}
                 spaceBetween={0}
                 loop
@@ -147,7 +158,7 @@ const PropertyDetailsPopup = () => {
                 swiperSlideClassName="aspect-4/4 relative rounded-xl overflow-hidden"
                 renderSlide={(image) => (
                   <Image
-                    src={image}
+                    src={image as string}
                     alt={property?.title || ""}
                     fill
                     sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
@@ -211,9 +222,7 @@ const PropertyDetailsPopup = () => {
                     {activeSection.listOfData.map((group, gIdx) => (
                       <div key={gIdx} className="space-y-2">
                         {group.title && (
-                          <p className="font-semibold text-p2">
-                            {group.title}
-                          </p>
+                          <p className="font-semibold text-p2">{group.title}</p>
                         )}
                         <div className="space-y-2">
                           {group.list.map((item, iIdx) =>

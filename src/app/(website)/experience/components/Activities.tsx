@@ -28,7 +28,7 @@ const Activities = ({ title, slides, exploreBeyond }: ActivitiesProps) => {
   return (
     <Section className="bg-background-2">
       {/* HEADING */}
-      <div className="mx-auto mb-8 max-w-[650px] text-center md:mb-10">
+      <div className="mx-auto max-w-[650px] text-center ">
         <h2
           className="
             font-primary
@@ -61,7 +61,7 @@ const Activities = ({ title, slides, exploreBeyond }: ActivitiesProps) => {
 
       {exploreBeyond && (
         <div className="mt-10 md:mt-16 ">
-          <div className="mx-auto w-full max-w-[1165px] border border-primary">
+          <div className="mx-auto w-full max-w-[300px] md:max-w-[650px] lg:max-w-[980px] xl:max-w-[1165px] border border-primary">
             <div
               className="
                 grid

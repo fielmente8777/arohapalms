@@ -7,10 +7,10 @@ export interface AccommodationSectionProps {
   note?: string;
   cards: {
     title: string;
-    span: string;
-    discountCode: string;
+    span?: string;
+    discountCode?: string;
     type: string;
-    description: string;
+    description?: string;
     amenities: {
       icon: JSX.Element;
       label: string;
@@ -19,14 +19,14 @@ export interface AccommodationSectionProps {
       icon: JSX.Element;
       label: string;
     }[];
-    originalPrice: string;
-    startingPrice: string;
+    originalPrice?: string;
+    startingPrice?: string;
     moreInfo: {
-      title: string;
-      roomInfo: string[];
+      title?: string;
+      roomInfo?: string[];
       description: string[];
       listOfData: {
-        title: string;
+        title?: string;
         description?: string;
         list: string[];
       }[];
@@ -34,6 +34,15 @@ export interface AccommodationSectionProps {
         author: string;
         description: string;
       };
+      sectionButton?: {
+        btn: string;
+        listOfData: {
+          title?: string;
+          list: (
+            string | { title?: string; subTitle?: string; items?: string[] }
+          )[];
+        }[];
+      }[];
     };
     note?: {
       title: string;

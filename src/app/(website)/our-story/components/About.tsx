@@ -121,11 +121,11 @@ const About = ({ title, intro, description, images }: AboutProps) => {
 
   return (
     <Section className="bg-background-2">
-      <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch">
+      <div className="flex flex-col gap-6 xl:flex-row ">
         <h2 className=" lg:hidden justify-between text-center font-normal mt-8 text-blue text-3xl lg:text-5xl xl:text-5xl">
           {title}
         </h2>
-        <div className="w-full min-w-0 md:w-[50%] lg:w-[62%] xl:w-[941px]">
+        <div className="w-full min-w-0 xl:w-[941px]">
           <GallerySlider
             images={images}
             index={index}
@@ -134,7 +134,7 @@ const About = ({ title, intro, description, images }: AboutProps) => {
           />
         </div>
 
-        <div className="flex w-full flex-col justify-between px-6 md:px-6 lg:w-[42%] lg:px-0 xl:w-[500px]">
+        <div className="flex w-full flex-col justify-between px-6 md:px-6 lg:mt-6 xl:w-[500px]">
           <div>
             <h2 className="hidden lg:block font-normal text-blue text-3xl lg:text-5xl xl:text-5xl">
               {title}
@@ -156,12 +156,12 @@ const About = ({ title, intro, description, images }: AboutProps) => {
             </div>
           </div>
 
-          <div className="mt-8 flex items-center justify-between lg:mb-0">
+          <div className="mt-8 hidden xl:flex items-center justify-between lg:mb-0">
             <button
               type="button"
               onClick={next}
               aria-label="Next image"
-              className="hidden rotate-180 items-center lg:flex"
+              className="hidden rotate-180 items-center xl:flex"
             >
               <BtnIcon />
             </button>
