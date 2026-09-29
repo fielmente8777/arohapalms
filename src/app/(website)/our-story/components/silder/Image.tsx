@@ -148,13 +148,214 @@
 //   </svg>
 // );
 
+// "use client";
+
+// import LinkButton from "@/components/buttons/LinkButton";
+// import { Section } from "@/components/sectionComponants";
+// import Image from "next/image";
+// import { useCallback, useState } from "react";
+
+// export function useSlider(total: number) {
+//   const [index, setIndex] = useState(0);
+//   const next = useCallback(() => setIndex((i) => (i + 1) % total), [total]);
+//   const prev = useCallback(
+//     () => setIndex((i) => (i - 1 + total) % total),
+//     [total]
+//   );
+//   return { index, next, prev };
+// }
+
+// interface GallerySliderProps {
+//   images: string[];
+//   index: number;
+//   onPrev: () => void;
+//   onNext: () => void;
+//   link?: { label: string; href: string };
+// }
+
+// const PREVIEW_W = 241;
+// const PREVIEW_H = 528;
+// const MAIN_W = 676;
+// const MAIN_H = 568;
+// const GAP = 24;
+// const TOTAL_W = PREVIEW_W + GAP + MAIN_W;
+
+// // Mobile + MD layout (percent of container width)
+// const M_MAIN_W = 72;
+// const M_GAP = 4;
+// const M_MAIN_L = (100 - M_MAIN_W) / 2; // 14
+// const M_PREV_L = M_MAIN_L - M_GAP - M_MAIN_W; // -62
+// const M_NEXT_L = M_MAIN_L + M_MAIN_W + M_GAP; // 90
+
+// const pw = (v: number) => `${(v / TOTAL_W) * 100}%`;
+// const ph = (v: number) => `${(v / MAIN_H) * 100}%`;
+// const NEXT_LEFT = PREVIEW_W + GAP + MAIN_W + GAP;
+
+// const GallerySlider = ({
+//   images,
+//   index: activeIndex,
+//   onPrev,
+//   onNext,
+//   link,
+// }: GallerySliderProps) => {
+//   const total = images.length;
+//   if (!total) return null;
+
+//   function getSlideStyle(i: number): React.CSSProperties {
+//     const rel = (i - activeIndex + total) % total;
+
+//     if (rel === 0)
+//       return {
+//         left: pw(PREVIEW_W + GAP),
+//         width: pw(MAIN_W),
+//         height: ph(MAIN_H),
+//         opacity: 1,
+//       };
+
+//     if (rel === total - 1)
+//       return {
+//         left: 0,
+//         width: pw(PREVIEW_W),
+//         height: ph(PREVIEW_H),
+//         opacity: 1,
+//       };
+
+//     if (rel === 1)
+//       return {
+//         left: pw(NEXT_LEFT),
+//         width: pw(PREVIEW_W),
+//         height: ph(PREVIEW_H),
+//         opacity: 1,
+//       };
+
+//     const parkLeft = rel > total / 2;
+//     return {
+//       left: parkLeft ? pw(-(PREVIEW_W + GAP)) : pw(NEXT_LEFT),
+//       width: pw(PREVIEW_W),
+//       height: ph(PREVIEW_H),
+//       opacity: 0,
+//     };
+//   }
+//   function getMobileSlideStyle(i: number): React.CSSProperties {
+//     const rel = (i - activeIndex + total) % total;
+
+//     if (rel === 0)
+//       return { left: `${M_MAIN_L}%`, width: `${M_MAIN_W}%`, opacity: 1 };
+
+//     if (rel === total - 1)
+//       return { left: `${M_PREV_L}%`, width: `${M_MAIN_W}%`, opacity: 1 };
+
+//     if (rel === 1)
+//       return { left: `${M_NEXT_L}%`, width: `${M_MAIN_W}%`, opacity: 1 };
+
+//     const parkLeft = rel > total / 2;
+//     return {
+//       left: `${parkLeft ? M_PREV_L : M_NEXT_L}%`,
+//       width: `${M_MAIN_W}%`,
+//       opacity: 0,
+//     };
+//   }
+//   return (
+//     <Section defaultPadding={false}>
+//       <div className="w-full lg:max-w-[941px]">
+//         {/* DESKTOP */}
+//         <div className="relative hidden aspect-[941/568] w-full overflow-hidden lg:block">
+//           {images.map((src, i) => (
+//             <div
+//               key={`${src}-${i}`}
+//               className="absolute top-0 overflow-hidden transition-all duration-700 ease-in-out"
+//               style={getSlideStyle(i)}
+//             >
+//               <Image
+//                 src={src}
+//                 alt={`Image ${i + 1}`}
+//                 fill
+//                 sizes="(min-width:1280px) 676px, 50vw"
+//                 className="object-cover"
+//                 priority={i === 0}
+//               />
+//             </div>
+//           ))}
+
+//           <div
+//             className="absolute left-0 z-10 flex justify-end"
+//             style={{ top: "96.8%", width: pw(PREVIEW_W) }}
+//           >
+//             <button type="button" onClick={onPrev} aria-label="Previous image">
+//               <BtnIcon />
+//             </button>
+//           </div>
+//         </div>
+
+//         {/* MOBILE + MD */}
+//         <div className="lg:hidden">
+//           <div className="relative aspect-[442/664] w-full overflow-hidden md:aspect-[4/3]">
+//             <Image
+//               key={images[activeIndex]}
+//               src={images[activeIndex]}
+//               alt={`Image ${activeIndex + 1}`}
+//               fill
+//               sizes="100vw"
+//               className="object-cover"
+//             />
+
+//             {/* MD ONLY: arrows centered vertically on the image */}
+//             <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-10 hidden items-center justify-between px-4 md:flex md:px-6">
+//               <button
+//                 type="button"
+//                 onClick={onPrev}
+//                 aria-label="Previous image"
+//                 className="pointer-events-auto"
+//               >
+//                 <BtnIcon />
+//               </button>
+//               <button
+//                 type="button"
+//                 onClick={onNext}
+//                 aria-label="Next image"
+//                 className="pointer-events-auto rotate-180"
+//               >
+//                 <BtnIcon />
+//               </button>
+//             </div>
+//           </div>
+
+//           {/* MOBILE ONLY: arrows below the image */}
+//           <div className="mt-3 flex items-center justify-between px-4 md:hidden">
+//             <button type="button" onClick={onPrev} aria-label="Previous image">
+//               <BtnIcon />
+//             </button>
+//             <button
+//               type="button"
+//               onClick={onNext}
+//               aria-label="Next image"
+//               className="rotate-180"
+//             >
+//               <BtnIcon />
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+
+//       {link && (
+//         <LinkButton
+//           href={link.href}
+//           label={link.label}
+//           className="mx-auto mt-18! border-0! border-b! border-p2! text-p2"
+//         />
+//       )}
+//     </Section>
+//   );
+// };
+
+// export default GallerySlider;
+
 "use client";
 
 import LinkButton from "@/components/buttons/LinkButton";
 import { Section } from "@/components/sectionComponants";
 import Image from "next/image";
-import { useCallback, useState } from "react";
-
+import { memo, useCallback, useRef, useState } from "react";
 
 export function useSlider(total: number) {
   const [index, setIndex] = useState(0);
@@ -174,16 +375,126 @@ interface GallerySliderProps {
   link?: { label: string; href: string };
 }
 
+/* ---------- Layouts (sab values % mein) ---------- */
+
+interface Layout {
+  mainLeft: number;
+  prevLeft: number;
+  nextLeft: number;
+  mainW: number;
+  sideW: number;
+  mainH: number;
+  sideH: number;
+}
+
+// Desktop: original px design ko % mein convert kiya (941 x 568 canvas)
 const PREVIEW_W = 241;
 const PREVIEW_H = 528;
 const MAIN_W = 676;
 const MAIN_H = 568;
 const GAP = 24;
-const TOTAL_W = PREVIEW_W + GAP + MAIN_W; 
+const TOTAL_W = PREVIEW_W + GAP + MAIN_W;
+const xp = (v: number) => (v / TOTAL_W) * 100;
+const yp = (v: number) => (v / MAIN_H) * 100;
 
-const pw = (v: number) => `${(v / TOTAL_W) * 100}%`;
-const ph = (v: number) => `${(v / MAIN_H) * 100}%`;
-const NEXT_LEFT = PREVIEW_W + GAP + MAIN_W + GAP;
+const DESKTOP: Layout = {
+  mainLeft: xp(PREVIEW_W + GAP),
+  prevLeft: 0,
+  nextLeft: xp(PREVIEW_W + GAP + MAIN_W + GAP),
+  mainW: xp(MAIN_W),
+  sideW: xp(PREVIEW_W),
+  mainH: yp(MAIN_H),
+  sideH: yp(PREVIEW_H),
+};
+
+// Mobile + MD: beech ki image 72%, side ki images edge tak half dikhti hain
+const M_MAIN_W = 72;
+const M_GAP = 4;
+const M_MAIN_L = 100 - M_MAIN_W;
+
+const MOBILE: Layout = {
+  mainLeft: M_MAIN_L,
+  prevLeft: M_MAIN_L - M_GAP - M_MAIN_W,
+   nextLeft: 100, 
+  mainW: M_MAIN_W,
+  sideW: M_MAIN_W,
+  mainH: 100,
+  sideH: 100,
+};
+
+/* ---------- Ek hi function dono layouts ke liye ---------- */
+
+function getSlideStyle(
+  i: number,
+  activeIndex: number,
+  total: number,
+  L: Layout
+): React.CSSProperties {
+  const rel = (i - activeIndex + total) % total;
+
+  if (rel === 0)
+    return {
+      left: `${L.mainLeft}%`,
+      width: `${L.mainW}%`,
+      height: `${L.mainH}%`,
+      opacity: 1,
+    };
+
+  const isPrev = rel === total - 1;
+  const isNext = rel === 1;
+  const parkLeft = rel > total / 2;
+
+  return {
+    left: `${isPrev || (!isNext && parkLeft) ? L.prevLeft : L.nextLeft}%`,
+    width: `${L.sideW}%`,
+    height: `${L.sideH}%`,
+    opacity: isPrev || isNext ? 1 : 0,
+  };
+}
+
+/* ---------- Slides layer (memoized) ---------- */
+
+interface SlidesProps {
+  images: string[];
+  activeIndex: number;
+  layout: Layout;
+  sizes: string;
+  priority?: boolean;
+}
+
+const Slides = memo(function Slides({
+  images,
+  activeIndex,
+  layout,
+  sizes,
+  priority,
+}: SlidesProps) {
+  const total = images.length;
+  return (
+    <>
+      {images.map((src, i) => (
+        <div
+          key={`${src}-${i}`}
+          className="absolute top-0 overflow-hidden transition-all duration-700 ease-in-out"
+          style={getSlideStyle(i, activeIndex, total, layout)}
+        >
+          <Image
+            src={src}
+            alt={`Image ${i + 1}`}
+            fill
+            sizes={sizes}
+            className="object-cover"
+            priority={priority && i === 0}
+          />
+        </div>
+      ))}
+    </>
+  );
+});
+
+/* ---------- Main component ---------- */
+
+const SWIPE_THRESHOLD = 40;
 
 const GallerySlider = ({
   images,
@@ -192,70 +503,44 @@ const GallerySlider = ({
   onNext,
   link,
 }: GallerySliderProps) => {
+  // Hooks hamesha early return se pehle
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (touchStartX.current === null) return;
+      const diff = touchStartX.current - e.changedTouches[0].clientX;
+      touchStartX.current = null;
+      if (Math.abs(diff) < SWIPE_THRESHOLD) return;
+      if (diff > 0) onNext();
+      else onPrev();
+    },
+    [onNext, onPrev]
+  );
+
   const total = images.length;
   if (!total) return null;
-
-  function getSlideStyle(i: number): React.CSSProperties {
-    const rel = (i - activeIndex + total) % total;
-
-    if (rel === 0)
-      return {
-        left: pw(PREVIEW_W + GAP),
-        width: pw(MAIN_W),
-        height: ph(MAIN_H),
-        opacity: 1,
-      };
-
-    if (rel === total - 1)
-      return {
-        left: 0,
-        width: pw(PREVIEW_W),
-        height: ph(PREVIEW_H),
-        opacity: 1,
-      };
-
-    if (rel === 1)
-      return {
-        left: pw(NEXT_LEFT),
-        width: pw(PREVIEW_W),
-        height: ph(PREVIEW_H),
-        opacity: 1,
-      };
-
-    const parkLeft = rel > total / 2;
-    return {
-      left: parkLeft ? pw(-(PREVIEW_W + GAP)) : pw(NEXT_LEFT),
-      width: pw(PREVIEW_W),
-      height: ph(PREVIEW_H),
-      opacity: 0,
-    };
-  }
 
   return (
     <Section defaultPadding={false}>
       <div className="w-full lg:max-w-[941px]">
         {/* DESKTOP */}
         <div className="relative hidden aspect-[941/568] w-full overflow-hidden lg:block">
-          {images.map((src, i) => (
-            <div
-              key={`${src}-${i}`}
-              className="absolute top-0 overflow-hidden transition-all duration-700 ease-in-out"
-              style={getSlideStyle(i)}
-            >
-              <Image
-                src={src}
-                alt={`Image ${i + 1}`}
-                fill
-                sizes="(min-width:1280px) 676px, 50vw"
-                className="object-cover"
-                priority={i === 0}
-              />
-            </div>
-          ))}
+          <Slides
+            images={images}
+            activeIndex={activeIndex}
+            layout={DESKTOP}
+            sizes="(min-width:1280px) 676px, 50vw"
+            priority
+          />
 
           <div
             className="absolute left-0 z-10 flex justify-end"
-            style={{ top: "96.8%", width: pw(PREVIEW_W) }}
+            style={{ top: "96.8%", width: `${xp(PREVIEW_W)}%` }}
           >
             <button type="button" onClick={onPrev} aria-label="Previous image">
               <BtnIcon />
@@ -265,42 +550,26 @@ const GallerySlider = ({
 
         {/* MOBILE + MD */}
         <div className="lg:hidden">
-          <div className="relative aspect-[442/664] w-full overflow-hidden md:aspect-[4/3]">
-            <Image
-              key={images[activeIndex]}
-              src={images[activeIndex]}
-              alt={`Image ${activeIndex + 1}`}
-              fill
-              sizes="100vw"
-              className="object-cover"
+          <div
+            className="relative aspect-[4/3.5] w-full overflow-hidden md:aspect-[4/3]"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            <Slides
+              images={images}
+              activeIndex={activeIndex}
+              layout={MOBILE}
+              sizes="72vw"
             />
-
-            {/* MD ONLY: arrows centered vertically on the image */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-10 hidden items-center justify-between px-4 md:flex md:px-6">
-              <button
-                type="button"
-                onClick={onPrev}
-                aria-label="Previous image"
-                className="pointer-events-auto"
-              >
-                <BtnIcon />
-              </button>
-              <button
-                type="button"
-                onClick={onNext}
-                aria-label="Next image"
-                className="pointer-events-auto rotate-180"
-              >
-                <BtnIcon />
-              </button>
-            </div>
           </div>
 
-          {/* MOBILE ONLY: arrows below the image */}
-          <div className="mt-3 flex items-center justify-between px-4 md:hidden">
+          <div className="mt-3 flex items-center justify-between px-6 md:px-10">
             <button type="button" onClick={onPrev} aria-label="Previous image">
               <BtnIcon />
             </button>
+            <span className="text-xs tracking-widest text-[#152536]">
+              {activeIndex + 1} - {total}
+            </span>
             <button
               type="button"
               onClick={onNext}
@@ -324,7 +593,7 @@ const GallerySlider = ({
   );
 };
 
-export default GallerySlider;
+export default memo(GallerySlider);
 
 export const BtnIcon = () => (
   <svg

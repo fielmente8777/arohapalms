@@ -19,28 +19,21 @@ interface StayWithUsProps {
   cards: StayCard[];
 }
 
-const Place = ({
-  tag,
-  title,
-  cards,
-}: StayWithUsProps) => {
+const Place = ({ tag, title, cards }: StayWithUsProps) => {
   return (
-    <Section
-      
-      className="bg-background-2 lg:py-24! drop-shadow-2xl"
-    >
+    <Section className="bg-background-2  drop-shadow-2xl">
       <div className="mx-auto max_screen_width">
-
         {/* HEADING */}
         <div
           className="
             mx-auto
             flex
+            max-w-[320px]
             md:max-w-[600px]
             lg:max-w-[850px]
             flex-col
             items-center
-            px-7
+            
             pb-12
             text-center
             lg:pb-[52px]
@@ -75,7 +68,7 @@ const Place = ({
         </div>
 
         {/* LOCATION CARDS */}
-        <div className="grid w-full grid-cols-1 md:grid-cols-2">
+        <div className="grid w-full grid-cols-1 lg:grid-cols-2">
           {cards.map((card) => (
             <Link
               key={card.location}
@@ -83,6 +76,7 @@ const Place = ({
               className="
                 group
                 relative
+                aspect-[5/3]
                 md:aspect-[4/3]
                 lg:aspect-[6/5]
                 w-full
@@ -159,9 +153,11 @@ const Place = ({
                 className="
                   absolute
                   bottom-7
+                  left-4
                   lg:left-7
                   md:left-4
                   z-10
+                  max-w-[320px]
                   md:max-w-[400px]
                   lg:max-w-[430px]
                   text-white
@@ -202,9 +198,11 @@ const Place = ({
 
                 <span
                   className="
-                    mt-4
+                  mt-2
+                    lg:mt-4
                     block
-                    text-[14px]
+                    text-xs
+                    lg:text-sm
                     uppercase
                     
                   "

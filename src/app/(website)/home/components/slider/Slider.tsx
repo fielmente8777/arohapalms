@@ -13,11 +13,17 @@ interface GallerySliderProps {
     label: string;
     href: string;
   };
+  onSlideChange?: (index: number) => void;
 }
 
-const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
+const GallerySlider: React.FC<GallerySliderProps> = ({
+  images,
+  link,
+  onSlideChange,
+}) => {
   images = images.length > 3 ? images : [...images, ...images];
   const [activeIndex, setActiveIndex] = useState(0);
+  const total = images.length;
   return (
     <Section className="w-full">
       <div className="relative ">
@@ -32,8 +38,8 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
           //   delay: 2000,
           //   disableOnInteraction: false,
           // }}
-          slidesPerView={1}
-          spaceBetween={20}
+          slidesPerView={1.4}
+          spaceBetween={16}
           loop
           centeredSlides={true}
           breakpoints={{
@@ -41,30 +47,38 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
               slidesPerView: 1.55,
               spaceBetween: 12,
             },
+            1032: {
+              slidesPerView: 1.7,
+              spaceBetween: 16,
+            },
           }}
           speed={900}
-          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          onSlideChange={(swiper) => {
+            setActiveIndex(swiper.realIndex);
+            onSlideChange?.(swiper.realIndex);
+          }}
           className="w-full"
           renderSlide={(src, index) => (
             <div
               className={`w-full relative ${
                 index === activeIndex
-                  ? "md:aspect-4/2.5 aspect-4/3"
-                  : "md:aspect-[4/2.2] aspect-4/3"
+                  ? "md:aspect-4/2.5 aspect-3/3"
+                  : "md:aspect-[4/2.2] aspect-4/3.5"
               }`}
             >
               <Image src={src} alt="Image" fill className="object-cover" />
             </div>
           )}
         />
-        <div className="relative md:-mt-8 max-md:-mt-32 max-lg:-mt-10 xl:-mt-11 z-20 pointer-events-none">
+        <div className="relative mt-4 md:-mt-8 max-md:mt-4 max-lg:-mt-10 xl:-mt-11 z-20 pointer-events-none">
           <div
             className="mx-auto
               flex
               w-full
+              max-w-[310px]
               md:max-w-[650px]
-              lg:max-w-[830px]
-              xl:max-w-[1150px]
+              lg:max-w-[850px]
+              xl:max-w-[1200px]
               items-center
               justify-between
               pointer-events-auto
@@ -73,6 +87,9 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
             <button className="gallery-slider-prev flex items-center justify-center  ">
               <BtnIcon />
             </button>
+            <span className="hidden text-xs text-[#152536] max-lg:block">
+              {activeIndex + 1} - {total}
+            </span>
             <button className="gallery-slider-next flex items-center justify-center rotate-180">
               <BtnIcon />
             </button>
@@ -83,8 +100,8 @@ const GallerySlider: React.FC<GallerySliderProps> = ({ images, link }) => {
         <LinkButton
           href={link.href}
           label={link.label}
-          className="mx-auto md:mt-16 max-md:mt-17 max-lg:mt-18!
-          lg:mt-16 border-0! border-b! border-p2! text-p2"
+          className="mx-auto -mb-10 md:mt-10 lg:mt-18
+          xl:mt-16  border-0! border-b! border-p2! text-p2"
         />
       )}
     </Section>

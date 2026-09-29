@@ -1,7 +1,7 @@
 "use client";
 
-import LinkButton from "@/components/buttons/LinkButton";
 import { Section } from "@/components/sectionComponants";
+import { LazyLoadedVideo } from "@/components/Video";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,7 +31,7 @@ const OurVillas = ({
   buttons,
 }: OurVillasProps) => {
   return (
-    <Section className="bg-background-2 ">
+    <Section defaultPadding={false} className="bg-background-2 ">
       <div className="max_screen_width px-8">
         <div
           className="
@@ -47,9 +47,9 @@ const OurVillas = ({
           <div className="lg:max-w-[480px]">
             <h2
               className="
-                text-2xl
+                text-3xl
                 lg:text-start
-                md:text-center
+                text-center
                 text-blue
                 md:text-5xl
               "
@@ -62,7 +62,7 @@ const OurVillas = ({
                 <p
                   key={index}
                   className="
-                    text-sm
+                    text-lg
                     text-[#666]
                     md:text-xl
                   "
@@ -72,7 +72,7 @@ const OurVillas = ({
               ))}
             </div>
 
-            <div className="mt-7 flex flex-wrap items-center gap-4">
+            <div className="mt-7 hidden lg:block  flex flex-wrap items-center gap-4">
               {buttons.map((button, index) => (
                 <Link
                   key={`${button.href}-${index}`}
@@ -89,75 +89,39 @@ const OurVillas = ({
             </div>
           </div>
 
-          <div
-            className="
-              grid
-              grid-cols-1
-              gap-4
-              sm:grid-cols-2
-            "
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {videos.slice(0, 2).map((item, index) => (
               <div
                 key={`${item.video}-${index}`}
                 className="
-                  group
-                  relative
-                  md:aspect-[3/4]
-                  lg:h-[664]
-                  lg:aspect-[2/3]
-                  w-full
-                  overflow-hidden
-                "
+        group
+        relative
+        w-full
+        aspect-[3/4]
+        md:aspect-[3/4] lg:h-[660] lg:aspect-[2.5/3.2]
+        overflow-hidden
+      "
               >
-                <Image
-                  src={item.thumbnail}
-                  alt=""
-                  fill
-                  className="
-                    absolute
-                    inset-0
-                    z-10
-                    object-cover
-                   
-                  "
-                />
-                <video
-                  src={item.video}
-                  muted
-                  loop
-                  autoPlay
-                  playsInline
-                  className="
-                    h-full
-                    w-full
-                    object-cover
-                    transition-transform
-                    duration-700
-                    group-hover:scale-105
-                  "
-                />
-
-                {/* PLAY ICON */}
-                {/* <div className="absolute inset-0 flex items-center justify-center">
-                  <div
-                    className="
-                      flex
-                      h-12
-                      w-12
-                      items-center
-                      justify-center
-                      rounded-full
-                      bg-white/90
-                      text-blue
-                    "
-                  >
-                    <span className="ml-1 text-base">▶</span>
-                  </div>
-                </div> */}
+                <LazyLoadedVideo src={item.video} poster={item.thumbnail} />
               </div>
             ))}
           </div>
+
+                      <div className="mt-7 w-full lg:hidden flex flex-wrap  items-center gap-4">
+              {buttons.map((button, index) => (
+                <Link
+                  key={`${button.href}-${index}`}
+                  href={button.href}
+                  className={`inline-flex items-center justify-center px-5 py-2.5 text-[10px] font-medium uppercase md:text-sm transition duration-300 ${
+                    button.variant === "solid"
+                      ? "bg-navy text-white hover:bg-blue"
+                      : "border-b border-blue text-blue hover:bg-blue hover:text-white"
+                  }`}
+                >
+                  {button.label}
+                </Link>
+              ))}
+            </div>
         </div>
       </div>
       <div className="mt-10 w-full overflow-hidden md:mt-16 rotate-180">
@@ -172,6 +136,7 @@ const OurVillas = ({
       <div
         className="
     bg-background-2
+    py-6
     md:py-8
     lg:py-12
   "
@@ -192,7 +157,7 @@ const OurVillas = ({
             <h3
               className="
           lg:max-w-[624px]
-          md:text-3xl
+          text-3xl
           font-light
           text-[#1670B7]
           lg:text-[40px]
@@ -210,7 +175,7 @@ const OurVillas = ({
           lg:max-w-[676px]
           lg:text-[14px]
           font-normal
-          
+          text-lg
           text-[#6B6B6B]
           lg:text-[20px]
           

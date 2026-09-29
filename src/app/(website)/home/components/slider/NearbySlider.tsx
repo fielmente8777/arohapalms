@@ -23,7 +23,7 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
 
   return (
     <Section>
-      <div className="relative">
+      <div className="relative lg:mb-30">
         <SwiperCarousel
           data={sliderCards}
           modules={[Navigation]}
@@ -31,7 +31,7 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
             nextEl: ".nearby-section-next",
             prevEl: ".nearby-section-prev",
           }}
-          slidesPerView={1.5}
+          slidesPerView={1.4}
           spaceBetween={12}
           loop
           centeredSlides={true}
@@ -40,12 +40,16 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
               slidesPerView: 2.45,
               spaceBetween: 16,
             },
+             1032: {
+              slidesPerView: 2.7,
+              spaceBetween: 16,
+            },
           }}
           speed={900}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           className="w-full"
           renderSlide={(card, index) => (
-            <div className="relative flex md:h-[500px] lg:h-[650px] w-full items-start">
+            <div className="relative flex h-[280px] md:h-[500px] lg:h-[650px] w-full items-start">
               <div
                 className={`
                 relative
@@ -56,8 +60,8 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
                 ease-in-out
                 ${
                   index === activeIndex
-                    ? "md:aspect-5/6 aspect-4/3"
-                    : "md:aspect-[5/5] aspect-4/3"
+                    ? "md:aspect-5/6 aspect-3/3"
+                    : "md:aspect-[5/5] aspect-4/3.5"
                 }
               `}
               >
@@ -123,15 +127,16 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
         />
 
         {/* NAVIGATION */}
-        <div className="relative z-20 md:-mt-55 lg:-mt-65 xl:-mt-24">
+        <div className="relative z-20 md:-mt-40 lg:-mt-55 xl:-mt-20">
           <div
             className="
               mx-auto
               flex
               w-full
-              md:max-w-[440px]
+              max-w-[280px]
+              md:max-w-[470px]
               lg:max-w-[550px]
-              xl:max-w-[700px]
+              xl:max-w-[750px]
               items-center
               justify-between
             "

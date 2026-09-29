@@ -594,7 +594,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Thumbs } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 
-
 import { AccommodationSectionProps } from "@/@types/landingPageTypes";
 import RoomDetailsPopupButton from "@/components/pop-up/RoomDetailsPopupButton";
 import Container from "@/components/sectionComponants/Container";
@@ -666,7 +665,6 @@ export const AccommodationCard: React.FC<
             : "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
         }`}
       >
-        {/* ================= LEFT / SLIDER COLUMN ================= */}
         {/* <div className="lg:col-span-7 flex flex-col justify-between">
           <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[500px] overflow-hidden bg-gray-100">
             {images.length > 0 && (
@@ -758,7 +756,6 @@ export const AccommodationCard: React.FC<
           )}
         </div> */}
         <div className="lg:col-span-7 flex flex-col justify-between w-full">
-          {/* ================= 1. MAIN IMAGE SLIDER ================= */}
           <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[500px] overflow-hidden bg-gray-100">
             {images.length > 0 && (
               <Swiper
@@ -804,10 +801,8 @@ export const AccommodationCard: React.FC<
             )}
           </div>
 
-
           {images.length > 1 && (
             <div className="mt-4 flex items-center justify-between gap-3 w-full">
-             
               <button
                 type="button"
                 aria-label="Previous image"
@@ -817,7 +812,6 @@ export const AccommodationCard: React.FC<
                 <BtnIcon />
               </button>
 
-            
               <div className="w-full max-w-[280px] sm:max-w-[360px] overflow-hidden px-1">
                 <Swiper
                   modules={[Thumbs]}
@@ -927,7 +921,7 @@ export const AccommodationCard: React.FC<
             </div>
           </div>
 
-          <div className="mt-8 pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          {/* <div className="mt-8 pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="flex items-baseline gap-1 text-[#222]">
               <span className="text-sm md:text-[15px] lg:text-xl font-medium">
                 {startingPrice?.toLowerCase().includes("from") ? "" : "From "}
@@ -947,6 +941,31 @@ export const AccommodationCard: React.FC<
               <WhatsAppIcon />
               <span>{cta?.label || "ENQUIRE NOW"}</span>
             </Link>
+          </div> */}
+          <div className="mt-8 pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            {startingPrice ? (
+              <div className="flex items-baseline gap-1 text-[#222]">
+                <span className="text-sm md:text-[15px] lg:text-xl font-medium">
+                  {startingPrice.toLowerCase().includes("from") ? "" : "From "}
+                  <span className="font-semibold text-gray-900">
+                    {startingPrice}
+                  </span>
+                </span>
+                <span className="text-xs lg:text-sm text-gray-500 font-normal">
+                  + taxes
+                </span>
+              </div>
+            ) : (
+              <div />
+            )}
+
+            <Link
+              href={cta?.href || "#"}
+              className="inline-flex items-center justify-center gap-2 bg-[#0B1E2D] hover:bg-[#005BA4] text-white text-[11px] lg:text-sm font-semibold uppercase px-7 py-3 rounded-sm transition-colors duration-200 min-w-[170px]"
+            >
+              <WhatsAppIcon />
+              <span>{cta?.label || "ENQUIRE NOW"}</span>
+            </Link>
           </div>
         </div>
       </div>
@@ -957,7 +976,7 @@ export const AccommodationCard: React.FC<
 const AccommodationCardsSection: React.FC<AccommodationCardsSectionProps> = ({
   cards,
   note,
-  sectionHeader , 
+  sectionHeader,
 }) => {
   return (
     <Section className=" w-full max_screen_width bg-background-2">

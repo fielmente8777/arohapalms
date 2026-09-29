@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { SectionWithContainer } from "@/components/sectionComponants";
+import { Section, SectionWithContainer } from "@/components/sectionComponants";
 
 import Slider from "./slider/NearbySlider";
 
@@ -23,7 +23,7 @@ const NearbyActivities = ({
   activities,
 }: NearbyActivitiesProps) => {
   return (
-    <SectionWithContainer sectionClassName="w-full bg-background-2 text-white md:px-0 overflow-hidden">
+    <Section defaultPadding={false} className="w-full bg-background-2 text-white  overflow-hidden">
       {/* HEADING */}
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
         <p className="text-xs uppercase text-blue 
@@ -38,7 +38,7 @@ const NearbyActivities = ({
           />
         </div> */}
 
-        <h2 className="mt-2 text-blue font-primary  font-light md:text-3xl lg:text-5xl">
+        <h2 className="mt-2 text-blue font-primary  font-light text-3xl lg:text-5xl">
           {title}
         </h2>
       </div>
@@ -48,7 +48,7 @@ const NearbyActivities = ({
       <Slider cards={activities} />
       </div>
 
-    </SectionWithContainer>
+    </Section>
   );
 };
 

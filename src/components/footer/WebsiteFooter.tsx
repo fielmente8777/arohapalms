@@ -243,7 +243,7 @@ const Footer = ({
 
             {/* CIN / GSTIN */}
             {(cin || gstin) && (
-              <div className="mt-6 space-y-3 text-base text-slate-200">
+              <div className="mt-6 space-y-3 text-base text-slate-200 text-center">
                 {cin && <p>CIN: {cin}</p>}
                 {gstin && <p>GSTIN: {gstin}</p>}
               </div>

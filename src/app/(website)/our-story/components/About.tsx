@@ -122,7 +122,10 @@ const About = ({ title, intro, description, images }: AboutProps) => {
   return (
     <Section className="bg-background-2">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch">
-        <div className="w-full min-w-0 lg:w-[62%] xl:w-[941px]">
+        <h2 className=" lg:hidden justify-between text-center font-normal mt-8 text-blue text-3xl lg:text-5xl xl:text-5xl">
+          {title}
+        </h2>
+        <div className="w-full min-w-0 md:w-[50%] lg:w-[62%] xl:w-[941px]">
           <GallerySlider
             images={images}
             index={index}
@@ -131,13 +134,13 @@ const About = ({ title, intro, description, images }: AboutProps) => {
           />
         </div>
 
-        <div className="flex w-full flex-col justify-between px-4 md:px-6 lg:w-[42%] lg:px-0 xl:w-[500px]">
+        <div className="flex w-full flex-col justify-between px-6 md:px-6 lg:w-[42%] lg:px-0 xl:w-[500px]">
           <div>
-            <h2 className="text-2xl font-normal text-[#17384e] md:text-3xl lg:text-5xl xl:text-5xl">
+            <h2 className="hidden lg:block font-normal text-blue text-3xl lg:text-5xl xl:text-5xl">
               {title}
             </h2>
 
-            <p className="mt-6 text-sm text-gray-600 lg:text-xl xl:text-xl">
+            <p className="mt-6 text-lg text-gray-600 lg:text-xl xl:text-xl">
               {intro}
             </p>
 
@@ -145,7 +148,7 @@ const About = ({ title, intro, description, images }: AboutProps) => {
               {description.map((text, i) => (
                 <p
                   key={i}
-                  className="text-sm text-gray-600 lg:text-xl xl:text-xl"
+                  className="text-lg text-gray-600 lg:text-xl xl:text-xl"
                 >
                   {text}
                 </p>

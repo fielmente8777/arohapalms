@@ -1,10 +1,12 @@
 "use client";
 
 import { Section } from "@/components/sectionComponants";
+import { LazyLoadedVideo } from "@/components/Video";
 import Image from "next/image";
 
 interface ExperienceCard {
   image: string;
+  video: string;
   title: string;
   description: string;
 }
@@ -28,13 +30,13 @@ const ExperienceGallery = ({
           <div className="mx-auto flex max-w-[850px] flex-col items-center text-center">
             <h2
               className="
-              font-primary
-              text-[32px]
-              font-light
-              leading-[1.2]
-              text-p2
-              md:text-[48px]
-            "
+                font-primary
+                text-[32px]
+                font-light
+                leading-[1.2]
+                text-p2
+                md:text-[48px]
+              "
             >
               {heading}
             </h2>
@@ -49,114 +51,70 @@ const ExperienceGallery = ({
           {/* EXPERIENCE CARDS */}
           <div
             className="
-            mt-10
-            flex
-            gap-2
-            overflow-x-auto
-            pb-2
-            md:mt-12
-            md:grid
-            md:grid-cols-4
-            md:gap-1
-            md:overflow-visible
-          "
+              mt-10
+              grid
+              grid-cols-1
+              gap-4
+              md:mt-12
+              md:grid-cols-4
+              md:gap-1
+            "
           >
             {cards.map((card, index) => (
               <div
                 key={`${card.image}-${index}`}
                 className="
-                group
-                relative
-                aspect-[0.64]
-                w-[220px]
-                shrink-0
-                overflow-hidden
-                md:w-full
-              "
-              >
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  sizes="(max-width: 768px) 220px, 25vw"
-                  className="
-                  object-cover
-                  transition-transform
-                  duration-700
-                  ease-out
-                  group-hover:scale-105
+                  group
+                  relative
+                  aspect-[0.64]
+                  w-full
+                  overflow-hidden
                 "
+              >
+                {/* LAZY LOADED VIDEO */}
+                <LazyLoadedVideo
+                  src={card.video}
+                  poster={card.image}
                 />
 
                 {/* OVERLAY */}
                 <div
                   className="
-                  absolute
-                  inset-0
-                  bg-black/5
-                  transition-colors
-                  duration-500
-                  group-hover:bg-black/15
-                "
+                    absolute
+                    inset-0
+                    z-10
+                    bg-black/5
+                    transition-colors
+                    duration-500
+                    group-hover:bg-black/15
+                  "
                 />
 
-                {/* PLAY BUTTON */}
-                <button
-                  type="button"
-                  aria-label={`Play ${card.title}`}
-                  className="
-                  absolute
-                  left-1/2
-                  top-1/2
-                  flex
-                  h-10
-                  w-10
-                  -translate-x-1/2
-                  -translate-y-1/2
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-white
-                  transition-transform
-                  duration-300
-                  group-hover:scale-110
-                  md:h-12
-                  md:w-12
-                "
-                >
-                  <span
-                    className="
-                    ml-0.5
-                    border-y-[6px]
-                    border-y-transparent
-                    border-l-[9px]
-                    border-l-p2
-                  "
-                  />
-                </button>
+           
 
-                {/* TITLE FROM PAGE DATA */}
+                {/* TITLE */}
                 <div
                   className="
-                  absolute
-                  bottom-0
-                  left-0
-                  right-0
-                  bg-gradient-to-t
-                  from-black/60
-                  to-transparent
-                  px-4
-                  pb-5
-                  pt-12
-                "
+                    absolute
+                    bottom-0
+                    left-0
+                    right-0
+                    z-20
+                    bg-gradient-to-t
+                    from-black/60
+                    to-transparent
+                    px-4
+                    pb-5
+                    pt-12
+                  "
                 >
                   <h3
                     className="
-                    text-sm
-                    uppercase
-                    text-white
-                    md:text-base
-                  "
+                      text-sm
+                      uppercase
+                      text-white
+                      md:text-base
+                    "
                   >
                     {card.title}
                   </h3>
@@ -166,6 +124,8 @@ const ExperienceGallery = ({
           </div>
         </div>
       </Section>
+
+      {/* GREEK DIVIDER */}
       <div className="bg-background-2 max_screen_width overflow-hidden">
         <Image
           src="/images/Greek1.png"

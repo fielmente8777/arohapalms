@@ -38,7 +38,7 @@ const AboutSection = ({
             lg:text-5xl
             font-light
             text-p2
-            md:text-3xl
+           text-3xl
           "
           >
             {title}
@@ -55,12 +55,13 @@ const AboutSection = ({
 
           <p
             className="mt-6
+            max-w-[320px]
             md:max-w-[650px]
             lg:max-w-[800px]
             text-sm
             font-normal
             text-[#777777]
-            md:text-xl
+            text-xl
           "
           >
             {description}

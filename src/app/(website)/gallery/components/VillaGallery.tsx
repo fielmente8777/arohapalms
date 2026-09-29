@@ -22,6 +22,8 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
 
   const [activeVillaIndex, setActiveVillaIndex] = useState(0);
 
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
   const villas = useMemo(
     () => (location === "Mandrem" ? mandrem : pilerne),
     [location, mandrem, pilerne]
@@ -34,14 +36,37 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
   const handleLocationChange = (newLocation: "Mandrem" | "Pilerne") => {
     setLocation(newLocation);
     setActiveVillaIndex(0);
+    setActiveImageIndex(0);
   };
 
   const handleVillaChange = (index: number) => {
     setActiveVillaIndex(index);
+    setActiveImageIndex(0);
   };
 
+  const totalImages = activeVilla.images.length;
+
+  const currentImage = totalImages > 0 ? activeImageIndex % totalImages : 0;
+
+  const totalAllImages = villas.reduce((sum, v) => sum + v.images.length, 0);
+
+  const imagesBefore = villas
+    .slice(0, activeVillaIndex)
+    .reduce((sum, v) => sum + v.images.length, 0);
+
   const progressPercent =
-    villas.length > 0 ? ((activeVillaIndex + 1) / villas.length) * 100 : 0;
+    totalAllImages > 0
+      ? ((imagesBefore + currentImage + 1) / totalAllImages) * 100
+      : 0;
+
+  // // desktop: pehle jaisa
+  // const progressPercent =
+  //   villas.length > 0 ? ((activeVillaIndex + 1) / villas.length) * 100 : 0;
+
+  // // mobile: image based
+  // const totalImages = activeVilla.images.length;
+  // const mobileProgressPercent =
+  //   totalImages > 0 ? ((activeImageIndex + 1) / totalImages) * 100 : 0;
 
   return (
     <Section className="w-full overflow-hidden bg-background-2 py-12 md:py-16">
@@ -60,9 +85,12 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
           inline-flex
           items-center
           gap-2
-          px-5
-          py-3
-          text-lg
+          lg:px-5
+          lg:py-3
+          py-2
+          px-3
+          text-sm
+          lg:text-lg
           uppercase
           transition
           md:px-7
@@ -129,6 +157,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
               }}
             />
           </div>
+          
         </div>
 
         {/* VILLA IMAGE SLIDER */}
@@ -136,6 +165,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
           <GallerySlider
             key={`${location}-${activeVillaIndex}`}
             images={activeVilla.images}
+            onSlideChange={setActiveImageIndex}
           />
         </div>
 
