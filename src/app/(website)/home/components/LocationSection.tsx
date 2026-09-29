@@ -34,14 +34,14 @@ const LocationSection = ({
             </p>
 
             {/* DECORATIVE IMAGE */}
-            <div className="relative mt-1 h-[9px] w-[120px] overflow-hidden">
+            {/* <div className="relative mt-1 h-[9px] w-[120px] overflow-hidden">
               <Image
                 src="/home/design4.png"
                 alt=""
                 fill
                 className="object-cover object-left"
               />
-            </div>
+            </div> */}
 
             {/* TITLE */}
             <h2
@@ -88,7 +88,7 @@ const LocationSection = ({
             </div>
           </div>
 
-          <div className="absolute hidden lg:block right-0 top-0 z-20 h-full w-[15px] rotate-180">
+          <div className="absolute hidden md:block right-0 top-0 z-20 h-full w-[15px] rotate-180">
             <Image
               src="/home/design6.png"
               alt=""
@@ -97,11 +97,11 @@ const LocationSection = ({
             />
           </div>
         </div>
-        <div className=" relative lg:hidden left-0 bottom-0 z-0 h-[30px] w-full ">
+        <div className=" relative md:hidden left-0 bottom-0 z-0 h-[30px] w-full ">
           <Image src="/home/design2.png" alt="" fill className="object-fill rotate-180" />
         </div>
         {/* MAP */}
-        <div className="relative h-[350px] md:h-[420px] overflow-hidden lg:h-[616px] px-6 md:px-0">
+        <div className="relative h-[350px] md:h-[450px] overflow-hidden lg:h-[616px] px-6 md:px-0">
           <Image
             src={mapImage}
             alt="Location map"

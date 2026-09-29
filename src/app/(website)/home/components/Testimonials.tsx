@@ -30,11 +30,11 @@ const Testimonials = ({
   return (
     <Section className="w-full bg-background-2 ">
       
-      <div className="mx-auto w-full lg:w-[1450px] ">
-        <div className="grid grid-cols-1 overflow-hidden rounded-xs border border-[#CA9E55] bg-white lg:h-[602px] md:grid-cols-2">
+      <div className="mx-auto w-full max-w-[1320px] ">
+        <div className="grid grid-cols-1 overflow-hidden rounded-xs border border-[#CA9E55] bg-white lg:h-[602px] md:grid-cols-2 lg:grid-cols-[50%_50%] lg:h-[602px]">
        
 
-          <div className="relative md:min-h-[300px] w-full md:h-full">
+          <div className="relative md:h-[300px] w-full md:h-full">
             <Image
               src={image || "/home/testimonial-img.jpg"}
               alt="Guest Appreciation"
@@ -46,7 +46,7 @@ const Testimonials = ({
           </div>
 
 
-          <div className="flex h-full flex-col items-center justify-start py-16 px-6 text-center md:px-12 lg:px-16">
+          <div className="flex h-full flex-col items-center justify-start py-16 px-6 text-center">
             <div className="flex w-full max-w-[520px] flex-col items-center">
              
               <h2 className="font-primary text-2xl font-light text-p2 md:text-[34px] lg:text-5xl ">
