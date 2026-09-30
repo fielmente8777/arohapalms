@@ -8,7 +8,7 @@ export default function FAQPage() {
   return (
     <>
     <Navbar/>
-    <main>
+    <main className="pt-16 md:pt-28">
       <FAQSection {...faqData} />
     </main>
 

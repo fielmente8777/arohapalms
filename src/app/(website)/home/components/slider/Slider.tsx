@@ -25,7 +25,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const total = images.length;
   return (
-    <Section className="w-full">
+    <Section defaultPadding={false} className="w-full py-2 md:py-16">
       <div className="relative ">
         <SwiperCarousel
           data={images}
@@ -100,7 +100,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
         <LinkButton
           href={link.href}
           label={link.label}
-          className="mx-auto -mb-10 md:mt-10 lg:mt-18
+          className="mx-auto mt-5 mb-2 md:-mb-10 md:mt-10 lg:mt-18
           xl:mt-16  border-0! border-b! border-p2! text-p2"
         />
       )}

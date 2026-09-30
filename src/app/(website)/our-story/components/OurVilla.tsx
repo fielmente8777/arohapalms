@@ -32,15 +32,15 @@ const OurVillas = ({
 }: OurVillasProps) => {
   return (
     <Section defaultPadding={false} className="bg-background-2 ">
-      <div className="max_screen_width px-8">
+      <div className="max_screen_width px-4 sm:px-6 md:px-8">
         <div
           className="
             grid
             grid-cols-1
             items-center
-            gap-10
-            lg:grid-cols-[0.75fr_1.25fr]
+            gap-6
             md:gap-12
+            lg:grid-cols-[0.75fr_1.25fr]
             lg:gap-16
           "
         >
@@ -73,70 +73,65 @@ const OurVillas = ({
               ))}
             </div>
 
-            <div className="mt-7 hidden lg:flex flex-wrap mx-auto items-center gap-4">
-              {buttons.map((button, index) => (
-                <Link
-                  key={`${button.href}-${index}`}
-                  href={button.href}
-                  className={`inline-flex items-center justify-center px-5 py-2.5 text-[10px] font-medium uppercase md:text-sm transition duration-300 ${
-                    button.variant === "solid"
-                      ? "bg-navy text-white hover:bg-blue"
-                      : "border-b border-blue text-blue hover:bg-blue hover:text-white"
-                  }`}
-                >
-                  {button.label}
-                </Link>
-              ))}
+            <div className="mt-8 hidden lg:flex items-center justify-start">
+              <Link
+                href="/contact-us"
+                className="border-b border-[#17384e] pb-0.5 text-sm uppercase text-[#17384e]"
+              >
+                Contact
+              </Link>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {videos.slice(0, 2).map((item, index) => (
               <div
-                key={`${item.video}-${index}`}
+                key={`${item.thumbnail || item.video}-${index}`}
                 className="
         group
         relative
         w-full
         aspect-[3/4]
-        md:aspect-[3/4] lg:h-[550] lg:aspect-[2/3]
+        md:aspect-[3/4] lg:h-[550px] lg:aspect-[2/3]
         overflow-hidden
       "
               >
-                <LazyLoadedVideo src={item.video} poster={item.thumbnail} />
+                {item.video ? (
+                  <LazyLoadedVideo src={item.video} poster={item.thumbnail} />
+                ) : (
+                  <Image
+                    src={item.thumbnail}
+                    alt={`Villa ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                )}
               </div>
             ))}
           </div>
-                      <div className="mt-5 lg:hidden space-y-4">
-              {description.map((text, index) => (
-                <p
-                  key={index}
-                  className="
-                    text-lg
-                    text-[#666]
-                    lg:text-xl
-                  "
-                >
-                  {text}
-                </p>
-              ))}
-            </div>
+          <div className="lg:hidden space-y-4">
+            {description.map((text, index) => (
+              <p
+                key={index}
+                className="
+                  text-lg
+                  text-[#666]
+                  lg:text-xl
+                "
+              >
+                {text}
+              </p>
+            ))}
+          </div>
 
-                      <div className="mt-7 w-full lg:hidden flex flex-row mx-auto items-center justify-center gap-4">
-              {buttons.map((button, index) => (
-                <Link
-                  key={`${button.href}-${index}`}
-                  href={button.href}
-                  className={`inline-flex items-center justify-center px-5 py-2.5 text-[10px] font-medium uppercase md:text-sm transition duration-300 ${
-                    button.variant === "solid"
-                      ? "bg-navy text-white hover:bg-blue"
-                      : "border-b border-blue text-blue hover:bg-blue hover:text-white"
-                  }`}
-                >
-                  {button.label}
-                </Link>
-              ))}
-            </div>
+          <div className="w-full lg:hidden flex items-center justify-start">
+            <Link
+              href="/contact-us"
+              className="border-b border-[#17384e] pb-0.5 text-sm uppercase text-[#17384e]"
+            >
+              Contact
+            </Link>
+          </div>
         </div>
       </div>
       <div className="mt-10 w-full overflow-hidden md:mt-16 rotate-180">

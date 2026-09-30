@@ -9,7 +9,9 @@ export default function TermsAndConditionsPage() {
   return (
     <>
       <Navbar />
-      <TermsConditions {...termsConditionsData} />
+      <main className="pt-16 md:pt-24 lg:pt-28">
+        <TermsConditions {...termsConditionsData} />
+      </main>
       <Footer {...WebfooterData} />
     </>
   );

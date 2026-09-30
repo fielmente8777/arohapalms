@@ -18,9 +18,9 @@ export default function GuestArrivalPage() {
     <>
       <Navbar />
 
-      <SectionWithContainer sectionClassName="py-20">
+      <main className="pt-16 md:pt-24 lg:pt-28">
         <GuestArrival {...guestArrivalData} />
-      </SectionWithContainer>
+      </main>
 
       <Footer {...WebfooterData} />
     </>

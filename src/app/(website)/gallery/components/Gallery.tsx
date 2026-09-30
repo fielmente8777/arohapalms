@@ -37,7 +37,7 @@ const Gallery = ({
           </h1>
 
           {description && (
-            <p className="mx-auto mt-4 max-w-[620px] whitespace-pre-line text-[13px] font-light md:text-xl">
+            <p className="mx-auto mt-3 sm:mt-4 max-w-[620px] whitespace-pre-line text-base leading-relaxed font-light md:text-xl">
               {description}
             </p>
           )}

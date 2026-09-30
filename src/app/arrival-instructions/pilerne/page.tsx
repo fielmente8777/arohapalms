@@ -19,9 +19,9 @@ const GuestArrivalPilernePage = () => {
     <>
       <Navbar />
 
-      <SectionWithContainer>
+      <main className="pt-16 md:pt-24 lg:pt-28">
         <GuestArrival {...guestArrivalData} />
-      </SectionWithContainer>
+      </main>
 
       <Footer {...WebfooterData} />
     </>

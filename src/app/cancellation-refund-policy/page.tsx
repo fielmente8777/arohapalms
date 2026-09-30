@@ -16,7 +16,9 @@ const CancellationRefundPolicyPage = () => {
   return (
     <>
       <Navbar />
-      <Policy {...cancellationRefundPolicyData} />
+      <main className="pt-16 md:pt-24 lg:pt-28">
+        <Policy {...cancellationRefundPolicyData} />
+      </main>
       <Footer {...WebfooterData} />
     </>
   );

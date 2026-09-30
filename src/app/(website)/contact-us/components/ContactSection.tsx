@@ -55,11 +55,11 @@ const ContactUs = ({
 
        
           <div>
-            <p className="font-inter text-primary text-sm tracking-[0.3em] uppercase mb-4">
+            <p className="font-inter text-blue text-sm tracking-[0.3em] uppercase mb-4">
               {subTitle}
             </p>
 
-            <h2 className="font-inter text-primary text-4xl lg:text-[48px] leading-none font-light">
+            <h2 className="font-inter text-blue text-4xl lg:text-[48px] leading-none font-light">
               {title}
             </h2>
           </div>
@@ -92,35 +92,35 @@ const ContactUs = ({
         </div>
 
      
-        <div className="relative bg-navy text-white min-h-[500px] lg:min-h-[650px] px-8 md:px-12 lg:px-14 py-12 lg:py-14">
-            <div className=" absolute lg:hidden left-0 top-0 z-0 h-[30px] w-full ">
-    <Image
-      src="/home/design5.png"
-      alt=""
-      fill
-      className="object-fill"
-    />
-  </div>
-  <div className=" absolute hidden lg:block left-0 top-0 z-0 h-full w-[16px]">
-    <Image
-      src="/home/design6.png"
-      alt=""
-      fill
-      className="object-cover"
-    />
-  </div>
-          <div className="max-w-[600px] mx-auto">
+        <div className="relative bg-navy text-white min-h-[500px] lg:min-h-[650px] px-4 sm:px-6 md:px-12 lg:px-14 py-10 md:py-12 lg:py-14">
+          <div className="absolute lg:hidden left-0 top-0 z-0 h-[20px] sm:h-[24px] w-full">
+            <Image
+              src="/home/design5.png"
+              alt=""
+              fill
+              className="object-contain object-top"
+            />
+          </div>
+          <div className="absolute hidden lg:block left-0 top-0 z-0 h-full w-[16px]">
+            <Image
+              src="/home/design6.png"
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="max-w-[600px] mx-auto pt-4 md:pt-0">
 
             {/* EMAIL */}
-            <div className="pb-10 border-b border-white/30">
+            <div className="pb-6 md:pb-10 border-b border-white/30">
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 md:gap-4">
 
-                <span>
+                <span className="shrink-0 w-6 h-6 md:w-9 md:h-9 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full">
                   <EmailIcon />
                 </span>
 
-                <h3 className="font-inter font-light text-2xl md:text-3xl">
+                <h3 className="font-inter font-light text-xl sm:text-2xl md:text-3xl">
                   {email.label}
                 </h3>
 
@@ -128,7 +128,7 @@ const ContactUs = ({
 
               <Link
                 href={email.href}
-                className="block mt-5 font-inter text-base md:text-lg text-white/90 hover:text-white transition-colors"
+                className="block mt-3 md:mt-5 font-inter text-sm sm:text-base md:text-lg text-white/90 hover:text-white transition-colors"
               >
                 {email.value}
               </Link>
@@ -136,15 +136,15 @@ const ContactUs = ({
             </div>
 
             {/* PHONE */}
-            <div className="py-10 border-b border-white/30">
+            <div className="py-6 md:py-10 border-b border-white/30">
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 md:gap-4">
 
-                <span>
+                <span className="shrink-0 w-6 h-6 md:w-9 md:h-9 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full">
                   <PhoneIcon />
                 </span>
 
-                <h3 className="font-inter font-light text-2xl md:text-3xl">
+                <h3 className="font-inter font-light text-xl sm:text-2xl md:text-3xl">
                   {phone.label}
                 </h3>
 
@@ -152,7 +152,7 @@ const ContactUs = ({
 
               <Link
                 href={phone.href}
-                className="block mt-5 font-inter text-base md:text-lg text-white/90 hover:text-white transition-colors"
+                className="block mt-3 md:mt-5 font-inter text-sm sm:text-base md:text-lg text-white/90 hover:text-white transition-colors"
               >
                 {phone.value}
               </Link>
@@ -160,21 +160,21 @@ const ContactUs = ({
             </div>
 
             {/* LOCATIONS */}
-            <div className="pt-10">
+            <div className="pt-6 md:pt-10">
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 md:gap-4">
 
-                <span>
+                <span className="shrink-0 w-6 h-6 md:w-9 md:h-9 flex items-center justify-center [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-6 md:[&>svg]:h-6">
                   <MapIcon />
                 </span>
 
-                <h3 className="font-inter font-light text-2xl md:text-3xl">
+                <h3 className="font-inter font-light text-xl sm:text-2xl md:text-3xl">
                   {locations.label}
                 </h3>
 
               </div>
 
-              <div className="mt-5 space-y-4 font-inter text-base md:text-lg leading-relaxed text-white/90">
+              <div className="mt-3 md:mt-5 space-y-3 md:space-y-4 font-inter text-sm sm:text-base md:text-lg leading-relaxed text-white/90">
 
                 {locations.items.map((location, index) => (
                   <p key={index}>

@@ -82,12 +82,12 @@ export const OurStoryData = {
     ],
     videos: [
       {
-        video: "/videos/mandrem.mp4",
-        thumbnail: "/home/img6.jpg",
+        video: "",
+        thumbnail: "/villa-1.png",
       },
       {
-        video: "/videos/pilerne.mp4",
-        thumbnail: "/landing-page/faq-aerial.png",
+        video: "",
+        thumbnail: "/villa-2.png",
       },
     ],
 
