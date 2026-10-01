@@ -26,7 +26,7 @@ export default function HomePage() {
       <Amenities amenities={homePageData.amenities} outdoors={homePageData.outdoors} /> */}
       {/* <Outdoors {...homePageData.outdoors} /> */}
       <Place {...homePageData.stayWithUs} />
-      <About {...OurStoryData.missionData} />
+      <About {...OurStoryData.missionData} isHomePage />
       {/* <StayWithUs {...homePageData.stayWithUs} /> */}
       <NearbyActivities {...homePageData.nearbyActivities} />
       <LocationSection {...homePageData.location} />

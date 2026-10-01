@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 };
 
 const PrivacyPolicyPage = () => {
-   return (
-      <>
-      <Navbar/>
-      <SectionWithContainer>
+  return (
+    <>
+      <Navbar />
+      <main className="pt-16 md:pt-24 lg:pt-28">
         <Privacy {...privacyPolicyData} />
-      </SectionWithContainer>
-      <Footer {...WebfooterData}/>
-      </>
-    );
+      </main>
+      <Footer {...WebfooterData} />
+    </>
+  );
 };
 
 export default PrivacyPolicyPage;

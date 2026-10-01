@@ -13,9 +13,9 @@ interface FAQSectionProps {
 
 const FAQSection = ({ title, sections }: FAQSectionProps) => {
   return (
-    <section className="bg-white py-24">
-      <div className="max_width max-w-[900px] mx-auto">
-        <h1 className="text-center text-blue  text-[56px] leading-tight mb-16">
+    <section className="bg-white pt-6 pb-12 md:py-24">
+      <div className="max_width max-w-[900px] mx-auto px-4 sm:px-6 md:px-8">
+        <h1 className="text-center text-blue text-3xl sm:text-4xl md:text-[56px] leading-tight mb-8 md:mb-16">
           {title}
         </h1>
 

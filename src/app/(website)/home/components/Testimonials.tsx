@@ -28,32 +28,39 @@ const Testimonials = ({
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <Section className="w-full bg-background-2 ">
-      
-      <div className="mx-auto w-full max-w-[1320px] ">
-        <div className="grid grid-cols-1 overflow-hidden rounded-xs border border-[#CA9E55] bg-white lg:h-[602px] md:grid-cols-2 lg:grid-cols-[50%_50%] lg:h-[602px]">
+    <Section className="w-full bg-background-2">
+      <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-0">
+        <div className="grid grid-cols-1 overflow-hidden rounded-xs border border-[#CA9E55] bg-white md:grid-cols-2 lg:grid-cols-[50%_50%] lg:h-[602px]">
        
 
-          <div className="relative md:h-[300px] w-full md:h-full">
+          {/* DESKTOP IMAGE */}
+          <div className="relative hidden w-full md:block md:h-full">
             <Image
               src={image || "/home/testimonial-img.jpg"}
               alt="Guest Appreciation"
               fill
-              
               priority
               className="object-cover"
             />
           </div>
 
-
-          <div className="flex h-full flex-col items-center justify-start py-16 px-6 text-center">
+          <div className="flex h-full flex-col items-center justify-start py-8 px-4 text-center sm:px-6 md:py-16 md:px-6">
             <div className="flex w-full max-w-[520px] flex-col items-center">
-             
-              <h2 className="font-primary text-2xl font-light text-p2 md:text-[34px] lg:text-5xl ">
+              <h2 className="font-primary text-2xl font-light text-p2 md:text-[34px] lg:text-5xl">
                 {title}
               </h2>
 
-            
+              {/* MOBILE IMAGE - Displayed after heading */}
+              <div className="relative my-5 aspect-[16/10] w-full overflow-hidden md:hidden">
+                <Image
+                  src={image || "/home/testimonial-img.jpg"}
+                  alt="Guest Appreciation"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
+
               <div className="relative mt-4 h-7 w-7">
                 <Image
                   src="/g-icon.png"

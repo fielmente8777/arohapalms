@@ -97,8 +97,34 @@ export const AccommodationCard: React.FC<
 
   return (
     <div className="w-full md:py-6">
+      {/* MOBILE HEADER: Tag, Title, Badges (Shown ONLY on mobile < lg) */}
+      <div className="block lg:hidden mb-6">
+        {moreInfo?.title && (
+          <p className="text-sm text-primary uppercase mb-2">
+            {moreInfo.title}
+          </p>
+        )}
+
+        <h3 className="text-2xl md:text-3xl font-serif text-[#005BA4] font-normal">
+          {title} {span}
+        </h3>
+
+        {badges.length > 0 && (
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            {badges.map((badge, bIdx) => (
+              <span
+                key={bIdx}
+                className="rounded-full border border-[#CA9E55] bg-[#F6F7EB]/40 text-[#2B2B2B] px-3.5 py-1 text-[11px] md:text-[12px] font-normal whitespace-nowrap"
+              >
+                {badge.trim()}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
       <div
-        className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 ${
+        className={`grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-10 ${
           isEven
             ? ""
             : "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
@@ -194,7 +220,7 @@ export const AccommodationCard: React.FC<
             </div>
           )}
         </div> */}
-        <div className="lg:col-span-7 flex flex-col justify-between w-full">
+        <div className="lg:col-span-7 flex flex-col w-full">
           <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[500px] overflow-hidden bg-gray-100">
             {images.length > 0 && (
               <Swiper
@@ -309,34 +335,39 @@ export const AccommodationCard: React.FC<
         {/* ================= RIGHT / CONTENT COLUMN ================= */}
         <div className="lg:col-span-5 flex flex-col justify-between h-full ">
           <div>
-            <p className="text-sm text-primary uppercase mb-4">
-              {moreInfo.title}
-            </p>
+            {/* DESKTOP HEADER (Hidden on mobile < lg) */}
+            <div className="hidden lg:block">
+              {moreInfo?.title && (
+                <p className="text-sm text-primary uppercase mb-4">
+                  {moreInfo.title}
+                </p>
+              )}
 
-            <h3 className="text-2xl md:text-3xl lg:text-[32px] font-serif text-[#005BA4] font-normal ">
-              {title} {span}
-            </h3>
+              <h3 className="text-2xl md:text-3xl lg:text-[32px] font-serif text-[#005BA4] font-normal ">
+                {title} {span}
+              </h3>
 
-            {badges.length > 0 && (
-              <div className="mt-4 flex flex-wrap items-center gap-2">
-                {badges.map((badge, bIdx) => (
-                  <span
-                    key={bIdx}
-                    className="rounded-full border border-[#CA9E55] bg-[#F6F7EB]/40 text-[#2B2B2B] px-3.5 py-1 text-[11px] md:text-[12px] lg:text-sm font-normal whitespace-nowrap"
-                  >
-                    {badge.trim()}
-                  </span>
-                ))}
-              </div>
-            )}
+              {badges.length > 0 && (
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                  {badges.map((badge, bIdx) => (
+                    <span
+                      key={bIdx}
+                      className="rounded-full border border-[#CA9E55] bg-[#F6F7EB]/40 text-[#2B2B2B] px-3.5 py-1 text-[11px] md:text-[12px] lg:text-sm font-normal whitespace-nowrap"
+                    >
+                      {badge.trim()}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {cardDescription && (
-              <p className="mt-5 text-[13px] md:text-[14px] lg:text-xl text-[#5A5856] line-clamp-9">
+              <p className="mt-1 lg:mt-5 text-base sm:text-lg lg:text-xl text-[#5A5856] leading-relaxed line-clamp-9">
                 {cardDescription}
               </p>
             )}
 
-            <div className="mt-5">
+            <div className="mt-3.5 lg:mt-5">
               <RoomDetailsPopupButton
                 label="KNOW MORE"
                 roomDetails={{
@@ -381,7 +412,7 @@ export const AccommodationCard: React.FC<
               <span>{cta?.label || "ENQUIRE NOW"}</span>
             </Link>
           </div> */}
-          <div className="mt-8 pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="mt-4 pt-2 lg:mt-8 lg:pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             {startingPrice ? (
               <div className="flex items-baseline gap-1 text-[#222]">
                 <span className="text-sm md:text-[15px] lg:text-xl font-medium">
@@ -436,9 +467,22 @@ const AccommodationCardsSection: React.FC<AccommodationCardsSectionProps> = ({
           </h2>
         </div>
 
-        <div className="flex flex-col gap-12 sm:gap-20">
+        <div className="flex flex-col gap-10 sm:gap-14 lg:gap-20">
           {cards.map((card, idx) => (
-            <AccommodationCard key={card.title} {...card} index={idx} />
+            <React.Fragment key={card.title}>
+              <AccommodationCard {...card} index={idx} />
+              {idx < cards.length - 1 && (
+                <div className="block lg:hidden -mx-4 sm:-mx-6 w-[calc(100%+2rem)] sm:w-[calc(100%+3rem)] overflow-hidden my-2 sm:my-4">
+                  <Image
+                    src="/images/Greek1.png"
+                    alt=""
+                    width={1440}
+                    height={80}
+                    className="h-auto w-full object-cover"
+                  />
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
 

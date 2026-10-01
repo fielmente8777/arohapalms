@@ -107,6 +107,7 @@
 
 import { Section } from "@/components/sectionComponants";
 import GallerySlider, { BtnIcon, useSlider } from "./silder/Image";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 interface AboutProps {
@@ -114,15 +115,28 @@ interface AboutProps {
   intro: string;
   description: string[];
   images: string[];
+  isHomePage?: boolean;
 }
 
-const About = ({ title, intro, description, images }: AboutProps) => {
+const About = ({ title, intro, description, images, isHomePage }: AboutProps) => {
+  const pathname = usePathname();
+  const isHome = isHomePage ?? (pathname === "/" || pathname === "");
   const { index, next, prev } = useSlider(images.length);
 
   return (
-    <Section className="bg-background-2 py-12">
-      <div className="flex flex-col gap-6 xl:flex-row ">
-        <h2 className=" lg:hidden justify-between text-center font-normal text-blue text-3xl lg:text-5xl xl:text-5xl">
+    <Section
+      className={`bg-background-2 ${
+        isHome
+          ? "py-12 md:py-16"
+          : "pt-20 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20"
+      }`}
+    >
+      <div className="flex flex-col gap-6 xl:flex-row">
+        <h2
+          className={`lg:hidden justify-between text-center font-normal text-blue text-3xl lg:text-5xl xl:text-5xl ${
+            isHome ? "mt-2 mb-6" : "mt-4 mb-4"
+          }`}
+        >
           {title}
         </h2>
         <div className="w-full min-w-0 xl:w-[941px]">
@@ -134,13 +148,13 @@ const About = ({ title, intro, description, images }: AboutProps) => {
           />
         </div>
 
-        <div className="flex w-full flex-col justify-between px-6 md:px-6 xl:w-[500px]">
+        <div className="flex w-full flex-col justify-between px-4 md:px-6 lg:mt-6 xl:w-[500px]">
           <div>
             <h2 className="hidden lg:block font-normal text-blue text-3xl lg:text-5xl xl:text-5xl">
               {title}
             </h2>
 
-            <p className="mt-6 text-lg text-gray-600 lg:text-xl xl:text-xl">
+            <p className="mt-2 text-lg text-gray-600 lg:mt-6 lg:text-xl xl:text-xl">
               {intro}
             </p>
 
@@ -156,7 +170,7 @@ const About = ({ title, intro, description, images }: AboutProps) => {
             </div>
           </div>
 
-          <div className="mt-8 hidden xl:flex items-center justify-between lg:mb-0">
+          <div className="mt-8 flex items-center justify-start xl:justify-between lg:mb-0">
             <button
               type="button"
               onClick={next}
@@ -168,7 +182,7 @@ const About = ({ title, intro, description, images }: AboutProps) => {
 
             <a
               href="/contact-us"
-              className="ml-auto border-b border-[#17384e] pb-0.5 text-sm uppercase text-[#17384e]"
+              className="border-b border-[#17384e] pb-0.5 text-sm uppercase text-[#17384e] xl:ml-auto"
             >
               Contact
             </a>

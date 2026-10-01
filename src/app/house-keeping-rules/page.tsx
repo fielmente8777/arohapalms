@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 const HouseKeepingRulesPage = () => {
   return (
     <>
-    <Navbar/>
-    <SectionWithContainer>
-      <HouseKeepingRules {...houseKeepingRulesData} />
-    </SectionWithContainer>
-    <Footer {...WebfooterData}/>
+      <Navbar />
+      <main className="pt-16 md:pt-24 lg:pt-28">
+        <HouseKeepingRules {...houseKeepingRulesData} />
+      </main>
+      <Footer {...WebfooterData} />
     </>
   );
 };

@@ -222,17 +222,17 @@ export const homePageData = {
       {
         icon: <BusIcon />,
         title: "Bus Station",
-        distance: ["Mandrem - 17 Kilometers","Pilerne - 4.5 Kilometers"],
+        distance: ["Mandrem - 500 Meters","Pilerne - 550 Meters"],
       },
       {
         icon: <BusIcon />,
         title: "Train Station",
-        distance: ["Mandrem - 24–30 Kilometers","Pilerne - 18–20 Kilometers"],
+        distance: ["Mandrem - 17.5 Kilometers","Pilerne - 18.5 Kilometers"],
       },
       {
         icon: <BusIcon />,
         title: "Airport",
-        distance: ["Mandrem - 29 Kilometers","Pilerne - 31 Kilometers"],
+        distance: ["Mandrem - 29.5 Kilometers","Pilerne - 28.7 Kilometers"],
       },
     ],
     mapImage: "/images/Map.png",

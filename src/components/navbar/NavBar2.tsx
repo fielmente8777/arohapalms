@@ -17,9 +17,14 @@ const NavBar2 = () => {
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
 
-  const blueNavbarPages = ["/our-story/", "/experience/", "/contact-us/"];
+  // Pages with a top background hero image where navbar should start transparent
+  const normalizedPath = pathname ? pathname.replace(/\/$/, "") : "";
+  const isHeroPage =
+    normalizedPath === "" ||
+    normalizedPath.startsWith("/destination") ||
+    normalizedPath.startsWith("/gallery");
 
-  const isBlueNavbar = blueNavbarPages.includes(pathname);
+  const isSolid = !isHeroPage || scrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,10 +66,9 @@ const NavBar2 = () => {
         ${visible ? "translate-y-0" : "-translate-y-full"}`}
         >
           <nav
-            className={`max_screen_width flex items-center justify-between border-b border-white/40 pl-4 md:pl-6 ${
-              isBlueNavbar || scrolled ? "bg-navy shadow-md" : "bg-transparent"
-            }
-            `}
+            className={`max_screen_width flex items-center justify-between border-b border-white/40 pl-4 md:pl-6 transition-colors duration-300 ${
+              isSolid ? "bg-navy shadow-md" : "bg-transparent"
+            }`}
           >
             {/* MENU */}
             <div className="">

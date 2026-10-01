@@ -45,28 +45,11 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
   };
 
   const totalImages = activeVilla.images.length;
-
   const currentImage = totalImages > 0 ? activeImageIndex % totalImages : 0;
 
-  const totalAllImages = villas.reduce((sum, v) => sum + v.images.length, 0);
-
-  const imagesBefore = villas
-    .slice(0, activeVillaIndex)
-    .reduce((sum, v) => sum + v.images.length, 0);
-
+  // Progress strictly based on the current active villa's images (1 to total)
   const progressPercent =
-    totalAllImages > 0
-      ? ((imagesBefore + currentImage + 1) / totalAllImages) * 100
-      : 0;
-
-  // // desktop: pehle jaisa
-  // const progressPercent =
-  //   villas.length > 0 ? ((activeVillaIndex + 1) / villas.length) * 100 : 0;
-
-  // // mobile: image based
-  // const totalImages = activeVilla.images.length;
-  // const mobileProgressPercent =
-  //   totalImages > 0 ? ((activeImageIndex + 1) / totalImages) * 100 : 0;
+    totalImages > 0 ? ((currentImage + 1) / totalImages) * 100 : 0;
 
   return (
     <Section className="w-full overflow-hidden bg-background-2 py-12 md:py-16">
@@ -116,7 +99,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
           })}
         </div>
 
-        <div className="mt-7 overflow-x-auto scrollbar-hide">
+        <div className="mt-9 sm:mt-10 md:mt-7 overflow-x-auto scrollbar-hide">
           <div className="mx-auto flex w-max min-w-full justify-center gap-8 px-6 md:gap-14">
             {villas.map((villa, index) => (
               <button
@@ -148,7 +131,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
           </div>
         </div>
 
-        <div className="mx-auto mt-3 w-full max-w-[1100px] px-6 md:px-12">
+        <div className="mx-auto mt-5 sm:mt-6 md:mt-3 w-full max-w-[1100px] px-4 sm:px-6 md:px-12">
           <div className="relative h-[8px] w-full rounded-full bg-[#e8e4dc]">
             <div
               className="absolute left-0 top-[2px] h-[5px] rounded-full bg-[#CA9E55] transition-all duration-500 ease-out"
@@ -157,11 +140,10 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
               }}
             />
           </div>
-          
         </div>
 
         {/* VILLA IMAGE SLIDER */}
-        <div className="mt-8 max_screen_width">
+        <div className="mt-4 sm:mt-5 md:mt-8 max_screen_width">
           <GallerySlider
             key={`${location}-${activeVillaIndex}`}
             images={activeVilla.images}
@@ -170,8 +152,8 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
         </div>
 
         {/* DESCRIPTION */}
-        <div className="mx-auto max-md:mt-18 max-lg:mt-10 lg:mt-10 max-w-[680px] px-6 text-center">
-          <p className="text-[13px] leading-[1.8] text-[#777] md:text-xl">
+        <div className="mx-auto mt-4 md:mt-8 lg:mt-10 max-w-[680px] px-4 md:px-6 text-center">
+          <p className="text-base leading-relaxed text-[#777] md:text-xl">
             {activeVilla.description}
           </p>
         </div>

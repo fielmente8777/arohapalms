@@ -26,29 +26,29 @@ const Privacy = ({
   closingNote,
 }: PrivacyProps) => {
   return (
-    <SectionWithContainer sectionClassName="py-20">
+    <SectionWithContainer sectionClassName="py-8 md:py-20">
       <div className="max-w-[1100px] mx-auto">
-        <h1 className="text-center text-blue text-[64px] leading-tight mb-4">
+        <h1 className="text-center text-blue text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-normal font-serif leading-tight mb-6 md:mb-8">
           {title}
         </h1>
 
-        <p className=" mb-12">
+        <p className="mb-6 md:mb-12 text-sm sm:text-base text-gray-600">
           <b>Effective Date:</b> {effectiveDate}
         </p>
 
-        <div className="space-y-10 text-[18px] leading-9 text-[#333333]">
-          <div>{introduction}</div>
+        <div className="space-y-8 md:space-y-10 text-base sm:text-lg md:text-[18px] leading-relaxed md:leading-9 text-[#333333]">
+          <div className="leading-relaxed md:leading-9">{introduction}</div>
 
           {sections.map((section, index) => (
             <div key={index}>
-              <h2 className="text-blue text-[28px] font-semibold mb-4">
+              <h2 className="text-blue text-xl sm:text-2xl md:text-[28px] font-semibold mb-3 md:mb-4">
                 {section.title}
               </h2>
 
               {section.content && <div>{section.content}</div>}
 
               {section.points && (
-                <ul className="list-disc pl-6 mt-4 space-y-2">
+                <ul className="list-disc pl-5 sm:pl-6 md:pl-8 mt-3 md:mt-4 space-y-2">
                   {section.points.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
@@ -57,10 +57,10 @@ const Privacy = ({
 
               {section.extra && (
                 <>
-                  <div className="mt-6">{section.extra}</div>
+                  <div className="mt-4 md:mt-6">{section.extra}</div>
 
                   {section.extraPoints && (
-                    <ul className="list-disc pl-6 mt-4 space-y-2">
+                    <ul className="list-disc pl-5 sm:pl-6 md:pl-8 mt-3 md:mt-4 space-y-2">
                       {section.extraPoints.map((point, i) => (
                         <li key={i}>{point}</li>
                       ))}
@@ -71,10 +71,10 @@ const Privacy = ({
 
               {section.footer && (
                 <>
-                  <div className="mt-6">{section.footer}</div>
+                  <div className="mt-4 md:mt-6">{section.footer}</div>
 
                   {section.footerPoints && (
-                    <ul className="list-disc pl-6 mt-4 space-y-2">
+                    <ul className="list-disc pl-5 sm:pl-6 md:pl-8 mt-3 md:mt-4 space-y-2">
                       {section.footerPoints.map((point, i) => (
                         <li key={i}>{point}</li>
                       ))}
@@ -85,7 +85,7 @@ const Privacy = ({
             </div>
           ))}
 
-          <div className="pt-6">{closingNote}</div>
+          <div className="pt-4 md:pt-6 font-medium">{closingNote}</div>
         </div>
       </div>
     </SectionWithContainer>

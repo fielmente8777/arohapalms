@@ -226,7 +226,7 @@ const Footer = ({
 }: WebFooterProps) => {
   return (
     <footer className="bg-navy max_screen_width text-white pt-16 lg:pt-24 pb-8">
-      <div className="max-w-8xl mx-auto px-6 md:px-12">
+      <div className="max-w-8xl mx-auto px-4 md:px-12">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 xl:grid-cols-[auto_auto_auto_auto_auto] lg:justify-between items-start mb-16 gap-10">
           {/* Logo Section */}

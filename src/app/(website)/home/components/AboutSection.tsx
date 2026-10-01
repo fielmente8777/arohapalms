@@ -25,7 +25,7 @@ const AboutSection = ({
 }: AboutSectionProps) => {
   return (
     <>
-      <SectionWithContainer defaultPadding={false} sectionClassName="w-full bg-background-2 ">
+      <SectionWithContainer defaultPadding={false} sectionClassName="w-full bg-background-2 pb-8 sm:pb-10 md:pb-0">
         <div className="mx-auto flex flex-col items-center text-center">
           {/* TITLE */}
 
@@ -55,13 +55,13 @@ const AboutSection = ({
 
           <p
             className="mt-6
-            max-w-[320px]
+            w-full
+            max-w-full
             md:max-w-[650px]
             lg:max-w-[800px]
-            text-sm
+            text-xl
             font-normal
             text-[#777777]
-            text-xl
           "
           >
             {description}

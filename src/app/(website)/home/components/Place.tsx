@@ -68,7 +68,7 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
         </div>
 
         {/* LOCATION CARDS */}
-        <div className="grid w-full grid-cols-1 lg:grid-cols-2">
+        <div className="grid w-full grid-cols-1 gap-5 px-4 sm:px-6 md:px-8 lg:grid-cols-2 lg:gap-0 lg:px-0">
           {cards.map((card) => (
             <Link
               key={card.location}
@@ -76,11 +76,14 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
               className="
                 group
                 relative
-                aspect-[5/3]
+                aspect-[4/3]
+                sm:aspect-[5/3]
                 md:aspect-[4/3]
                 lg:aspect-[6/5]
                 w-full
                 overflow-hidden
+                rounded-2xl
+                lg:rounded-none
               "
             >
               {/* MAIN IMAGE */}
@@ -152,13 +155,18 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
               <div
                 className="
                   absolute
-                  bottom-7
-                  left-4
-                  lg:left-7
-                  md:left-4
+                  bottom-9
+                  left-5
+                  right-5
                   z-10
                   max-w-[320px]
+                  sm:bottom-10
+                  sm:left-6
+                  md:bottom-8
+                  md:left-6
                   md:max-w-[400px]
+                  lg:bottom-7
+                  lg:left-7
                   lg:max-w-[430px]
                   text-white
                 "
@@ -187,28 +195,33 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
 
                 <p
                   className="
-                    mt-3
+                    mt-2
                     text-xs
                     text-white/90
+                    md:mt-3
                     md:text-sm
                   "
                 >
                   {card.description}
                 </p>
 
-                <span
-                  className="
-                  mt-2
-                    lg:mt-4
-                    block
-                    text-xs
-                    lg:text-sm
-                    uppercase
-                    
-                  "
-                >
-                  Explore
-                </span>
+                <div className="mt-3 lg:mt-4">
+                  <span
+                    className="
+                      inline-block
+                      border-b
+                      border-white
+                      pb-0.5
+                      text-xs
+                      font-medium
+                      tracking-widest
+                      uppercase
+                      lg:text-sm
+                    "
+                  >
+                    Explore
+                  </span>
+                </div>
               </div>
 
               {/* PLAY BUTTON */}

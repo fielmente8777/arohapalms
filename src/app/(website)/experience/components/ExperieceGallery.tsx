@@ -24,7 +24,7 @@ const ExperienceGallery = ({
 }: ExperienceGalleryProps) => {
   return (
     <>
-      <Section className="w-full bg-background-2 py-16 md:py-20">
+      <Section className="w-full bg-background-2 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-20">
         <div className="mx-auto w-full max_width px-6">
           {/* HEADING + DESCRIPTION */}
           <div className="mx-auto flex max-w-[850px] flex-col items-center text-center">
@@ -41,7 +41,7 @@ const ExperienceGallery = ({
               {heading}
             </h2>
 
-            <div className="mt-5 flex flex-col gap-4 text-sm leading-relaxed text-p2/80 md:text-base">
+            <div className="mt-5 flex flex-col gap-4 text-base leading-relaxed text-[#777777]">
               {desc.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -63,13 +63,14 @@ const ExperienceGallery = ({
             {cards.map((card, index) => (
               <div
                 key={`${card.image}-${index}`}
-                className="
+                className={`
                   group
                   relative
                   aspect-[0.64]
                   w-full
                   overflow-hidden
-                "
+                  ${index >= 2 ? "hidden md:block" : ""}
+                `}
               >
                 {card.video ? (
                   <LazyLoadedVideo src={card.video} poster={card.image} />
@@ -88,39 +89,50 @@ const ExperienceGallery = ({
                     absolute
                     inset-0
                     z-10
-                    bg-black/5
+                    bg-black/10
                     transition-colors
                     duration-500
-                    group-hover:bg-black/15
+                    group-hover:bg-black/20
                   "
                 />
 
-                {/* TITLE */}
+                {/* PLAY BUTTON ICON */}
                 <div
                   className="
+                    pointer-events-none
                     absolute
-                    bottom-0
-                    left-0
-                    right-0
+                    left-1/2
+                    top-1/2
                     z-20
-                    bg-gradient-to-t
-                    from-black/60
-                    to-transparent
-                    px-4
-                    pb-5
-                    pt-12
+                    flex
+                    h-12
+                    w-12
+                    md:h-14
+                    md:w-14
+                    -translate-x-1/2
+                    -translate-y-1/2
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-white/90
+                    shadow-lg
+                    transition-all
+                    duration-300
+                    group-hover:scale-110
+                    group-hover:bg-white
                   "
                 >
-                  <h3
+                  <span
                     className="
-                      text-sm
-                      uppercase
-                      text-white
-                      md:text-base
+                      ml-1
+                      border-y-[6px]
+                      md:border-y-[7px]
+                      border-y-transparent
+                      border-l-[10px]
+                      md:border-l-[12px]
+                      border-l-p2
                     "
-                  >
-                    {card.title}
-                  </h3>
+                  />
                 </div>
               </div>
             ))}

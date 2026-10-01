@@ -28,19 +28,19 @@ const Activities = ({ title, slides, exploreBeyond }: ActivitiesProps) => {
   return (
     <Section className="bg-background-2">
       {/* HEADING */}
-      <div className="mx-auto max-w-[650px] text-center ">
+      <div className="mx-auto max-w-[650px] text-center px-4 mb-7 sm:mb-8 md:mb-0">
         <h2
           className="
             font-primary
-            text-3xl
+            text-2xl
+            sm:text-3xl
+            md:text-[48px]
             font-light
             text-p2
-            md:text-[48px]
+            whitespace-nowrap
           "
         >
-          {title.prefix}
-          <br />
-          {title.words[0]}
+          {title.prefix} {title.words[0]}
         </h2>
       </div>
 
@@ -60,8 +60,8 @@ const Activities = ({ title, slides, exploreBeyond }: ActivitiesProps) => {
 
 
       {exploreBeyond && (
-        <div className="mt-10 md:mt-16 ">
-          <div className="mx-auto w-full max-w-[300px] md:max-w-[650px] lg:max-w-[980px] xl:max-w-[1165px] border border-primary">
+        <div className="mt-10 md:mt-16 px-4 sm:px-6 md:px-0">
+          <div className="mx-auto w-full md:max-w-[650px] lg:max-w-[980px] xl:max-w-[1165px] border border-primary">
             <div
               className="
                 grid

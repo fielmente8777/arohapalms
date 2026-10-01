@@ -407,15 +407,15 @@ const DESKTOP: Layout = {
   sideH: yp(PREVIEW_H),
 };
 
-// Mobile + MD: beech ki image 72%, side ki images edge tak half dikhti hain
-const M_MAIN_W = 72;
-const M_GAP = 4;
-const M_MAIN_L = 100 - M_MAIN_W;
+// Mobile + MD: beech ki image centered, dono side ki images partial preview me dikhti hain
+const M_MAIN_W = 70;
+const M_GAP = 3.5;
+const M_MAIN_L = (100 - M_MAIN_W) / 2;
 
 const MOBILE: Layout = {
   mainLeft: M_MAIN_L,
   prevLeft: M_MAIN_L - M_GAP - M_MAIN_W,
-   nextLeft: 100, 
+  nextLeft: M_MAIN_L + M_MAIN_W + M_GAP,
   mainW: M_MAIN_W,
   sideW: M_MAIN_W,
   mainH: 100,
@@ -563,7 +563,7 @@ const GallerySlider = ({
             />
           </div>
 
-          <div className="mt-3 flex items-center justify-between px-6 md:px-10">
+          <div className="mt-7 flex items-center justify-between px-6 md:mt-8 md:px-10">
             <button type="button" onClick={onPrev} aria-label="Previous image">
               <BtnIcon />
             </button>
