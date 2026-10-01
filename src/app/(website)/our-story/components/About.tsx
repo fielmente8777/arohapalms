@@ -120,9 +120,9 @@ const About = ({ title, intro, description, images }: AboutProps) => {
   const { index, next, prev } = useSlider(images.length);
 
   return (
-    <Section className="bg-background-2">
+    <Section className="bg-background-2 py-12">
       <div className="flex flex-col gap-6 xl:flex-row ">
-        <h2 className=" lg:hidden justify-between text-center font-normal mt-8 text-blue text-3xl lg:text-5xl xl:text-5xl">
+        <h2 className=" lg:hidden justify-between text-center font-normal text-blue text-3xl lg:text-5xl xl:text-5xl">
           {title}
         </h2>
         <div className="w-full min-w-0 xl:w-[941px]">
@@ -134,7 +134,7 @@ const About = ({ title, intro, description, images }: AboutProps) => {
           />
         </div>
 
-        <div className="flex w-full flex-col justify-between px-6 md:px-6 lg:mt-6 xl:w-[500px]">
+        <div className="flex w-full flex-col justify-between px-6 md:px-6 xl:w-[500px]">
           <div>
             <h2 className="hidden lg:block font-normal text-blue text-3xl lg:text-5xl xl:text-5xl">
               {title}

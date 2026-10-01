@@ -527,7 +527,7 @@ const GallerySlider = ({
 
   return (
     <Section defaultPadding={false}>
-      <div className="w-full xl:max-w-[941px]">
+      <div className="w-full">
         {/* DESKTOP */}
         <div className="relative hidden aspect-[941/568] w-full overflow-hidden xl:block">
           <Slides

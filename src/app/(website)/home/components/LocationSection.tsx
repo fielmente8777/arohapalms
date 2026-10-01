@@ -6,7 +6,7 @@ import { MapPinIcon } from "lucide-react";
 interface LocationItem {
   icon: React.ReactNode;
   title: string;
-  distance: string;
+  distance: string[];
 }
 
 interface LocationSectionProps {
@@ -78,10 +78,11 @@ const LocationSection = ({
                       </p>
                     </div>
 
-                    {/* DISTANCE */}
-                    <p className="pl-[35px] text-sm text-gray md:text-base">
-                      {location.distance}
-                    </p>
+                    <div className="pl-[35px] text-sm text-white md:text-base">
+                      {location.distance.map((distance, distanceIndex) => (
+                        <p key={distanceIndex}>{distance}</p>
+                      ))}
+                    </div>
                   </div>
                 );
               })}
@@ -98,7 +99,12 @@ const LocationSection = ({
           </div>
         </div>
         <div className=" relative md:hidden left-0 bottom-0 z-0 h-[30px] w-full ">
-          <Image src="/home/design2.png" alt="" fill className="object-fill rotate-180" />
+          <Image
+            src="/home/design2.png"
+            alt=""
+            fill
+            className="object-fill rotate-180"
+          />
         </div>
         {/* MAP */}
         <div className="relative h-[350px] md:h-[450px] overflow-hidden lg:h-[616px] px-6 md:px-0">
