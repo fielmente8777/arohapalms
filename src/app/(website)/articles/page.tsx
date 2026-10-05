@@ -12,7 +12,7 @@ const gfsNeohellenic = GFS_Neohellenic({
 });
 
 export const metadata: Metadata = {
-  title: "The Arohha Edit | Blogs - Aroha Palms",
+  title: "The Aroha Edit | Blogs - Aroha Palms",
   description:
     "Explore stories, guides, and updates from Aroha Palms luxury villas and apartments in North Goa.",
 };
@@ -47,7 +47,7 @@ export default function ArticlesPage() {
               letterSpacing: "0%",
             }}
           >
-            The Arohha Edit
+            The Aroha Edit
           </h1>
         </Container>
       </section>
