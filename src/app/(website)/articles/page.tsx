@@ -52,7 +52,7 @@ export default function ArticlesPage() {
         </Container>
       </section>
 
-      {/* GREEK PATTERN DIVIDER */}
+
       <div className="w-full max_screen_width overflow-hidden">
         <Image
           src="/images/Greek1.png"
@@ -63,7 +63,6 @@ export default function ArticlesPage() {
         />
       </div>
 
-      {/* BLOGS GRID SECTION */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 lg:gap-x-8 lg:gap-y-10 justify-items-center">
