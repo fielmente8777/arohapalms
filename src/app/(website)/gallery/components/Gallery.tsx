@@ -27,17 +27,17 @@ const Gallery = ({
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#07182b]/35" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#07182b]/70 via-[#07182b]/40 to-[#07182b]/25" />
 
       {/* Bottom Content */}
-      <div className="relative z-10 flex h-full items-end justify-center ">
-        <div className="max-w-[700px] px-6 text-center text-white">
-          <h1 className="text-[34px] font-light leading-[1.2] md:text-5xl">
+      <div className="relative z-10 flex h-full items-end justify-center pb-8 sm:pb-12 md:pb-16 lg:pb-20">
+        <div className="max-w-[720px] px-6 text-center text-white">
+          <h1 className="text-[34px] sm:text-[42px] md:text-5xl font-normal leading-[1.2] tracking-wide">
             {title}
           </h1>
 
           {description && (
-            <p className="mx-auto mt-3 sm:mt-4 max-w-[620px] whitespace-pre-line text-base leading-relaxed font-light md:text-xl">
+            <p className="mx-auto mt-3 sm:mt-4 max-w-[620px] whitespace-pre-line text-base sm:text-lg md:text-xl leading-relaxed font-normal text-white">
               {description}
             </p>
           )}

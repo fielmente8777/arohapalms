@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { MapPin } from "lucide-react";
 import GallerySlider from "../../home/components/slider/Slider";
 import { Section } from "@/components/sectionComponants";
@@ -24,6 +24,12 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
+  const tabsContainerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragMoved, setDragMoved] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
   const villas = useMemo(
     () => (location === "Mandrem" ? mandrem : pilerne),
     [location, mandrem, pilerne]
@@ -37,11 +43,38 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
     setLocation(newLocation);
     setActiveVillaIndex(0);
     setActiveImageIndex(0);
+    if (tabsContainerRef.current) {
+      tabsContainerRef.current.scrollLeft = 0;
+    }
   };
 
   const handleVillaChange = (index: number) => {
+    if (dragMoved) return;
     setActiveVillaIndex(index);
     setActiveImageIndex(0);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!tabsContainerRef.current) return;
+    setIsDragging(true);
+    setDragMoved(false);
+    setStartX(e.pageX - tabsContainerRef.current.offsetLeft);
+    setScrollLeft(tabsContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseLeaveOrUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !tabsContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - tabsContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    if (Math.abs(walk) > 4) {
+      setDragMoved(true);
+    }
+    tabsContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 
   const totalImages = activeVilla.images.length;
@@ -99,35 +132,56 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
           })}
         </div>
 
-        <div className="mt-9 sm:mt-10 md:mt-7 overflow-x-auto scrollbar-hide">
-          <div className="mx-auto flex w-max min-w-full justify-center gap-8 px-6 md:gap-14">
-            {villas.map((villa, index) => (
-              <button
-                key={villa.name}
-                type="button"
-                onClick={() => handleVillaChange(index)}
-                className={`
-                  relative
-                  
-                  pb-3
-                  text-sm
-                  uppercase
-                  
-                  transition
-                  ${
-                    activeVillaIndex === index
-                      ? "text-[#1976b9]"
-                      : "text-[#c2c2c2]"
-                  }
-                `}
-              >
-                {villa.name}
+        {/* TABS CONTAINER - Aligned strictly with the progress bar width */}
+        <div className="mx-auto mt-9 sm:mt-10 md:mt-7 w-full max-w-[1100px] px-4 sm:px-6 md:px-12">
+          <div
+            ref={tabsContainerRef}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeaveOrUp}
+            onMouseUp={handleMouseLeaveOrUp}
+            onMouseMove={handleMouseMove}
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+            className={`overflow-x-auto scrollbar-hide [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar]:!w-0 [&::-webkit-scrollbar]:!h-0 ${
+              isDragging ? "cursor-grabbing select-none" : "cursor-grab"
+            }`}
+          >
+            <div
+              className={`mx-auto flex w-max min-w-full items-center ${
+                location === "Pilerne" ? "justify-center" : "justify-start"
+              } gap-8 md:gap-14 select-none`}
+            >
+              {villas.map((villa, index) => (
+                <button
+                  key={villa.name}
+                  type="button"
+                  onClick={() => handleVillaChange(index)}
+                  className={`
+                    relative
+                    shrink-0
+                    whitespace-nowrap
+                    pb-3
+                    text-sm
+                    uppercase
+                    cursor-pointer
+                    transition
+                    ${
+                      activeVillaIndex === index
+                        ? "text-[#1976b9]"
+                        : "text-[#c2c2c2]"
+                    }
+                  `}
+                >
+                  {villa.name}
 
-                {activeVillaIndex === index && (
-                  <span className="absolute bottom-0 left-0 h-[1px] w-full bg-[#1976b9]" />
-                )}
-              </button>
-            ))}
+                  {activeVillaIndex === index && (
+                    <span className="absolute bottom-0 left-0 h-[1px] w-full bg-[#1976b9]" />
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -147,6 +201,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
           <GallerySlider
             key={`${location}-${activeVillaIndex}`}
             images={activeVilla.images}
+            title={activeVilla.name}
             onSlideChange={setActiveImageIndex}
           />
         </div>

@@ -13,8 +13,11 @@ interface StayCardsProps {
 
 const StayCards = ({ stays }: StayCardsProps) => {
   return (
-    <SectionWithContainer sectionClassName="max_width mb-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+    <SectionWithContainer
+      defaultPadding={false}
+      sectionClassName="pt-2 pb-12 sm:pb-16 md:pb-20"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
         {stays.map((stay) => (
           <Link
             key={stay.href}

@@ -106,7 +106,7 @@ export const AccommodationCard: React.FC<
         )}
 
         <h3 className="text-2xl md:text-3xl font-serif text-[#005BA4] font-normal">
-          {title} {span}
+          {title} {span ? `- ${span}` : ""}
         </h3>
 
         {badges.length > 0 && (
@@ -333,7 +333,7 @@ export const AccommodationCard: React.FC<
           )}
         </div>
         {/* ================= RIGHT / CONTENT COLUMN ================= */}
-        <div className="lg:col-span-5 flex flex-col justify-between h-full ">
+        <div className="lg:col-span-5 flex flex-col justify-between lg:h-[500px]">
           <div>
             {/* DESKTOP HEADER (Hidden on mobile < lg) */}
             <div className="hidden lg:block">
@@ -344,7 +344,7 @@ export const AccommodationCard: React.FC<
               )}
 
               <h3 className="text-2xl md:text-3xl lg:text-[32px] font-serif text-[#005BA4] font-normal ">
-                {title} {span}
+                {title} {span ? `- ${span}` : ""}
               </h3>
 
               {badges.length > 0 && (
@@ -362,12 +362,12 @@ export const AccommodationCard: React.FC<
             </div>
 
             {cardDescription && (
-              <p className="mt-1 lg:mt-5 text-base sm:text-lg lg:text-xl text-[#5A5856] leading-relaxed line-clamp-9">
+              <p className="mt-1 lg:mt-4 text-base sm:text-lg lg:text-[18px] text-[#5A5856] leading-relaxed line-clamp-5 xl:line-clamp-6">
                 {cardDescription}
               </p>
             )}
 
-            <div className="mt-3.5 lg:mt-5">
+            <div className="mt-3 lg:mt-4">
               <RoomDetailsPopupButton
                 label="KNOW MORE"
                 roomDetails={{

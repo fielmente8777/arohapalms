@@ -41,7 +41,7 @@ export const InnerNavData = {
     // },
     {
       label: "Your Stay",
-      href: "/destination/",
+      href: "",
       children: [
         {
           label: "Mandrem",

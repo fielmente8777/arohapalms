@@ -164,7 +164,7 @@ const ContactUs = ({
 
               <div className="flex items-center gap-3 md:gap-4">
 
-                <span className="shrink-0 w-6 h-6 md:w-9 md:h-9 flex items-center justify-center [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-6 md:[&>svg]:h-6">
+                <span className="shrink-0 w-6 h-6 md:w-9 md:h-9 flex items-center justify-center [&>svg]:w-auto [&>svg]:h-6 md:[&>svg]:h-7 text-white">
                   <MapIcon />
                 </span>
 

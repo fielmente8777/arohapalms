@@ -57,10 +57,7 @@ const WebsiteNav = () => {
         will-change-transform
         ${visible ? "translate-y-0" : "-translate-y-full"}
         ${
-          // isTransparent
-          // ?
-          scrolled ? "bg-secondary backdrop-blur-xl" : "bg-transparent"
-          // : "bg-background"
+          scrolled ? "bg-secondary backdrop-blur-xl" : "bg-black/20 backdrop-blur-md"
         }
       `}
       >

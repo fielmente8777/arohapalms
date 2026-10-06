@@ -7,7 +7,7 @@ import { yourStayPageData } from "./pagedata";
 
 export default function YourStayPage() {
   return (
-    <main>
+    <main className="pt-20 md:pt-24">
       <StayIntro {...yourStayPageData.intro} />
 
       <StayCards stays={yourStayPageData.stays} />

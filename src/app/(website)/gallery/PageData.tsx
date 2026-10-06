@@ -211,6 +211,103 @@ export const GalleryData = {
         description:
           "The pinnacle of private group luxury in North Goa, Villa Marisol is the ultimate total takeover of our Mandrem collection.",
       },
+      {
+        name: "Suite De Onyx",
+        images: [
+          "/rooms/Onyx/suite-de-emerald-0c2ec6-1024x683.jpg",
+          "/rooms/Onyx/suite-de-emerald-4a8a5f-1024x768.webp",
+          "/rooms/Onyx/suite-de-emerald-4bae35-1024x683.webp",
+          "/rooms/Onyx/suite-de-emerald-5deaba-1024x683.webp",
+          "/rooms/Onyx/suite-de-emerald-48fb29-1024x683.webp",
+          "/rooms/Onyx/suite-de-emerald-575c62-1024x683.webp",
+          "/rooms/Onyx/suite-de-emerald-033720-1024x683.webp",
+          "/rooms/Onyx/suite-de-emerald-794512-1024x683.webp",
+          "/rooms/Onyx/suite-de-emerald-af28ef-1024x683.webp",
+          "/rooms/Onyx/suite-de-regal-ac4cb9-1024x683.webp",
+          "/rooms/Onyx/suite-de-regal-dcd5bb-1024x683.webp",
+          "/rooms/Onyx/Onyx.png",
+        ],
+        description:
+          "A thoughtfully designed 1,200 sq. ft. apartment that blends Mediterranean-inspired elegance with the vibrant, coastal soul of the Arabian sea.",
+      },
+      {
+        name: "Suite De Lumina",
+        images: [
+          "/rooms/Lumina/Lumina.png",
+          "/rooms/Lumina/suite-de-regal-11fa20-1024x683.webp",
+          "/rooms/Lumina/suite-de-regal-45c2fc-1024x683.webp",
+          "/rooms/Lumina/suite-de-regal-86bd8d-1024x683.webp",
+          "/rooms/Lumina/suite-de-regal-850ce5-1024x683.webp",
+          "/rooms/Lumina/suite-de-regal-2700ac-1024x683.webp",
+          "/rooms/Lumina/suite-de-regal-7591f1-1024x683.webp",
+          "/rooms/Lumina/suite-de-regal-8179d7-1024x683.webp",
+          "/rooms/Lumina/suite-de-regal-ac4cb9-1024x683.webp",
+          "/rooms/Lumina/suite-de-regal-dcd5bb-1024x683.webp",
+          "/rooms/Lumina/suite-de-regal-ed2ebb-1024x683.webp",
+          "/rooms/Lumina/suite-de-regal-2f3711-1024x681.webp",
+          "/rooms/Lumina/suite-de-regal-4d7a0a-1024x768.webp",
+        ],
+        description:
+          "A thoughtfully designed 1,200 sq. ft. apartment that blends Mediterranean-inspired elegance with the vibrant, coastal soul of the Arabian sea.",
+      },
+      {
+        name: "Suite De Emerald",
+        images: [
+          "/rooms/Emerald/Emerald.png",
+          "/rooms/Emerald/emerald1.jpg",
+          "/rooms/Emerald/emerald6.webp",
+          "/rooms/Emerald/emerald2.jpg",
+          "/rooms/Emerald/emerald3.jpg",
+          "/rooms/Emerald/emerald4.jpg",
+          "/rooms/Emerald/emerald5.webp",
+        ],
+        description:
+          "Suite De Emerald is a thoughtfully designed 800 sq. ft. apartment that blends Mediterranean-inspired aesthetics with a calm, coastal sensibility.",
+      },
+      {
+        name: "Suite De Platinum",
+        images: [
+          "/rooms/Platinum/Platinum.png",
+          "/rooms/Emerald/suite-de-emerald-4a8a5f-1024x768.webp",
+          "/rooms/Emerald/suite-de-emerald-4bae35-1024x683.webp",
+          "/rooms/Emerald/suite-de-emerald-5deaba-1024x683.webp",
+          "/rooms/Emerald/suite-de-emerald-48fb29-1024x683.webp",
+          "/rooms/Emerald/suite-de-emerald-575c62-1024x683.webp",
+          "/rooms/Emerald/suite-de-emerald-af28ef-1024x683.webp",
+          "/rooms/Emerald/suite-de-regal-ac4cb9-1024x683.webp",
+          "/rooms/Emerald/06-Bed-2-1024x683.jpg",
+        ],
+        description:
+          "Suite De Platinum is a thoughtfully designed 400 sq. ft. studio retreat that blends Mediterranean-inspired aesthetics with a calm, coastal sensibility.",
+      },
+      {
+        name: "Suite De Prestige",
+        images: [
+          "/rooms/Prestige/suite-de-emerald-ea3ee5-1024x683.webp",
+          "/rooms/Prestige/suite-de-regal-2f3711-1024x681.webp",
+          "/rooms/Prestige/suite-de-regal-850ce5-1024x683.webp",
+          "/rooms/Prestige/suite-de-regal-ed2ebb-1024x683.webp",
+          "/rooms/Prestige/Prestige.png",
+          "/rooms/Prestige/suite-de-emerald-4a8a5f-1024x768.webp",
+        ],
+        description:
+          "A thoughtfully designed 400 sq. ft. studio retreat that blends Mediterranean-inspired aesthetics with a calm, coastal sensibility.",
+      },
+      {
+        name: "Suite De Regal",
+        images: [
+          "/rooms/Regal/06-Bed-2-1024x683.jpg",
+          "/rooms/Regal/suite-de-emerald-4a8a5f-1024x768.webp",
+          "/rooms/Regal/suite-de-emerald-4bae35-1024x683.webp",
+          "/rooms/Regal/suite-de-emerald-5deaba-1024x683.webp",
+          "/rooms/Regal/suite-de-emerald-48fb29-1024x683.webp",
+          "/rooms/Regal/suite-de-emerald-575c62-1024x683.webp",
+          "/rooms/Regal/suite-de-emerald-af28ef-1024x683.webp",
+          "/rooms/Regal/suite-de-regal-ac4cb9-1024x683.webp",
+        ],
+        description:
+          "Suite De Regal is a thoughtfully designed 800 sq. ft. apartment that blends Mediterranean-inspired aesthetics with a calm, coastal sensibility.",
+      },
     ],
 
     pilerne: [

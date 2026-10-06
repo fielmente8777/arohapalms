@@ -9,6 +9,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 
 interface GallerySliderProps {
   images: string[];
+  title?: string;
   link?: {
     label: string;
     href: string;
@@ -18,6 +19,7 @@ interface GallerySliderProps {
 
 const GallerySlider: React.FC<GallerySliderProps> = ({
   images,
+  title,
   link,
   onSlideChange,
 }) => {
@@ -60,13 +62,26 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
           className="w-full"
           renderSlide={(src, index) => (
             <div
-              className={`w-full relative ${
+              className={`w-full relative overflow-hidden ${
                 index === activeIndex
                   ? "md:aspect-4/2.5 aspect-3/3"
                   : "md:aspect-[4/2.2] aspect-4/3.5"
               }`}
             >
-              <Image src={src} alt="Image" fill className="object-cover" />
+              <Image src={src} alt={title || "Image"} fill className="object-cover" />
+              {title && (
+                <div className="absolute right-4 bottom-3 sm:right-6 sm:bottom-4 md:right-8 md:bottom-6 z-10 pointer-events-none">
+                  <span
+                    className="text-white uppercase tracking-[0.2em] font-medium text-xs sm:text-sm md:text-base select-none"
+                    style={{
+                      textShadow:
+                        "0 1px 3px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5)",
+                    }}
+                  >
+                    {title}
+                  </span>
+                </div>
+              )}
             </div>
           )}
         />

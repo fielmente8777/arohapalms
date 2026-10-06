@@ -21,7 +21,8 @@ const NavBar2 = () => {
   const normalizedPath = pathname ? pathname.replace(/\/$/, "") : "";
   const isHeroPage =
     normalizedPath === "" ||
-    normalizedPath.startsWith("/destination") ||
+    normalizedPath === "/destination/mandrem" ||
+    normalizedPath === "/destination/pilerne" ||
     normalizedPath.startsWith("/gallery");
 
   const isSolid = !isHeroPage || scrolled;
@@ -66,8 +67,8 @@ const NavBar2 = () => {
         ${visible ? "translate-y-0" : "-translate-y-full"}`}
         >
           <nav
-            className={`max_screen_width flex items-center justify-between border-b border-white/40 pl-4 md:pl-6 transition-colors duration-300 ${
-              isSolid ? "bg-navy shadow-md" : "bg-transparent"
+            className={`max_screen_width flex items-center justify-between border-b border-white/40 pl-4 md:pl-6 transition-all duration-300 ${
+              isSolid ? "bg-navy shadow-md" : "bg-black/20 backdrop-blur-md"
             }`}
           >
             {/* MENU */}

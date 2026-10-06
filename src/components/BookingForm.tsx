@@ -21,25 +21,45 @@ const locations = [
   },
 ];
 
-const villas = [
-  {
-    name: "Villa Majestic",
-    slug: "villa-majestic",
-  },
-  {
-    name: "Villa Grande",
-    slug: "villa-grande",
-  },
-];
+const villasByLocation = {
+  mandrem: [
+    { name: "Villa Magnifica", slug: "villa-magnifica", location: "mandrem" },
+    { name: "Villa Paradiso", slug: "villa-paradiso", location: "mandrem" },
+    { name: "Villa Serenity", slug: "villa-serenity", location: "mandrem" },
+    { name: "Villa Caia", slug: "villa-caia", location: "mandrem" },
+    { name: "Villa Prana", slug: "villa-prana", location: "mandrem" },
+    { name: "Villa Encanto", slug: "villa-encanto", location: "mandrem" },
+    { name: "Villa Marisol", slug: "villa-marisol", location: "mandrem" },
+    { name: "Suite De Onyx", slug: "suite-de-onyx", location: "mandrem" },
+    { name: "Suite De Lumina", slug: "suite-de-lumina", location: "mandrem" },
+    { name: "Suite De Emerald", slug: "suite-de-emerald", location: "mandrem" },
+    { name: "Suite De Platinum", slug: "suite-de-platinum", location: "mandrem" },
+    { name: "Suite De Prestige", slug: "suite-de-prestige", location: "mandrem" },
+    { name: "Suite De Regal", slug: "suite-de-regal", location: "mandrem" },
+  ],
+  pilerne: [
+    { name: "Villa Majestic", slug: "villa-majestic", location: "pilerne" },
+    { name: "Villa Grande", slug: "villa-grande", location: "pilerne" },
+    { name: "Villa Grande & Majestic", slug: "villa-grande-and-majestic", location: "pilerne" },
+  ],
+};
+
+type VillaType = {
+  name: string;
+  slug: string;
+  location: string;
+};
+
 export default function BookingForm() {
   const [location, setLocation] = useState<(typeof locations)[number] | null>(
     null
   );
-  const [villa, setVilla] = useState<(typeof villas)[number] | null>(null);
+  const [villa, setVilla] = useState<VillaType | null>(null);
   const [locationOpen, setLocationOpen] = useState(false);
   const [villaOpen, setVillaOpen] = useState(false);
   const [guestOpen, setGuestOpen] = useState(false);
   const [search, setSearch] = useState("");
+  const [villaSearch, setVillaSearch] = useState("");
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
 
@@ -54,19 +74,6 @@ export default function BookingForm() {
   const guestRef = useRef<HTMLDivElement>(null);
   const villaRef = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   const close = (e: MouseEvent) => {
-  //     if (
-  //       locationRef.current &&
-  //       !locationRef.current.contains(e.target as Node)
-  //     )
-  //       setLocationOpen(false);
-  //     if (guestRef.current && !guestRef.current.contains(e.target as Node))
-  //       setGuestOpen(false);
-  //   };
-  //   document.addEventListener("mousedown", close);
-  //   return () => document.removeEventListener("mousedown", close);
-  // }, []);
   useEffect(() => {
     const close = (e: MouseEvent) => {
       if (
@@ -97,6 +104,39 @@ export default function BookingForm() {
       ),
     [search]
   );
+
+  const availableVillas = useMemo(() => {
+    if (!location) {
+      return [...villasByLocation.mandrem, ...villasByLocation.pilerne];
+    }
+    return (
+      villasByLocation[location.slug as keyof typeof villasByLocation] || []
+    );
+  }, [location]);
+
+  const filteredVillas = useMemo(() => {
+    return availableVillas.filter((v) =>
+      v.name.toLowerCase().includes(villaSearch.toLowerCase())
+    );
+  }, [availableVillas, villaSearch]);
+
+  const handleSelectLocation = (item: (typeof locations)[number]) => {
+    setLocation(item);
+    setLocationOpen(false);
+    if (villa && villa.location !== item.slug) {
+      setVilla(null);
+    }
+  };
+
+  const handleSelectVilla = (item: VillaType) => {
+    setVilla(item);
+    setVillaOpen(false);
+    if (!location) {
+      const loc = locations.find((l) => l.slug === item.location);
+      if (loc) setLocation(loc);
+    }
+  };
+
   const formatDate = (date: Date | null) => {
     if (!date) return "";
 
@@ -124,16 +164,17 @@ export default function BookingForm() {
   const guestLabel = `${adults} Adult${adults !== 1 ? "s" : ""}${children > 0 ? `, ${children} Child${children !== 1 ? "ren" : ""}` : ""}`;
 
   const handleSearch = () => {
+    const locSlug = location?.slug || (villa?.location || "mandrem");
     window.open(
-      `https://letsbook.me/booking/${location?.slug}?checkin=${formatDate(startDate)}&checkout=${formatDate(endDate)}&adults=${adults}&children=${children}`,
+      `https://letsbook.me/booking/${locSlug}?checkin=${formatDate(startDate)}&checkout=${formatDate(endDate)}&adults=${adults}&children=${children}`,
       "_blank"
     );
   };
 
   // Shared field styles
   const fieldCls =
-    "relative flex items-center gap-2.5 px-5 h-14 border-r-0 border-y-[0.5px] not-first:border-l-0 border-l  not-last:border-r  border-white/20 cursor-pointer hover:bg-white/5 transition-colors";
-  const labelCls = " text-white tracking-wide whitespace-nowrap";
+    "relative flex items-center gap-2.5 px-5 h-14 border-r-0 border-y-[0.5px] not-first:border-l-0 border-l not-last:border-r border-white/20 cursor-pointer hover:bg-white/5 transition-colors";
+  const labelCls = "text-white tracking-wide whitespace-nowrap";
 
   return (
     <div className="w-full">
@@ -153,7 +194,7 @@ export default function BookingForm() {
           {locationOpen && (
             <div className="absolute left-0 top-full z-50 mt-0.5 w-64 rounded-b-md bg-background shadow-xl overflow-hidden">
               <input
-                className="w-full bg-transparent px-4 py-2.5 text-sm  outline-none border-b "
+                className="w-full bg-transparent px-4 py-2.5 text-sm outline-none border-b"
                 placeholder="Search..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -163,11 +204,8 @@ export default function BookingForm() {
                 <button
                   type="button"
                   key={item.slug}
-                  onClick={() => {
-                    setLocation(item);
-                    setLocationOpen(false);
-                  }}
-                  className="block w-full px-4 py-3 text-left text-sm hover:bg-white/10"
+                  onClick={() => handleSelectLocation(item)}
+                  className="block w-full px-4 py-3 text-left text-sm hover:bg-white/10 transition-colors"
                 >
                   {item.name}
                 </button>
@@ -186,19 +224,38 @@ export default function BookingForm() {
 
           {villaOpen && (
             <div className="absolute left-0 top-full z-50 mt-0.5 w-64 rounded-b-md bg-background shadow-xl overflow-hidden">
-              {villas.map((item) => (
-                <button
-                  type="button"
-                  key={item.slug}
-                  onClick={() => {
-                    setVilla(item);
-                    setVillaOpen(false);
-                  }}
-                  className="block w-full px-4 py-3 text-left text-sm hover:bg-white/10"
-                >
-                  {item.name}
-                </button>
-              ))}
+              <input
+                className="w-full bg-transparent px-4 py-2.5 text-sm outline-none border-b"
+                placeholder="Search Villa..."
+                value={villaSearch}
+                onChange={(e) => setVillaSearch(e.target.value)}
+                onClick={(e) => e.stopPropagation()}
+              />
+              <div className="max-h-60 overflow-y-auto">
+                {filteredVillas.length === 0 ? (
+                  <p className="px-4 py-3 text-xs text-white/50 text-center">
+                    No properties found
+                  </p>
+                ) : (
+                  filteredVillas.map((item) => (
+                    <button
+                      type="button"
+                      key={item.slug}
+                      onClick={() => handleSelectVilla(item)}
+                      className="block w-full px-4 py-3 text-left text-sm hover:bg-white/10 transition-colors"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span>{item.name}</span>
+                        {!location && (
+                          <span className="text-[10px] uppercase tracking-wider text-white/50">
+                            {item.location}
+                          </span>
+                        )}
+                      </div>
+                    </button>
+                  ))
+                )}
+              </div>
             </div>
           )}
         </div>

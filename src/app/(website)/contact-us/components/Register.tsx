@@ -25,7 +25,14 @@ const Register = ({
       {/* MOBILE VIEW ONLY (< lg) */}
       <div className="block lg:hidden bg-background-2 px-4 sm:px-6 py-10">
         {/* 1. LOGO */}
-        <div className="relative w-[200px] sm:w-[220px] h-[80px] sm:h-[100px] mx-auto mb-6">
+        <div
+          className="relative w-full max-w-[427px] h-[80px] sm:h-[112px] mx-auto mb-6 opacity-100 rotate-0"
+          style={{
+            maxWidth: "427px",
+            opacity: 1,
+            transform: "rotate(0deg)",
+          }}
+        >
           <Image
             src={logo}
             alt="Aroha Palms"
@@ -57,7 +64,7 @@ const Register = ({
         </div>
       </div>
 
-      {/* DESKTOP VIEW ONLY (lg:) - 100% UNTOUCHED ORIGINAL */}
+      {/* DESKTOP VIEW ONLY (lg:) */}
       <div className="hidden lg:grid w-full grid-cols-2 min-h-[600px] bg-background-2">
         {/* IMAGE */}
         <div className="relative min-h-[600px]">
@@ -67,7 +74,15 @@ const Register = ({
         {/* CONTENT */}
         <div className="bg-background-2 flex flex-col items-center justify-center text-center px-6 py-12">
           {/* LOGO */}
-          <div className="relative w-[220px] h-[100px] mb-8">
+          <div
+            className="relative w-full max-w-[427px] h-[112px] mb-8 mx-auto opacity-100 rotate-0"
+            style={{
+              maxWidth: "427px",
+              height: "112px",
+              opacity: 1,
+              transform: "rotate(0deg)",
+            }}
+          >
             <Image
               src={logo}
               alt="Aroha Palms"

@@ -7,13 +7,20 @@ interface StayIntroProps {
 
 const StayIntro = ({ title, description }: StayIntroProps) => {
   return (
-    <SectionWithContainer sectionClassName="">
-      <h1 className="text-4xl font-normal! text-blue mb-4">{title}</h1>
-      <div className=" w-200 mt-10! mb-4 h-px bg-blue text-blue" />
+    <SectionWithContainer
+      defaultPadding={false}
+      sectionClassName="pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-6"
+    >
+      <h1 className="text-3xl sm:text-4xl md:text-[40px] font-light text-blue mb-4 leading-tight">
+        {title}
+      </h1>
+      <div className="w-full max-w-[200px] my-4 h-px bg-blue" />
 
-      {description.map((item, index) => (
-        <p key={index}>{item}</p>
-      ))}
+      <div className="space-y-3 text-sm sm:text-base text-dark leading-relaxed">
+        {description.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
+      </div>
     </SectionWithContainer>
   );
 };

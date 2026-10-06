@@ -84,7 +84,7 @@ export default async function Page({ params }: Params) {
 
   if (!pageData) return notFound();
   return (
-    <main >
+    <main className="pt-24 sm:pt-28 md:pt-32 lg:pt-36 bg-[#FAF8F5]">
       {/* <ImageBanner
         image={pageData?.bannerImage as string}
         title={pageData?.title as string}
@@ -93,13 +93,16 @@ export default async function Page({ params }: Params) {
         benefits=""
       /> */}
 
-      <div className="relative max-w-6xl mx-auto  w-full lg:aspect-3/2 aspect-[3/2] overflow-hidden">
-        <Image
-          src={pageData?.bannerImage}
-          alt={pageData?.title}
-          fill
-          className="object-cover"
-        />
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 w-full">
+        <div className="relative w-full aspect-[16/9] md:aspect-[3/2] overflow-hidden rounded-xl shadow-sm">
+          <Image
+            src={pageData?.bannerImage}
+            alt={pageData?.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       </div>
       <SectionWithContainer>
         <div

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { GFS_Neohellenic } from "next/font/google";
 import blogPostPageData from "../[slug]/pageData";
-import { Container, Section } from "@/components/sectionComponants";
+import { Container } from "@/components/sectionComponants";
 
 const gfsNeohellenic = GFS_Neohellenic({
   subsets: ["greek", "latin"],
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 
 export default function ArticlesPage() {
   return (
-    <main className="bg-[#FAF8F5] pt-16 md:pt-24 lg:pt-28">
+    <main className="bg-[#FAF8F5] pt-[80px]">
       {/* HEADER / BANNER SECTION */}
-      <section className="pt-12 pb-12 sm:pt-16 sm:pb-16 md:pt-20 md:pb-20 lg:pt-24 lg:pb-24 text-center">
+      <section className="pt-[80px] pb-[80px] text-center">
         <Container>
           <p
             className={`${gfsNeohellenic.className} uppercase text-[#CA9E55] mb-3 sm:mb-4 md:mb-5`}
@@ -64,43 +64,59 @@ export default function ArticlesPage() {
       </div>
 
       {/* BLOGS GRID SECTION */}
-      <Section defaultPadding={false} className="py-12 sm:py-16 md:py-20 lg:py-24">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 lg:gap-x-8 lg:gap-y-10 justify-items-center">
             {blogPostPageData.map((post) => (
               <Link
                 key={post.slug}
                 href={`/${post.slug}`}
-                className="group block border border-[#D6D6D6] bg-[#F9F9F1] overflow-hidden transition-all duration-300 hover:shadow-lg"
+                className="group flex flex-col w-full max-w-[442px] h-[552px] border border-[#D6D6D6] bg-[#FAF8F5] overflow-hidden opacity-100 rotate-0 transition-all duration-300 hover:shadow-md"
+                style={{
+                  maxWidth: "442px",
+                  height: "552px",
+                  opacity: 1,
+                  transform: "rotate(0deg)",
+                }}
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                {/* TOP IMAGE */}
+                <div className="relative w-full h-[325px] shrink-0 overflow-hidden">
                   <Image
                     src={post.bannerImage}
                     alt={post.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 442px"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-5 sm:p-6 flex flex-col gap-3 sm:gap-4">
-                  <p className="text-xs sm:text-sm font-medium uppercase tracking-wider text-[#005BA4]">
+
+                {/* CONTENT */}
+                <div className="p-5 sm:p-6 flex flex-col justify-start flex-1 gap-2.5">
+                  <p className="text-xs sm:text-[13px] font-normal text-[#005BA4]">
                     {post.publishedAt}
                   </p>
-                  <h3 className="text-xl sm:text-2xl font-serif text-[#005BA4] line-clamp-2 leading-snug">
+                  <h3
+                    className="text-xl sm:text-[22px] md:text-[24px] text-[#005BA4] line-clamp-2 leading-[1.3] font-light"
+                    style={{
+                      fontFamily: "var(--font-fira-sans), 'Fira Sans', sans-serif",
+                      fontWeight: 300,
+                    }}
+                  >
                     {post.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-[#5A5856] line-clamp-3 leading-relaxed">
-                    {post.description.replace(/<[^>]*>?/gm, "").slice(0, 110)}...{" "}
-                    <span className="text-[#CA9E55] font-semibold underline underline-offset-4">
-                      Read more
+
+                  <p className="text-sm sm:text-[14px] text-[#5A5856] line-clamp-3 leading-relaxed mt-1">
+                    {post.description.replace(/<[^>]*>?/gm, "").slice(0, 115)}...
+                    <span className="text-[#CA9E55] font-medium ml-1">
+                      Read More
                     </span>
                   </p>
                 </div>
               </Link>
             ))}
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
     </main>
   );
 }
