@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 
 export default function ArticlesPage() {
   return (
-    <main className="bg-[#FAF8F5] pt-[80px]">
+    <main className="bg-[#F6F7EB] pt-[70px] md:pt-[80px]">
       {/* HEADER / BANNER SECTION */}
-      <section className="pt-[80px] pb-[80px] text-center">
+      <section className="pt-6 pb-8 sm:pt-10 sm:pb-12 md:pt-[80px] md:pb-[80px] text-center">
         <Container>
           <p
             className={`${gfsNeohellenic.className} uppercase text-[#CA9E55] mb-3 sm:mb-4 md:mb-5`}
@@ -71,7 +71,7 @@ export default function ArticlesPage() {
               <Link
                 key={post.slug}
                 href={`/${post.slug}`}
-                className="group flex flex-col w-full max-w-[442px] h-[552px] border border-[#D6D6D6] bg-[#FAF8F5] overflow-hidden opacity-100 rotate-0 transition-all duration-300 hover:shadow-md"
+                className="group flex flex-col w-full max-w-[442px] h-[552px] border border-[#D6D6D6] bg-[#F9F9F1] overflow-hidden opacity-100 rotate-0 transition-all duration-300 hover:shadow-md"
                 style={{
                   maxWidth: "442px",
                   height: "552px",
@@ -92,7 +92,7 @@ export default function ArticlesPage() {
 
                 {/* CONTENT */}
                 <div className="p-5 sm:p-6 flex flex-col justify-start flex-1 gap-2.5">
-                  <p className="text-xs sm:text-[13px] font-normal text-[#005BA4]">
+                  <p className="text-xs sm:text-[13px] font-light text-[#005BA4]">
                     {post.publishedAt}
                   </p>
                   <h3
@@ -105,7 +105,7 @@ export default function ArticlesPage() {
                     {post.title}
                   </h3>
 
-                  <p className="text-sm sm:text-[14px] text-[#5A5856] line-clamp-3 leading-relaxed mt-1">
+                  <p className="text-sm sm:text-[14px] font-light text-[#5A5856] line-clamp-3 leading-relaxed mt-1">
                     {post.description.replace(/<[^>]*>?/gm, "").slice(0, 115)}...
                     <span className="text-[#CA9E55] font-medium ml-1">
                       Read More

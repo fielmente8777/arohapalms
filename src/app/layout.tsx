@@ -5,7 +5,7 @@ import PropertyDetailsPopup from "@/components/pop-up/PropertyDetailsPopup";
 import RoomDetailsPopup from "@/components/pop-up/RoomDetailsPopup";
 import { WebProvider } from "@/context-api/WebContext";
 import { contact } from "@/utils/constent";
-import { Fira_Sans } from "next/font/google";
+import { DM_Sans, Fira_Sans, GFS_Neohellenic } from "next/font/google";
 import Image from "next/image";
 import Script from "next/script";
 import "./globals.css";
@@ -16,6 +16,24 @@ const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  adjustFontFallback: true,
+  display: "swap",
+  preload: true,
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  adjustFontFallback: true,
+  display: "swap",
+  preload: true,
+});
+
+const gfsNeohellenic = GFS_Neohellenic({
+  variable: "--font-gfs-neohellenic",
+  subsets: ["latin", "greek"],
+  weight: ["400", "700"],
   adjustFontFallback: true,
   display: "swap",
   preload: true,
@@ -84,7 +102,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${firaSans.variable} h-full antialiased`}>
+    <html lang="en" className={`${firaSans.variable} ${dmSans.variable} ${gfsNeohellenic.variable} h-full antialiased`}>
       <head>
         {/* <!-- Facebook Pixel Code --> */}
         <Script id="fb-pixel" strategy="afterInteractive">

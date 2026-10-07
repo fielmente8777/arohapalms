@@ -50,6 +50,7 @@ const OurVillas = ({
                 text-3xl
                 lg:text-start
                 text-center
+                font-light
                 text-blue
                 lg:text-5xl
 
@@ -64,6 +65,7 @@ const OurVillas = ({
                   key={index}
                   className="
                     text-lg
+                    font-light
                     text-[#666]
                     lg:text-xl
                   "
@@ -115,6 +117,7 @@ const OurVillas = ({
                 key={index}
                 className="
                   text-lg
+                  font-light
                   text-[#666]
                   lg:text-xl
                 "
@@ -184,7 +187,7 @@ const OurVillas = ({
               className="
           lg:max-w-[676px]
           lg:text-[14px]
-          font-normal
+          font-light
           text-lg
           text-[#6B6B6B]
           lg:text-[20px]

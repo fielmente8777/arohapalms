@@ -29,19 +29,9 @@ const LocationSection = ({
         <div className="relative flex items-start px-6 py-12 ">
           <div className="w-full max-w-[550px]">
             {/* TAG */}
-            <p className="text-xs font-medium uppercase text-white md:text-lg">
+            <p className="font-light uppercase text-white md:text-lg">
               {tag}
             </p>
-
-            {/* DECORATIVE IMAGE */}
-            {/* <div className="relative mt-1 h-[9px] w-[120px] overflow-hidden">
-              <Image
-                src="/home/design4.png"
-                alt=""
-                fill
-                className="object-cover object-left"
-              />
-            </div> */}
 
             {/* TITLE */}
             <h2
@@ -49,9 +39,9 @@ const LocationSection = ({
                 mt-5
                 w-full
                 font-primary
-                
                 font-light
                 text-white
+                text-2xl
                 md:text-3xl
                 lg:text-5xl
               "
@@ -73,12 +63,12 @@ const LocationSection = ({
                         {location.icon}
                       </div>
 
-                      <p className="text-xs uppercase tracking-[0.2em] text-white md:text-sm">
+                      <p className="uppercase tracking-[0.2em] font-light text-white md:text-sm">
                         {location.title}
                       </p>
                     </div>
 
-                    <div className="pl-[35px] text-sm text-white md:text-base">
+                    <div className="pl-[35px] font-light text-white md:text-base">
                       {location.distance.map((distance, distanceIndex) => (
                         <p key={distanceIndex}>{distance}</p>
                       ))}
@@ -102,7 +92,7 @@ const LocationSection = ({
           <Image src="/home/design2.png" alt="" fill className="object-contain rotate-180" />
         </div>
         {/* MAP */}
-        <div className="relative -mt-2.5 md:mt-0 h-[350px] md:h-[450px] overflow-hidden lg:h-[616px] px-6 md:px-0">
+        <div className="relative -mt-2.5 md:mt-0 h-[350px] md:h-[450px] overflow-hidden lg:h-[616px] px-6 md:px-0 border-b-2 md:border-b-4 border-navy">
           <Image
             src={mapImage}
             alt="Location map"

@@ -55,7 +55,13 @@ const ContactUs = ({
 
        
           <div>
-            <p className="font-inter text-blue text-sm tracking-[0.3em] uppercase mb-4">
+            <p
+              className="text-blue text-sm uppercase mb-4"
+              style={{
+                fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+                letterSpacing: "0.3em",
+              }}
+            >
               {subTitle}
             </p>
 

@@ -138,7 +138,14 @@ const RoomDetailsPopup = () => {
 
               {/* Subtitle / Tagline */}
               {room?.moreInfo?.title && (
-                <p className=" text-p2 font-medium">{room?.moreInfo.title}</p>
+                <p
+                  className="text-p2 font-medium uppercase tracking-[0.15em]"
+                  style={{
+                    fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+                  }}
+                >
+                  {room?.moreInfo.title}
+                </p>
               )}
 
               {/* Room Info */}

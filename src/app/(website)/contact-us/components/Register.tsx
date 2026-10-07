@@ -47,19 +47,19 @@ const Register = ({
         </div>
 
         {/* 3. REGISTERED ADDRESS DETAILS */}
-        <div className="max-w-[500px] mx-auto font-inter text-[#162534] text-center">
-          <h3 className="font-semibold text-lg sm:text-xl mb-3">{title}</h3>
+        <div className="max-w-[500px] mx-auto text-[#162534] text-center font-light">
+          <h3 className="font-light text-lg sm:text-xl mb-3">{title}</h3>
 
-          <p className="text-base leading-relaxed text-[#2b2b2b]">{address}</p>
+          <p className="text-base leading-relaxed text-[#2b2b2b] font-light">{address}</p>
 
           {/* CIN */}
-          <p className="mt-4 text-base sm:text-lg">
-            <span className="font-semibold">CIN:</span> {cin}
+          <p className="mt-4 text-base sm:text-lg font-light">
+            <span className="font-light">CIN:</span> {cin}
           </p>
 
           {/* GST */}
-          <p className="mt-2 text-base sm:text-lg">
-            <span className="font-semibold">GST:</span> {gst}
+          <p className="mt-2 text-base sm:text-lg font-light">
+            <span className="font-light">GST:</span> {gst}
           </p>
         </div>
       </div>
@@ -92,19 +92,19 @@ const Register = ({
           </div>
 
           {/* REGISTERED ADDRESS */}
-          <div className="max-w-[500px] font-inter text-[#162534]">
-            <h3 className="font-semibold text-xl mb-3">{title}</h3>
+          <div className="max-w-[500px] text-[#162534] font-light">
+            <h3 className="font-light text-xl mb-3">{title}</h3>
 
-            <p className="text-xl">{address}</p>
+            <p className="text-xl font-light">{address}</p>
 
             {/* CIN */}
-            <p className="mt-5 text-xl">
-              <span className="font-semibold">CIN:</span> {cin}
+            <p className="mt-5 text-xl font-light">
+              <span className="font-light">CIN:</span> {cin}
             </p>
 
             {/* GST */}
-            <p className="mt-3 text-xl">
-              <span className="font-semibold">GST:</span> {gst}
+            <p className="mt-3 text-xl font-light">
+              <span className="font-light">GST:</span> {gst}
             </p>
           </div>
         </div>

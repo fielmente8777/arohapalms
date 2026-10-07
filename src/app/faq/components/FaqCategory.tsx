@@ -20,7 +20,7 @@ const FAQCategory = ({ title, faqs }: FAQCategoryProps) => {
 
   return (
     <div>
-      <h2 className="text-blue text-[24px] mb-4">
+      <h2 className="text-blue text-lg sm:text-xl md:text-2xl mb-3 font-light">
         {title}
       </h2>
 

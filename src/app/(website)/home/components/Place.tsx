@@ -21,7 +21,7 @@ interface StayWithUsProps {
 
 const Place = ({ tag, title, cards }: StayWithUsProps) => {
   return (
-    <Section className="bg-background-2  drop-shadow-2xl">
+    <Section className="bg-background-2 drop-shadow-2xl pb-12 sm:pb-16 md:pb-24 lg:pb-28">
       <div className="mx-auto max_screen_width">
         {/* HEADING */}
         <div
@@ -82,8 +82,7 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
                 lg:aspect-[6/5]
                 w-full
                 overflow-hidden
-                rounded-2xl
-                lg:rounded-none
+                rounded-none
               "
             >
               {/* MAIN IMAGE */}
@@ -185,7 +184,7 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
                   className="
                     mt-2
                     text-xl
-                    font-medium
+                    font-light
                     md:text-[24px]
                     lg:text-[30px]
                   "
@@ -197,6 +196,7 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
                   className="
                     mt-2
                     text-xs
+                    font-light
                     text-white/90
                     md:mt-3
                     md:text-sm

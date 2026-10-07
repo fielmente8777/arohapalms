@@ -30,9 +30,9 @@ const ExperienceCards = ({ cards, cta }: ExperienceCardsProps) => {
             />
 
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 p-6 text-center text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              <h3>{card.title}</h3>
+              <h3 className="font-light">{card.title}</h3>
 
-              <p>{card.description}</p>
+              <p className="font-light">{card.description}</p>
             </div>
           </div>
         ))}

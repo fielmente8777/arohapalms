@@ -26,29 +26,29 @@ const Privacy = ({
   closingNote,
 }: PrivacyProps) => {
   return (
-    <SectionWithContainer sectionClassName="py-8 md:py-20">
-      <div className="max-w-[1100px] mx-auto">
-        <h1 className="text-center text-blue text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-normal font-serif leading-tight mb-6 md:mb-8">
+    <SectionWithContainer defaultPadding={false} sectionClassName="py-8 md:py-12">
+      <div className="max-w-[1000px] mx-auto">
+        <h1 className="text-center text-blue text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-light font-serif leading-tight mb-4 md:mb-6">
           {title}
         </h1>
 
-        <p className="mb-6 md:mb-12 text-sm sm:text-base text-gray-600">
+        <p className="mb-6 md:mb-8 text-xs sm:text-sm text-gray-500 font-light">
           <b>Effective Date:</b> {effectiveDate}
         </p>
 
-        <div className="space-y-8 md:space-y-10 text-base sm:text-lg md:text-[18px] leading-relaxed md:leading-9 text-[#333333]">
-          <div className="leading-relaxed md:leading-9">{introduction}</div>
+        <div className="space-y-6 md:space-y-8 text-sm sm:text-base leading-relaxed text-[#5A5856] font-light">
+          <div className="leading-relaxed font-light">{introduction}</div>
 
           {sections.map((section, index) => (
             <div key={index}>
-              <h2 className="text-blue text-xl sm:text-2xl md:text-[28px] font-semibold mb-3 md:mb-4">
+              <h2 className="text-blue text-lg sm:text-xl md:text-2xl font-light mb-2.5 md:mb-3">
                 {section.title}
               </h2>
 
-              {section.content && <div>{section.content}</div>}
+              {section.content && <div className="font-light">{section.content}</div>}
 
               {section.points && (
-                <ul className="list-disc pl-5 sm:pl-6 md:pl-8 mt-3 md:mt-4 space-y-2">
+                <ul className="list-disc pl-5 sm:pl-6 mt-2.5 space-y-1.5 font-light">
                   {section.points.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}

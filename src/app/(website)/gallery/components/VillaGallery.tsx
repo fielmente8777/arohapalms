@@ -173,6 +173,10 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
                         : "text-[#c2c2c2]"
                     }
                   `}
+                  style={{
+                    fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+                    letterSpacing: "0.15em",
+                  }}
                 >
                   {villa.name}
 
@@ -208,7 +212,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
 
         {/* DESCRIPTION */}
         <div className="mx-auto mt-4 md:mt-8 lg:mt-10 max-w-[680px] px-4 md:px-6 text-center">
-          <p className="text-base leading-relaxed text-[#777] md:text-xl">
+          <p className="text-base leading-relaxed text-[#777] md:text-xl font-light">
             {activeVilla.description}
           </p>
         </div>
