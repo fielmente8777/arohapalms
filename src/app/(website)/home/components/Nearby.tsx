@@ -26,8 +26,16 @@ const NearbyActivities = ({
     <Section defaultPadding={false} className="w-full bg-background-2 text-white  overflow-hidden">
       {/* HEADING */}
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-        <p className="text-xs uppercase text-blue 
-       md:text-[17px] lg:text-lg">{tag}</p>
+        <p
+          className="text-xs uppercase text-primary md:text-[17px] lg:text-lg"
+          style={{
+            fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+            fontWeight: 400,
+            letterSpacing: "0.2em",
+          }}
+        >
+          {tag}
+        </p>
 
         {/* <div className="relative mt-2 mb-4 h-[9px] w-[190px] overflow-hidden">
           <Image

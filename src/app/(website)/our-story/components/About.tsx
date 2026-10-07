@@ -127,13 +127,13 @@ const About = ({ title, intro, description, images, isHomePage }: AboutProps) =>
     <Section
       className={`bg-background-2 ${
         isHome
-          ? "py-12 md:py-16"
-          : "pt-20 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20"
+          ? "py-16 sm:py-20 md:py-24 lg:py-28"
+          : "pt-16 pb-10 sm:pt-20 sm:pb-12 md:pt-24 md:pb-16 lg:pt-28 lg:pb-18"
       }`}
     >
       <div className="flex flex-col gap-6 xl:flex-row">
         <h2
-          className={`lg:hidden justify-between text-center font-normal text-blue text-3xl lg:text-5xl xl:text-5xl ${
+          className={`lg:hidden justify-between text-center font-light text-blue text-3xl lg:text-5xl xl:text-5xl ${
             isHome ? "mt-2 mb-6" : "mt-4 mb-4"
           }`}
         >
@@ -150,11 +150,11 @@ const About = ({ title, intro, description, images, isHomePage }: AboutProps) =>
 
         <div className="flex w-full flex-col justify-between px-4 md:px-6 lg:mt-6 xl:w-[500px]">
           <div>
-            <h2 className="hidden lg:block font-normal text-blue text-3xl lg:text-5xl xl:text-5xl">
+            <h2 className="hidden lg:block font-light text-blue text-3xl lg:text-5xl xl:text-5xl">
               {title}
             </h2>
 
-            <p className="mt-2 text-lg text-gray-600 lg:mt-6 lg:text-xl xl:text-xl">
+            <p className="mt-2 text-lg font-light text-gray-600 lg:mt-6 lg:text-xl xl:text-xl">
               {intro}
             </p>
 
@@ -162,7 +162,7 @@ const About = ({ title, intro, description, images, isHomePage }: AboutProps) =>
               {description.map((text, i) => (
                 <p
                   key={i}
-                  className="text-lg text-gray-600 lg:text-xl xl:text-xl"
+                  className="text-lg font-light text-gray-600 lg:text-xl xl:text-xl"
                 >
                   {text}
                 </p>
@@ -189,7 +189,7 @@ const About = ({ title, intro, description, images, isHomePage }: AboutProps) =>
           </div>
         </div>
       </div>
-      <div className="mt-10 w-full overflow-hidden md:mt-16">
+      <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-28 w-full overflow-hidden">
         <Image
           src="/images/Greek1.png"
           alt=""

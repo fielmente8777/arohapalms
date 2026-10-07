@@ -100,12 +100,18 @@ export const AccommodationCard: React.FC<
       {/* MOBILE HEADER: Tag, Title, Badges (Shown ONLY on mobile < lg) */}
       <div className="block lg:hidden mb-6">
         {moreInfo?.title && (
-          <p className="text-sm text-primary uppercase mb-2">
+          <p
+            className="text-sm text-primary uppercase mb-2"
+            style={{
+              fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+              letterSpacing: "0.15em",
+            }}
+          >
             {moreInfo.title}
           </p>
         )}
 
-        <h3 className="text-2xl md:text-3xl font-serif text-[#005BA4] font-normal">
+        <h3 className="text-2xl md:text-3xl font-serif text-[#005BA4] font-light">
           {title} {span ? `- ${span}` : ""}
         </h3>
 
@@ -338,12 +344,18 @@ export const AccommodationCard: React.FC<
             {/* DESKTOP HEADER (Hidden on mobile < lg) */}
             <div className="hidden lg:block">
               {moreInfo?.title && (
-                <p className="text-sm text-primary uppercase mb-4">
+                <p
+                  className="text-sm text-primary uppercase mb-4"
+                  style={{
+                    fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+                    letterSpacing: "0.15em",
+                  }}
+                >
                   {moreInfo.title}
                 </p>
               )}
 
-              <h3 className="text-2xl md:text-3xl lg:text-[32px] font-serif text-[#005BA4] font-normal ">
+              <h3 className="text-2xl md:text-3xl lg:text-[32px] font-serif text-[#005BA4] font-light">
                 {title} {span ? `- ${span}` : ""}
               </h3>
 
@@ -362,7 +374,7 @@ export const AccommodationCard: React.FC<
             </div>
 
             {cardDescription && (
-              <p className="mt-1 lg:mt-4 text-base sm:text-lg lg:text-[18px] text-[#5A5856] leading-relaxed line-clamp-5 xl:line-clamp-6">
+              <p className="mt-1 lg:mt-4 text-base sm:text-lg lg:text-[18px] text-[#5A5856] leading-relaxed line-clamp-5 xl:line-clamp-6 font-light">
                 {cardDescription}
               </p>
             )}
@@ -454,15 +466,25 @@ const AccommodationCardsSection: React.FC<AccommodationCardsSectionProps> = ({
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           {sectionHeader?.locationTag && (
             <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="flex items-center justify-center -mt-2">
+              <span className="flex items-center justify-center">
                 <PinIcon />
               </span>
-              <p className="text-[11px] lg:text-lg font-semibold uppercase text-[#005BA4] mb-2">
+              <p
+                className="uppercase text-[#005BA4] text-center"
+                style={{
+                  fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  fontSize: "18px",
+                  lineHeight: "26px",
+                  letterSpacing: "0.2em",
+                }}
+              >
                 {sectionHeader.locationTag}
               </p>
             </div>
           )}
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-serif text-[#005BA4] leading-snug">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-serif text-[#005BA4] leading-snug font-light">
             {sectionHeader?.title || "Explore Our Properties in Mandrem"}
           </h2>
         </div>

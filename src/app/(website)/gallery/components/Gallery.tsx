@@ -32,12 +32,12 @@ const Gallery = ({
       {/* Bottom Content */}
       <div className="relative z-10 flex h-full items-end justify-center pb-8 sm:pb-12 md:pb-16 lg:pb-20">
         <div className="max-w-[720px] px-6 text-center text-white">
-          <h1 className="text-[34px] sm:text-[42px] md:text-5xl font-normal leading-[1.2] tracking-wide">
+          <h1 className="text-[34px] sm:text-[42px] md:text-5xl font-light leading-[1.2] tracking-wide">
             {title}
           </h1>
 
           {description && (
-            <p className="mx-auto mt-3 sm:mt-4 max-w-[620px] whitespace-pre-line text-base sm:text-lg md:text-xl leading-relaxed font-normal text-white">
+            <p className="mx-auto mt-3 sm:mt-4 max-w-[620px] whitespace-pre-line text-base sm:text-lg md:text-xl leading-relaxed font-light text-white">
               {description}
             </p>
           )}

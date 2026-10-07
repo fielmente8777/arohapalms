@@ -238,7 +238,7 @@ export const homePageData = {
     mapImage: "/images/Map.png",
   },
   testimonials: {
-    image: "/home/review.jpg",
+    image: "/images/AOB_0106.jpg",
     tagline: "Testimonials",
     title: "Appreciation From Our Guests",
 

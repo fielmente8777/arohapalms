@@ -19,9 +19,9 @@ const FAQAccordion = ({
         onClick={onToggle}
         className="w-full flex items-center gap-3 px-4 py-3 text-left"
       >
-        <span className="text-xl w-5">{isOpen ? "−" : "+"}</span>
+        <span className="text-lg w-5 font-light">{isOpen ? "−" : "+"}</span>
 
-        <span className="flex-1 text-lg font-medium text-blue transition-colors duration-300 hover:text-[#005b96]">
+        <span className="flex-1 text-base sm:text-lg font-light text-blue transition-colors duration-300 hover:text-[#005b96]">
           {question}
         </span>
       </button>
@@ -31,7 +31,7 @@ const FAQAccordion = ({
           isOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        <div className="px-10 pb-4">{answer}</div>
+        <div className="px-8 sm:px-10 pb-4 text-sm sm:text-base font-light text-[#5A5856] leading-relaxed">{answer}</div>
       </div>
     </div>
   );

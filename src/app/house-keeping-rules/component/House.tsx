@@ -22,23 +22,23 @@ const HouseKeepingRules = ({
   contact,
 }: HouseKeepingRulesProps) => {
   return (
-    <SectionWithContainer sectionClassName="py-8 md:py-20">
-      <div className="max-w-[1100px] mx-auto px-0 md:px-6">
-        <h1 className="text-center text-blue text-3xl sm:text-4xl md:text-[54px] leading-tight mb-8 md:mb-12 font-serif">
+    <SectionWithContainer defaultPadding={false} sectionClassName="py-8 md:py-12">
+      <div className="max-w-[1000px] mx-auto">
+        <h1 className="text-center text-blue text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-light leading-tight mb-6 md:mb-8 font-serif">
           {title}
         </h1>
 
-        <p className="mb-8 md:mb-10 text-base md:text-lg leading-relaxed md:leading-8 text-[#2b2b2b]">
+        <p className="mb-6 md:mb-8 text-sm sm:text-base font-light leading-relaxed text-[#5A5856]">
           {introduction}
         </p>
 
         {sections.map((section, index) => (
-          <div key={index} className="mb-8 md:mb-10">
-            <h2 className="text-xl sm:text-2xl font-semibold text-blue mb-3 md:mb-5">
+          <div key={index} className="mb-6 md:mb-8">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-light text-blue mb-2.5 md:mb-3">
               {section.icon} {section.title}
             </h2>
 
-            <ol className="list-decimal pl-5 md:pl-7 space-y-3 md:space-y-4 text-base md:text-lg leading-relaxed text-[#2b2b2b]">
+            <ol className="list-decimal pl-5 sm:pl-6 space-y-2 text-sm sm:text-base font-light leading-relaxed text-[#5A5856]">
               {section.rules.map((rule, ruleIndex) => (
                 <li
                   key={ruleIndex}
@@ -48,9 +48,9 @@ const HouseKeepingRules = ({
             </ol>
           </div>
         ))}
-        <p className="mt-8 md:mt-10 text-base md:text-lg leading-relaxed text-[#2b2b2b]" dangerouslySetInnerHTML={{ __html: footer }} />
+        <p className="mt-6 md:mt-8 text-sm sm:text-base font-light leading-relaxed text-[#5A5856]" dangerouslySetInnerHTML={{ __html: footer }} />
 
-        <p className="mt-4 md:mt-6 text-base md:text-lg leading-relaxed text-[#2b2b2b]" dangerouslySetInnerHTML={{ __html: contact.text }} />
+        <p className="mt-3 md:mt-4 text-sm sm:text-base font-light leading-relaxed text-[#5A5856]" dangerouslySetInnerHTML={{ __html: contact.text }} />
       </div>
     </SectionWithContainer>
   );

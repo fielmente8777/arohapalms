@@ -28,7 +28,7 @@ const Testimonials = ({
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <Section className="w-full bg-background-2">
+    <Section className="w-full bg-background-2 py-16 sm:py-20 md:py-24 lg:py-28">
       <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-0">
         <div className="grid grid-cols-1 overflow-hidden rounded-xs border border-[#CA9E55] bg-white md:grid-cols-2 lg:grid-cols-[50%_50%] lg:h-[602px]">
        
@@ -101,7 +101,7 @@ const Testimonials = ({
                   renderSlide={(item) => (
                     <div className="flex flex-col items-center text-center">
                       
-                      <p className="text-[13px] text-[#777777] md:text-xl">
+                      <p className="text-[13px] font-light text-[#777777] md:text-xl">
                         {item.review}
                       </p>
 

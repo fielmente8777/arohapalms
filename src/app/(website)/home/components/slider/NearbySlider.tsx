@@ -23,7 +23,7 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
 
   return (
     <Section>
-      <div className="relative lg:mb-30">
+      <div className="relative md:aspect-[4/2] lg:mb-30">
         <SwiperCarousel
           data={sliderCards}
           modules={[Navigation]}
@@ -49,7 +49,7 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           className="w-full"
           renderSlide={(card, index) => (
-            <div className="relative flex h-[280px] md:h-[500px] lg:h-[650px] w-full items-start">
+            <div className="relative flex w-full items-start">
               <div
                 className={`
                 relative
@@ -58,11 +58,10 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
                 transition-all
                 duration-700
                 ease-in-out
-                ${
-                  index === activeIndex
+                ${index === activeIndex
                     ? "md:aspect-5/6 aspect-3/3"
                     : "md:aspect-[5/5] aspect-4/3.5"
-                }
+                  }
               `}
               >
                 <Image
@@ -125,7 +124,7 @@ const Slider: React.FC<SliderProps> = ({ cards }) => {
         />
 
         {/* NAVIGATION */}
-        <div className="relative z-20 md:-mt-40 lg:-mt-55 xl:-mt-20">
+        <div className="relative z-20 mt-6 sm:mt-7 md:-mt-40 lg:-mt-55 xl:-mt-20">
           <div
             className="
               mx-auto

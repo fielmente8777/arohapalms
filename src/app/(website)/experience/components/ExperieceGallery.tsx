@@ -41,7 +41,7 @@ const ExperienceGallery = ({
               {heading}
             </h2>
 
-            <div className="mt-5 flex flex-col gap-4 text-base leading-relaxed text-[#777777]">
+            <div className="mt-5 flex flex-col gap-4 text-base leading-relaxed text-[#777777] font-light">
               {desc.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}

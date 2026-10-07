@@ -16,7 +16,7 @@ const StayIntro = ({ title, description }: StayIntroProps) => {
       </h1>
       <div className="w-full max-w-[200px] my-4 h-px bg-blue" />
 
-      <div className="space-y-3 text-sm sm:text-base text-dark leading-relaxed">
+      <div className="space-y-3 text-sm sm:text-base font-light text-dark leading-relaxed">
         {description.map((item, index) => (
           <p key={index}>{item}</p>
         ))}

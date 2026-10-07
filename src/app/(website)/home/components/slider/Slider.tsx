@@ -72,7 +72,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
               {title && (
                 <div className="absolute right-4 bottom-3 sm:right-6 sm:bottom-4 md:right-8 md:bottom-6 z-10 pointer-events-none">
                   <span
-                    className="text-white uppercase tracking-[0.2em] font-medium text-xs sm:text-sm md:text-base select-none"
+                    className="text-white uppercase tracking-[0.2em] font-light text-xs sm:text-sm md:text-base select-none"
                     style={{
                       textShadow:
                         "0 1px 3px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5)",
@@ -115,7 +115,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
         <LinkButton
           href={link.href}
           label={link.label}
-          className="mx-auto mt-5 mb-2 md:-mb-10 md:mt-10 lg:mt-18
+          className="mx-auto mt-5 mb-8 sm:mb-10 md:mb-14 lg:mb-16 md:mt-10 lg:mt-18
           xl:mt-16  border-0! border-b! border-p2! text-p2"
         />
       )}

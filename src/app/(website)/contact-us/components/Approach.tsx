@@ -34,16 +34,16 @@ const Approach = ({
 }: ApproachProps) => {
   return (
     <section className="max-w-3xl mx-auto px-5 py-24">
-      <h2 className="text-2xl md:text-3xl text-start mx-auto">{heading}</h2>
+      <h2 className="text-2xl md:text-3xl text-start mx-auto font-light">{heading}</h2>
 
-      <p className="text-md md:text-lg text-start mt-7 whitespace-pre-line">
+      <p className="text-md md:text-lg text-start mt-7 whitespace-pre-line font-light">
         {desc}
       </p>
-      <h2 className="text-5xl text-center mt-12 border-b pb-5 w-100 mx-auto">
+      <h2 className="text-5xl text-center mt-12 border-b pb-5 w-100 mx-auto font-light">
         {title}
       </h2>
 
-      <p className="text-start mt-7">{description}</p>
+      <p className="text-start mt-7 font-light">{description}</p>
 
       {sections.map((section) => (
         <div key={section.title} className="py-10">
@@ -78,9 +78,9 @@ const Approach = ({
       ))}
 
       <div className="mt-8">
-        <p className=" text-start md:text-center font-medium">{footer.text}</p>
+        <p className=" text-start md:text-center font-light">{footer.text}</p>
 
-        <p className=" text-start md:text-center font-medium">{footer.gst}</p>
+        <p className=" text-start md:text-center font-light">{footer.gst}</p>
       </div>
     </section>
   );

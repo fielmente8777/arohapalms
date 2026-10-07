@@ -31,7 +31,7 @@ const AboutSection = ({
 
           <h2
             className="mb-4
-            mt-12!
+            mt-16 sm:mt-20 md:mt-24
             font-primary
             md:w-[380px]
             lg:w-[400px]
@@ -60,7 +60,7 @@ const AboutSection = ({
             md:max-w-[650px]
             lg:max-w-[800px]
             text-xl
-            font-normal
+            font-light
             text-[#777777]
           "
           >

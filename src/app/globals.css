@@ -16,6 +16,11 @@
 }
 
 @theme inline {
+  --font-fira-sans: var(--font-fira-sans);
+  --font-dm-sans: var(--font-dm-sans);
+  --font-gfs-neohellenic: var(--font-gfs-neohellenic);
+  --font-primary: var(--font-fira-sans);
+  --font-sans: var(--font-fira-sans);
   --color-background: #fcfaf4;
   --color-background-2: #f4efe6;
   --color-background-dark: #1c1917;
@@ -31,7 +36,24 @@
 }
 
 body {
-  font-family: var(--font-fira-sans);
+  font-family: var(--font-fira-sans), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-primary {
+  font-family: var(--font-fira-sans), sans-serif;
+}
+
+p,
+.body-l,
+.description,
+.font-dm-sans {
+  font-family: var(--font-dm-sans), sans-serif;
 }
 @utility scrollbar-hide {
   -ms-overflow-style: none;
