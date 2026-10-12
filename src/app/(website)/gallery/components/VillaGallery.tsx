@@ -81,20 +81,19 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
   const currentImage = totalImages > 0 ? activeImageIndex % totalImages : 0;
   const totalVillas = villas.length;
 
-  // Pichle villas ka end (is villa ke segment ka start)
-  const baseProgress = (activeVillaIndex / totalVillas) * 100;
+  // // Pichle villas ka end (is villa ke segment ka start)
+  // const baseProgress = (activeVillaIndex / totalVillas) * 100;
 
-  // Is villa ke andar images ka progress (sirf apne segment tak)
-  const withinVillaProgress =
-    totalImages > 0
-      ? ((currentImage + 1) / totalImages) * (100 / totalVillas)
-      : 0;
+  // // Is villa ke andar images ka progress (sirf apne segment tak)
+  // const withinVillaProgress =
+  //   totalImages > 0
+  //     ? ((currentImage + 1) / totalImages) * (100 / totalVillas)
+  //     : 0;
 
-  const progressPercent = baseProgress + withinVillaProgress;
+  // const progressPercent = baseProgress + withinVillaProgress;
 
-  // // Progress strictly based on the current active villa's images (1 to total)
-  // const progressPercent =
-  //   totalImages > 0 ? ((currentImage + 1) / totalImages) * 100 : 0;
+  const progressPercent =
+    totalVillas > 0 ? ((activeVillaIndex + 1) / totalVillas) * 100 : 0;
 
   return (
     <Section className="w-full overflow-hidden bg-background-2 py-12 md:py-16">
