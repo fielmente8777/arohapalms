@@ -61,7 +61,7 @@ const NavMenu = ({ side = "right" }: NavMenuProps) => {
           <ul className="flex flex-col gap-6">
             {InnerNavData.links.map((link) => (
               <li key={link.label} className="w-full">
-                {link.children ? (
+                {/* {link.children ? (
                   <>
                     <Link
                       href={link.href}
@@ -95,6 +95,55 @@ const NavMenu = ({ side = "right" }: NavMenuProps) => {
                         </span>
                       </span>
                     </Link>
+
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        openMenu === link.label ? "max-h-60 mt-4" : "max-h-0"
+                      }`}
+                    >
+                      <ul className="ml-6 flex flex-col gap-3">
+                        {link.children.map((child) => (
+                          <li key={child.href}>
+                            <Link
+                              href={child.href}
+                              onClick={() => setIsOpenNavBar(false)}
+                              className="block text-sm text-[#16386C] hover:text-[#011f4b] transition-colors"
+                            >
+                              {child.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={link.href!}
+                    onClick={() => setIsOpenNavBar(false)}
+                    className="block text-sm md:text-lg font-primary tracking-[0.12em] text-[#005b96] hover:text-[#011f4b] transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                )} */}
+                {link.children ? (
+                  <>
+                    <button
+                      type="button"
+                      aria-expanded={openMenu === link.label}
+                      onClick={() =>
+                        setOpenMenu(openMenu === link.label ? null : link.label)
+                      }
+                      className="flex w-full items-center justify-between text-left text-sm md:text-lg font-primary tracking-[0.12em] text-[#005b96] hover:text-[#011f4b] transition-colors"
+                    >
+                      <span>{link.label}</span>
+                      <span
+                        className={`text-lg transition-transform duration-300 ${
+                          openMenu === link.label ? "rotate-180" : ""
+                        }`}
+                      >
+                        ▼
+                      </span>
+                    </button>
 
                     <div
                       className={`overflow-hidden transition-all duration-300 ${

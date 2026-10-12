@@ -60,28 +60,36 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
             onSlideChange?.(swiper.realIndex);
           }}
           className="w-full"
-          renderSlide={(src, index) => (
-            <div
-              className={`w-full relative overflow-hidden ${
-                index === activeIndex
-                  ? "md:aspect-4/2.5 aspect-3/3"
-                  : "md:aspect-[4/2.2] aspect-4/3.5"
-              }`}
-            >
-              <Image src={src} alt={title || "Image"} fill className="object-cover" />
-              {title && (
-                <div className="absolute right-4 bottom-3 sm:right-6 sm:bottom-4 md:right-8 md:bottom-6 z-10 pointer-events-none">
-                  <span
-                    className="text-white uppercase tracking-[0.2em] font-light text-xs sm:text-sm md:text-base select-none"
-                    style={{
-                      textShadow:
-                        "0 1px 3px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5)",
-                    }}
-                  >
-                    {title}
-                  </span>
-                </div>
-              )}
+          renderSlide={(src) => (
+
+            <div className="relative w-full aspect-[3/3] md:aspect-[4/2.5]">
+              <div
+                className="absolute inset-x-0 top-0 h-[88%] overflow-hidden
+        transition-[height] duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)]
+        [.swiper-slide-active_&]:h-full"
+              >
+                <Image
+                  src={src}
+                  alt={title || "Image"}
+                  fill
+                  sizes="(min-width: 1032px) 60vw, 80vw"
+                  className="object-cover"
+                />
+
+                {title && (
+                  <div className="absolute right-4 bottom-3 sm:right-6 sm:bottom-4 md:right-8 md:bottom-6 z-10 pointer-events-none">
+                    <span
+                      className="text-white uppercase tracking-[0.2em] font-light text-xs sm:text-sm md:text-base select-none"
+                      style={{
+                        textShadow:
+                          "0 1px 3px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.5)",
+                      }}
+                    >
+                      {title}
+                    </span>
+                  </div>
+                )}
+              </div>
             </div>
           )}
         />

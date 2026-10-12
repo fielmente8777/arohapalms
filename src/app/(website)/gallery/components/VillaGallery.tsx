@@ -79,10 +79,22 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
 
   const totalImages = activeVilla.images.length;
   const currentImage = totalImages > 0 ? activeImageIndex % totalImages : 0;
+  const totalVillas = villas.length;
 
-  // Progress strictly based on the current active villa's images (1 to total)
-  const progressPercent =
-    totalImages > 0 ? ((currentImage + 1) / totalImages) * 100 : 0;
+  // Pichle villas ka end (is villa ke segment ka start)
+  const baseProgress = (activeVillaIndex / totalVillas) * 100;
+
+  // Is villa ke andar images ka progress (sirf apne segment tak)
+  const withinVillaProgress =
+    totalImages > 0
+      ? ((currentImage + 1) / totalImages) * (100 / totalVillas)
+      : 0;
+
+  const progressPercent = baseProgress + withinVillaProgress;
+
+  // // Progress strictly based on the current active villa's images (1 to total)
+  // const progressPercent =
+  //   totalImages > 0 ? ((currentImage + 1) / totalImages) * 100 : 0;
 
   return (
     <Section className="w-full overflow-hidden bg-background-2 py-12 md:py-16">
@@ -174,7 +186,8 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
                     }
                   `}
                   style={{
-                    fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+                    fontFamily:
+                      "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
                     letterSpacing: "0.15em",
                   }}
                 >
