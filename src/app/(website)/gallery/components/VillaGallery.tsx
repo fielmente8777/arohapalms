@@ -160,9 +160,9 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
             }`}
           >
             <div
-              className={`mx-auto flex w-max min-w-full items-center ${
+              className={`mx-auto flex  w-max min-w-full items-center ${
                 location === "Pilerne" ? "justify-center" : "justify-start"
-              } gap-8 md:gap-14 select-none`}
+              } gap-5 md:gap-10 select-none`}
             >
               {villas.map((villa, index) => (
                 <button
@@ -181,7 +181,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
                     ${
                       activeVillaIndex === index
                         ? "text-[#1976b9]"
-                        : "text-[#c2c2c2]"
+                        : "text-black/55"
                     }
                   `}
                   style={{
