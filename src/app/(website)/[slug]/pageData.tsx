@@ -297,6 +297,88 @@ const blogPostPageData: BlogPost[] = [
   // `,
   //   },
   {
+    slug: "where-to-stay-north-goa-new-year",
+    metaData: {
+      title:
+        "Where to Stay in North Goa for New Year's Eve: The Case for a Quiet Base Near Candolim | Aroha Palms",
+      description:
+        "Planning New Year's Eve in North Goa? Why a private villa in Pilerne beats a beach-road hotel — close to Candolim and Calangute, far from the traffic.",
+      keyWords:
+        "villas in North Goa for New Year, private pool villa near Candolim, where to stay in North Goa for New Year's Eve, New Year villa booking Goa, luxury villa Pilerne",
+    },
+    title:
+      "Where to Stay in North Goa for New Year's Eve: The Case for a Quiet Base Near Candolim",
+    publishedAt: "October 14, 2026",
+    description:
+      "Planning New Year's Eve in North Goa? Why a private villa in Pilerne beats a beach-road hotel — close to Candolim and Calangute, far from the traffic.",
+    author: "Aroha Palms",
+    bannerImage: "/images/where-to-stay-north-goa-new-year.jpg",
+    content: `<p>Everyone who has spent New Year's Eve in North Goa has the same story. The party was excellent. Getting home was not.</p>
+
+<p>Between roughly the 24th of December and the 1st of January, the coastal strip from Sinquerim up through Candolim, Calangute and Baga becomes one continuous slow-moving queue. Taxis triple their fares and still refuse short runs. A journey that takes eleven minutes in November takes fifty. And the hotel you booked precisely because it was in the middle of everything turns out to be in the middle of everything at three in the morning, when you would rather be asleep.</p>
+
+<p>There is a straightforward fix, and it is the one seasoned visitors have quietly adopted: stay inland, a few minutes behind the coast, and travel to the noise rather than sleeping inside it.</p>
+
+<h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">The Problem with Booking on the Beach Road</h3>
+
+<p>The instinct is understandable. If the parties are on the beach, book on the beach. But three things work against it over New Year specifically.</p>
+
+<p><strong>The first is cost.</strong> Peak-season rates on the coastal strip climb steeply over the last week of December, and the premium buys you proximity you can only use for a few hours a night.</p>
+
+<p><strong>The second is noise.</strong> Beach shacks and clubs on the Calangute–Baga stretch run late through the season, and sound carries. If your group includes children, parents or anyone who wants to be functional before noon, a beachfront room is a compromise you will feel by day three.</p>
+
+<p><strong>The third is space.</strong> Hotel rooms separate a group. New Year in Goa is usually a group occasion — extended family, a set of old friends, two or three households travelling together — and the best parts of it tend to happen around a table or a pool rather than in a club. A room-based booking makes that impossible by design.</p>
+
+<h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">Why Pilerne Works as a New Year Base</h3>
+
+<p><a class='text-blue' href="/destination/pilerne/">Pilerne</a> is a village in Bardez, set in the countryside between Candolim and Saligao, roughly ten kilometres from Panaji. It is green, residential and quiet. It is also, crucially, ten to fifteen minutes from Candolim and Sinquerim beaches.</p>
+
+<p>That combination is the whole argument. You are close enough to reach the coast whenever you want it, and far enough back that the coast does not reach you. The lanes around Pilerne stay calm through the peak week because they are not on the route to anywhere touristic. You can actually park. You can hear the evening.</p>
+
+<p>There is more to the village than a convenient location. The Museum of Goa sits here — a contemporary art space with galleries, open-air sculpture and a good café, and one of the more interesting ways to spend a slow afternoon in North Goa. Fort Aguada and its seventeenth-century lighthouse are a short drive towards the coast. Reis Magos Fort, the Saligao and Sangolda design stores, and the restaurants of Porvorim are all within easy reach.</p>
+
+<h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">Getting to the Parties — and Back</h3>
+
+<p>A New Year base needs to work in both directions, so plan the return leg before you plan the night.</p>
+
+<p>Candolim and Sinquerim are the closest stretch, and the gentlest — beach clubs and restaurant countdowns rather than full-scale events. Calangute and Baga are where the larger commercial parties sit. Anjuna and Vagator, fifteen to twenty minutes further north, carry the bigger electronic line-ups. Panaji, in the other direction, is the base for the cruise casinos on the Mandovi, which run late and make a good alternative for a group that wants an evening out without a dance floor. Explore curated coastal options on <a class='text-blue' href="/experience/">The Experience</a> page.</p>
+
+<p>Two practical points. Arrange your transport in advance rather than on the night — ride-hailing availability collapses on the 31st and drivers turn down short trips. And take the inland route back where you can; the coastal road is the one that gridlocks.</p>
+
+<h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">The Case for a Private Villa over a Hotel Room</h3>
+
+<p>Once you accept that you will be travelling to the parties, the accommodation question changes. What you want is not proximity. It is a place worth coming back to, and worth spending the daytime in.</p>
+
+<p>A private villa gives a group three things a hotel cannot. A pool that belongs only to you, which over a week is where most of the holiday actually happens. A kitchen and a dining table, so that the 1st of January can be a slow breakfast at home rather than a queue at a café. And the ability to keep everyone under one roof, which for a family gathering is the entire point.</p>
+
+<p>It also tends to work out better per head. A twelve-person group splitting a villa is usually paying less each than six hotel rooms over the same dates, and getting considerably more.</p>
+
+<h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">Two Villas in Pilerne, or One Very Large One</h3>
+
+<p>Aroha Palms has two Greek-inspired white <a class='text-blue' href="/destination/pilerne/">villas in Pilerne</a>, set in the village's quiet countryside with private pools and space to spread out.</p>
+
+<p><a class='text-blue' href="/destination/pilerne/villa-majestic/">Aroha Palms Majestic</a> has five bedrooms plus two lofts and sleeps up to fourteen. The loft rooms are useful for the cousins or the teenagers — connected to the house but slightly apart from it.</p>
+
+<p><a class='text-blue' href="/destination/pilerne/villa-grande/">Aroha Palms Grande</a> is a six-bedroom art villa for twelve, and the more design-led of the two: a white six-bedroom house built around light, calm and considered interiors.</p>
+
+<p>For larger gatherings the two are taken together as Villa Imperial — eleven bedrooms across the pair, which comfortably absorbs a multi-family New Year or a group of old friends who have all acquired spouses and children since the last one.</p>
+
+<h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">When to Book</h3>
+
+<p>Earlier than feels necessary. The last week of December is the single most contested week in the Goan calendar, and the better villas in North Goa are committed well before the season opens in November. If you are reading this in autumn, you are booking at about the right time. If you are reading it in December, book whatever is left today.</p>
+
+<h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">A Four-Night Plan That Works</h3>
+
+<ol>
+  <li><strong>Day one:</strong> Arrive, swim, and eat locally in Saligao or Porvorim rather than fighting the coast on your first evening.</li><br />
+  <li><strong>Day two:</strong> Candolim or Sinquerim beach in the morning, Fort Aguada and the lighthouse in the late afternoon, sundowners back at the villa.</li><br />
+  <li><strong>Day three — the 31st:</strong> Keep the day deliberately empty. The Museum of Goa in the afternoon if anyone wants it. Eat early, leave for the coast before the roads set, and have your return transport agreed before you go.</li><br />
+  <li><strong>Day four — the 1st:</strong> Nothing. Breakfast at the pool. This is what you booked the villa for.</li>
+</ol>
+
+<p>Aroha Palms has two private villas in Pilerne, North Goa — Majestic and Grande — ten to fifteen minutes from Candolim and Sinquerim, available individually or together as Villa Imperial. <a class='text-blue' href="/contact-us/">Enquire about New Year dates</a>.</p>`,
+  },
+  {
     slug: "monsoon-bonanza-50-per-cent-off-luxury-villas-in-goa",
     metaData: {
       title:
