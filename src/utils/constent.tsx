@@ -7,6 +7,7 @@ Please share the best available options and rates.
 Thank you!`);
 
 
+
 export const contact = {
   email: "reserve@arohapalms.com",
   mapUrl: "",
