@@ -43,11 +43,11 @@ export const WebfooterData = {
       },
       {
         label: "Location - Mandrem",
-        href: "/destination/mandrem",
+        href: "/mandrem",
       },
       {
         label: "Location - Pilerne",
-        href: "/destination/pilerne",
+        href: "/pilerne",
       },
       {
         label: "The Experience",

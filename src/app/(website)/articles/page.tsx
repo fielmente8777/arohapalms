@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { GFS_Neohellenic } from "next/font/google";
-import blogPostPageData from "../[slug]/pageData";
+import blogPostPageData from "./[slug]/pageData";
 import { Container } from "@/components/sectionComponants";
 
 const gfsNeohellenic = GFS_Neohellenic({
@@ -69,7 +69,7 @@ export default function ArticlesPage() {
             {blogPostPageData.map((post) => (
               <Link
                 key={post.slug}
-                href={`/${post.slug}`}
+                href={`/articles/${post.slug}`}
                 className="group flex flex-col w-full max-w-[442px] h-[552px] border border-[#D6D6D6] bg-[#F9F9F1] overflow-hidden opacity-100 rotate-0 transition-all duration-300 hover:shadow-md"
                 style={{
                   maxWidth: "442px",

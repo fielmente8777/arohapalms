@@ -1,7 +1,7 @@
 "use client";
 
 import { AccommodationSectionProps } from "@/@types/landingPageTypes";
-import { Card } from "@/app/(website)/destination/[slug]/components/Properties";
+import { Card } from "@/app/(website)/[slug]/components/Properties";
 import { createContext, useContext, useState } from "react";
 
 interface OpenGalleryProps {

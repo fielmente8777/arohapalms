@@ -1,11 +1,11 @@
 
-import { BlogPost } from "@/app/(website)/[slug]/pageData";
+import { BlogPost } from "@/app/(website)/articles/[slug]/pageData";
 import Image from "next/image";
 import Link from "next/link";
 
 const BlogCard: React.FC<BlogPost> = ({ title, bannerImage, slug, metaData }) => {
   return (
-    <Link href={`/${slug}`} className="flex flex-col gap-4">
+    <Link href={`/articles/${slug}`} className="flex flex-col gap-4">
       <div className="w-full relative aspect-4/2">
         <Image
           src={bannerImage}

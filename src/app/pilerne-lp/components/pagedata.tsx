@@ -192,7 +192,7 @@ export const landingPageData = {
               "We stayed at the property on a visit from the UK. They have two villas and both are amazingly well laid out, beautiful and comfortable. The lower villa is a classic Goan villa. It’s worth a visit only to admire the architecture. We stayed at the one in the back. The villas have huge rooms either comfortable beds and comfortable bathrooms. They have been tastefully decorated with large windows that allow light in. The staff are attentive and make sure the stay is comfortable. Overall, an amazing stay! Thanks.",
           },
         },
-        location: "Mandrem",
+        location: "Pilerne",
         images: [
           "https://lh3.googleusercontent.com/d/1Ae2jINBXsQAt6hlANAf5es4Ly-P_W00u",
           "https://lh3.googleusercontent.com/d/1y57gRQBG5_-3N3OP_uG9pT1YXNM3JSei",
@@ -215,7 +215,7 @@ export const landingPageData = {
         cta: {
           label: "Enquire Now",
           href: "#form",
-          // href: createWhatsappCta("Aroha Palms Villa Magnifica"),
+          // href: createWhatsappCta("Aroha Palms Villa Majestic"),
         },
       },
       {
@@ -301,7 +301,7 @@ export const landingPageData = {
               "This was an amazing place to stay with my family. The place is very specious and beautiful with its decor and Goan architecture. The staff were extremely attentive and kind to us. Definitely would stay again.",
           },
         },
-        location: "Mandrem",
+        location: "Pilerne",
         images: [
           "https://lh3.googleusercontent.com/d/1_Y5GfRSkWCAQdubo8cHzrVKcW1_0Zdve",
           "https://lh3.googleusercontent.com/d/1Ad9bdJ7TyqE6plj7ySLdDwIV0A6DQ_aM",
@@ -327,7 +327,7 @@ export const landingPageData = {
         cta: {
           label: "Enquire Now",
           href: "#form",
-          // href: createWhatsappCta("Aroha Palms Villa Paradiso"),
+          // href: createWhatsappCta("Aroha Palms Villa Grande"),
         },
       },
       {
@@ -413,7 +413,7 @@ export const landingPageData = {
               "We stayed a couple of days and found the place to absolutely amazing. As a whole the facilities were amazing with access to the swimming pool. The staff were absolutely wonderful and the overall ambience of the place was great. The Goan style architecture was very beautiful and the house was extremely spacious.",
           },
         },
-        location: "Mandrem",
+        location: "Pilerne",
         images: [
           "https://lh3.googleusercontent.com/d/1_Y5GfRSkWCAQdubo8cHzrVKcW1_0Zdve",
           "https://lh3.googleusercontent.com/d/1Ae2jINBXsQAt6hlANAf5es4Ly-P_W00u",
@@ -456,7 +456,7 @@ export const landingPageData = {
         cta: {
           label: "Enquire Now",
           href: "#form",
-          // href: createWhatsappCta("Aroha Palms Villa Paradiso"),
+          // href: createWhatsappCta("Aroha Palms Villa Imperial"),
         },
       },
       //   {
