@@ -1095,6 +1095,10 @@ export const landingPageData = {
         rating: 5,
       },
       {
+        name:"Sumedh Naik",
+        review:"Fantastic experience. Beautifully designed villa's with excellent renovation of old building keeping traditional Architecture look with modern amenities. New building also compliments to the overall Greek style design.Nice large Swimming pools with green landscape enhances the ambience of the outdoor space. tasty food with good hospitality adds to the overall styling.overall great place to enjoy with large group of family or friends."
+      },
+      {
         name: "Jagjit Dhaliwal",
         review:
           "We stayed a couple of days and found the place to absolutely amazing. As a whole the facilities were amazing with access to the swimming pool. The staff were absolutely wonderful and the overall ambience of the place was great. The Goan style architecture was very beautiful and the house was extremely spacious.",

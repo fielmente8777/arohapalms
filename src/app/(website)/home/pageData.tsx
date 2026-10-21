@@ -222,17 +222,17 @@ export const homePageData = {
       {
         icon: <BusIcon />,
         title: "Bus Station",
-        distance: ["Mandrem - 500 Meters","Pilerne - 550 Meters"],
+        distance: ["Mandrem - 500 Meters", "Pilerne - 550 Meters"],
       },
       {
         icon: <BusIcon />,
         title: "Train Station",
-        distance: ["Mandrem - 17.5 Kilometers","Pilerne - 18.5 Kilometers"],
+        distance: ["Mandrem - 17.5 Kilometers", "Pilerne - 18.5 Kilometers"],
       },
       {
         icon: <BusIcon />,
         title: "Airport",
-        distance: ["Mandrem - 29.5 Kilometers","Pilerne - 28.7 Kilometers"],
+        distance: ["Mandrem - 29.5 Kilometers", "Pilerne - 28.7 Kilometers"],
       },
     ],
     mapImage: "/images/Map.png",
@@ -244,22 +244,36 @@ export const homePageData = {
 
     reviews: [
       {
-        review: "Quiet and great value.",
-        name: "Sarthak Chavan",
-      },
-      {
-        review: "Good villas.",
-        name: "Sarthak Chavan",
+        review:
+          "We stayed at the property on a visit from the UK. They have two villas and both are amazingly well laid out, beautiful and comfortable. The lower villa is a classic Goan villa. It’s worth a visit only to admire the architecture. We stayed at the one in the back. The villas have huge rooms either comfortable beds and comfortable bathrooms. They have been tastefully decorated with large windows that allow light in. The staff are attentive and make sure the stay is comfortable. Overall, an amazing stay! Thanks.",
+        name: "Praveen Kujal",
       },
       {
         review:
-          "The place and the staff are very polite and give homely vibes to all the guests. The hospitality was excellent.",
-        name: "Vedant Chavan",
+          "Anup is professional, knowledgeable, and reliable. He helped me organize my investments and provided a clear roadmap for my financial goals. If you want an advisor who listens and provides unbiased advice, look no further.  His advice is always grounded in deep research and logic, which gives me great confidence even when the markets are volatile. A top-tier financial consultant.",
+        name: "Sumedh Naik",
       },
       {
         review:
-          "The villa was superb, and the manager treated us very well. We enjoyed our stay a lot.",
-        name: "Atharva Burle",
+          "Our stay at this villa exceeded all expectations! The service was exceptional—the staff was attentive, friendly, and always ready to help with anything we needed. The villas are stunning, with a Greek-inspired design that adds a touch of elegance to the whole experience. The private pool was a luxurious addition, and the views of the backwaters and greenery from our room were breathtaking. The location in Mandrem made it easy to explore the nearby beaches and enjoy the local culture. The food was fantastic, with a wide variety of dishes at very reasonable prices. We left feeling completely refreshed and can’t wait to return.",
+        name: "Akshit Goel",
+      },
+      {
+        review:
+          "a very warm and comfortable stay in a beautiful property...a very well maintained fully functional villa With a great location A very warm hospitable and helpful staff. special Kudos and mention to Attik the House Supervisor and his wife Irene... Many many thanks for making our stay so comfortable",
+        name: "Shailendra Rawat",
+      },
+      {
+        review:
+          "Perfect Staycation I had an absolutely relaxing and rejuvenating stay at this 1BHK villa. The place was beautifully maintained—clean, cozy, and thoughtfully designed with all the comforts of home. The private space made it perfect for a peaceful staycation.. The highlight was definitely the food. Every meal was delicious and freshly prepared, with great attention to taste and presentation. the experience felt luxurious and homely at the same time.. Perfect for couples —highly recommended for anyone looking to unwind and enjoy great food in a comfortable, private setting.",
+
+        name: "Shivam Hemade",
+      },
+      {
+        review:
+          "Had a great experience with Aroha Palms with the pool parties and much needed escape from the daily chaos. Place was very spacious and awesome for people looking for modern and aesthetically pleasing things. Awesome help from Rahul and Renu with managing all the maintenance of the place and was much needed help, greatly appreciate their efforts.",
+
+        name: "Rushikesh Nimbhorkar",
       },
     ],
   },

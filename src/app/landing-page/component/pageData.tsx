@@ -210,7 +210,7 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-         href:"#form",
+          href: "#form",
           // href: createWhatsappCta("Aroha Palms Villa Magnifica"),
         },
       },
@@ -308,7 +308,7 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-         href:"#form",
+          href: "#form",
           // href: createWhatsappCta("Aroha Palms Villa Paradiso"),
         },
       },
@@ -408,7 +408,7 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-         href:"#form",
+          href: "#form",
           // href: createWhatsappCta("Aroha Palms Villa Serenity"),
         },
       },
@@ -512,7 +512,7 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-         href:"#form",
+          href: "#form",
           // href: createWhatsappCta("Aroha Palms Villa Caia"),
         },
       },
@@ -615,7 +615,7 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-         href:"#form",
+          href: "#form",
           // href: createWhatsappCta("Aroha Palms Villa Prana"),
         },
       },
@@ -713,7 +713,7 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-         href:"#form",
+          href: "#form",
           // href: createWhatsappCta("Aroha Palms Villa Encanto"),
         },
       },
@@ -744,7 +744,7 @@ export const landingPageData = {
           roomInfo: [
             "18 Bedrooms",
             "Full Compound: All 3 Villas + 2 Apartments",
-            "Sleeps up to 36"
+            "Sleeps up to 36",
           ],
           description: [
             "The pinnacle of private group luxury in North Goa, Villa Marisol is the ultimate total takeover of our Mandrem collection. Created by combining all three luxury villas and both 2-bedroom apartments into a massive 18-bedroom compound, Marisol turns what would usually be a fragmented booking into one seamless, private retreat that comfortably sleeps up to 36 guests. Set along a peaceful, flowing stream and wrapped in lush tropical greenery, this grand estate balances complete exclusive privacy with generous, open communal spaces. Best of all, the sun-kissed shores of Mandrem Beach are just a 3-5 minutes' drive away.",
@@ -849,7 +849,7 @@ export const landingPageData = {
         ],
         cta: {
           label: "Enquire Now",
-         href:"#form",
+          href: "#form",
           // href: createWhatsappCta("Aroha Palms Villa Marisol"),
         },
       },
@@ -1141,31 +1141,31 @@ export const landingPageData = {
         name: "Naveen Kumar Dagar",
         review:
           "Amazing place amazing staff members Kuldeep, seeta ji and Manoj everyone is very nice and taking care of small small requirements, will miss this villa, checking out today",
-           rating: 5,
+        rating: 5,
       },
       {
         name: "vedant chavan",
         review:
           "The place and the staff of this place is very polite and gives homely vibes to all its guest, specially manoj ji who manages it is very friendly and always ready to help the person It feels like the dream house of many people",
-           rating: 5,
+        rating: 5,
       },
       {
         name: "Gudiya Yadav",
         review:
           "Paradiso is an excellent luxury villa for families and groups visiting Goa. Beautiful interiors, relaxing pool area, and easy access to restaurants, nightlife, and beaches. We especially appreciated that the beach was only a 2-minute drive away manager Manoj yadav was very helpful,kind and loyal ",
-           rating: 5,
+        rating: 5,
       },
       {
-        name: "Atharva burle",
+        name: "Shivam Hemade",
         review:
-          "The villa was superb , and villa manager named Mr. Manoj he treated us very well and was too nice and kind . I enjoyed a lot . 😃",
-           rating: 5,
+          "Perfect Staycation I had an absolutely relaxing and rejuvenating stay at this 1BHK villa. The place was beautifully maintained—clean, cozy, and thoughtfully designed with all the comforts of home. The private space made it perfect for a peaceful staycation.. The highlight was definitely the food. Every meal was delicious and freshly prepared, with great attention to taste and presentation. the experience felt luxurious and homely at the same time.. Perfect for couples —highly recommended for anyone looking to unwind and enjoy great food in a comfortable, private setting.",
+        rating: 5,
       },
       {
         name: "Sonu Rawat",
         review:
           "Aroha Palms Paradiso combines luxury, privacy, and location perfectly. The villa is close to Mandrem and Ashwem beaches while still feeling calm and exclusive. Loved evenings at Lazy Dog and the nearby cafes. One of the finest luxury villas in Goa",
-           rating: 5,
+        rating: 5,
       },
     ],
   },
