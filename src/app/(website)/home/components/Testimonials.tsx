@@ -195,7 +195,7 @@ const ReviewText = ({ review, name }: { review: string; name: string }) => {
         ref={textRef}
         className={`text-[13px] font-light text-[#777777] md:text-xl ${
           expanded
-            ? "max-h-[100px] overflow-y-auto md:max-h-[120px]"
+            ? "max-h-[100px] overflow-y-auto md:max-h-[140px]"
             : "line-clamp-5"
         }`}
       >
