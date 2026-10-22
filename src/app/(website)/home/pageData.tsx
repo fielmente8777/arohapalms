@@ -108,7 +108,7 @@ export const homePageData = {
   //         "Set in Mandrem, enjoy calm, private stays just minutes from serene beaches, cafés, and North Goa's vibrant coastline.",
   //       cta: {
   //         text: "Explore Now",
-  //         href: "/destination/mandrem",
+  //         href: "/mandrem",
   //       },
   //     },
   //     {
@@ -318,7 +318,7 @@ export const homePageData = {
 
         secondaryImage: "/rooms/Magnifica/magnifica2.webp",
 
-        href: "/destination/mandrem",
+        href: "/mandrem",
 
         showPlay: false,
       },

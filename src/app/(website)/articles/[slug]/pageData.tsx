@@ -349,11 +349,11 @@ const blogPostPageData: BlogPost[] = [
 
 <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">Staying Within Forty Minutes of the Airport</h3>
 
-<p><a class='text-blue' href="/destination/mandrem/">Mandrem</a> is the obvious base for anyone flying into Mopa. It is one of the calmest stretches of the northern coast: a long beach, a creek running behind it with wooden bridges across to the sand, and a pace that has stayed slower than the villages either side. It is also a long-established yoga and wellness village, which shapes the kind of place it is.</p>
+<p><a class='text-blue' href="/mandrem/">Mandrem</a> is the obvious base for anyone flying into Mopa. It is one of the calmest stretches of the northern coast: a long beach, a creek running behind it with wooden bridges across to the sand, and a pace that has stayed slower than the villages either side. It is also a long-established yoga and wellness village, which shapes the kind of place it is.</p>
 
 <p>Aroha Palms sits about two kilometres back from Mandrem Beach — three Greek-inspired villas and four apartments on a single property, set between a river and the hills, with private pools and a lawn.</p>
 
-<p><a class='text-blue' href="/destination/mandrem/villa-magnifica/">Magnifica</a> is a four-bedroom villa. <a class='text-blue' href="/destination/mandrem/villa-paradiso/">Paradiso</a> and <a class='text-blue' href="/destination/mandrem/villa-serenity/">Serenity</a> each have five, with river and mountain views from the terraces. The four <a class='text-blue' href="/destination/mandrem/">Suite De apartments</a> run from 1,200 sq ft down to 400 sq ft studios, all with king beds, lift access and dedicated workstations, the larger ones with full kitchens — useful if you are extending a holiday into a working month.</p>
+<p><a class='text-blue' href="/mandrem/villa-magnifica/">Magnifica</a> is a four-bedroom villa. <a class='text-blue' href="/destination/mandrem/villa-paradiso/">Paradiso</a> and <a class='text-blue' href="/destination/mandrem/villa-serenity/">Serenity</a> each have five, with river and mountain views from the terraces. The four <a class='text-blue' href="/destination/mandrem/">Suite De apartments</a> run from 1,200 sq ft down to 400 sq ft studios, all with king beds, lift access and dedicated workstations, the larger ones with full kitchens — useful if you are extending a holiday into a working month.</p>
 
 <p>Taken together the property sleeps 36, and up to 46 with additional mattresses, which makes it one of the few places in the belt that can hold a large group on one site rather than splitting it across three.</p>
 

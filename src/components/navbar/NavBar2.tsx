@@ -21,8 +21,8 @@ const NavBar2 = () => {
   const normalizedPath = pathname ? pathname.replace(/\/$/, "") : "";
   const isHeroPage =
     normalizedPath === "" ||
-    normalizedPath === "/destination/mandrem" ||
-    normalizedPath === "/destination/pilerne" ||
+    normalizedPath === "/mandrem" ||
+    normalizedPath === "/pilerne" ||
     normalizedPath.startsWith("/gallery");
 
   const isSolid = !isHeroPage || scrolled;

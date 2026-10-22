@@ -121,7 +121,7 @@ interface AboutProps {
 const About = ({ title, intro, description, images, isHomePage }: AboutProps) => {
   const pathname = usePathname();
   const isHome = isHomePage ?? (pathname === "/" || pathname === "");
-  const { index, next, prev } = useSlider(images.length);
+  const { index, direction, next, prev } = useSlider(images.length);
 
   return (
     <Section
@@ -143,6 +143,7 @@ const About = ({ title, intro, description, images, isHomePage }: AboutProps) =>
           <GallerySlider
             images={images}
             index={index}
+            direction={direction}
             onPrev={prev}
             onNext={next}
           />
@@ -175,7 +176,7 @@ const About = ({ title, intro, description, images, isHomePage }: AboutProps) =>
               type="button"
               onClick={next}
               aria-label="Next image"
-              className="hidden rotate-180 items-center xl:flex"
+              className="hidden rotate-180 items-center xl:flex cursor-pointer transition-opacity hover:opacity-70"
             >
               <BtnIcon />
             </button>

@@ -68,7 +68,7 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
         </div>
 
         {/* LOCATION CARDS */}
-        <div className="grid w-full grid-cols-1 gap-5 px-4 sm:px-6 md:px-8 lg:grid-cols-2 lg:gap-0 lg:px-0">
+        <div className="grid w-full grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-2 lg:gap-4 px-4 sm:px-6 md:px-8">
           {cards.map((card) => (
             <Link
               key={card.location}

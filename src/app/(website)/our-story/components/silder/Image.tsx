@@ -355,100 +355,235 @@
 import LinkButton from "@/components/buttons/LinkButton";
 import { Section } from "@/components/sectionComponants";
 import Image from "next/image";
-import { memo, useCallback, useRef, useState } from "react";
+import { memo, useCallback, useEffect, useRef, useState } from "react";
 
 export function useSlider(total: number) {
   const [index, setIndex] = useState(0);
-  const next = useCallback(() => setIndex((i) => (i + 1) % total), [total]);
-  const prev = useCallback(
-    () => setIndex((i) => (i - 1 + total) % total),
-    [total]
-  );
-  return { index, next, prev };
+  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const isAnimatingRef = useRef(false);
+
+  const next = useCallback(() => {
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
+    setDirection("next");
+    setIndex((i) => (i + 1) % total);
+    setTimeout(() => {
+      isAnimatingRef.current = false;
+    }, 620);
+  }, [total]);
+
+  const prev = useCallback(() => {
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
+    setDirection("prev");
+    setIndex((i) => (i - 1 + total) % total);
+    setTimeout(() => {
+      isAnimatingRef.current = false;
+    }, 620);
+  }, [total]);
+
+  return { index, direction, next, prev };
 }
 
 interface GallerySliderProps {
   images: string[];
   index: number;
+  direction?: "next" | "prev";
   onPrev: () => void;
   onNext: () => void;
   link?: { label: string; href: string };
 }
 
-/* ---------- Layouts (sab values % mein) ---------- */
+/* ---------- Layouts (Percentages) ---------- */
 
-interface Layout {
-  mainLeft: number;
-  prevLeft: number;
-  nextLeft: number;
-  mainW: number;
-  sideW: number;
-  mainH: number;
-  sideH: number;
-}
-
-// Desktop: original px design ko % mein convert kiya (941 x 568 canvas)
 const PREVIEW_W = 241;
 const PREVIEW_H = 528;
 const MAIN_W = 676;
 const MAIN_H = 568;
 const GAP = 24;
-const TOTAL_W = PREVIEW_W + GAP + MAIN_W;
+const TOTAL_W = PREVIEW_W + GAP + MAIN_W; // 941
+
 const xp = (v: number) => (v / TOTAL_W) * 100;
 const yp = (v: number) => (v / MAIN_H) * 100;
 
-const DESKTOP: Layout = {
-  mainLeft: xp(PREVIEW_W + GAP),
-  prevLeft: 0,
-  nextLeft: xp(PREVIEW_W + GAP + MAIN_W + GAP),
-  mainW: xp(MAIN_W),
-  sideW: xp(PREVIEW_W),
-  mainH: yp(MAIN_H),
-  sideH: yp(PREVIEW_H),
+const DESKTOP_POS = {
+  exitLeft: -xp(PREVIEW_W + GAP), // -28.16%
+  prevLeft: 0,                   // 0%
+  mainLeft: xp(PREVIEW_W + GAP), // 28.16%
+  nextLeft: 102.5,               // 102.5%
+  mainW: xp(MAIN_W),             // 71.84%
+  sideW: xp(PREVIEW_W),          // 25.61%
+  mainH: 100,                    // 100%
+  sideH: yp(PREVIEW_H),          // 92.96%
 };
 
-// Mobile + MD: beech ki image centered, dono side ki images partial preview me dikhti hain
 const M_MAIN_W = 70;
 const M_GAP = 3.5;
-const M_MAIN_L = (100 - M_MAIN_W) / 2;
+const M_MAIN_L = (100 - M_MAIN_W) / 2; // 15%
 
-const MOBILE: Layout = {
-  mainLeft: M_MAIN_L,
-  prevLeft: M_MAIN_L - M_GAP - M_MAIN_W,
-  nextLeft: M_MAIN_L + M_MAIN_W + M_GAP,
+const MOBILE_POS = {
+  exitLeft: -130,
+  prevLeft: M_MAIN_L - M_GAP - M_MAIN_W, // -58.5%
+  mainLeft: M_MAIN_L,                    // 15%
+  nextLeft: M_MAIN_L + M_MAIN_W + M_GAP, // 88.5%
+  stagedRight: 160,
   mainW: M_MAIN_W,
   sideW: M_MAIN_W,
   mainH: 100,
   sideH: 100,
 };
 
-/* ---------- Ek hi function dono layouts ke liye ---------- */
+const TRANSITION_ACTIVE =
+  "left 620ms cubic-bezier(0.22, 1, 0.36, 1), width 620ms cubic-bezier(0.22, 1, 0.36, 1), height 620ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease";
+const TRANSITION_MOBILE =
+  "left 620ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease";
 
-function getSlideStyle(
+function getDesktopSlideStyle(
   i: number,
   activeIndex: number,
   total: number,
-  L: Layout
+  direction: "next" | "prev"
 ): React.CSSProperties {
   const rel = (i - activeIndex + total) % total;
 
-  if (rel === 0)
+  // Active / Main
+  if (rel === 0) {
     return {
-      left: `${L.mainLeft}%`,
-      width: `${L.mainW}%`,
-      height: `${L.mainH}%`,
+      left: `${DESKTOP_POS.mainLeft}%`,
+      width: `${DESKTOP_POS.mainW}%`,
+      height: `${DESKTOP_POS.mainH}%`,
       opacity: 1,
+      zIndex: 3,
+      transition: TRANSITION_ACTIVE,
+      willChange: "left, width, height, opacity",
     };
+  }
 
-  const isPrev = rel === total - 1;
-  const isNext = rel === 1;
-  const parkLeft = rel > total / 2;
+  // Left Preview
+  if (rel === total - 1) {
+    return {
+      left: `${DESKTOP_POS.prevLeft}%`,
+      width: `${DESKTOP_POS.sideW}%`,
+      height: `${DESKTOP_POS.sideH}%`,
+      opacity: 1,
+      zIndex: 2,
+      transition: TRANSITION_ACTIVE,
+      willChange: "left, width, height, opacity",
+    };
+  }
+
+  // Exiting Left (on next) or Entering from Left (on prev)
+  if (rel === total - 2) {
+    return {
+      left: `${DESKTOP_POS.exitLeft}%`,
+      width: `${DESKTOP_POS.sideW}%`,
+      height: `${DESKTOP_POS.sideH}%`,
+      opacity: 0,
+      zIndex: 1,
+      transition: direction === "next" ? TRANSITION_ACTIVE : "none",
+      willChange: "left, opacity",
+    };
+  }
+
+  // Staged on Right (enters on next, exits on prev)
+  if (rel === 1) {
+    return {
+      left: `${DESKTOP_POS.nextLeft}%`,
+      width: `${DESKTOP_POS.mainW}%`,
+      height: `${DESKTOP_POS.mainH}%`,
+      opacity: 0,
+      zIndex: 1,
+      transition: direction === "prev" ? TRANSITION_ACTIVE : "none",
+      willChange: "left, opacity",
+    };
+  }
+
+  // Parked off-screen without any animation
+  return {
+    left: `${DESKTOP_POS.nextLeft}%`,
+    width: `${DESKTOP_POS.sideW}%`,
+    height: `${DESKTOP_POS.sideH}%`,
+    opacity: 0,
+    zIndex: 0,
+    transition: "none",
+  };
+}
+
+function getMobileSlideStyle(
+  i: number,
+  activeIndex: number,
+  total: number,
+  direction: "next" | "prev"
+): React.CSSProperties {
+  const rel = (i - activeIndex + total) % total;
+
+  if (rel === 0) {
+    return {
+      left: `${MOBILE_POS.mainLeft}%`,
+      width: `${MOBILE_POS.mainW}%`,
+      height: `${MOBILE_POS.mainH}%`,
+      opacity: 1,
+      zIndex: 3,
+      transition: TRANSITION_MOBILE,
+      willChange: "left, opacity",
+    };
+  }
+
+  if (rel === total - 1) {
+    return {
+      left: `${MOBILE_POS.prevLeft}%`,
+      width: `${MOBILE_POS.sideW}%`,
+      height: `${MOBILE_POS.sideH}%`,
+      opacity: 1,
+      zIndex: 2,
+      transition: TRANSITION_MOBILE,
+      willChange: "left, opacity",
+    };
+  }
+
+  if (rel === 1) {
+    return {
+      left: `${MOBILE_POS.nextLeft}%`,
+      width: `${MOBILE_POS.sideW}%`,
+      height: `${MOBILE_POS.sideH}%`,
+      opacity: 1,
+      zIndex: 2,
+      transition: TRANSITION_MOBILE,
+      willChange: "left, opacity",
+    };
+  }
+
+  if (rel === total - 2) {
+    return {
+      left: `${MOBILE_POS.exitLeft}%`,
+      width: `${MOBILE_POS.sideW}%`,
+      height: `${MOBILE_POS.sideH}%`,
+      opacity: 0,
+      zIndex: 1,
+      transition: direction === "next" ? TRANSITION_MOBILE : "none",
+      willChange: "left, opacity",
+    };
+  }
+
+  if (rel === 2) {
+    return {
+      left: `${MOBILE_POS.stagedRight}%`,
+      width: `${MOBILE_POS.sideW}%`,
+      height: `${MOBILE_POS.sideH}%`,
+      opacity: 0,
+      zIndex: 1,
+      transition: direction === "prev" ? TRANSITION_MOBILE : "none",
+      willChange: "left, opacity",
+    };
+  }
 
   return {
-    left: `${isPrev || (!isNext && parkLeft) ? L.prevLeft : L.nextLeft}%`,
-    width: `${L.sideW}%`,
-    height: `${L.sideH}%`,
-    opacity: isPrev || isNext ? 1 : 0,
+    left: `${MOBILE_POS.stagedRight}%`,
+    width: `${MOBILE_POS.sideW}%`,
+    height: `${MOBILE_POS.sideH}%`,
+    opacity: 0,
+    zIndex: 0,
+    transition: "none",
   };
 }
 
@@ -457,7 +592,8 @@ function getSlideStyle(
 interface SlidesProps {
   images: string[];
   activeIndex: number;
-  layout: Layout;
+  direction: "next" | "prev";
+  isDesktop: boolean;
   sizes: string;
   priority?: boolean;
 }
@@ -465,7 +601,8 @@ interface SlidesProps {
 const Slides = memo(function Slides({
   images,
   activeIndex,
-  layout,
+  direction,
+  isDesktop,
   sizes,
   priority,
 }: SlidesProps) {
@@ -475,8 +612,12 @@ const Slides = memo(function Slides({
       {images.map((src, i) => (
         <div
           key={`${src}-${i}`}
-          className="absolute top-0 overflow-hidden transition-all duration-700 ease-in-out"
-          style={getSlideStyle(i, activeIndex, total, layout)}
+          className="absolute top-0 overflow-hidden"
+          style={
+            isDesktop
+              ? getDesktopSlideStyle(i, activeIndex, total, direction)
+              : getMobileSlideStyle(i, activeIndex, total, direction)
+          }
         >
           <Image
             src={src}
@@ -499,11 +640,26 @@ const SWIPE_THRESHOLD = 40;
 const GallerySlider = ({
   images,
   index: activeIndex,
+  direction: propDirection,
   onPrev,
   onNext,
   link,
 }: GallerySliderProps) => {
-  // Hooks hamesha early return se pehle
+  const prevIndexRef = useRef(activeIndex);
+  const [internalDirection, setInternalDirection] = useState<"next" | "prev">("next");
+
+  const total = images.length;
+
+  useEffect(() => {
+    if (prevIndexRef.current !== activeIndex && total > 0) {
+      const diff = (activeIndex - prevIndexRef.current + total) % total;
+      setInternalDirection(diff === 1 || diff > total / 2 ? "next" : "prev");
+      prevIndexRef.current = activeIndex;
+    }
+  }, [activeIndex, total]);
+
+  const effectiveDirection = propDirection ?? internalDirection;
+
   const touchStartX = useRef<number | null>(null);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
@@ -522,7 +678,6 @@ const GallerySlider = ({
     [onNext, onPrev]
   );
 
-  const total = images.length;
   if (!total) return null;
 
   return (
@@ -533,7 +688,8 @@ const GallerySlider = ({
           <Slides
             images={images}
             activeIndex={activeIndex}
-            layout={DESKTOP}
+            direction={effectiveDirection}
+            isDesktop={true}
             sizes="(min-width:1280px) 676px, 50vw"
             priority
           />
@@ -542,7 +698,12 @@ const GallerySlider = ({
             className="absolute left-0 z-10 flex justify-end"
             style={{ top: "96.8%", width: `${xp(PREVIEW_W)}%` }}
           >
-            <button type="button" onClick={onPrev} aria-label="Previous image">
+            <button
+              type="button"
+              onClick={onPrev}
+              aria-label="Previous image"
+              className="cursor-pointer transition-opacity hover:opacity-70"
+            >
               <BtnIcon />
             </button>
           </div>
@@ -558,13 +719,19 @@ const GallerySlider = ({
             <Slides
               images={images}
               activeIndex={activeIndex}
-              layout={MOBILE}
+              direction={effectiveDirection}
+              isDesktop={false}
               sizes="72vw"
             />
           </div>
 
           <div className="mt-7 flex items-center justify-between px-6 md:mt-8 md:px-10">
-            <button type="button" onClick={onPrev} aria-label="Previous image">
+            <button
+              type="button"
+              onClick={onPrev}
+              aria-label="Previous image"
+              className="cursor-pointer transition-opacity hover:opacity-70"
+            >
               <BtnIcon />
             </button>
             <span className="text-xs tracking-widest text-[#152536]">
@@ -574,7 +741,7 @@ const GallerySlider = ({
               type="button"
               onClick={onNext}
               aria-label="Next image"
-              className="rotate-180"
+              className="rotate-180 cursor-pointer transition-opacity hover:opacity-70"
             >
               <BtnIcon />
             </button>

@@ -101,12 +101,12 @@ export const OurStoryData = {
     buttons: [
       {
         label: "Explore Mandrem",
-        href: "/destination/mandrem",
+        href: "/mandrem",
         variant: "solid",
       },
       {
         label: "Explore Pilerne",
-        href: "/destination/pilerne",
+        href: "/pilerne",
         variant: "outline",
       },
     ],
