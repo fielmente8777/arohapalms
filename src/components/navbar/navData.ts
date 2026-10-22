@@ -45,11 +45,11 @@ export const InnerNavData = {
       children: [
         {
           label: "Mandrem",
-          href: "/destination/mandrem",
+          href: "/mandrem",
         },
         {
           label: "Pilerne",
-          href: "/destination/pilerne",
+          href: "/pilerne",
         },
       ],
     },
