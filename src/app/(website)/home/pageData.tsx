@@ -118,7 +118,7 @@ export const homePageData = {
   //         "Located in Pilerne, enjoy a quiet, local setting with easy access to Candolim, Calangute, beaches, dining, and nightlife.",
   //       cta: {
   //         text: "Explore Now",
-  //         href: "/destination/pilerne",
+  //         href: "/pilerne",
   //       },
   //     },
   //   ],
@@ -332,7 +332,7 @@ export const homePageData = {
 
         secondaryImage: "/rooms/Imperial/AOB_3422[1]_47_11zon.jpg",
 
-        href: "/destination/pilerne",
+        href: "/pilerne",
 
         showPlay: false,
       },

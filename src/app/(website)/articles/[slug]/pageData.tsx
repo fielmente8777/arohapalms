@@ -357,7 +357,7 @@ const blogPostPageData: BlogPost[] = [
 
 <p>Taken together the property sleeps 36, and up to 46 with additional mattresses, which makes it one of the few places in the belt that can hold a large group on one site rather than splitting it across three.</p>
 
-<p>For Candolim and the Bardez side, Aroha Palms also has two villas in <a class='text-blue' href="/destination/pilerne/">Pilerne</a> — <a class='text-blue' href="/destination/pilerne/villa-majestic/">Majestic</a> and <a class='text-blue' href="/destination/pilerne/villa-grande/">Grande</a> — about an hour from either airport.</p>
+<p>For Candolim and the Bardez side, Aroha Palms also has two villas in <a class='text-blue' href="/pilerne/">Pilerne</a> — <a class='text-blue' href="/pilerne/villa-majestic/">Majestic</a> and <a class='text-blue' href="/pilerne/villa-grande/">Grande</a> — about an hour from either airport.</p>
 
 <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">Arriving Well</h3>
 
@@ -510,13 +510,13 @@ const blogPostPageData: BlogPost[] = [
 
 <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">Staying in the Village</h3>
 
-<p>The reason to stay in <a class='text-blue' href="/destination/pilerne/">Pilerne</a> rather than visit it is that the good parts are slow. They do not survive being squeezed into a half-day trip from a hotel in Calangute.</p>
+<p>The reason to stay in <a class='text-blue' href="/pilerne/">Pilerne</a> rather than visit it is that the good parts are slow. They do not survive being squeezed into a half-day trip from a hotel in Calangute.</p>
 
 <p>Aroha Palms has two villas here, both white, Greek-inspired houses set in the countryside with private pools, about ten to fifteen minutes from Candolim and Sinquerim.</p>
 
-<p><a class='text-blue' href="/destination/pilerne/villa-grande/">Aroha Palms Grande</a> is a six-bedroom art villa for twelve — the more design-led of the two, built around light and considered interiors, and the natural choice if the museum is the reason you came.</p>
+<p><a class='text-blue' href="/pilerne/villa-grande/">Aroha Palms Grande</a> is a six-bedroom art villa for twelve — the more design-led of the two, built around light and considered interiors, and the natural choice if the museum is the reason you came.</p>
 
-<p><a class='text-blue' href="/destination/pilerne/villa-majestic/">Aroha Palms Majestic</a> has five bedrooms plus two lofts and sleeps up to fourteen, with more room to spread out for a larger family or group.</p>
+<p><a class='text-blue' href="/pilerne/villa-majestic/">Aroha Palms Majestic</a> has five bedrooms plus two lofts and sleeps up to fourteen, with more room to spread out for a larger family or group.</p>
 
 <p>Both are taken together as Villa Imperial when a group needs all eleven bedrooms.</p>
 
@@ -660,7 +660,7 @@ const blogPostPageData: BlogPost[] = [
 
 <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">Why Pilerne Works as a New Year Base</h3>
 
-<p><a class='text-blue' href="/destination/pilerne/">Pilerne</a> is a village in Bardez, set in the countryside between Candolim and Saligao, roughly ten kilometres from Panaji. It is green, residential and quiet. It is also, crucially, ten to fifteen minutes from Candolim and Sinquerim beaches.</p>
+<p><a class='text-blue' href="/pilerne/">Pilerne</a> is a village in Bardez, set in the countryside between Candolim and Saligao, roughly ten kilometres from Panaji. It is green, residential and quiet. It is also, crucially, ten to fifteen minutes from Candolim and Sinquerim beaches.</p>
 
 <p>That combination is the whole argument. You are close enough to reach the coast whenever you want it, and far enough back that the coast does not reach you. The lanes around Pilerne stay calm through the peak week because they are not on the route to anywhere touristic. You can actually park. You can hear the evening.</p>
 
@@ -684,11 +684,11 @@ const blogPostPageData: BlogPost[] = [
 
 <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">Two Villas in Pilerne, or One Very Large One</h3>
 
-<p>Aroha Palms has two Greek-inspired white <a class='text-blue' href="/destination/pilerne/">villas in Pilerne</a>, set in the village's quiet countryside with private pools and space to spread out.</p>
+<p>Aroha Palms has two Greek-inspired white <a class='text-blue' href="/pilerne/">villas in Pilerne</a>, set in the village's quiet countryside with private pools and space to spread out.</p>
 
-<p><a class='text-blue' href="/destination/pilerne/villa-majestic/">Aroha Palms Majestic</a> has five bedrooms plus two lofts and sleeps up to fourteen. The loft rooms are useful for the cousins or the teenagers — connected to the house but slightly apart from it.</p>
+<p><a class='text-blue' href="/pilerne/villa-majestic/">Aroha Palms Majestic</a> has five bedrooms plus two lofts and sleeps up to fourteen. The loft rooms are useful for the cousins or the teenagers — connected to the house but slightly apart from it.</p>
 
-<p><a class='text-blue' href="/destination/pilerne/villa-grande/">Aroha Palms Grande</a> is a six-bedroom art villa for twelve, and the more design-led of the two: a white six-bedroom house built around light, calm and considered interiors.</p>
+<p><a class='text-blue' href="/pilerne/villa-grande/">Aroha Palms Grande</a> is a six-bedroom art villa for twelve, and the more design-led of the two: a white six-bedroom house built around light, calm and considered interiors.</p>
 
 <p>For larger gatherings the two are taken together as Villa Imperial — eleven bedrooms across the pair, which comfortably absorbs a multi-family New Year or a group of old friends who have all acquired spouses and children since the last one.</p>
 
