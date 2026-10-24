@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { pilerneOctoberPosts } from "./pilerneOctoberPosts";
+import { mandremWellnessPost } from "./mandremWellnessPost";
 export interface MetaData {
   title: string;
   description: string;
@@ -20,6 +21,7 @@ export interface BlogPost {
 
 
 const blogPostPageData: BlogPost[] = [
+  mandremWellnessPost,
   ...pilerneOctoberPosts,
   //   {
   //     slug: "monsoon-bonanza-50-per-cent-off-luxury-villas-in-goa",
@@ -457,6 +459,8 @@ const blogPostPageData: BlogPost[] = [
 <p>A long stay in Mandrem works well for people whose work is genuinely portable and whose hours are flexible enough to absorb a time difference. It works for couples and for people travelling alone who are comfortable with quiet. It works for families outside term time, particularly with the space to spread out (or for milestone events and <a class='text-blue' href="/articles/large-group-villa-north-goa-mandrem/">large groups in Mandrem</a>).</p>
 
 <p>It works less well if you need a reliable office environment every day without exception, or if you want a city. Mandrem is a village. That is the entire point of it, and it is worth being honest with yourself about whether that is what you are after before you book four weeks of it.</p>
+
+<p>If the point of your trip is to switch off rather than work, read our <a href="/articles/wellness-break-mandrem-north-goa/">guide to a self-directed wellness break in Mandrem</a>.</p>
 
 <p><a class='text-blue' href="/mandrem/">Aroha Palms in Mandrem</a>, North Goa has apartments from 400 to 1,200 sq ft with dedicated workstations, kitchens and lift access, two kilometres from Mandrem Beach. <a class='text-blue' href="/contact-us/">Enquire about monthly and extended-stay rates</a>.</p>`,
   },
