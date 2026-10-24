@@ -136,7 +136,7 @@ export default async function Page({ params }: Params) {
         </div>
 
         <div
-          className="max-w-6xl mx-auto blog-content!"
+          className="max-w-6xl mx-auto blog-content [&_ul]:list-disc [&_ol]:list-decimal"
           dangerouslySetInnerHTML={{ __html: pageData?.content || "" }}
         />
         <div className="sticky bottom-6 z-50 flex justify-center mt-10">
