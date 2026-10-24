@@ -96,7 +96,10 @@ export const AccommodationCard: React.FC<
   const isEven = index % 2 === 0;
 
   return (
-    <div className="w-full md:py-6">
+    <div
+      id={title?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}
+      className="w-full md:py-6 scroll-mt-28"
+    >
       {/* MOBILE HEADER: Tag, Title, Badges (Shown ONLY on mobile < lg) */}
       <div className="block lg:hidden mb-6">
         {moreInfo?.title && (

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { pilerneOctoberPosts } from "./pilerneOctoberPosts";
 export interface MetaData {
   title: string;
   description: string;
@@ -13,11 +14,13 @@ export interface BlogPost {
   publishedAt: string;
   author: string;
   bannerImage: string;
+  ctaLabel?: string;
   content: string;
 }
 
 
 const blogPostPageData: BlogPost[] = [
+  ...pilerneOctoberPosts,
   //   {
   //     slug: "monsoon-bonanza-50-per-cent-off-luxury-villas-in-goa",
   //     metaData: {
@@ -353,7 +356,7 @@ const blogPostPageData: BlogPost[] = [
 
 <p>Aroha Palms sits about two kilometres back from Mandrem Beach — three Greek-inspired villas and four apartments on a single property, set between a river and the hills, with private pools and a lawn.</p>
 
-<p><a class='text-blue' href="/mandrem/villa-magnifica/">Magnifica</a> is a four-bedroom villa. <a class='text-blue' href="/destination/mandrem/villa-paradiso/">Paradiso</a> and <a class='text-blue' href="/destination/mandrem/villa-serenity/">Serenity</a> each have five, with river and mountain views from the terraces. The four <a class='text-blue' href="/destination/mandrem/">Suite De apartments</a> run from 1,200 sq ft down to 400 sq ft studios, all with king beds, lift access and dedicated workstations, the larger ones with full kitchens — useful if you are extending a holiday into a working month.</p>
+<p><a class='text-blue' href="/mandrem/#villa-magnifica">Magnifica</a> is a four-bedroom villa. <a class='text-blue' href="/mandrem/#villa-paradiso">Paradiso</a> and <a class='text-blue' href="/mandrem/#villa-serenity">Serenity</a> each have five, with river and mountain views from the terraces. The four <a class='text-blue' href="/mandrem/">Suite De apartments</a> run from 1,200 sq ft down to 400 sq ft studios, all with king beds, lift access and dedicated workstations, the larger ones with full kitchens — useful if you are extending a holiday into a working month.</p>
 
 <p>Taken together the property sleeps 36, and up to 46 with additional mattresses, which makes it one of the few places in the belt that can hold a large group on one site rather than splitting it across three.</p>
 
@@ -373,7 +376,7 @@ const blogPostPageData: BlogPost[] = [
 
 <p>November to February is peak: the best weather, the fullest calendar, the highest rates, and the charter season at full tilt. October and late February into March are the value windows, with much the same weather and considerably fewer people. April and May are hot but cheap. The monsoon, June to September, is green, dramatic, almost empty, and no good at all if you came for the beach.</p>
 
-<p><a class='text-blue' href="/destination/mandrem/">Aroha Palms</a> is about 30 kilometres from Manohar International Airport at Mopa — three villas and four apartments on one property, two kilometres from Mandrem Beach. <a class='text-blue' href="/contact-us/">Enquire about dates</a>.</p>`,
+<p><a class='text-blue' href="/mandrem/">Aroha Palms</a> is about 30 kilometres from Manohar International Airport at Mopa — three villas and four apartments on one property, two kilometres from Mandrem Beach. <a class='text-blue' href="/contact-us/">Enquire about dates</a>.</p>`,
   },
   {
     slug: "long-stay-remote-work-mandrem-goa",
@@ -411,7 +414,7 @@ const blogPostPageData: BlogPost[] = [
 
 <p>This is the part most holiday listings ignore, and it is the part that decides whether a long stay succeeds.</p>
 
-<p>The <a class='text-blue' href="/destination/mandrem/">Suite De apartments at Aroha Palms in Mandrem</a> were built for this in a way that villa bedrooms are not. They range from 1,200 sq ft two-suite apartments down to 400 sq ft studios, all with king beds, lift access and a dedicated workstation, and the larger ones with fully equipped kitchens and their own balconies.</p>
+<p>The <a class='text-blue' href="/mandrem/">Suite De apartments at Aroha Palms in Mandrem</a> were built for this in a way that villa bedrooms are not. They range from 1,200 sq ft two-suite apartments down to 400 sq ft studios, all with king beds, lift access and a dedicated workstation, and the larger ones with fully equipped kitchens and their own balconies.</p>
 
 <p>The distinction matters. A dedicated desk means you are not working from a bed or a dining table for four weeks, which is the single most common reason a working month in a holiday rental falls apart by week two. A kitchen means you are not eating in restaurants twice a day, which is both expensive and, after a fortnight, genuinely tiring. A separate balcony means you can take a call without leaving your room.</p>
 
@@ -455,7 +458,7 @@ const blogPostPageData: BlogPost[] = [
 
 <p>It works less well if you need a reliable office environment every day without exception, or if you want a city. Mandrem is a village. That is the entire point of it, and it is worth being honest with yourself about whether that is what you are after before you book four weeks of it.</p>
 
-<p><a class='text-blue' href="/destination/mandrem/">Aroha Palms in Mandrem</a>, North Goa has apartments from 400 to 1,200 sq ft with dedicated workstations, kitchens and lift access, two kilometres from Mandrem Beach. <a class='text-blue' href="/contact-us/">Enquire about monthly and extended-stay rates</a>.</p>`,
+<p><a class='text-blue' href="/mandrem/">Aroha Palms in Mandrem</a>, North Goa has apartments from 400 to 1,200 sq ft with dedicated workstations, kitchens and lift access, two kilometres from Mandrem Beach. <a class='text-blue' href="/contact-us/">Enquire about monthly and extended-stay rates</a>.</p>`,
   },
   {
     slug: "pilerne-north-goa-art-village",
@@ -565,7 +568,7 @@ const blogPostPageData: BlogPost[] = [
 
 <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">One Property, Not Three</h3>
 
-<p><a class='text-blue' href="/destination/mandrem/">Aroha Palms in Mandrem</a> is a single contiguous property in North Goa with three villas and four apartments on it — eighteen bedrooms in total, sleeping thirty-six guests as standard and up to forty-six with additional mattresses.</p>
+<p><a class='text-blue' href="/mandrem/">Aroha Palms in Mandrem</a> is a single contiguous property in North Goa with three villas and four apartments on it — eighteen bedrooms in total, sleeping thirty-six guests as standard and up to forty-six with additional mattresses.</p>
 
 <p>Everything is within walking distance of everything else. One entrance, one team, one lawn. Guests arriving at different times on different flights all arrive at the same address. Nobody needs a car to get to breakfast.</p>
 
@@ -589,11 +592,11 @@ const blogPostPageData: BlogPost[] = [
 
 <h3 style="font-size: 2rem; color: #011f4b; font-weight: 700; margin-top: 1rem;">How the Rooms Divide Up</h3>
 
-<p>The three <a class='text-blue' href="/destination/mandrem/">Mandrem villas</a> each have their own character and their own pool:</p>
+<p>The three <a class='text-blue' href="/mandrem/">Mandrem villas</a> each have their own character and their own pool:</p>
 <ul>
-  <li><strong><a class='text-blue' href="/destination/mandrem/villa-magnifica/">Magnifica</a></strong> — a four-bedroom villa, and the natural choice for the core family group or the senior team.</li><br />
-  <li><strong><a class='text-blue' href="/destination/mandrem/villa-paradiso/">Paradiso</a></strong> — five bedrooms, with river and mountain views from the terrace.</li><br />
-  <li><strong><a class='text-blue' href="/destination/mandrem/villa-serenity/">Serenity</a></strong> — five bedrooms, the most sheltered of the three, with outdoor terraces and shaded seating.</li>
+  <li><strong><a class='text-blue' href="/mandrem/#villa-magnifica">Magnifica</a></strong> — a four-bedroom villa, and the natural choice for the core family group or the senior team.</li><br />
+  <li><strong><a class='text-blue' href="/mandrem/#villa-paradiso">Paradiso</a></strong> — five bedrooms, with river and mountain views from the terrace.</li><br />
+  <li><strong><a class='text-blue' href="/mandrem/#villa-serenity">Serenity</a></strong> — five bedrooms, the most sheltered of the three, with outdoor terraces and shaded seating.</li>
 </ul>
 
 <p>The four apartments add the flexibility that large groups always end up needing. They range from a 1,200 sq ft two-suite apartment down to a 400 sq ft studio, all with king beds, lift access and dedicated workstations, and several with full kitchens. They are the answer for a couple who want their own front door, a family with a baby who need to keep different hours, or the colleague who has to work through Tuesday.</p>
