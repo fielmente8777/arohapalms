@@ -59,7 +59,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       openGraph: {
         title: post.metaData.title,
         description: post.metaData.description,
-        images: [post.bannerImage],
+        type: "article",
+        url: `https://arohapalms.com/articles/${post.slug}/`,
+        siteName: "Aroha Palms",
+        images: [
+          {
+            url: new URL(post.bannerImage, "https://arohapalms.com").toString(),
+            alt: post.title,
+          },
+        ],
       },
       robots: {
         index: true,
@@ -128,7 +136,7 @@ export default async function Page({ params }: Params) {
         </div>
 
         <div
-          className="max-w-6xl mx-auto blog-content!"
+          className="max-w-6xl mx-auto blog-content [&_ul]:list-disc [&_ol]:list-decimal"
           dangerouslySetInnerHTML={{ __html: pageData?.content || "" }}
         />
         <div className="sticky bottom-6 z-50 flex justify-center mt-10">
@@ -137,7 +145,7 @@ export default async function Page({ params }: Params) {
             target="_blank"
             className="rounded-2xl bg-[#B8941F] px-10 py-5 text-white font-semibold shadow-xl hover:bg-[#9f7f18] transition-all"
           >
-            RESERVE YOUR STAY AT 50% OFF THIS MONSOON
+            {pageData.ctaLabel ?? "RESERVE YOUR STAY AT 50% OFF THIS MONSOON"}
           </Link>
         </div>
       </SectionWithContainer>

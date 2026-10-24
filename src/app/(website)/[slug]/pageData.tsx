@@ -4669,7 +4669,7 @@ export const roomData = [
               "2 Dedicated Staffs",
             ],
             description: [
-              "Villa Majestic is built on an old Portuguese house, and the bones of it still show — thick walls, generous proportions, the kind of deep shade that only comes from a home designed before air conditioning existed. The restoration kept all of that and added contemporary interiors around it. Across 7,500 square feet, five bedrooms and two lofts sleep up to fourteen guests.",
+              "Villa Majestic is built on an old Portuguese house, and the bones of it still show — thick walls, generous proportions, the kind of deep shade that only comes from a home designed before air conditioning existed. The restoration kept all of that and added contemporary interiors around it. Across 7,500 square feet, five bedrooms and two lofts sleep up to fourteen guests. Four of the five bedrooms are on the ground floor. Please ask us for entrance steps, bathroom layouts and door widths before booking for anyone with limited mobility.",
               "Mornings begin with breakfast beside the private 10-metre pool, sunlight filtering through the palms. Afternoons belong to whoever wants them — Candolim beach ten minutes down the road, Calangute fifteen, Baga eighteen, or a work desk in a beautifully composed room and no reason to leave at all. Evenings drift into candlelit dinners under open skies. It suits families, celebrations, and groups who want the villa to run itself so nobody has to organise anything.",
             ],
             listOfData: [
@@ -4679,6 +4679,7 @@ export const roomData = [
                   "Villa Majestic stands out as Pilerne's most accommodating private villa due to its:",
                 list: [
                   "<b>7,500 square feet</b> across five bedrooms and two lofts, sleeping up to 14",
+                  "<b>Four of the five bedrooms are on the ground floor.</b> Ground-floor rooms do not imply step-free or wheelchair access; please confirm your group's access requirements with us before booking.",
                   "<b>Ten minutes to Candolim, fifteen to Calangute, eighteen to Baga</b> — three of North Goa's best-known beaches within easy reach, with Anjuna, Sinquerim, Morjim and Vagator a short drive further",
                   "A restored old Portuguese house paired with contemporary interiors, set in a quiet residential village away from the crowds",
                   "Private 10-metre swimming pool with poolside dining, the natural centre of the villa from breakfast through to evening drinks",
