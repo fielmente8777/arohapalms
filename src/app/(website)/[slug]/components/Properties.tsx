@@ -10,7 +10,7 @@ import type { Swiper as SwiperType } from "swiper";
 import { AccommodationSectionProps } from "@/@types/landingPageTypes";
 import RoomDetailsPopupButton from "@/components/pop-up/RoomDetailsPopupButton";
 import Container from "@/components/sectionComponants/Container";
-import { WhatsAppIcon } from "@/components/buttons/LinkButton";
+import LinkButton, { WhatsAppIcon } from "@/components/buttons/LinkButton";
 import { PinIcon } from "@/utils/icons";
 import { Section } from "@/components/sectionComponants";
 
@@ -97,7 +97,10 @@ export const AccommodationCard: React.FC<
 
   return (
     <div
-      id={title?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}
+      id={title
+        ?.toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")}
       className="w-full md:py-6 scroll-mt-28"
     >
       {/* MOBILE HEADER: Tag, Title, Badges (Shown ONLY on mobile < lg) */}
@@ -106,7 +109,8 @@ export const AccommodationCard: React.FC<
           <p
             className="text-sm text-primary uppercase mb-2"
             style={{
-              fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+              fontFamily:
+                "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
               letterSpacing: "0.15em",
             }}
           >
@@ -350,7 +354,8 @@ export const AccommodationCard: React.FC<
                 <p
                   className="text-sm text-primary uppercase mb-4"
                   style={{
-                    fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+                    fontFamily:
+                      "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
                     letterSpacing: "0.15em",
                   }}
                 >
@@ -443,14 +448,21 @@ export const AccommodationCard: React.FC<
             ) : (
               <div />
             )}
-
-            <Link
+            {/* <Link
               href={cta?.href || "#"}
               className="inline-flex items-center justify-center gap-2 bg-[#0B1E2D] hover:bg-[#005BA4] text-white text-[11px] lg:text-sm font-semibold uppercase px-7 py-3 rounded-sm transition-colors duration-200 min-w-[170px]"
             >
               <WhatsAppIcon />
               <span>{cta?.label || "ENQUIRE NOW"}</span>
-            </Link>
+            </Link> */}
+           
+            <LinkButton
+              href={cta?.href || "#form"}
+              label={cta?.label || "ENQUIRE NOW"}
+              whatsAppIcon
+              villa={title}
+              className="bg-[#0B1E2D] hover:bg-[#005BA4] text-white text-[11px] lg:text-sm font-semibold uppercase px-7 py-3 rounded-sm min-w-[170px] justify-center"
+            />
           </div>
         </div>
       </div>
@@ -475,7 +487,8 @@ const AccommodationCardsSection: React.FC<AccommodationCardsSectionProps> = ({
               <p
                 className="uppercase text-[#005BA4] text-center"
                 style={{
-                  fontFamily: "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
+                  fontFamily:
+                    "var(--font-gfs-neohellenic), 'GFS Neohellenic', sans-serif",
                   fontWeight: 400,
                   fontStyle: "normal",
                   fontSize: "18px",
