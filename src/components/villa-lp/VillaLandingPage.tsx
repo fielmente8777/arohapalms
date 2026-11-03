@@ -45,6 +45,53 @@ interface Props {
   showLandingNavbar?: boolean;
 }
 
+type DetailPart =
+  | { kind: "bullets"; items: string[] }
+  | { kind: "text" | "tagline"; text: string };
+interface DetailSection {
+  heading?: string;
+  parts: DetailPart[];
+}
+
+const DASH = /^\s*[–—-]\s*/;
+// e.g. "ADD-ON SERVICES" — short, all caps, starts with a letter
+const isHeading = (t: string) => /^[A-Z][A-Z0-9 &'/-]{2,38}$/.test(t);
+
+/**
+ * The villa cards store details as tidy bullet lists, but the apartment cards pack
+ * intro lines, "– " bullets, paragraphs and an "ADD-ON SERVICES" heading into one flat
+ * list. Split that into headed sections with real paragraphs and bullets.
+ */
+const normalizeDetails = (blocks: Card["moreInfo"]["listOfData"]): DetailSection[] => {
+  const out: DetailSection[] = [];
+  for (const block of blocks) {
+    const dashed = block.list.some((t) => DASH.test(t));
+    let current: DetailSection = { heading: block.title, parts: [] };
+    if (block.description) current.parts.push({ kind: "text", text: block.description });
+    const push = (item: string) => {
+      const last = current.parts[current.parts.length - 1];
+      if (last && last.kind === "bullets") last.items.push(item);
+      else current.parts.push({ kind: "bullets", items: [item] });
+    };
+    for (const raw of block.list) {
+      const t = raw.trim();
+      if (!t) continue;
+      if (isHeading(t)) {
+        if (current.parts.length) out.push(current);
+        current = { heading: t, parts: [] };
+      } else if (!dashed) {
+        push(t);
+      } else if (DASH.test(t)) {
+        push(t.replace(DASH, ""));
+      } else {
+        current.parts.push({ kind: t.length < 90 && !t.endsWith(":") ? "tagline" : "text", text: t });
+      }
+    }
+    if (current.parts.length) out.push(current);
+  }
+  return out;
+};
+
 const VillaLandingPage: React.FC<Props> = ({
   card,
   photos,
@@ -60,6 +107,7 @@ const VillaLandingPage: React.FC<Props> = ({
   const { title, span, moreInfo, startingPrice, inRoomAmenities, location } =
     card;
   const span_ = span?.trim();
+  const detailSections = normalizeDetails(moreInfo.listOfData ?? []);
 
   return (
     <main className="bg-background">
@@ -161,27 +209,51 @@ const VillaLandingPage: React.FC<Props> = ({
       </SectionWithContainer>
 
       {/* Details */}
-      {moreInfo.listOfData?.length > 0 && (
+      {detailSections.length > 0 && (
         <SectionWithContainer sectionClassName="bg-background-2">
-          <div className="grid lg:grid-cols-3 gap-6">
-            {moreInfo.listOfData.map((block, i) => (
+          <div
+            className={`grid gap-6 items-start ${
+              detailSections.length === 1
+                ? "max-w-4xl mx-auto"
+                : detailSections.length === 2
+                  ? "lg:grid-cols-2"
+                  : "lg:grid-cols-3"
+            }`}
+          >
+            {detailSections.map((block, i) => (
               <div
                 key={i}
-                className="bg-background rounded-2xl p-6 border border-primary/30 space-y-3"
+                className="bg-background rounded-2xl p-6 lg:p-8 border border-primary/30 space-y-4"
               >
-                {block.title && (
-                  <h2 className="text-xl text-p2 font-semibold uppercase tracking-wide">
-                    {block.title}
+                {block.heading && (
+                  <h2 className="text-lg lg:text-xl text-p2 font-semibold uppercase tracking-wide">
+                    {block.heading}
                   </h2>
                 )}
-                {block.description && (
-                  <p className="text-secondary">{block.description}</p>
+                {block.parts.map((part, j) =>
+                  part.kind === "bullets" ? (
+                    <ul
+                      key={j}
+                      className="space-y-2 list-disc pl-5 text-[#57534E] marker:text-primary"
+                    >
+                      {part.items.map((item, k) => (
+                        <li key={k} dangerouslySetInnerHTML={{ __html: item }} />
+                      ))}
+                    </ul>
+                  ) : part.kind === "tagline" ? (
+                    <p
+                      key={j}
+                      className="text-primary text-lg italic"
+                      dangerouslySetInnerHTML={{ __html: part.text }}
+                    />
+                  ) : (
+                    <p
+                      key={j}
+                      className="text-[#57534E] leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: part.text }}
+                    />
+                  ),
                 )}
-                <ul className="space-y-2 list-disc pl-5 text-[#57534E]">
-                  {block.list.map((item, j) => (
-                    <li key={j} dangerouslySetInnerHTML={{ __html: item }} />
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
