@@ -47,10 +47,15 @@ interface Props {
 
 type DetailPart =
   | { kind: "bullets"; items: string[] }
-  | { kind: "text" | "tagline"; text: string };
+  | { kind: "text"; text: string };
 interface DetailSection {
   heading?: string;
   parts: DetailPart[];
+}
+interface Details {
+  /** Tagline + long narrative paragraphs, shown full width above the cards */
+  story: { tagline?: string; paragraphs: string[] };
+  sections: DetailSection[];
 }
 
 const DASH = /^\s*[–—-]\s*/;
@@ -60,10 +65,12 @@ const isHeading = (t: string) => /^[A-Z][A-Z0-9 &'/-]{2,38}$/.test(t);
 /**
  * The villa cards store details as tidy bullet lists, but the apartment cards pack
  * intro lines, "– " bullets, paragraphs and an "ADD-ON SERVICES" heading into one flat
- * list. Split that into headed sections with real paragraphs and bullets.
+ * list. Split that into headed sections with real paragraphs and bullets, and pull the
+ * tagline + long story paragraph out so the cards stay a similar height.
  */
-const normalizeDetails = (blocks: Card["moreInfo"]["listOfData"]): DetailSection[] => {
+const normalizeDetails = (blocks: Card["moreInfo"]["listOfData"]): Details => {
   const out: DetailSection[] = [];
+  const story: Details["story"] = { paragraphs: [] };
   for (const block of blocks) {
     const dashed = block.list.some((t) => DASH.test(t));
     let current: DetailSection = { heading: block.title, parts: [] };
@@ -84,12 +91,14 @@ const normalizeDetails = (blocks: Card["moreInfo"]["listOfData"]): DetailSection
       } else if (DASH.test(t)) {
         push(t.replace(DASH, ""));
       } else {
-        current.parts.push({ kind: t.length < 90 && !t.endsWith(":") ? "tagline" : "text", text: t });
+        if (t.endsWith(":")) current.parts.push({ kind: "text", text: t });
+        else if (t.length < 90 && !story.tagline) story.tagline = t;
+        else story.paragraphs.push(t);
       }
     }
     if (current.parts.length) out.push(current);
   }
-  return out;
+  return { story, sections: out };
 };
 
 const VillaLandingPage: React.FC<Props> = ({
@@ -107,7 +116,9 @@ const VillaLandingPage: React.FC<Props> = ({
   const { title, span, moreInfo, startingPrice, inRoomAmenities, location } =
     card;
   const span_ = span?.trim();
-  const detailSections = normalizeDetails(moreInfo.listOfData ?? []);
+  const { story, sections: detailSections } = normalizeDetails(
+    moreInfo.listOfData ?? [],
+  );
 
   return (
     <main className="bg-background">
@@ -210,7 +221,27 @@ const VillaLandingPage: React.FC<Props> = ({
 
       {/* Details */}
       {detailSections.length > 0 && (
-        <SectionWithContainer sectionClassName="bg-background-2">
+        <SectionWithContainer
+          sectionClassName="bg-background-2"
+          containerClassName="space-y-10"
+        >
+          {(story.tagline || story.paragraphs.length > 0) && (
+            <div className="max-w-3xl mx-auto text-center space-y-4">
+              {story.tagline && (
+                <p
+                  className="text-primary lg:text-3xl text-2xl italic"
+                  dangerouslySetInnerHTML={{ __html: story.tagline }}
+                />
+              )}
+              {story.paragraphs.map((p, i) => (
+                <p
+                  key={i}
+                  className="text-[#57534E] lg:text-lg leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: p }}
+                />
+              ))}
+            </div>
+          )}
           <div
             className={`grid gap-6 items-start ${
               detailSections.length === 1
@@ -240,12 +271,6 @@ const VillaLandingPage: React.FC<Props> = ({
                         <li key={k} dangerouslySetInnerHTML={{ __html: item }} />
                       ))}
                     </ul>
-                  ) : part.kind === "tagline" ? (
-                    <p
-                      key={j}
-                      className="text-primary text-lg italic"
-                      dangerouslySetInnerHTML={{ __html: part.text }}
-                    />
                   ) : (
                     <p
                       key={j}
