@@ -1,14 +1,16 @@
 import VillaLandingPage, {
   villaSlug,
 } from "@/components/villa-lp/VillaLandingPage";
-import { villaMeta, villaPhotos } from "@/data/villaPhotos";
+import { villaMeta, villaPageSlugs, villaPhotos } from "@/data/villaPhotos";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import NearbyPlaces from "../components/Nearby";
 import { landingPageData } from "../components/pagedata";
 
 const BASE = "/pilerne-lp";
-const cards = landingPageData.accommodationSection.cards;
+const cards = landingPageData.accommodationSection.cards.filter((c) =>
+  villaPageSlugs.includes(villaSlug(c.title)),
+);
 
 interface PageProps {
   params: Promise<{ villa: string }>;
@@ -44,7 +46,7 @@ export default async function PilerneVillaPage({ params }: PageProps) {
   const { villa } = await params;
   const card = cards.find((c) => villaSlug(c.title) === villa);
   if (!card) notFound();
-  const photos = villaPhotos[villa] ?? card.images;
+  const photos = villaPhotos[villa];
 
   const siblings = cards
     .filter((c) => c !== card)

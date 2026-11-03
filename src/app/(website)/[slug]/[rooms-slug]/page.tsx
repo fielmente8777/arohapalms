@@ -1,7 +1,7 @@
 import VillaLandingPage, {
   villaSlug,
 } from "@/components/villa-lp/VillaLandingPage";
-import { villaMeta, villaPhotos } from "@/data/villaPhotos";
+import { villaMeta, villaPageSlugs, villaPhotos } from "@/data/villaPhotos";
 import { landingPageData as mandremData } from "@/app/landing-page/component/pageData";
 import NearbyPlaces from "@/app/pilerne-lp/components/Nearby";
 import { landingPageData as pilerneData } from "@/app/pilerne-lp/components/pagedata";
@@ -23,14 +23,17 @@ export const dynamicParams = false;
 
 const findStay = (location: string, stay: string) => {
   const loc = locations.find((l) => l.slug === location);
-  const cards = loc?.properties.cards ?? [];
+  // Only stays with their own photos get a page (see src/data/villaPhotos.ts)
+  const cards = (loc?.properties.cards ?? []).filter((c) =>
+    villaPageSlugs.includes(villaSlug(c.title)),
+  );
   const card = cards.find((c) => villaSlug(c.title) === stay);
   return { loc, cards, card };
 };
 
 export function generateStaticParams() {
   return locations.flatMap((loc) =>
-    loc.properties.cards.map((c) => ({
+    findStay(loc.slug, "").cards.map((c) => ({
       slug: loc.slug,
       "rooms-slug": villaSlug(c.title),
     })),
@@ -68,7 +71,7 @@ export default async function StayPage({ params }: PageProps) {
   const { cards, card } = findStay(slug, stay);
   if (!card) notFound();
 
-  const photos = villaPhotos[stay] ?? card.images;
+  const photos = villaPhotos[stay];
   const siblings = cards
     .filter((c) => c !== card)
     .map((c) => {

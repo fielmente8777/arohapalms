@@ -13,6 +13,7 @@ import Container from "@/components/sectionComponants/Container";
 import LinkButton, { WhatsAppIcon } from "@/components/buttons/LinkButton";
 import { PinIcon } from "@/utils/icons";
 import { villaSlug } from "@/utils/villaSlug";
+import { villaPageSlugs } from "@/data/villaPhotos";
 import { Section } from "@/components/sectionComponants";
 
 export type AccommodationCardType = AccommodationSectionProps["cards"][0];
@@ -409,7 +410,7 @@ export const AccommodationCard: React.FC<
                 }}
                 // className="text-[#005BA4] text-xs font-semibold uppercase tracking-wider underline underline-offset-8 hover:text-[#004077] transition-colors"
               />
-              {location && (
+              {location && villaPageSlugs.includes(villaSlug(title)) && (
                 <Link
                   href={`/${location.toLowerCase()}/${villaSlug(title)}/`}
                   className="text-xs lg:text-sm font-semibold uppercase tracking-wider text-[#005BA4] underline underline-offset-8 hover:text-[#004077] transition-colors"
