@@ -7,13 +7,10 @@ import { footerData, pilerneFooterData } from "./footerdata";
 
 const LandingFooter = () => {
   const pathName = usePathname();
-  const data =
-    pathName === "/landing-page/" ||
-    "/corporate/" ||
-    "/4bhk-and-5bhk/ " ||
-    " /group-and-family/"
-      ? footerData
-      : pilerneFooterData;
+  // Pilerne pages get the Pilerne footer; every other landing page uses the Mandrem one.
+  const data = pathName?.startsWith("/pilerne-lp")
+    ? pilerneFooterData
+    : footerData;
 
   if (pathName === "/thank-you/") {
     return null;

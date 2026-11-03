@@ -110,7 +110,7 @@ export const getLocationOptions = (pathname: string | null): VillaOption[] => {
   ) {
     return largeGroupAndCorporateLocationOptions;
   }
-  if (cleanPath.endsWith("/pilerne-lp")) {
+  if (cleanPath.endsWith("/pilerne-lp") || cleanPath.includes("/pilerne-lp/")) {
     return pilerneLocationOptions;
   }
 
