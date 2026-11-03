@@ -13,16 +13,20 @@ interface BannerProps {
   image?: string;
   images?: string[];
   isSliding?: boolean;
+  /** Landing pages draw their own navbar over the hero; website pages already have one */
+  showNavbar?: boolean;
 }
 
-const Banner: React.FC<BannerProps> = ({ image, images, isSliding = true }) => {
+const Banner: React.FC<BannerProps> = ({ image, images, isSliding = true, showNavbar = true }) => {
   const bannerImage = image || (images && images.length > 0 ? images[0] : "/hero-banner.jpg");
 
   return (
     <Section defaultPadding={false} className="relative w-full">
-      <div className="inset-x-0 absolute z-30 ">
-        <LandingNavbar />
-      </div>
+      {showNavbar && (
+        <div className="inset-x-0 absolute z-30 ">
+          <LandingNavbar />
+        </div>
+      )}
       <div className="absolute inset-0 z-10 bg-black/10" />
       {isSliding && images && images.length > 0 ? (
         <SwiperCarousel

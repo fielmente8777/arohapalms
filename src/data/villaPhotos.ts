@@ -2,6 +2,69 @@
 // Exterior & pool shots first, then living, dining, bedrooms and bathrooms last.
 // Low-res cover PNGs, near-duplicates and off-brand shots are left out on purpose.
 export const villaPhotos: Record<string, string[]> = {
+  "suite-de-onyx": [
+    "/rooms/Onyx/suite-de-emerald-0c2ec6-1024x683.jpg",
+    "/rooms/Onyx/suite-de-emerald-4a8a5f-1024x768.webp",
+    "/rooms/Onyx/suite-de-emerald-4bae35-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-48fb29-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-575c62-1024x683.webp",
+    "/rooms/Onyx/suite-de-regal-ac4cb9-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-794512-1024x683.webp",
+    "/rooms/Onyx/suite-de-regal-dcd5bb-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-5deaba-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-af28ef-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-033720-1024x683.webp"
+  ],
+  "suite-de-lumina": [
+    "/rooms/Lumina/suite-de-regal-45c2fc-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-4d7a0a-1024x768.webp",
+    "/rooms/Lumina/suite-de-regal-11fa20-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-2700ac-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-7591f1-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-ac4cb9-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-dcd5bb-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-2f3711-1024x681.webp",
+    "/rooms/Lumina/suite-de-regal-8179d7-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-ed2ebb-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-850ce5-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-86bd8d-1024x683.webp"
+  ],
+  "suite-de-emerald": [
+    "/rooms/Emerald/emerald6.webp",
+    "/rooms/Emerald/emerald1.jpg",
+    "/rooms/Emerald/emerald4.jpg",
+    "/rooms/Emerald/emerald3.jpg",
+    "/rooms/Emerald/emerald5.webp",
+    "/rooms/Emerald/emerald2.jpg"
+  ],
+  "suite-de-platinum": [
+    "/rooms/Emerald/suite-de-emerald-4a8a5f-1024x768.webp",
+    "/rooms/Emerald/suite-de-emerald-4bae35-1024x683.webp",
+    "/rooms/Emerald/suite-de-emerald-48fb29-1024x683.webp",
+    "/rooms/Emerald/suite-de-emerald-575c62-1024x683.webp",
+    "/rooms/Emerald/suite-de-regal-ac4cb9-1024x683.webp",
+    "/rooms/Emerald/06-Bed-2-1024x683.jpg",
+    "/rooms/Emerald/suite-de-emerald-5deaba-1024x683.webp",
+    "/rooms/Emerald/suite-de-emerald-af28ef-1024x683.webp"
+  ],
+  "suite-de-prestige": [
+    "/rooms/Prestige/suite-de-emerald-4a8a5f-1024x768.webp",
+    "/rooms/Prestige/suite-de-emerald-ea3ee5-1024x683.webp",
+    "/rooms/Prestige/suite-de-regal-2f3711-1024x681.webp",
+    "/rooms/Prestige/suite-de-regal-ed2ebb-1024x683.webp",
+    "/rooms/Prestige/suite-de-regal-850ce5-1024x683.webp"
+  ],
+  "suite-de-regal": [
+    "/rooms/Regal/regal9.webp",
+    "/rooms/Regal/regal1.jpg",
+    "/rooms/Regal/regal7.jpg",
+    "/rooms/Regal/regal5.jpg",
+    "/rooms/Regal/regal6.jpg",
+    "/rooms/Regal/regal4.jpg",
+    "/rooms/Regal/regal3.jpg",
+    "/rooms/Regal/regal8.jpg",
+    "/rooms/Regal/regal2.jpg"
+  ],
   "villa-majestic": [
     "https://lh3.googleusercontent.com/d/1GK6sTc641VnApTeIjIK62aquly1s5EnZ",
     "https://lh3.googleusercontent.com/d/1kEXnjOYHFXhJkHMyH4LBRMJuNY6cJFqL",
@@ -211,6 +274,30 @@ export const villaPhotos: Record<string, string[]> = {
 };
 
 export const villaMeta: Record<string, { title: string; description: string }> = {
+  "suite-de-onyx": {
+    "title": "Suite De Onyx \u2013 2-Bedroom Serviced Apartment in Mandrem, North Goa | Aroha Palms",
+    "description": "Suite De Onyx at Aroha Palms, Mandrem: a 1,200 sq ft first-floor apartment with two king-bed suites, lift access, workstations and a full kitchen, minutes from Mandrem Beach. Sleeps 4."
+  },
+  "suite-de-lumina": {
+    "title": "Suite De Lumina \u2013 2-Bedroom Serviced Apartment in Mandrem, North Goa | Aroha Palms",
+    "description": "Suite De Lumina at Aroha Palms, Mandrem: a 1,200 sq ft apartment with two king-bed suites, lift access, workstations and a full kitchen, minutes from Mandrem Beach. Sleeps 4."
+  },
+  "suite-de-emerald": {
+    "title": "Suite De Emerald \u2013 Serviced Apartment in Mandrem, North Goa | Aroha Palms",
+    "description": "Suite De Emerald at Aroha Palms, Mandrem: a Mediterranean-style apartment with king beds, a dedicated workstation and lift access, a short drive from Mandrem Beach."
+  },
+  "suite-de-platinum": {
+    "title": "Suite De Platinum \u2013 Studio Apartment in Mandrem, North Goa | Aroha Palms",
+    "description": "Suite De Platinum at Aroha Palms, Mandrem: a 400 sq ft second-floor studio with a king bed, workstation and lift access, a short drive from Mandrem Beach. Sleeps 2."
+  },
+  "suite-de-prestige": {
+    "title": "Suite De Prestige \u2013 Studio Apartment in Mandrem, North Goa | Aroha Palms",
+    "description": "Suite De Prestige at Aroha Palms, Mandrem: a 400 sq ft first-floor studio with a king bed, workstation and lift access, a short drive from Mandrem Beach. Sleeps 2."
+  },
+  "suite-de-regal": {
+    "title": "Suite De Regal \u2013 800 sq ft Apartment in Mandrem, North Goa | Aroha Palms",
+    "description": "Suite De Regal at Aroha Palms, Mandrem: an 800 sq ft first-floor apartment with a king bed, workstation and lift access, a short drive from Mandrem Beach. Sleeps 2."
+  },
   "villa-majestic": {
     "title": "Villa Majestic – 5 BHK Heritage Pool Villa in Pilerne, North Goa | Aroha Palms",
     "description": "Villa Majestic at Aroha Palms: a restored Portuguese house in Pilerne with 5 bedrooms + 2 lofts, private 10 m pool, jacuzzis and dedicated staff. Sleeps 14. From ₹35,000/night."

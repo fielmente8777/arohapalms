@@ -19,8 +19,7 @@ import VillaGallery from "./VillaGallery";
 
 type Card = AccommodationSectionProps["cards"][0];
 
-export const villaSlug = (title: string) =>
-  title.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+export { villaSlug } from "@/utils/villaSlug";
 
 export interface VillaSibling {
   slug: string;
@@ -42,6 +41,8 @@ interface Props {
   faq: FaqSectionProps;
   /** Optional extra block (e.g. Pilerne "Nearby" section) */
   extra?: React.ReactNode;
+  /** Landing pages draw their own navbar over the hero; website pages already have one */
+  showLandingNavbar?: boolean;
 }
 
 const VillaLandingPage: React.FC<Props> = ({
@@ -54,6 +55,7 @@ const VillaLandingPage: React.FC<Props> = ({
   testimonials,
   faq,
   extra,
+  showLandingNavbar = true,
 }) => {
   const { title, span, moreInfo, startingPrice, inRoomAmenities, location } =
     card;
@@ -61,7 +63,11 @@ const VillaLandingPage: React.FC<Props> = ({
 
   return (
     <main className="bg-background">
-      <Banner images={photos.slice(0, 5)} isSliding />
+      <Banner
+        images={photos.slice(0, 5)}
+        isSliding
+        showNavbar={showLandingNavbar}
+      />
 
       {/* Intro */}
       <SectionWithContainer containerClassName="grid lg:grid-cols-10 gap-8 lg:gap-14 items-start">
@@ -109,10 +115,14 @@ const VillaLandingPage: React.FC<Props> = ({
               className="object-cover"
             />
           </div>
-          {startingPrice && (
+          {startingPrice ? (
             <p className="text-xl text-secondary">
               <span className="font-semibold">{startingPrice}</span>{" "}
               <span className="text-sm">+ Taxes</span>
+            </p>
+          ) : (
+            <p className="text-xl text-secondary font-semibold">
+              Rates on request
             </p>
           )}
           <AmenitiesSlider items={inRoomAmenities} />
@@ -206,7 +216,7 @@ const VillaLandingPage: React.FC<Props> = ({
             <p className="text-sm text-primary uppercase tracking-widest">
               Also at Aroha Palms {location}
             </p>
-            <SectionHeading title="Compare the other villas" textCenter />
+            <SectionHeading title="Compare the other stays" textCenter />
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {siblings.map((s) => (

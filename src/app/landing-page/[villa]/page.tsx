@@ -5,9 +5,15 @@ import { villaMeta, villaPhotos } from "@/data/villaPhotos";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { landingPageData } from "../component/pageData";
+import { roomData as websiteLocations } from "@/app/(website)/[slug]/pageData";
 
 const BASE = "/landing-page";
-const cards = landingPageData.accommodationSection.cards;
+// Villas from the landing page, plus the Mandrem apartments from the website data
+const apartments =
+  websiteLocations
+    .find((l) => l.slug === "mandrem")
+    ?.properties.cards.filter((c) => c.type === "Apartment") ?? [];
+const cards = [...landingPageData.accommodationSection.cards, ...apartments];
 
 interface PageProps {
   params: Promise<{ villa: string }>;

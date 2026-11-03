@@ -50,6 +50,18 @@ const mandermLocationOptions: VillaOption[] = [
   { value: "18BHK, Aroha Palms Marisol", label: "18BHK, Aroha Palms Marisol" },
 ];
 
+const mandremApartmentOptions: VillaOption[] = [
+  "Suite De Onyx",
+  "Suite De Lumina",
+  "Suite De Emerald",
+  "Suite De Platinum",
+  "Suite De Prestige",
+  "Suite De Regal",
+].map((name) => ({
+  value: `Aroha Palms ${name} (Apartment)`,
+  label: `Apartment, Aroha Palms ${name}`,
+}));
+
 const fourAndFiveBhkLocationOptions: VillaOption[] = [
   {
     value: "4BHK, Aroha Palms Magnifica",
@@ -110,8 +122,17 @@ export const getLocationOptions = (pathname: string | null): VillaOption[] => {
   ) {
     return largeGroupAndCorporateLocationOptions;
   }
-  if (cleanPath.endsWith("/pilerne-lp") || cleanPath.includes("/pilerne-lp/")) {
+  if (
+    cleanPath.endsWith("/pilerne-lp") ||
+    cleanPath.includes("/pilerne-lp/") ||
+    cleanPath.endsWith("/pilerne") ||
+    cleanPath.includes("/pilerne/")
+  ) {
     return pilerneLocationOptions;
+  }
+  // Apartment pages (e.g. /mandrem/suite-de-onyx/) list the apartments first
+  if (cleanPath.includes("/suite-de-")) {
+    return [...mandremApartmentOptions, ...mandermLocationOptions];
   }
 
   return mandermLocationOptions;
