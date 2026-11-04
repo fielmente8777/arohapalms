@@ -127,6 +127,12 @@ const VillaLandingPage: React.FC<Props> = ({
         ),
       }
     : featuresSection;
+  const reviews = isApartment
+    ? {
+        ...testimonials,
+        reviews: testimonials.reviews.filter((r) => noPool(r.review)),
+      }
+    : testimonials;
   const amenities = isApartment
     ? inRoomAmenities.filter((a) => noPool(a.label))
     : inRoomAmenities;
@@ -317,7 +323,7 @@ const VillaLandingPage: React.FC<Props> = ({
       <FeaturesSection {...features} />
       {extra}
       <ExperienceSection {...experienceSection} />
-      <Testimonials {...testimonials} />
+      <Testimonials {...reviews} />
       <FaqSection {...faq} />
 
       {/* Other villas at this location */}
