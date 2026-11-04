@@ -10,6 +10,7 @@ import StayWithUs from "./home/components/Stay";
 
 import Testimonials from "./home/components/Testimonials";
 import { homePageData } from "./home/pageData";
+import { homeHeroPhotos } from "@/data/villaPhotos";
 import Place from "./home/components/Place";
 import About from "./our-story/components/About";
 import { OurStoryData } from "./our-story/pageData";
@@ -17,7 +18,7 @@ import { OurStoryData } from "./our-story/pageData";
 export default function HomePage() {
   return (
     <main>
-      <Banner {...homePageData.hero} showBookingForm />
+      <Banner {...homePageData.hero} images={homeHeroPhotos} showBookingForm />
       <AboutSection {...homePageData.about} />
       {/* <Experience {...homePageData.experience} /> */}
       {/* <OfferBanner {...homePageData.offers} />

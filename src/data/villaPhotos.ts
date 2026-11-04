@@ -3,10 +3,55 @@
 //  - Pilerne: "Pilerne Pictures / aroha palms 5bhk" (Majestic) and "Aroha palms 6BHK" (Grande)
 // Order: exterior & pool first, then living, dining, bedrooms, bathrooms last.
 // Only properties listed here get their own page. Onyx, Lumina, Platinum and Prestige have no
-// photos of their own in Drive yet, so they are left out until real photos are added.
+// separate shoot in Drive, so they use the photos the website already shows for them
+// (public/rooms/<Suite>). Replace these when dedicated photos are available.
 const drive = (id: string) => `https://lh3.googleusercontent.com/d/${id}=w2400`;
 
 export const villaPhotos: Record<string, string[]> = {
+  "suite-de-onyx": [
+    "/rooms/Onyx/suite-de-emerald-0c2ec6-1024x683.jpg",
+    "/rooms/Onyx/suite-de-emerald-4a8a5f-1024x768.webp",
+    "/rooms/Onyx/suite-de-emerald-4bae35-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-48fb29-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-575c62-1024x683.webp",
+    "/rooms/Onyx/suite-de-regal-ac4cb9-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-794512-1024x683.webp",
+    "/rooms/Onyx/suite-de-regal-dcd5bb-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-5deaba-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-af28ef-1024x683.webp",
+    "/rooms/Onyx/suite-de-emerald-033720-1024x683.webp"
+  ],
+  "suite-de-lumina": [
+    "/rooms/Lumina/suite-de-regal-45c2fc-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-4d7a0a-1024x768.webp",
+    "/rooms/Lumina/suite-de-regal-11fa20-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-2700ac-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-7591f1-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-ac4cb9-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-dcd5bb-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-2f3711-1024x681.webp",
+    "/rooms/Lumina/suite-de-regal-8179d7-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-ed2ebb-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-850ce5-1024x683.webp",
+    "/rooms/Lumina/suite-de-regal-86bd8d-1024x683.webp"
+  ],
+  "suite-de-platinum": [
+    "/rooms/Emerald/suite-de-emerald-4a8a5f-1024x768.webp",
+    "/rooms/Emerald/suite-de-emerald-4bae35-1024x683.webp",
+    "/rooms/Emerald/suite-de-emerald-48fb29-1024x683.webp",
+    "/rooms/Emerald/suite-de-emerald-575c62-1024x683.webp",
+    "/rooms/Emerald/suite-de-regal-ac4cb9-1024x683.webp",
+    "/rooms/Emerald/06-Bed-2-1024x683.jpg",
+    "/rooms/Emerald/suite-de-emerald-5deaba-1024x683.webp",
+    "/rooms/Emerald/suite-de-emerald-af28ef-1024x683.webp"
+  ],
+  "suite-de-prestige": [
+    "/rooms/Prestige/suite-de-emerald-4a8a5f-1024x768.webp",
+    "/rooms/Prestige/suite-de-emerald-ea3ee5-1024x683.webp",
+    "/rooms/Prestige/suite-de-regal-2f3711-1024x681.webp",
+    "/rooms/Prestige/suite-de-regal-ed2ebb-1024x683.webp",
+    "/rooms/Prestige/suite-de-regal-850ce5-1024x683.webp"
+  ],
   "villa-majestic": [
     drive("1q_mbo4QV9VbJRlJPl6fKazGWYCzOKq1Z"),
     drive("1BmO9g61rywUZzcO8CgR2vbM0QUoSXtIG"),
@@ -287,6 +332,10 @@ export const villaPhotos: Record<string, string[]> = {
 export const villaPageSlugs = Object.keys(villaPhotos);
 
 export const villaMeta: Record<string, { title: string; description: string }> = {
+  "suite-de-onyx": {"title": "Suite De Onyx – 2-Bedroom Serviced Apartment in Mandrem, North Goa | Aroha Palms", "description": "Suite De Onyx at Aroha Palms, Mandrem: a 1,200 sq ft first-floor apartment with two king-bed suites, lift access, workstations and a full kitchen, minutes from Mandrem Beach. Sleeps 4."},
+  "suite-de-lumina": {"title": "Suite De Lumina – 2-Bedroom Serviced Apartment in Mandrem, North Goa | Aroha Palms", "description": "Suite De Lumina at Aroha Palms, Mandrem: a 1,200 sq ft apartment with two king-bed suites, lift access, workstations and a full kitchen, minutes from Mandrem Beach. Sleeps 4."},
+  "suite-de-platinum": {"title": "Suite De Platinum – Studio Apartment in Mandrem, North Goa | Aroha Palms", "description": "Suite De Platinum at Aroha Palms, Mandrem: a 400 sq ft second-floor studio with a king bed, workstation and lift access, a short drive from Mandrem Beach. Sleeps 2."},
+  "suite-de-prestige": {"title": "Suite De Prestige – Studio Apartment in Mandrem, North Goa | Aroha Palms", "description": "Suite De Prestige at Aroha Palms, Mandrem: a 400 sq ft first-floor studio with a king bed, workstation and lift access, a short drive from Mandrem Beach. Sleeps 2."},
   "suite-de-emerald": {
     "title": "Suite De Emerald – Serviced Apartment in Mandrem, North Goa | Aroha Palms",
     "description": "Suite De Emerald at Aroha Palms, Mandrem: a Mediterranean-style apartment with king beds, a dedicated workstation and lift access, a short drive from Mandrem Beach."
@@ -336,3 +385,28 @@ export const villaMeta: Record<string, { title: string; description: string }> =
     "description": "Villa Marisol at Aroha Palms, Mandrem: the full Mandrem compound, three villas and two apartments, 18 bedrooms, sleeps 36, for weddings and large celebrations. From ₹1,18,000/night."
   }
 };
+
+/** Hero photos for the home page and the Mandrem / Pilerne location pages (best exterior & pool shots) */
+const first = (slug: string, n: number) => (villaPhotos[slug] ?? []).slice(0, n);
+export const heroPhotos = {
+  mandrem: [
+    ...first("villa-paradiso", 1),
+    ...first("villa-magnifica", 2),
+    ...first("villa-serenity", 2),
+    ...first("villa-paradiso", 2).slice(1),
+  ],
+  pilerne: [
+    ...first("villa-majestic", 2),
+    ...first("villa-grande", 1),
+    villaPhotos["villa-majestic"][3],
+    ...first("villa-grande", 3).slice(1, 3),
+  ],
+};
+export const homeHeroPhotos = [
+  heroPhotos.pilerne[0],
+  heroPhotos.mandrem[0],
+  heroPhotos.pilerne[2],
+  heroPhotos.mandrem[1],
+  heroPhotos.pilerne[3],
+  heroPhotos.mandrem[3],
+];

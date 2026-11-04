@@ -1,5 +1,8 @@
 import { notFound } from "next/navigation";
 import { roomData } from "./pageData";
+import { heroPhotos, villaPhotos } from "@/data/villaPhotos";
+import { villaSlug } from "@/utils/villaSlug";
+
 
 import { Metadata } from "next";
 import Testimonials from "../home/components/Testimonials";
@@ -69,9 +72,20 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main>
-      <Banner {...homePageData.hero} showBookingForm />
+      <Banner
+        {...homePageData.hero}
+        images={heroPhotos[slug as keyof typeof heroPhotos] ?? homePageData.hero.images}
+        showBookingForm
+      />
       {/* <HeroBanner {...data.hero} /> */}
-      <Properties cards={data.properties.cards} sectionHeader={data.properties.sectionHeader} />
+      <Properties
+        cards={data.properties.cards.map((c) => ({
+          ...c,
+          // curated Google Drive photos where we have them (src/data/villaPhotos.ts)
+          images: villaPhotos[villaSlug(c.title)] ?? c.images,
+        }))}
+        sectionHeader={data.properties.sectionHeader}
+      />
       {/* <Testimonials {...homePageData.testimonials} /> */}
     </main>
   );

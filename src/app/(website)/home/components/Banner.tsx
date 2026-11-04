@@ -159,7 +159,7 @@ const Banner: FC<BannerProps> = ({
             speed={2500}
             className="w-full"
             renderSlide={(image) => (
-              <div className="w-full xl-[3/1.5] max-xl:aspect-[3.2/1.7] lg:aspect-[3.2/1.5] max-md:aspect-[4/6] md:aspect-[4/5]  relative">
+              <div className="w-full xl-[3/1.5] max-xl:aspect-[3.2/1.7] lg:aspect-[3.2/1.5] max-md:aspect-[4/5] md:aspect-[4/5]  relative">
                 <Image
                   src={image}
                   alt="banner image"
@@ -183,8 +183,9 @@ const Banner: FC<BannerProps> = ({
           {/* <div className="absolute top-0 left-0 w-full z-10">
             <NavBar2 />
           </div> */}
+          {/* Phones: form sits under the photos so it doesn't cover them; md and up: overlaid */}
           {showBookingForm && (
-            <div className="absolute bottom-6 inset-x-0 z-10">
+            <div className="relative md:absolute md:bottom-6 inset-x-0 z-10 max-md:bg-[#0B1E2D] max-md:py-4">
               <Container className="xl:max-w-5xl! mx-auto">
                 <BookingForm />
               </Container>

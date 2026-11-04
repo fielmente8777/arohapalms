@@ -116,6 +116,20 @@ const VillaLandingPage: React.FC<Props> = ({
   const { title, span, moreInfo, startingPrice, inRoomAmenities, location } =
     card;
   const span_ = span?.trim();
+  // Apartments have no pool of their own: drop any pool feature/amenity so the page doesn't imply one
+  const isApartment = card.type === "Apartment";
+  const noPool = (t?: string) => !/pool/i.test(t ?? "");
+  const features = isApartment
+    ? {
+        ...featuresSection,
+        features: featuresSection.features.filter(
+          (f) => noPool(f.title) && noPool(f.description),
+        ),
+      }
+    : featuresSection;
+  const amenities = isApartment
+    ? inRoomAmenities.filter((a) => noPool(a.label))
+    : inRoomAmenities;
   const { story, sections: detailSections } = normalizeDetails(
     moreInfo.listOfData ?? [],
   );
@@ -184,7 +198,7 @@ const VillaLandingPage: React.FC<Props> = ({
               Rates on request
             </p>
           )}
-          <AmenitiesSlider items={inRoomAmenities} />
+          <AmenitiesSlider items={amenities} />
           <LinkButton
             href="#form"
             label="Check availability & rates"
@@ -300,7 +314,7 @@ const VillaLandingPage: React.FC<Props> = ({
         </SectionWithContainer>
       )}
 
-      <FeaturesSection {...featuresSection} />
+      <FeaturesSection {...features} />
       {extra}
       <ExperienceSection {...experienceSection} />
       <Testimonials {...testimonials} />

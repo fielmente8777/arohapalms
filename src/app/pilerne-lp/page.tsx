@@ -1,4 +1,6 @@
 import WhatsappForm from "@/components/forms/WhatsappForm";
+import { villaPhotos } from "@/data/villaPhotos";
+import { villaSlug } from "@/utils/villaSlug";
 import { SectionWithContainer } from "@/components/sectionComponants";
 // import SlidingTitle from "@/components/sliders/SlidingTitle";
 
@@ -30,7 +32,14 @@ export default function LandingPage() {
       </SectionWithContainer>
       <UnforgettableSection {...landingPageData.unforgettableSection} />
       {/* <SlidingTitle items={landingPageData.offer}ariaHidden /> */}
-      <AccommodationSection {...landingPageData.accommodationSection} />
+      <AccommodationSection
+        {...landingPageData.accommodationSection}
+        cards={landingPageData.accommodationSection.cards.map((c) => ({
+          ...c,
+          // curated Google Drive photos (src/data/villaPhotos.ts)
+          images: villaPhotos[villaSlug(c.title)] ?? c.images,
+        }))}
+      />
       {/* <SlidingTitle items={landingPageData.offer} ariaHidden /> */}
       <FeaturesSection {...landingPageData.featuresSection} />
       <NearbyPlaces {...landingPageData.nearbyPlaces} />
