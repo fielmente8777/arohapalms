@@ -185,7 +185,8 @@ const VillaLandingPage: React.FC<Props> = ({
         </div>
 
         <aside className="lg:col-span-4 lg:sticky lg:top-6 min-w-0 overflow-hidden border-2 border-primary rounded-2xl p-5 lg:p-6 bg-background box-shadow space-y-5">
-          <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden">
+          {/* phones already see the villa in the banner above, so keep the card compact there */}
+          <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden hidden lg:block">
             <Image
               src={photos[1] ?? photos[0]}
               alt={title}
