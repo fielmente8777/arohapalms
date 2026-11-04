@@ -410,3 +410,10 @@ export const homeHeroPhotos = [
   heroPhotos.pilerne[3],
   heroPhotos.mandrem[3],
 ];
+
+/** Swap each card's images for the curated Google Drive set when we have one */
+export const withVillaPhotos = <T extends { title: string; images: string[] }>(cards: T[]): T[] =>
+  cards.map((c) => {
+    const slug = c.title.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    return villaPhotos[slug] ? { ...c, images: villaPhotos[slug] } : c;
+  });

@@ -2,6 +2,7 @@ import { AccommodationSectionProps } from "@/@types/landingPageTypes";
 import { SectionHeading } from "@/components/typography";
 import Section from "../../../components/sectionComponants/Section";
 import AccommodationCardsSection from "./AccommodationCardsSection";
+import { withVillaPhotos } from "@/data/villaPhotos";
 import { Container } from "@/components/sectionComponants";
 
 const AccommodationSection: React.FC<AccommodationSectionProps> = ({
@@ -36,7 +37,7 @@ const AccommodationSection: React.FC<AccommodationSectionProps> = ({
             )}
           </div>
         )}
-        <AccommodationCardsSection cards={cards} note={note} />
+        <AccommodationCardsSection cards={withVillaPhotos(cards)} note={note} />
       </div>
     </Section>
   );

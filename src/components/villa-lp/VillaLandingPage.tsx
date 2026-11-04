@@ -149,8 +149,8 @@ const VillaLandingPage: React.FC<Props> = ({
       />
 
       {/* Intro */}
-      <SectionWithContainer containerClassName="grid lg:grid-cols-10 gap-8 lg:gap-14 items-start">
-        <div className="lg:col-span-6 space-y-5">
+      <SectionWithContainer containerClassName="grid grid-cols-1 lg:grid-cols-10 gap-8 lg:gap-14 items-start">
+        <div className="lg:col-span-6 space-y-5 min-w-0">
           <p className="text-sm text-primary uppercase tracking-widest">
             Aroha Palms · {location}, North Goa
           </p>
@@ -184,7 +184,7 @@ const VillaLandingPage: React.FC<Props> = ({
           ))}
         </div>
 
-        <aside className="lg:col-span-4 lg:sticky lg:top-6 border-2 border-primary rounded-2xl p-5 lg:p-6 bg-background box-shadow space-y-5">
+        <aside className="lg:col-span-4 lg:sticky lg:top-6 min-w-0 overflow-hidden border-2 border-primary rounded-2xl p-5 lg:p-6 bg-background box-shadow space-y-5">
           <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden">
             <Image
               src={photos[1] ?? photos[0]}
@@ -263,7 +263,7 @@ const VillaLandingPage: React.FC<Props> = ({
             </div>
           )}
           <div
-            className={`grid gap-6 items-start ${
+            className={`grid grid-cols-1 gap-6 items-start ${
               detailSections.length === 1
                 ? "max-w-4xl mx-auto"
                 : detailSections.length === 2
@@ -335,7 +335,7 @@ const VillaLandingPage: React.FC<Props> = ({
             </p>
             <SectionHeading title="Compare the other stays" textCenter />
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {siblings.map((s) => (
               <Link
                 key={s.slug}

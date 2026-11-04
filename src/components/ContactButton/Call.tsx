@@ -12,15 +12,15 @@ function Call({ callNumber }: { callNumber: string }) {
     }
   return (
     <div
-      className={`fixed bottom-10 lg:left-3  left-4 z-20 cursor-pointer`}
+      className={`fixed z-20 cursor-pointer max-lg:right-3 max-lg:bottom-[96px] lg:bottom-10 lg:left-3`}
     >
       <Link
         href={`tel: ${callNumber ? callNumber : "+911234567890"} `}
         target="_blank"
         rel="noreferrer"
-        className="w-12 h-12 rounded-full flex items-center justify-center bg-blue-700 hover:bg-primary text-white/95 hover:shadow-2xl transition-all"
+        className="w-11 h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center shadow-lg bg-blue-700 hover:bg-primary text-white/95 hover:shadow-2xl transition-all"
       >
-        <IoCall size={29} color="white" />
+        <IoCall size={24} color="white" />
         <span className="sr-only">call</span>
       </Link>
     </div>
