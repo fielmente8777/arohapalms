@@ -96,7 +96,8 @@ const ExperienceGallery = ({
                   "
                 />
 
-                {/* PLAY BUTTON ICON */}
+                {/* PLAY BUTTON ICON — only on tiles that actually have a video */}
+                {card.video && (
                 <div
                   className="
                     pointer-events-none
@@ -134,6 +135,7 @@ const ExperienceGallery = ({
                     "
                   />
                 </div>
+                )}
               </div>
             ))}
           </div>
