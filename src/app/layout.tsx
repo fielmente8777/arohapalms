@@ -195,6 +195,9 @@ export default function RootLayout({
           <Whatsapp whatsAppNumber={contact.phone[0]} />
           <Call callNumber={contact.phone[0]} />
         </WebProvider>
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zbn6khn6ts");`}
+        </Script>
       </body>
       {/* <!-- Eazbot Script (Next.js) --> */}
       <Script id="chatbot-config" strategy="afterInteractive">
