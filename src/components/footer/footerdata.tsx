@@ -246,7 +246,7 @@ export const WebData: FooterData = {
     },
     {
       label: "BOOK NOW",
-      href: "#form",
+      href: "https://letsbook.me/booking/arohapalmsmandrem",
     },
   ],
 

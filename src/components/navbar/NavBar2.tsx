@@ -90,7 +90,9 @@ const NavBar2 = () => {
 
             {/* FIND A ROOM */}
             <Link
-              href="#form"
+              href="https://letsbook.me/booking/arohapalmsmandrem"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden items-center bg-primary px-6 text-xs font-medium uppercase text-white transition-colors duration-300 hover:bg-[#c49954] md:flex md:h-[59px] md:px-8"
             >
               FIND A ROOM

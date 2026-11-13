@@ -81,7 +81,7 @@ const WebsiteNav = () => {
           </div>
 
           <LinkButton
-            href="/"
+            href="https://letsbook.me/booking/arohapalmsmandrem"
             label="Book Stay"
             target="_blank"
             rel="noopener noreferrer"

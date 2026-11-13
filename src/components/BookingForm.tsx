@@ -13,7 +13,7 @@ import {
 const locations = [
   {
     name: "Mandrem",
-    slug: "mandrem",
+    slug: "arohapalmsmandrem",
   },
   {
     name: "Pilerne",
@@ -22,20 +22,20 @@ const locations = [
 ];
 
 const villasByLocation = {
-  mandrem: [
-    { name: "Villa Magnifica", slug: "villa-magnifica", location: "mandrem" },
-    { name: "Villa Paradiso", slug: "villa-paradiso", location: "mandrem" },
-    { name: "Villa Serenity", slug: "villa-serenity", location: "mandrem" },
-    { name: "Villa Caia", slug: "villa-caia", location: "mandrem" },
-    { name: "Villa Prana", slug: "villa-prana", location: "mandrem" },
-    { name: "Villa Encanto", slug: "villa-encanto", location: "mandrem" },
-    { name: "Villa Marisol", slug: "villa-marisol", location: "mandrem" },
-    { name: "Suite De Onyx", slug: "suite-de-onyx", location: "mandrem" },
-    { name: "Suite De Lumina", slug: "suite-de-lumina", location: "mandrem" },
-    { name: "Suite De Emerald", slug: "suite-de-emerald", location: "mandrem" },
-    { name: "Suite De Platinum", slug: "suite-de-platinum", location: "mandrem" },
-    { name: "Suite De Prestige", slug: "suite-de-prestige", location: "mandrem" },
-    { name: "Suite De Regal", slug: "suite-de-regal", location: "mandrem" },
+  arohapalmsmandrem: [
+    { name: "Villa Magnifica", slug: "villa-magnifica", location: "arohapalmsmandrem" },
+    { name: "Villa Paradiso", slug: "villa-paradiso", location: "arohapalmsmandrem" },
+    { name: "Villa Serenity", slug: "villa-serenity", location: "arohapalmsmandrem" },
+    { name: "Villa Caia", slug: "villa-caia", location: "arohapalmsmandrem" },
+    { name: "Villa Prana", slug: "villa-prana", location: "arohapalmsmandrem" },
+    { name: "Villa Encanto", slug: "villa-encanto", location: "arohapalmsmandrem" },
+    { name: "Villa Marisol", slug: "villa-marisol", location: "arohapalmsmandrem" },
+    { name: "Suite De Onyx", slug: "suite-de-onyx", location: "arohapalmsmandrem" },
+    { name: "Suite De Lumina", slug: "suite-de-lumina", location: "arohapalmsmandrem" },
+    { name: "Suite De Emerald", slug: "suite-de-emerald", location: "arohapalmsmandrem" },
+    { name: "Suite De Platinum", slug: "suite-de-platinum", location: "arohapalmsmandrem" },
+    { name: "Suite De Prestige", slug: "suite-de-prestige", location: "arohapalmsmandrem" },
+    { name: "Suite De Regal", slug: "suite-de-regal", location: "arohapalmsmandrem" },
   ],
   pilerne: [
     { name: "Villa Majestic", slug: "villa-majestic", location: "pilerne" },
@@ -107,7 +107,7 @@ export default function BookingForm() {
 
   const availableVillas = useMemo(() => {
     if (!location) {
-      return [...villasByLocation.mandrem, ...villasByLocation.pilerne];
+      return [...villasByLocation.arohapalmsmandrem, ...villasByLocation.pilerne];
     }
     return (
       villasByLocation[location.slug as keyof typeof villasByLocation] || []
@@ -164,11 +164,21 @@ export default function BookingForm() {
   const guestLabel = `${adults} Adult${adults !== 1 ? "s" : ""}${children > 0 ? `, ${children} Child${children !== 1 ? "ren" : ""}` : ""}`;
 
   const handleSearch = () => {
-    const locSlug = location?.slug || (villa?.location || "mandrem");
-    window.open(
-      `https://letsbook.me/booking/${locSlug}?checkin=${formatDate(startDate)}&checkout=${formatDate(endDate)}&adults=${adults}&children=${children}`,
-      "_blank"
-    );
+    const locSlug =
+      location?.slug ||
+      (villa?.location === "mandrem"
+        ? "arohapalmsmandrem"
+        : villa?.location || "arohapalmsmandrem");
+    const targetSlug = locSlug === "mandrem" ? "arohapalmsmandrem" : locSlug;
+
+    if (startDate && endDate) {
+      window.open(
+        `https://letsbook.me/booking/${targetSlug}?checkin=${formatDate(startDate)}&checkout=${formatDate(endDate)}&adults=${adults}&children=${children}`,
+        "_blank"
+      );
+    } else {
+      window.open(`https://letsbook.me/booking/${targetSlug}`, "_blank");
+    }
   };
 
   // Shared field styles
