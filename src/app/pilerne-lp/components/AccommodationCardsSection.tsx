@@ -204,11 +204,15 @@ export const AccommodationCard: React.FC<
             <span className="sr-only">{originalPrice}</span>
             <span className="font">{originalPrice} </span>
           </p> */}
-            <p className="text-lg text-secondary">
-              <span className="sr-only">{startingPrice}</span>
-              <span className="font-semibold">{startingPrice} </span>
-              <span className="text-sm">+ Taxes</span>
-            </p>
+            {startingPrice ? (
+              <p className="text-lg text-secondary">
+                <span className="sr-only">{startingPrice}</span>
+                <span className="font-semibold">{startingPrice} </span>
+                <span className="text-sm">+ Taxes</span>
+              </p>
+            ) : (
+              <p className="text-lg text-secondary font-semibold">Rates on request</p>
+            )}
             {/* <div className="flex flex-col items-center">
               <p className="text-sm text-secondary">
                 <span className="sr-only">{discountCode}</span>

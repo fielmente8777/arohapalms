@@ -55,7 +55,7 @@ export const roomData = [
             { icon: <BathroomIcon />, label: "Bathroom" },
           ],
           originalPrice: "₹ 23400/night",
-          startingPrice: "From ₹ 28,000/night",
+          startingPrice: "From ₹ 22,000/night",
           moreInfo: {
             title: "Mediterranean Grace Meets Coastal Tranquility",
             roomInfo: [
@@ -159,7 +159,7 @@ export const roomData = [
             { icon: <BathroomIcon />, label: "Bathroom" },
           ],
           originalPrice: "₹ 28600",
-          startingPrice: "From ₹ 35,000/night",
+          startingPrice: "From ₹ 27,000/night",
           moreInfo: {
             title: "Unmatched Scale, Tropical Privacy, and Grand Elegance",
             roomInfo: [
@@ -257,7 +257,7 @@ export const roomData = [
             { icon: <BathroomIcon />, label: "Bathroom" },
           ],
           originalPrice: "₹ 28600/night",
-          startingPrice: "From ₹ 35,000/night",
+          startingPrice: "From ₹ 27,000/night",
           moreInfo: {
             title: "Understated Luxury Wrapped in Coastal Calm",
             roomInfo: [
@@ -357,7 +357,6 @@ export const roomData = [
             { icon: <BathroomIcon />, label: "Bathroom" },
           ],
           originalPrice: "₹ 40300/night",
-          startingPrice: "From ₹ 45,000/night",
           moreInfo: {
             title: "Together in Luxury, Designed for Every Generation",
             roomInfo: [
@@ -461,7 +460,7 @@ export const roomData = [
             { icon: <BathroomIcon />, label: "Bathroom" },
           ],
           originalPrice: "₹ 52000/night",
-          startingPrice: "From ₹ 63,000/night",
+          startingPrice: "From ₹ 49,000/night",
           moreInfo: {
             title: "A Sanctuary of Wellness, Space & Timeless Luxury",
             roomInfo: [
@@ -564,7 +563,7 @@ export const roomData = [
             { icon: <BathroomIcon />, label: "Bathroom" },
           ],
           originalPrice: "₹ 57200/night",
-          startingPrice: "From ₹ 70,000/night",
+          startingPrice: "From ₹ 54,000/night",
           moreInfo: {
             title: "Where Grand Celebrations Meet Timeless Luxury",
             roomInfo: [
@@ -662,7 +661,6 @@ export const roomData = [
             { icon: <BathroomIcon />, label: "Bathroom" },
           ],
           originalPrice: "₹ 97500/night",
-          startingPrice: "From ₹ 1,18,000/night",
           moreInfo: {
             title: "The Ultimate Private Luxury Estate in North Goa",
             roomInfo: [
@@ -4651,7 +4649,7 @@ export const roomData = [
             { icon: <JacuzziIcon />, label: "5 Private Jacuzzis" },
           ],
           originalPrice: "₹ 35,000/night",
-          startingPrice: "From ₹ 35,000/night",
+          startingPrice: "From ₹ 27,000/night",
           moreInfo: {
             title: "Grand Portuguese Walls, Soft Sunlit Calm",
             roomInfo: [
@@ -4757,7 +4755,7 @@ export const roomData = [
             { icon: <JacuzziIcon />, label: "6 Private Jacuzzis" },
           ],
           originalPrice: "₹ 48,000",
-          startingPrice: "From ₹ 48,000/night",
+          startingPrice: "From ₹ 32,000/night",
           moreInfo: {
             title: "A Collector's Sanctuary of Stone and Sky",
             roomInfo: [
@@ -4868,7 +4866,7 @@ export const roomData = [
             { icon: <JacuzziIcon />, label: "11 Private Jacuzzis" },
           ],
           originalPrice: "₹ 80,000",
-          startingPrice: "From ₹ 80,000/night",
+          startingPrice: "From ₹ 59,000/night",
           moreInfo: {
             title: "A Newly Built Artistic Villa With An Intimate Setting",
             roomInfo: [

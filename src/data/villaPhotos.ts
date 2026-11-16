@@ -346,43 +346,43 @@ export const villaMeta: Record<string, { title: string; description: string }> =
   },
   "villa-majestic": {
     "title": "Villa Majestic – 5 BHK Heritage Pool Villa in Pilerne, North Goa | Aroha Palms",
-    "description": "Villa Majestic at Aroha Palms: a restored Portuguese house in Pilerne with 5 bedrooms + 2 lofts, private 10 m pool, jacuzzis and dedicated staff. Sleeps 14. From ₹35,000/night."
+    "description": "Villa Majestic at Aroha Palms: a restored Portuguese house in Pilerne with 5 bedrooms + 2 lofts, private 10 m pool, jacuzzis and dedicated staff. Sleeps 14. From ₹27,000/night + taxes."
   },
   "villa-grande": {
     "title": "Villa Grande – 6 BHK Art Villa with Private Pool in Pilerne, North Goa | Aroha Palms",
-    "description": "Villa Grande at Aroha Palms: a newly built 8,000 sq ft art villa in Pilerne with 6 ensuite bedrooms, private jacuzzis, 10 m pool and dedicated staff. Sleeps 12. From ₹48,000/night."
+    "description": "Villa Grande at Aroha Palms: a newly built 8,000 sq ft art villa in Pilerne with 6 ensuite bedrooms, private jacuzzis, 10 m pool and dedicated staff. Sleeps 12. From ₹32,000/night + taxes."
   },
   "villa-imperial": {
     "title": "Villa Imperial – 11 BHK Private Estate for Weddings & Groups in North Goa | Aroha Palms",
-    "description": "Villa Imperial at Aroha Palms: two connected villas in Pilerne forming a 15,500 sq ft private estate with 11 bedrooms, two 10 m pools, sleeps 26. Weddings, offsites, reunions. From ₹80,000/night."
+    "description": "Villa Imperial at Aroha Palms: two connected villas in Pilerne forming a 15,500 sq ft private estate with 11 bedrooms, two 10 m pools, sleeps 26. Weddings, offsites, reunions. From ₹59,000/night + taxes."
   },
   "villa-magnifica": {
     "title": "Villa Magnifica – 4 BHK Private Pool Villa in Mandrem, North Goa | Aroha Palms",
-    "description": "Villa Magnifica at Aroha Palms, Mandrem: a 4-bedroom, 4,000 sq ft streamside villa with a private 10 m pool, 3–5 minutes from Mandrem Beach. From ₹28,000/night."
+    "description": "Villa Magnifica at Aroha Palms, Mandrem: a 4-bedroom, 4,000 sq ft streamside villa with a private 10 m pool, 3–5 minutes from Mandrem Beach. From ₹22,000/night + taxes."
   },
   "villa-paradiso": {
     "title": "Villa Paradiso – 5 BHK Private Pool Villa in Mandrem, North Goa | Aroha Palms",
-    "description": "Villa Paradiso at Aroha Palms, Mandrem: a 5-bedroom, 5,000 sq ft estate with the largest pool terrace on the property, 3–5 minutes from Mandrem Beach. From ₹35,000/night."
+    "description": "Villa Paradiso at Aroha Palms, Mandrem: a 5-bedroom, 5,000 sq ft estate with the largest pool terrace on the property, 3–5 minutes from Mandrem Beach. From ₹27,000/night + taxes."
   },
   "villa-serenity": {
     "title": "Villa Serenity – 5 BHK Private Pool Villa in Mandrem, North Goa | Aroha Palms",
-    "description": "Villa Serenity at Aroha Palms, Mandrem: a 5-bedroom, 5,000 sq ft Greek-inspired villa with a private 10 m pool, 3–5 minutes from Mandrem Beach. From ₹35,000/night."
+    "description": "Villa Serenity at Aroha Palms, Mandrem: a 5-bedroom, 5,000 sq ft Greek-inspired villa with a private 10 m pool, 3–5 minutes from Mandrem Beach. From ₹27,000/night + taxes."
   },
   "villa-caia": {
     "title": "Villa Caia – 7 BHK Villa + Apartment Estate in Mandrem, North Goa | Aroha Palms",
-    "description": "Villa Caia at Aroha Palms, Mandrem: a 5-bedroom villa plus a private 2-bedroom apartment, 7 bedrooms in total, sleeps 14, 3–5 minutes from Mandrem Beach. From ₹45,000/night."
+    "description": "Villa Caia at Aroha Palms, Mandrem: a 5-bedroom villa plus a private 2-bedroom apartment, 7 bedrooms in total, sleeps 14, 3–5 minutes from Mandrem Beach. Rates on request."
   },
   "villa-prana": {
     "title": "Villa Prana – 9 BHK Private Estate for Groups in Mandrem, North Goa | Aroha Palms",
-    "description": "Villa Prana at Aroha Palms, Mandrem: two connected villas (5-BR + 4-BR), 9 bedrooms, sleeps 18, for wellness retreats and group getaways. From ₹63,000/night."
+    "description": "Villa Prana at Aroha Palms, Mandrem: two connected villas (5-BR + 4-BR), 9 bedrooms, sleeps 18, for wellness retreats and group getaways. From ₹49,000/night + taxes."
   },
   "villa-encanto": {
     "title": "Villa Encanto – 10 BHK Celebration Estate in Mandrem, North Goa | Aroha Palms",
-    "description": "Villa Encanto at Aroha Palms, Mandrem: two joined 5-bedroom villas, 10 bedrooms, dual living halls, sleeps 20 for birthdays, reunions and celebrations. From ₹70,000/night."
+    "description": "Villa Encanto at Aroha Palms, Mandrem: two joined 5-bedroom villas, 10 bedrooms, dual living halls, sleeps 20 for birthdays, reunions and celebrations. From ₹54,000/night + taxes."
   },
   "villa-marisol": {
     "title": "Villa Marisol – 18 BHK Full Private Compound for Weddings & Groups in Goa | Aroha Palms",
-    "description": "Villa Marisol at Aroha Palms, Mandrem: the full Mandrem compound, three villas and two apartments, 18 bedrooms, sleeps 36, for weddings and large celebrations. From ₹1,18,000/night."
+    "description": "Villa Marisol at Aroha Palms, Mandrem: the full Mandrem compound, three villas and four apartments, 18 bedrooms, sleeps 36, for weddings and large celebrations. Rates on request."
   }
 };
 

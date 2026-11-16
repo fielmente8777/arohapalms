@@ -131,7 +131,7 @@ export const landingPageData = {
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
         originalPrice: "₹ 23400/night",
-        startingPrice: "From ₹ 28,000/night",
+        startingPrice: "From ₹ 22,000/night",
         moreInfo: {
           title: "Mediterranean Grace Meets Coastal Tranquility",
           roomInfo: [
@@ -235,7 +235,7 @@ export const landingPageData = {
           { icon: <BathroomIcon />, label: "Bathroom" },
         ],
         originalPrice: "₹ 28600",
-        startingPrice: "From ₹ 35,000/night",
+        startingPrice: "From ₹ 27,000/night",
         moreInfo: {
           title: "Unmatched Scale, Tropical Privacy, and Grand Elegance",
           roomInfo: [
@@ -333,7 +333,7 @@ export const landingPageData = {
       //     { icon: <BathroomIcon />, label: "Bathroom" },
       //   ],
       //   originalPrice: "₹ 28600/night",
-      //   startingPrice: "From ₹ 35,000/night",
+      //   startingPrice: "From ₹ 27,000/night",
       //   moreInfo: {
       //     title: "Understated Luxury Wrapped in Coastal Calm",
       //     roomInfo: [
@@ -537,7 +537,7 @@ export const landingPageData = {
       //     { icon: <BathroomIcon />, label: "Bathroom" },
       //   ],
       //   originalPrice: "₹ 52000/night",
-      //   startingPrice: "From ₹ 63,000/night",
+      //   startingPrice: "From ₹ 49,000/night",
       //   moreInfo: {
       //     title: "A Sanctuary of Wellness, Space & Timeless Luxury",
       //     roomInfo: [
@@ -640,7 +640,7 @@ export const landingPageData = {
       //     { icon: <BathroomIcon />, label: "Bathroom" },
       //   ],
       //   originalPrice: "₹ 57200/night",
-      //   startingPrice: "From ₹ 70,000/night",
+      //   startingPrice: "From ₹ 54,000/night",
       //   moreInfo: {
       //     title: "Where Grand Celebrations Meet Timeless Luxury",
       //     roomInfo: [
@@ -743,7 +743,7 @@ export const landingPageData = {
       //     title: "The Ultimate Private Luxury Estate in North Goa",
       //     roomInfo: [
       //       "18 Bedrooms",
-      //       "Full Compound: All 3 Villas + 2 Apartments",
+      //       "Full Compound: All 3 Villas + 4 Apartments",
       //       "Sleeps up to 36"
       //     ],
       //     description: [
@@ -756,7 +756,7 @@ export const landingPageData = {
       //         description:
       //           "Villa Marisol stands out as North Goa's premier private compound due to its:",
       //         list: [
-      //           "Rare capacity and flexible configurations, offering up to 18 private, elegantly appointed bedrooms across 3 villas and 2 apartments for groups of up to 36",
+      //           "Rare capacity and flexible configurations, offering up to 18 private, elegantly appointed bedrooms across 3 villas and 4 apartments for groups of up to 36",
       //           "Complete exclusive domain over the entire estate, ensuring total privacy for your retreat or event",
       //           "Three private 10m swimming pools and surrounding sun decks designed for daytime lounging and evening gatherings",
       //           "Tranquil streamside setting in North Goa, providing a serene natural environment to embrace the relaxed susegad pace",
