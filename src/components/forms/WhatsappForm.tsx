@@ -14,7 +14,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { countries } from "../../utils/constent";
 import { WhatsAppIcon } from "../buttons/LinkButton";
-import { goToThankYou, saveEnquiry } from "@/utils/enquiry";
+import { buildWhatsappText, goToThankYou, newLeadId, saveEnquiry, whatsappUrl } from "@/utils/enquiry";
 
 // India, UK, UAE and US first in the country list (client doc L5)
 const PRIORITY_CODES = ["+91", "+44", "+971", "+1"];
@@ -378,6 +378,9 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const submissionPending = useRef(false);
+  const leadId = useRef<string | null>(null);
 
   // Dates/guests handed over from the search bar (Pilerne searches, client doc L4)
   useEffect(() => {
@@ -496,10 +499,11 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
 
     const digits = formData.phone.replace(/\D/g, "");
     if (!digits) nextErrors.phone = "Please enter your phone number";
-    else if (digits.length < 7) nextErrors.phone = "Enter a valid phone number";
+    else if (digits.length < 7 || digits.length + formData.countryCode.replace(/\D/g, "").length > 15 || (formData.countryCode === "+91" && digits.length !== 10)) nextErrors.phone = "Enter a valid phone number";
 
     if (!formData.villa) nextErrors.villa = "Please select a villa";
-    if (!formData.guests.trim()) nextErrors.guests = "Please enter the number of guests";
+    if (!/^\d+$/.test(formData.guests.trim()) || Number(formData.guests) < 1) nextErrors.guests = "Please enter a valid number of guests";
+    if (!formData.checkIn || !formData.checkOut || formData.checkOut <= formData.checkIn) nextErrors.checkIn = "Please select check-in and check-out dates, with check-out after check-in";
 
     setErrors(nextErrors);
     return nextErrors;
@@ -520,6 +524,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submissionPending.current) return;
 
     const currentErrors = validate();
 
@@ -528,11 +533,14 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
       return;
     }
 
+    submissionPending.current = true;
     setIsSubmitting(true);
+    setSubmitError("");
+    leadId.current ??= newLeadId();
 
     // 1) save to Eazotel (with ad source), 2) thank-you page in the same tab,
     // 3) "Continue on WhatsApp" there with the message prefilled (client doc L5)
-    await saveEnquiry({
+    const result = await saveEnquiry({
       name: formData.name.trim(),
       phone: formData.countryCode + formData.phone.replace(/\D/g, ""),
       villa: formData.villa,
@@ -540,7 +548,14 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
       checkOut: formData.checkOut,
       guests: formData.guests,
       form: "enquiry-form",
-    });
+    }, leadId.current);
+
+    submissionPending.current = false;
+    setIsSubmitting(false);
+    if (!result.saved) {
+      setSubmitError("We couldn't confirm that your enquiry was saved. Your details are still here. Please try again or contact us on WhatsApp.");
+      return;
+    }
 
     setSubmitSuccess(true);
     goToThankYou();
@@ -754,8 +769,16 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
       {Object.keys(errors).length > 0 && (
         <p className="text-red-500 text-center" role="alert">
           {/* {Object.values(errors).join(" ")} */}
-          Please fill all the required fields
+          {Object.values(errors).join(". ")}
         </p>
+      )}
+      {submitError && (
+        <div className="mt-3 text-center" role="alert">
+          <p className="text-red-600">{submitError}</p>
+          <a className="underline text-primary" target="_blank" rel="noopener noreferrer" href={whatsappUrl(buildWhatsappText({ ...formData, form: "enquiry-form" }))}>
+            Contact us on WhatsApp
+          </a>
+        </div>
       )}
     </div>
   );

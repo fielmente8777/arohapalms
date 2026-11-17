@@ -2,6 +2,7 @@
 import { landingPageData } from "@/app/landing-page/component/pageData";
 import { getDateInputLimits } from "@/hooks/getDateInputLimits";
 import useForm from "@/hooks/useForm";
+import { formatLocalDate } from "@/utils/date";
 import {
   CalendarIcon,
   CallIcon,
@@ -207,12 +208,8 @@ const Form1 = ({ gridView }: Props) => {
     setStartDate(start);
     setEndDate(end);
 
-    if (start) {
-      setFieldValue("checkIn", start.toISOString().split("T")[0]);
-    }
-    if (end) {
-      setFieldValue("checkOut", end.toISOString().split("T")[0]);
-    }
+    setFieldValue("checkIn", formatLocalDate(start));
+    setFieldValue("checkOut", formatLocalDate(end));
   };
 
   // Handle location change

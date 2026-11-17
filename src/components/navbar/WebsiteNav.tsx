@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import LinkButton from "../buttons/LinkButton";
+import { useWebContext } from "@/context-api/WebContext";
 import MenuButton from "./MenuButton";
 import NavMenu from "./NavMenu";
 
 const WebsiteNav = () => {
+  const { openFormPopUp } = useWebContext();
   // const pathname = usePathname();
 
   // const paths = ["/", "/rooms/"];
@@ -80,11 +81,9 @@ const WebsiteNav = () => {
             />
           </div>
 
-          <LinkButton
-            href="https://letsbook.me/booking/arohapalmsmandrem"
-            label="Check availability"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => openFormPopUp()}
             className={`
             w-fit rounded-lg
             max-md:hidden
@@ -95,7 +94,9 @@ const WebsiteNav = () => {
                 : " text-primary border border-primary"
             }
             `}
-          />
+          >
+            Check availability
+          </button>
         </nav>
 
         <NavMenu />

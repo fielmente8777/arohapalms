@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
-  markEnquiryFired,
+  consumeEnquiryConversion,
   readStoredEnquiry,
   StoredEnquiry,
   whatsappUrl,
@@ -24,15 +24,10 @@ export default function ThankYouClient() {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- sessionStorage is only readable after mount
     setEnquiry(e);
     // One conversion per saved enquiry: never on a plain visit or a reload (client doc T5)
-    if (e && e.saved && !e.fired && Date.now() - e.ts < 30 * 60 * 1000) {
+    const conversion = consumeEnquiryConversion();
+    if (conversion) {
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "enquiry_saved",
-        lead_id: e.leadId,
-        event_id: e.leadId, // same ID for Meta pixel + Conversions API de-duplication
-        villa: e.villa || "",
-      });
-      markEnquiryFired(e);
+      window.dataLayer.push(conversion);
     }
   }, []);
 
@@ -42,13 +37,19 @@ export default function ThankYouClient() {
 
   return (
     <div className="flex flex-col items-center gap-4">
+      <h1 className="font-bold font-primary text-2xl md:text-5xl text-primary text-center">
+        {enquiry ? "Thank you for your enquiry!" : "Contact Aroha Palms"}
+      </h1>
+      <p className="text-secondary text-center">
+        {enquiry ? "Your enquiry has been saved. We will get back to you shortly." : "Speak with our team about availability and your stay."}
+      </p>
       <a
         href={whatsappUrl(text)}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3 text-white font-medium shadow hover:bg-green-700"
       >
-        Continue on WhatsApp
+        {enquiry ? "Continue on WhatsApp" : "Enquire on WhatsApp"}
       </a>
       {enquiry?.leadId && (
         <p className="text-sm text-secondary">Your enquiry reference: {enquiry.leadId}</p>

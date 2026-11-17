@@ -17,10 +17,6 @@ export default function ThankYou() {
           <div className="max-w-sm w-full relative aspect-4/2 bg-background-dark rounded-md">
             <Image src="/logo.png" alt="Aroha Palms" fill className="object-contain p-2" />
           </div>
-          <p className="">THANK YOU FOR YOUR ENQUIRY</p>
-          <h1 className="font-bold font-primary text-2xl md:text-5xl text-primary text-center">
-            We will get back to you shortly!
-          </h1>
           <ThankYouClient />
         </div>
       </SectionWithContainer>

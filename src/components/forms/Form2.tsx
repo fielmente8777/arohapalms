@@ -1,5 +1,6 @@
 "use client";
 import useForm from "@/hooks/useForm";
+import { formatLocalDate } from "@/utils/date";
 import { countries } from "@/utils/constent";
 import { CallIcon, MailIcon, UserIcon } from "@/utils/formIcons";
 import { useMemo, useState, useRef, useEffect } from "react";
@@ -169,31 +170,23 @@ const Form2: React.FC<Form2Props> = ({
     if (singleDate) {
       // Single date mode - dates is a Date or null
       const date = dates as Date | null;
-      if (date) {
-        setFieldValue("checkIn", date.toISOString().split("T")[0]);
-      } else {
-        setFieldValue("checkIn", "");
-      }
+      setFieldValue("checkIn", formatLocalDate(date));
     } else {
       // Range mode - dates is a tuple [Date | null, Date | null]
       const [start, end] = dates as [Date | null, Date | null];
-      if (start) {
-        setFieldValue("checkIn", start.toISOString().split("T")[0]);
-      }
-      if (end) {
-        setFieldValue("checkOut", end.toISOString().split("T")[0]);
-      }
+      setFieldValue("checkIn", formatLocalDate(start));
+      setFieldValue("checkOut", formatLocalDate(end));
     }
   };
 
   // Helper to get DatePicker value
   const getDatePickerValue = useMemo(() => {
     if (singleDate) {
-      return formData.checkIn ? new Date(formData.checkIn) : null;
+      return formData.checkIn ? new Date(`${formData.checkIn}T00:00:00`) : null;
     }
     return {
-      startDate: formData.checkIn ? new Date(formData.checkIn) : null,
-      endDate: formData.checkOut ? new Date(formData.checkOut) : null,
+      startDate: formData.checkIn ? new Date(`${formData.checkIn}T00:00:00`) : null,
+      endDate: formData.checkOut ? new Date(`${formData.checkOut}T00:00:00`) : null,
     };
   }, [singleDate, formData.checkIn, formData.checkOut]);
 
