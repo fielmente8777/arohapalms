@@ -218,32 +218,6 @@ export const villaPhotos: Record<string, string[]> = {
     drive("1oidAiIkidFjJI13UWrXrv51FtdmYE54o"),
     drive("1XvFdSnVRk797R__hX_x0loVoIShpkD55")
   ],
-  "villa-prana": [
-    drive("1qXkOdwMe5PGbkzdm3SWcrQzpha7OdOBX"),
-    drive("1mkBUO78neEv2krXvivp5Ft9Ddl2rdk8a"),
-    drive("1X-FcIdYMVjfQOj6hvq-un9uClEy7mWhp"),
-    drive("1ijnLsA-KFYXZm5wdgrfbhJCpWCKtzZeg"),
-    drive("11OokbireF8rf6TR28nQHFmPT_OFVnGnw"),
-    drive("1xODMzoOulA0jD9KeSfdJVRpTxyJQky_v"),
-    drive("1tyC5gG4X9I2ArvlEzCtpDhHPz4N0YqDP"),
-    drive("1kcVNhvnG_FCnFM0FcmvTU7l3_Hory0ud"),
-    drive("1Uj8O-3F7P8oteHi2jV3vV28hCtOmVhHt"),
-    drive("19JoTD9cR-Nen_Dze0-GUS6qjmhFZFn98"),
-    drive("1l5oyq8BnovYPinx4RBGTVJJ9tCIF6CNr"),
-    drive("19A62yfUunh7ac7efp8DOFQSOj0BEkEF9"),
-    drive("10Lm_vL5plgRQpO-t1Zn9cIkb3dYAb6DL"),
-    drive("1VWpHNvYBpPgIOuDPUF9ihS1tw2GfgNK3"),
-    drive("1jd-2qkmjShxqDmmKVJrBeBR05dRILLfG"),
-    drive("1dApqiTAYNRxddYebV5zR0127ruBBa2Hd"),
-    drive("1JP1BISYLsftMRw3_nxRLY940NWlhmYEI"),
-    drive("1BvR70J1PUA2iBpXRo1ExoBaeA423p62H"),
-    drive("1IwWO7RJPkuANmQ7Yc9l2t7-MZySIYajB"),
-    drive("1715y6PjaQKn0Dco87qBAQPTTJszKy3-O"),
-    drive("1iSv-RwgSAW-aJDvR9FHUC0g0cgjWnrtj"),
-    drive("1sSKV-F86MKGh3QfutCz0xU8pWmzWmKZp"),
-    drive("1E1MwZFOhCbl6OMPFnDos2du4TmiZk3fJ"),
-    drive("1wZ7DfxK8X1IrnSaZFBAbVhbQd3YFt2zL")
-  ],
   "villa-encanto": [
     drive("1mkBUO78neEv2krXvivp5Ft9Ddl2rdk8a"),
     drive("1xvnNH3w2fhULwRx0hyo_PT7HpQW6wbNd"),
@@ -371,10 +345,6 @@ export const villaMeta: Record<string, { title: string; description: string }> =
   "villa-caia": {
     "title": "Villa Caia – 7 BHK Villa + Apartment Estate in Mandrem, North Goa | Aroha Palms",
     "description": "Villa Caia at Aroha Palms, Mandrem: a 5-bedroom villa plus a private 2-bedroom apartment, 7 bedrooms in total, sleeps 14, 3–5 minutes from Mandrem Beach. Rates on request."
-  },
-  "villa-prana": {
-    "title": "Villa Prana – 9 BHK Private Estate for Groups in Mandrem, North Goa | Aroha Palms",
-    "description": "Villa Prana at Aroha Palms, Mandrem: two connected villas (5-BR + 4-BR), 9 bedrooms, sleeps 18, for wellness retreats and group getaways. From ₹49,000/night + taxes."
   },
   "villa-encanto": {
     "title": "Villa Encanto – 10 BHK Celebration Estate in Mandrem, North Goa | Aroha Palms",

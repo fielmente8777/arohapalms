@@ -113,8 +113,8 @@ export const guestArrivalData = {
         </>,
         <>
           Every villa includes a fully equipped kitchen. Caretakers can prepare
-          tea and coffee. A private chef can also be arranged on request for an
-          additional charge. Please inform the manager in advance.
+          tea and coffee. There is no in-house chef, but a cook can be arranged
+          at a charge. Please inform the manager in advance.
         </>,
         <>
           Several restaurants and cafés are located nearby, and a list of
@@ -134,10 +134,11 @@ export const guestArrivalData = {
       title: "Need Assistance?",
       content: (
         <>
-          Please contact our manager <strong>Mr. Kismat</strong> for any
-          assistance.
+          Please call or WhatsApp us for any assistance.
           <br />
-          <strong>+91 88301 242549</strong>
+          <strong>
+            <a href="tel:+919834220573">+91 98342 20573</a> (call or WhatsApp)
+          </strong>
         </>
       ),
     },

@@ -12,6 +12,7 @@ const gfsNeohellenic = GFS_Neohellenic({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://arohapalms.com/articles/" },
   title: "The Aroha Edit | Blogs - Aroha Palms",
   description:
     "Explore stories, guides, and updates from Aroha Palms luxury villas and apartments in North Goa.",

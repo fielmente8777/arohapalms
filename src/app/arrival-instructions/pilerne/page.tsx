@@ -9,7 +9,8 @@ import Footer from "@/components/footer/WebsiteFooter";
 import { WebfooterData } from "@/components/footer/footerdata";
 
 export const metadata: Metadata = {
-  title: "Guest Arrival Instructions | Aroha Palms",
+  alternates: { canonical: "https://arohapalms.com/arrival-instructions/pilerne/" },
+  title: "Guest Arrival Instructions - Pilerne | Aroha Palms",
   description:
     "Read the guest arrival instructions and check-in information for Aroha Palms Pilerne.",
 };

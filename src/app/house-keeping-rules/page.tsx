@@ -7,6 +7,7 @@ import Footer from "@/components/footer/WebsiteFooter";
 import { WebfooterData } from "@/components/footer/footerdata";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://arohapalms.com/house-keeping-rules/" },
   title: "House Keeping Rules | Aroha Palms",
   description:
     "Read the housekeeping rules and guest guidelines for your stay at Aroha Palms.",

@@ -9,11 +9,11 @@ export const faqData = {
           question: "What is the total capacity of Aroha Palms?",
           answer: `Aroha Palms consists of 18 luxury rooms in total, divided into:
 
-• 3 Luxury Villas: Villa Serenity (5 BR), Villa Paradisio (5 BR), and Villa Magnifica (4 BR).
+• 3 Luxury Villas: Villa Serenity (5 BR), Villa Paradiso (5 BR), and Villa Magnifica (4 BR).
 
-• 4 Luxury Apartments: Suite de Emerald.
+• 4 Luxury Apartments: Suite de Emerald and Suite de Regal (1 BHK), and Suite de Prestige and Suite de Platinum (studios). Suite de Onyx and Suite de Lumina are 2 BHK combinations of these.
 
-The entire estate can be booked exclusively for large groups of 36–45 guests, depending on availability. Please contact us as early as possible for buyout inquiries.`,
+The entire estate can be booked exclusively for large groups of up to 36 guests, depending on availability. Please contact us as early as possible for buyout inquiries.`,
         },
 
         {
@@ -40,7 +40,7 @@ The entire estate can be booked exclusively for large groups of 36–45 guests, 
         {
           question: "Is the swimming pool private?",
           answer: `• Villas: Each villa has a 10-meter private swimming pool that is not shared with any other guests while the villa is occupied.
-            • Apartments: Apartment guests have "Conditional Access." You may use a villa pool only when that specific villa is vacant. If all villas are occupied, the pools remain private to the villa guests.
+            • Apartments: The apartments have no pool access.
             • Note: Our pools are not heated, but the Goa climate ensures pleasant water temperatures year-round.`,
         },
         {
@@ -55,7 +55,7 @@ The entire estate can be booked exclusively for large groups of 36–45 guests, 
       faqs: [
         {
           question: "Which airport is closer to Aroha Palms?",
-          answer: `• Mopa (Manohar International Airport - GOX): The preferred choice, located only 28 km (35 - 45 mins) away.
+          answer: `• Mopa (Manohar International Airport - GOX): The preferred choice, located 28 km from Mandrem (35 to 45 minutes depending on traffic) and 27.8 km from Pilerne (about 37 minutes).
 • Dabolim (GOI): Located 56 km (1.5–2 hours) away depending on traffic.`,
         },
         {
@@ -82,14 +82,13 @@ The entire estate can be booked exclusively for large groups of 36–45 guests, 
       faqs: [
         {
           question: "Is there on-site management?",
-          answer: `Yes. Aroha Palms provides 24/7 on-site management and a resident caretaker to ensure a secure and seamless stay`,
+          answer: `Yes. Caretakers live on site, on hand 9 AM to 9 PM and on call at night. Every property also has 24/7 security.`,
         },
         {
           question: "What are the dining and breakfast options?",
           answer: `Stays are typically room-only, but we offer maximum flexibility:
 • Self-Cooking: Each unit has a full-fledged kitchen.
-• Private Chef: We can arrange a professional chef for private meals (breakfast, lunch, or dinner). Charges are per meal or per day (plus groceries). Please provide 24-48 hours' notice.
-• Next Door: An excellent restaurant right next door provides direct service to our villas and apartments.
+• Cook on Request: There is no in-house chef, but a cook can be arranged at a charge for breakfast, lunch or dinner (plus groceries). Please give 24 to 48 hours' notice.
 • Delivery: Swiggy and other food apps operate in the area.
 • Grocery Stocking: Our caretaker can assist you with grocery shopping before or during your stay.`,
         },

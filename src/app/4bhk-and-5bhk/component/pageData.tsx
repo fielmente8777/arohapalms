@@ -161,7 +161,7 @@ export const landingPageData = {
             {
               title: "CURATED ADD-ON SERVICES",
               list: [
-                "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+                "<b>Cook on Request:</b> A cook can be arranged at a charge (there is no in-house chef); please book ahead.",
                 "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
                 "<b>Coastal & Watersports Itineraries:</b> Custom activity planning including watersports packages, yacht charters, and local excursions.",
                 "<b>Flexible Accommodation Options:</b> Configurable villa requirements arranged with our reservation specialists to fit your exact group size.",
@@ -171,9 +171,9 @@ export const landingPageData = {
             {
               title: "Essential Stay Information:",
               list: [
-                " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-                " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+                "Rates are per night for the whole villa, plus taxes.",
+                " <b>Caretakers Living On Site:</b> On hand 9 AM to 9 PM for guest support and housekeeping, and on call at night.",
+                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for self-cooking. A cook can be arranged at a charge (no in-house chef).",
                 " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
               ],
             },
@@ -265,7 +265,7 @@ export const landingPageData = {
             {
               title: "CURATED ADD-ON SERVICES",
               list: [
-                "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+                "<b>Cook on Request:</b> A cook can be arranged at a charge (there is no in-house chef); please book ahead.",
                 "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
                 "<b>Coastal & Watersports Itineraries:</b> Custom activity planning including watersports packages, yacht charters, and local excursions.",
                 "<b>Flexible Accommodation Options:</b> Configurable villa requirements arranged with our reservation specialists to fit your exact group size.",
@@ -275,17 +275,17 @@ export const landingPageData = {
             {
               title: "Essential Stay Information:",
               list: [
-                " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-                " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+                "Rates are per night for the whole villa, plus taxes.",
+                " <b>Caretakers Living On Site:</b> On hand 9 AM to 9 PM for guest support and housekeeping, and on call at night.",
+                " <b>Cooking facilities:</b> Villa kitchens are fully equipped for self-cooking. A cook can be arranged at a charge (no in-house chef).",
                 " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
               ],
             },
           ],
           review: {
-            author: "Rushikesh Nimbhorkar",
+            author: "Sonu Rawat",
             description:
-              "Had a great experience with Aroha Palms with the pool parties and much needed escape from the daily chaos. Place was very spacious and awesome for people looking for modern and aesthetically pleasing things. Awesome help from Rahul and Renu with managing all the maintenance of the place and was much needed help, greatly appreciate their efforts.",
+              "Aroha Palms Paradiso combines luxury, privacy, and location perfectly. The villa is close to Mandrem and Ashwem beaches while still feeling calm and exclusive. Loved evenings at Lazy Dog and the nearby cafes. One of the finest luxury villas in Goa",
           },
         },
         location: "Mandrem",
@@ -363,7 +363,7 @@ export const landingPageData = {
       //       {
       //         title: "CURATED ADD-ON SERVICES",
       //         list: [
-      //           "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+      //           "<b>Cook on Request:</b> A cook can be arranged at a charge (there is no in-house chef); please book ahead.",
       //           "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
       //           "<b>Coastal & Watersports Itineraries:</b> Custom group activity planning including watersports packages, yacht charters, and local excursions.",
       //           "<b>Flexible Accommodation Options:</b> Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
@@ -373,9 +373,9 @@ export const landingPageData = {
       //       {
       //         title: "Essential Stay Information:",
       //         list: [
-      //           " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-      //           " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-      //           " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+      //           "Rates are per night for the whole villa, plus taxes.",
+      //           " <b>Caretakers Living On Site:</b> On hand 9 AM to 9 PM for guest support and housekeeping, and on call at night.",
+      //           " <b>Cooking facilities:</b> Villa kitchens are fully equipped for self-cooking. A cook can be arranged at a charge (no in-house chef).",
       //           " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
       //         ],
       //       },
@@ -462,7 +462,7 @@ export const landingPageData = {
       //       {
       //         title: "CURATED ADD-ON SERVICES",
       //         list: [
-      //           "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+      //           "<b>Cook on Request:</b> A cook can be arranged at a charge (there is no in-house chef); please book ahead.",
       //           "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
       //           "<b>Coastal & Watersports Itineraries:</b> Custom group activity planning including watersports packages, yacht charters, and local excursions.",
       //           "<b>Flexible Accommodation Options:</b> Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
@@ -472,9 +472,9 @@ export const landingPageData = {
       //       {
       //         title: "Essential Stay Information:",
       //         list: [
-      //           " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-      //           " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-      //           " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+      //           "Rates are per night for the whole villa, plus taxes.",
+      //           " <b>Caretakers Living On Site:</b> On hand 9 AM to 9 PM for guest support and housekeeping, and on call at night.",
+      //           " <b>Cooking facilities:</b> Villa kitchens are fully equipped for self-cooking. A cook can be arranged at a charge (no in-house chef).",
       //           " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
       //         ],
       //       },
@@ -566,7 +566,7 @@ export const landingPageData = {
       //       {
       //         title: "CURATED ADD-ON SERVICES",
       //         list: [
-      //           "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+      //           "<b>Cook on Request:</b> A cook can be arranged at a charge (there is no in-house chef); please book ahead.",
       //           "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
       //           "<b>Coastal & Watersports Itineraries:</b> Custom group activity planning including watersports packages, yacht charters, and local excursions.",
       //           "<b>Flexible Accommodation Options:</b> Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
@@ -576,9 +576,9 @@ export const landingPageData = {
       //       {
       //         title: "Essential Stay Information:",
       //         list: [
-      //           " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-      //           " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-      //           " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+      //           "Rates are per night for the whole villa, plus taxes.",
+      //           " <b>Caretakers Living On Site:</b> On hand 9 AM to 9 PM for guest support and housekeeping, and on call at night.",
+      //           " <b>Cooking facilities:</b> Villa kitchens are fully equipped for self-cooking. A cook can be arranged at a charge (no in-house chef).",
       //           " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
       //         ],
       //       },
@@ -669,7 +669,7 @@ export const landingPageData = {
       //       {
       //         title: "CURATED ADD-ON SERVICES",
       //         list: [
-      //           "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+      //           "<b>Cook on Request:</b> A cook can be arranged at a charge (there is no in-house chef); please book ahead.",
       //           "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
       //           "<b>Coastal & Watersports Itineraries:</b> Custom group activity planning including watersports packages, yacht charters, and local excursions.",
       //           "<b>Flexible Accommodation Options:</b> Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
@@ -679,9 +679,9 @@ export const landingPageData = {
       //       {
       //         title: "Essential Stay Information:",
       //         list: [
-      //           " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-      //           " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-      //           " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+      //           "Rates are per night for the whole villa, plus taxes.",
+      //           " <b>Caretakers Living On Site:</b> On hand 9 AM to 9 PM for guest support and housekeeping, and on call at night.",
+      //           " <b>Cooking facilities:</b> Villa kitchens are fully equipped for self-cooking. A cook can be arranged at a charge (no in-house chef).",
       //           " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
       //         ],
       //       },
@@ -767,7 +767,7 @@ export const landingPageData = {
       //       {
       //         title: "CURATED ADD-ON SERVICES",
       //         list: [
-      //           "<b>Chef-on-Call Service:</b> Enjoy freshly cooked gourmet meals served right in your villa—from poolside breakfast spreads to multi-course custom dinners (prior booking required).",
+      //           "<b>Cook on Request:</b> A cook can be arranged at a charge (there is no in-house chef); please book ahead.",
       //           "<b>Private Airport Transfers:</b> Chauffeur-driven pickups and drop-offs curated directly for Mopa (GOX) and Dabolim (GOI) airports (prior booking required).",
       //           "<b>Coastal & Watersports Itineraries:</b> Custom group activity planning including watersports packages, yacht charters, and local excursions.",
       //           "<b>Flexible Accommodation Options:</b> Configurable suite and villa combinations arranged with our reservation specialists to fit your exact group size.",
@@ -777,9 +777,9 @@ export const landingPageData = {
       //       {
       //         title: "Essential Stay Information:",
       //         list: [
-      //           " All rates are quoted on a full compound buyout, per-night basis for up to 36 guests.",
-      //           " <b>Dedicated On-Site Caretakers:</b> On-premises caretaker assistance available daily from 9:00 AM to 9:00 PM for guest support and housekeeping.",
-      //           " <b>Cooking facilities:</b> Villa kitchens are fully equipped for guest self-cooking, and the restaurant next door can also deliver meals.",
+      //           "Rates are per night for the whole villa, plus taxes.",
+      //           " <b>Caretakers Living On Site:</b> On hand 9 AM to 9 PM for guest support and housekeeping, and on call at night.",
+      //           " <b>Cooking facilities:</b> Villa kitchens are fully equipped for self-cooking. A cook can be arranged at a charge (no in-house chef).",
       //           " <b>24/7 Estate Security:</b> Complete peace of mind with round-the-clock security personnel and CCTV surveillance.",
       //         ],
       //       },
@@ -1035,9 +1035,9 @@ export const landingPageData = {
       },
       {
         icon: <ConciergeIcon />,
-        title: "Concierge",
+        title: "Caretakers On Site",
         description:
-          "24/7 dedicated concierge for bookings, transfers, chef service and events.",
+          "Caretakers living on site, on hand 9 AM to 9 PM, on call at night.",
       },
       {
         icon: <FreeWifiIcon />,
@@ -1053,9 +1053,9 @@ export const landingPageData = {
       },
       {
         icon: <EcoLuxuryIcon />,
-        title: "Eco Luxury",
+        title: "Full Kitchens",
         description:
-          "Sustainable materials, natural landscaping and eco-conscious design.",
+          "Fully equipped kitchens in every villa. A cook can be arranged at a charge.",
       },
     ],
     buttons: [
@@ -1089,18 +1089,6 @@ export const landingPageData = {
         image: "/landing-page/beach.png",
         // description:
         //   "Sunlit beaches, water sports and coastal trails just a short drive away.",
-      },
-      {
-        title: "Heritage & Culture",
-        image: "/landing-page/culture.png",
-        // description:
-        //   "Explore churches, forts and local markets where Goa's history comes alive.",
-      },
-      {
-        title: "Casino & Nightlife",
-        image: "/landing-page/casino.png",
-        // description:
-        //   "Cruise casinos, live music and Goa's iconic beach clubs after dark.",
       },
       {
         title: "Yoga & Wellbeing",
@@ -1177,7 +1165,7 @@ export const landingPageData = {
     items: [
       {
         q: "How much does a stay at Aroha Palms cost?",
-        a: "Rates vary by season, villa type, and duration. Share your dates via the enquiry form and our concierge will send you a personalised quote within a few hours.",
+        a: "Rates vary by season, villa type, and duration. Share your dates via the enquiry form and our team will send you a personalised quote within a few hours.",
       },
       {
         q: "What are the check-in and check-out timings?",
@@ -1185,7 +1173,7 @@ export const landingPageData = {
       },
       {
         q: "Can I book a villa for weddings or corporate offsites?",
-        a: "Yes. Villas like Marisol (36 guests) and Encanto (20 guests) are ideal for weddings, birthday celebrations and corporate offsites. Our team helps with décor, catering and event planning.",
+        a: "Yes. Villa Marisol (the full Mandrem estate) and Villa Encanto are ideal for weddings, birthday celebrations and corporate offsites. Share your group size and we will suggest the right stay.",
       },
       {
         q: "Are the villas pet-friendly?",
@@ -1193,19 +1181,19 @@ export const landingPageData = {
       },
       {
         q: "Do all properties have private pools?",
-        a: "Pool access for apartment and suite guests is only available when booked together with a villa.",
+        a: "Every villa has its own private pool. The apartments have no pool access.",
       },
       {
         q: "Is the location safe?",
-        a: "All properties feature 24/7 on-site security, CCTV surveillance, and a dedicated concierge available round the clock.",
+        a: "Yes. Every property has 24/7 security and CCTV in common areas, and caretakers live on site, on hand 9 AM to 9 PM and on call at night.",
       },
     ],
     concierge: {
-      tagline: "CONCIERGE",
+      tagline: "ENQUIRE",
       title: "Get a callback in minutes.",
       description:
         "Share your plan, dates, group size and occasion. We'll match you with the perfect villa.",
-      note: "By submitting, you agree to be contacted by our concierge on WhatsApp or phone.",
+      note: "By submitting, you agree to be contacted by our team on WhatsApp or phone.",
     },
   },
 };

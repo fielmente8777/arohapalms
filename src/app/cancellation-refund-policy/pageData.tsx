@@ -1,6 +1,6 @@
 export const cancellationRefundPolicyData = {
   title: "Cancellation & Refund Policy",
-  lastUpdated: "Applies to all bookings made directly with Aroha Palms.",
+  lastUpdated: "17 November 2026. Applies to all bookings made directly with Aroha Palms.",
   description:
     "Plans change. This policy sets out exactly where you stand if they do, and gives you the choice of a future stay instead of a refund whenever that suits you better. One policy applies to every villa, apartment and estate booking; only peak dates are treated differently.",
 
@@ -140,7 +140,7 @@ export const cancellationRefundPolicyData = {
       content: (
         <ul className="list-disc pl-5 sm:pl-6 md:pl-8 space-y-2.5">
           <li>
-            <strong>Add-on services</strong> (private chef, airport transfers, bonfire, watersports) are fully refundable if cancelled 48 hours or more before they are due. Ingredients already purchased are billed at cost.
+            <strong>Add-on services</strong> (cook arranged at a charge, airport transfers, bonfire, watersports) are fully refundable if cancelled 48 hours or more before they are due. Ingredients already purchased are billed at cost.
           </li>
           <li>
             <strong>Security deposit</strong> is always refunded in full when a booking is cancelled.

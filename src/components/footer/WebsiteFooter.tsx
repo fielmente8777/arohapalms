@@ -170,11 +170,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import LinkButton from "@/components/buttons/LinkButton";
 
 interface WebFooterProps {
   logo: string;
   cin?: string;
   gstin?: string;
+  registrations?: string[];
 
   bookNow: {
     text: string;
@@ -217,6 +219,7 @@ const Footer = ({
   logo,
   cin,
   gstin,
+  registrations,
   bookNow,
   links,
   quickLinks,
@@ -246,6 +249,9 @@ const Footer = ({
               <div className="mt-6 space-y-3 text-base text-slate-200 text-center">
                 {cin && <p>CIN: {cin}</p>}
                 {gstin && <p>GSTIN: {gstin}</p>}
+                {registrations?.map((r) => (
+                  <p key={r} className="text-sm text-slate-300">{r}</p>
+                ))}
               </div>
             )}
           </div>
@@ -296,12 +302,20 @@ const Footer = ({
           </div>
 
           <div className="flex lg:justify-end">
-            <Link
-              href={bookNow.href}
-              className="inline-block bg-white text-navy font-medium text-[13px]  md:text-base uppercase px-8 py-3.5 hover:bg-navy hover:text-white border border-white transition-colors"
-            >
-              {bookNow.text}
-            </Link>
+            {bookNow.href === "#form" ? (
+              <LinkButton
+                href="#form"
+                label={bookNow.text}
+                className="!shadow-none bg-white text-navy font-medium text-[13px] md:text-base uppercase px-8 py-3.5 hover:bg-navy hover:text-white border border-white"
+              />
+            ) : (
+              <Link
+                href={bookNow.href}
+                className="inline-block bg-white text-navy font-medium text-[13px]  md:text-base uppercase px-8 py-3.5 hover:bg-navy hover:text-white border border-white transition-colors"
+              >
+                {bookNow.text}
+              </Link>
+            )}
           </div>
         </div>
 

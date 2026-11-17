@@ -72,11 +72,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       robots: {
         index: true,
         follow: true,
-        nocache: true,
         googleBot: {
           index: true,
           follow: true,
-          nocache: true,
         },
       },
     };

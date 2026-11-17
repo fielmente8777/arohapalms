@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Aroha Palms, North Goa",
+  description: "Call or WhatsApp +91 98342 20573 to plan your stay at Aroha Palms in Mandrem or Pilerne, North Goa.",
+  alternates: { canonical: "https://arohapalms.com/contact-us/" },
+  openGraph: { title: "Contact Us | Aroha Palms, North Goa", description: "Call or WhatsApp +91 98342 20573 to plan your stay at Aroha Palms in Mandrem or Pilerne, North Goa.", url: "https://arohapalms.com/contact-us/" },
+};
+
 import ContactHero from "./components/ContactHero";
 import ContactGrid from "./components/ContactGrid";
 

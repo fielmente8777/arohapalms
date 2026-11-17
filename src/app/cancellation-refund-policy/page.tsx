@@ -7,6 +7,7 @@ import Footer from "@/components/footer/WebsiteFooter";
 import { WebfooterData } from "@/components/footer/footerdata";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://arohapalms.com/cancellation-refund-policy/" },
   title: "Cancellation & Refund Policy | Aroha Palms",
   description:
     "Read the cancellation and refund policy for bookings at Aroha Palms.",

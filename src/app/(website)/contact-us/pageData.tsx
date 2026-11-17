@@ -139,7 +139,7 @@ Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, V
 
     footer: {
       text: "Owned & Operated by AKAHATA HOSPITALITY PRIVATE LIMITED",
-      gst: "CIN: U55101GA2022PTC015434  GSTIN: 30AAXCA2498B1ZV",
+      gst: "CIN: U55101GA2022PTC015434  GSTIN: 30AAXCA4249B1ZV",
     },
   },
   contactSection: {
@@ -188,8 +188,8 @@ Registered Address: House No.211/1-A 7, B-704, Block B, Sancoale, Zuari Nagar, V
     address:
       "House No 211/A-7, B-704, Block B, Sancoale, Zuari Nagar, Vasco Da Gama, South Goa,",
 
-    cin: "U55100GA2022PTC015434",
+    cin: "U55101GA2022PTC015434",
 
-    gst: "30AAXCA2498B1ZV",
+    gst: "30AAXCA4249B1ZV",
   },
 };

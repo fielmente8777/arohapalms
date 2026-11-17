@@ -34,7 +34,7 @@ export const OurStoryData = {
       "At Aroha Palms, we craft unforgettable stays in Goa where refined living, intuitive service, and thoughtfully curated moments come together to create experiences that linger long after you leave.",
 
     description: [
-      "Refined luxury, elevated hospitality, and 24/7 personalized service ensuring a seamless, comfortable, and indulgent stay.",
+      "Refined luxury and warm hospitality, with caretakers living on site, on hand 9 AM to 9 PM and on call at night, for a seamless, comfortable stay.",
 
       "The core of Aroha Palm's philosophy is simply luxury whilst blending elegance with comfort rather than opulence. Our accommodation are set in a luxurious tone, and designed to complement the Goan setting.",
     ],

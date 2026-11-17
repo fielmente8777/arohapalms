@@ -26,9 +26,13 @@ export const WebfooterData = {
   gstin: "30AAXCA4249B1ZV",
 
   bookNow: {
-    text: "Find A Villa",
-    href: "/booking",
+    text: "Check availability",
+    href: "#form",
   },
+  registrations: [
+    "Goa Tourism reg.: Mandrem HOTN005937",
+    "Villa Grande HOTN004184 · Villa Majestic HOTN004179",
+  ],
 
   links: {
     title: "Links",
@@ -108,15 +112,15 @@ export const WebfooterData = {
     items: [
       {
         label: "Facebook",
-        href: "https://facebook.com",
+        href: "https://www.facebook.com/profile.php?id=61577418721550",
       },
       {
         label: "Instagram",
-        href: "https://instagram.com",
+        href: "https://www.instagram.com/aroha_palms/",
       },
       {
         label: "LinkedIn",
-        href: "https://linkedin.com",
+        href: "https://www.linkedin.com/company/aroha-palms/",
       },
     ],
   },
@@ -216,8 +220,8 @@ export const pilerneFooterData: FooterData = {
           href: contact.WhatsappCta,
         },
         {
-          label: "Call: 022-41642345",
-          href: "+919834220573",
+          label: "Call: +91 98342 20573",
+          href: contact.callCta,
         },
 
         {
@@ -273,8 +277,8 @@ export const WebData: FooterData = {
           href: contact.WhatsappCta,
         },
         {
-          label: "Call: 022-41642345",
-          href: "+919834220573",
+          label: "Call: +91 98342 20573",
+          href: contact.callCta,
         },
         {
           label: contact.email,

@@ -8,6 +8,7 @@ import Footer from "@/components/footer/WebsiteFooter";
 import { WebfooterData } from "@/components/footer/footerdata";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://arohapalms.com/privacy-policy/" },
   title: "Privacy Policy | Aroha Palms",
   description:
     "Read the Privacy Policy for Aroha Palms Luxury Villas.",

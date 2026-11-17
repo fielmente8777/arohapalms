@@ -45,7 +45,7 @@ export const experiencePageData = {
         image: "/images/casino.jpg",
         title: "Casino & Nightlife",
         description:
-          "Cruise casinos, live music, nightlife, fine dining and entertainment experiences across Goa.",
+          "Panjim's cruise casinos, live music and nightlife: an easy evening trip from our Pilerne villas.",
       },
     ],
 

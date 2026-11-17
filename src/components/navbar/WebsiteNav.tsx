@@ -82,7 +82,7 @@ const WebsiteNav = () => {
 
           <LinkButton
             href="https://letsbook.me/booking/arohapalmsmandrem"
-            label="Book Stay"
+            label="Check availability"
             target="_blank"
             rel="noopener noreferrer"
             className={`

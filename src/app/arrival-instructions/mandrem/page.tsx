@@ -8,6 +8,7 @@ import GuestArrival from "./components/GuestArrival";
 import { guestArrivalData } from "./pageData";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://arohapalms.com/arrival-instructions/mandrem/" },
   title: "Guest Arrival Instructions - Mandrem | Aroha Palms",
   description:
     "Guest arrival instructions for Aroha Palms, Mandrem. Find directions, transportation details, check-in process, and useful information before your stay.",

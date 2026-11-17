@@ -39,23 +39,32 @@ export async function generateMetadata({
       title: data.metaData.title,
       description: data.metaData.description,
       alternates: {
-        canonical: `https://arohapalms.com/${data.slug}`,
+        canonical: `https://arohapalms.com/${data.slug}/`,
         languages: {
-          "en-US": `https://arohapalms.com/${data.slug}`,
+          "en-US": `https://arohapalms.com/${data.slug}/`,
         },
       },
       openGraph: {
         title: data.metaData.title,
         description: data.metaData.description,
+        url: `https://arohapalms.com/${data.slug}/`,
+        images: [
+          {
+            url:
+              heroPhotos[data.slug as keyof typeof heroPhotos]?.[0] ??
+              `https://arohapalms.com${data.hero.image}`,
+            width: 1200,
+            height: 630,
+            alt: data.metaData.title,
+          },
+        ],
       },
       robots: {
         index: true,
         follow: true,
-        nocache: true,
         googleBot: {
           index: true,
           follow: true,
-          nocache: true,
         },
       },
     };

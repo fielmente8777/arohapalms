@@ -16,11 +16,11 @@ export const contact = {
     "Next to Dulhadeva Temple, Khudar Bridge, Khajuraho, Madhya Pradesh, 471606. 7 min from Khajuraho Airport",
   addressLink: "",
   socialMedia: {
-    facebook: "https://www.facebook.com",
-    instagram: "https://www.instagram.com/",
+    facebook: "https://www.facebook.com/profile.php?id=61577418721550",
+    instagram: "https://www.instagram.com/aroha_palms/",
   },
   callCta: `tel:+919834220573`,
-  WhatsappCta: `https://wa.me/+919834220573?text=${enCodeText}`,
+  WhatsappCta: `https://wa.me/919834220573?text=${enCodeText}`,
   formDomain: "arohapalmsmandrem",
   // formDomain: "testmulti", //for testing
   formHid: "",

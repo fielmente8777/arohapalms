@@ -119,8 +119,8 @@ export const guestArrivalData = {
 
         <>
           Every villa has a fully equipped kitchen. Tea and coffee can be
-          prepared by the caretakers. A private chef can also be arranged on
-          request for an additional charge. Please inform the manager in
+          prepared by the caretakers. There is no in-house chef, but a cook can
+          be arranged at a charge. Please inform the manager in
           advance.
         </>,
 

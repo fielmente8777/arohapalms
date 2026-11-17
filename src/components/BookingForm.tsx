@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useWebContext } from "@/context-api/WebContext";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {
@@ -27,7 +28,6 @@ const villasByLocation = {
     { name: "Villa Paradiso", slug: "villa-paradiso", location: "arohapalmsmandrem" },
     { name: "Villa Serenity", slug: "villa-serenity", location: "arohapalmsmandrem" },
     { name: "Villa Caia", slug: "villa-caia", location: "arohapalmsmandrem" },
-    { name: "Villa Prana", slug: "villa-prana", location: "arohapalmsmandrem" },
     { name: "Villa Encanto", slug: "villa-encanto", location: "arohapalmsmandrem" },
     { name: "Villa Marisol", slug: "villa-marisol", location: "arohapalmsmandrem" },
     { name: "Suite De Onyx", slug: "suite-de-onyx", location: "arohapalmsmandrem" },
@@ -51,6 +51,7 @@ type VillaType = {
 };
 
 export default function BookingForm() {
+  const { openFormPopUp } = useWebContext();
   const [location, setLocation] = useState<(typeof locations)[number] | null>(
     null
   );
@@ -170,6 +171,24 @@ export default function BookingForm() {
         ? "arohapalmsmandrem"
         : villa?.location || "arohapalmsmandrem");
     const targetSlug = locSlug === "mandrem" ? "arohapalmsmandrem" : locSlug;
+
+    // Pilerne is not in LetsBook yet (client doc L4): open the enquiry form with the dates filled in
+    if (targetSlug === "pilerne") {
+      try {
+        sessionStorage.setItem(
+          "aroha_prefill",
+          JSON.stringify({
+            checkIn: formatDate(startDate),
+            checkOut: formatDate(endDate),
+            guests: String(adults + children),
+          }),
+        );
+      } catch {
+        /* storage blocked: the form still opens */
+      }
+      openFormPopUp(villa?.name && villa.slug !== "villa-grande-and-majestic" ? villa.name : villa ? "Villa Imperial" : "Villa Majestic");
+      return;
+    }
 
     if (startDate && endDate) {
       window.open(
@@ -329,7 +348,7 @@ export default function BookingForm() {
           onClick={handleSearch}
           className="h-14 px-7 bg-p2 text-white text-[13px] font-medium tracking-widest uppercase hover:bg-[#734937] transition-colors whitespace-nowrap"
         >
-          Find a Room
+          Check availability
         </button>
       </div>
     </div>

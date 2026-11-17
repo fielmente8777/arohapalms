@@ -70,7 +70,7 @@ export const houseKeepingRulesData = {
       icon: "🍽️",
       title: "Dining & Chef Services",
       rules: [
-        "<b> We do not provide in-house chef services <b/>, but a private chef can be arranged at an additional cost if requested in advance.",
+        "<b>We do not provide in-house chef services</b>, but a cook can be arranged at a charge if requested in advance.",
         "Our <b> housekeeping staff can prepare tea and coffee </b>, help warm meals, and clean up after meals.",
         "Guests can order food from <b> local restaurants or online delivery services </b> such as Swiggy and Zomato.",
       ],
@@ -98,7 +98,7 @@ export const houseKeepingRulesData = {
       title: "Maintenance & Reporting Issues",
       rules: [
         "<b> We follow a zero-defect policy.</b> If you notice any defects or issues, please inform the housekeeping staff, and we will try to rectify them as soon as possible.",
-        "<b>For any urgent maintenance issues</b>, please contact our maintenance manager, <b> Mr. S. Kismat, at +91 883-01242549.</b>",
+        "<b>For any urgent maintenance issues</b>, please call or WhatsApp <b>+91 98342 20573</b>.",
       ],
     },
   ],
@@ -107,6 +107,6 @@ export const houseKeepingRulesData = {
     "We appreciate your cooperation in following these guidelines to ensure a pleasant stay for you and future guests. <b> Thank you for choosing our guest house! </b>",
 
   contact: {
-    text: "For any assistance, please contact the villa manager <b> +91 883-01242549 </b> or housekeeping staff.",
+    text: "For any assistance, please call or WhatsApp <b>+91 98342 20573</b>, or speak to the caretakers on site.",
   },
 };

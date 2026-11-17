@@ -1,6 +1,7 @@
 // useForm.ts
 import { useCallback, useState } from "react";
 import axios from "axios";
+import { attributionLines, goToThankYou, rememberEnquiry } from "@/utils/enquiry";
 import { contact } from "@/utils/constent";
 
 // Types
@@ -393,7 +394,7 @@ export const useForm = <T extends BaseFormData = BaseFormData>({
               Contact: formData.countryCode + formData.phone,
               check_in: formData.checkIn,
               check_out: formData.checkOut,
-              Description: getDescription(),
+              Description: [getDescription(), attributionLines()].filter(Boolean).join("\n"),
               created_from: formData.createdFrom || createdFrom,
               source_url: window.location.href,
               hId: formHid || contact.formHid,
@@ -414,8 +415,17 @@ export const useForm = <T extends BaseFormData = BaseFormData>({
             onSubmitSuccess();
           }
 
-          setTimeout(() => setSubmitSuccess(false), 3000);
-          window.open("/thank-you/", "_blank");
+          rememberEnquiry(true, {
+            name: formData.name,
+            phone: formData.countryCode + formData.phone,
+            villa: formData.villa,
+            checkIn: formData.checkIn,
+            checkOut: formData.checkOut,
+            guests: formData.guests,
+            message: formData.message,
+            form: "site-form",
+          });
+          goToThankYou();
         } else {
           alert(data.message || "Something went wrong. Please try again.");
         }

@@ -157,7 +157,6 @@ const Form2: React.FC<Form2Props> = ({
       if (setOpen) {
         setOpen(false);
       }
-      window.open("/thank-you", "_blank");
     },
   });
 

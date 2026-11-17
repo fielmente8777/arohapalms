@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Things to Do Near Our Villas | Aroha Palms, North Goa",
+  description: "Beaches, heritage, wellbeing and evenings out near Aroha Palms in Mandrem and Pilerne, North Goa.",
+  alternates: { canonical: "https://arohapalms.com/experience/" },
+  openGraph: { title: "Things to Do Near Our Villas | Aroha Palms, North Goa", description: "Beaches, heritage, wellbeing and evenings out near Aroha Palms in Mandrem and Pilerne, North Goa.", url: "https://arohapalms.com/experience/" },
+};
+
 import Testimonials from "../home/components/Testimonials";
 import { homePageData } from "../home/pageData";
 import Activities from "./components/Activities";

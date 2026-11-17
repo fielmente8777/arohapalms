@@ -31,7 +31,6 @@ const locationOptions = [
   },
   { value: "5BHK, Aroha Palms Serenity", label: "5BHK, Aroha Palms Serenity" },
   { value: "7BHK, Aroha Palms Caia ", label: "7BHK, Aroha Palms Caia " },
-  { value: "9BHK, Aroha Palms Prana ", label: "9BHK, Aroha Palms Prana" },
   { value: "10BHK, Aroha Palms Encanto ", label: "10BHK, Aroha Palms Encanto" },
   { value: "18BHK, Aroha Palms Marisol ", label: "18BHK, Aroha Palms Marisol" },
 
@@ -199,7 +198,6 @@ const Form1 = ({ gridView }: Props) => {
     onSubmitSuccess: () => {
       setStartDate(null);
       setEndDate(null);
-      window.open("/thank-you/", "_blank");
     },
   });
 

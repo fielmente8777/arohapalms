@@ -1,4 +1,5 @@
 import Call from "@/components/ContactButton/Call";
+import AttributionCapture from "@/components/AttributionCapture";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
 import PopUpForm from "@/components/pop-up/PopUpForm";
 import PropertyDetailsPopup from "@/components/pop-up/PropertyDetailsPopup";
@@ -84,7 +85,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -194,24 +194,13 @@ export default function RootLayout({
           <PropertyDetailsPopup />
           <Whatsapp whatsAppNumber={contact.phone[0]} />
           <Call callNumber={contact.phone[0]} />
+          <AttributionCapture />
         </WebProvider>
         <Script id="microsoft-clarity" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zbn6khn6ts");`}
         </Script>
       </body>
-      {/* <!-- Eazbot Script (Next.js) --> */}
-      <Script id="chatbot-config" strategy="afterInteractive">
-        {`
-          window.eazbotConfig = {
-            ndid: "4c13e800-cf4a-43f1-a448-d6df8149defe",
-            hid: "70816004",
-          };
-        `}
-      </Script>
-      <Script
-        src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
-        strategy="afterInteractive"
-      />
+      {/* Eazbot chatbot removed per client (L6): the bubble did nothing on tap. Keep floating WhatsApp + Call. */}
     </html>
   );
 }

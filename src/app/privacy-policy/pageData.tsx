@@ -71,6 +71,14 @@ export const privacyPolicyData = {
           display relevant ads on Google.
           <br />
           <br />
+          When you send an enquiry, we share your enquiry details (in hashed
+          form where the platform supports it) with Meta and Google to measure
+          which of our ads bring enquiries and bookings, as permitted under
+          India&apos;s Digital Personal Data Protection Act, 2023. You can ask us
+          to stop this or delete your details by writing to
+          reserve@arohapalms.com.
+          <br />
+          <br />
           You can easily opt out of targeted ads at any time by changing your
           browser settings or visiting Google’s personalized Ads Settings page.
         </>
@@ -99,9 +107,9 @@ export const privacyPolicyData = {
         </>
       ),
       points: [
-        "Trusted service providers (e.g., payment gateways, transportation partners, chef services)",
+        "Trusted service providers (e.g., payment gateways, transportation partners, a cook arranged for your stay)",
         "Government authorities, if required by law (such as filling out Form C for international guests)",
-        "Internal staff strictly on a need-to-know basis (like your villa host or chef)",
+        "Internal staff strictly on a need-to-know basis (like your caretaker)",
       ],
     },
     {

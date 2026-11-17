@@ -14,6 +14,15 @@ import "react-datepicker/dist/react-datepicker.css";
 import { IoIosArrowDown } from "react-icons/io";
 import { countries } from "../../utils/constent";
 import { WhatsAppIcon } from "../buttons/LinkButton";
+import { goToThankYou, saveEnquiry } from "@/utils/enquiry";
+
+// India, UK, UAE and US first in the country list (client doc L5)
+const PRIORITY_CODES = ["+91", "+44", "+971", "+1"];
+const orderedCountries = [
+  ...PRIORITY_CODES.map((c) => countries.find((x) => x.code === c)!).filter(Boolean),
+  ...countries.filter((x) => !PRIORITY_CODES.includes(x.code)),
+];
+// Tailwind safelist for the dynamic grid below: md:grid-cols-5 md:grid-cols-6
 
 interface Props {
   gridView?: boolean;
@@ -21,11 +30,9 @@ interface Props {
   villa?: string;
 }
 
-// WhatsApp destination number
-const WHATSAPP_NUMBER = "+919834220573";
 
 /** Focus order used when validation fails — first match wins */
-const FIELD_ORDER = ["name", "phone", "villa"] as const;
+const FIELD_ORDER = ["name", "phone", "villa", "guests"] as const;
 
 type VillaOption = {
   value: string;
@@ -45,7 +52,6 @@ const mandermLocationOptions: VillaOption[] = [
   },
   { value: "5BHK, Aroha Palms Serenity", label: "5BHK, Aroha Palms Serenity" },
   { value: "7BHK, Aroha Palms Caia", label: "7BHK, Aroha Palms Caia" },
-  { value: "9BHK, Aroha Palms Prana", label: "9BHK, Aroha Palms Prana" },
   { value: "10BHK, Aroha Palms Encanto", label: "10BHK, Aroha Palms Encanto" },
   { value: "18BHK, Aroha Palms Marisol", label: "18BHK, Aroha Palms Marisol" },
 ];
@@ -74,10 +80,6 @@ const fourAndFiveBhkLocationOptions: VillaOption[] = [
 ];
 
 const largeGroupAndCorporateLocationOptions: VillaOption[] = [
-  {
-    value: "9BHK, Aroha Palms Prana",
-    label: "9BHK, Aroha Palms Prana",
-  },
   {
     value: "10BHK, Aroha Palms Encanto",
     label: "10BHK, Aroha Palms Encanto",
@@ -307,6 +309,7 @@ interface WhatsappFormData {
   villa: string;
   checkIn: string;
   checkOut: string;
+  guests: string;
 }
 
 const initialFormData: WhatsappFormData = {
@@ -317,6 +320,7 @@ const initialFormData: WhatsappFormData = {
   villa: "",
   checkIn: "",
   checkOut: "",
+  guests: "",
 };
 
 // Builds the pre-filled WhatsApp message from the form data
@@ -333,6 +337,7 @@ export const buildWhatsappMessage = (data: WhatsappFormData) => {
   if (data.villa) lines.push(`Villa: ${data.villa.trim()}`);
   if (data.checkIn) lines.push(`Check-in: ${data.checkIn}`);
   if (data.checkOut) lines.push(`Check-out: ${data.checkOut}`);
+  if (data.guests) lines.push(`Guests: ${data.guests}`);
   if (data.promoCode) lines.push(`Promo Code: ${data.promoCode}`);
 
   lines.push(
@@ -373,6 +378,28 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  // Dates/guests handed over from the search bar (Pilerne searches, client doc L4)
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem("aroha_prefill");
+      if (!raw) return;
+      sessionStorage.removeItem("aroha_prefill");
+      const p = JSON.parse(raw) as { checkIn?: string; checkOut?: string; guests?: string };
+      const toDate = (v?: string) => (v ? new Date(`${v}T00:00:00`) : null);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sessionStorage is only readable after mount
+      setStartDate(toDate(p.checkIn));
+      setEndDate(toDate(p.checkOut));
+      setFormData((prev) => ({
+        ...prev,
+        checkIn: p.checkIn || prev.checkIn,
+        checkOut: p.checkOut || prev.checkOut,
+        guests: p.guests || prev.guests,
+      }));
+    } catch {
+      /* ignore */
+    }
+  }, []);
 
   // One ref per focusable field, keyed by field name
   const fieldRefs = useRef<Record<string, HTMLInputElement | null>>({});
@@ -472,6 +499,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
     else if (digits.length < 7) nextErrors.phone = "Enter a valid phone number";
 
     if (!formData.villa) nextErrors.villa = "Please select a villa";
+    if (!formData.guests.trim()) nextErrors.guests = "Please enter the number of guests";
 
     setErrors(nextErrors);
     return nextErrors;
@@ -490,7 +518,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
     el.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const currentErrors = validate();
@@ -502,22 +530,20 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
 
     setIsSubmitting(true);
 
-    const enCodeText = buildWhatsappMessage(formData);
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${enCodeText}`;
-
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-
-    // Keep the pre-selected villa after a reset if one was passed in
-    setFormData({
-      ...initialFormData,
-      villa: matchVillaOption(prefillVilla, locationOptions),
+    // 1) save to Eazotel (with ad source), 2) thank-you page in the same tab,
+    // 3) "Continue on WhatsApp" there with the message prefilled (client doc L5)
+    await saveEnquiry({
+      name: formData.name.trim(),
+      phone: formData.countryCode + formData.phone.replace(/\D/g, ""),
+      villa: formData.villa,
+      checkIn: formData.checkIn,
+      checkOut: formData.checkOut,
+      guests: formData.guests,
+      form: "enquiry-form",
     });
-    setStartDate(null);
-    setEndDate(null);
-    setIsSubmitting(false);
+
     setSubmitSuccess(true);
-    setTimeout(() => setSubmitSuccess(false), 3000);
-    window.open("/thank-you/", "_blank");
+    goToThankYou();
   };
 
   type DropdownOption = {
@@ -564,6 +590,14 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
       icon: <CallIcon />,
     },
 
+    {
+      name: "guests",
+      label: "No. of guests*",
+      type: "text",
+      value: formData.guests,
+      onChange: handleChange,
+      icon: <UserIcon />,
+    },
     {
       name: "villa",
       label: "Select Villa*",
@@ -652,7 +686,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
                     }}
                     aria-label="Country Code"
                   >
-                    {countries.map((country, index) => (
+                    {orderedCountries.map((country, index) => (
                       <option key={index} value={country.code}>
                         {country.code}
                       </option>
@@ -683,6 +717,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
                     ref={registerField(field.name)}
                     type={field.type}
                     name={field.name}
+                    inputMode={field.name === "guests" ? "numeric" : undefined}
                     placeholder={field.label}
                     className="w-full placeholder:text-secondarya focus:outline-none text-secondarya"
                     value={field.value}
@@ -703,7 +738,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
           disabled={isSubmitting}
         >
           {isSubmitting ? (
-            "Opening WhatsApp..."
+            "Sending..."
           ) : submitSuccess ? (
             "Thank You!"
           ) : (

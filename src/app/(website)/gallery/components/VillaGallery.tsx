@@ -232,7 +232,7 @@ const VillaGallery = ({ mandrem, pilerne }: VillaGalleryProps) => {
         {/* CONTACT */}
         <div className="mt-8 flex justify-center">
           <Link
-            href="/contact"
+            href="/contact-us/"
             className="
               border-b
               border-[#1976b9]

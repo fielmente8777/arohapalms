@@ -103,33 +103,6 @@ export const GalleryData = {
           "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Caia.",
       },
       {
-        name: "Villa Prana",
-        images: [
-          "/rooms/Magnifica/Magnifica.png",
-          "/rooms/Magnifica/magnifica2.webp",
-          "/rooms/Magnifica/magnifica6.jpg",
-          "/rooms/Magnifica/magnifica12.webp",
-          "/rooms/Magnifica/magnifica8.jpg",
-          "/rooms/Magnifica/magnifica14.webp",
-          "/rooms/Magnifica/magnifica10.webp",
-          "/rooms/Magnifica/magnifica11.jpg",
-          "/rooms/Magnifica/magnifica18.jpg",
-          "/rooms/Magnifica/magnifica19.webp",
-          "/rooms/Paradiso/Paradiso.png",
-          "/rooms/Paradiso/paradiso1.jpg",
-          "/rooms/Paradiso/paradiso5.jpg",
-          "/rooms/Paradiso/paradiso6.webp",
-          "/rooms/Paradiso/paradiso10.jpg",
-          "/rooms/Paradiso/paradiso11.jpg",
-          "/rooms/Paradiso/paradiso12.jpg",
-          "/rooms/Paradiso/paradiso15.webp",
-          "/rooms/Paradiso/paradiso2.jpg",
-          "/rooms/Paradiso/paradiso4.jpg",
-        ],
-        description:
-          "Picture this: Greek-inspired elegance meets tropical bliss, all wrapped up in the heart of Goa. Welcome to Villa Prana.",
-      },
-      {
         name: "Villa Encanto",
         images: [
           "/rooms/Paradiso/Paradiso.png",
