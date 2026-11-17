@@ -36,18 +36,20 @@ export type Attribution = Partial<Record<(typeof ATTR_PARAMS)[number], string>> 
   referrer?: string;
 };
 
-const safeGet = (store: Storage | undefined, key: string) => {
+const safeGet = (key: string) => {
   try {
-    return store?.getItem(key) ?? null;
+    return window.sessionStorage.getItem(key);
   } catch {
     return null;
   }
 };
-const safeSet = (store: Storage | undefined, key: string, value: string) => {
+const safeSet = (key: string, value: string) => {
   try {
-    store?.setItem(key, value);
+    window.sessionStorage.setItem(key, value);
+    return true;
   } catch {
     /* storage blocked: carry on without it */
+    return false;
   }
 };
 
@@ -68,22 +70,35 @@ export const captureAttribution = () => {
       landing_page: window.location.pathname,
       referrer: document.referrer ? document.referrer.slice(0, 200) : undefined,
     };
-    safeSet(window.sessionStorage, ATTR_KEY, JSON.stringify(next));
+    safeSet(ATTR_KEY, JSON.stringify(next));
   }
 };
 
 export const getAttribution = (): Attribution => {
   if (typeof window === "undefined") return {};
   try {
-    return JSON.parse(safeGet(window.sessionStorage, ATTR_KEY) || "{}");
+    const parsed = JSON.parse(safeGet(ATTR_KEY) || "{}");
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    return Object.fromEntries(
+      [...ATTR_PARAMS, "landing_page", "referrer"]
+        .filter((key) => typeof parsed[key] === "string")
+        .map((key) => [key, parsed[key].slice(0, 200)]),
+    );
   } catch {
     return {};
   }
 };
 
-const newLeadId = () => {
+export const enquirySource = () => {
+  const attr = getAttribution();
+  return attr.gclid || attr.gbraid || attr.wbraid
+    ? "google_ads"
+    : attr.fbclid ? "meta_ads" : attr.utm_source || "website";
+};
+
+export const newLeadId = () => {
   try {
-    return "AP-" + crypto.randomUUID().slice(0, 8).toUpperCase();
+    return "AP-" + crypto.randomUUID().toUpperCase();
   } catch {
     return "AP-" + Math.random().toString(36).slice(2, 10).toUpperCase();
   }
@@ -127,8 +142,7 @@ export const whatsappUrl = (text: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
 /** Saves to Eazotel first. Never throws: returns saved=false if the save failed. */
-export const saveEnquiry = async (e: EnquiryInput): Promise<StoredEnquiry> => {
-  const leadId = newLeadId();
+export const saveEnquiry = async (e: EnquiryInput, leadId = newLeadId()): Promise<StoredEnquiry> => {
   const attr = getAttribution();
   const attrLines = Object.entries(attr)
     .filter(([, v]) => v)
@@ -147,17 +161,13 @@ export const saveEnquiry = async (e: EnquiryInput): Promise<StoredEnquiry> => {
     .filter(Boolean)
     .join("\n");
 
-  const source =
-    attr.gclid || attr.gbraid || attr.wbraid
-      ? "google_ads"
-      : attr.fbclid
-        ? "meta_ads"
-        : attr.utm_source || "website";
+  const source = enquirySource();
 
   let saved = false;
   try {
     const res = await fetch("https://nexon.eazotel.com/eazotel/addcontacts", {
       method: "POST",
+      signal: AbortSignal.timeout(20000),
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         Domain: contact.formDomain,
@@ -173,7 +183,7 @@ export const saveEnquiry = async (e: EnquiryInput): Promise<StoredEnquiry> => {
       }),
     });
     const data = await res.json().catch(() => ({}));
-    saved = res.ok && data?.Status !== false;
+    saved = res.ok && data?.Status === true;
   } catch {
     saved = false;
   }
@@ -186,22 +196,40 @@ export const saveEnquiry = async (e: EnquiryInput): Promise<StoredEnquiry> => {
     fired: false,
     ts: Date.now(),
   };
-  safeSet(window.sessionStorage, ENQ_KEY, JSON.stringify(stored));
+  safeSet(ENQ_KEY, JSON.stringify(stored));
   return stored;
 };
 
 export const readStoredEnquiry = (): StoredEnquiry | null => {
   if (typeof window === "undefined") return null;
   try {
-    const raw = safeGet(window.sessionStorage, ENQ_KEY);
-    return raw ? (JSON.parse(raw) as StoredEnquiry) : null;
+    const raw = safeGet(ENQ_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    const age = Date.now() - parsed?.ts;
+    if (
+      !parsed || typeof parsed.leadId !== "string" || !parsed.leadId.startsWith("AP-") ||
+      parsed.saved !== true || typeof parsed.waText !== "string" ||
+      typeof parsed.ts !== "number" || !Number.isFinite(age) || age < 0 || age >= 30 * 60 * 1000 ||
+      (parsed.fired !== undefined && typeof parsed.fired !== "boolean") ||
+      (parsed.villa !== undefined && typeof parsed.villa !== "string")
+    ) return null;
+    return parsed as StoredEnquiry;
   } catch {
     return null;
   }
 };
 
-export const markEnquiryFired = (e: StoredEnquiry) => {
-  safeSet(window.sessionStorage, ENQ_KEY, JSON.stringify({ ...e, fired: true }));
+/** Claim the conversion once, before dispatch, so reloads cannot count it again. */
+export const consumeEnquiryConversion = () => {
+  const e = readStoredEnquiry();
+  if (!e || e.fired || !safeSet(ENQ_KEY, JSON.stringify({ ...e, fired: true }))) return null;
+  return {
+    event: "enquiry_saved",
+    lead_id: e.leadId,
+    event_id: e.leadId,
+    villa: e.villa || "",
+  };
 };
 
 /** Go to the thank-you page in the SAME tab (popups get blocked on phones). */
@@ -210,8 +238,7 @@ export const goToThankYou = () => {
 };
 
 /** For forms that post to Eazotel themselves (useForm): remember the result for the thank-you page. */
-export const rememberEnquiry = (saved: boolean, e: EnquiryInput) => {
-  const leadId = newLeadId();
+export const rememberEnquiry = (saved: boolean, e: EnquiryInput, leadId: string) => {
   const stored: StoredEnquiry = {
     leadId,
     saved,
@@ -220,7 +247,7 @@ export const rememberEnquiry = (saved: boolean, e: EnquiryInput) => {
     fired: false,
     ts: Date.now(),
   };
-  safeSet(window.sessionStorage, ENQ_KEY, JSON.stringify(stored));
+  safeSet(ENQ_KEY, JSON.stringify(stored));
   return stored;
 };
 

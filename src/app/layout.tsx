@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     "Luxury Villas & Apartments in North Goa | Aroha Palms Official Website",
 
   description:
-    "Book luxury villas and apartments at Aroha Palms in North Goa. Private pools, Greek-inspired architecture, spacious stays, concierge service, and the best direct booking offers.",
+    "Explore Aroha Palms villas in Mandrem and Pilerne, North Goa, with private pools, plus Mandrem apartments without pool access. Enquire directly for availability.",
 
   keywords: [
     "Aroha Palms",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     "Private Pool Villas Goa",
     "North Goa Villas",
     "Mandrem Villas",
-    "Pilerne Apartments",
+    "Pilerne Villas",
     "Holiday Villas Goa",
     "Family Villas Goa",
     "Corporate Offsite Goa",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Luxury Villas & Apartments in North Goa | Aroha Palms",
     description:
-      "Experience barefoot luxury at Aroha Palms. Greek-inspired villas and apartments with private pools, concierge services, and peaceful stays in North Goa.",
+      "Explore Aroha Palms villas in Mandrem and Pilerne, North Goa, with private pools, plus Mandrem apartments without pool access. Enquire directly for availability.",
     siteName: "Aroha Palms",
     locale: "en_IN",
     type: "website",
@@ -88,7 +88,6 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,

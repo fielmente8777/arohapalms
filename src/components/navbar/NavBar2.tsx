@@ -6,13 +6,14 @@ import { useEffect, useRef, useState } from "react";
 import MenuButton from "./MenuButton";
 import NavMenu from "./NavMenu";
 import { usePathname } from "next/navigation";
+import { useWebContext } from "@/context-api/WebContext";
 
 const NavBar2 = () => {
   const pathname = usePathname();
+  const { openFormPopUp } = useWebContext();
 
   const [visible, setVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
@@ -88,15 +89,13 @@ const NavBar2 = () => {
               </div>
             </Link>
 
-            {/* FIND A ROOM */}
-            <Link
-              href="https://letsbook.me/booking/arohapalmsmandrem"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => openFormPopUp()}
               className="hidden items-center bg-primary px-6 text-xs font-medium uppercase text-white transition-colors duration-300 hover:bg-[#c49954] md:flex md:h-[59px] md:px-8"
             >
-              FIND A ROOM
-            </Link>
+              Check availability
+            </button>
           </nav>
         </header>
       </div>
@@ -107,5 +106,4 @@ const NavBar2 = () => {
 };
 
 export default NavBar2;
-
 

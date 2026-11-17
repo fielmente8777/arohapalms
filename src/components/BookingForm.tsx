@@ -186,7 +186,7 @@ export default function BookingForm() {
       } catch {
         /* storage blocked: the form still opens */
       }
-      openFormPopUp(villa?.name && villa.slug !== "villa-grande-and-majestic" ? villa.name : villa ? "Villa Imperial" : "Villa Majestic");
+      openFormPopUp(villa?.name && villa.slug !== "villa-grande-and-majestic" ? villa.name : villa ? "Villa Imperial" : undefined);
       return;
     }
 

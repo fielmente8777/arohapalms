@@ -12,16 +12,16 @@ const nextConfig: NextConfig = {
   // 301s from the client fix list (17 Nov 2026): L1, L2, L3, W3, W16, S3
   async redirects() {
     return [
-      { source: "/mandrem/villa-imperial", destination: "/pilerne/villa-imperial/", permanent: true },
-      { source: "/mandrem/villa-prana", destination: "/mandrem/villa-encanto/", permanent: true },
-      { source: "/landing-page/villa-prana", destination: "/landing-page/villa-encanto/", permanent: true },
-      { source: "/booking", destination: "/contact-us/", permanent: true },
-      { source: "/contact", destination: "/contact-us/", permanent: true },
-      { source: "/5-bhk-villa-in-mandrem", destination: "/mandrem/", permanent: true },
-      { source: "/articles/monsoon-bonanza-50-per-cent-off-luxury-villas-in-goa", destination: "/articles/", permanent: true },
-      { source: "/destination/:location(mandrem|pilerne)/:stay", destination: "/:location/:stay/", permanent: true },
-      { source: "/destination/:location(mandrem|pilerne)", destination: "/:location/", permanent: true },
-      { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/mandrem/villa-imperial", destination: "/pilerne/villa-imperial/", statusCode: 301 },
+      { source: "/mandrem/villa-prana", destination: "/mandrem/villa-encanto/", statusCode: 301 },
+      { source: "/landing-page/villa-prana", destination: "/landing-page/villa-encanto/", statusCode: 301 },
+      { source: "/booking", destination: "/contact-us/", statusCode: 301 },
+      { source: "/contact", destination: "/contact-us/", statusCode: 301 },
+      { source: "/5-bhk-villa-in-mandrem", destination: "/mandrem/", statusCode: 301 },
+      { source: "/articles/monsoon-bonanza-50-per-cent-off-luxury-villas-in-goa", destination: "/articles/", statusCode: 301 },
+      { source: "/destination/:location(mandrem|pilerne)/:stay", destination: "/:location/:stay/", statusCode: 301 },
+      { source: "/destination/:location(mandrem|pilerne)", destination: "/:location/", statusCode: 301 },
+      { source: "/sitemap_index.xml", destination: "/sitemap.xml", statusCode: 301 },
     ];
   },
 

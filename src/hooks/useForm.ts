@@ -1,7 +1,8 @@
 // useForm.ts
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import axios from "axios";
-import { attributionLines, goToThankYou, rememberEnquiry } from "@/utils/enquiry";
+import { attributionLines, enquirySource, goToThankYou, newLeadId, rememberEnquiry } from "@/utils/enquiry";
+import { formatLocalDate } from "@/utils/date";
 import { contact } from "@/utils/constent";
 
 // Types
@@ -154,6 +155,8 @@ export const useForm = <T extends BaseFormData = BaseFormData>({
 }: UseFormProps<T> = {}) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const submissionPending = useRef(false);
+  const leadId = useRef<string | null>(null);
   const [formData, setFormData] = useState<T>(
     () =>
       ({
@@ -287,7 +290,7 @@ export const useForm = <T extends BaseFormData = BaseFormData>({
       // Handle single date
       if (singleDateMode) {
         const date = dates instanceof Date ? dates : (dates as Date | null);
-        const dateString = date ? date.toISOString().split("T")[0] : "";
+        const dateString = formatLocalDate(date);
         setFormData((prev) => ({ ...prev, checkIn: dateString }));
 
         if (errors.checkIn) {
@@ -301,8 +304,8 @@ export const useForm = <T extends BaseFormData = BaseFormData>({
         const [start, end] = dates;
         setFormData((prev) => ({
           ...prev,
-          checkIn: start ? start.toISOString().split("T")[0] : "",
-          checkOut: end ? end.toISOString().split("T")[0] : "",
+          checkIn: formatLocalDate(start),
+          checkOut: formatLocalDate(end),
         }));
 
         if (errors.checkIn || errors.checkOut) {
@@ -357,6 +360,7 @@ export const useForm = <T extends BaseFormData = BaseFormData>({
     if (includeVilla && formData.villa) {
       parts.push(`Villa: ${formData.villa}`);
     }
+    if (formData.guests) parts.push(`Guests: ${formData.guests}`);
 
     return parts.join("\n");
   }, [
@@ -376,12 +380,15 @@ export const useForm = <T extends BaseFormData = BaseFormData>({
       if (e) {
         e.preventDefault();
       }
+      if (submissionPending.current) return;
 
       if (!validateForm()) {
         return;
       }
 
+      submissionPending.current = true;
       setIsSubmitting(true);
+      leadId.current ??= newLeadId();
 
       try {
         // Use custom transform or default
@@ -394,27 +401,23 @@ export const useForm = <T extends BaseFormData = BaseFormData>({
               Contact: formData.countryCode + formData.phone,
               check_in: formData.checkIn,
               check_out: formData.checkOut,
-              Description: [getDescription(), attributionLines()].filter(Boolean).join("\n"),
-              created_from: formData.createdFrom || createdFrom,
+              Description: getDescription(),
+              created_from: `webform:${enquirySource()}`,
               source_url: window.location.href,
               hId: formHid || contact.formHid,
             };
+
+        payload.Description = [`Lead ID: ${leadId.current}`, payload.Description, `Form: ${formData.createdFrom || createdFrom}`, attributionLines()].filter(Boolean).join("\n");
 
         const { data } = await axios.post<{
           Status: boolean;
           message?: string;
         }>("https://nexon.eazotel.com/eazotel/addcontacts", payload, {
           headers: { "Content-Type": "application/json" },
+          timeout: 20000,
         });
 
-        if (data.Status) {
-          setSubmitSuccess(true);
-          resetForm();
-
-          if (onSubmitSuccess) {
-            onSubmitSuccess();
-          }
-
+        if (data?.Status === true) {
           rememberEnquiry(true, {
             name: formData.name,
             phone: formData.countryCode + formData.phone,
@@ -424,15 +427,20 @@ export const useForm = <T extends BaseFormData = BaseFormData>({
             guests: formData.guests,
             message: formData.message,
             form: "site-form",
-          });
+          }, leadId.current);
+          leadId.current = null;
+          setSubmitSuccess(true);
+          resetForm();
+          onSubmitSuccess?.();
           goToThankYou();
         } else {
-          alert(data.message || "Something went wrong. Please try again.");
+          alert(data?.message || "We couldn't confirm that your enquiry was saved. Your details are still here. Please try again.");
         }
       } catch (error) {
         console.error("Submission error:", error);
-        alert("An error occurred. Please try again later.");
+        alert("We couldn't confirm that your enquiry was saved. Your details are still here. Please try again or call +91 98342 20573.");
       } finally {
+        submissionPending.current = false;
         setIsSubmitting(false);
       }
     },
