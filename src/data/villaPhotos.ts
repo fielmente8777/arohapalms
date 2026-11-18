@@ -37,7 +37,7 @@ export const villaPhotos: Record<string, string[]> = {
   ],
   "suite-de-platinum": [
     "/rooms/Emerald/suite-de-emerald-4a8a5f-1024x768.webp",
-    "/rooms/Emerald/suite-de-emerald-4bae35-1024x683.webp",
+    // "/rooms/Emerald/suite-de-emerald-4bae35-1024x683.webp",
     "/rooms/Emerald/suite-de-emerald-48fb29-1024x683.webp",
     "/rooms/Emerald/suite-de-emerald-575c62-1024x683.webp",
     "/rooms/Emerald/suite-de-regal-ac4cb9-1024x683.webp",
