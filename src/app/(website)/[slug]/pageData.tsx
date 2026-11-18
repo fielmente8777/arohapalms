@@ -906,7 +906,7 @@ export const roomData = [
           location: "Mandrem",
           images: [
             "/rooms/Emerald/suite-de-emerald-4a8a5f-1024x768.webp",
-            "/rooms/Emerald/suite-de-emerald-4bae35-1024x683.webp",
+            // "/rooms/Emerald/suite-de-emerald-4bae35-1024x683.webp",
             "/rooms/Emerald/suite-de-emerald-5deaba-1024x683.webp",
             "/rooms/Emerald/suite-de-emerald-48fb29-1024x683.webp",
             "/rooms/Emerald/suite-de-emerald-575c62-1024x683.webp",
