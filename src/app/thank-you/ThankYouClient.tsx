@@ -9,6 +9,7 @@ import {
   whatsappUrl,
   buildWhatsappText,
 } from "@/utils/enquiry";
+import { pixelLead } from "@/utils/metaPixel";
 
 declare global {
   interface Window {
@@ -28,6 +29,7 @@ export default function ThankYouClient() {
     if (conversion) {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push(conversion);
+      pixelLead(conversion.lead_id, conversion.villa);
     }
   }, []);
 

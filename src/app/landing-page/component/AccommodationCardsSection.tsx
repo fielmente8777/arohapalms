@@ -251,7 +251,7 @@ export const AccommodationCard: React.FC<
             className="bg-primary rounded-sm border-none text-white w-full justify-center uppercase"
           />
           <p className="mt-2 text-center text-secondary">
-            *Rates vary by season
+            *Rates change with dates, season and group size. WhatsApp us for your exact quote.
           </p>
         </div>
         {/* </div> */}
