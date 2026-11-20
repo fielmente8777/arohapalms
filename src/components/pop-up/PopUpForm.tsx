@@ -32,7 +32,7 @@ const PopUpForm = () => {
           <MdClose />
         </button>
         <div className="max-md:overflow-y-scroll hide-scroll mt-6">
-          <WhatsappForm key={formKey} gridView />
+          <WhatsappForm key={formKey} gridView showLocation />
         </div>
       </div>
     </section>

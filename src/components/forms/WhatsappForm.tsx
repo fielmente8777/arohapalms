@@ -4,6 +4,7 @@ import { getDateInputLimits } from "@/hooks/getDateInputLimits";
 import {
   CalendarIcon,
   CallIcon,
+  LocationIcon,
   UserIcon,
   VilaIcon
 } from "@/utils/formIcons";
@@ -28,16 +29,21 @@ interface Props {
   gridView?: boolean;
   /** Optional villa name to pre-select, e.g. "Villa Magnifica" */
   villa?: string;
+  showLocation?: boolean;
 }
 
-
 /** Focus order used when validation fails — first match wins */
-const FIELD_ORDER = ["name", "phone", "villa", "guests"] as const;
+const FIELD_ORDER = ["name", "phone", "location", "villa", "guests"] as const;
 
 type VillaOption = {
   value: string;
   label: string;
 };
+
+export const generalLocationOptions: VillaOption[] = [
+  { value: "Mandrem", label: "Mandrem" },
+  { value: "Pilerne", label: "Pilerne" },
+];
 
 // Villa options
 
@@ -165,6 +171,26 @@ export const matchVillaOption = (
 
   // Return the exact option value so the dropdown selection matches
   return matched ? matched.value : "";
+};
+
+export const getVillaLocation = (villaName?: string | null): string => {
+  if (!villaName) return "";
+  const norm = normalizeVillaName(villaName);
+  if (!norm) return "";
+  const isPilerne = pilerneLocationOptions.some((opt) => {
+    const o = normalizeVillaName(opt.value);
+    return o === norm || o.includes(norm) || norm.includes(o);
+  });
+  if (isPilerne) return "Pilerne";
+  const isMandrem = [
+    ...mandermLocationOptions,
+    ...mandremApartmentOptions,
+  ].some((opt) => {
+    const o = normalizeVillaName(opt.value);
+    return o === norm || o.includes(norm) || norm.includes(o);
+  });
+  if (isMandrem) return "Mandrem";
+  return "";
 };
 
 // Custom Dropdown Component
@@ -306,6 +332,7 @@ interface WhatsappFormData {
   countryCode: string;
   phone: string;
   promoCode: string;
+  location: string;
   villa: string;
   checkIn: string;
   checkOut: string;
@@ -317,6 +344,7 @@ const initialFormData: WhatsappFormData = {
   countryCode: "+91",
   phone: "",
   promoCode: "",
+  location: "",
   villa: "",
   checkIn: "",
   checkOut: "",
@@ -334,6 +362,7 @@ export const buildWhatsappMessage = (data: WhatsappFormData) => {
 
   if (data.name) lines.push(`Name: ${data.name}`);
   if (data.phone) lines.push(`Phone: ${data.countryCode} ${data.phone}`);
+  if (data.location) lines.push(`Location: ${data.location}`);
   if (data.villa) lines.push(`Villa: ${data.villa.trim()}`);
   if (data.checkIn) lines.push(`Check-in: ${data.checkIn}`);
   if (data.checkOut) lines.push(`Check-out: ${data.checkOut}`);
@@ -350,8 +379,9 @@ export const buildWhatsappMessage = (data: WhatsappFormData) => {
   return encodeURIComponent(lines.join("\n"));
 };
 
-const WhatsappForm = ({ gridView, villa }: Props) => {
+const WhatsappForm = ({ gridView, villa, showLocation }: Props) => {
   const pathName = usePathname();
+  const displayLocation = showLocation ?? Boolean(gridView);
 
   // Route decides which villa list and which offer line to show
   const locationOptions = useMemo(
@@ -368,11 +398,35 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
   const { formVilla } = useWebContext();
   const prefillVilla = villa ?? formVilla;
 
+  const initialLocation = useMemo(() => {
+    if (prefillVilla) {
+      const loc = getVillaLocation(prefillVilla);
+      if (loc) return loc;
+    }
+    const cleanPath = pathName ? pathName.replace(/\/+$/, "") : "";
+    if (
+      cleanPath.endsWith("/pilerne") ||
+      cleanPath.includes("/pilerne/") ||
+      cleanPath.includes("pilerne-lp")
+    ) {
+      return "Pilerne";
+    }
+    if (
+      cleanPath.endsWith("/mandrem") ||
+      cleanPath.includes("/mandrem/") ||
+      cleanPath.includes("landing-page")
+    ) {
+      return "Mandrem";
+    }
+    return "";
+  }, [prefillVilla, pathName]);
+
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
   // Lazy initializer so a villa passed on first mount is already selected
   const [formData, setFormData] = useState<WhatsappFormData>(() => ({
     ...initialFormData,
+    location: displayLocation ? initialLocation : "",
     villa: matchVillaOption(prefillVilla, locationOptions),
   }));
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -381,6 +435,24 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
   const [submitError, setSubmitError] = useState("");
   const submissionPending = useRef(false);
   const leadId = useRef<string | null>(null);
+
+  // Filter villa options based on selected location
+  const currentVillaOptions = useMemo(() => {
+    if (displayLocation) {
+      if (formData.location === "Pilerne") {
+        return pilerneLocationOptions;
+      }
+      if (formData.location === "Mandrem") {
+        return [...mandermLocationOptions, ...mandremApartmentOptions];
+      }
+      return [
+        ...mandermLocationOptions,
+        ...pilerneLocationOptions,
+        ...mandremApartmentOptions,
+      ];
+    }
+    return locationOptions;
+  }, [displayLocation, formData.location, locationOptions]);
 
   // Dates/guests handed over from the search bar (Pilerne searches, client doc L4)
   useEffect(() => {
@@ -445,11 +517,17 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
     const matched = matchVillaOption(prefillVilla, locationOptions);
 
     if (matched) {
-      setFormData((prev) => ({ ...prev, villa: matched }));
+      const matchedLoc = getVillaLocation(matched);
+      setFormData((prev) => ({
+        ...prev,
+        villa: matched,
+        ...(displayLocation && matchedLoc ? { location: matchedLoc } : {}),
+      }));
       setErrors((prev) => {
-        if (!prev.villa) return prev;
+        if (!prev.villa && (!displayLocation || !prev.location)) return prev;
         const next = { ...prev };
         delete next.villa;
+        if (displayLocation && matchedLoc) delete next.location;
         return next;
       });
     } else if (optionsChanged) {
@@ -485,9 +563,30 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
     setFieldValue("promoCode", e.target.value.toUpperCase());
   };
 
+  // Handle location change
+  const handleLocationChange = (value: string) => {
+    setFieldValue("location", value);
+    if (value === "Pilerne") {
+      const isPilerne = pilerneLocationOptions.some(
+        (opt) => opt.value === formData.villa,
+      );
+      if (!isPilerne) setFieldValue("villa", "");
+    } else if (value === "Mandrem") {
+      const isMandrem = [
+        ...mandermLocationOptions,
+        ...mandremApartmentOptions,
+      ].some((opt) => opt.value === formData.villa);
+      if (!isMandrem) setFieldValue("villa", "");
+    }
+  };
+
   // Handle villa change
   const handleVillaChange = (value: string) => {
     setFieldValue("villa", value);
+    if (displayLocation && !formData.location) {
+      const loc = getVillaLocation(value);
+      if (loc) setFieldValue("location", loc);
+    }
   };
 
   /** Returns the error map so the caller can act on it immediately —
@@ -501,6 +600,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
     if (!digits) nextErrors.phone = "Please enter your phone number";
     else if (digits.length < 7 || digits.length + formData.countryCode.replace(/\D/g, "").length > 15 || (formData.countryCode === "+91" && digits.length !== 10)) nextErrors.phone = "Enter a valid phone number";
 
+    if (displayLocation && !formData.location) nextErrors.location = "Please select a location";
     if (!formData.villa) nextErrors.villa = "Please select a villa";
     if (!/^\d+$/.test(formData.guests.trim()) || Number(formData.guests) < 1) nextErrors.guests = "Please enter a valid number of guests";
     if (!formData.checkIn || !formData.checkOut || formData.checkOut <= formData.checkIn) nextErrors.checkIn = "Please select check-in and check-out dates, with check-out after check-in";
@@ -543,6 +643,7 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
     const result = await saveEnquiry({
       name: formData.name.trim(),
       phone: formData.countryCode + formData.phone.replace(/\D/g, ""),
+      location: formData.location,
       villa: formData.villa,
       checkIn: formData.checkIn,
       checkOut: formData.checkOut,
@@ -613,12 +714,25 @@ const WhatsappForm = ({ gridView, villa }: Props) => {
       onChange: handleChange,
       icon: <UserIcon />,
     },
+    ...(displayLocation
+      ? [
+          {
+            name: "location",
+            label: "Select Location*",
+            type: "dropdown" as const,
+            value: formData.location,
+            options: generalLocationOptions,
+            icon: <LocationIcon />,
+            onChange: handleLocationChange,
+          },
+        ]
+      : []),
     {
       name: "villa",
       label: "Select Villa*",
       type: "dropdown",
       value: formData.villa,
-      options: locationOptions,
+      options: currentVillaOptions,
       icon: <VilaIcon />,
       onChange: handleVillaChange,
     },

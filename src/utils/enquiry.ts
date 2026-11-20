@@ -108,6 +108,7 @@ export interface EnquiryInput {
   name: string;
   phone: string; // with country code, e.g. +919812345678
   email?: string;
+  location?: string;
   villa?: string;
   checkIn?: string;
   checkOut?: string;
@@ -128,6 +129,7 @@ export interface StoredEnquiry {
 export const buildWhatsappText = (e: EnquiryInput, leadId?: string) => {
   const lines = ["Hi Aroha Palms Team,", "", "I'm interested in booking a stay at Aroha Palms.", ""];
   if (e.name) lines.push(`Name: ${e.name}`);
+  if (e.location) lines.push(`Location: ${e.location}`);
   if (e.villa) lines.push(`Villa: ${e.villa.trim()}`);
   if (e.checkIn) lines.push(`Check-in: ${e.checkIn}`);
   if (e.checkOut) lines.push(`Check-out: ${e.checkOut}`);
@@ -150,6 +152,7 @@ export const saveEnquiry = async (e: EnquiryInput, leadId = newLeadId()): Promis
 
   const description = [
     `Lead ID: ${leadId}`,
+    e.location && `Location: ${e.location}`,
     e.villa && `Villa: ${e.villa.trim()}`,
     e.checkIn && `Check-in: ${e.checkIn}`,
     e.checkOut && `Check-out: ${e.checkOut}`,
