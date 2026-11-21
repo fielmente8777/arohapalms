@@ -675,7 +675,7 @@ export const roomData = [
         {
           title: "Suite De Onyx",
           type: "Apartment",
-          // startingPrice: "From ₹ xx,xxx/night",
+          startingPrice: "From ₹ 8,000/night",
           amenities: [
             { icon: <BedIcon />, label: "2 Rooms" },
             { icon: <BathTubIcon />, label: "2 Baths" },
@@ -739,7 +739,7 @@ export const roomData = [
         {
           title: "Suite De Lumina",
           type: "Apartment",
-          // startingPrice: "From ₹ xx,xxx/night",
+          startingPrice: "From ₹ 8,000/night",
           amenities: [
             { icon: <BedIcon />, label: "2 Rooms" },
             { icon: <BathTubIcon />, label: "2 Baths" },
@@ -803,7 +803,7 @@ export const roomData = [
         {
           title: "Suite De Emerald",
           type: "Apartment",
-          // startingPrice: "From ₹ xx,xxx/night",
+          startingPrice: "From ₹ 5,000/night",
           amenities: [
             { icon: <BedIcon />, label: "1 Rooms" },
             { icon: <GuestIcon />, label: "2 Guests" },
@@ -861,7 +861,7 @@ export const roomData = [
         {
           title: "Suite De Platinum",
           type: "Apartment",
-          // startingPrice: "From ₹ xx,xxx/night",
+          startingPrice: "From ₹ 3,000/night",
           amenities: [
             { icon: <BedIcon />, label: "1 Rooms" },
             { icon: <GuestIcon />, label: "2 Guests" },
@@ -920,7 +920,7 @@ export const roomData = [
         {
           title: "Suite De Prestige",
           type: "Apartment",
-          // startingPrice: "From ₹ xx,xxx/night",
+          startingPrice: "From ₹ 3,000/night",
           amenities: [
             { icon: <BedIcon />, label: "1 Rooms" },
             { icon: <GuestIcon />, label: "2 Guests" },
@@ -977,7 +977,7 @@ export const roomData = [
         {
           title: "Suite De Regal",
           type: "Apartment",
-          // startingPrice: "From ₹ xx,xxx/night",
+          startingPrice: "From ₹ 5,000/night",
           amenities: [
             { icon: <BedIcon />, label: "1 Rooms" },
             { icon: <GuestIcon />, label: "2 Guests" },
