@@ -6,14 +6,14 @@ import { SectionWithContainer } from "@/components/sectionComponants";
 /** Shared top bar, enquiry form, reviews and FAQ for the campaign landing pages. */
 export function CampaignHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-[#e5e0d6] bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-30 bg-[#0B1E2D]">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" aria-label="Aroha Palms home" className="relative block h-10 w-32">
           <Image src="/logo.png" alt="Aroha Palms" fill className="object-contain object-left" />
         </Link>
         <a
           href="tel:+919834220573"
-          className="rounded-sm border border-primary px-4 py-2 text-sm font-medium text-primary"
+          className="rounded-sm border border-white/70 px-3 py-2 text-sm font-medium text-white"
         >
           Call +91 98342 20573
         </a>
