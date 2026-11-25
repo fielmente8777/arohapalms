@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Section } from "@/components/sectionComponants";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +12,7 @@ interface StayCard {
   secondaryImage: string;
   href: string;
   showPlay: boolean;
+  villas?: { label: string; href: string; newLine?: boolean }[];
 }
 
 interface StayWithUsProps {
@@ -137,16 +139,18 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
                 "
               />
 
-              {/* BOTTOM GRADIENT */}
+              {/* BOTTOM TO TOP GRADIENT COVERING TEXT AREA */}
               <div
                 className="
                   absolute
                   inset-x-0
                   bottom-0
-                  h-[55%]
+                  h-[75%]
                   bg-gradient-to-t
-                  from-black/60
+                  from-black/85
+                  via-black/55
                   to-transparent
+                  pointer-events-none
                 "
               />
 
@@ -154,58 +158,73 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
               <div
                 className="
                   absolute
-                  bottom-9
+                  bottom-7
                   left-5
                   right-5
                   z-10
-                  max-w-[320px]
-                  sm:bottom-10
+                  max-w-[480px]
+                  sm:bottom-8
                   sm:left-6
                   md:bottom-8
                   md:left-6
-                  md:max-w-[400px]
-                  lg:bottom-7
+                  lg:bottom-8
                   lg:left-7
-                  lg:max-w-[430px]
                   text-white
+                  flex
+                  flex-col
+                  justify-between
+                  min-h-[220px]
+                  md:min-h-[240px]
                 "
               >
-                {/* <p
-                  className="
-                    text-[10px]
-                    uppercase
-                    text-white/80
-                  "
-                >
-                  {tag}
-                </p> */}
+                {/* TOP PORTION: TITLE, DESCRIPTION & VILLA PILLS */}
+                <div>
+                  <h3
+                    className="
+                      mt-2
+                      text-xl
+                      font-light
+                      md:text-[24px]
+                      lg:text-[30px]
+                    "
+                  >
+                    {card.location}
+                  </h3>
 
-                <h3
-                  className="
-                    mt-2
-                    text-xl
-                    font-light
-                    md:text-[24px]
-                    lg:text-[30px]
-                  "
-                >
-                  {card.location}
-                </h3>
+                  <p
+                    className="
+                      mt-1.5
+                      text-xs
+                      font-light
+                      text-white/90
+                      md:mt-2
+                      md:text-sm
+                      line-clamp-2
+                    "
+                  >
+                    {card.description}
+                  </p>
 
-                <p
-                  className="
-                    mt-2
-                    text-xs
-                    font-light
-                    text-white/90
-                    md:mt-3
-                    md:text-sm
-                  "
-                >
-                  {card.description}
-                </p>
+                  {/* VILLA PILLS FOR DIRECT INTERNAL LINKING */}
+                  {card.villas && card.villas.length > 0 && (
+                    <div className="mt-3 flex flex-wrap gap-1.5 md:gap-2" onClick={(e) => e.stopPropagation()}>
+                      {card.villas.map((v) => (
+                        <React.Fragment key={v.href}>
+                          {v.newLine && <div className="basis-full h-0" />}
+                          <Link
+                            href={v.href}
+                            className="rounded-full border border-white/40 bg-black/35 backdrop-blur-md px-3 py-1 text-xs md:text-sm font-normal text-white transition-all duration-200 hover:border-primary hover:bg-primary hover:text-white active:scale-95 shadow-sm"
+                          >
+                            {v.label}
+                          </Link>
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  )}
+                </div>
 
-                <div className="mt-3 lg:mt-4">
+                {/* BOTTOM PORTION: EXPLORE ALL PINNED AT BOTTOM */}
+                <div className="pt-3">
                   <span
                     className="
                       inline-block
@@ -213,13 +232,13 @@ const Place = ({ tag, title, cards }: StayWithUsProps) => {
                       border-white
                       pb-0.5
                       text-xs
-                      font-medium
+                      font-normal
                       tracking-widest
                       uppercase
                       lg:text-sm
                     "
                   >
-                    Explore
+                    Explore All
                   </span>
                 </div>
               </div>

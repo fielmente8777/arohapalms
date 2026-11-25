@@ -8,6 +8,7 @@ import { landingPageData as pilerneData } from "@/app/pilerne-lp/components/page
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { roomData as locations } from "../pageData";
+import JsonLd from "@/components/seo/JsonLd";
 
 /**
  * Website villa / apartment pages, e.g. /mandrem/villa-paradiso/ and /pilerne/villa-majestic/.
@@ -88,8 +89,32 @@ export default async function StayPage({ params }: PageProps) {
   const isPilerne = slug === "pilerne";
   const data = isPilerne ? pilerneData : mandremData;
 
+  const lodgingSchema = {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    name: `${card.title} | Aroha Palms`,
+    description: card.description ?? `Luxury stay at ${card.title}, ${slug === "pilerne" ? "Pilerne" : "Mandrem"}, North Goa.`,
+    url: `https://arohapalms.com/${slug}/${stay}/`,
+    image: photos?.[0] ? `https://arohapalms.com${photos[0]}` : undefined,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: slug === "pilerne" ? "Pilerne" : "Mandrem",
+      addressRegion: "Goa",
+      addressCountry: "IN",
+    },
+    priceRange: card.startingPrice ?? "₹₹₹",
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "10-metre Swimming Pool", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Air Conditioning", value: true },
+      { "@type": "LocationFeatureSpecification", name: "High Speed WiFi", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Dedicated Caretakers", value: true },
+    ],
+  };
+
   return (
-    <VillaLandingPage
+    <>
+      <JsonLd data={lodgingSchema} />
+      <VillaLandingPage
       card={card}
       photos={photos}
       basePath={`/${slug}`}
@@ -103,5 +128,6 @@ export default async function StayPage({ params }: PageProps) {
       }
       showLandingNavbar={false}
     />
+    </>
   );
 }

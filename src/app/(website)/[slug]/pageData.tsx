@@ -357,6 +357,7 @@ export const roomData = [
             { icon: <BathroomIcon />, label: "Bathroom" },
           ],
           originalPrice: "₹ 40300/night",
+          startingPrice: "From ₹ 35,000/night",
           moreInfo: {
             title: "Together in Luxury, Designed for Every Generation",
             roomInfo: [
@@ -558,6 +559,7 @@ export const roomData = [
             { icon: <BathroomIcon />, label: "Bathroom" },
           ],
           originalPrice: "₹ 97500/night",
+          startingPrice: "From ₹ 85,000/night",
           moreInfo: {
             title: "The Ultimate Private Luxury Estate in North Goa",
             roomInfo: [

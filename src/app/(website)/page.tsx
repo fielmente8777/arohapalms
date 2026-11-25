@@ -23,10 +23,35 @@ import { homeHeroPhotos } from "@/data/villaPhotos";
 import Place from "./home/components/Place";
 import About from "./our-story/components/About";
 import { OurStoryData } from "./our-story/pageData";
+import JsonLd from "@/components/seo/JsonLd";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Aroha Palms",
+  legalName: "Akahata Hospitality Pvt Ltd",
+  url: "https://arohapalms.com",
+  logo: "https://arohapalms.com/logo.png",
+  description:
+    "Family-run collection of private luxury villas and serviced apartments in North Goa, India (Mandrem & Pilerne).",
+  telephone: "+91-98342-20573",
+  email: "reserve@arohapalms.com",
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "Goa",
+    addressCountry: "IN",
+  },
+  sameAs: [
+    "https://www.instagram.com/aroha_palms/",
+    "https://www.facebook.com/profile.php?id=61577418721550",
+    "https://www.linkedin.com/company/aroha-palms/",
+  ],
+};
 
 export default function HomePage() {
   return (
     <main>
+      <JsonLd data={organizationSchema} />
       <Banner {...homePageData.hero} images={homeHeroPhotos} showBookingForm />
       <AboutSection {...homePageData.about} />
       {/* <Experience {...homePageData.experience} /> */}

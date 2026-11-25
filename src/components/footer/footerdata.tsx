@@ -24,6 +24,8 @@ export const WebfooterData = {
   logo: "/home/newf.png",
   cin: "U55101GA2022PTC015434",
   gstin: "30AAXCA4249B1ZV",
+  email: "reserve@arohapalms.com",
+  phone: "+91 98342 20573",
 
   bookNow: {
     text: "Check availability",
@@ -108,22 +110,41 @@ export const WebfooterData = {
   },
 
   social: {
-    title: "Social",
+    title: "Location",
     items: [
       {
-        label: "Facebook",
-        href: "https://www.facebook.com/profile.php?id=61577418721550",
+        label: "Aroha Palms (Mandrem)",
+        href: "https://maps.app.goo.gl/m2HPpmkyeBQAMsjZ7",
       },
       {
-        label: "Instagram",
-        href: "https://www.instagram.com/aroha_palms/",
+        label: "Aroha Palms (Villa Majestic)",
+        href: "https://maps.app.goo.gl/e7nBBKNYk1GQLxZo6",
       },
       {
-        label: "LinkedIn",
-        href: "https://www.linkedin.com/company/aroha-palms/",
+        label: "Aroha Palms (Villa Grande)",
+        href: "https://maps.app.goo.gl/XLBRFiDys3waquzw9",
       },
     ],
   },
+
+  socialIcons: [
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61577418721550",
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/aroha_palms/",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/aroha-palms/",
+    },
+    {
+      name: "YouTube",
+      href: "https://www.youtube.com/@arohapalms",
+    },
+  ],
 
   copyright: "© AROHA PALMS 2026. ALL RIGHTS RESERVED.",
 

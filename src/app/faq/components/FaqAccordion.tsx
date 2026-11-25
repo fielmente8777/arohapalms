@@ -28,10 +28,12 @@ const FAQAccordion = ({
 
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-96" : "max-h-0"
+          isOpen ? "max-h-[1600px]" : "max-h-0"
         }`}
       >
-        <div className="px-8 sm:px-10 pb-4 text-sm sm:text-base font-light text-[#5A5856] leading-relaxed">{answer}</div>
+        <div className="px-8 sm:px-10 pb-4 text-sm sm:text-base font-light text-[#5A5856] leading-relaxed whitespace-pre-line">
+          {answer}
+        </div>
       </div>
     </div>
   );

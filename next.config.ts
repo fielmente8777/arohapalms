@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
       { source: "/booking", destination: "/contact-us/", statusCode: 301 },
       { source: "/contact", destination: "/contact-us/", statusCode: 301 },
       { source: "/5-bhk-villa-in-mandrem", destination: "/mandrem/", statusCode: 301 },
-      { source: "/articles/monsoon-bonanza-50-per-cent-off-luxury-villas-in-goa", destination: "/articles/", statusCode: 301 },
+      { source: "/exploring-the-best-of-candolim-beach-goa-a-comprehensive-tourist-guide", destination: "/articles/exploring-the-best-of-candolim-beach-goa-a-comprehensive-tourist-guide/", statusCode: 301 },
       { source: "/destination/:location(mandrem|pilerne)/:stay", destination: "/:location/:stay/", statusCode: 301 },
       { source: "/destination/:location(mandrem|pilerne)", destination: "/:location/", statusCode: 301 },
       { source: "/sitemap_index.xml", destination: "/sitemap.xml", statusCode: 301 },

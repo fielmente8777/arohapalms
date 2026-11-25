@@ -171,12 +171,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import LinkButton from "@/components/buttons/LinkButton";
+import { FillCallIcon, FillMailIcon } from "@/utils/icons";
+import {
+  FillFaceBookIcon,
+  LinkedInIcon,
+  OutLineInstagramIcon,
+  YouTube,
+} from "@/utils/SocialIcon";
 
 interface WebFooterProps {
   logo: string;
   cin?: string;
   gstin?: string;
+  email?: string;
+  phone?: string;
   registrations?: string[];
+  socialIcons?: {
+    name: string;
+    href: string;
+  }[];
 
   bookNow: {
     text: string;
@@ -219,7 +232,10 @@ const Footer = ({
   logo,
   cin,
   gstin,
+  email,
+  phone,
   registrations,
+  socialIcons,
   bookNow,
   links,
   quickLinks,
@@ -244,20 +260,62 @@ const Footer = ({
               />
             </div>
 
-            {/* CIN / GSTIN */}
-            {(cin || gstin) && (
-              <div className="mt-6 space-y-3 text-base text-slate-200 text-center">
+            {/* CIN / GSTIN / CONTACT INFO */}
+            {(cin || gstin || email || phone) && (
+              <div className="mt-6 space-y-2 text-base text-slate-200 text-center">
+                {email && (
+                  <p className="flex items-center justify-center gap-2">
+                    <span className="shrink-0 text-white"><FillMailIcon /></span>
+                    <Link href={`mailto:${email}`} className="hover:text-white transition-colors">
+                      {email}
+                    </Link>
+                  </p>
+                )}
+                {phone && (
+                  <p className="flex items-center justify-center gap-2">
+                    <span className="shrink-0 text-white"><FillCallIcon /></span>
+                    <Link href={`tel:${phone.replace(/\s+/g, "")}`} className="hover:text-white transition-colors">
+                      {phone}
+                    </Link>
+                  </p>
+                )}
                 {cin && <p>CIN: {cin}</p>}
                 {gstin && <p>GSTIN: {gstin}</p>}
                 {registrations?.map((r) => (
                   <p key={r} className="text-sm text-slate-300">{r}</p>
                 ))}
+
+                {/* HORIZONTAL SOCIAL ICONS UNDER TEXT */}
+                {socialIcons && socialIcons.length > 0 && (
+                  <div className="pt-5 flex items-center justify-center gap-3.5 md:gap-4 text-white">
+                    {socialIcons.map((s) => {
+                      let iconNode = null;
+                      if (s.name === "Facebook") iconNode = <FillFaceBookIcon />;
+                      else if (s.name === "Instagram") iconNode = <OutLineInstagramIcon />;
+                      else if (s.name === "LinkedIn") iconNode = <LinkedInIcon />;
+                      else if (s.name === "YouTube") iconNode = <YouTube />;
+
+                      return (
+                        <Link
+                          key={s.name}
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={s.name}
+                          className="flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-sm border border-primary text-slate-200 hover:text-white transition-all duration-300 hover:bg-primary hover:scale-105 active:scale-95 shadow-sm"
+                        >
+                          <span className="scale-120 flex items-center justify-center">{iconNode}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             )}
           </div>
 
           <div className="flex flex-col space-y-4">
-            <h3 className="mb-2 text-[13px] md:text-lg font-medium uppercase ">
+            <h3 className="mb-2 text-[13px] md:text-lg font-medium">
               {links.title}
             </h3>
             {links.items.map((item) => (
@@ -272,7 +330,7 @@ const Footer = ({
           </div>
 
           <div className="flex flex-col space-y-4">
-            <h3 className="mb-2 text-[13px] md:text-lg font-medium uppercase]">
+            <h3 className="mb-2 text-[13px] md:text-lg font-medium">
               {quickLinks.title}
             </h3>
             {quickLinks.items.map((item) => (
@@ -287,13 +345,15 @@ const Footer = ({
           </div>
 
           <div className="flex flex-col space-y-4">
-            <h3 className="mb-2 text-[13px] md:text-lg font-medium uppercase ">
+            <h3 className="mb-2 text-[13px] md:text-lg font-medium">
               {social.title}
             </h3>
             {social.items.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="text-[13px] md:text-base font-light text-slate-200 hover:text-white transition-colors"
               >
                 {item.label}

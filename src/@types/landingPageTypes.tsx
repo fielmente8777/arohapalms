@@ -34,6 +34,7 @@ export interface AccommodationSectionProps {
         author: string;
         description: string;
       };
+      youtubeVideoId?: string;
       sectionButton?: {
         btn: string;
         listOfData: {

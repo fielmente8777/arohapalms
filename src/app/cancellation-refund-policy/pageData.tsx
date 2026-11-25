@@ -1,6 +1,6 @@
 export const cancellationRefundPolicyData = {
   title: "Cancellation & Refund Policy",
-  lastUpdated: "17 November 2026. Applies to all bookings made directly with Aroha Palms.",
+  lastUpdated: "21 November 2026. Applies to all bookings made directly with Aroha Palms.",
   description:
     "Plans change. This policy sets out exactly where you stand if they do, and gives you the choice of a future stay instead of a refund whenever that suits you better. One policy applies to every villa, apartment and estate booking; only peak dates are treated differently.",
 

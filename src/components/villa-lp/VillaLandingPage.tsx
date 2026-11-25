@@ -240,6 +240,27 @@ const VillaLandingPage: React.FC<Props> = ({
         <VillaGallery images={photos} title={title} />
       </SectionWithContainer>
 
+      {/* Video Tour Section (Doc Page 8) */}
+      {card.moreInfo?.youtubeVideoId && (
+        <SectionWithContainer containerClassName="space-y-6 max-w-4xl mx-auto">
+          <div className="space-y-2 text-center">
+            <p className="text-sm text-primary uppercase tracking-widest">
+              Video Walkthrough
+            </p>
+            <SectionHeading title={`Full Tour of ${title}`} textCenter />
+          </div>
+          <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-primary/30 shadow-lg">
+            <iframe
+              src={`https://www.youtube.com/embed/${card.moreInfo.youtubeVideoId}`}
+              title={`Tour of ${title}`}
+              className="absolute inset-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </SectionWithContainer>
+      )}
+
       {/* Details */}
       {detailSections.length > 0 && (
         <SectionWithContainer

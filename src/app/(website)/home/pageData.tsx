@@ -303,6 +303,16 @@ export const homePageData = {
 
         href: "/mandrem",
 
+        villas: [
+          { label: "Villa Magnifica", href: "/mandrem/villa-magnifica/" },
+          { label: "Villa Paradiso", href: "/mandrem/villa-paradiso/" },
+          { label: "Villa Serenity", href: "/mandrem/villa-serenity/" },
+          { label: "Villa Caia", href: "/mandrem/villa-caia/" },
+          { label: "Villa Encanto", href: "/mandrem/villa-encanto/" },
+          { label: "Villa Marisol", href: "/mandrem/villa-marisol/" },
+          { label: "Suites & Apartments", href: "/mandrem/#apartments" },
+        ],
+
         showPlay: false,
       },
 
@@ -316,6 +326,12 @@ export const homePageData = {
         secondaryImage: "/rooms/Imperial/AOB_3422[1]_47_11zon.jpg",
 
         href: "/pilerne",
+
+        villas: [
+          { label: "Villa Grande", href: "/pilerne/villa-grande/" },
+          { label: "Villa Majestic", href: "/pilerne/villa-majestic/" },
+          { label: "Villa Imperial", href: "/pilerne/villa-imperial/", newLine: true },
+        ],
 
         showPlay: false,
       },

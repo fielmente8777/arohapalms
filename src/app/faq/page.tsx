@@ -12,12 +12,29 @@ import FAQSection from "./components/FaoSection";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/WebsiteFooter";
 import { WebfooterData } from "@/components/footer/footerdata";
+import JsonLd from "@/components/seo/JsonLd";
 
 export default function FAQPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.sections.flatMap((section) =>
+      section.faqs.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    ),
+  };
+
   return (
     <>
-    <Navbar/>
-    <main className="pt-16 md:pt-28">
+      <JsonLd data={faqSchema} />
+      <Navbar />
+      <main className="pt-16 md:pt-28">
       <FAQSection {...faqData} />
     </main>
 

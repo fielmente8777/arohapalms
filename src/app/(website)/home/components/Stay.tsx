@@ -12,6 +12,7 @@ interface StayCard {
   secondaryImage: string;
   href: string;
   showPlay?: boolean;
+  villas?: { label: string; href: string }[];
 }
 
 interface StayWithUsProps {
@@ -136,12 +137,27 @@ const StayWithUs = ({ tag, title, cards }: StayWithUsProps) => {
                     {card.description}
                   </p>
 
+                  {/* VILLA LINKS */}
+                  {card.villas && card.villas.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {card.villas.map((v) => (
+                        <Link
+                          key={v.href}
+                          href={v.href}
+                          className="rounded-full border border-primary/40 px-3 py-1 text-xs text-p3 transition-colors hover:border-primary hover:bg-primary hover:text-white"
+                        >
+                          {v.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+
                   {/* EXPLORE */}
                   <Link
                     href={card.href}
                     className="group flex w-fit items-center gap-2 border-b border-p2 pb-1 text-[10px] md:text-sm font-medium uppercase text-p2"
                   >
-                    Explore {card.location}
+                    Explore All in {card.location}
                     <span className="transition-transform duration-300 group-hover:translate-x-1">
                       <ArrowIcon />
                     </span>
