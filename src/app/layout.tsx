@@ -198,8 +198,19 @@ export default function RootLayout({
         <Script id="microsoft-clarity" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zbn6khn6ts");`}
         </Script>
+        {/* <!-- Eazbot Script (Next.js) --> */}
+        <Script id="chatbot-config" strategy="afterInteractive">
+          {`window.eazbotConfig = {
+            ndid: "4c13e800-cf4a-43f1-a448-d6df8149defe",
+            hid: "70816004",
+          };`}
+        </Script>
+        <Script
+          id="eazbot-widget"
+          src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"
+          strategy="afterInteractive"
+        />
       </body>
-      {/* Eazbot chatbot removed per client (L6): the bubble did nothing on tap. Keep floating WhatsApp + Call. */}
     </html>
   );
 }
